@@ -1,9 +1,13 @@
 Package: LAGOS
-Title: What the Package Does (one line, title case)
+Title: Tools for Interacting with the Lake Multi-scaled Geospatial and Temporal Database
 Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Authors@R: c(
+    person("Joseph", "Stachelek", email = "stachel2@msu.edu", role = c("aut")),
+    person("Farzan","Masrour", role = c("cre"))
+    )
+Description: This package provides functions for interacting with the
+Lake Multi-scaled Geospatial and Temporal Database (LAGOS).
 Depends: R (>= 3.3.1)
-License: What license is it under?
+License: GPL
 Encoding: UTF-8
 LazyData: true
