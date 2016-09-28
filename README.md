@@ -31,5 +31,15 @@ The legacy code-base can be obtained by running the following command in your sh
 ```
 git clone https://github.com/jsta/LAGOS.git 
 
+cd LAGOS
+
 git checkout 553b0ba3875b29257aab1aaec71d3388070bd3e5
 ```
+
+## References
+
+[https://help.github.com/articles/distributing-large-binaries/](https://help.github.com/articles/distributing-large-binaries/)
+
+[https://github.com/richfitz/datastorr/blob/master/vignettes/datastorr.Rmd](https://github.com/richfitz/datastorr/blob/master/vignettes/datastorr.Rmd)
+
+[https://github.com/dfalster/baad/releases](https://github.com/dfalster/baad/releases)
