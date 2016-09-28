@@ -12,8 +12,8 @@ The design of the LAGOS data package will be guided by these principles:
 
 ## Potential Features
 
- * preloaded database _views_ using `data(LAGOS)`
- * API for compiling specific _views_ of LAGOS from the component `txt` files
+ * preloaded database _views_ using ~~`data(LAGOS)`~~ `richfitz/datastorr`
+ * API for compiling specific _views_ of LAGOS from the component `txt` files. _Include this info only in a vignette?_
  * filtering by censor codes
  * detection limit handling (imputation?)
  * vignettes to show common workflows (avoid reinventing the wheel as far as analysis and visualization)
@@ -21,7 +21,7 @@ The design of the LAGOS data package will be guided by these principles:
 ## Package Stucture Outline
 
 ```
-
+lagos_data()
 ```
 
 ## Legacy code-base
