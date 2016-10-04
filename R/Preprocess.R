@@ -21,7 +21,8 @@ identDetector <- function(list){
   return(unique(x))
 }
 
-
+#'@name readCol
+#'@title Return the position of a column name?
 readCol <- function(name){
   l <- which(informationTable[,"name"]==name)
   con <- T
@@ -47,7 +48,7 @@ readCol <- function(name){
 
 #'@name sortList
 #'@title Sort a list
-#'@param list vecotr of data.frame names
+#'@param list vector of data.frame names
 #'@description Sort the given list in a way that merging computation cost less
 #'@return list
 sortList <- function(list){
@@ -63,9 +64,12 @@ sortList <- function(list){
   out <- c(list[i1][order1], list[!i1][order2])
   return(out)
 }
-stepsfunc <- function(list,columns, identifiers){
-  ###########################
-  # adding necessary information
+
+#'@name stepsfunc
+#'@title stepsfunc
+#'@description Loops through a list and does something...?
+stepsfunc <- function(list, columns, identifiers){
+  # Adding necessary information ####
   group <- rep(0, length(list))
   id <- rep("", length(list))
   for(i in 1:length(list)){
@@ -75,32 +79,31 @@ stepsfunc <- function(list,columns, identifiers){
     y <-  strsplit(y,",")
     id[i] <- y[[1]][1]
 
-    ####################################
-    # Adding necessary columns
+    # Adding necessary columns ####
     type <- informationTable[j,'type']
 
-    if(type=="limno"){
+    if(type == "limno"){
       j <- which(names(limno)==list[i])
       col <- vector()
       for(k in 1:length(identifiers)){
-        x <- which(names(limno[[j]])==identifiers[k])
+        x <- which(names(limno[[j]]) == identifiers[k])
         col <- c(col, x)
       }
       columns[[i]] <-unique(sort(c(columns[[i]], col)))
     }
-    if(type=="geo"){
+    if(type == "geo"){
       j <- which(names(geo)==list[i])
       col <- vector()
       for(k in 1:length(identifiers)){
-        x <- which(names(geo[[j]])==identifiers[k])
+        x <- which(names(geo[[j]]) == identifiers[k])
         col <- c(col, x)
       }
       columns[[i]] <-unique(sort(c(columns[[i]], col)))
     }
 
   }
-  ###########################
-  # adding necessary dataframe
+
+  # Adding necessary dataframe ####
   newList <- list
   newColumns <- columns
 
@@ -151,8 +154,8 @@ stepsfunc <- function(list,columns, identifiers){
 #'@param list vector of data.frame names
 #'@param columns list
 #'@return data.frame
-multiMerge <- function( list, columns=list()){
-  # Error handeling:
+multiMerge <- function(list, columns = list()){
+  # Error handling:
   if(!is.vector(list)){
     stop("The input must be a vector of the names of all
          dataframes that must be merged together")
@@ -170,20 +173,20 @@ multiMerge <- function( list, columns=list()){
   if( all(c("epi.nutr","secchi") %in% list)){
     stop("Can not merge epi.nutr and secchi in a same dataframe")
   }
-  ###############################################
-  #Read the column part
+
+  # Read the column part ####
   list <-  sortList(list)
   if(length(columns)==0){
     for(i in 1:length(list)){
       columns[[i]] <- readCol(list[i])
     }
   }
-  ###############################################
-  #Adding necessary steps
+
+  # Adding necessary steps ####
   identifiers <- identDetector(list)
-  steps <- stepsfunc(list,columns, identifiers)
-  ###############################################
-  #merging process
+  steps <- stepsfunc(list, columns, identifiers)
+
+  # Merging process ####
   n <- which(informationTable[,"name"]==steps$list[1])
   type <- informationTable[n,"type"]
   if(type=="limno"){
@@ -214,5 +217,3 @@ multiMerge <- function( list, columns=list()){
   }
   return(out1)
   }
-
-

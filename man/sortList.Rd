@@ -7,7 +7,7 @@
 sortList(list)
 }
 \arguments{
-\item{list}{vecotr of data.frame names}
+\item{list}{vector of data.frame names}
 }
 \value{
 list
