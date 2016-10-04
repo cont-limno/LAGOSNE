@@ -4,7 +4,10 @@
 \alias{compile_data}
 \title{Compile LAGOS data}
 \usage{
-compile_data()
+compile_data(version)
+}
+\arguments{
+\item{version}{numeric LAGOS database version number}
 }
 \description{
 Compile LAGOS data from component flat files

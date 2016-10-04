@@ -4,15 +4,19 @@
 \alias{load_lagos_txt}
 \title{load_lagos_txt}
 \usage{
-load_lagos_txt(file_name)
+load_lagos_txt(file_name, sep = "\\t", ...)
 }
 \arguments{
 \item{file_name}{character}
+
+\item{sep}{character seperator (tab or comma seperated values)}
+
+\item{...}{Options passed on to \code{\link[utils]{read.table}}}
 }
 \value{
 data.frame
 }
 \description{
-load_lagos_txt
+A wrapper for \code{\link[utils]{read.table}} with a default set of parameters.
 }
 
