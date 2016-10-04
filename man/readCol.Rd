@@ -6,4 +6,10 @@
 \usage{
 readCol(name)
 }
+\arguments{
+\item{name}{character?}
+}
+\description{
+Return the position of a column name?
+}
 

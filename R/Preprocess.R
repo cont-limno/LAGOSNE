@@ -23,6 +23,8 @@ identDetector <- function(list){
 
 #'@name readCol
 #'@title Return the position of a column name?
+#'@description Return the position of a column name?
+#'@param name character?
 readCol <- function(name){
   l <- which(informationTable[,"name"]==name)
   con <- T
@@ -68,6 +70,9 @@ sortList <- function(list){
 #'@name stepsfunc
 #'@title stepsfunc
 #'@description Loops through a list and does something...?
+#'@param list list?
+#'@param columns numeric?
+#'@param identifiers character?
 stepsfunc <- function(list, columns, identifiers){
   # Adding necessary information ####
   group <- rep(0, length(list))

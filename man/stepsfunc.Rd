@@ -6,6 +6,13 @@
 \usage{
 stepsfunc(list, columns, identifiers)
 }
+\arguments{
+\item{list}{list?}
+
+\item{columns}{numeric?}
+
+\item{identifiers}{character?}
+}
 \description{
 Loops through a list and does something...?
 }
