@@ -17,16 +17,45 @@ The design of the LAGOS data package will be guided by these principles:
  * filtering by censor codes
  * detection limit handling (imputation?)
  * vignettes to show common workflows (avoid reinventing the wheel as far as analysis and visualization)
+ 
+## Usage
 
-## Package Stucture Outline
+For development purposes, the package will assume that the raw `txt` files will be located in a `data-raw` folder within the repository (but not under version control) in the same structure as Dropbox.
 
 ```
-lagos_data()
+LAGOS
+|
+|
+___man
+|
+|___R
+|
+|___data-raw
+    |
+    |
+    ___Geo
+    |
+    |
+    ___ Limno10541
+
+```
+
+## Potential Package Stucture Outline
+
+```
+# download data from remote source
+
+# build the dataset
+    # Use remake::make("export")?
+
+# load a precompiled view into R
+    # Use lagos <- readRDS('export/lagos.rds') 
+
 ```
 
 ## Legacy code-base
 
-The legacy code-base can be obtained by running the following command in your shell:
+The legacy code-base minus the data can be obtained by running the following command in your shell:
 
 ```
 git clone https://github.com/jsta/LAGOS.git 
