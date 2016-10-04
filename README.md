@@ -22,11 +22,13 @@ The design of the LAGOS data package will be guided by these principles:
 
 ## Installation
 
+### From the Shell (In RStudio: Tools -> Shell...)
+
 `git clone https://github.com/jsta/LAGOS.git`
 
 `cd LAGOS`
 
-`Rscript -e 'devtools::install()`
+`Rscript -e 'devtools::install()'`
  
 ## Usage
 
