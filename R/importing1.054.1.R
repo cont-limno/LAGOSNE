@@ -1,19 +1,10 @@
-######################################################
-#File description comment, including purpose of program, inputs
-# and outputs
-######################################################
-# Set the working directory
 
-
-######################################################
-#Importing Lagos limno data
-# setwd("/Users/farzan/Desktop/Dropbox/Summer\ 2015/Job/Lagos\ Package/LAGOS\ Package/Data/Limno")
-# setwd("C:\\Users\\FWL\\Dropbox\\Summer 2015\\Job\\Lagos Package\\LAGOS Package\\Data\\Limno10541")
 #'@name compile_data
 #'@title Compile LAGOS data
 #'@description Compile LAGOS data from component flat files
 #'@importFrom utils read.table
 compile_data <- function(){
+  # Importing Lagos limno data ####
   epi.nutr <- read.table("data-raw/Limno10541/lagos_epi_nutr_10541.txt",
                          header = TRUE,
                          sep = "\t",
@@ -57,12 +48,8 @@ compile_data <- function(){
                               strip.white=T,
                               comment.char="")
 
-  ######################################################
-  #Importing Lagos Geo data
-  # setwd("/Users/farzan/Desktop/Dropbox/Summer\ 2015/Job/Lagos\ Package/LAGOS\ Package/Data/Geo")
-  # setwd("C:\\Users\\FWL\\Dropbox\\Summer 2015\\Job\\Lagos Package\\LAGOS Package\\Data\\Geo")
-  #######
-  #Importing Lagos Geo county data
+  # Importing Lagos Geo data ####
+  # Importing Lagos Geo county data
 
   county <- read.table("data-raw/Geo/county.txt", header =T,
                        sep = "\t",
@@ -91,8 +78,8 @@ compile_data <- function(){
                              dec = "." ,
                              strip.white = TRUE,
                              comment.char = "")
-  #######
-  #Importing Lagos Geo edu data
+
+  # Importing Lagos Geo edu data ####
 
   edu <- read.table("data-raw/Geo/edu.txt", header =T,
                     sep = "\t",
@@ -121,8 +108,8 @@ compile_data <- function(){
                           dec = "." ,
                           strip.white = TRUE,
                           comment.char = "")
-  #######
-  #Importing Lagos Geo huc4 data
+
+  # Importing Lagos Geo huc4 data ####
 
 
   hu4 <- read.table("data-raw/Geo/hu4.txt", header =T,
@@ -156,9 +143,8 @@ compile_data <- function(){
                           strip.white = TRUE,
                           comment.char = "",
                           as.is=TRUE)
-  #######
-  #Importing Lagos Geo huc4 data
 
+  # Importing Lagos Geo huc4 data ####
 
   hu8 <- read.table("data-raw/Geo/hu8.txt", header =T,
                     sep = "\t",
@@ -192,8 +178,8 @@ compile_data <- function(){
                           strip.white = TRUE,
                           comment.char = "",
                           as.is=TRUE)
-  #######
-  #Importing Lagos Geo huc12 data
+
+  # Importing Lagos Geo huc12 data ####
 
 
   hu12 <- read.table("data-raw/Geo/hu12.txt", header =T,
@@ -227,8 +213,9 @@ compile_data <- function(){
                            strip.white = TRUE,
                            comment.char = "",
                            as.is=TRUE)
-  #################################
-  # Importing Lagos Geo iws data
+
+  # Importing Lagos Geo iws data ####
+
   iws <- read.table("data-raw/Geo/iws.txt", header =T,
                     sep = "\t",
                     quote= "",
@@ -249,8 +236,8 @@ compile_data <- function(){
                          dec = "." ,
                          strip.white = TRUE,
                          comment.char = "")
-  #######
-  #Importing Lagos Geo state data
+
+  # Importing Lagos Geo state data ####
 
   state <- read.table("data-raw/Geo/state.txt", header =T,
                       sep = "\t",
@@ -279,8 +266,9 @@ compile_data <- function(){
                             dec = "." ,
                             strip.white = TRUE,
                             comment.char = "")
-  #######################
-  # buffer
+
+  # buffer ####
+
   lakes4ha.buffer100m <- read.table("data-raw/Geo/lakes4ha_buffer100m.txt", header =T,
                                     sep = ",",
                                     quote= "",
@@ -330,7 +318,6 @@ compile_data <- function(){
 
   names(lakes4ha.buffer500m.lulc)[names(lakes4ha.buffer500m.lulc)==
                                     "lakes4ha_buffer500m_lagoslakeid"] <- "lagoslakeid"
-  #######################
 
   lagoslakes <-  read.table("data-raw/Geo/lagoslakes_10400.txt", header =T,
                             sep = "\t",
@@ -338,7 +325,6 @@ compile_data <- function(){
                             dec = "." ,
                             strip.white = TRUE,
                             comment.char = "")
-  #######
 
   limno <- list(epi.nutr = epi.nutr,lake.specific = lake.specific,
                 secchi=secchi ,lagos.source = lagos.source,
@@ -380,8 +366,8 @@ compile_data <- function(){
               ,lagoslakes = lagoslakes)
   #data1 <- merge( lake.specific[,c(1,15,17,19,21,23)],epi.nutr,
   #               by.x="lagoslakeid", by.y="lagoslakeid" )
-  ###################################################################
-  ## Creating information table
+
+  ## Creating information table ####
 
   name <- c(names(geo), names(limno))
   type <- c(rep("geo",length(geo)), rep("limno", length(limno)))
@@ -428,10 +414,8 @@ compile_data <- function(){
                                  observations=I(observations),
                                  identifier= I(identifier),
                                  group = I(group))
-  #################################################
-  # Saving the Data frame
+
+  # Saving the Data frame ####
   rm(i,identifier,j,name, type, variables, observations,group)
-  # setwd("/Users/farzan/Desktop/Dropbox/Summer\ 2015/Job/Lagos\ Package/LAGOS\ Package")
-  # setwd("C:\\Users\\FWL\\Dropbox\\Summer 2015\\Job\\Lagos Package\\LAGOS Package")
   save.image(file="data_1.054.1.RData")
 }
