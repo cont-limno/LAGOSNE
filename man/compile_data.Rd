@@ -6,4 +6,7 @@
 \usage{
 compile_data()
 }
+\description{
+Compile LAGOS data from component flat files
+}
 
