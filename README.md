@@ -1,4 +1,6 @@
-# LAGOS Package Documentation
+# LAGOS
+
+[![Project Status: WIP - Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
 
 ## Design Philisophy
 
@@ -17,6 +19,12 @@ The design of the LAGOS data package will be guided by these principles:
  * filtering by censor codes
  * detection limit handling (imputation?)
  * vignettes to show common workflows (avoid reinventing the wheel as far as analysis and visualization)
+
+## Installation
+
+`git clone https://github.com/jsta/LAGOS.git`
+`cd LAGOS`
+`Rscript -e 'devtools::install()`
  
 ## Usage
 
