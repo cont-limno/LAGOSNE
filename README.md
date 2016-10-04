@@ -23,7 +23,9 @@ The design of the LAGOS data package will be guided by these principles:
 ## Installation
 
 `git clone https://github.com/jsta/LAGOS.git`
+
 `cd LAGOS`
+
 `Rscript -e 'devtools::install()`
  
 ## Usage
