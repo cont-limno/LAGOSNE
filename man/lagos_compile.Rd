@@ -13,8 +13,9 @@ lagos_compile(version)
 Compile LAGOS data from component flat files
 }
 \examples{
-
+\dontrun{
 lagos_compile("1.054.1")
+}
 
 }
 
