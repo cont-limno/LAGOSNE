@@ -52,6 +52,12 @@ ___man
 
 ```
 
+### Compile `txt` files
+
+```
+LAGOS:::lagos_compile()
+```
+
 ## Potential Package Stucture Outline
 
 ```

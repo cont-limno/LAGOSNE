@@ -1,10 +1,14 @@
 
-#'@name compile_data
+#'@name lagos_compile
 #'@title Compile LAGOS data
 #'@description Compile LAGOS data from component flat files
-#'@param version numeric LAGOS database version number
+#'@param version character LAGOS database version string
 #'@importFrom utils read.table
-compile_data <- function(version){
+#'@examples
+#'
+#'lagos_compile("1.054.1")
+#'
+lagos_compile <- function(version){
 
   # Importing Lagos limno data ####
   epi.nutr  <- load_lagos_txt("data-raw/Limno10541/lagos_epi_nutr_10541.txt",
@@ -212,6 +216,6 @@ compile_data <- function(version){
                                  group = I(group))
 
   # Saving the Data frame ####
-  rm(i,identifier,j,name, type, variables, observations,group)
-  save.image(file="data_1.054.1.RData")
+  rm(i, identifier, j, name, type, variables, observations, group)
+  save.image(file = paste0("data_", version, ".RData"))
 }
