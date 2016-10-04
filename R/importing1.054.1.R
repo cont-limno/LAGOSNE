@@ -12,7 +12,7 @@
 #'@name compile_data
 #'@importFrom utils read.table
 compile_data <- function(){
-  epi.nutr <- read.table("data/Limno10541/lagos_epi_nutr_10541.txt",
+  epi.nutr <- read.table("data-raw/Limno10541/lagos_epi_nutr_10541.txt",
                          header = TRUE,
                          sep = "\t",
                          quote = "",
@@ -30,7 +30,7 @@ compile_data <- function(){
                               comment.char = "")
 
 
-  secchi <- read.table('data/Limno10541/lagos_secchi_10541.txt',
+  secchi <- read.table('data-raw/Limno10541/lagos_secchi_10541.txt',
                        header =T,
                        sep = "\t",
                        quote = "",
@@ -39,7 +39,7 @@ compile_data <- function(){
                        comment.char="")
 
 
-  lagos.source <- read.table('data/Limno10541/lagos_source_10541.txt',
+  lagos.source <- read.table('data-raw/Limno10541/lagos_source_10541.txt',
                              header =T,
                              sep = "\t",
                              quote = "",
@@ -47,7 +47,7 @@ compile_data <- function(){
                              strip.white=T,
                              comment.char="")
 
-  lagos.program <- read.table('data/Limno10541/lagos_program_10541.txt',
+  lagos.program <- read.table('data-raw/Limno10541/lagos_program_10541.txt',
                               header=T,
                               sep = "\t",
                               quote = "",
@@ -62,28 +62,28 @@ compile_data <- function(){
   #######
   #Importing Lagos Geo county data
 
-  county <- read.table("data/Geo/county.txt", header =T,
+  county <- read.table("data-raw/Geo/county.txt", header =T,
                        sep = "\t",
                        quote= "",
                        dec = "." ,
                        strip.white = TRUE,
                        comment.char = "")
 
-  county.chag <-  read.table("data/Geo/county_chag.txt", header =T,
+  county.chag <-  read.table("data-raw/Geo/county_chag.txt", header =T,
                              sep = "\t",
                              quote= "",
                              dec = "." ,
                              strip.white = TRUE,
                              comment.char = "")
 
-  county.conn <-  read.table("data/Geo/county_conn.txt", header =T,
+  county.conn <-  read.table("data-raw/Geo/county_conn.txt", header =T,
                              sep = "\t",
                              quote= "",
                              dec = "." ,
                              strip.white = TRUE,
                              comment.char = "")
 
-  county.lulc <-  read.table("data/Geo/county_lulc.txt", header =T,
+  county.lulc <-  read.table("data-raw/Geo/county_lulc.txt", header =T,
                              sep = "\t",
                              quote= "",
                              dec = "." ,
@@ -92,28 +92,28 @@ compile_data <- function(){
   #######
   #Importing Lagos Geo edu data
 
-  edu <- read.table("data/Geo/edu.txt", header =T,
+  edu <- read.table("data-raw/Geo/edu.txt", header =T,
                     sep = "\t",
                     quote= "",
                     dec = "." ,
                     strip.white = TRUE,
                     comment.char = "")
 
-  edu.chag <-  read.table("data/Geo/edu_chag.txt", header =T,
+  edu.chag <-  read.table("data-raw/Geo/edu_chag.txt", header =T,
                           sep = "\t",
                           quote= "",
                           dec = "." ,
                           strip.white = TRUE,
                           comment.char = "")
 
-  edu.conn <-  read.table("data/Geo/edu_conn.txt", header =T,
+  edu.conn <-  read.table("data-raw/Geo/edu_conn.txt", header =T,
                           sep = "\t",
                           quote= "",
                           dec = "." ,
                           strip.white = TRUE,
                           comment.char = "")
 
-  edu.lulc <-  read.table("data/Geo/edu_lulc.txt", header =T,
+  edu.lulc <-  read.table("data-raw/Geo/edu_lulc.txt", header =T,
                           sep = "\t",
                           quote= "",
                           dec = "." ,
@@ -123,7 +123,7 @@ compile_data <- function(){
   #Importing Lagos Geo huc4 data
 
 
-  hu4 <- read.table("data/Geo/hu4.txt", header =T,
+  hu4 <- read.table("data-raw/Geo/hu4.txt", header =T,
                     sep = "\t",
                     quote= "",
                     dec = "." ,
@@ -131,7 +131,7 @@ compile_data <- function(){
                     comment.char = "",
                     colClasses=c("hu4"="factor"))
 
-  hu4.chag <-  read.table("data/Geo/hu4_chag.txt", header =T,
+  hu4.chag <-  read.table("data-raw/Geo/hu4_chag.txt", header =T,
                           sep = "\t",
                           quote= "",
                           dec = "." ,
@@ -139,7 +139,7 @@ compile_data <- function(){
                           comment.char = "",
                           as.is=TRUE)
 
-  hu4.conn <-  read.table("data/Geo/hu4_conn.txt", header =T,
+  hu4.conn <-  read.table("data-raw/Geo/hu4_conn.txt", header =T,
                           sep = "\t",
                           quote= "",
                           dec = "." ,
@@ -147,7 +147,7 @@ compile_data <- function(){
                           comment.char = "",
                           as.is=TRUE)
 
-  hu4.lulc <-  read.table("data/Geo/hu4_lulc.txt", header =T,
+  hu4.lulc <-  read.table("data-raw/Geo/hu4_lulc.txt", header =T,
                           sep = "\t",
                           quote= "",
                           dec = "." ,
@@ -158,7 +158,7 @@ compile_data <- function(){
   #Importing Lagos Geo huc4 data
 
 
-  hu8 <- read.table("data/Geo/hu8.txt", header =T,
+  hu8 <- read.table("data-raw/Geo/hu8.txt", header =T,
                     sep = "\t",
                     quote= "",
                     dec = "." ,
@@ -167,7 +167,7 @@ compile_data <- function(){
                     colClasses=c("hu8"="factor")
   )
 
-  hu8.chag <-  read.table("data/Geo/hu8_chag.txt", header =T,
+  hu8.chag <-  read.table("data-raw/Geo/hu8_chag.txt", header =T,
                           sep = "\t",
                           quote= "",
                           dec = "." ,
@@ -175,7 +175,7 @@ compile_data <- function(){
                           comment.char = "",
                           as.is=TRUE)
 
-  hu8.conn <-  read.table("data/Geo/hu8_conn.txt", header =T,
+  hu8.conn <-  read.table("data-raw/Geo/hu8_conn.txt", header =T,
                           sep = "\t",
                           quote= "",
                           dec = "." ,
@@ -183,7 +183,7 @@ compile_data <- function(){
                           comment.char = "",
                           as.is=TRUE)
 
-  hu8.lulc <-  read.table("data/Geo/hu8_lulc.txt", header =T,
+  hu8.lulc <-  read.table("data-raw/Geo/hu8_lulc.txt", header =T,
                           sep = "\t",
                           quote= "",
                           dec = "." ,
@@ -194,7 +194,7 @@ compile_data <- function(){
   #Importing Lagos Geo huc12 data
 
 
-  hu12 <- read.table("data/Geo/hu12.txt", header =T,
+  hu12 <- read.table("data-raw/Geo/hu12.txt", header =T,
                      sep = "\t",
                      quote= "",
                      dec = "." ,
@@ -202,7 +202,7 @@ compile_data <- function(){
                      comment.char = "",
                      colClasses=c("hu12"="factor"))
 
-  hu12.chag <-  read.table("data/Geo/hu12_chag.txt", header =T,
+  hu12.chag <-  read.table("data-raw/Geo/hu12_chag.txt", header =T,
                            sep = "\t",
                            quote= "",
                            dec = "." ,
@@ -210,7 +210,7 @@ compile_data <- function(){
                            comment.char = "",
                            as.is=TRUE)
 
-  hu12.conn <-  read.table("data/Geo/hu12_conn.txt", header =T,
+  hu12.conn <-  read.table("data-raw/Geo/hu12_conn.txt", header =T,
                            sep = "\t",
                            quote= "",
                            dec = "." ,
@@ -218,7 +218,7 @@ compile_data <- function(){
                            comment.char = "",
                            as.is=TRUE)
 
-  hu12.lulc <-  read.table("data/Geo/hu12_lulc.txt", header =T,
+  hu12.lulc <-  read.table("data-raw/Geo/hu12_lulc.txt", header =T,
                            sep = "\t",
                            quote= "",
                            dec = "." ,
@@ -227,21 +227,21 @@ compile_data <- function(){
                            as.is=TRUE)
   #################################
   # Importing Lagos Geo iws data
-  iws <- read.table("data/Geo/iws.txt", header =T,
+  iws <- read.table("data-raw/Geo/iws.txt", header =T,
                     sep = "\t",
                     quote= "",
                     dec = "." ,
                     strip.white = TRUE,
                     comment.char = "")
 
-  iws.conn <- read.table("data/Geo/iws_conn.txt", header =T,
+  iws.conn <- read.table("data-raw/Geo/iws_conn.txt", header =T,
                          sep = "\t",
                          quote= "",
                          dec = "." ,
                          strip.white = TRUE,
                          comment.char = "")
 
-  iws.lulc <- read.table("data/Geo/iws_lulc.txt", header =T,
+  iws.lulc <- read.table("data-raw/Geo/iws_lulc.txt", header =T,
                          sep = "\t",
                          quote= "",
                          dec = "." ,
@@ -250,28 +250,28 @@ compile_data <- function(){
   #######
   #Importing Lagos Geo state data
 
-  state <- read.table("data/Geo/state.txt", header =T,
+  state <- read.table("data-raw/Geo/state.txt", header =T,
                       sep = "\t",
                       quote= "",
                       dec = "." ,
                       strip.white = TRUE,
                       comment.char = "")
 
-  state.chag <-  read.table("data/Geo/state_chag.txt", header =T,
+  state.chag <-  read.table("data-raw/Geo/state_chag.txt", header =T,
                             sep = "\t",
                             quote= "",
                             dec = "." ,
                             strip.white = TRUE,
                             comment.char = "")
 
-  state.conn <-  read.table("data/Geo/state_conn.txt", header =T,
+  state.conn <-  read.table("data-raw/Geo/state_conn.txt", header =T,
                             sep = "\t",
                             quote= "",
                             dec = "." ,
                             strip.white = TRUE,
                             comment.char = "")
 
-  state.lulc <-  read.table("data/Geo/state_lulc.txt", header =T,
+  state.lulc <-  read.table("data-raw/Geo/state_lulc.txt", header =T,
                             sep = "\t",
                             quote= "",
                             dec = "." ,
@@ -279,7 +279,7 @@ compile_data <- function(){
                             comment.char = "")
   #######################
   # buffer
-  lakes4ha.buffer100m <- read.table("data/Geo/lakes4ha_buffer100m.txt", header =T,
+  lakes4ha.buffer100m <- read.table("data-raw/Geo/lakes4ha_buffer100m.txt", header =T,
                                     sep = ",",
                                     quote= "",
                                     dec = "." ,
@@ -288,7 +288,7 @@ compile_data <- function(){
   names(lakes4ha.buffer100m)[names(lakes4ha.buffer100m)==
                                "lakes4ha_buffer100m_lagoslakeid"] <- "lagoslakeid"
 
-  lakes4ha.buffer100m.lulc <- read.table("data/Geo/lakes4ha_buffer100m_lulc.txt", header =T,
+  lakes4ha.buffer100m.lulc <- read.table("data-raw/Geo/lakes4ha_buffer100m_lulc.txt", header =T,
                                          sep = "\t",
                                          quote= "",
                                          dec = "." ,
@@ -298,7 +298,7 @@ compile_data <- function(){
   names(lakes4ha.buffer100m.lulc)[names(lakes4ha.buffer100m.lulc)==
                                     "lakes4ha_buffer100m_lagoslakeid"] <- "lagoslakeid"
 
-  lakes4ha.buffer500m <- read.table("data/Geo/lakes4ha_buffer500m.txt", header =T,
+  lakes4ha.buffer500m <- read.table("data-raw/Geo/lakes4ha_buffer500m.txt", header =T,
                                     sep = ",",
                                     quote= "",
                                     dec = "." ,
@@ -309,7 +309,7 @@ compile_data <- function(){
                                "lakes4ha_buffer500m_lagoslakeid"] <- "lagoslakeid"
 
 
-  lakes4ha.buffer500m.conn <- read.table("data/Geo/lakes4ha_buffer500m_conn.txt", header =T,
+  lakes4ha.buffer500m.conn <- read.table("data-raw/Geo/lakes4ha_buffer500m_conn.txt", header =T,
                                          sep = "\t",
                                          quote= "",
                                          dec = "." ,
@@ -319,7 +319,7 @@ compile_data <- function(){
   names(lakes4ha.buffer500m.conn)[names(lakes4ha.buffer500m.conn)==
                                     "lakes4ha_buffer500m_lagoslakeid"] <- "lagoslakeid"
 
-  lakes4ha.buffer500m.lulc <- read.table("data/Geo/lakes4ha_buffer500m_lulc.txt", header =T,
+  lakes4ha.buffer500m.lulc <- read.table("data-raw/Geo/lakes4ha_buffer500m_lulc.txt", header =T,
                                          sep = "\t",
                                          quote= "",
                                          dec = "." ,
@@ -330,7 +330,7 @@ compile_data <- function(){
                                     "lakes4ha_buffer500m_lagoslakeid"] <- "lagoslakeid"
   #######################
 
-  lagoslakes <-  read.table("data/Geo/lagoslakes_10400.txt", header =T,
+  lagoslakes <-  read.table("data-raw/Geo/lagoslakes_10400.txt", header =T,
                             sep = "\t",
                             quote= "",
                             dec = "." ,
