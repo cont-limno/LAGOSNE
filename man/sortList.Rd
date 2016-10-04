@@ -2,6 +2,7 @@
 % Please edit documentation in R/Preprocess.R
 \name{sortList}
 \alias{sortList}
+\title{Sort a list}
 \usage{
 sortList(list)
 }

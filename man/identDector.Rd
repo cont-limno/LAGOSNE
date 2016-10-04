@@ -3,6 +3,7 @@
 \name{identDector}
 \alias{identDector}
 \alias{identDetector}
+\title{Not sure what this does}
 \usage{
 identDetector(list)
 }
@@ -13,6 +14,6 @@ identDetector(list)
 vector
 }
 \description{
-given a vector contains dataframes names return a vecotor of dataframes identifiers
+given a vector contains dataframes names return a vector of dataframes identifiers
 }
 

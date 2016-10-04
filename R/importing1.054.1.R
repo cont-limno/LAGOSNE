@@ -10,6 +10,7 @@
 # setwd("/Users/farzan/Desktop/Dropbox/Summer\ 2015/Job/Lagos\ Package/LAGOS\ Package/Data/Limno")
 # setwd("C:\\Users\\FWL\\Dropbox\\Summer 2015\\Job\\Lagos Package\\LAGOS Package\\Data\\Limno10541")
 #'@name compile_data
+#'@title Compile LAGOS data
 #'@importFrom utils read.table
 compile_data <- function(){
   epi.nutr <- read.table("data-raw/Limno10541/lagos_epi_nutr_10541.txt",

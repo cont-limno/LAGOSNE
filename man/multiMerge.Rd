@@ -2,6 +2,7 @@
 % Please edit documentation in R/Preprocess.R
 \name{multiMerge}
 \alias{multiMerge}
+\title{Merge multiple data.frames}
 \usage{
 multiMerge(list, columns = list())
 }

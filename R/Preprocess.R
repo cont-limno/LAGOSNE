@@ -1,7 +1,8 @@
 #'@name identDector
+#'@title Not sure what this does
 #'@param list vector of data.frame names
 #'@return vector
-#'@description given a vector contains dataframes names return a vecotor of dataframes identifiers
+#'@description given a vector contains dataframes names return a vector of dataframes identifiers
 identDetector <- function(list){
   x <- rep("", length(list))
   for(i in 1:length(list)){
@@ -45,6 +46,7 @@ readCol <- function(name){
 }
 
 #'@name sortList
+#'@title Sort a list
 #'@param list vecotr of data.frame names
 #'@description Sort the given list in a way that merging computation cost less
 #'@return list
@@ -144,6 +146,7 @@ stepsfunc <- function(list,columns, identifiers){
 }
 
 #'@name multiMerge
+#'@title Merge multiple data.frames
 #'@description Merge the given list of data frame into one dataframe
 #'@param list vector of data.frame names
 #'@param columns list

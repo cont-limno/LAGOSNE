@@ -2,6 +2,7 @@
 % Please edit documentation in R/importing1.054.1.R
 \name{compile_data}
 \alias{compile_data}
+\title{Compile LAGOS data}
 \usage{
 compile_data()
 }
