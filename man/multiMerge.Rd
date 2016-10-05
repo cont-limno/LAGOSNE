@@ -4,9 +4,11 @@
 \alias{multiMerge}
 \title{Merge multiple data.frames}
 \usage{
-multiMerge(list, columns = list())
+multiMerge(informationTable, list, columns = list())
 }
 \arguments{
+\item{informationTable}{data.frame info table from \code{\link[LAGOS]{lagos_compile}}}
+
 \item{list}{vector of data.frame names}
 
 \item{columns}{list}
@@ -16,5 +18,12 @@ data.frame
 }
 \description{
 Merge the given list of data frame into one dataframe
+}
+\examples{
+\dontrun{
+dt <- lagos_load("1.054.1")
+tables_list <- c("iws.lulc", "epi.nutr", "iws.conn", "hu4.chag")
+}
+
 }
 

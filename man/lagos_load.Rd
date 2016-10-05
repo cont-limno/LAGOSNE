@@ -14,7 +14,7 @@ lagos_load
 }
 \examples{
 \dontrun{
-lagos_load("1.054.1")
+dt <- lagos_load("1.054.1")
 }
 }
 

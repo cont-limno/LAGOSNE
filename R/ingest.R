@@ -98,33 +98,36 @@ lagos_ingest <- function(version){
   # SEP EQUALS COMMA?????????????????????????
   lakes4ha.buffer100m <- read.table("data-raw/Geo/lakes4ha_buffer100m.txt",
                                     sep = ",")
-  names(lakes4ha.buffer100m)[names(lakes4ha.buffer100m)==
-                               "lakes4ha_buffer100m_lagoslakeid"] <- "lagoslakeid"
+  names(lakes4ha.buffer100m)[names(lakes4ha.buffer100m) ==
+    "lakes4ha_buffer100m_lagoslakeid"] <- "lagoslakeid"
 
-  lakes4ha.buffer100m.lulc <- load_lagos_txt("data-raw/Geo/lakes4ha_buffer100m_lulc.txt")
+  lakes4ha.buffer100m.lulc <-
+    load_lagos_txt("data-raw/Geo/lakes4ha_buffer100m_lulc.txt")
 
   names(lakes4ha.buffer100m.lulc)[names(lakes4ha.buffer100m.lulc) ==
-                                    "lakes4ha_buffer100m_lagoslakeid"] <- "lagoslakeid"
+    "lakes4ha_buffer100m_lagoslakeid"] <- "lagoslakeid"
 
   # SEP EQUALS COMMA?????????????????????????
   lakes4ha.buffer500m <- read.table("data-raw/Geo/lakes4ha_buffer500m.txt",
                                     sep = ",")
 
-  names(lakes4ha.buffer500m)[names(lakes4ha.buffer500m)==
-                               "lakes4ha_buffer500m_lagoslakeid"] <- "lagoslakeid"
+  names(lakes4ha.buffer500m)[names(lakes4ha.buffer500m) ==
+    "lakes4ha_buffer500m_lagoslakeid"] <- "lagoslakeid"
 
 
-  lakes4ha.buffer500m.conn <- load_lagos_txt("data-raw/Geo/lakes4ha_buffer500m_conn.txt")
+  lakes4ha.buffer500m.conn <-
+    load_lagos_txt("data-raw/Geo/lakes4ha_buffer500m_conn.txt")
 
-  names(lakes4ha.buffer500m.conn)[names(lakes4ha.buffer500m.conn)==
-                                    "lakes4ha_buffer500m_lagoslakeid"] <- "lagoslakeid"
+  names(lakes4ha.buffer500m.conn)[names(lakes4ha.buffer500m.conn) ==
+    "lakes4ha_buffer500m_lagoslakeid"] <- "lagoslakeid"
 
-  lakes4ha.buffer500m.lulc <- load_lagos_txt("data-raw/Geo/lakes4ha_buffer500m_lulc.txt")
+  lakes4ha.buffer500m.lulc <-
+    load_lagos_txt("data-raw/Geo/lakes4ha_buffer500m_lulc.txt")
 
-  names(lakes4ha.buffer500m.lulc)[names(lakes4ha.buffer500m.lulc)==
-                                    "lakes4ha_buffer500m_lagoslakeid"] <- "lagoslakeid"
+  names(lakes4ha.buffer500m.lulc)[names(lakes4ha.buffer500m.lulc) ==
+    "lakes4ha_buffer500m_lagoslakeid"] <- "lagoslakeid"
 
-  lagoslakes <-  load_lagos_txt("data-raw/Geo/lagoslakes_10400.txt")
+  lagoslakes <- load_lagos_txt("data-raw/Geo/lagoslakes_10400.txt")
 
   limno <- list(epi.nutr = epi.nutr, lake.specific = lake.specific,
                 secchi = secchi, lagos.source = lagos.source,
