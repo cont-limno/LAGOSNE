@@ -1,10 +1,6 @@
-#First set the working directory
-#setwd("C:\\Users\\FWL\\Dropbox\\CSI-LIMNO_DATA\\LAGOSData\\Version1.054.1\\LAGOS_ver1.054.1_R_package")
-
-# loading functions
-# source("R/LAGOS1.054.1.R")
-#
-# #
 # list <- c("iws.lulc","epi.nutr","iws.conn" , "hu4.chag")
 # testdataframe <- multiMerge(list)
 # head(testdataframe)
+#
+# data1 <- merge(lake.specific[,c(1, 15, 17, 19, 21, 23)], epi.nutr,
+# by.x = "lagoslakeid", by.y = "lagoslakeid" )
