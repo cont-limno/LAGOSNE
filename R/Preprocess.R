@@ -1,9 +1,10 @@
 #'@name identDector
-#'@title Not sure what this does
+#'@title Detect "identifiers"...
 #'@param list vector of data.frame names
 #'@return vector
 #'@description given a vector contains dataframes names return a vector of dataframes identifiers
 identDetector <- function(list){
+  browser()
   x <- rep("", length(list))
 
   for(i in 1:length(list)){
@@ -29,24 +30,27 @@ identDetector <- function(list){
 #'@title Return the position of a column name?
 #'@description Return the position of a column name?
 #'@param name character?
-readCol <- function(name){
-  l <- which(informationTable[,"name"] == name)
+readCol <- function(name, geo, limno, info){
+
+  info_table_row <- which(info[,"name"] == name)
+  print(lapply(get(info[info_table_row, "type"])[name], names))
+
   con <- TRUE
   while(con){
     con <- FALSE
-    cat('Which columns from',name,"?" ,'\n')
-    x <- readLines( n=1 )
+    cat('Which columns from', name, "?" ,'\n')
+    x <- readLines(n = 1)
     x <- strsplit(x, ",")
     x <- as.integer(x[[1]])
 
-    if( sum(is.na(x))!= 0 ){
+    if(sum(is.na(x)) != 0){
       cat('The input must be integers separated by "," \n ')
       con <- TRUE
     }else{
 
-      if(min(x) <1 | max(x) > informationTable[l,"variables"]){
+      if(min(x) < 1 | max(x) > info[info_table_row, "variables"]){
         cat(' The given column numbers are out of range \n')
-       con <- TRUE
+        con <- TRUE
       }
 
     }
@@ -59,12 +63,12 @@ readCol <- function(name){
 #'@param list vector of data.frame names
 #'@description Sort the given list in a way that merging computation cost less
 #'@return list
-sortList <- function(list){
+sortList <- function(list, info){
   x <- rep(0, length(list))
   for(i in 1:length(list)){
-    x[i] <- which(informationTable[,"name"] == list[i])
+    x[i] <- which(info[,"name"] == list[i])
   }
-  groups <- informationTable[x, "group"]
+  groups <- info[x, "group"]
   d <- data.frame(list, groups)
   i1 <- groups >= 10
   order1 <- order(groups[i1], decreasing = T)
@@ -162,78 +166,119 @@ stepsfunc <- function(list, columns, identifiers){
 #'@name multiMerge
 #'@title Merge multiple data.frames
 #'@description Merge the given list of data frame into one dataframe
-#'@param informationTable data.frame info table from \code{\link[LAGOS]{lagos_compile}}
-#'@param list vector of data.frame names
+#'@param geo data.frame geo table from \code{\link[LAGOS]{lagos_compile}}
+#'@param limno data.frame limno table from \code{\link[LAGOS]{lagos_compile}}
+#'@param info data.frame info table from \code{\link[LAGOS]{lagos_compile}}
+#'@param table_names vector of data.frame names
 #'@param columns list
 #'@return data.frame
 #'@examples \dontrun{
 #' dt <- lagos_load("1.054.1")
-#' tables_list <- c("iws.lulc", "epi.nutr", "iws.conn", "hu4.chag")
-#  dt <- multiMerge(informationTable = dt$info, tables_list)
+#' table_names <- c("iws.lulc", "epi.nutr", "iws.conn", "hu4.chag")
+#  dt <- multiMerge(geo = dt$geo, limno = dt$limno, info = dt$info, table_names)
 #  head(dt)
 #'}
 #'
-multiMerge <- function(informationTable, list, columns = list()){
-  browser()
-  # Error handling:
-  if(!is.vector(list)){
+multiMerge <- function(geo, limno, info, table_names, columns = list()){
+
+  if(!is.vector(table_names)){
     stop("The input must be a vector of the names of all
          dataframes that must be merged together")
   }
-  if(!is.character(list)){
+  if(!is.character(table_names)){
     stop("The input vector must contain only the
          names of dataframes")
   }
-  if(!all(list %in% informationTable[,"name"])){
+  if(!all(table_names %in% info[,"name"])){
     stop("Invalid input vector")
   }
-  if(length(list) <= 1){
+  if(length(table_names) <= 1){
     stop("Input vector must contain at list two data frames")
   }
-  if(all(c("epi.nutr", "secchi") %in% list)){
+  if(all(c("epi.nutr", "secchi") %in% table_names)){
     stop("Can not merge epi.nutr and secchi in a same dataframe")
   }
 
   # Read the column part ####
-  list <- sortList(list)
+  table_names <- sortList(table_names, info)
   if(length(columns) == 0){
-    for(i in 1:length(list)){
-      columns[[i]] <- readCol(list[i])
+    browser()
+    for(i in seq_along(table_names)){
+      columns[[i]] <- readCol(table_names[i], geo, limno, info)
     }
   }
 
+  browser()
+
   # Adding necessary steps ####
-  identifiers <- identDetector(list)
+  identifiers <- identDetector(table_names)
   steps <- stepsfunc(list, columns, identifiers)
 
   # Merging process ####
   n <- which(informationTable[,"name"] == steps$list[1])
-  type <- informationTable[n,"type"]
-  if(type=="limno"){
-    n <- which(names(limno)==steps$list[1])
+  type <- informationTable[n, "type"]
+  if(type == "limno"){
+    n <- which(names(limno) == steps$list[1])
     out1  <- limno[[n]][,steps$columns[[1]]]
   }
-  if(type=="geo"){
-    n <- which(names(geo)==steps$list[1])
+  if(type == "geo"){
+    n <- which(names(geo) == steps$list[1])
     out1  <- geo[[n]][,steps$columns[[1]]]
   }
   j <- 1
   for(i in 2:length(steps$list)){
-    n <- which(informationTable[,"name"]==steps$list[i])
-    type <- informationTable[n,"type"]
-    if(type=="limno"){
-      n <- which(names(limno)==steps$list[i])
-      out2  <- limno[[n]][,steps$columns[[i]]]
+    n <- which(informationTable[,"name"] == steps$list[i])
+    type <- informationTable[n, "type"]
+    if(type == "limno"){
+      n <- which(names(limno) == steps$list[i])
+      out2 <- limno[[n]][,steps$columns[[i]]]
     }
-    if(type=="geo"){
-      n <- which(names(geo)==steps$list[i])
-      out2  <- geo[[n]][,steps$columns[[i]]]
+    if(type == "geo"){
+      n <- which(names(geo) == steps$list[i])
+      out2 <- geo[[n]][,steps$columns[[i]]]
     }
-    if(steps$id[[j]]=="hub"){
-      j <- j+1
+    if(steps$id[[j]] == "hub"){
+      j <- j + 1
     }
-    out1 <- merge(out1, out2, by.x=steps$id[[j]],by.y=steps$id[[j]])
-    j <- j+1
+    out1 <- merge(out1, out2, by.x = steps$id[[j]], by.y = steps$id[[j]])
+    j <- j + 1
   }
   return(out1)
   }
+
+#' lagos_select
+#'
+#' @description Select and merge columns based on a nested list of LAGOS tables and column names.
+#' @export
+#' @import dplyr
+#'
+#' @examples \dontrun{
+#' dt <- lagos_load("1.054.1")
+#' table_column_nested <- list("iws.lulc" = c("test", "test1"), "epi.nutr" = "test1", "iws.conn" = "test", "hu4.chag" = "test")
+#'
+#' table_column_nested <- list("iws.lulc" = c("lakeconnection"))
+#'
+#' table_column_nested <- list("iws.lulc" = c("lakeconnection"), "hu4.chag" = c("hu4_baseflowindex_min"))
+#'
+#' lagos_select(dt, table_column_nested)
+#' }
+lagos_select <- function(x, table_column_nested){
+
+  limno_tables <- table_column_nested[names(table_column_nested) %in% names(dt$limno)]
+  geo_tables   <- table_column_nested[names(table_column_nested) %in% names(dt$geo)]
+
+  # create a list of data.frame objects from geo_tables headers
+  geo_data_frames <- lapply(names(geo_tables), function(x) dt$geo[which(names(dt$geo) %in% x)])
+
+  # select corresonding columns from geo_tables contents
+  # return data.frame objects
+  # lapply(seq_along(geo_data_frames), function(x) head(geo_data_frames[[x]][[1]]))
+
+  # return column names
+  # lapply(seq_along(geo_data_frames), function(x) (geo_tables[[x]]))
+
+  geo_data <- lapply(seq_along(geo_data_frames), function(x) dplyr::select_(geo_data_frames[[x]][[1]], unlist(geo_tables[[x]])))
+  head(geo_data)
+
+  # print(lapply(get(info[info_table_row, "type"])[name], names))
+}

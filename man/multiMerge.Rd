@@ -4,12 +4,16 @@
 \alias{multiMerge}
 \title{Merge multiple data.frames}
 \usage{
-multiMerge(informationTable, list, columns = list())
+multiMerge(geo, limno, info, table_names, columns = list())
 }
 \arguments{
-\item{informationTable}{data.frame info table from \code{\link[LAGOS]{lagos_compile}}}
+\item{geo}{data.frame geo table from \code{\link[LAGOS]{lagos_compile}}}
 
-\item{list}{vector of data.frame names}
+\item{limno}{data.frame limno table from \code{\link[LAGOS]{lagos_compile}}}
+
+\item{info}{data.frame info table from \code{\link[LAGOS]{lagos_compile}}}
+
+\item{table_names}{vector of data.frame names}
 
 \item{columns}{list}
 }
@@ -22,7 +26,8 @@ Merge the given list of data frame into one dataframe
 \examples{
 \dontrun{
 dt <- lagos_load("1.054.1")
-tables_list <- c("iws.lulc", "epi.nutr", "iws.conn", "hu4.chag")
+table_names <- c("iws.lulc", "epi.nutr", "iws.conn", "hu4.chag")
+      tables_names)
 }
 
 }

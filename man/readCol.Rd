@@ -4,7 +4,7 @@
 \alias{readCol}
 \title{Return the position of a column name?}
 \usage{
-readCol(name)
+readCol(name, informationTable)
 }
 \arguments{
 \item{name}{character?}
