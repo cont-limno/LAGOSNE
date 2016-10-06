@@ -35,7 +35,7 @@ info_table <- function(geo, limno){
                   "lagoslakeid, eventidc10400, programname", "sourceid","programname, sourceid")
   # number of variables of each data.frame in the list
   variables <- rep(0, length(name))
-  for(i in 1: length(name)){
+  for(i in 1:length(name)){
     if(type[i] == "geo"){
       j <- which(names(geo) == name[i])
       variables[i] <- ncol(geo[[j]])
