@@ -4,7 +4,6 @@
 #'@return vector
 #'@description given a vector contains dataframes names return a vector of dataframes identifiers
 identDetector <- function(list){
-  browser()
   x <- rep("", length(list))
 
   for(i in 1:length(list)){
@@ -202,13 +201,10 @@ multiMerge <- function(geo, limno, info, table_names, columns = list()){
   # Read the column part ####
   table_names <- sortList(table_names, info)
   if(length(columns) == 0){
-    browser()
     for(i in seq_along(table_names)){
       columns[[i]] <- readCol(table_names[i], geo, limno, info)
     }
   }
-
-  browser()
 
   # Adding necessary steps ####
   identifiers <- identDetector(table_names)
