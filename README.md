@@ -4,6 +4,8 @@
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/LAGOS)](https://cran.r-project.org/package=LAGOS) 
 [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/LAGOS)](https://cran.r-project.org/package=LAGOS)
 
+The `LAGOS` package provides an R interface to download LAGOS data from remote databases, store this data locally, and perform a variety of filtering and subsetting operations.
+
 ## Design Philisophy
 
 The design of the LAGOS data package will be guided by these principles:
@@ -12,16 +14,6 @@ The design of the LAGOS data package will be guided by these principles:
  
  * **Internal code will follow a functional programming style.** See the [Motivation Section](http://adv-r.had.co.nz/Functional-programming.html#fp-motivation) of the Functional Programming chapter of the Advanced R book.
  
- * **Data citation information will be displayed prominently.** Definitely make sure that `citation(lagos)` returns a reasonable result. Print citation information on package load?
-
-## Potential Features
-
- * preloaded database _views_ using ~~`data(LAGOS)`~~ `richfitz/datastorr`
- * API for compiling specific _views_ of LAGOS from the component `txt` files. _Include this info only in a vignette?_
- * filtering by censor codes
- * detection limit handling (imputation?)
- * vignettes to show common workflows (avoid reinventing the wheel as far as analysis and visualization)
-
 ## Installation
 
 ### From the Shell (In RStudio: Tools -> Shell...)
