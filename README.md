@@ -32,27 +32,27 @@ The design of the LAGOS data package will be guided by these principles:
  
 ## Usage
 
-For development purposes, the package will assume that the raw `txt` files will be located in a `data-raw` folder within the repository (but not under version control) in the same structure as Dropbox.
+For development purposes, the package will assume that the raw `txt` files required to run `LAGOS:::lagos_compile` will be located in a `data-raw` folder within the repository (but not under version control) in the same structure as Dropbox. Eventually, users will be able to run `LAGOS::lagos_get` to supply `LAGOS::lagos_compile` with the flat files from GigaScience stored in the location returned by `rappdirs::user_data_dir`.
 
 ```
 LAGOS
 |
 |
-___man
+|___man
 |
 |___R
 |
 |___data-raw
     |
     |
-    ___Geo
+    |___Geo
     |
     |
-    ___ Limno10541
+    |___ Limno10541
 
 ```
 
-### Compile `txt` files
+### Compile `txt` files to `rds`
 
 ```
 LAGOS:::lagos_compile(version = "1.054.1")
@@ -69,19 +69,6 @@ dt <- LAGOS::lagos_load(version = "1.054.1")
 ```
 table_columns <- list("iws.lulc" = c("lakeconnection"), "hu4.chag" = c("hu4_baseflowindex_min"))
 dt_reduced <- LAGOS::lagos_select(dt, table_columns)
-```
-
-## Potential Package Stucture Outline
-
-```
-# download data from remote source
-
-# build the dataset
-    # Use remake::make("export")?
-
-# load a precompiled view into R
-    # Use lagos <- readRDS('export/lagos.rds') 
-
 ```
 
 ## Legacy code-base
