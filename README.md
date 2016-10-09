@@ -6,14 +6,6 @@
 
 The `LAGOS` package provides an R interface to download LAGOS data from remote databases, store this data locally, and perform a variety of filtering and subsetting operations.
 
-## Design Philisophy
-
-The design of the LAGOS data package will be guided by these principles:
-
- * **Package structure and styling will follow best practices for R-data packages.** See the [rOpenSci packaging guide](https://github.com/ropensci/onboarding/blob/master/packaging_guide.md)
- 
- * **Internal code will follow a functional programming style.** See the [Motivation Section](http://adv-r.had.co.nz/Functional-programming.html#fp-motivation) of the Functional Programming chapter of the Advanced R book.
- 
 ## Installation
 
 ### From the Shell (In RStudio: Tools -> Shell...)
@@ -76,6 +68,14 @@ cd LAGOS
 
 git checkout 553b0ba3875b29257aab1aaec71d3388070bd3e5
 ```
+
+## Design Philisophy
+
+The design of the LAGOS data package will be guided by these principles:
+
+ * **Package structure and styling will follow best practices for R-data packages.** See the [rOpenSci packaging guide](https://github.com/ropensci/onboarding/blob/master/packaging_guide.md)
+ 
+ * **Internal code will follow a functional programming style.** See the [Motivation Section](http://adv-r.had.co.nz/Functional-programming.html#fp-motivation) of the Functional Programming chapter of the Advanced R book.
 
 ## References
 
