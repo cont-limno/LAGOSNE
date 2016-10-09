@@ -55,7 +55,20 @@ ___man
 ### Compile `txt` files
 
 ```
-LAGOS:::lagos_compile()
+LAGOS:::lagos_compile(version = "1.054.1")
+```
+
+### Load compiled `rds` object
+
+```
+dt <- LAGOS::lagos_load(version = "1.054.1")
+```
+
+### Select desired table-columns
+
+```
+table_columns <- list("iws.lulc" = c("lakeconnection"), "hu4.chag" = c("hu4_baseflowindex_min"))
+dt_reduced <- LAGOS::lagos_select(dt, table_columns)
 ```
 
 ## Potential Package Stucture Outline

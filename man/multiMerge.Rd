@@ -27,7 +27,6 @@ Merge the given list of data frame into one dataframe
 \dontrun{
 dt <- lagos_load("1.054.1")
 table_names <- c("iws.lulc", "epi.nutr", "iws.conn", "hu4.chag")
-      tables_names)
 }
 
 }

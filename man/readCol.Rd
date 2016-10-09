@@ -4,10 +4,16 @@
 \alias{readCol}
 \title{Return the position of a column name?}
 \usage{
-readCol(name, informationTable)
+readCol(name, geo, limno, info)
 }
 \arguments{
 \item{name}{character?}
+
+\item{geo}{data.frame output of \code{\link[LAGOS]{lagos_compile}}}
+
+\item{limno}{data.frame output of \code{\link[LAGOS]{lagos_compile}}}
+
+\item{info}{data.frame output of \code{\link[LAGOS]{lagos_compile}}}
 }
 \description{
 Return the position of a column name?

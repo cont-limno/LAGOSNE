@@ -12,5 +12,5 @@
     ecology database from disparate data sources: fostering open science and
     data reuse. Gigascience, 4(1)"
 
-  packageStartupMessage(paste0("Welcome to LAGOS version ", pkg.info["Version"] , ". To cite LAGOS in publications use: \n", gigascience_cite))
+  packageStartupMessage(paste0("Welcome to LAGOS version ", pkg.info["Version"] , ". To cite LAGOS in publications use: \n \n", gigascience_cite))
 }

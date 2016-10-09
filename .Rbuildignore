@@ -2,3 +2,7 @@
 ^\.Rproj\.user$
 ^data-raw$
 ^data$
+^data/.+$
+^.*\.rds$
+^data_1\.054\.1\.rds$
+^data/data_1\.054\.1\.RData$

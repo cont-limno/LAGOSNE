@@ -4,7 +4,7 @@
 \alias{sortList}
 \title{Sort a list}
 \usage{
-sortList(list)
+sortList(list, info)
 }
 \arguments{
 \item{list}{vector of data.frame names}

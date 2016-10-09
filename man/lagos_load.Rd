@@ -4,13 +4,15 @@
 \alias{lagos_load}
 \title{lagos_load}
 \usage{
-lagos_load(version)
+lagos_load(version, fpath = NA)
 }
 \arguments{
 \item{version}{character LAGOS database version string}
+
+\item{fpath}{file.path optionally specify custom location of LAGOS rds file}
 }
 \description{
-lagos_load
+Load LAGOS files from local file system
 }
 \examples{
 \dontrun{

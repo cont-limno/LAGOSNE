@@ -3,7 +3,7 @@
 \name{identDector}
 \alias{identDector}
 \alias{identDetector}
-\title{Not sure what this does}
+\title{Detect "identifiers"...}
 \usage{
 identDetector(list)
 }

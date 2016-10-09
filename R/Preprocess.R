@@ -29,6 +29,9 @@ identDetector <- function(list){
 #'@title Return the position of a column name?
 #'@description Return the position of a column name?
 #'@param name character?
+#'@param geo data.frame output of \code{\link[LAGOS]{lagos_compile}}
+#'@param limno data.frame output of \code{\link[LAGOS]{lagos_compile}}
+#'@param info data.frame output of \code{\link[LAGOS]{lagos_compile}}
 readCol <- function(name, geo, limno, info){
 
   info_table_row <- which(info[,"name"] == name)
@@ -245,20 +248,20 @@ multiMerge <- function(geo, limno, info, table_names, columns = list()){
 #' lagos_select
 #'
 #' @description Select and merge columns based on a nested list of LAGOS tables and column names.
+#' @param dt data.frame
+#' @param table_column_nested nested list of tables and table-columns to select from LAGOS
 #' @export
 #' @import dplyr
 #'
 #' @examples \dontrun{
 #' dt <- lagos_load("1.054.1")
-#' table_column_nested <- list("iws.lulc" = c("test", "test1"), "epi.nutr" = "test1", "iws.conn" = "test", "hu4.chag" = "test")
 #'
-#' table_column_nested <- list("iws.lulc" = c("lakeconnection"))
-#'
-#' table_column_nested <- list("iws.lulc" = c("lakeconnection"), "hu4.chag" = c("hu4_baseflowindex_min"))
+#' table_column_nested <- list("iws.lulc" = c("lakeconnection"),
+#'  "hu4.chag" = c("hu4_baseflowindex_min"))
 #'
 #' lagos_select(dt, table_column_nested)
 #' }
-lagos_select <- function(x, table_column_nested){
+lagos_select <- function(dt, table_column_nested){
 
   limno_tables <- table_column_nested[names(table_column_nested) %in% names(dt$limno)]
   geo_tables   <- table_column_nested[names(table_column_nested) %in% names(dt$geo)]
