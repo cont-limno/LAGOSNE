@@ -256,10 +256,9 @@ multiMerge <- function(geo, limno, info, table_names, columns = list()){
 #' @examples \dontrun{
 #' dt <- lagos_load("1.054.1")
 #'
-#' table_column_nested <- list("iws.lulc" = c("lakeconnection"),
-#'  "hu4.chag" = c("hu4_baseflowindex_min"))
+#' table_columns <- list("epi.nutr" = c("tp", "tn"), "iws.lulc" = c("iws_nlcd2011_pct_95"))
 #'
-#' lagos_select(dt, table_column_nested)
+#' dt_reduced <- LAGOS::lagos_select(dt, table_columns)
 #' }
 lagos_select <- function(dt, table_column_nested){
 
@@ -267,17 +266,19 @@ lagos_select <- function(dt, table_column_nested){
   geo_tables   <- table_column_nested[names(table_column_nested) %in% names(dt$geo)]
 
   # create a list of data.frame objects from geo_tables headers
-  geo_data_frames <- lapply(names(geo_tables), function(x) dt$geo[which(names(dt$geo) %in% x)])
+  geo_data_frames   <- lapply(names(geo_tables),
+                        function(x) dt$geo[which(names(dt$geo) %in% x)])
+  limno_data_frames <- lapply(names(limno_tables),
+                        function(x) dt$limno[which(names(dt$limno) %in% x)])
 
-  # select corresonding columns from geo_tables contents
-  # return data.frame objects
-  # lapply(seq_along(geo_data_frames), function(x) head(geo_data_frames[[x]][[1]]))
+  geo_data <- lapply(seq_along(geo_data_frames),
+                function(x) dplyr::select_(geo_data_frames[[x]][[1]],
+                .dots = geo_tables[[x]]))
 
-  # return column names
-  # lapply(seq_along(geo_data_frames), function(x) (geo_tables[[x]]))
+  limno_data <- lapply(seq_along(limno_data_frames),
+                  function(x) dplyr::select_(limno_data_frames[[x]][[1]],
+                  .dots = limno_tables[[x]]))
 
-  geo_data <- lapply(seq_along(geo_data_frames), function(x) dplyr::select_(geo_data_frames[[x]][[1]], unlist(geo_tables[[x]])))
-  head(geo_data)
-
-  # print(lapply(get(info[info_table_row, "type"])[name], names))
+  unlist(list(geo_data = geo_data, limno_data = limno_data),
+    recursive = FALSE)
 }

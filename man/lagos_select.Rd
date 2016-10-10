@@ -18,10 +18,9 @@ Select and merge columns based on a nested list of LAGOS tables and column names
 \dontrun{
 dt <- lagos_load("1.054.1")
 
-table_column_nested <- list("iws.lulc" = c("lakeconnection"),
- "hu4.chag" = c("hu4_baseflowindex_min"))
+table_columns <- list("epi.nutr" = c("tp", "tn"), "iws.lulc" = c("iws_nlcd2011_pct_95"))
 
-lagos_select(dt, table_column_nested)
+dt_reduced <- LAGOS::lagos_select(dt, table_columns)
 }
 }
 

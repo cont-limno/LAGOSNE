@@ -53,8 +53,9 @@ dt <- LAGOS::lagos_load(version = "1.054.1")
 ### Select desired table-columns
 
 ```
-table_columns <- list("iws.lulc" = c("lakeconnection"), "hu4.chag" = c("hu4_baseflowindex_min"))
+table_columns <- list("epi.nutr" = c("tp", "tn"), "iws.lulc" = c("iws_nlcd2011_pct_95"))
 dt_reduced <- LAGOS::lagos_select(dt, table_columns)
+head(dt_reduced$limno_data)
 ```
 
 ## Legacy code-base
