@@ -4,7 +4,6 @@
 #' @param dt data.frame output of \code{\link[LAGOS]{lagos_load}}
 #' @param name character lake name not caps sensitive
 #' @param state character state name not caps sensitive
-#' @import magrittr
 #' @importFrom dplyr filter
 #'
 #' @export
@@ -20,5 +19,7 @@
 #'     dt = dt$limno$lake.specific, name = x[1], state = x[2]))
 #' }
 lake_info <- function(dt, name, state){
-  dplyr::filter(dt, grepl(name, lagosname1, ignore.case = TRUE)) %>% dplyr::filter(grepl(state, state_name, ignore.case = TRUE))
+  dt_filter <- dplyr::filter(dt, grepl(name, lagosname1, ignore.case = TRUE))
+  dt_filter <- dplyr::filter(dt_filter, grepl(state, state_name,
+                ignore.case = TRUE))
 }
