@@ -40,13 +40,13 @@ LAGOS
 
 ### Compile `txt` files to `rds`
 
-```
+```r
 LAGOS:::lagos_compile(version = "1.054.1")
 ```
 
 ### Load compiled `rds` object
 
-```
+```r
 dt <- LAGOS::lagos_load(version = "1.054.1")
 ```
 
