@@ -52,25 +52,44 @@ LAGOS
 LAGOS:::lagos_compile(version = "1.054.1", format = "rds")
 ```
 
+### Load compiled `rds` object
+
+```r
+dt_rds <- LAGOS::lagos_load(version = "1.054.1", format = "rds")
+```
+
+### Select desired table-columns from `rds`
+
+```r
+table_columns <- list("epi.nutr" = c("lagoslakeid", "tp", "tn"),
+                      "iws.lulc" = c("iws_lagoslakeid", "iws_nlcd2011_pct_95"))
+dt_rds    <- LAGOS::lagos_select(dt_rds, table_columns)
+dt_rds    <- dplyr::left_join(dt_rds$limno_data, dt_rds$geo_data,
+                  by = c("lagoslakeid" = "iws_lagoslakeid"))
+```
+
 ### Compile `txt` files to `sqlite`
 
 ```r
 LAGOS:::lagos_compile(version = "1.054.1", format = "sqlite")
 ```
 
-### Load compiled `rds` object
+### Load compiled `sqlite` object
 
 ```r
-dt <- LAGOS::lagos_load(version = "1.054.1")
+dt_sqlite <- LAGOS::lagos_load(version = "1.054.1", format = "sqlite")
 ```
 
-### Select desired table-columns
+### Select desired table-columns from `sqlite`
 
 ```r
-table_columns <- list("epi.nutr" = c("lagoslakeid", "tp", "tn"),
-                  "iws.lulc" = c("iws_lagoslakeid", "iws_nlcd2011_pct_95"))
-dt_reduced    <- LAGOS::lagos_select(dt, table_columns)
-dt_reduced    <- dplyr::left_join(dt_reduced$limno_data, dt_reduced$geo_data,
+epi.nutr <- dplyr::tbl(dt_sqlite, "epi.nutr") %>%
+              dplyr::select(lagoslakeid, tp, tn)
+
+iws.lulc <- dplyr::tbl(dt_sqlite, "iws.lulc") %>%
+              dplyr::select(iws_lagoslakeid, iws_nlcd2011_pct_95)
+
+dt_sqlite <- dplyr::left_join(epi.nutr, iws.lulc,
                   by = c("lagoslakeid" = "iws_lagoslakeid"))
 ```
 

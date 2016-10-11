@@ -4,10 +4,12 @@
 \alias{lagos_load}
 \title{lagos_load}
 \usage{
-lagos_load(version, fpath = NA)
+lagos_load(version, format = "rds", fpath = NA)
 }
 \arguments{
 \item{version}{character LAGOS database version string}
+
+\item{format}{character choice of rds or sqlite}
 
 \item{fpath}{file.path optionally specify custom location of LAGOS rds file}
 }
