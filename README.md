@@ -1,6 +1,4 @@
-# LAGOS <h1 align="right">
-	<img width="400" src="./inst/lagos.png" alt="">
-</h1>
+# LAGOS <img width="400" src="./inst/lagos.png" alt="">
 
 [![Project Status: WIP - Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/LAGOS)](https://cran.r-project.org/package=LAGOS) 
