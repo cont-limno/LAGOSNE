@@ -20,7 +20,6 @@ lake_info
 \dontrun{
 dt <- lagos_load("1.054.1")
 
-focal_lakes <- data.frame(
   name = c("Oneida Lake", "Sunapee Lake", "Lake Mendota"),
   state = c("New York", "New Hampshire", "Wisconsin"))
 
