@@ -6,11 +6,14 @@ Authors@R: c(
     person("Joseph", "Stachelek", email = "stachel2@msu.edu", role = c("aut", "cre")),
     person("Farzan","Masrour", role = c("aut"))
     )
+URL: https://github.com/jsta/LAGOS
+BugReports: https://github.com/jsta/LAGOS/issues
 Description: This package provides functions for interacting with the Lake
     Multi-scaled Geospatial and Temporal Database (LAGOS).
 Depends:
     R (>= 3.3.1)
-Imports: dplyr,rappdirs,RSQLite (>= 1.0.9014), DBI (>= 0.5-12)
+Imports: dplyr,rappdirs
+Suggests: RSQLite (>= 1.0.9014), DBI (>= 0.5-12)
 License: GPL
 Encoding: UTF-8
 LazyData: true

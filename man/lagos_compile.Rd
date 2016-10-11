@@ -16,6 +16,7 @@ Compile LAGOS data from component flat files
 }
 \examples{
 \dontrun{
+lagos_compile("1.054.1")
 lagos_compile("1.054.1", format = "sqlite")
 }
 

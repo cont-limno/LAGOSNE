@@ -7,8 +7,9 @@
 #'@importFrom utils read.table
 #'@import rappdirs
 #'@examples \dontrun{
+#' lagos_compile("1.054.1")
 #' lagos_compile("1.054.1", format = "sqlite")
-#'}
+#' }
 #'
 lagos_compile <- function(version, format = "rds"){
 

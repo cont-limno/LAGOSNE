@@ -15,14 +15,16 @@
 #' }
 lagos_select <- function(dt, table_column_nested){
 
-  limno_tables <- table_column_nested[names(table_column_nested) %in% names(dt$limno)]
-  geo_tables   <- table_column_nested[names(table_column_nested) %in% names(dt$geo)]
+  limno_tables <- table_column_nested[names(table_column_nested) %in%
+                    names(dt$limno)]
+  geo_tables   <- table_column_nested[names(table_column_nested) %in%
+                    names(dt$geo)]
 
   # create a list of data.frame objects from geo_tables headers
   geo_data_frames   <- lapply(names(geo_tables),
-                              function(x) dt$geo[which(names(dt$geo) %in% x)])
+                        function(x) dt$geo[which(names(dt$geo) %in% x)])
   limno_data_frames <- lapply(names(limno_tables),
-                              function(x) dt$limno[which(names(dt$limno) %in% x)])
+                        function(x) dt$limno[which(names(dt$limno) %in% x)])
 
   geo_data <- lapply(seq_along(geo_data_frames),
                      function(x) dplyr::select_(geo_data_frames[[x]][[1]],

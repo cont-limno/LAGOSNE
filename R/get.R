@@ -22,6 +22,7 @@ lagos_get <- function(dest_folder = NA){
   # dir.exists(destdir)
   dir.create(destdir, showWarnings = FALSE)
 
-  invisible(lapply(files, function(x) download.file(paste0(baseurl, x), paste0(destdir, .Platform$file.sep, x))))
+  invisible(lapply(files, function(x) download.file(paste0(baseurl, x),
+    paste0(destdir, .Platform$file.sep, x))))
 
 }

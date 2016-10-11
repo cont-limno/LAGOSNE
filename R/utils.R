@@ -8,7 +8,8 @@
 #' @export
 load_lagos_txt <- function(file_name, sep = "\t", ...){
 
-  read.table(file_name, header = TRUE, sep = sep, quote = "", dec = ".", strip.white = TRUE, comment.char = "")
+  read.table(file_name, header = TRUE, sep = sep, quote = "", dec = ".",
+    strip.white = TRUE, comment.char = "")
 
 }
 
@@ -21,21 +22,23 @@ load_lagos_txt <- function(file_name, sep = "\t", ...){
 info_table <- function(geo, limno){
 
   name <- c(names(geo), names(limno))
-  type <- c(rep("geo",length(geo)), rep("limno", length(limno)))
-  identifier <- c("county_zoneid","county_zoneid","county_zoneid","county_zoneid",
-                  "edu_zoneid", "edu_zoneid", "edu_zoneid", "edu_zoneid",
-                  "hu4_zoneid", "hu4_zoneid", "hu4_zoneid", "hu4_zoneid",
-                  "hu8_zoneid", "hu8_zoneid", "hu8_zoneid", "hu8_zoneid",
-                  "hu12_zoneid", "hu12_zoneid", "hu12_zoneid", "hu12_zoneid",
-                  "iws_zoneid","iws_zoneid", "iws_zoneid",
-                  "state_zoneid", "state_zoneid", "state_zoneid", "state_zoneid",
-                  "lagoslakeid", "lagoslakeid",
+  type <- c(rep("geo", length(geo)), rep("limno", length(limno)))
+  identifier <- c("county_zoneid","county_zoneid","county_zoneid",
+                  "county_zoneid", "edu_zoneid", "edu_zoneid", "edu_zoneid",
+                  "edu_zoneid", "hu4_zoneid", "hu4_zoneid", "hu4_zoneid",
+                  "hu4_zoneid", "hu8_zoneid", "hu8_zoneid", "hu8_zoneid",
+                  "hu8_zoneid", "hu12_zoneid", "hu12_zoneid", "hu12_zoneid",
+                  "hu12_zoneid", "iws_zoneid","iws_zoneid", "iws_zoneid",
+                  "state_zoneid", "state_zoneid", "state_zoneid",
+                  "state_zoneid", "lagoslakeid", "lagoslakeid",
                   "lagoslakeid", "lagoslakeid", "lagoslakeid",
                   "hub", "lagoslakeid, eventida10400, programname", "hub",
-                  "lagoslakeid, eventidc10400, programname", "sourceid","programname, sourceid")
+                  "lagoslakeid, eventidc10400, programname",
+                  "sourceid","programname, sourceid")
   # number of variables of each data.frame in the list
   variables <- rep(0, length(name))
-  for(i in 1:length(name)){
+
+  for(i in seq_along(name)){
     if(type[i] == "geo"){
       j <- which(names(geo) == name[i])
       variables[i] <- ncol(geo[[j]])
@@ -47,7 +50,7 @@ info_table <- function(geo, limno){
 
   # Number of observation of each dataframe in the table
   observations <- rep(0, length(name))
-  for(i in 1: length(name)){
+  for(i in seq_along(name)){
     if(type[i] == "geo"){
       j <- which(names(geo) == name[i])
       observations[i] <- nrow(geo[[j]])
