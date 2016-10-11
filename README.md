@@ -29,7 +29,7 @@ To install from Github, you'll need a [development environment](https://support.
 
 `Rscript -e 'devtools::install()'`
  
-## Usage
+### Data
 
 For development purposes, the package will assume that the raw `txt` files required to run `LAGOS:::lagos_compile` will be located in a `data-raw` folder within the repository (but not under version control) in the same structure as Dropbox. Eventually, users will be able to run `LAGOS::lagos_get` to supply `LAGOS::lagos_compile` with the flat files from GigaScience stored in the location returned by `rappdirs::user_data_dir`.
 
@@ -47,6 +47,8 @@ LAGOS
     |___ Limno10541
 
 ```
+
+## Usage
 
 ### Compile `txt` files to `rds`
 
