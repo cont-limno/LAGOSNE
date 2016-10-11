@@ -52,10 +52,12 @@ dt <- LAGOS::lagos_load(version = "1.054.1")
 
 ### Select desired table-columns
 
-```
-table_columns <- list("epi.nutr" = c("tp", "tn"), "iws.lulc" = c("iws_nlcd2011_pct_95"))
-dt_reduced <- LAGOS::lagos_select(dt, table_columns)
-head(dt_reduced$limno_data)
+```r
+table_columns <- list("epi.nutr" = c("lagoslakeid", "tp", "tn"),
+                  "iws.lulc" = c("iws_lagoslakeid", "iws_nlcd2011_pct_95"))
+dt_reduced    <- LAGOS::lagos_select(dt, table_columns)
+dt_reduced    <- dplyr::left_join(dt_reduced$limno_data, dt_reduced$geo_data,
+                  by = c("lagoslakeid" = "iws_lagoslakeid"))
 ```
 
 ## Legacy code-base
