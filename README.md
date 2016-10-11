@@ -1,4 +1,4 @@
-<h1 align="center">
+<h1 align="left">
 <img width="100" src="./inst/lagos.png" alt="">
 </h1>
 
