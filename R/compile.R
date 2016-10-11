@@ -3,14 +3,14 @@
 #'@title Compile LAGOS data
 #'@description Compile LAGOS data from component flat files
 #'@param version character LAGOS database version string
-#'@param outformat character choice of "rds" or "sqlite"
+#'@param format character choice of "rds" or "sqlite"
 #'@importFrom utils read.table
 #'@import rappdirs
 #'@examples \dontrun{
-#' lagos_compile("1.054.1", outformat = "sqlite")
+#' lagos_compile("1.054.1", format = "sqlite")
 #'}
 #'
-lagos_compile <- function(version, outformat = "rds"){
+lagos_compile <- function(version, format = "rds"){
 
   ingest <- lagos_ingest(version = version)
 
@@ -21,7 +21,7 @@ lagos_compile <- function(version, outformat = "rds"){
   destdir <- rappdirs::user_data_dir("LAGOS")  # dir.exists(destdir)
   dir.create(destdir, showWarnings = FALSE)
 
-  if(outformat == "sqlite"){
+  if(format == "sqlite"){
 
     # unlink(paste0(destdir, "/LAGOS.sqlite3"))
     my_db <- dplyr::src_sqlite(paste0(destdir, "/LAGOS.sqlite3"),

@@ -4,19 +4,19 @@
 \alias{lagos_compile}
 \title{Compile LAGOS data}
 \usage{
-lagos_compile(version, outformat = "rds")
+lagos_compile(version, format = "rds")
 }
 \arguments{
 \item{version}{character LAGOS database version string}
 
-\item{outformat}{character choice of "rds" or "sqlite"}
+\item{format}{character choice of "rds" or "sqlite"}
 }
 \description{
 Compile LAGOS data from component flat files
 }
 \examples{
 \dontrun{
-lagos_compile("1.054.1", outformat = "sqlite")
+lagos_compile("1.054.1", format = "sqlite")
 }
 
 }

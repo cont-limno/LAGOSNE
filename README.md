@@ -8,6 +8,17 @@ The `LAGOS` package provides an R interface to download LAGOS data from remote d
 
 ## Installation
 
+### Package dependencies
+
+`LAGOS` requires some packages not yet available from CRAN. The development versions of the `DBI` and `RSQLite` packages can be installed by running the following commands from the R console:
+
+```r
+devtools::install_github("rstats-db/DBI")
+devtools::install_github("rstats-db/RSQLite")
+```
+
+To install from Github, you'll need a [development environment](https://support.rstudio.com/hc/en-us/articles/200486498-Package-Development-Prerequisites).
+
 ### From the Shell (In RStudio: Tools -> Shell...)
 
 `git clone https://github.com/jsta/LAGOS.git`
@@ -41,7 +52,13 @@ LAGOS
 ### Compile `txt` files to `rds`
 
 ```r
-LAGOS:::lagos_compile(version = "1.054.1")
+LAGOS:::lagos_compile(version = "1.054.1", format = "rds")
+```
+
+### Compile `txt` files to `sqlite`
+
+```r
+LAGOS:::lagos_compile(version = "1.054.1", format = "sqlite")
 ```
 
 ### Load compiled `rds` object
