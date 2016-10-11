@@ -22,7 +22,15 @@ lagos_get <- function(dest_folder = NA){
   # dir.exists(destdir)
   dir.create(destdir, showWarnings = FALSE)
 
-  invisible(lapply(files, function(x) download.file(paste0(baseurl, x),
+  get_if_not_exists <- function(url, destfile){
+    if(!file.exists(destfile)){
+      download.file(url, destfile)
+    }else{
+      message(paste0("A local copy of ", url, " already exists on disk"))
+    }
+  }
+
+  invisible(lapply(files, function(x) get_if_not_exists(paste0(baseurl, x),
     paste0(destdir, .Platform$file.sep, x))))
 
 }
