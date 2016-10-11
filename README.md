@@ -34,16 +34,13 @@ For development purposes, the package will assume that the raw `txt` files requi
 ```
 LAGOS
 |
-|
 |___man
 |
 |___R
 |
 |___data-raw
     |
-    |
     |___Geo
-    |
     |
     |___ Limno10541
 
