@@ -19,8 +19,9 @@ lagos_compile <- function(version, format = "rds"){
   limno  <- ingest$limno
   info <- info_table(geo, limno)
 
-  destdir <- rappdirs::user_data_dir("LAGOS")  # dir.exists(destdir)
-  dir.create(destdir, showWarnings = FALSE)
+  destdir <- rappdirs::user_data_dir(appname = "LAGOS", appauthor = "LAGOS")
+  # dir.exists(destdir)
+  dir.create(destdir, recursive = TRUE, showWarnings = FALSE)
 
   if(format == "sqlite"){
 
