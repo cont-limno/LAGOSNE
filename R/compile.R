@@ -25,7 +25,7 @@ lagos_compile <- function(version, format = "rds"){
   if(format == "sqlite"){
 
     # unlink(paste0(destdir, "/LAGOS.sqlite3"))
-    my_db <- dplyr::src_sqlite(paste0(destdir, "/LAGOS.sqlite3"),
+    my_db <- dplyr::src_sqlite(file.path(destdir, "LAGOS.sqlite3"),
               create = TRUE)
 
     invisible(lapply(seq_along(geo),
@@ -38,6 +38,6 @@ lagos_compile <- function(version, format = "rds"){
 
   }else{
     saveRDS(list("geo" = geo, "limno" = limno, "info" = info),
-            paste0(destdir, "/data_", version, ".rds"))
+            file.path(destdir, paste0("data_", version, ".rds")))
   }
 }
