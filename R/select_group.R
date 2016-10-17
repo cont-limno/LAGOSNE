@@ -22,48 +22,23 @@
 #' @examples \dontrun{
 #' dt <- lagos_load("1.054.1")
 #'
-#' table_columns <- list("epi.nutr" = c("tp", "tn"), "iws.lulc" = c("iws_nlcd2011_pct_95"))
+#' table_columns <- list("epi.nutr" = c("waterquality"), "iws.lulc" = c("iws_nlcd2011_pct_95"))
 #'
 #' dt_reduced <- LAGOS::lagos_select(dt, table_columns)
 #' }
 lagos_select_group <- function(dt, table_column_nested){
 
-  water.quality = c("chla", "colora", "colort", "dkn", "doc", "nh4", "no2",
+  waterquality = c("chla", "colora", "colort", "dkn", "doc", "nh4", "no2",
                     "no2no3", "srp", "tdn", "tdp", "tkn", "tn", "toc", "ton", "tp",
                     "secchi")
-  deposition = grep("_dep_", x = )
+  deposition = grep("_dep_",)
   hydrology = grep("baseflowindex"|"groundwaterrecharge"|"runoff"|"saturationoverlandflow", )
-  climate =
-  topography =
-  lulc1992 =
-  lulc2001 =
-  lulc2006 =
-  lulc2011 =
-
-    limno_tables <- table_column_nested[names(table_column_nested) %in%
-                                          names(dt$limno)]
-  geo_tables   <- table_column_nested[names(table_column_nested) %in%
-                                        names(dt$geo)]
+  climate = grep("prism")
+  topography = grep("tri"|"slope")
+  lulc1992 = grep("nlcd1992")
+  lulc2001 = grep("nlcd2001")
+  lulc2006 = grep("nlcd2006")
+  lulc2011 = grep("nlcd2011")
 
 
-
-  # create a list of data.frame objects from geo_tables headers
-  geo_data_frames   <- lapply(names(geo_tables),
-                              function(x) dt$geo[which(names(dt$geo) %in% x)])
-  limno_data_frames <- lapply(names(limno_tables),
-                              function(x) dt$limno[which(names(dt$limno) %in% x)])
-
-  # pull out variable names from the group select feature
-
-
-  geo_data <- lapply(seq_along(geo_data_frames),
-                     function(x) dplyr::select_(geo_data_frames[[x]][[1]],
-                                                .dots = geo_tables[[x]]))
-
-  limno_data <- lapply(seq_along(limno_data_frames),
-                       function(x) dplyr::select_(limno_data_frames[[x]][[1]],
-                                                  .dots = limno_tables[[x]]))
-
-  unlist(list(geo_data = geo_data, limno_data = limno_data),
-         recursive = FALSE)
 }
