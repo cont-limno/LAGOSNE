@@ -34,11 +34,17 @@ lagos_select_group <- function(dt, table_column_nested){
   deposition = grep("_dep_",)
   hydrology = grep("baseflowindex"|"groundwaterrecharge"|"runoff"|"saturationoverlandflow", )
   climate = grep("prism")
+  geology = grep("surficialgeology")
   topography = grep("tri"|"slope")
   lulc1992 = grep("nlcd1992")
   lulc2001 = grep("nlcd2001")
   lulc2006 = grep("nlcd2006")
   lulc2011 = grep("nlcd2011")
+  lakes = grep("_lakes_")
+  wetlands = grep("_wl_")
+  streams = grep("streamdensity")
+
+
 
 
 }
