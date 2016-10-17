@@ -1,7 +1,7 @@
 
 #' lake_info
-#'
-#' @param dt data.frame output of \code{\link[LAGOS]{lagos_load}}
+#' @description Return lake attribute information from its name and state
+#' @param dt data.frame output of \code{\link[LAGOS]{lagos_load}}. Likely to be the \code{lake.specific} table.
 #' @param name character lake name not caps sensitive
 #' @param state character state name not caps sensitive
 #' @importFrom dplyr filter
