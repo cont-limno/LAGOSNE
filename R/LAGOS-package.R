@@ -11,6 +11,7 @@ NULL
 #' A dataset containing information on the interlake watershed (IWS) characteristics for LAGOS lakes.
 #' For details on how the watersheds were delineated, see additional file 8 in Soranno et al. (2015).
 #'
+#' @format A data frame with 51065 observations and 12 variables:
 #' \itemize{
 #'     \item iws_nhdid: a unique indentifier for each lake from the National Hydrography Dataset
 #'     \item iws_areaha: area of IWS in hectares
