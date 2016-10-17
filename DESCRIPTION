@@ -4,6 +4,7 @@ Title: Tools for Interacting with the Lake Multi-scaled Geospatial and Temporal
 Version: 1.054.1
 Authors@R: c(
     person("Joseph", "Stachelek", email = "stachel2@msu.edu", role = c("aut", "cre")),
+    person("Samantha","Oliver", role = c("aut")),
     person("Farzan","Masrour", role = c("aut"))
     )
 URL: https://github.com/jsta/LAGOS

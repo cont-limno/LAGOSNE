@@ -7,14 +7,14 @@
 lake_info(dt, name, state)
 }
 \arguments{
-\item{dt}{data.frame output of \code{\link[LAGOS]{lagos_load}}}
+\item{dt}{data.frame output of \code{\link[LAGOS]{lagos_load}}. Likely to be the \code{lake.specific} table.}
 
 \item{name}{character lake name not caps sensitive}
 
 \item{state}{character state name not caps sensitive}
 }
 \description{
-lake_info
+Return lake attribute information from its name and state
 }
 \examples{
 \dontrun{
