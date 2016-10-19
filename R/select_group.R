@@ -17,6 +17,7 @@
 #' lulc1992 (all LULC variables from 1992), lulc2001, lulc2006, lulc2011.
 #' \item Groups for the "geo" .conn tables include lakes (all lake connectivity metrics),
 #' wetlands (all wetland connectivity metrics) and streams (all stream/river connectivity metrics)
+#' }
 #'
 #'
 #' @examples \dontrun{
@@ -31,8 +32,8 @@ lagos_select_group <- function(dt, table_column_nested){
   waterquality = c("chla", "colora", "colort", "dkn", "doc", "nh4", "no2",
                     "no2no3", "srp", "tdn", "tdp", "tkn", "tn", "toc", "ton", "tp",
                     "secchi")
-  deposition = grep("_dep_",)
-  hydrology = grep("baseflowindex"|"groundwaterrecharge"|"runoff"|"saturationoverlandflow", )
+  deposition = grep("_dep_")
+  hydrology = grep("baseflowindex"|"groundwaterrecharge"|"runoff"|"saturationoverlandflow")
   climate = grep("prism")
   geology = grep("surficialgeology")
   topography = grep("tri"|"slope")
