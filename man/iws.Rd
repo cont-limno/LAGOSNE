@@ -4,24 +4,27 @@
 \name{iws}
 \alias{iws}
 \title{Watershed Data}
-\description{
-A dataset containing information on watershed characteristics for LAGOS lakes
-}
-\details{
+\format{A data frame with 51065 observations and 12 variables:
 \itemize{
-    \item iws_nhdid
-    \item iws_areaha
-    \item iws_perimkm
-    \item iws_lat latitude
-    \item iws_long longitude
+    \item iws_nhdid: a unique indentifier for each lake from the National Hydrography Dataset
+    \item iws_areaha: area of IWS in hectares
+    \item iws_perimkm: perimeter of IWS in kilometers
+    \item iws_lat: latitude of the IWS
+    \item iws_long: longitude of the IWS
     \item iws_lakeareaha
     \item iws_pct_in_usa
     \item iws_ha_in_usa
     \item iws_pct_in_nwi
     \item iws_ha_in_nwi
-    \item iws_zoneid
-    \item iws_lagoslakeid
-    }
+    \item iws_zoneid: a unique identifier for each IWS in LAGOS
+    \item iws_lagoslakeid: a unique identifier for each lake in LAGOS
+    }}
+\description{
+A dataset containing information on the interlake watershed (IWS) characteristics for LAGOS lakes.
+For details on how the watersheds were delineated, see additional file 8 in Soranno et al. (2015).
+}
+\references{
+Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
 }
 \keyword{datasets}
 

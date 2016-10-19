@@ -10,11 +10,13 @@
 #' dt <- lagos_load("1.054.1")
 #'
 #' # select individual table-columns
-#' table_columns <- list("epi.nutr" = c("tp", "tn"), "iws.lulc" = c("iws_nlcd2011_pct_95"))
+#' table_columns <- list("epi.nutr" = c("tp", "tn"),
+#'                    "iws.lulc" = c("iws_nlcd2011_pct_95"))
 #' dt_reduced <- LAGOS::lagos_select(dt, table_columns)
 #'
 #' # group-select using keywords
-#' table_columns <- list("epi.nutr" = c("waterquality", "lagoslakeid"), "hu4.chag" = c("deposition"))
+#' table_columns <- list("epi.nutr" = c("waterquality", "lagoslakeid"),
+#'                    "hu4.chag" = c("deposition"))
 #' dt_reduced <- LAGOS::lagos_select(dt, table_columns)
 #' }
 lagos_select <- function(dt, table_column_nested){
