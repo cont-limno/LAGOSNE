@@ -18,7 +18,7 @@ Select and merge columns based on a nested list of LAGOS tables and groups of va
 \details{
 This function takes advantage of predefined groups of variables within each LAGOS table.
 The possible table and group combinations include:
-\n \enumerate{
+\enumerate{
 Groups for the "limno" tables include water.quality (all chemistry + chlorophyll + water clarity measures).
 \item Groups for "geo" .chag tables include deposition (all atmospheric deposition related variables),
 hydrology (basefloe, groundwater, runoff and overland flow variables), climate (30-year normal precipitation and temperature variables),
