@@ -16,7 +16,7 @@
 #'
 #' # group-select using keywords
 #' table_columns <- list("epi.nutr" = c("waterquality", "lagoslakeid"),
-#'                    "hu4.chag" = c("deposition"))
+#'                    "hu4.chag" = c("deposition", "climate", "hu4_zoneid"))
 #' dt_reduced <- LAGOS::lagos_select(dt, table_columns)
 #' }
 lagos_select <- function(dt, table_column_nested){
@@ -42,6 +42,7 @@ lagos_select <- function(dt, table_column_nested){
   # expand query column names that match keywords
   limno_tables <- lapply(limno_tables, function(x) expand_keywords(x,
                     all_limno_table_names))
+
   geo_tables   <- lapply(geo_tables, function(x) expand_keywords(x,
                     all_geo_table_names))
 

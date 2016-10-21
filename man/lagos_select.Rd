@@ -25,7 +25,7 @@ dt_reduced <- LAGOS::lagos_select(dt, table_columns)
 
 # group-select using keywords
 table_columns <- list("epi.nutr" = c("waterquality", "lagoslakeid"),
-                   "hu4.chag" = c("deposition"))
+                   "hu4.chag" = c("deposition", "climate", "hu4_zoneid"))
 dt_reduced <- LAGOS::lagos_select(dt, table_columns)
 }
 }

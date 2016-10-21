@@ -25,7 +25,8 @@ keyword_full_key <- function(){
 
 keyword_partial_key <- function(){
   res <- data.frame(rbind(
-    c("deposition", "_dep_")
+    c("deposition", "_dep_"),
+    c("climate", "prism")
   ), stringsAsFactors = FALSE)
 
   names(res) <- c("keyword", "definition")
@@ -33,9 +34,8 @@ keyword_partial_key <- function(){
 }
 
 keyword_partial_match <- function(table_column, all_table_names){
-
   match <- keyword_partial_key()[
-            table_column %in% keyword_partial_key()[,1], 2]
+              keyword_partial_key()[,1] %in% table_column, 2]
 
   if(!any(lapply(match, length) > 0 & !is.na(match))){
     match <- table_column
@@ -58,7 +58,6 @@ keyword_full_match <- function(table_column){
 }
 
 expand_keywords <- function(table_column, all_table_names){
-
   partial_matches <- unlist(lapply(table_column,
                       function(x) keyword_partial_match(x, all_table_names)))
 
