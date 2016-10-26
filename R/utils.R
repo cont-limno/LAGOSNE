@@ -16,6 +16,7 @@ load_lagos_txt <- function(file_name, sep = "\t", ...){
 #' info_table
 #' @description generate table summary statistics
 #' @export
+#' @author Masrour Farzan
 #' @param geo data.frame
 #' @param limno data.frame
 #'

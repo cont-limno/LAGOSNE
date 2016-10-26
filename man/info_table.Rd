@@ -14,4 +14,7 @@ info_table(geo, limno)
 \description{
 generate table summary statistics
 }
+\author{
+Masrour Farzan
+}
 
