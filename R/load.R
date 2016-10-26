@@ -26,3 +26,21 @@ lagos_load <- function(version, format = "rds", fpath = NA){
     }
   }
 }
+
+#' lagos_load_oliver_2015
+#'
+#' @export
+#' @param fpath file.path optionally specify custom location of csv data file
+#'
+#' @examples
+#' lagos_load_oliver_2015()
+lagos_load_oliver_2015 <- function(fpath = NA){
+  destdir <- rappdirs::user_data_dir("LAGOS")
+  dir.create(destdir, showWarnings = FALSE)
+
+  if(is.na(fpath)){
+    read.csv(paste0(destdir, .Platform$file.sep, "oliver_2015_depth.csv"))
+  }else{
+    read.csv(fpath)
+  }
+}
