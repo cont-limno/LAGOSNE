@@ -80,3 +80,11 @@ get_if_not_exists <- function(url, destfile){
     message(paste0("A local copy of ", url, " already exists on disk"))
   }
 }
+
+stop_if_not_exists <- function(src_path) {
+  if(!file.exists(src_path)){
+    stop(paste0("Dataset not found at: ", src_path,
+      ". Try running the appropriate `lagos_get*` and/or `lagos_compile`
+      commands."))
+  }
+}

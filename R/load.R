@@ -20,9 +20,13 @@ lagos_load <- function(version, format = "rds", fpath = NA){
   }else{
     data_dir <- rappdirs::user_data_dir("LAGOS")
     if(format == "sqlite"){
-      dplyr::src_sqlite(paste0(data_dir, "/LAGOS.sqlite3"))
+      sqlite_path <- paste0(data_dir, "/LAGOS.sqlite3")
+      stop_if_not_exists(sqlite_path)
+      dplyr::src_sqlite(sqlite_path)
     }else{
-      readRDS(paste0(data_dir, "/data_", version, ".rds"))
+      rds_path <- paste0(data_dir, "/data_", version, ".rds")
+      stop_if_not_exists(rds_path)
+      readRDS(rds_path)
     }
   }
 }
