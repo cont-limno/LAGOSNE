@@ -43,6 +43,10 @@ LAGOS
 
 ## Usage
 
+```{r }
+library(LAGOS)
+```
+
 ### Compile `txt` files to `rds`
 
 ```r
@@ -52,7 +56,7 @@ LAGOS:::lagos_compile(version = "1.054.1", format = "rds")
 ### Load compiled `rds` object
 
 ```r
-dt_rds <- LAGOS::lagos_load(version = "1.054.1", format = "rds")
+dt_rds <- lagos_load(version = "1.054.1", format = "rds")
 ```
 
 ### Select desired table-columns from `rds`
@@ -60,7 +64,7 @@ dt_rds <- LAGOS::lagos_load(version = "1.054.1", format = "rds")
 ```r
 table_columns <- list("epi.nutr" = c("lagoslakeid", "tp", "tn"),
                       "iws.lulc" = c("iws_lagoslakeid", "iws_nlcd2011_pct_95"))
-dt_rds    <- LAGOS::lagos_select(dt_rds, table_columns)
+dt_rds    <- lagos_select(dt_rds, table_columns)
 dt_rds    <- dplyr::left_join(dt_rds$limno_data, dt_rds$geo_data,
                   by = c("lagoslakeid" = "iws_lagoslakeid"))
 ```
@@ -84,7 +88,7 @@ LAGOS:::lagos_compile(version = "1.054.1", format = "sqlite")
 ### Load compiled `sqlite` object
 
 ```r
-dt_sqlite <- LAGOS::lagos_load(version = "1.054.1", format = "sqlite")
+dt_sqlite <- lagos_load(version = "1.054.1", format = "sqlite")
 ```
 
 ### Select desired table-columns from `sqlite`
