@@ -40,7 +40,7 @@ lagos_load <- function(version, format = "rds", fpath = NA){
 #'
 #' @export
 #' @param fpath file.path optionally specify custom location of csv data file
-#'
+#' @importFrom utils read.csv
 #' @examples
 #' lagos_load_oliver_2015()
 lagos_load_oliver_2015 <- function(fpath = NA){

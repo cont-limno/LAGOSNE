@@ -97,7 +97,8 @@ lagos_names <- function(dt) purrr::map(purrr::flatten(dt), names)
 
 
 #' query_lagos_names
-#' @description return table names with column names that grep to query
+#' @description return a vector of table names whose associated tables have
+#'  columns that grep to query
 #' @param dt data.frame output of \code{\link[LAGOS]{lagos_load}}
 #' @param grep_string character search string to grep to table column names
 #' @param scale character filter results by one of:
@@ -115,6 +116,7 @@ lagos_names <- function(dt) purrr::map(purrr::flatten(dt), names)
 #' query_lagos_names(dt, "_dep_")
 #' query_lagos_names(dt, "_dep_", "hu4")
 #' query_lagos_names(dt, "chla")
+#' query_lagos_names(dt, "secchi")
 #' }
 query_lagos_names <- function(dt, grep_string, scale = NA){
   dt_names <- lagos_names(dt)
@@ -134,6 +136,30 @@ query_lagos_names <- function(dt, grep_string, scale = NA){
   }
 }
 
+#' query_column_names
+#' @description return a vector of column names, given a table name and grep
+#'  query string
+#' @examples \dontrun{
+#' dt <- lagos_load("1.054.1")
+#' query_column_names(dt, "hu4.chag", "_dep_")
+#' }
+query_column_names <- function(dt, table_name, grep_string){
+  dt_names <- lagos_names(dt)
+  dt_names[table_name][[1]][grep(grep_string, dt_names[table_name][[1]])]
+}
 
+#' query_column_keywords
+#' @description return a vector of column names, given a table name and keyword string
+#' @examples \dontrun{
+#' dt <- lagos_load("1.054.1")
+#' query_column_keywords(dt, "epi.nutr", "waterquality")
+#' }
+query_column_keywords <- function(dt, table_name, keyword_string){
+  dt_names <- lagos_names(dt)
 
+  match <- keyword_partial_key()[
+    keyword_partial_key()[,1] %in% keyword_string, 2]
 
+  dt_names[table_name][[1]][dt_names[table_name][[1]] %in% match]
+
+}

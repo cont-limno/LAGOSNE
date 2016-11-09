@@ -22,7 +22,8 @@ query_lagos_names(dt, grep_string, scale = NA)
 }}
 }
 \description{
-return table names with column names that grep to query
+return a vector of table names whose associated tables have
+ columns that grep to query
 }
 \examples{
 \dontrun{
@@ -30,6 +31,7 @@ dt <- lagos_load("1.054.1")
 query_lagos_names(dt, "_dep_")
 query_lagos_names(dt, "_dep_", "hu4")
 query_lagos_names(dt, "chla")
+query_lagos_names(dt, "secchi")
 }
 }
 
