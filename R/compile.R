@@ -5,7 +5,7 @@
 #'@param version character LAGOS database version string
 #'@param format character choice of "rds" or "sqlite"
 #'@importFrom utils read.table
-#'@import rappdirs
+#'@importFrom rappdirs user_data_dir
 #'@examples \dontrun{
 #' lagos_compile("1.054.1", format = "rds")
 #' lagos_compile("1.054.1", format = "sqlite")

@@ -139,6 +139,9 @@ query_lagos_names <- function(dt, grep_string, scale = NA){
 #' query_column_names
 #' @description return a vector of column names, given a table name and grep
 #'  query string
+#' @param dt data.frame
+#' @param table_name character
+#' @param grep_string character
 #' @examples \dontrun{
 #' dt <- lagos_load("1.054.1")
 #' query_column_names(dt, "hu4.chag", "_dep_")
@@ -150,6 +153,9 @@ query_column_names <- function(dt, table_name, grep_string){
 
 #' query_column_keywords
 #' @description return a vector of column names, given a table name and keyword string
+#' @param dt data.frame
+#' @param table_name character
+#' @param keyword_string character
 #' @examples \dontrun{
 #' dt <- lagos_load("1.054.1")
 #' query_column_keywords(dt, "epi.nutr", "waterquality")

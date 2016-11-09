@@ -31,6 +31,7 @@ lagos_get <- function(dest_folder = NA){
 #' lagos_get_oliver_2015
 #'
 #' @export
+#' @param dest_folder file.path
 #' @references Oliver SK, Soranno PA, Fergus EC, Wagner T, Webster KE, Scott C,
 #'  Winslow LA, Downing JA, Stanley EH. 2015. LAGOS - Predicted and observed
 #'  maximum depth values for lakes in a 17-state region of the U.S. Long Term

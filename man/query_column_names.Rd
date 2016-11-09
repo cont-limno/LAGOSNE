@@ -6,6 +6,13 @@
 \usage{
 query_column_names(dt, table_name, grep_string)
 }
+\arguments{
+\item{dt}{data.frame}
+
+\item{table_name}{character}
+
+\item{grep_string}{character}
+}
 \description{
 return a vector of column names, given a table name and grep
  query string

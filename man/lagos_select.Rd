@@ -42,7 +42,7 @@ dt_reduced <- lagos_select(dt, table_column_nested =
 # select individual table-columns from limno and geo
 table_columns <- list("epi.nutr" = c("tp", "tn"),
                    "iws.lulc" = c("iws_nlcd2011_pct_95"))
-dt_reduced <- lagos_select(dt, table_column_nested = table_columns)
+dt_reduced    <- lagos_select(dt, table_column_nested = table_columns)
 
 # select from specific tables using keywords
 dt_reduced <- lagos_select(dt, table_column_nested = list("epi.nutr" = "waterquality"))
@@ -50,14 +50,16 @@ dt_reduced <- lagos_select(dt, table_column_nested = list("epi.nutr" = "waterqua
 # select from multiple specific tables using keywords
 table_columns <- list("epi.nutr" = c("waterquality"),
                    "hu4.chag" = c("deposition"))
-dt_reduced <- lagos_select(dt, table_column_nested = table_columns)
+dt_reduced    <- lagos_select(dt, table_column_nested = table_columns)
 
 # select based non-specific tables using keywords
-dt_reduced <- lagos_select(dt, scale = "HU4", category = c("waterquality", "deposition"))
+dt_reduced <- lagos_select(dt, scale = "HU4",
+               category = c("waterquality", "deposition"))
 
 # select based on inexact keywords and exact table specification
 table_columns <- list("epi.nutr" = c("doc", "lagoslakeid"))
-dt_reduced <- lagos_select(dt, scale = "HU4", category = c("deposition"), table_column_nested = table_columns)
+dt_reduced    <- lagos_select(dt, scale = "HU4", category = c("deposition"),
+                  table_column_nested = table_columns)
 }
 }
 

@@ -4,7 +4,7 @@
 #' @param format character choice of rds or sqlite
 #' @param fpath file.path optionally specify custom location of LAGOS rds file
 #' @export
-#' @import rappdirs
+#' @importFrom rappdirs user_data_dir
 #' @importFrom dplyr src_sqlite
 #' @examples \dontrun{
 #' dt <- lagos_load("1.054.1")
@@ -41,6 +41,7 @@ lagos_load <- function(version, format = "rds", fpath = NA){
 #' @export
 #' @param fpath file.path optionally specify custom location of csv data file
 #' @importFrom utils read.csv
+#' @importFrom rappdirs user_data_dir
 #' @examples
 #' lagos_load_oliver_2015()
 lagos_load_oliver_2015 <- function(fpath = NA){

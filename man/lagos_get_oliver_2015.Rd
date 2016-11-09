@@ -6,6 +6,9 @@
 \usage{
 lagos_get_oliver_2015(dest_folder)
 }
+\arguments{
+\item{dest_folder}{file.path}
+}
 \description{
 lagos_get_oliver_2015
 }
