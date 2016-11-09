@@ -114,6 +114,7 @@ lagos_names <- function(dt) purrr::map(purrr::flatten(dt), names)
 #' dt <- lagos_load("1.054.1")
 #' query_lagos_names(dt, "_dep_")
 #' query_lagos_names(dt, "_dep_", "hu4")
+#' query_lagos_names(dt, "chla")
 #' }
 query_lagos_names <- function(dt, grep_string, scale = NA){
   dt_names <- lagos_names(dt)
@@ -121,16 +122,16 @@ query_lagos_names <- function(dt, grep_string, scale = NA){
                     function(x) length(grep(grep_string, x)) > 0))
   res <- names(dt_names)[names_matches]
 
-  if(!is.na(scale)){
-    res_filtered <- res[grep(scale, res)]
-    if(length(res_filtered) < 1){
-      stop("No results found for specified scale.")
-    }
+  res_filtered <- res[grep(scale, res)]
+
+  if(!is.na(scale) & length(res_filtered) > 0){
+    # if(length(res_filtered) < 1){
+    #   stop("No results found for specified scale.")
+    # }
     res_filtered
   }else{
     res
   }
-
 }
 
 

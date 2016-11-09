@@ -29,6 +29,7 @@ return table names with column names that grep to query
 dt <- lagos_load("1.054.1")
 query_lagos_names(dt, "_dep_")
 query_lagos_names(dt, "_dep_", "hu4")
+query_lagos_names(dt, "chla")
 }
 }
 
