@@ -8,3 +8,5 @@
 ^data/data_1\.054\.1\.RData$
 ^docx$
 ^lagos_r_package_meeting_notes$
+^Makefile
+^shiny
