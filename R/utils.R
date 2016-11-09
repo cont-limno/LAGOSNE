@@ -100,14 +100,37 @@ lagos_names <- function(dt) purrr::map(purrr::flatten(dt), names)
 #' @description return table names with column names that grep to query
 #' @param dt data.frame output of \code{\link[LAGOS]{lagos_load}}
 #' @param grep_string character search string to grep to table column names
+#' @param scale character filter results by one of:
+#' \itemize{
+#'     \item county
+#'     \item edu
+#'     \item hu4
+#'     \item hu8
+#'     \item hu12
+#'     \item state
+#' }
 #' @export
-#' @examples
-#' query_lagos_names(lagos_load("1.054.1"), "dep")
-query_lagos_names <- function(dt, grep_string){
+#' @examples \dontrun{
+#' dt <- lagos_load("1.054.1")
+#' query_lagos_names(dt, "_dep_")
+#' query_lagos_names(dt, "_dep_", "hu4")
+#' }
+query_lagos_names <- function(dt, grep_string, scale = NA){
   dt_names <- lagos_names(dt)
   names_matches <- unlist(lapply(dt_names,
                     function(x) length(grep(grep_string, x)) > 0))
-  names(dt_names)[names_matches]
+  res <- names(dt_names)[names_matches]
+
+  if(!is.na(scale)){
+    res_filtered <- res[grep(scale, res)]
+    if(length(res_filtered) < 1){
+      stop("No results found for specified scale.")
+    }
+    res_filtered
+  }else{
+    res
+  }
+
 }
 
 

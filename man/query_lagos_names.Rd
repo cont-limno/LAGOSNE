@@ -4,17 +4,31 @@
 \alias{query_lagos_names}
 \title{query_lagos_names}
 \usage{
-query_lagos_names(dt, grep_string)
+query_lagos_names(dt, grep_string, scale = NA)
 }
 \arguments{
 \item{dt}{data.frame output of \code{\link[LAGOS]{lagos_load}}}
 
 \item{grep_string}{character search string to grep to table column names}
+
+\item{scale}{character filter results by one of:
+\itemize{
+    \item county
+    \item edu
+    \item hu4
+    \item hu8
+    \item hu12
+    \item state
+}}
 }
 \description{
 return table names with column names that grep to query
 }
 \examples{
-query_lagos_names(lagos_load("1.054.1"), "dep")
+\dontrun{
+dt <- lagos_load("1.054.1")
+query_lagos_names(dt, "_dep_")
+query_lagos_names(dt, "_dep_", "hu4")
+}
 }
 
