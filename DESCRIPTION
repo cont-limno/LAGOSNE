@@ -13,8 +13,8 @@ Description: This package provides functions for interacting with the Lake
     Multi-scaled Geospatial and Temporal Database (LAGOS).
 Depends:
     R (>= 3.3.1)
-Imports: dplyr,rappdirs,lazyeval
-Suggests: RSQLite (>= 1.0.9014), DBI (>= 0.5-12)
+Imports: dplyr,rappdirs,lazyeval,purrr
+Suggests: RSQLite (>= 1.0.9014), DBI (>= 0.5-12), ggplot2
 License: GPL
 Encoding: UTF-8
 LazyData: true

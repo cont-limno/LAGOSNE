@@ -89,3 +89,27 @@ stop_if_not_exists <- function(src_path) {
       commands."))
   }
 }
+
+lagos_path <- function() paste0(rappdirs::user_data_dir("LAGOS"),
+                .Platform$file.sep)
+
+lagos_names <- function(dt) purrr::map(purrr::flatten(dt), names)
+
+
+#' query_lagos_names
+#' @description return table names with column names that grep to query
+#' @param dt data.frame output of \code{\link[LAGOS]{lagos_load}}
+#' @param grep_string character search string to grep to table column names
+#' @export
+#' @examples
+#' query_lagos_names(lagos_load("1.054.1"), "dep")
+query_lagos_names <- function(dt, grep_string){
+  dt_names <- lagos_names(dt)
+  names_matches <- unlist(lapply(dt_names,
+                    function(x) length(grep(grep_string, x)) > 0))
+  names(dt_names)[names_matches]
+}
+
+
+
+
