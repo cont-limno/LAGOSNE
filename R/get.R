@@ -18,12 +18,11 @@ lagos_get <- function(dest_folder = NA){
   files <- c("Cirflux_ScalingAndModeling_canopyLevelData_GigaScience.csv",
                  "Cirflux_ScalingAndModeling_leafLevelData_GigaScience.csv")
 
-  destdir <- rappdirs::user_data_dir("LAGOS")
-  # dir.exists(destdir)
-  dir.create(destdir, showWarnings = FALSE)
+  # dir.exists(lagos_path())
+  dir.create(lagos_path(), showWarnings = FALSE)
 
   invisible(lapply(files, function(x) get_if_not_exists(paste0(baseurl, x),
-    paste0(destdir, .Platform$file.sep, x))))
+    paste0(lagos_path(), x))))
 
 }
 
@@ -41,11 +40,9 @@ lagos_get <- function(dest_folder = NA){
 #' @examples
 #' lagos_get_oliver_2015()
 lagos_get_oliver_2015 <- function(dest_folder){
-  destdir <- rappdirs::user_data_dir("LAGOS")
-  dir.create(destdir, showWarnings = FALSE)
+  dir.create(lagos_path(), showWarnings = FALSE)
 
   baseurl <- "http://pasta.lternet.edu/package/data/eml/knb-lter-ntl/320/4/4a283c25f3548c0f78d8a01658e4a353"
 
-  get_if_not_exists(baseurl, paste0(destdir, .Platform$file.sep,
-    "oliver_2015_depth.csv"))
+  get_if_not_exists(baseurl, paste0(lagos_path(), "oliver_2015_depth.csv"))
 }

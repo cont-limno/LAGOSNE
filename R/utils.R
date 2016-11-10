@@ -90,11 +90,10 @@ stop_if_not_exists <- function(src_path) {
   }
 }
 
-lagos_path <- function() paste0(rappdirs::user_data_dir("LAGOS"),
-                .Platform$file.sep)
+lagos_path <- function() paste0(rappdirs::user_data_dir(appname = "LAGOS",
+                appauthor = "LAGOS"), .Platform$file.sep)
 
 lagos_names <- function(dt) purrr::map(purrr::flatten(dt), names)
-
 
 #' query_lagos_names
 #' @description return a vector of table names whose associated tables have

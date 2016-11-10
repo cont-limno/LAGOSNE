@@ -19,14 +19,13 @@ lagos_compile <- function(version, format = "rds"){
   limno  <- ingest$limno
   info <- info_table(geo, limno)
 
-  destdir <- rappdirs::user_data_dir(appname = "LAGOS", appauthor = "LAGOS")
-  # dir.exists(destdir)
-  dir.create(destdir, recursive = TRUE, showWarnings = FALSE)
+  # dir.exists(lagos_path())
+  dir.create(lagos_path(), recursive = TRUE, showWarnings = FALSE)
 
   if(format == "sqlite"){
 
-    # unlink(paste0(destdir, "/LAGOS.sqlite3"))
-    my_db <- dplyr::src_sqlite(file.path(destdir, "LAGOS.sqlite3"),
+    # unlink(paste0(lagos_path(), "/LAGOS.sqlite3"))
+    my_db <- dplyr::src_sqlite(file.path(lagos_path(), "LAGOS.sqlite3"),
               create = TRUE)
 
     invisible(lapply(seq_along(geo),
@@ -39,6 +38,6 @@ lagos_compile <- function(version, format = "rds"){
 
   }else{
     saveRDS(list("geo" = geo, "limno" = limno, "info" = info),
-            file.path(destdir, paste0("data_", version, ".rds")))
+            file.path(lagos_path(), paste0("data_", version, ".rds")))
   }
 }
