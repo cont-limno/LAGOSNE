@@ -32,6 +32,7 @@ query_lagos_names(dt, "_dep_")
 query_lagos_names(dt, "_dep_", "hu4")
 query_lagos_names(dt, "chla")
 query_lagos_names(dt, "secchi")
+
 }
 }
 

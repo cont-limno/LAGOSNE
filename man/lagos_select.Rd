@@ -56,6 +56,8 @@ dt_reduced    <- lagos_select(dt, table_column_nested = table_columns)
 dt_reduced <- lagos_select(dt, scale = "HU4",
                category = c("waterquality", "deposition"))
 
+dt_reduced <- lagos_select(dt, scale = "county", category = c("hydrology"))
+
 # select based on inexact keywords and exact table specification
 table_columns <- list("epi.nutr" = c("doc", "lagoslakeid"))
 dt_reduced    <- lagos_select(dt, scale = "HU4", category = c("deposition"),

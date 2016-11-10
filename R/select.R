@@ -45,6 +45,8 @@
 #' dt_reduced <- lagos_select(dt, scale = "HU4",
 #'                category = c("waterquality", "deposition"))
 #'
+#' dt_reduced <- lagos_select(dt, scale = "county", category = c("hydrology"))
+#'
 #' # select based on inexact keywords and exact table specification
 #' table_columns <- list("epi.nutr" = c("doc", "lagoslakeid"))
 #' dt_reduced    <- lagos_select(dt, scale = "HU4", category = c("deposition"),
@@ -56,7 +58,6 @@ lagos_select <- function(dt, scale = NULL, category = NULL, table_column_nested 
   nested_partial <- NULL
 
   construct_nested_from_partial <- function(){
-
     category_match <- keyword_partial_key()[
                         keyword_partial_key()[,1] %in% category, 2]
     table_names    <- unlist(lapply(category_match,
@@ -67,14 +68,16 @@ lagos_select <- function(dt, scale = NULL, category = NULL, table_column_nested 
     res <- as.list(data.frame(res[,-1, drop = FALSE]))
     res <- lapply(res, function(x) x[!is.na(x)])
 
-    # Expand the entries not listed in keyword_full_key()[,2]?
     expand_partial_keywords <- function(res){
       partial_keyword_elements <- unlist(lapply(res, function(x)
                                     any(!(x %in% keyword_full_key()[,2]))))
 
-      res[partial_keyword_elements] <- list(query_column_names(dt,
-                                        names(res[partial_keyword_elements]),
-                                        res[partial_keyword_elements]))
+      grepped_keywords <- lapply(res[partial_keyword_elements][[1]],
+                            function(x) query_column_names(dt,
+                            names(res[partial_keyword_elements]), x))
+
+      res[partial_keyword_elements] <- list(unlist(grepped_keywords))
+
       res
     }
 

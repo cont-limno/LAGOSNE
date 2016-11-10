@@ -93,7 +93,7 @@ stop_if_not_exists <- function(src_path) {
 lagos_path <- function() paste0(rappdirs::user_data_dir(appname = "LAGOS",
                 appauthor = "LAGOS"), .Platform$file.sep)
 
-lagos_names <- function(dt) purrr::map(purrr::flatten(dt), names)
+lagos_names <- function(dt) purrr::map(dt, names)
 
 #' query_lagos_names
 #' @description return a vector of table names whose associated tables have
@@ -116,6 +116,7 @@ lagos_names <- function(dt) purrr::map(purrr::flatten(dt), names)
 #' query_lagos_names(dt, "_dep_", "hu4")
 #' query_lagos_names(dt, "chla")
 #' query_lagos_names(dt, "secchi")
+#'
 #' }
 query_lagos_names <- function(dt, grep_string, scale = NA){
   dt_names <- lagos_names(dt)
@@ -144,6 +145,7 @@ query_lagos_names <- function(dt, grep_string, scale = NA){
 #' @examples \dontrun{
 #' dt <- lagos_load("1.054.1")
 #' query_column_names(dt, "hu4.chag", "_dep_")
+#' query_column_names(dt, "county.chag", "baseflowindex")
 #' }
 query_column_names <- function(dt, table_name, grep_string){
   dt_names <- lagos_names(dt)

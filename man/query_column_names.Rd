@@ -21,6 +21,7 @@ return a vector of column names, given a table name and grep
 \dontrun{
 dt <- lagos_load("1.054.1")
 query_column_names(dt, "hu4.chag", "_dep_")
+query_column_names(dt, "county.chag", "baseflowindex")
 }
 }
 
