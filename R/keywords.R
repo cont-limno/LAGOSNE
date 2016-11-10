@@ -27,6 +27,10 @@ keyword_partial_key <- function(){
   res <- data.frame(rbind(
     c("deposition", "_dep_"),
     c("climate", "prism"),
+    c("hydrology", "baseflowindex"),
+    c("hydrology", "groundwaterrecharge"),
+    c("hydrology", "runoff"),
+    c("hydrology", "saturationoverlandflow"),
     c("waterquality", "chla"),
     c("waterquality", "colora"),
     c("waterquality", "colort"),
