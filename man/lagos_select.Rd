@@ -20,7 +20,21 @@ lagos_select(dt, scale = NULL, category = NULL,
     \item state
 }}
 
-\item{category}{character}
+\item{category}{character
+\itemize{
+    \item Groups for the "limno" tables include water.quality (all
+          chemistry + chlorophyll + water clarity measures).
+    \item Groups for "geo" .chag tables include deposition (all atmospheric
+          deposition related variables), hydrology (baseflow, groundwater,
+          runoff and overland flow variables), climate (30-year normal
+          precipitation and temperature variables), and geology (all
+          surficial geology variables)
+    \item Groups for the "geo" .lulc tables include topography (Terrain
+          Roughness Index and slope variables), lulc1992 (all LULC variables #'           from 1992), lulc2001, lulc2006, lulc2011.
+    \item Groups for the "geo" .conn tables include lakes (all lake
+          connectivity metrics), wetlands (all wetland connectivity metrics)
+          and streams (all stream/river connectivity metrics)
+}}
 
 \item{table_column_nested}{nested list of tables and table-columns to select from LAGOS}
 }
