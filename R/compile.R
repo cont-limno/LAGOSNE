@@ -37,7 +37,10 @@ lagos_compile <- function(version, format = "rds"){
       temporary = FALSE)))
 
   }else{
-    saveRDS(list("geo" = geo, "limno" = limno, "info" = info),
-            file.path(lagos_path(), paste0("data_", version, ".rds")))
+
+    res <- list("geo" = geo, "limno" = limno, "info" = info)
+    res <- purrr::flatten(res)
+
+    saveRDS(res, file.path(lagos_path(), paste0("data_", version, ".rds")))
   }
 }

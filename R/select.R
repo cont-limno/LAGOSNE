@@ -95,7 +95,7 @@ lagos_select <- function(dt, scale = NULL, category = NULL, table_column_nested 
                                            query_column_keywords(dt,
                                            names(nested_full)[x],
                                            nested_full[[x]]))
-    nested_full
+  nested_full
   }
 
   nested_full <- check_for_partial_full(nested_full)
@@ -103,43 +103,25 @@ lagos_select <- function(dt, scale = NULL, category = NULL, table_column_nested 
   nested_combined <- c(nested_full, nested_partial)
 
   ##### combine below into a seperate function
+  query_tables <- nested_combined[names(nested_combined) %in%
+                                    names(dt)]
 
-  # separate limno and geo table names
-  limno_tables <- nested_combined[names(nested_combined) %in%
-                    names(dt$limno)]
+  query_data_frames <- lapply(names(query_tables),
+                              function(x) dt[which(names(dt) %in% x)])
 
-  geo_tables   <- nested_combined[names(nested_combined) %in%
-                    names(dt$geo)]
+  all_query_table_names <- lapply(seq_along(query_data_frames),
+                              function(x) names(query_data_frames[[x]][[1]]))
 
-  # subset geo and limno based on query table_columns
-  geo_data_frames   <- lapply(names(geo_tables),
-                        function(x) dt$geo[which(names(dt$geo) %in% x)])
-  limno_data_frames <- lapply(names(limno_tables),
-                        function(x) dt$limno[which(names(dt$limno) %in% x)])
+  query_tables <- lapply(query_tables, function(x) expand_keywords(x,
+                    all_query_table_names))
 
-  # retrieve all column names from table subset
-  all_geo_table_names   <- lapply(seq_along(geo_data_frames),
-                            function(x) names(geo_data_frames[[x]][[1]]))
-  all_limno_table_names <- lapply(seq_along(limno_data_frames),
-                            function(x) names(limno_data_frames[[x]][[1]]))
-
-  # expand query column names that match keywords
-  limno_tables <- lapply(limno_tables, function(x) expand_keywords(x,
-                    all_limno_table_names))
-
-  geo_tables   <- lapply(geo_tables, function(x) expand_keywords(x,
-                    all_geo_table_names))
 
   # select from all tables based on (expanded) query
-  geo_data   <- lapply(seq_along(geo_data_frames),
-                       function(x) dplyr::select_(geo_data_frames[[x]][[1]],
-                       .dots = geo_tables[[x]]))
+  res <- lapply(seq_along(query_data_frames),
+                function(x) dplyr::select_(query_data_frames[[x]][[1]],
+                                           .dots = query_tables[[x]]))
 
-  limno_data <- lapply(seq_along(limno_data_frames),
-                       function(x) dplyr::select_(limno_data_frames[[x]][[1]],
-                       .dots = limno_tables[[x]]))
-
-  # should purrr this to reduce hierarchy
-  unlist(list(geo_data = geo_data, limno_data = limno_data),
-         recursive = FALSE)
+  names(res) <- names(query_tables)
+  res
+  # purrr::flatten(res)
 }
