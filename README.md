@@ -64,8 +64,9 @@ dt_rds <- lagos_load(version = "1.054.1", format = "rds")
 ```r
 table_columns <- list("epi.nutr" = c("lagoslakeid", "tp", "tn"),
                       "iws.lulc" = c("iws_lagoslakeid", "iws_nlcd2011_pct_95"))
-dt_rds    <- lagos_select(dt_rds, table_columns)
-dt_rds    <- dplyr::left_join(dt_rds$limno_data, dt_rds$geo_data,
+dt_rds    <- lagos_select(dt_rds, table_column_nested = table_columns)
+
+dt_rds    <- dplyr::left_join(dt_rds$epi.nutr, dt_rds$iws.lulc,
                   by = c("lagoslakeid" = "iws_lagoslakeid"))
 ```
 
