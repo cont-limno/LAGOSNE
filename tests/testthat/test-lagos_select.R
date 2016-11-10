@@ -32,19 +32,29 @@ test_that("lagos_select works", {
   expect_equal(length(dt_reduced), 1)
   expect_equal(ncol(dt_reduced$epi.nutr), 16)
 
-  #' # select from multiple specific tables using keywords
-  #' table_columns <- list("epi.nutr" = c("waterquality"),
-  #'                    "hu4.chag" = c("deposition"))
-  #' dt_reduced    <- lagos_select(dt, table_column_nested = table_columns)
-  #'
-  #' # select based non-specific tables using keywords
-  #' dt_reduced <- lagos_select(dt, scale = "HU4",
-  #'                category = c("waterquality", "deposition"))
-  #'
-  #' # select based on inexact keywords and exact table specification
-  #' table_columns <- list("epi.nutr" = c("doc", "lagoslakeid"))
-  #' dt_reduced    <- lagos_select(dt, scale = "HU4", category = c("deposition"),
-  #'                   table_column_nested = table_columns)
+  # select from multiple specific tables using keywords
+  table_columns <- list("epi.nutr" = c("waterquality"),
+                        "hu4.chag" = c("deposition"))
+  dt_reduced    <- lagos_select(dt, table_column_nested = table_columns)
+  expect_equal(length(dt_reduced), 2)
+  expect_equal(ncol(dt_reduced$epi.nutr), 16)
 
+  # select from a single non-specific table using keywords
+  dt_reduced <- lagos_select(dt, scale = "hu4",
+                             category = c("hydrology"))
+  expect_equal(ncol(dt_reduced$hu4.chag), 16)
+
+  # select from multiple non-specific tables using keywords
+  dt_reduced <- lagos_select(dt, scale = "HU4",
+                  category = c("waterquality", "deposition"))
+  expect_equal(length(dt_reduced), 2)
+  expect_equal(ncol(dt_reduced$epi.nutr), 16)
+
+  # select based on a mix of inexact keywords and exact table specifications
+  table_columns <- list("epi.nutr" = c("doc", "lagoslakeid"))
+  dt_reduced    <- lagos_select(dt, scale = "HU4", category = c("deposition"),
+                     table_column_nested = table_columns)
+  expect_equal(length(dt_reduced), 2)
+  expect_equal(ncol(dt_reduced$epi.nutr), 2)
 
 })
