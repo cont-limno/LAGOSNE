@@ -60,7 +60,6 @@ NULL
 #' @references USGS Hydrologic Unit Maps \href{http://water.usgs.gov/GIS/huc.html}
 NULL
 
-
 #' Epilimnion Data
 #'
 #' A dataset containing physical and chemical attributes of the lakes' epilimnion (surface waters).
