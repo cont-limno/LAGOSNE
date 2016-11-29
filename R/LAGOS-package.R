@@ -33,6 +33,34 @@ NULL
 #' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
 NULL
 
+#' HUC 12 Data
+#'
+#' A dataset containing information about the HUC 12 characteristics for LAGOS lakes.
+#' For details on hydrologic units, refer to the USGS hydrologic unit code documentation.
+#'
+#' @format A data frame with 51065 observations and 12 variables:
+#' \itemize{
+#'     \item hu12:
+#'     \item hu12_name:
+#'     \item hu12_country:
+#'     \item hu12_pct_in_us:
+#'     \item hu12_zoneid:
+#'     \item hu12_pct_in_nwi:
+#'     \item hu12_ha:
+#'     \item hu12_ha_in_nwi:
+#'     \item hu12_pct_in_usa:
+#'     \item hu12_ha_in_usa:
+#'     \item hu12_lat:
+#'     \item hu12_long:
+#'     }
+#'
+#' @docType data
+#' @keywords datasets
+#' @name hu12
+#' @references USGS Hydrologic Unit Maps \href{http://water.usgs.gov/GIS/huc.html}
+NULL
+
+
 #' Epilimnion Data
 #'
 #' A dataset containing physical and chemical attributes of the lakes' epilimnion (surface waters).
