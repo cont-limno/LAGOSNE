@@ -167,3 +167,127 @@ NULL
 #' @name epi.nutr
 #' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
 NULL
+
+#' Lake Attributes
+#'
+#' A dataset containing attributes of lakes.
+#'
+#' @format A data frame with 141271 observations and 109 variables:
+#' \itemize{
+#'              \item lagoslakeid
+#'              \item nhdid
+#'              \item nhd_lat
+#'              \item nhd_long
+#'              \item lake_area_ha
+#'              \item lake_perim_meters
+#'              \item nhd_fcode
+#'              \item nhd_ftype
+#'              \item greatlakes
+#'              \item lagosname1
+#'              \item meandepth
+#'              \item maxdepth
+#'              \item iws_zoneid
+#'              \item hu4_zoneid
+#'              \item hu4_name
+#'              \item hu6_zoneid
+#'              \item hu6_name
+#'              \item hu8_zoneid
+#'              \item hu8_name
+#'              \item hu12_zoneid
+#'              \item hu12_name
+#'              \item edu_zoneid
+#'              \item edu_name
+#'              \item county_zoneid
+#'              \item county_name
+#'              \item state_name
+#'              \item state_zoneid
+#'              \item hu4
+#'              \item hu6
+#'              \item hu12
+#'              \item hu8
+#'              \item iws_areaha
+#'              \item iws_perimkm
+#'              \item iws_pct_in_usa
+#'              \item iws_ha_in_usa
+#'              \item iws_pct_in_nwi
+#'              \item iws_ha_in_nwi
+#'              \item lakeconnectivity
+#'              \item lakes4ha_upstreamlakes_upstream_lakes_4ha_count
+#'              \item lakes4ha_upstreamlakes_upstream_lakes_4ha_area_ha
+#'              \item lakes4ha_upstreamlakes_upstream_lakes_10ha_count
+#'              \item lakes4ha_upstreamlakes_upstream_lakes_10ha_area_ha
+#'              \item lakes4ha_latewisconsinglaciation_glacial
+#'              \item iws_wetlands_allwetlandsundissolved_avgsize_ha
+#'              \item iws_wetlands_allwetlandsundissolved_overlapping_area_ha
+#'              \item iws_wetlands_allwetlandsundissolved_contributing_area_ha
+#'              \item iws_wetlands_allwetlandsundissolved_overlapping_area_pct
+#'              \item iws_wetlands_allwetlandsundissolved_count
+#'              \item iws_wetlands_isolatedwetlandsundissolved_avgsize_ha
+#'              \item iws_wetlands_isolatedwetlandsundissolved_overlapping_area_ha
+#'              \item iws_wetlands_isolatedwetlandsundissolved_contributing_area_ha
+#'              \item iws_wetlands_isolatedwetlandsundissolved_overlapping_area_pct
+#'              \item iws_wetlands_isolatedwetlandsundissolved_count
+#'              \item iws_wetlands_singlewetlandsundissolved_avgsize_ha
+#'              \item iws_wetlands_singlewetlandsundissolved_overlapping_area_ha
+#'              \item iws_wetlands_singlewetlandsundissolved_contributing_area_ha
+#'              \item iws_wetlands_singlewetlandsundissolved_overlapping_area_pct
+#'              \item iws_wetlands_singlewetlandsundissolved_count
+#'              \item iws_wetlands_connectedwetlandsundissolved_avgsize_ha
+#'              \item iws_wetlands_connectedwetlandsundissolved_overlapping_area_ha
+#'              \item iws_wetlands_connectedwetlandsundissolved_contributing_area_ha
+#'              \item iws_wetlands_connectedwetlandsundissolved_overlapping_area_pct
+#'              \item iws_wetlands_connectedwetlandsundissolved_count
+#'              \item iws_wetlands_forestedwetlandsundissolved_avgsize_ha
+#'              \item iws_wetlands_forestedwetlandsundissolved_overlapping_area_ha
+#'              \item iws_wetlands_forestedwetlandsundissolved_contributing_area_ha
+#'              \item iws_wetlands_forestedwetlandsundissolved_overlapping_area_pct
+#'              \item iws_wetlands_forestedwetlandsundissolved_count
+#'              \item iws_wetlands_scrubshrubwetlandsundissolved_avgsize_ha
+#'              \item iws_wetlands_scrubshrubwetlandsundissolved_overlapping_area_ha
+#'              \item iws_wetlands_scrubshrubwetlandsundissolved_contributing_area_ha
+#'              \item iws_wetlands_scrubshrubwetlandsundissolved_overlapping_area_pct
+#'              \item iws_wetlands_scrubshrubwetlandsundissolved_count
+#'              \item iws_wetlands_openwaterwetlandsundissolved_avgsize_ha
+#'              \item iws_wetlands_openwaterwetlandsundissolved_overlapping_area_ha
+#'              \item iws_wetlands_openwaterwetlandsundissolved_contributing_area_ha
+#'              \item iws_wetlands_openwaterwetlandsundissolved_overlapping_area_pct
+#'              \item iws_wetlands_openwaterwetlandsundissolved_count
+#'              \item iws_wetlands_regimeawetlandsundissolved_avgsize_ha
+#'              \item iws_wetlands_regimeawetlandsundissolved_overlapping_area_ha
+#'              \item iws_wetlands_regimeawetlandsundissolved_contributing_area_ha
+#'              \item iws_wetlands_regimeawetlandsundissolved_overlapping_area_pct
+#'              \item iws_wetlands_regimeawetlandsundissolved_count
+#'              \item iws_wetlands_regimecwetlandsundissolved_avgsize_ha
+#'              \item iws_wetlands_regimecwetlandsundissolved_overlapping_area_ha
+#'              \item iws_wetlands_regimecwetlandsundissolved_contributing_area_ha
+#'              \item iws_wetlands_regimecwetlandsundissolved_overlapping_area_pct
+#'              \item iws_wetlands_regimecwetlandsundissolved_count
+#'              \item iws_wetlands_regimefwetlandsundissolved_avgsize_ha
+#'              \item iws_wetlands_regimefwetlandsundissolved_overlapping_area_ha
+#'              \item iws_wetlands_regimefwetlandsundissolved_contributing_area_ha
+#'              \item iws_wetlands_regimefwetlandsundissolved_overlapping_area_pct
+#'              \item iws_wetlands_regimefwetlandsundissolved_count
+#'              \item iws_wetlands_regimegwetlandsundissolved_avgsize_ha
+#'              \item iws_wetlands_regimegwetlandsundissolved_overlapping_area_ha
+#'              \item iws_wetlands_regimegwetlandsundissolved_contributing_area_ha
+#'              \item iws_wetlands_regimegwetlandsundissolved_overlapping_area_pct
+#'              \item iws_wetlands_regimegwetlandsundissolved_count
+#'              \item iws_wetlands_regimehwetlandsundissolved_avgsize_ha
+#'              \item iws_wetlands_regimehwetlandsundissolved_overlapping_area_ha
+#'              \item iws_wetlands_regimehwetlandsundissolved_contributing_area_ha
+#'              \item iws_wetlands_regimehwetlandsundissolved_overlapping_area_pct
+#'              \item iws_wetlands_regimehwetlandsundissolved_count
+#'              \item iws_wetlands_allwetlandsdissolved_avgsize_ha
+#'              \item iws_wetlands_allwetlandsdissolved_overlapping_area_ha
+#'              \item iws_wetlands_allwetlandsdissolved_contributing_area_ha
+#'              \item iws_wetlands_allwetlandsdissolved_overlapping_area_pct
+#'              \item iws_wetlands_allwetlandsdissolved_count
+#'              \item iws_nwiexclusions
+#'              \item samplemonth
+#'     }
+#'
+#' @docType data
+#' @keywords datasets
+#' @name lagoslakes
+#' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
+NULL
