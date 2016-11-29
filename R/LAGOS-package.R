@@ -38,7 +38,7 @@ NULL
 #' A dataset containing information about the HUC 12 characteristics for LAGOS lakes.
 #' For details on hydrologic units, refer to the USGS hydrologic unit code documentation.
 #'
-#' @format A data frame with 51065 observations and 12 variables:
+#' @format A data frame with 20257 observations of 12 variables:
 #' \itemize{
 #'     \item hu12:
 #'     \item hu12_name:
