@@ -57,7 +57,7 @@ NULL
 #' @docType data
 #' @keywords datasets
 #' @name hu12
-#' @references USGS Hydrologic Unit Maps \href{http://water.usgs.gov/GIS/huc.html}
+#' @references \href{http://water.usgs.gov/GIS/huc.html}{USGS Hydrologic Unit Maps}
 NULL
 
 #' Epilimnion Data

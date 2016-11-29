@@ -24,7 +24,7 @@ A dataset containing information about the HUC 12 characteristics for LAGOS lake
 For details on hydrologic units, refer to the USGS hydrologic unit code documentation.
 }
 \references{
-USGS Hydrologic Unit Maps \href{http://water.usgs.gov/GIS/huc.html}
+\href{http://water.usgs.gov/GIS/huc.html}{USGS Hydrologic Unit Maps}
 }
 \keyword{datasets}
 
