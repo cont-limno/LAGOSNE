@@ -38,6 +38,8 @@ LAGOS
     |___Geo
     |
     |___ Limno10541
+    |
+    |___ Limno10542
 
 ```
 
@@ -50,13 +52,13 @@ library(LAGOS)
 ### Compile `txt` files to `rds`
 
 ```r
-LAGOS:::lagos_compile(version = "1.054.1", format = "rds")
+LAGOS:::lagos_compile(version = "1.054.2", format = "rds")
 ```
 
 ### Load compiled `rds` object
 
 ```r
-dt_rds <- lagos_load(version = "1.054.1", format = "rds")
+dt_rds <- lagos_load(version = "1.054.2", format = "rds")
 ```
 
 ### Select desired table-columns from `rds`
