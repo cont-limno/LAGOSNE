@@ -9,6 +9,8 @@
 #'@examples \dontrun{
 #' lagos_compile("1.054.1", format = "rds")
 #' lagos_compile("1.054.1", format = "sqlite")
+#'
+#' lagos_compile("1.054.2", format = "rds")
 #' }
 #'
 lagos_compile <- function(version, format = "rds"){
@@ -41,6 +43,9 @@ lagos_compile <- function(version, format = "rds"){
     res <- list("geo" = geo, "limno" = limno, "info" = info)
     res <- purrr::flatten(res)
 
-    saveRDS(res, file.path(lagos_path(), paste0("data_", version, ".rds")))
+    outpath <- file.path(lagos_path(), paste0("data_", version, ".rds"))
+
+    saveRDS(res, outpath)
+    message(paste0("LAGOS compiled to ", outpath))
   }
 }

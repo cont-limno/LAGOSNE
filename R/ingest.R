@@ -9,17 +9,23 @@
 #'
 lagos_ingest <- function(version){
 
+  folder_version <- gsub("\\.", "", version)
+
   # Importing Lagos limno data ####
-  epi.nutr  <- load_lagos_txt("data-raw/Limno10541/lagos_epi_nutr_10541.txt",
+  limno_prefix  <- paste0("data-raw/Limno", folder_version, "/")
+  limno_path    <- function(fname){paste0(limno_prefix, fname, "_",
+                    folder_version, ".txt")}
+
+  epi.nutr  <- load_lagos_txt(limno_path("lagos_epi_nutr"),
                               colClasses = c(sampledate = "POSIXct"))
 
-  lake.specific<- load_lagos_txt("data-raw/Limno10541/lagos_lakes_10541.txt")
+  lake.specific<- load_lagos_txt(limno_path("lagos_lakes"))
 
-  secchi       <- load_lagos_txt('data-raw/Limno10541/lagos_secchi_10541.txt')
+  secchi       <- load_lagos_txt(limno_path('lagos_secchi'))
 
-  lagos.source <- load_lagos_txt('data-raw/Limno10541/lagos_source_10541.txt')
+  lagos.source <- load_lagos_txt(limno_path('lagos_source'))
 
-  lagos.program<- load_lagos_txt('data-raw/Limno10541/lagos_program_10541.txt')
+  lagos.program<- load_lagos_txt(limno_path('lagos_program'))
 
 
   # Importing Lagos Geo data ####
