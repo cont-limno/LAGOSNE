@@ -4,7 +4,7 @@
 \name{edu}
 \alias{edu}
 \title{Ecological Drainage Unit Data}
-\format{A data frame with 955 observations of 8 variables:
+\format{A data frame with 91 observations of 10 variables:
 \itemize{
     \item csi_edu: text name of the zone
     \item edu_lat: latitude of centroid of each polygon in decimal degrees (NAD83)

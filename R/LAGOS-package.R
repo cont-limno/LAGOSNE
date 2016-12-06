@@ -161,23 +161,20 @@ NULL
 #' A dataset containing information about state characteristics for LAGOS lakes.
 #' For details on zone delineations, see additional file 7 in Soranno et al. (2015).
 #'
-#' @format A data frame with 955 observations of 8 variables:
+#' @format A data frame with 17 observations of 7 variables:
 #' \itemize{
-#'     \item csi_edu: text name of the zone
-#'     \item edu_lat: latitude of centroid of each polygon in decimal degrees (NAD83)
-#'     \item edu_long: longitude of centroid of each polygon in decimal degrees (NAD83)
-#'     \item edu_country: zonal units identified as totally within the US ("US") or cross the US-Canada border ("US_CA")
-#'     \item edu_zoneid: unique zone identifier
-#'     \item edu_pct_in_nwi: percent of polygon within the USFWS National Wetland Inventory (NWI) boundary
-#'     \item edu_ha: surface area (ha) of polygon
-#'     \item edu_ha_in_nwi: area (ha) of polygon within the USFWS National Wetland Inventory (NWI) boundary
-#'     \item edu_pct_in_usa: percent of polygon within the US boundary
-#'     \item edu_ha_in_usa: area (ha) of polygon within the US boundary
+#'     \item state: abbreviation of state name
+#'     \item state_name: text name of state
+#'     \item state_zoneid: unique zone identifier
+#'     \item state_lat: latitude of centroid of each polygon in decimal degrees (NAD83)
+#'     \item state_long: longitude of centroid of each polygon in decimal degrees (NAD83)
+#'     \item state_pct_in_nwi: percent of polygon within the USFWS National Wetland Inventory (NWI) boundary
+#'     \item state_ha_in_nwi: area (ha) of polygon within the USFWS National Wetland Inventory (NWI) boundary
 #'     }
 #'
 #' @docType data
 #' @keywords datasets
-#' @name edu
+#' @name state
 #' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
 NULL
 
