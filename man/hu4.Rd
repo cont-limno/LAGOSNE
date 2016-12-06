@@ -12,8 +12,8 @@
     \item hu4_ha: surface area (ha) of zonal polygon
     \item hu4_pct_in_nwi: percent of polygon within the USFWS National Wetland Inventory (NWI) boundary
     \item hu4_ha_in_nwi: area (ha) of polygon within the USFWS National Wetland Inventory (NWI) boundary
-    \item hu12_lat: latitude of centroid of each polygon in decimal degrees (NAD83)
-    \item hu12_long: longitude of centroid of each polygon in decimal degrees (NAD83)
+    \item hu4_lat: latitude of centroid of each polygon in decimal degrees (NAD83)
+    \item hu4_long: longitude of centroid of each polygon in decimal degrees (NAD83)
     \item hu4_zoneid: unique zone identifier
     }}
 \description{
