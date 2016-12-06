@@ -18,7 +18,14 @@ Load LAGOS files from local file system
 }
 \examples{
 \dontrun{
-dt <- lagos_load("1.054.1")
+dt  <- lagos_load("1.054.1")
+dt2 <- lagos_load("1.054.2")
+
+compare_columns <- function(num){
+ identical(dt2$epi.nutr[,num], dt$epi.nutr[,num])
+}
+names(dt2$epi.nutr)[sapply(13:94, compare_columns)]
+
 }
 }
 

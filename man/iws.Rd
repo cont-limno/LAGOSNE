@@ -6,16 +6,16 @@
 \title{Watershed Data}
 \format{A data frame with 51065 observations and 12 variables:
 \itemize{
-    \item iws_nhdid: a unique indentifier for each lake from the National Hydrography Dataset
-    \item iws_areaha: area of IWS in hectares
-    \item iws_perimkm: perimeter of IWS in kilometers
-    \item iws_lat: latitude of the IWS
-    \item iws_long: longitude of the IWS
-    \item iws_lakeareaha
-    \item iws_pct_in_usa
-    \item iws_ha_in_usa
-    \item iws_pct_in_nwi
-    \item iws_ha_in_nwi
+    \item iws_nhdid: permanent lake-specific identifier from the National Hydrography Dataset
+    \item iws_areaha: area (ha) of IWS
+    \item iws_perimkm: perimeter (km) of IWS
+    \item iws_lat: latitude of centroid of IWS polygon in decimal degrees (NAD83)
+    \item iws_long: longitude of centroid of IWS polygon in decimal degrees (NAD83)
+    \item iws_lakeareaha: lake area (ha) of focal lake within iws polygon
+    \item iws_pct_in_usa: percent of polygon within the US boundary
+    \item iws_ha_in_usa: area (ha) of polygon within the US boundary
+    \item iws_pct_in_nwi: percent of polygon within the USFWS National Wetland Inventory (NWI) boundary
+    \item iws_ha_in_nwi: area (ha) of polygon within the USFWS National Wetland Inventory (NWI) boundary
     \item iws_zoneid: a unique identifier for each IWS in LAGOS
     \item iws_lagoslakeid: a unique identifier for each lake in LAGOS
     }}

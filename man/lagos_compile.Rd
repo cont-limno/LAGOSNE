@@ -18,6 +18,8 @@ Compile LAGOS data from component flat files
 \dontrun{
 lagos_compile("1.054.1", format = "rds")
 lagos_compile("1.054.1", format = "sqlite")
+
+lagos_compile("1.054.2", format = "rds")
 }
 
 }

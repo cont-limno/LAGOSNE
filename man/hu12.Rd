@@ -6,18 +6,18 @@
 \title{HUC 12 Data}
 \format{A data frame with 20257 observations of 12 variables:
 \itemize{
-    \item hu12:
-    \item hu12_name:
-    \item hu12_country:
-    \item hu12_pct_in_us:
-    \item hu12_zoneid:
-    \item hu12_pct_in_nwi:
-    \item hu12_ha:
-    \item hu12_ha_in_nwi:
-    \item hu12_pct_in_usa:
-    \item hu12_ha_in_usa:
-    \item hu12_lat:
-    \item hu12_long:
+    \item hu12: NHD HUC identifier
+    \item hu12_name: text name of the zone
+    \item hu12_country: zonal units identified as totally within the US ("US") or cross the US-Canada border ("US_CA")
+    \item hu12_pct_in_us: percent of polygon within the US boundary
+    \item hu12_zoneid: unique zone identifier
+    \item hu12_pct_in_nwi: percent of polygon within the USFWS National Wetland Inventory (NWI) boundary
+    \item hu12_ha: surface area (ha) of zonal polygon
+    \item hu12_ha_in_nwi: area (ha) of polygon within the USFWS National Wetland Inventory (NWI) boundary
+    \item hu12_pct_in_usa: percent of polygon within the US boundary
+    \item hu12_ha_in_usa: area (ha) of polygon within the US boundary
+    \item hu12_lat: latitude of centroid of each polygon in decimal degrees (NAD83)
+    \item hu12_long: longitude of centroid of each polygon in decimal degrees (NAD83)
     }}
 \description{
 A dataset containing information about the HUC 12 characteristics for LAGOS lakes.

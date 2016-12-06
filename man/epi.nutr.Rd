@@ -6,100 +6,38 @@
 \title{Epilimnion Data}
 \format{A data frame with 276488 observations and 94 variables:
 \itemize{
-            \item eventida10541
-            \item lagoslakeid
-            \item programname
-            \item programtype
-            \item lagosversion
-            \item sampledate
-            \item chla
-            \item colora
-            \item colort
-            \item dkn
-            \item doc
-            \item nh4
-            \item no2
-            \item no2no3
-            \item srp
-            \item tdn
-            \item tdp
-            \item tkn
-            \item tn
-            \item toc
-            \item ton
-            \item tp
-            \item secchi
-            \item chla_qual
-            \item colora_qual
-            \item colort_qual
-            \item dkn_qual
-            \item doc_qual
-            \item nh4_qual
-            \item no2_qual
-            \item no2no3_qual
-            \item srp_qual
-            \item tdn_qual
-            \item tdp_qual
-            \item tkn_qual
-            \item tn_qual
-            \item toc_qual
-            \item ton_qual
-            \item tp_qual
-            \item secchi_qual
-            \item chla_censorcode
-            \item colora_censorcode
-            \item colort_censorcode
-            \item dkn_censorcode
-            \item doc_censorcode
-            \item nh4_censorcode
-            \item no2_censorcode
-            \item no2no3_censorcode
-            \item secchi_censorcode
-            \item srp_censorcode
-            \item tdn_censorcode
-            \item tdp_censorcode
-            \item tkn_censorcode
-            \item tn_censorcode
-            \item toc_censorcode
-            \item ton_censorcode
-            \item tp_censorcode
-            \item chla_detectionlimit
-            \item colora_detectionlimit
-            \item colort_detectionlimit
-            \item dkn_detectionlimit
-            \item doc_detectionlimit
-            \item nh4_detectionlimit
-            \item no2_detectionlimit
-            \item no2no3_detectionlimit
-            \item secchi_detectionlimit
-            \item srp_detectionlimit
-            \item tdn_detectionlimit
-            \item tdp_detectionlimit
-            \item tkn_detectionlimit
-            \item tn_detectionlimit
-            \item toc_detectionlimit
-            \item ton_detectionlimit
-            \item tp_detectionlimit
-            \item chla_labmethodname
-            \item colora_labmethodname
-            \item colort_labmethodname
-            \item dkn_labmethodname
-            \item doc_labemthodname
-            \item nh4_labmethodname
-            \item no2_labmethodname
-            \item no2no3_labmethodname
-            \item srp_labmethodname
-            \item tdn_labmethodname
-            \item tdp_labmethodname
-            \item tkn_labmethodname
-            \item tn_labmethodname
-            \item toc_labmethodname
-            \item tp_labmethodname
-            \item chla_methodinfo
-            \item nh4_methodinfo
-            \item secchi_methodinfo
-            \item sampleyear
-            \item samplemonth
+            \item eventida10542: unique combination of programid, lakeid, and date for each sampling event in LAGOS
+            \item lagoslakeid: unique integer identifier for each lake in LAGOS
+            \item programname: name of the sampling/monitoring program that collected the data
+            \item programtype: categorical description of the type of sampling/monitoring effort (Federal Agency, LTER = Long Term Ecological Research program, National Survey Program, Non-Profit Agency, State Agency, State Agency/Citizen Monitoring Program, State Agency/University/Citizen Monitoring Program, State Agency/Citizen Monitoring Program, Tribal Agency, University)
+            \item lagosversion: current version of LAGOS that the data record belongs to
+            \item sampledate: date at which the sample was collected, stored in date format (YYYY-MM-DD)
+            \item chla: chlorophyll a (µg/l)
+            \item colora: color, apparent (PCU)
+            \item colort: color, true (PCU)
+            \item dkn: nitrogen, dissolved Kjeldahl  (µg/l as N)
+            \item doc: carbon, dissolved organic (µg/l as C)
+            \item nh4: nitrogen, ammonium NH4 (µg/l as N)
+            \item no2: nitrogen, nitrite NO2 (µg/l as N)
+            \item no2no3: nitrogen, nitrite NO2 + nitrate NO3 nitrogen (µg/l as N)
+            \item srp: phosphorus, soluble reactive  (µg/l as P)
+            \item tdn: nitrogen, total dissolved (µg/l as N)
+            \item tdp: phosphorus, total dissolved (µg/l as P)
+            \item tkn: nitrogen, total Kjeldahl (µg/l as N)
+            \item tn: nitrogen, total (µg/l as N)
+            \item toc: carbon, total organic (µg/l as C)
+            \item ton: nitrogen, total organic (µg/l as N)
+            \item tp: phosphorus, total (µg/l as P)
+            \item secchi: Secchi disk transparency (m)
+            \item *_qual: data flags from the source program for each water quality parameter. For example, "chla_qual" is the variable name for the data flag for chlorophyll a observations.
+            \item *_censorcode: identifies whether a data value is censored and the censor type for each water quality parameter. For example, "chla_censorcode" is the variable name for censor information regarding chlorophyll a observations.
+            \item *_detectionlimit: the detection limit used by the source program for each water quality parameter. For example, "chla_detectionlimit" is the name of the variable that reports detection limits for chlorophyll a observations.
+            \item *_labmethodname: analytical procedure, from a standards body if available for each water quality parameter. For example, "chla_labmethodname" is the variable name for lab methods associated with each chlorophyll a observation.
+            \item chla_methodinfo: flag to indicate variable was sampled using different methods. "CHLA_UNFILTERED" means that a sample was
+            \item nh4_methodinfo: flag to indicate variable was sampled using different methods. "DISSOLVED" means that a sample was
+            \item secchi_methodinfo: flag to indicate variable was sampled using different methods. "SECCHI_VIEW" means that Secchi depth was measured using a viewer box, whereas "SECCHI_VIEW_UNKNOWN" reports observations where it is unclear if a Secchi viewer box was used. A secchi observation without a methodinfo code means the Secchi depth was made without the viewer box.
+            \item sampleyear: year in which sample was collected
+            \item samplemonth: month in which sample was collected
     }}
 \description{
 A dataset containing physical and chemical attributes of the lakes' epilimnion (surface waters).
