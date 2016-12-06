@@ -76,12 +76,35 @@ NULL
 #'     \item hu12_lat: latitude of centroid of each polygon in decimal degrees (NAD83)
 #'     \item hu12_long: longitude of centroid of each polygon in decimal degrees (NAD83)
 #'     \item hu8_zoneid: unique zone identifier
-
 #'     }
 #'
 #' @docType data
 #' @keywords datasets
 #' @name hu8
+#' @references \href{http://water.usgs.gov/GIS/huc.html}{USGS Hydrologic Unit Maps}
+NULL
+
+#' HUC 4 Data
+#'
+#' A dataset containing information about the HUC 4 characteristics for LAGOS lakes.
+#' For details on hydrologic units, refer to the USGS hydrologic unit code documentation.
+#'
+#' @format A data frame with 65 observations of 9 variables:
+#' \itemize{
+#'     \item hu4_states: abbreviations of states intersecting each zonal unit
+#'     \item hu4: NHD HUC identifier
+#'     \item hu4_name: text name of the zone
+#'     \item hu4_ha: surface area (ha) of zonal polygon
+#'     \item hu4_pct_in_nwi: percent of polygon within the USFWS National Wetland Inventory (NWI) boundary
+#'     \item hu4_ha_in_nwi: area (ha) of polygon within the USFWS National Wetland Inventory (NWI) boundary
+#'     \item hu12_lat: latitude of centroid of each polygon in decimal degrees (NAD83)
+#'     \item hu12_long: longitude of centroid of each polygon in decimal degrees (NAD83)
+#'     \item hu4_zoneid: unique zone identifier
+#'     }
+#'
+#' @docType data
+#' @keywords datasets
+#' @name hu4
 #' @references \href{http://water.usgs.gov/GIS/huc.html}{USGS Hydrologic Unit Maps}
 NULL
 
