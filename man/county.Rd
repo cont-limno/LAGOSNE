@@ -17,7 +17,7 @@
     }}
 \description{
 A dataset containing information about county characteristics for LAGOS lakes.
-For details on zone delineations, see additional file 8 in Soranno et al. (2015).
+For details on zone delineations, see additional file 7 in Soranno et al. (2015).
 }
 \references{
 Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
