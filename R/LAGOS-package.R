@@ -108,6 +108,29 @@ NULL
 #' @references \href{http://water.usgs.gov/GIS/huc.html}{USGS Hydrologic Unit Maps}
 NULL
 
+#' County Data
+#'
+#' A dataset containing information about county characteristics for LAGOS lakes.
+#' For details on zone delineations, see additional file 8 in Soranno et al. (2015).
+#'
+#' @format A data frame with 955 observations of 8 variables:
+#' \itemize{
+#'     \item county_state: abbreviation of state corresponding to the county
+#'     \item county_name: text name of the zone
+#'     \item county_ha_in_nwi: area (ha) of polygon within the USFWS National Wetland Inventory (NWI) boundary
+#'     \item county_ha: surface area (ha) of polygon
+#'     \item county_zoneid: unique zone identifier
+#'     \item county_pct_in_nwi: percent of polygon within the USFWS National Wetland Inventory (NWI) boundary
+#'     \item county_lat: latitude of centroid of each polygon in decimal degrees (NAD83)
+#'     \item county_long: longitude of centroid of each polygon in decimal degrees (NAD83)
+#'     }
+#'
+#' @docType data
+#' @keywords datasets
+#' @name county
+#' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
+NULL
+
 #' Epilimnion Data
 #'
 #' A dataset containing physical and chemical attributes of the lakes' epilimnion (surface waters).
