@@ -4,7 +4,7 @@
 \name{epi.nutr}
 \alias{epi.nutr}
 \title{Epilimnion Data}
-\format{A data frame with 276488 observations and 94 variables:
+\format{A data frame with 276588 observations and 94 variables:
 \itemize{
             \item eventida10542: unique combination of programid, lakeid, and date for each sampling event in LAGOS
             \item lagoslakeid: unique integer identifier for each lake in LAGOS

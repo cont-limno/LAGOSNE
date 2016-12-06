@@ -60,11 +60,36 @@ NULL
 #' @references \href{http://water.usgs.gov/GIS/huc.html}{USGS Hydrologic Unit Maps}
 NULL
 
+#' HUC 8 Data
+#'
+#' A dataset containing information about the HUC 8 characteristics for LAGOS lakes.
+#' For details on hydrologic units, refer to the USGS hydrologic unit code documentation.
+#'
+#' @format A data frame with 511 observations of 9 variables:
+#' \itemize{
+#'     \item hu8_states: abbreviations of states intersecting each zonal unit
+#'     \item hu8: NHD HUC identifier
+#'     \item hu8_name: text name of the zone
+#'     \item hu8_ha: surface area (ha) of zonal polygon
+#'     \item hu8_pct_in_nwi: percent of polygon within the USFWS National Wetland Inventory (NWI) boundary
+#'     \item hu8_ha_in_nwi: area (ha) of polygon within the USFWS National Wetland Inventory (NWI) boundary
+#'     \item hu12_lat: latitude of centroid of each polygon in decimal degrees (NAD83)
+#'     \item hu12_long: longitude of centroid of each polygon in decimal degrees (NAD83)
+#'     \item hu8_zoneid: unique zone identifier
+
+#'     }
+#'
+#' @docType data
+#' @keywords datasets
+#' @name hu8
+#' @references \href{http://water.usgs.gov/GIS/huc.html}{USGS Hydrologic Unit Maps}
+NULL
+
 #' Epilimnion Data
 #'
 #' A dataset containing physical and chemical attributes of the lakes' epilimnion (surface waters).
 #'
-#' @format A data frame with 276488 observations and 94 variables:
+#' @format A data frame with 276588 observations and 94 variables:
 #' \itemize{
 #'             \item eventida10542: unique combination of programid, lakeid, and date for each sampling event in LAGOS
 #'             \item lagoslakeid: unique integer identifier for each lake in LAGOS
