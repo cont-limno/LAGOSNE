@@ -47,12 +47,12 @@ For details on how the watersheds were delineated, see additional file 8 in Sora
 Original data sources and layers from which each metric was derived can be found in additional file 5 of Soranno et al. (2015).
 }
 \details{
-Note the variable descriptions below for each National Land Cover Database (NLCD)
+Note the variable descriptions above for each National Land Cover Database (NLCD)
 code are not repeated for each year and statistic combination.
-NLCD data come from multiple years (* = 1992, 2001, 2006 and 2011) and were calculated as either the total area in hectares of coverage or percent coverage (** = ha, pct).
+NLCD data come from multiple years (* = 1992, 2001, 2006, 2011) and were calculated as either the total area in hectares of coverage or percent coverage (** = ha, pct).
 }
 \references{
-Soranno et al. (2015) \href{http://www.mrlc.gov/nlcd2011.php}{National Land Cover Database},
+Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}; \href{http://www.mrlc.gov/nlcd2011.php}{National Land Cover Database},
 }
 \keyword{datasets}
 
