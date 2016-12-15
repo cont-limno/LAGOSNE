@@ -24,7 +24,9 @@ lagos_compile("1.054.1", format = "rds")
 lagos_compile("1.054.1", format = "sqlite")
 
 lagos_compile("1.054.2", format = "rds")
-lagos_compile("1.054.2", format = "rds", limno_folder = "~/Downloads/Version1.054.2", geo_folder = "~/Downloads/LAGOS_VER1.03")
+lagos_compile("1.054.2", format = "rds",
+ limno_folder = "~/Downloads/Version1.054.2",
+ geo_folder = "~/Downloads/LAGOS_VER1.03")
 }
 
 }
