@@ -24,24 +24,7 @@ New Project -> Version Control -> Git ->
  
 ### Data
 
-For development purposes, the package will assume that the raw `txt` files required to run `LAGOS:::lagos_compile` will be located in a `data-raw` folder within the repository (but not under version control) in the same structure as Dropbox. Eventually, users will be able to run `LAGOS::lagos_get` to supply `LAGOS::lagos_compile` with the flat files from GigaScience stored in the location returned by `rappdirs::user_data_dir`.
-
-```
-LAGOS
-|
-|___man
-|
-|___R
-|
-|___data-raw
-    |
-    |___Geo
-    |
-    |___ Limno10541
-    |
-    |___ Limno10542
-
-```
+Until the data exports have been loaded to Gigascience (or elsewhere) users must supply the path to their `limno` and `geo` data folders to the `lagos_compile` function (see example below). Eventually, users will be able to run `lagos_get` to supply `LAGOS::lagos_compile` with the flat files from GigaScience without having to deal with file paths. All data returned by `lagos_get` and `lagos_compile` is stored in the location returned by `rappdirs::user_data_dir`.
 
 ## Usage
 
@@ -52,13 +35,15 @@ library(LAGOS)
 ### Compile `txt` files to `rds`
 
 ```r
-LAGOS:::lagos_compile(version = "1.054.2", format = "rds")
+lagos_compile("1.054.2", format = "rds",
+  limno_folder = "~/Downloads/Version1.054.2",
+  geo_folder   = "~/Downloads/LAGOS_VER1.03")
 ```
 
 ### Load compiled `rds` object
 
 ```r
-dt_rds <- lagos_load(version = "1.054.2", format = "rds")
+dt <- lagos_load(version = "1.054.2", format = "rds")
 ```
 
 ### Select desired table-columns from `rds`
@@ -69,41 +54,6 @@ table_columns <- list("epi.nutr" = c("lagoslakeid", "tp", "tn"),
 dt_rds    <- lagos_select(dt_rds, table_column_nested = table_columns)
 
 dt_rds    <- dplyr::left_join(dt_rds$epi.nutr, dt_rds$iws.lulc,
-                  by = c("lagoslakeid" = "iws_lagoslakeid"))
-```
-
-### Compile `txt` files to `sqlite`
-
-> The `LAGOS` `sqlite` commands require some packages not yet available from CRAN. The development versions of the `DBI` and `RSQLite` packages can be installed by running the following commands from the R console:
-
-> ```r
-> devtools::install_github("rstats-db/DBI")
-> devtools::install_github("rstats-db/RSQLite")
-> ```
-
-> To install from Github, you'll need a [development environment](https://support.rstudio.com/hc/en-us/articles/200486498-Package-Development-Prerequisites).
-
-
-```r
-LAGOS:::lagos_compile(version = "1.054.1", format = "sqlite")
-```
-
-### Load compiled `sqlite` object
-
-```r
-dt_sqlite <- lagos_load(version = "1.054.1", format = "sqlite")
-```
-
-### Select desired table-columns from `sqlite`
-
-```r
-epi.nutr <- dplyr::tbl(dt_sqlite, "epi.nutr") %>%
-              dplyr::select(lagoslakeid, tp, tn)
-
-iws.lulc <- dplyr::tbl(dt_sqlite, "iws.lulc") %>%
-              dplyr::select(iws_lagoslakeid, iws_nlcd2011_pct_95)
-
-dt_sqlite <- dplyr::left_join(epi.nutr, iws.lulc,
                   by = c("lagoslakeid" = "iws_lagoslakeid"))
 ```
 
