@@ -1,9 +1,12 @@
 
 #'@name lagos_compile
 #'@title Compile LAGOS data
+#'@export
 #'@description Compile LAGOS data from component flat files
 #'@param version character LAGOS database version string
 #'@param format character choice of "rds" or "sqlite"
+#'@param limno_folder file.path to limno export folder. optional.
+#'@param geo_folder file.path to geo export folder. optional.
 #'@importFrom utils read.table
 #'@importFrom rappdirs user_data_dir
 #'@examples \dontrun{
@@ -11,11 +14,15 @@
 #' lagos_compile("1.054.1", format = "sqlite")
 #'
 #' lagos_compile("1.054.2", format = "rds")
+#' lagos_compile("1.054.2", format = "rds",
+#'  limno_folder = "~/Downloads/Version1.054.2",
+#'  geo_folder = "~/Downloads/LAGOS_VER1.03")
 #' }
 #'
-lagos_compile <- function(version, format = "rds"){
+lagos_compile <- function(version, format = "rds", limno_folder = NA, geo_folder = NA){
 
-  ingest <- lagos_ingest(version = version)
+  ingest <- lagos_ingest(version = version, limno_folder = limno_folder,
+                         geo_folder = geo_folder)
 
   geo    <- ingest$geo
   limno  <- ingest$limno

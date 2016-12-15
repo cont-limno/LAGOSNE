@@ -4,10 +4,14 @@
 \alias{lagos_ingest}
 \title{Ingest LAGOS flat files}
 \usage{
-lagos_ingest(version)
+lagos_ingest(version, limno_folder = NA, geo_folder = NA)
 }
 \arguments{
 \item{version}{character LAGOS database version string}
+
+\item{limno_folder}{file.path to limno export folder. optional.}
+
+\item{geo_folder}{file.path to geo export folder. optional.}
 }
 \description{
 Ingest LAGOS data from component flat files

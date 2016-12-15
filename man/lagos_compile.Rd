@@ -4,12 +4,16 @@
 \alias{lagos_compile}
 \title{Compile LAGOS data}
 \usage{
-lagos_compile(version, format = "rds")
+lagos_compile(version, format = "rds", limno_folder = NA, geo_folder = NA)
 }
 \arguments{
 \item{version}{character LAGOS database version string}
 
 \item{format}{character choice of "rds" or "sqlite"}
+
+\item{limno_folder}{file.path to limno export folder. optional.}
+
+\item{geo_folder}{file.path to geo export folder. optional.}
 }
 \description{
 Compile LAGOS data from component flat files
@@ -20,6 +24,7 @@ lagos_compile("1.054.1", format = "rds")
 lagos_compile("1.054.1", format = "sqlite")
 
 lagos_compile("1.054.2", format = "rds")
+lagos_compile("1.054.2", format = "rds", limno_folder = "~/Downloads/Version1.054.2", geo_folder = "~/Downloads/LAGOS_VER1.03")
 }
 
 }
