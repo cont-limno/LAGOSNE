@@ -71,33 +71,6 @@ lagos_select <- function(dt, scale = NULL, category = NULL, table_column_nested 
   nested_full <- table_column_nested
   nested_partial <- NULL
 
-  construct_nested_from_partial <- function(){
-    category_match <- keyword_partial_key()[
-                        keyword_partial_key()[,1] %in% category, 2]
-    table_names    <- unlist(lapply(category_match,
-                        function(x) query_lagos_names(dt, x, tolower(scale))))
-
-    res <- data.frame(cbind(table_names, category_match))
-    res <- suppressMessages(reshape2::dcast(res, category_match ~ table_names))
-    res <- as.list(data.frame(res[,-1, drop = FALSE]))
-    res <- lapply(res, function(x) x[!is.na(x)])
-
-    expand_partial_keywords <- function(res){
-      partial_keyword_elements <- unlist(lapply(res, function(x)
-                                    any(!(x %in% keyword_full_key()[,2]))))
-
-      grepped_keywords <- lapply(res[partial_keyword_elements][[1]],
-                            function(x) query_column_names(dt,
-                            names(res[partial_keyword_elements]), x))
-
-      res[partial_keyword_elements] <- list(unlist(grepped_keywords))
-
-      res
-    }
-
-    expand_partial_keywords(res)
-  }
-
   if(!is.null(category)){
     nested_partial <- construct_nested_from_partial()
   }
@@ -141,4 +114,36 @@ lagos_select <- function(dt, scale = NULL, category = NULL, table_column_nested 
   names(res) <- names(query_tables)
   res
   # purrr::flatten(res)
+}
+
+construct_nested_from_partial <- function(){
+  category_match <- keyword_partial_key()[
+    keyword_partial_key()[,1] %in% category, 2]
+
+  if(length(category_match) == 0){
+    stop(paste0("The '", category, "' category does not exist!"))
+  }
+
+  table_names    <- unlist(lapply(category_match,
+                                  function(x) query_lagos_names(dt, x, tolower(scale))))
+
+  res <- data.frame(cbind(table_names, category_match))
+  res <- suppressMessages(reshape2::dcast(res, category_match ~ table_names))
+  res <- as.list(data.frame(res[,-1, drop = FALSE]))
+  res <- lapply(res, function(x) x[!is.na(x)])
+
+  expand_partial_keywords <- function(res){
+    partial_keyword_elements <- unlist(lapply(res, function(x)
+      any(!(x %in% keyword_full_key()[,2]))))
+
+    grepped_keywords <- lapply(res[partial_keyword_elements][[1]],
+                               function(x) query_column_names(dt,
+                               names(res[partial_keyword_elements]), x))
+
+    res[partial_keyword_elements] <- list(unlist(grepped_keywords))
+
+    res
+  }
+
+  expand_partial_keywords(res)
 }
