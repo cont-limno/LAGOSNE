@@ -13,8 +13,6 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA){
 
   folder_version <- gsub("\\.", "", version)
 
-  # browser()
-
   # Set-up paths ####
   if(!is.na(limno_folder)){
     limno_prefix <- paste0(limno_folder, "/")
@@ -119,9 +117,8 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA){
 
   # Importing lake buffer data ####
 
-  # SEP EQUALS COMMA?????????????????????????
-  lakes4ha.buffer100m <- read.table(geo_path("lakes4ha_buffer100m"),
-                                    sep = ",")
+  lakes4ha.buffer100m <- load_lagos_txt(geo_path("lakes4ha_buffer100m"), sep = ",")
+
   names(lakes4ha.buffer100m)[names(lakes4ha.buffer100m) ==
     "lakes4ha_buffer100m_lagoslakeid"] <- "lagoslakeid"
 
@@ -131,8 +128,7 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA){
   names(lakes4ha.buffer100m.lulc)[names(lakes4ha.buffer100m.lulc) ==
     "lakes4ha_buffer100m_lagoslakeid"] <- "lagoslakeid"
 
-  # SEP EQUALS COMMA?????????????????????????
-  lakes4ha.buffer500m <- read.table(geo_path("lakes4ha_buffer500m"),
+  lakes4ha.buffer500m <- load_lagos_txt(geo_path("lakes4ha_buffer500m"),
                                     sep = ",")
 
   names(lakes4ha.buffer500m)[names(lakes4ha.buffer500m) ==
