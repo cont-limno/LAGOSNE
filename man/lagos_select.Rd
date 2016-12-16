@@ -10,30 +10,34 @@ lagos_select(dt, scale = NULL, category = NULL,
 \arguments{
 \item{dt}{data.frame}
 
-\item{scale}{character filter results by one of:
+\item{scale}{what spatial scale should be kept. Scale refers to the spatial extent at which the variable was calculated. For detailed descriptions of each spatial scale, see Additional File 7 of Soranno et al. (2015). Possible scales include:
 \itemize{
-    \item county
-    \item edu
-    \item hu4
-    \item hu8
-    \item hu12
-    \item state
+    \item "county" - political divisions within states
+    \item "edu" - ecological drainage units, delineated regions which generally share biotic, geographic and climatic characteristics.
+    \item "hu4" - the second level of classification from the nested watershed boundary dataset, called a subregion, with 65 HU4s in the LAGOS study extent.
+    \item "hu8" - the fourth level of classification from the nested watershed boundary dataset, called a watershed, with 511 HU8s in the LAGOS study extent.
+    \item "hu12" - the sixth level of classification from the nested watershed boundary dataset, with 20257 HU12s in the LAGOS study extent.
+    \item "state" - states of the U.S., with 17 states in the LAGOS study extent.
+    \item "iws" - interlake watersheds, defined as the area of land that drains directly into a lake, with a watershed for each 51065 lakes in the LAGOS study extent.
+    \item "buffer100m" - a 100 meter buffer around the lake polygon, with a buffer for each 51065 lakes in the LAGOS study extent
+    \item "buffer500m" - a 500 meter buffer around the lake polygon, with a buffer for each 51065 lakes in the LAGOS study extent
 }}
 
-\item{category}{character
+\item{category}{what type of variables should be kept. Note not all scale-category options are available. Variable categories include:
 \itemize{
-    \item Groups for the "limno" tables include water.quality (all
-          chemistry + chlorophyll + water clarity measures).
-    \item Groups for "geo" .chag tables include deposition (all atmospheric
-          deposition related variables), hydrology (baseflow, groundwater,
-          runoff and overland flow variables), climate (30-year normal
-          precipitation and temperature variables), and geology (all
-          surficial geology variables)
-    \item Groups for the "geo" .lulc tables include topography (Terrain
-          Roughness Index and slope variables), lulc1992 (all LULC variables #'           from 1992), lulc2001, lulc2006, lulc2011.
-    \item Groups for the "geo" .conn tables include lakes (all lake
-          connectivity metrics), wetlands (all wetland connectivity metrics)
-          and streams (all stream/river connectivity metrics)
+    \item "water.quality" - includes all in-situ chemistry, chlorophyll, and water clarity measurements.
+    \item "deposition" - all atmospheric deposition variables from the .chag tables
+    \item "hydrology" - baseflow, groundwater, runoff, and overland flow variables from the .chag tables
+    \item "climate" - 30-year normal precipitation and temperature variables from the .chag tables
+    \item "geology" - all surficial geology variables from the .chag tables
+    \item "topography" - Terrain Roughness Index and slope variables from the .lulc tables
+    \item "lulc1992" - all 1992 land use/land cover variables from the .lulc tables
+    \item "lulc2001" - all 2001 land use/land cover variables from the .lulc tables
+    \item "lulc2006" - all 2006 land use/land cover variables from the .lulc tables
+    \item "lulc2011" - all 2011 land use/land cover variables from the .lulc tables
+    \item "lakes" - all lake connectivity metrics from the .conn tables
+    \item "wetlands" - all wetland connectivity metrics from the .conn tables
+    \item "streams" - all stream/river connectivity metrics from the .conn tables
 }}
 
 \item{table_column_nested}{nested list of tables and table-columns to select from LAGOS}
