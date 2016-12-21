@@ -119,6 +119,7 @@ lagos_names <- function(dt) purrr::map(dt, names)
 #'
 #' }
 query_lagos_names <- function(dt, grep_string, scale = NA){
+
   dt_names <- lagos_names(dt)
   names_matches <- unlist(lapply(dt_names,
                     function(x) length(grep(grep_string, x)) > 0))
@@ -126,10 +127,11 @@ query_lagos_names <- function(dt, grep_string, scale = NA){
 
   res_filtered <- res[grep(scale, res)]
 
-  if(!is.na(scale) & length(res_filtered) > 0){
-    # if(length(res_filtered) < 1){
-    #   stop("No results found for specified scale.")
-    # }
+  if(!is.na(scale)){
+    if(length(res_filtered) < 1 & length(res) > 1){
+      # browser()
+      stop(paste0("The '", scale, "' scale does not exist!"))
+    }
     res_filtered
   }else{
     res

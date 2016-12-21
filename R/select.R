@@ -76,7 +76,9 @@ lagos_select <- function(dt, scale = NULL, category = NULL, table_column_nested 
   nested_partial <- NULL
 
   if(!is.null(category)){
-    nested_partial <- construct_nested_from_partial()
+    nested_partial <- construct_nested_from_partial(
+                        category = category,
+                        scale = scale)
   }
 
   check_for_partial_full <- function(nested_full){
@@ -104,11 +106,35 @@ lagos_select <- function(dt, scale = NULL, category = NULL, table_column_nested 
                               function(x) dt[which(names(dt) %in% x)])
 
   all_query_table_names <- lapply(seq_along(query_data_frames),
-                              function(x) names(query_data_frames[[x]][[1]]))
+                                  function(x) names(query_data_frames[[x]][[1]]))
 
   query_tables <- lapply(query_tables, function(x) expand_keywords(x,
-                    all_query_table_names))
+                   all_query_table_names))
 
+  validate_query_tables <- function(query_data_frames, query_tables){
+    all_names <- lapply(seq_along(query_data_frames),
+           function(x) names(query_data_frames[[x]][[1]]))
+
+    select_names <- lapply(seq_along(query_data_frames),
+                           function(x) query_tables[[x]])
+
+    x_validate <- lapply(seq_along(query_data_frames),
+           function(x) query_tables[[x]] %in% all_names[[x]])
+
+    x_validate_table <- lapply(x_validate, function(x) !x[[1]])
+
+    if(any(unlist(x_validate_table))){
+      bad_table_pos <- which(unlist(x_validate_table))
+      bad_tables    <- names(query_tables)[bad_table_pos]
+      bad_column_pos <- which(!unlist(x_validate[bad_table_pos]))
+      bad_columns    <- query_tables[bad_table_pos][[1]][bad_column_pos]
+      stop("The '", bad_tables, "' table does not contain a '",
+           bad_columns, "' column!")
+    }
+
+  }
+
+  validate_query_tables(query_data_frames, query_tables)
 
   # select from all tables based on (expanded) query
   res <- lapply(seq_along(query_data_frames),
@@ -117,10 +143,9 @@ lagos_select <- function(dt, scale = NULL, category = NULL, table_column_nested 
 
   names(res) <- names(query_tables)
   res
-  # purrr::flatten(res)
 }
 
-construct_nested_from_partial <- function(){
+construct_nested_from_partial <- function(category, scale){
   category_match <- keyword_partial_key()[
     keyword_partial_key()[,1] %in% category, 2]
 
@@ -129,7 +154,7 @@ construct_nested_from_partial <- function(){
   }
 
   table_names    <- unlist(lapply(category_match,
-                                  function(x) query_lagos_names(dt, x, tolower(scale))))
+                        function(x) query_lagos_names(dt, x, tolower(scale))))
 
   res <- data.frame(cbind(table_names, category_match))
   res <- suppressMessages(reshape2::dcast(res, category_match ~ table_names))
