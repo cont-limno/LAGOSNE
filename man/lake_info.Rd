@@ -24,7 +24,7 @@ dt <- lagos_load("1.054.1")
   state = c("New York", "New Hampshire", "Wisconsin"))
 
   apply(focal_lakes, 1, function(x) lake_info(
-    dt = dt$limno$lake.specific, name = x[1], state = x[2]))
+    dt = dt$lake.specific, name = x[1], state = x[2]))
 }
 }
 

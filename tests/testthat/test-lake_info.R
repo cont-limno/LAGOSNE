@@ -1,5 +1,13 @@
 context("lake_info")
 
+test_that("lake_info works", {
+  dt <- readRDS("lagos_test_subset.rds")
+
+  expect_equal(nrow(
+    LAGOS::lake_info(dt$lake.specific, "Benton Pond", "Massachusetts")), 1)
+
+})
+
 test_that("lake_info fails well", {
 
   dt <- readRDS("lagos_test_subset.rds")
