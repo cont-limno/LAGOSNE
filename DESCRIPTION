@@ -7,8 +7,8 @@ Authors@R: c(
     person("Samantha","Oliver", role = c("aut")),
     person("Farzan","Masrour", role = c("aut"))
     )
-URL: https://github.com/jsta/LAGOS
-BugReports: https://github.com/jsta/LAGOS/issues
+URL: https://github.com/cont-limno/LAGOS
+BugReports: https://github.com/cont-limno/LAGOS/issues
 Description: This package provides functions for interacting with the Lake
     Multi-scaled Geospatial and Temporal Database (LAGOS).
 Depends:
