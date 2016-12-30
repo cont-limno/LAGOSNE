@@ -67,7 +67,7 @@ names(dt_reduced)
 head(dt_reduced$hu4.chag)
 ```
 
-## LAGOS subsets
+## Published LAGOS subsets
 
 ```r
 # Oliver et al. 2015
@@ -99,4 +99,4 @@ Soranno, P.A., Bissell, E.G., Cheruvelil, K.S., Christel, S.T., Collins,
   multi-scaled geospatial temporal ecology database from disparate data
   sources: fostering open science and data reuse. _Gigascience_, 4(1)
 
-
+Oliver SK, Soranno PA, Fergus CE, Wagner T, Webster K, Scott C, Winslow LA,      Downing J, Stanley EH. 2015. LAGOS - Predicted and observed maximum depth      values for lakes in a 17-state region of the U.S. DOI:                         10.6073/pasta/edc06bbae6db80e801b6e52253f2ea09
