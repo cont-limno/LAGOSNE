@@ -30,13 +30,13 @@ Until the data exports have been loaded to Gigascience (or elsewhere) users must
 
 ### Load Package
 
-```r 
+``` 
 library(LAGOS)
 ```
 
 ### Compile flat files
 
-```r 
+``` 
 lagos_compile("1.054.2", format = "rds",
   limno_folder = "~/Downloads/Version1.054.2",
   geo_folder   = "~/Downloads/LAGOS_VER1.03")
@@ -44,13 +44,13 @@ lagos_compile("1.054.2", format = "rds",
 
 ### Load data
 
-```r
+```
 dt <- lagos_load(version = "1.054.2", format = "rds")
 ```
 
 ### Select data
 
-```r
+```
 # select specific columns from a specific table
 dt_reduced <- lagos_select(dt, table_column_nested =
                  list("epi.nutr" = c("tp", "tn")))
@@ -65,6 +65,16 @@ dt_reduced    <- lagos_select(dt, table_column_nested = table_columns)
 
 names(dt_reduced)
 head(dt_reduced$hu4.chag)
+```
+
+## LAGOS subsets
+
+```r
+# Oliver et al. 2015
+
+lagos_get_oliver_2015()
+dt <- lagos_load_oliver_2015()
+head(dt)
 ```
 
 ## Legacy code-base
@@ -87,6 +97,6 @@ Soranno, P.A., Bissell, E.G., Cheruvelil, K.S., Christel, S.T., Collins,
   Downing, J.A., Gries, C., Henry, E.H., Skaff, N.K., Stanley, E.H.,
   Stow, C.A., Tan, P.N., Wagner, T. and Webster, K.E. 2015. Building a
   multi-scaled geospatial temporal ecology database from disparate data
-  sources: fostering open science and data reuse. _Gigascience_, 4(1)"
+  sources: fostering open science and data reuse. _Gigascience_, 4(1)
 
 
