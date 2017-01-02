@@ -54,8 +54,9 @@ lagos_load_oliver_2015 <- function(fpath = NA){
   dir.create(destdir, showWarnings = FALSE)
 
   if(is.na(fpath)){
-    read.csv(paste0(destdir, .Platform$file.sep, "oliver_2015_depth.csv"))
+    read.csv(paste0(destdir, .Platform$file.sep, "oliver_2015_depth.csv"),
+             stringsAsFactors = FALSE)
   }else{
-    read.csv(fpath)
+    read.csv(fpath, stringsAsFactors = FALSE)
   }
 }
