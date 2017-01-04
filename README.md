@@ -80,10 +80,10 @@ head(dt)
 
 ## Legacy code-base
 
-The legacy code-base (minus the data) can be obtained by running the following command in your shell:
+The legacy code-base (minus the data) can be obtained by running the following commands in your shell:
 
 ```
-git clone https://github.com/jsta/LAGOS.git 
+git clone https://github.com/cont-limno/LAGOS.git 
 
 cd LAGOS
 
