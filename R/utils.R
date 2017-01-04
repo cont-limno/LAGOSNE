@@ -34,8 +34,14 @@ info_table <- function(geo, limno){
                   "state_zoneid", "lagoslakeid", "lagoslakeid",
                   "lagoslakeid", "lagoslakeid", "lagoslakeid",
                   "hub", "lagoslakeid, eventida10400, programname", "hub",
-                  "lagoslakeid, eventidc10400, programname",
-                  "sourceid","programname, sourceid")
+                  "lagoslakeid, eventidc10400, programname")
+
+  if("lagos.source.program" %in% name){
+    identifier <- c(identifier, "programname, sourceid")
+  }else{
+    identifier <- c(identifier, "sourceid","programname, sourceid")
+  }
+
   # number of variables of each data.frame in the list
   variables <- rep(0, length(name))
 
@@ -48,6 +54,7 @@ info_table <- function(geo, limno){
       variables[i] <- ncol(limno[[j]])
     }
   }
+
 
   # Number of observation of each dataframe in the table
   observations <- rep(0, length(name))
@@ -63,7 +70,12 @@ info_table <- function(geo, limno){
   group <- c(1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3,
              4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6,
              7, 7, 7, 7, 10, 10, 10, 10, 10, 0, 11,
-             0, 11, 13, 12)
+             0, 11)
+  if("lagos.source.program" %in% name){
+    group <- c(group, 13)
+  }else{
+    group <- c(group, 13, 12)
+  }
 
   data.frame(name= I(name),
     type= I(type),
@@ -85,8 +97,7 @@ get_if_not_exists <- function(url, destfile){
 stop_if_not_exists <- function(src_path) {
   if(!file.exists(src_path)){
     stop(paste0("Dataset not found at: ", src_path,
-      ". Try running the appropriate `lagos_get*` and/or `lagos_compile`
-      commands."))
+      "\n Try running the appropriate `lagos_get*` and/or `lagos_compile` commands."))
   }
 }
 

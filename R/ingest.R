@@ -39,10 +39,17 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA){
 
   secchi       <- load_lagos_txt(limno_path('lagos_secchi'))
 
-  lagos.source <- load_lagos_txt(limno_path('lagos_source'))
+  is_combined_source_program <- function(){
+    file.exists(limno_path('lagos_source_program'))
+  }
 
-  lagos.program<- load_lagos_txt(limno_path('lagos_program'))
+  if(is_combined_source_program()){
+    lagos.source.program <- load_lagos_txt(limno_path('lagos_source_program'))
+  }else{
+    lagos.source <- load_lagos_txt(limno_path('lagos_source'))
 
+    lagos.program<- load_lagos_txt(limno_path('lagos_program'))
+  }
 
   # Importing Lagos Geo data ####
 
@@ -148,10 +155,19 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA){
     "lakes4ha_buffer500m_lagoslakeid"] <- "lagoslakeid"
 
   lagoslakes <- load_lagos_txt(geo_path("lagoslakes_10400"))
+  limno <- list(epi.nutr = epi.nutr,
+                lake.specific = lake.specific,
+                secchi = secchi)
 
-  limno <- list(epi.nutr = epi.nutr, lake.specific = lake.specific,
-                secchi = secchi, lagos.source = lagos.source,
-                lagos.program = lagos.program)
+  if(is_combined_source_program()){
+    source_program <- list(lagos.source.program = lagos.source.program)
+  }else{
+    source_program <- list(lagos.source = lagos.source,
+                           lagos.program = lagos.program)
+  }
+
+  limno <- c(limno, source_program)
+
   #rm(epi.nutr, lake.specific, secchi, lagos.source)
   geo <- list(county = county,
               county.chag = county.chag,

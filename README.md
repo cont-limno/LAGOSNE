@@ -37,15 +37,15 @@ library(LAGOS)
 ### Compile flat files
 
 ``` 
-lagos_compile("1.054.2", format = "rds",
-  limno_folder = "~/Downloads/Version1.054.2",
-  geo_folder   = "~/Downloads/LAGOS_VER1.03")
+lagos_compile("1.087.0", format = "rds",
+  limno_folder = "~/Downloads/Version1.087.0",
+  geo_folder   = "~/Downloads/LAGOS_VER1.04")
 ```
 
 ### Load data
 
 ```
-dt <- lagos_load(version = "1.054.2", format = "rds")
+dt <- lagos_load(version = "1.087.0", format = "rds")
 ```
 
 ### Select data
@@ -65,6 +65,7 @@ dt_reduced    <- lagos_select(dt, table_column_nested = table_columns)
 
 names(dt_reduced)
 head(dt_reduced$hu4.chag)
+head(dt_reduced$epi.nutr)
 ```
 
 ## Published LAGOS subsets

@@ -10,13 +10,13 @@
 #'@importFrom utils read.table
 #'@importFrom rappdirs user_data_dir
 #'@examples \dontrun{
-#' lagos_compile("1.054.1", format = "rds")
-#' lagos_compile("1.054.1", format = "sqlite")
+#'lagos_compile("1.087.0", format = "rds",
+#'  limno_folder = "~/Downloads/Version1.087.0",
+#'  geo_folder   = "~/Downloads/LAGOS_VER1.04")
 #'
-#' lagos_compile("1.054.2", format = "rds")
-#' lagos_compile("1.054.2", format = "rds",
-#'  limno_folder = "~/Downloads/Version1.054.2",
-#'  geo_folder = "~/Downloads/LAGOS_VER1.03")
+#' # Pending Gigascience availability
+#' lagos_compile("1.087.0", format = "rds")
+#' lagos_compile("1.087.0", format = "sqlite")
 #' }
 #'
 lagos_compile <- function(version, format = "rds", limno_folder = NA, geo_folder = NA){
