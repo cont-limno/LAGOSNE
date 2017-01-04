@@ -1,5 +1,5 @@
 <h1 align="left">
-<img width="100" src="./inst/lagos_banner.png" alt="">
+<img width="800" src="./inst/lagos_banner.png" alt="">
 </h1>
 
 [![Project Status: WIP - Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
