@@ -58,6 +58,11 @@ test_that("lagos_select works", {
   expect_equal(length(dt_reduced), 2)
   expect_equal(ncol(dt_reduced$epi.nutr), 2)
 
+  # select from a mix of keywords and exact columns
+  table_columns <- list("epi.nutr" = c("lagoslakeid", "sampledate", "waterquality"))
+  dt_sub    <- lagos_select(dt, table_column_nested = table_columns)
+  expect_equal(ncol(dt_sub$epi.nutr), 18)
+
   # pull all columns from table if no columns specified
   # dt_reduced <- lagos_select(dt, table_column_nested = list("epi.nutr" = ""))
 

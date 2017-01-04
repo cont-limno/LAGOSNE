@@ -56,6 +56,29 @@ lagos_compile("1.087.0", format = "rds",
 
 ``` r
 dt <- lagos_load(version = "1.087.0", format = "rds")
+names(dt)
+#>  [1] "county"                   "county.chag"             
+#>  [3] "county.conn"              "county.lulc"             
+#>  [5] "edu"                      "edu.chag"                
+#>  [7] "edu.conn"                 "edu.lulc"                
+#>  [9] "hu4"                      "hu4.chag"                
+#> [11] "hu4.conn"                 "hu4.lulc"                
+#> [13] "hu8"                      "hu8.chag"                
+#> [15] "hu8.conn"                 "hu8.lulc"                
+#> [17] "hu12"                     "hu12.chag"               
+#> [19] "hu12.conn"                "hu12.lulc"               
+#> [21] "iws"                      "iws.conn"                
+#> [23] "iws.lulc"                 "state"                   
+#> [25] "state.chag"               "state.conn"              
+#> [27] "state.lulc"               "lakes4ha.buffer100m"     
+#> [29] "lakes4ha.buffer100m.lulc" "lakes4ha.buffer500m"     
+#> [31] "lakes4ha.buffer500m.conn" "lakes4ha.buffer500m.lulc"
+#> [33] "lagoslakes"               "epi.nutr"                
+#> [35] "lake.specific"            "secchi"                  
+#> [37] "lagos.source.program"     "name"                    
+#> [39] "type"                     "variables"               
+#> [41] "observations"             "identifier"              
+#> [43] "group"
 ```
 
 ### Select data
@@ -63,22 +86,22 @@ dt <- lagos_load(version = "1.087.0", format = "rds")
 ``` r
 # select specific columns from a specific table
 dt_sub <- lagos_select(dt, table_column_nested =
-                 list("epi.nutr" = c("tp", "tn")))
+                 list("epi.nutr" = c("lagoslakeid", "sampledate", "tp", "tn")))
 
 names(dt_sub)
 #> [1] "epi.nutr"
 head(dt_sub$epi.nutr)
-#>   tp tn
-#> 1 30 NA
-#> 2 10 NA
-#> 3  5 NA
-#> 4  9 NA
-#> 5  5 NA
-#> 6 27 NA
+#>   lagoslakeid sampledate tp tn
+#> 1           2 1996-05-14 30 NA
+#> 2           2 1996-08-07 10 NA
+#> 3           2 2006-07-13  5 NA
+#> 4           2 2006-08-16  9 NA
+#> 5           2 2006-09-07  5 NA
+#> 6           3 2002-07-17 27 NA
 
 # select from specific tables using keywords (see help.search("lagos_select"))
 table_columns <- list("epi.nutr" = c("waterquality"),
-                    "hu4.chag" = c("deposition"))
+                      "hu4.chag" = c("deposition"))
 dt_sub    <- lagos_select(dt, table_column_nested = table_columns)
 
 names(dt_sub)

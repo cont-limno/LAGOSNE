@@ -60,21 +60,23 @@ lagos_compile("1.087.0", format = "rds",
 
 ```{r }
 dt <- lagos_load(version = "1.087.0", format = "rds")
+names(dt)
 ```
 
 ### Select data
 
+
 ```{r }
 # select specific columns from a specific table
 dt_sub <- lagos_select(dt, table_column_nested =
-                 list("epi.nutr" = c("tp", "tn")))
+                 list("epi.nutr" = c("lagoslakeid", "sampledate", "tp", "tn")))
 
 names(dt_sub)
 head(dt_sub$epi.nutr)
 
 # select from specific tables using keywords (see help.search("lagos_select"))
 table_columns <- list("epi.nutr" = c("waterquality"),
-                    "hu4.chag" = c("deposition"))
+                      "hu4.chag" = c("deposition"))
 dt_sub    <- lagos_select(dt, table_column_nested = table_columns)
 
 names(dt_sub)
