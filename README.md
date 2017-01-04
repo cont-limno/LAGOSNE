@@ -33,7 +33,7 @@ Usage
 
 ``` r
 library(LAGOS)
-#> Welcome to LAGOS version 1.054.1. To cite LAGOS in publications use: 
+#> Welcome to LAGOS version 1.087.0. To cite LAGOS in publications use: 
 #>  
 #> Soranno, P.A., Bissell, E.G., Cheruvelil, K.S., Christel, S.T., Collins,
 #>     S.M., Fergus, C.E., Filstrup, C.T., Lapierre, J.F., Lottig, N.R., Oliver,
