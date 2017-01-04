@@ -16,7 +16,7 @@ Installation
 
 New Project -&gt; Version Control -&gt; Git -&gt;
 
-`https://github.com/jsta/LAGOS.git` -&gt; Create Project
+`https://github.com/cont-limno/LAGOS.git` -&gt; Create Project
 
 #### R prompt/console
 

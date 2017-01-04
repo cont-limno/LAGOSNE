@@ -30,7 +30,7 @@ The `LAGOS` package provides an R interface to download LAGOS data from remote d
 
 New Project -> Version Control -> Git ->
 
-`https://github.com/jsta/LAGOS.git` -> Create Project
+`https://github.com/cont-limno/LAGOS.git` -> Create Project
 
 #### R prompt/console
 
