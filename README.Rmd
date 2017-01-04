@@ -1,0 +1,119 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+<h1 align="left">
+<img width="800" src="./inst/lagos_banner.png" alt="">
+</h1>
+
+[![Project Status: WIP - Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/LAGOS)](https://cran.r-project.org/package=LAGOS) 
+[![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/LAGOS)](https://cran.r-project.org/package=LAGOS)
+
+The `LAGOS` package provides an R interface to download LAGOS data from remote databases, store this data locally, and perform a variety of filtering and subsetting operations.
+
+## Installation
+
+### From RStudio
+
+#### GUI
+
+New Project -> Version Control -> Git ->
+
+`https://github.com/jsta/LAGOS.git` -> Create Project
+
+#### R prompt/console
+
+`devtools::install()`
+ 
+### Data
+
+Until the data exports have been loaded to Gigascience (or elsewhere) users must supply the path to their `limno` and `geo` data folders to the `lagos_compile` function (see example below). Eventually, users will be able to run `lagos_get` to supply `lagos_compile` with the flat files from GigaScience without having to deal with file paths. The __output__ of `lagos_get` and `lagos_compile` is stored in the location returned by `rappdirs::user_data_dir`.
+
+## Usage
+
+### Load Package
+
+```{r } 
+library(LAGOS)
+```
+
+### Compile flat files
+
+```{r eval=FALSE} 
+lagos_compile("1.087.0", format = "rds",
+  limno_folder = "~/Downloads/Version1.087.0",
+  geo_folder   = "~/Downloads/LAGOS_VER1.04")
+```
+
+### Load data
+
+```{r }
+dt <- lagos_load(version = "1.087.0", format = "rds")
+```
+
+### Select data
+
+```{r }
+# select specific columns from a specific table
+dt_sub <- lagos_select(dt, table_column_nested =
+                 list("epi.nutr" = c("tp", "tn")))
+
+names(dt_sub)
+head(dt_sub$epi.nutr)
+
+# select from specific tables using keywords (see help.search("lagos_select"))
+table_columns <- list("epi.nutr" = c("waterquality"),
+                    "hu4.chag" = c("deposition"))
+dt_sub    <- lagos_select(dt, table_column_nested = table_columns)
+
+names(dt_sub)
+head(dt_sub$hu4.chag[,1:3])
+head(dt_sub$epi.nutr)
+```
+
+## Published LAGOS subsets
+
+```{r eval = FALSE}
+# Oliver et al. 2015
+lagos_get_oliver_2015()
+```
+
+```{r }
+dt <- lagos_load_oliver_2015()
+head(dt)
+```
+
+## Legacy code-base
+
+The legacy code-base (minus the data) can be obtained by running the following commands in your shell:
+
+```{shell eval=FALSE}
+git clone https://github.com/cont-limno/LAGOS.git 
+
+cd LAGOS
+
+git checkout 553b0ba3875b29257aab1aaec71d3388070bd3e5
+```
+
+## References
+
+Soranno, P.A., Bissell, E.G., Cheruvelil, K.S., Christel, S.T., Collins,
+  S.M., Fergus, C.E., Filstrup, C.T., Lapierre, J.F., Lottig, N.R., Oliver,
+  S.K., Scott, C.E., Smith, N.J., Stopyak, S., Yuan, S., Bremigan, M.T.,
+  Downing, J.A., Gries, C., Henry, E.H., Skaff, N.K., Stanley, E.H.,
+  Stow, C.A., Tan, P.N., Wagner, T. and Webster, K.E. 2015. Building a
+  multi-scaled geospatial temporal ecology database from disparate data
+  sources: fostering open science and data reuse. _Gigascience_, 4(1)
+
+Oliver SK, Soranno PA, Fergus CE, Wagner T, Webster K, Scott C, Winslow LA,      Downing J, Stanley EH. 2015. LAGOS - Predicted and observed maximum depth      values for lakes in a 17-state region of the U.S. DOI:                         10.6073/pasta/edc06bbae6db80e801b6e52253f2ea09

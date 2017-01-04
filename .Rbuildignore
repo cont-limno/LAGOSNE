@@ -11,3 +11,5 @@
 ^Makefile
 ^shiny
 create_test_data.R
+^README\.Rmd$
+^README-.*\.png$
