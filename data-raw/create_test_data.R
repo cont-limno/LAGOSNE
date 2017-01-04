@@ -2,9 +2,9 @@
 
 # LAGOS:::lagos_compile("1.054.1", "rds")
 
-dt <- LAGOS::lagos_load("1.054.1")
+dt <- LAGOS::lagos_load("1.087.0")
 
-dt_subset <- purrr::map(purrr::flatten(dt), function(x) head(x, n = 2))
+dt_subset <- purrr::map(dt, function(x) head(x, n = 2))
 
 # names(dt_subset)
 exclude_names <- c("lakes4ha.buffer100m",
