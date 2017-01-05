@@ -47,8 +47,9 @@ lagos_load <- function(version, format = "rds", fpath = NA){
 #' @param fpath file.path optionally specify custom location of csv data file
 #' @importFrom utils read.csv
 #' @importFrom rappdirs user_data_dir
-#' @examples
+#' @examples \dontrun{
 #' lagos_load_oliver_2015()
+#' }
 lagos_load_oliver_2015 <- function(fpath = NA){
   destdir <- rappdirs::user_data_dir("LAGOS")
   dir.create(destdir, showWarnings = FALSE)

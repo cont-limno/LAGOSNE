@@ -13,6 +13,8 @@ lagos_load_oliver_2015(fpath = NA)
 lagos_load_oliver_2015
 }
 \examples{
+\dontrun{
 lagos_load_oliver_2015()
+}
 }
 
