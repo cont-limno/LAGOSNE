@@ -26,6 +26,15 @@ New Project -&gt; Version Control -&gt; Git -&gt;
 
 Until the data exports have been loaded to Gigascience (or elsewhere) users must supply the path to their `limno` and `geo` data folders to the `lagos_compile` function (see example below). Eventually, users will be able to run `lagos_get` to supply `lagos_compile` with the flat files from GigaScience without having to deal with file paths. The **output** of `lagos_get` and `lagos_compile` is stored in the location returned by `rappdirs::user_data_dir`.
 
+### Compile flat files
+
+``` r
+library(LAGOS)
+lagos_compile("1.087.0", format = "rds",
+  limno_folder = "~/Downloads/Version1.087.0",
+  geo_folder   = "~/Downloads/LAGOS_VER1.04")
+```
+
 Usage
 -----
 
@@ -42,14 +51,6 @@ library(LAGOS)
 #>     Stow, C.A., Tan, P.N., Wagner, T. and Webster, K.E. 2015. Building a
 #>     multi-scaled geospatial temporal ecology database from disparate data
 #>     sources: fostering open science and data reuse. Gigascience, 4(1)
-```
-
-### Compile flat files
-
-``` r
-lagos_compile("1.087.0", format = "rds",
-  limno_folder = "~/Downloads/Version1.087.0",
-  geo_folder   = "~/Downloads/LAGOS_VER1.04")
 ```
 
 ### Load data
