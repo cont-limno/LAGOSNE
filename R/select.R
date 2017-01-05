@@ -78,7 +78,8 @@ lagos_select <- function(dt, scale = NULL, category = NULL, table_column_nested 
   if(!is.null(category)){
     nested_partial <- construct_nested_from_partial(
                         category = category,
-                        scale = scale)
+                        scale = scale,
+                        dt = dt)
   }
 
   check_for_partial_full <- function(nested_full){
@@ -145,7 +146,7 @@ lagos_select <- function(dt, scale = NULL, category = NULL, table_column_nested 
   res
 }
 
-construct_nested_from_partial <- function(category, scale){
+construct_nested_from_partial <- function(category, scale, dt){
   category_match <- keyword_partial_key()[
     keyword_partial_key()[,1] %in% category, 2]
 
@@ -161,7 +162,7 @@ construct_nested_from_partial <- function(category, scale){
   res <- as.list(data.frame(res[,-1, drop = FALSE]))
   res <- lapply(res, function(x) x[!is.na(x)])
 
-  expand_partial_keywords <- function(res){
+  expand_partial_keywords <- function(res, dt){
     partial_keyword_elements <- unlist(lapply(res, function(x)
       any(!(x %in% keyword_full_key()[,2]))))
 
@@ -174,5 +175,5 @@ construct_nested_from_partial <- function(category, scale){
     res
   }
 
-  expand_partial_keywords(res)
+  expand_partial_keywords(res, dt)
 }

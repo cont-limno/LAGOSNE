@@ -2,6 +2,7 @@
 #' @name LAGOS-package
 #' @aliases LAGOS
 #' @docType package
+#' @importFrom magrittr %>%
 #' @title R interface to the LAGOS lakes database
 #' @author \email{stachel2@msu.edu}
 NULL
