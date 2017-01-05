@@ -11,7 +11,7 @@ vignette: >
 
 ## Compile `txt` files to `sqlite`
 
-```{r }
+```{r eval=FALSE}
 library(LAGOS)
 library(magrittr)
 ```
@@ -34,13 +34,13 @@ lagos_compile(version = "1.087.0", format = "sqlite",
 
 ### Load compiled `sqlite` object
 
-```{r }
+```{r eval=FALSE}
 dt_sqlite <- lagos_load(version = "1.087.0", format = "sqlite")
 ```
 
 ### Select desired table-columns from `sqlite`
 
-```{r }
+```{r eval=FALSE}
 epi.nutr <- dplyr::tbl(dt_sqlite, "epi.nutr") %>%
               dplyr::select(lagoslakeid, tp, tn)
 
