@@ -37,8 +37,9 @@ lagos_get <- function(dest_folder = NA){
 #'  Ecological Research Network.
 #'  doi:10.6073/pasta/f00a245fd9461529b8cd9d992d7e3a2f
 #'
-#' @examples
+#' @examples \dontrun{
 #' lagos_get_oliver_2015()
+#' }
 lagos_get_oliver_2015 <- function(dest_folder){
   dir.create(lagos_path(), showWarnings = FALSE)
 

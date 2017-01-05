@@ -13,7 +13,9 @@ lagos_get_oliver_2015(dest_folder)
 lagos_get_oliver_2015
 }
 \examples{
+\dontrun{
 lagos_get_oliver_2015()
+}
 }
 \references{
 Oliver SK, Soranno PA, Fergus EC, Wagner T, Webster KE, Scott C,
