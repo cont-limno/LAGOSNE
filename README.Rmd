@@ -64,7 +64,21 @@ dt <- lagos_load(version = "1.087.0", format = "rds")
 names(dt)
 ```
 
+#### Preview a table
+
+```{r }
+head(dt$county)
+```
+
+#### Read table metadata
+
+```{r Read metadata for individual tables}
+help.search("datasets", package = "LAGOS")
+```
+
 ### Select data
+
+The following section is experimental. See [here](http://adv-r.had.co.nz/Subsetting.html) for a tutorial on convential `data.frame` subsetting.
 
 ```{r }
 # select specific columns from a specific table

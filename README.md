@@ -82,7 +82,35 @@ names(dt)
 #> [43] "group"
 ```
 
+#### Preview a table
+
+``` r
+head(dt$county)
+#>   county_state       county_name county_ha_in_nwi county_ha county_zoneid
+#> 1           CT  Fairfield County         167421.8  168044.3      County_1
+#> 2           IL       Ford County         125912.3  125912.3     County_10
+#> 3           IL      Stark County          74682.0   74682.0    County_100
+#> 4           IL Stephenson County         146269.3  146269.3    County_101
+#> 5           IL   Tazewell County         170204.0  170204.0    County_102
+#> 6           IL  Vermilion County         233543.6  233543.6    County_103
+#>   county_pct_in_nwi county_lat county_long
+#> 1               100   41.27225   -73.38940
+#> 2               100   40.59720   -88.22340
+#> 3               100   41.09336   -89.79749
+#> 4               100   42.35175   -89.66246
+#> 5               100   40.50731   -89.51343
+#> 6               100   40.18342   -87.73293
+```
+
+#### Read table metadata
+
+``` r
+help.search("datasets", package = "LAGOS")
+```
+
 ### Select data
+
+The following section is experimental. See [here](http://adv-r.had.co.nz/Subsetting.html) for a tutorial on convential `data.frame` subsetting.
 
 ``` r
 # select specific columns from a specific table
