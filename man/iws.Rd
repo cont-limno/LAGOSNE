@@ -16,11 +16,11 @@
 \alias{scales}
 \alias{state}
 \title{LAGOS Spatial Scale Metadata}
-\format{Date frames with all or a subset of the following variables. Number of observations is
-equal to the number of zones in each spatial scale (see Details below). (buffers and iws = 51065, hu12 = 20257,
-hu8 = 511, hu4 = 65, edu = 91, county = 955, state = 17)
+\format{Data frames with all or a subset of the following variables. Number of observations is
+equal to the number of zones in each spatial scale (see Details below).
 \itemize{
-    \item *_nhdid: permanent lake-specific identifier from the National Hydrography Dataset (* = lakes4ha_buffer100m, lakes4ha_buffer500m, iws)
+    \item *_nhdid: permanent lake-specific identifier from the National Hydrography
+    Dataset (* = lakes4ha_buffer100m, lakes4ha_buffer500m, iws)
     \item *_name: text name of the zone (* = iws, hu12, hu8, hu4, county, state)
     \item hu*: unique zone identifier (* = 12, 8, 4)
     \item *_ha: area of spatial extent in hectares (* = lakes4ha_buffer100m, lakes4ha_buffer500m, hu12, hu8, hu4, edu, county)

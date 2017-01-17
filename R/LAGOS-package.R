@@ -104,10 +104,6 @@ NULL
 #'
 #' Original data sources and layers from which each metric was derived can be found in additional file 5 of Soranno et al. (2015).
 #'
-#' Note the variable descriptions above for each National Land Cover Database (NLCD)
-#' code are not repeated for each year and statistic combination.
-#' NLCD data come from multiple years (* = 1992, 2001, 2006, 2011) and were calculated as either the total area in hectares of coverage or percent coverage (** = ha, pct).
-#'
 #' @format Data frames with all or a subset of the following variables. Number of observations is
 #' equal to the number of zones in each spatial scale (see Details below). Wildcard options include
 #' table names of the 9 LAGOS spatial scales (* = lakes4ha.buff100m, lakes4ha.buffer500m,
@@ -170,7 +166,8 @@ NULL
 #'
 #' @docType data
 #' @keywords datasets
-#' @name iws.lulc
+#' @name lulc
+#' @aliases lakes4ha.buffer100m.lulc lakes4ha.buffer500m.lulc iws.lulc hu12.lulc hu8.lulc hu4.lulc edu.lulc county.lulc state.lulc
 #' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}; \href{http://www.mrlc.gov/nlcd2011.php}{National Land Cover Database},
 NULL
 
