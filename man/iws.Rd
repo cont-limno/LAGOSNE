@@ -2,26 +2,46 @@
 % Please edit documentation in R/LAGOS-package.R
 \docType{data}
 \name{iws}
+\alias{county}
+\alias{edu}
+\alias{hu12}
+\alias{hu4}
+\alias{hu8}
 \alias{iws}
-\title{Watershed Data}
-\format{A data frame with 51065 observations and 12 variables:
+\alias{lakes4ha.buffer100m}
+\alias{lakes4ha.buffer500m}
+\alias{state}
+\title{Scale Metadata}
+\format{Date frames with all or a subset of the following variables. Number of observations is
+equal to the number of regions in each spatial extent (buffers and iws = 51065, hu12 = 20257,
+hu8 = 511, hu4 = 65, edu = 91, county = 955, state = 17)
 \itemize{
-    \item iws_nhdid: permanent lake-specific identifier from the National Hydrography Dataset
-    \item iws_areaha: area (ha) of IWS
-    \item iws_perimkm: perimeter (km) of IWS
-    \item iws_lat: latitude of centroid of IWS polygon in decimal degrees (NAD83)
-    \item iws_long: longitude of centroid of IWS polygon in decimal degrees (NAD83)
-    \item iws_lakeareaha: lake area (ha) of focal lake within iws polygon
-    \item iws_pct_in_usa: percent of polygon within the US boundary
-    \item iws_ha_in_usa: area (ha) of polygon within the US boundary
-    \item iws_pct_in_nwi: percent of polygon within the USFWS National Wetland Inventory (NWI) boundary
-    \item iws_ha_in_nwi: area (ha) of polygon within the USFWS National Wetland Inventory (NWI) boundary
-    \item iws_zoneid: a unique identifier for each IWS in LAGOS
-    \item iws_lagoslakeid: a unique identifier for each lake in LAGOS
+    \item *_nhdid: permanent lake-specific identifier from the National Hydrography Dataset (* = lakes4ha_buffer100m, lakes4ha_buffer500m, iws)
+    \item *_name: text name of the zone (* = iws, hu12, hu8, hu4, county, state)
+    \item hu*: unique zone identifier (* = 12, 8, 4)
+    \item *_ha: area of spatial extent in hectares (* = lakes4ha_buffer100m, lakes4ha_buffer500m, hu12, hu8, hu4, edu, county)
+    \item *_areaha: area of spatial extent in hectares (* = iws, )
+    \item *_perimkm: perimeter of spatial extent in kilometers (* = iws, )
+    \item *_lat: latitude of centroid of polygon in decimal degrees (NAD83) (* = iws, hu12, hu8, hu4, edu, county, state)
+    \item *_long: longitude of centroid of polygon in decimal degrees (NAD83) (* = iws, hu12, hu8, hu4, edu, county, state)
+    \item *_lakeareaha: lake area (ha) of focal lake within polygon (* = iws, )
+    \item *_country: whether the polygon lies within the US ("US") or the US and Canada (US_CA) (* = hu12, edu)
+    \item *_pct_in_usa: percent of polygon within the US boundary (* = iws, hu12, edu)
+    \item *_ha_in_usa: area (ha) of polygon within the US boundary (* = iws, hu12, edu)
+    \item *_pct_in_nwi: percent of polygon within the USFWS National Wetland Inventory (NWI) boundary (* = hu12, hu8, hu4, edu, county, state)
+    \item *_ha_in_nwi: area (ha) of polygon within the USFWS National Wetland Inventory (NWI) boundary (* = hu12, hu8, hu4, edu, county, state)
+    \item *_zoneid: a unique identifier for each IWS in LAGOS, numbered 1:n with scale prefix (e.g., HU12_1) (* = iws, hu12, hu8, hu4, edu, county, state)
+    \item *_lagoslakeid: LAGOS unique identifier for focal lake (* = lakes4ha_buffer100m, lakes_buffer500m, iws, )
+    \item hu4_states: states that intersect hu4 zone polygon
+    \item state: 2-letter state abbreviation
+    \item county_state: state where county is located
     }}
 \description{
-A dataset containing information on the interlake watershed (IWS) characteristics for LAGOS lakes.
-For details on how the watersheds were delineated, see additional file 8 in Soranno et al. (2015).
+Data frames containing metadata for each spatial scale at which ecological context
+data are derived in LAGOS. The spatial scales include 100m buffers (lakes4ha.buffer100m),
+500m buffers (lakes4ha.buffer500m), interlake watersheds (iws), hydrologic units (hu12, hu8,
+hu4), ecological drainage units (edu), counties (county), and states (state). Each abbreviation
+is the name of the data frame, with all or a subset of the following variables.
 }
 \references{
 Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}

@@ -3,7 +3,7 @@
 \docType{data}
 \name{iws.lulc}
 \alias{iws.lulc}
-\title{Watershed LULC Data}
+\title{Land Use Land Cover (LULC) Data Frames}
 \format{A data frame with 51065 observations of 158 variables:
 \itemize{
    \item iws_nhdid

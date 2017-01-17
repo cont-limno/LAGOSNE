@@ -17,7 +17,7 @@ NULL
 #'
 #'
 #' @format Date frames with all or a subset of the following variables. Number of observations is
-#' equal to the number of regions in each spatial extent (buffers and iws = 51065, hu12 = 20257,
+#' equal to the number of zones in each spatial scale (buffers and iws = 51065, hu12 = 20257,
 #' hu8 = 511, hu4 = 65, edu = 91, county = 955, state = 17)
 #' \itemize{
 #'     \item *_nhdid: permanent lake-specific identifier from the National Hydrography Dataset (* = lakes4ha_buffer100m, lakes4ha_buffer500m, iws)
