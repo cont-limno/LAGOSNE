@@ -99,14 +99,15 @@ NULL
 
 #' Land Use Land Cover (LULC) Data Frames
 #'
-#' Datasets containing information on the land use and land cover (LULC) characteristics calculated at
-#' all LAGOS spatial extents (see ?scales). the interlake watershed spatial extent.
+#' Datasets containing information on the land use and land cover (LULC) characteristics
+#' calculated at all LAGOS spatial extents (see ?scales) from the National Land Cover
+#' Dataset (NLCD).
 #'
 #' Original data sources and layers from which each metric was derived can be found in additional file 5 of Soranno et al. (2015).
 #'
 #' @format Data frames with all or a subset of the following variables. Number of observations is
-#' equal to the number of zones in each spatial scale (see Details below). Wildcard options include
-#' table names of the 9 LAGOS spatial scales (* = lakes4ha.buff100m, lakes4ha.buffer500m,
+#' equal to the number of zones in each spatial scale (see Details below). Wildcard options
+#' include the 9 LAGOS spatial scales (* = lakes4ha.buff100m, lakes4ha.buffer500m,
 #' iws, hu12, hu8, hu4, edu, county, state), year of measurement (** = 1992, 2001, 2006,
 #' 2011), and unit of measurement in hectares or percent of zone area (*** = ha, pct unless
 #' noted otherwise). Each variable is available at each scale, year, and unit unless
@@ -158,10 +159,12 @@ NULL
 #'    \item *_tri_***: Terrain ruggedness index (TRI) at each cell in meters with repsect to
 #'    its immediate neighbors (10m scale). Cells in zone summarized as either the minimum,
 #'    maximum, mean, or standard deviation (*** = min, max, mean, std)
-#'    \item *_zoneid: unique zone identifier
-#'    \item *_lagoslakeid: unique integer identifier for each lake in LAGOS
-#'    \item lakeconnection:
-#'    \item borderiws:
+#'    \item *_zoneid: unique zone identifier (* = iws, hu12, hu8, hu4, edu, county, state)
+#'    \item *_lagoslakeid: unique integer identifier for focal lake (* = lakes4ha_buffer100m,
+#'    lakes4ha_buffer500m, iws)
+#'    \item lakeconnection: connectivity class of focal lake. Only in iws.lulc table.
+#'    \item borderiws: whether iws zone intersects Canadian border (1 = yes, NA = no). Only
+#'    in iws.lulc table.
 #'     }
 #'
 #' @docType data
@@ -177,7 +180,7 @@ NULL
 #'
 #' @format A data frame with 276588 observations and 94 variables:
 #' \itemize{
-#'             \item eventida10542: unique combination of programid, lakeid, and date for each sampling event in LAGOS
+#'             \item eventida1087: unique combination of programid, lakeid, and date for each sampling event in LAGOS
 #'             \item lagoslakeid: unique integer identifier for each lake in LAGOS
 #'             \item programname: name of the sampling/monitoring program that collected the data
 #'             \item programtype: categorical description of the type of sampling/monitoring effort (Federal Agency, LTER = Long Term Ecological Research program, National Survey Program, Non-Profit Agency, State Agency, State Agency/Citizen Monitoring Program, State Agency/University/Citizen Monitoring Program, State Agency/Citizen Monitoring Program, Tribal Agency, University)
@@ -219,48 +222,51 @@ NULL
 
 #' Lake Attributes
 #'
-#' A dataset containing attributes of lakes.
+#' A dataset containing attributes of all lakes in LAGOS >1 hectare.
 #'
 #' @format A data frame with 141271 observations and 109 variables:
 #' \itemize{
-#'              \item lagoslakeid
-#'              \item nhdid
-#'              \item nhd_lat
-#'              \item nhd_long
-#'              \item lake_area_ha
-#'              \item lake_perim_meters
-#'              \item nhd_fcode
-#'              \item nhd_ftype
-#'              \item greatlakes
-#'              \item lagosname1
-#'              \item meandepth
-#'              \item maxdepth
-#'              \item iws_zoneid
-#'              \item hu4_zoneid
-#'              \item hu4_name
-#'              \item hu6_zoneid
-#'              \item hu6_name
-#'              \item hu8_zoneid
-#'              \item hu8_name
-#'              \item hu12_zoneid
-#'              \item hu12_name
-#'              \item edu_zoneid
-#'              \item edu_name
-#'              \item county_zoneid
-#'              \item county_name
-#'              \item state_name
-#'              \item state_zoneid
-#'              \item hu4
-#'              \item hu6
-#'              \item hu12
-#'              \item hu8
-#'              \item iws_areaha
-#'              \item iws_perimkm
-#'              \item iws_pct_in_usa
+#'              \item lagoslakeid: unique lake identifier in LAGOS
+#'              \item nhdid: unique lake identifier from the National Hydrography Dataset (NHD)
+#'              \item nhd_lat: latitude of lake polygon centroid
+#'              \item nhd_long: longitude of lake polygon centroid
+#'              \item lake_area_ha: lake area in hectares
+#'              \item lake_perim_meters: lake perimeter in meters
+#'              \item nhd_fcode:
+#'              \item nhd_ftype:
+#'              \item greatlakes:
+#'              \item lagosname1: lake name
+#'              \item meandepth: mean depth in meters
+#'              \item maxdepth: maximum depth in meters
+#'              \item iws_zoneid: zone ID of interlake watershed (IWS) in which focal lake is located
+#'              \item hu4_zoneid: zone ID of HUC4 in which focal lake is located
+#'              \item hu4_name: name of HUC4 in which focal lake is located
+#'              \item hu6_zoneid: zone ID of HUC6 in which focal lake is located
+#'              \item hu6_name: name of HUC6 in which focal lake is located
+#'              \item hu8_zoneid: zone ID of HUC8 in which focal lake is located
+#'              \item hu8_name: name of HUC8 in which focal lake is located
+#'              \item hu12_zoneid: zone ID of HU12 in which focal lake is located
+#'              \item hu12_name: name of HUC12 in which focal lake is located
+#'              \item edu_zoneid: zone ID of ecological drainage unit (EDU) in which focal lake is located
+#'              \item edu_name: name of EDU in which focal lake is located
+#'              \item county_zoneid: zone ID of county in which focal lake is located
+#'              \item county_name: name of county in which focal lake is located
+#'              \item state_name: name of state in which focal lake is located
+#'              \item state_zoneid: two-letter abbreviation of state in which focal lake is located
+#'              \item hu4:
+#'              \item hu6:
+#'              \item hu12:
+#'              \item hu8:
+#'              \item iws_areaha: area in hectares of iws in which focal lake is located
+#'              \item iws_perimkm: perimieter of iws in which focal lake is located
+#'              \item iws_pct_in_usa:
 #'              \item iws_ha_in_usa
 #'              \item iws_pct_in_nwi
 #'              \item iws_ha_in_nwi
-#'              \item lakeconnectivity
+#'              \item lakeconnectivity: connectivity of focal lake to upstream features
+#'              (DR_LakeStream = drainage lake with an upstream lake, DR_Stream = drainage lake
+#'              with upstream stream, Headwater = lake with outlet but no inlet, Isolated =
+#'              lake with no inlets or outlets)
 #'              \item lakes4ha_upstreamlakes_upstream_lakes_4ha_count
 #'              \item lakes4ha_upstreamlakes_upstream_lakes_4ha_area_ha
 #'              \item lakes4ha_upstreamlakes_upstream_lakes_10ha_count

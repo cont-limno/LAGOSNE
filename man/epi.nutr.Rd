@@ -6,7 +6,7 @@
 \title{Epilimnion Data}
 \format{A data frame with 276588 observations and 94 variables:
 \itemize{
-            \item eventida10542: unique combination of programid, lakeid, and date for each sampling event in LAGOS
+            \item eventida1087: unique combination of programid, lakeid, and date for each sampling event in LAGOS
             \item lagoslakeid: unique integer identifier for each lake in LAGOS
             \item programname: name of the sampling/monitoring program that collected the data
             \item programtype: categorical description of the type of sampling/monitoring effort (Federal Agency, LTER = Long Term Ecological Research program, National Survey Program, Non-Profit Agency, State Agency, State Agency/Citizen Monitoring Program, State Agency/University/Citizen Monitoring Program, State Agency/Citizen Monitoring Program, Tribal Agency, University)

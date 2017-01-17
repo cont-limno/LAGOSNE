@@ -14,8 +14,8 @@
 \alias{state.lulc}
 \title{Land Use Land Cover (LULC) Data Frames}
 \format{Data frames with all or a subset of the following variables. Number of observations is
-equal to the number of zones in each spatial scale (see Details below). Wildcard options include
-table names of the 9 LAGOS spatial scales (* = lakes4ha.buff100m, lakes4ha.buffer500m,
+equal to the number of zones in each spatial scale (see Details below). Wildcard options
+include the 9 LAGOS spatial scales (* = lakes4ha.buff100m, lakes4ha.buffer500m,
 iws, hu12, hu8, hu4, edu, county, state), year of measurement (** = 1992, 2001, 2006,
 2011), and unit of measurement in hectares or percent of zone area (*** = ha, pct unless
 noted otherwise). Each variable is available at each scale, year, and unit unless
@@ -67,14 +67,17 @@ otherwise noted.
    \item *_tri_***: Terrain ruggedness index (TRI) at each cell in meters with repsect to
    its immediate neighbors (10m scale). Cells in zone summarized as either the minimum,
    maximum, mean, or standard deviation (*** = min, max, mean, std)
-   \item *_zoneid: unique zone identifier
-   \item *_lagoslakeid: unique integer identifier for each lake in LAGOS
-   \item lakeconnection:
-   \item borderiws:
+   \item *_zoneid: unique zone identifier (* = iws, hu12, hu8, hu4, edu, county, state)
+   \item *_lagoslakeid: unique integer identifier for focal lake (* = lakes4ha_buffer100m,
+   lakes4ha_buffer500m, iws)
+   \item lakeconnection: connectivity class of focal lake. Only in iws.lulc table.
+   \item borderiws: whether iws zone intersects Canadian border (1 = yes, NA = no). Only
+   in iws.lulc table.
     }}
 \description{
-Datasets containing information on the land use and land cover (LULC) characteristics calculated at
-all LAGOS spatial extents (see ?scales). the interlake watershed spatial extent.
+Datasets containing information on the land use and land cover (LULC) characteristics
+calculated at all LAGOS spatial extents (see ?scales) from the National Land Cover
+Dataset (NLCD).
 }
 \details{
 Original data sources and layers from which each metric was derived can be found in additional file 5 of Soranno et al. (2015).
