@@ -174,11 +174,12 @@ NULL
 #' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}; \href{http://www.mrlc.gov/nlcd2011.php}{National Land Cover Database},
 NULL
 
-#' Epilimnion Data
+#' Epilimnion Water Quality Data
 #'
-#' A dataset containing physical and chemical attributes of the lakes' epilimnion (surface waters).
+#' A dataset containing physical and chemical observations in the epilimnion (surface waters).
+#' Each row is a sampling event, and lakes can have multiple sampling events.
 #'
-#' @format A data frame with 276588 observations and 94 variables:
+#' @format A data frame with 289482 observations and 94 variables:
 #' \itemize{
 #'             \item eventida1087: unique combination of programid, lakeid, and date for each sampling event in LAGOS
 #'             \item lagoslakeid: unique integer identifier for each lake in LAGOS
@@ -203,20 +204,20 @@ NULL
 #'             \item ton: nitrogen, total organic (µg/l as N)
 #'             \item tp: phosphorus, total (µg/l as P)
 #'             \item secchi: Secchi disk transparency (m)
-#'             \item *_qual: data flags from the source program for each water quality parameter. For example, "chla_qual" is the variable name for the data flag for chlorophyll a observations.
-#'             \item *_censorcode: identifies whether a data value is censored and the censor type for each water quality parameter. For example, "chla_censorcode" is the variable name for censor information regarding chlorophyll a observations.
-#'             \item *_detectionlimit: the detection limit used by the source program for each water quality parameter. For example, "chla_detectionlimit" is the name of the variable that reports detection limits for chlorophyll a observations.
-#'             \item *_labmethodname: analytical procedure, from a standards body if available for each water quality parameter. For example, "chla_labmethodname" is the variable name for lab methods associated with each chlorophyll a observation.
+#'             \item *_qual: data flags from the source program for each water quality parameter (* = all water quality parameters listed above). For example, "chla_qual" is the variable name for the data flag for chlorophyll a observations.
+#'             \item *_censorcode: identifies whether a data value is censored and the censor type for each water quality parameter (* = all water quality parameters listed above). For example, "chla_censorcode" is the variable name for censor information regarding chlorophyll a observations.
+#'             \item *_detectionlimit: the detection limit used by the source program for each water quality parameter (* = all water quality parameters listed above). For example, "chla_detectionlimit" is the name of the variable that reports detection limits for chlorophyll a observations.
+#'             \item *_labmethodname: analytical procedure, from a standards body if available for each water quality parameter (* = all water quality parameters listed above). For example, "chla_labmethodname" is the variable name for lab methods associated with each chlorophyll a observation.
 #'             \item chla_methodinfo: flag to indicate variable was sampled using different methods. "CHLA_UNFILTERED" means that a sample was
 #'             \item nh4_methodinfo: flag to indicate variable was sampled using different methods. "DISSOLVED" means that a sample was
 #'             \item secchi_methodinfo: flag to indicate variable was sampled using different methods. "SECCHI_VIEW" means that Secchi depth was measured using a viewer box, whereas "SECCHI_VIEW_UNKNOWN" reports observations where it is unclear if a Secchi viewer box was used. A secchi observation without a methodinfo code means the Secchi depth was made without the viewer box.
-#'             \item sampleyear: year in which sample was collected
+#'             \item sampleyear: year (4-digit) in which sample was collected
 #'             \item samplemonth: month in which sample was collected
 #'     }
 #'
 #' @docType data
 #' @keywords datasets
-#' @name epi.nutr
+#' @name epi.nutr water.quality
 #' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
 NULL
 
