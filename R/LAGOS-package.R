@@ -7,179 +7,48 @@
 #' @author \email{stachel2@msu.edu}
 NULL
 
-#' Watershed Data
+#' Scale Metadata
 #'
-#' A dataset containing information on the interlake watershed (IWS) characteristics for LAGOS lakes.
-#' For details on how the watersheds were delineated, see additional file 8 in Soranno et al. (2015).
+#' Data frames containing metadata for each spatial scale at which ecological context
+#' data are derived in LAGOS. The spatial scales include 100m buffers (lakes4ha.buffer100m),
+#' 500m buffers (lakes4ha.buffer500m), interlake watersheds (iws), hydrologic units (hu12, hu8,
+#' hu4), ecological drainage units (edu), counties (county), and states (state). Each abbreviation
+#' is the name of the data frame, with all or a subset of the following variables.
 #'
-#' @format A data frame with 51065 observations and 12 variables:
+#'
+#' @format Date frames with all or a subset of the following variables. Number of observations is
+#' equal to the number of regions in each spatial extent (buffers and iws = 51065, hu12 = 20257,
+#' hu8 = 511, hu4 = 65, edu = 91, county = 955, state = 17)
 #' \itemize{
-#'     \item iws_nhdid: permanent lake-specific identifier from the National Hydrography Dataset
-#'     \item iws_areaha: area (ha) of IWS
-#'     \item iws_perimkm: perimeter (km) of IWS
-#'     \item iws_lat: latitude of centroid of IWS polygon in decimal degrees (NAD83)
-#'     \item iws_long: longitude of centroid of IWS polygon in decimal degrees (NAD83)
-#'     \item iws_lakeareaha: lake area (ha) of focal lake within iws polygon
-#'     \item iws_pct_in_usa: percent of polygon within the US boundary
-#'     \item iws_ha_in_usa: area (ha) of polygon within the US boundary
-#'     \item iws_pct_in_nwi: percent of polygon within the USFWS National Wetland Inventory (NWI) boundary
-#'     \item iws_ha_in_nwi: area (ha) of polygon within the USFWS National Wetland Inventory (NWI) boundary
-#'     \item iws_zoneid: a unique identifier for each IWS in LAGOS
-#'     \item iws_lagoslakeid: a unique identifier for each lake in LAGOS
+#'     \item *_nhdid: permanent lake-specific identifier from the National Hydrography Dataset (* = lakes4ha_buffer100m, lakes4ha_buffer500m, iws)
+#'     \item *_name: text name of the zone (* = iws, hu12, hu8, hu4, county, state)
+#'     \item hu*: unique zone identifier (* = 12, 8, 4)
+#'     \item *_ha: area of spatial extent in hectares (* = lakes4ha_buffer100m, lakes4ha_buffer500m, hu12, hu8, hu4, edu, county)
+#'     \item *_areaha: area of spatial extent in hectares (* = iws, )
+#'     \item *_perimkm: perimeter of spatial extent in kilometers (* = iws, )
+#'     \item *_lat: latitude of centroid of polygon in decimal degrees (NAD83) (* = iws, hu12, hu8, hu4, edu, county, state)
+#'     \item *_long: longitude of centroid of polygon in decimal degrees (NAD83) (* = iws, hu12, hu8, hu4, edu, county, state)
+#'     \item *_lakeareaha: lake area (ha) of focal lake within polygon (* = iws, )
+#'     \item *_country: whether the polygon lies within the US ("US") or the US and Canada (US_CA) (* = hu12, edu)
+#'     \item *_pct_in_usa: percent of polygon within the US boundary (* = iws, hu12, edu)
+#'     \item *_ha_in_usa: area (ha) of polygon within the US boundary (* = iws, hu12, edu)
+#'     \item *_pct_in_nwi: percent of polygon within the USFWS National Wetland Inventory (NWI) boundary (* = hu12, hu8, hu4, edu, county, state)
+#'     \item *_ha_in_nwi: area (ha) of polygon within the USFWS National Wetland Inventory (NWI) boundary (* = hu12, hu8, hu4, edu, county, state)
+#'     \item *_zoneid: a unique identifier for each IWS in LAGOS, numbered 1:n with scale prefix (e.g., HU12_1) (* = iws, hu12, hu8, hu4, edu, county, state)
+#'     \item *_lagoslakeid: LAGOS unique identifier for focal lake (* = lakes4ha_buffer100m, lakes_buffer500m, iws, )
+#'     \item hu4_states: states that intersect hu4 zone polygon
+#'     \item state: 2-letter state abbreviation
+#'     \item county_state: state where county is located
 #'     }
 #'
 #' @docType data
 #' @keywords datasets
 #' @name iws
 #' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
+#' @aliases lakes4ha.buffer100m lakes4ha.buffer500m iws hu12 hu8 hu4 edu county state
 NULL
 
-#' HUC 12 Data
-#'
-#' A dataset containing information about the HUC 12 characteristics for LAGOS lakes.
-#' For details on hydrologic units, refer to the USGS hydrologic unit code documentation.
-#'
-#' @format A data frame with 20257 observations of 12 variables:
-#' \itemize{
-#'     \item hu12: NHD HUC identifier
-#'     \item hu12_name: text name of the zone
-#'     \item hu12_country: zonal units identified as totally within the US ("US") or cross the US-Canada border ("US_CA")
-#'     \item hu12_pct_in_us: percent of polygon within the US boundary
-#'     \item hu12_zoneid: unique zone identifier
-#'     \item hu12_pct_in_nwi: percent of polygon within the USFWS National Wetland Inventory (NWI) boundary
-#'     \item hu12_ha: surface area (ha) of zonal polygon
-#'     \item hu12_ha_in_nwi: area (ha) of polygon within the USFWS National Wetland Inventory (NWI) boundary
-#'     \item hu12_pct_in_usa: percent of polygon within the US boundary
-#'     \item hu12_ha_in_usa: area (ha) of polygon within the US boundary
-#'     \item hu12_lat: latitude of centroid of each polygon in decimal degrees (NAD83)
-#'     \item hu12_long: longitude of centroid of each polygon in decimal degrees (NAD83)
-#'     }
-#'
-#' @docType data
-#' @keywords datasets
-#' @name hu12
-#' @references \href{http://water.usgs.gov/GIS/huc.html}{USGS Hydrologic Unit Maps}
-NULL
-
-#' HUC 8 Data
-#'
-#' A dataset containing information about the HUC 8 characteristics for LAGOS lakes.
-#' For details on hydrologic units, refer to the USGS hydrologic unit code documentation.
-#'
-#' @format A data frame with 511 observations of 9 variables:
-#' \itemize{
-#'     \item hu8_states: abbreviations of states intersecting each zonal unit
-#'     \item hu8: NHD HUC identifier
-#'     \item hu8_name: text name of the zone
-#'     \item hu8_ha: surface area (ha) of zonal polygon
-#'     \item hu8_pct_in_nwi: percent of polygon within the USFWS National Wetland Inventory (NWI) boundary
-#'     \item hu8_ha_in_nwi: area (ha) of polygon within the USFWS National Wetland Inventory (NWI) boundary
-#'     \item hu8_lat: latitude of centroid of each polygon in decimal degrees (NAD83)
-#'     \item hu8_long: longitude of centroid of each polygon in decimal degrees (NAD83)
-#'     \item hu8_zoneid: unique zone identifier
-#'     }
-#'
-#' @docType data
-#' @keywords datasets
-#' @name hu8
-#' @references \href{http://water.usgs.gov/GIS/huc.html}{USGS Hydrologic Unit Maps}
-NULL
-
-#' HUC 4 Data
-#'
-#' A dataset containing information about the HUC 4 characteristics for LAGOS lakes.
-#' For details on hydrologic units, refer to the USGS hydrologic unit code documentation.
-#'
-#' @format A data frame with 65 observations of 9 variables:
-#' \itemize{
-#'     \item hu4_states: abbreviations of states intersecting each zonal unit
-#'     \item hu4: NHD HUC identifier
-#'     \item hu4_name: text name of the zone
-#'     \item hu4_ha: surface area (ha) of zonal polygon
-#'     \item hu4_pct_in_nwi: percent of polygon within the USFWS National Wetland Inventory (NWI) boundary
-#'     \item hu4_ha_in_nwi: area (ha) of polygon within the USFWS National Wetland Inventory (NWI) boundary
-#'     \item hu4_lat: latitude of centroid of each polygon in decimal degrees (NAD83)
-#'     \item hu4_long: longitude of centroid of each polygon in decimal degrees (NAD83)
-#'     \item hu4_zoneid: unique zone identifier
-#'     }
-#'
-#' @docType data
-#' @keywords datasets
-#' @name hu4
-#' @references \href{http://water.usgs.gov/GIS/huc.html}{USGS Hydrologic Unit Maps}
-NULL
-
-#' County Data
-#'
-#' A dataset containing information about county characteristics for LAGOS lakes.
-#' For details on zone delineations, see additional file 7 in Soranno et al. (2015).
-#'
-#' @format A data frame with 955 observations of 8 variables:
-#' \itemize{
-#'     \item county_state: abbreviation of state corresponding to the county
-#'     \item county_name: text name of the zone
-#'     \item county_ha_in_nwi: area (ha) of polygon within the USFWS National Wetland Inventory (NWI) boundary
-#'     \item county_ha: surface area (ha) of polygon
-#'     \item county_zoneid: unique zone identifier
-#'     \item county_pct_in_nwi: percent of polygon within the USFWS National Wetland Inventory (NWI) boundary
-#'     \item county_lat: latitude of centroid of each polygon in decimal degrees (NAD83)
-#'     \item county_long: longitude of centroid of each polygon in decimal degrees (NAD83)
-#'     }
-#'
-#' @docType data
-#' @keywords datasets
-#' @name county
-#' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
-NULL
-
-#' Ecological Drainage Unit Data
-#'
-#' A dataset containing information about ecological drainage unit (EDU) characteristics for LAGOS lakes.
-#' For details on zone delineations, see additional file 7 in Soranno et al. (2015).
-#'
-#' @format A data frame with 91 observations of 10 variables:
-#' \itemize{
-#'     \item csi_edu: text name of the zone
-#'     \item edu_lat: latitude of centroid of each polygon in decimal degrees (NAD83)
-#'     \item edu_long: longitude of centroid of each polygon in decimal degrees (NAD83)
-#'     \item edu_country: zonal units identified as totally within the US ("US") or cross the US-Canada border ("US_CA")
-#'     \item edu_zoneid: unique zone identifier
-#'     \item edu_pct_in_nwi: percent of polygon within the USFWS National Wetland Inventory (NWI) boundary
-#'     \item edu_ha: surface area (ha) of polygon
-#'     \item edu_ha_in_nwi: area (ha) of polygon within the USFWS National Wetland Inventory (NWI) boundary
-#'     \item edu_pct_in_usa: percent of polygon within the US boundary
-#'     \item edu_ha_in_usa: area (ha) of polygon within the US boundary
-#'     }
-#'
-#' @docType data
-#' @keywords datasets
-#' @name edu
-#' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
-NULL
-
-#' State Data
-#'
-#' A dataset containing information about state characteristics for LAGOS lakes.
-#' For details on zone delineations, see additional file 7 in Soranno et al. (2015).
-#'
-#' @format A data frame with 17 observations of 7 variables:
-#' \itemize{
-#'     \item state: abbreviation of state name
-#'     \item state_name: text name of state
-#'     \item state_zoneid: unique zone identifier
-#'     \item state_lat: latitude of centroid of each polygon in decimal degrees (NAD83)
-#'     \item state_long: longitude of centroid of each polygon in decimal degrees (NAD83)
-#'     \item state_pct_in_nwi: percent of polygon within the USFWS National Wetland Inventory (NWI) boundary
-#'     \item state_ha_in_nwi: area (ha) of polygon within the USFWS National Wetland Inventory (NWI) boundary
-#'     }
-#'
-#' @docType data
-#' @keywords datasets
-#' @name state
-#' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
-NULL
-
-#' Watershed LULC Data
+#' Land Use Land Cover (LULC) Data Frames
 #'
 #' A dataset containing information on the land use and land cover (LULC) characteristics calculated at the interlake watershed spatial extent.
 #' For details on how the watersheds were delineated, see additional file 8 in Soranno et al. (2015).
