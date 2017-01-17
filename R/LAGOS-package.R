@@ -66,8 +66,7 @@ NULL
 #' }
 #'
 #' @format Date frames with all or a subset of the following variables. Number of observations is
-#' equal to the number of zones in each spatial scale (see Details below). (buffers and iws = 51065, hu12 = 20257,
-#' hu8 = 511, hu4 = 65, edu = 91, county = 955, state = 17)
+#' equal to the number of zones in each spatial scale (see Details below).
 #' \itemize{
 #'     \item *_nhdid: permanent lake-specific identifier from the National Hydrography Dataset (* = lakes4ha_buffer100m, lakes4ha_buffer500m, iws)
 #'     \item *_name: text name of the zone (* = iws, hu12, hu8, hu4, county, state)
@@ -108,40 +107,41 @@ NULL
 #' code are not repeated for each year and statistic combination.
 #' NLCD data come from multiple years (* = 1992, 2001, 2006, 2011) and were calculated as either the total area in hectares of coverage or percent coverage (** = ha, pct).
 #'
-#' @format A data frame with 51065 observations of 158 variables:
+#' @format Data frames with all or a subset of the following variables. Number of observations
+#' is equal to the number of zones in each spatial scale:
 #' \itemize{
-#'    \item iws_nhdid
-#'    \item iws_canopy2001_*: per pixel tree canopy percent for zone, 2001. Summary statistics include minimum, maximum, mean and standard deviation (* = min, max, mean, std).
-#'    \item iws_damdensity_*: dams in zone. Summary statistics include a point count, points per hectare, and points per square kilometer (* = pointcount, poinsperha, pointspersqkm)
-#'    \item iws_nlcd*_**_0: No data
-#'    \item iws_nlcd*_**_11: Open water
-#'    \item iws_nlcd*_**_21: Residential, low intensity
-#'    \item iws_nlcd*_**_22: Residential, high intensity
-#'    \item iws_nlcd*_**_23: Commercial/industrial/transportation
-#'    \item iws_nlcd*_**_24: Developed, high Intensity. Note, this variable was not calculated in 1992 (* = 2001, 2006, 2011)
-#'    \item iws_nlcd*_**_31: Bare rock/sand/clay
-#'    \item iws_nlcd1992_**_32: Quarries/strip mines/gravel pits. Note, this variable only calculated in 1992.
-#'    \item iws_nlcd1992_**_33: Transitional (barren). Note, this variable only calculated in 1992.
-#'    \item iws_nlcd*_**_41: Deciduous forest
-#'    \item iws_nlcd*_**_42: Evergreen forest
-#'    \item iws_nlcd*_**_43: Mixed forest
-#'    \item iws_nlcd1992_**_51: Shrubland. Note, this variable only calculated in 1992.
-#'    \item iws_nlcd1992_**_52: Scrub/shrub. Note, this variable not calculated in 1992 (* = 2001, 2006, 2011)
-#'    \item iws_nlcd1992_**_61: Orchards/vineyards/other. Note, this variable only calculated in 1992.
-#'    \item iws_nlcd*_**_71: Grasslands/herbaceous
-#'    \item iws_nlcd*_**_81: Pasture/hay
-#'    \item iws_nlcd*_**_82: Row crops
-#'    \item iws_nlcd1992_**_83: Small grains. Note, this variable only calculated in 1992.
-#'    \item iws_nlcd1992_**_85: Urban/recreational grasses. Note, this variable only calculated in 1992.
-#'    \item iws_nlcd*_**_90: Woody wetlands. Note, this variable not calculated in 1992 (* = 2001, 2006, 2011). Equivalent code for 1992 = 91.
-#'    \item iws_nlcd1992_**_91: Woody wetlands. Note, this variable only calculated in 1992. Equivalent code for 2001, 2006 and 2011 = 90.
-#'    \item iws_nlcd1992_**_92: Emergent herbaceous wetlands. Note, this variable only calculated in 1992. Equivalent code for 2001, 2006, and 2011 = 95.
-#'    \item iws_nlcd*_**_95: Emergent herbaceous wetlands. Note, this variable not calculated in 1992. Equivalent code for 1992 = 92.
-#'    \item iws_roaddensity_*: Roads within the zone, calculated as sum of the length in meters, or sum of the length in meters divided by area of zone in hectares (* = sum_lengthm, density_mperha)
-#'    \item iws_slope_*: The slope at each cell is the slope with respect to its immediate neighbors (10m scale). Cells in IWS summarized as either the minimum, maximum, mean, or standard deviation (* = min, max, mean, std)
-#'    \item iws_tri_*: Terrain ruggedness index (TRI) at each cell in meters with repsect to its immediate neighbors (10m scale). Cells in IWS summarized as either the minimum, maximum, mean, or standard deviation (* = min, max, mean, std)
-#'    \item iws_zoneid: unique zone identifier
-#'    \item iws_lagoslakeid: unique integer identifier for each lake in LAGOS
+#'    \item *_nhdid
+#'    \item *_canopy2001_*: per pixel tree canopy percent for zone, 2001. Summary statistics include minimum, maximum, mean and standard deviation (* = min, max, mean, std).
+#'    \item *_damdensity_*: dams in zone. Summary statistics include a point count, points per hectare, and points per square kilometer (* = pointcount, poinsperha, pointspersqkm)
+#'    \item *_nlcd**_***_0: No data
+#'    \item *_nlcd*_**_11: Open water
+#'    \item *_nlcd*_**_21: Residential, low intensity
+#'    \item *_nlcd*_**_22: Residential, high intensity
+#'    \item *_nlcd*_**_23: Commercial/industrial/transportation
+#'    \item *_nlcd*_**_24: Developed, high Intensity. Note, this variable was not calculated in 1992 (* = 2001, 2006, 2011)
+#'    \item *_nlcd*_**_31: Bare rock/sand/clay
+#'    \item *_nlcd1992_**_32: Quarries/strip mines/gravel pits. Note, this variable only calculated in 1992.
+#'    \item *_nlcd1992_**_33: Transitional (barren). Note, this variable only calculated in 1992.
+#'    \item *_nlcd*_**_41: Deciduous forest
+#'    \item *_nlcd*_**_42: Evergreen forest
+#'    \item *_nlcd*_**_43: Mixed forest
+#'    \item *_nlcd1992_**_51: Shrubland. Note, this variable only calculated in 1992.
+#'    \item *_nlcd1992_**_52: Scrub/shrub. Note, this variable not calculated in 1992 (* = 2001, 2006, 2011)
+#'    \item *_nlcd1992_**_61: Orchards/vineyards/other. Note, this variable only calculated in 1992.
+#'    \item *_nlcd*_**_71: Grasslands/herbaceous
+#'    \item *_nlcd*_**_81: Pasture/hay
+#'    \item *_nlcd*_**_82: Row crops
+#'    \item *_nlcd1992_**_83: Small grains. Note, this variable only calculated in 1992.
+#'    \item *_nlcd1992_**_85: Urban/recreational grasses. Note, this variable only calculated in 1992.
+#'    \item *_nlcd*_**_90: Woody wetlands. Note, this variable not calculated in 1992 (* = 2001, 2006, 2011). Equivalent code for 1992 = 91.
+#'    \item *_nlcd1992_**_91: Woody wetlands. Note, this variable only calculated in 1992. Equivalent code for 2001, 2006 and 2011 = 90.
+#'    \item *_nlcd1992_**_92: Emergent herbaceous wetlands. Note, this variable only calculated in 1992. Equivalent code for 2001, 2006, and 2011 = 95.
+#'    \item *_nlcd*_**_95: Emergent herbaceous wetlands. Note, this variable not calculated in 1992. Equivalent code for 1992 = 92.
+#'    \item *_roaddensity_*: Roads within the zone, calculated as sum of the length in meters, or sum of the length in meters divided by area of zone in hectares (* = sum_lengthm, density_mperha)
+#'    \item *_slope_*: The slope at each cell is the slope with respect to its immediate neighbors (10m scale). Cells in IWS summarized as either the minimum, maximum, mean, or standard deviation (* = min, max, mean, std)
+#'    \item *_tri_*: Terrain ruggedness index (TRI) at each cell in meters with repsect to its immediate neighbors (10m scale). Cells in IWS summarized as either the minimum, maximum, mean, or standard deviation (* = min, max, mean, std)
+#'    \item *_zoneid: unique zone identifier
+#'    \item *_lagoslakeid: unique integer identifier for each lake in LAGOS
 #'    \item lakeconnection:
 #'    \item borderiws:
 #'     }

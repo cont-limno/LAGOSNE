@@ -42,11 +42,12 @@
    \item borderiws:
     }}
 \description{
-A dataset containing information on the land use and land cover (LULC) characteristics calculated at the interlake watershed spatial extent.
-For details on how the watersheds were delineated, see additional file 8 in Soranno et al. (2015).
-Original data sources and layers from which each metric was derived can be found in additional file 5 of Soranno et al. (2015).
+Datasets containing information on the land use and land cover (LULC) characteristics calculated at
+all LAGOS spatial extents (see ?scales). the interlake watershed spatial extent.
 }
 \details{
+Original data sources and layers from which each metric was derived can be found in additional file 5 of Soranno et al. (2015).
+
 Note the variable descriptions above for each National Land Cover Database (NLCD)
 code are not repeated for each year and statistic combination.
 NLCD data come from multiple years (* = 1992, 2001, 2006, 2011) and were calculated as either the total area in hectares of coverage or percent coverage (** = ha, pct).
