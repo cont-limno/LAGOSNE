@@ -136,7 +136,7 @@ hu12, hu8, hu4, edu, county, state) and additional wildcards described below.
     }
     }}
 \description{
-Datasets containing lake surface water connectivity metrics calculated
+Datasets containing lake, stream, and wetland abundance and connectivity metrics calculated
 at the 500m buffer (lakes4ha.buffer500m.conn), HUC12 (hu12.conn), HUC8 (hu8.conn),
 HUC4 (hu4.conn), EDU (edu.conn), county (county.conn) and state (state.conn) scale.
 }
