@@ -485,7 +485,7 @@ NULL
 
 #' Secchi (Water Clarity) Data
 #'
-#' A dataset containing Secchi disk observations from lakes.
+#' A dataset containing Secchi disk measurements from lakes.
 #'
 #' There is some overlap between the Secchi values reported in table 'secchi'
 #' and table 'epi.nut'. The 'epi.nutr' table only contains Secchi observations when
@@ -494,7 +494,7 @@ NULL
 #' @format A data frame with 913319 observations of 12 variables:
 #' \itemize{
 #'      \item eventida1087: unique combination of programid, lakeid, and date for each sampling event
-#'      \item lagoslakeid:
+#'      \item lagoslakeid: unique LAGOS lake identifier
 #'      \item programname: name of the sampling/monitoring program that collected the data
 #'      \item programtype: categorical description of the type of sampling/monitoring effort
 #'      \item lagosversion: current version of LAGOS that the data record belongs to
