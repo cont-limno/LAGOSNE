@@ -181,8 +181,7 @@ NULL
 #' state spatial extents (see ?scales).
 #'
 #' Original data sources and layers from which each metric was derived can be found in
-#' \href{https://static-content.springer.com/esm/art%3A10.1186%2Fs13742-015-0067-4/MediaObjects/13742_2015_67_MOESM5_ESM.xlsx}{additional file 5}
-#' of Soranno et al. (2015). Briefly, climate data
+#' additional file 5 of Soranno et al. (2015). Briefly, climate data
 #' came from the PRISM climate group, hydrology metrics were derived from United States Geologic
 #' Survey (USGS) data, atmospheric deposition was from the National Atmospheric Deposition program,
 #' and surficial geology were derived from layers USGS data.
@@ -233,7 +232,7 @@ NULL
 #' @keywords datasets
 #' @name chag
 #' @aliases hu12.chag hu8.chag hu4.chag edu.chag county.chag state.chag
-#' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}; \href{http://www.mrlc.gov/nlcd2011.php}{National Land Cover Database},
+#' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
 NULL
 
 #' Epilimnion Water Quality Data
@@ -283,6 +282,145 @@ NULL
 #' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
 NULL
 
+#' Connectivity Datasets
+#'
+#' Datasets containing lake, stream, and wetland abundance and connectivity metrics calculated
+#' at the 500m buffer (lakes4ha.buffer500m.conn), HUC12 (hu12.conn), HUC8 (hu8.conn),
+#' HUC4 (hu4.conn), EDU (edu.conn), county (county.conn) and state (state.conn) scale.
+#'
+#' @format Data frames with all or a subset of the following variables. Number of observations is
+#' equal to the number of zones in each spatial scale (see ?scales). Wildcard options
+#' include a subset of the LAGOS spatial scales (* = lakes4ha_buffer500m,
+#' hu12, hu8, hu4, edu, county, state) and additional wildcards described below.
+#' \itemize{
+#'      \item Identifiers and Zone Metadata
+#'      \itemize{
+#'          \item *_zoneid
+#'          \item *_nwiexclusions
+#'          }
+#'      \item Lake Connectivity Metrics. Lake abundance metrics are derived for all lakes,
+#'      isolated lakes ("isolated" - no inflow or outflow streams), headwater lakes ("headwater" - no inflowing streams),
+#'      stream drainage lakes ("drstream" - lakes with inflowing stream(s), with or without outflows,
+#'      and no upstream lakes ≥10 ha), and lake drainage lakes ("drlakeStream" lakes with inflowing
+#'      stream(s) and at least one upstream lake ≥10 ha).
+#'      \itemize{
+#'          \item *_lakes_**_***: all lakes that are within or intersect the zone boundary
+#'          and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha),
+#'          expressed as average lake area (** = agsize_ha) or count (** = count)
+#'          \item *_lakes_**_overlapping_***: all lakes that are clipped to the zone boundary
+#'          and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
+#'          as sum of lake area (*** = area_ha) or percent of zone area (*** = area_pct)
+#'          \item *_lakes_**_contributing_area_ha: all lakes that are within or intersect the zone boundary,
+#'          and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed as
+#'          sum of lake area
+#'          \item *_lakes_**_isolated_***: all isolated lakes that are within or intersect the zone boundary,
+#'          and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
+#'          as average size in hectares (*** = avgsize_ha) or count (*** = count
+#'          \item *_lakes_**_isolated_overlapping_***: all isolated lakes that are clipped to the zone boundary
+#'          and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
+#'          as sum of lake area (*** = area_ha) or percent of zone area (*** = area_pct)
+#'          \item *_lakes_**_isolated_contributing_area_ha: all isolated lakes that are within or intersect the zone boundary,
+#'          and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed as
+#'          sum of lake area
+#'           \item *_lakes_**_headwater_***: all headwater lakes that are within or intersect the zone boundary,
+#'          and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
+#'          as average size in hectares (*** = avgsize_ha) or count (*** = count
+#'          \item *_lakes_**_headwater_overlapping_***: all headwater lakes that are clipped to the zone boundary
+#'          and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
+#'          as sum of lake area (*** = area_ha) or percent of zone area (*** = area_pct)
+#'          \item *_lakes_**_headwater_contributing_area_ha: all headwater lakes that are within or intersect the zone boundary,
+#'          and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed as
+#'          sum of lake area
+#'          \item *_lakes_**_drstream_***: all drstream lakes that are within or intersect the zone boundary,
+#'          and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
+#'          as average size in hectares (*** = avgsize_ha) or count (*** = count
+#'          \item *_lakes_**_drstream_overlapping_***: all drstream lakes that are clipped to the zone boundary
+#'          and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
+#'          as sum of lake area (*** = area_ha) or percent of zone area (*** = area_pct)
+#'          \item *_lakes_**_drstream_contributing_area_ha: all drstream lakes that are within or intersect the zone boundary,
+#'          and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed as
+#'          sum of lake area
+#'          \item *_lakes_**_drlakestream_***: all drlakestream lakes that are within or intersect the zone boundary,
+#'          and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
+#'          as average size in hectares (*** = avgsize_ha) or count (*** = count
+#'          \item *_lakes_**_drlakestream_overlapping_***: all drlakestream lakes that are clipped to the zone boundary
+#'          and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
+#'          as sum of lake area (*** = area_ha) or percent of zone area (*** = area_pct)
+#'          \item *_lakes_**_drlakestream_contributing_area_ha: all drlakestream lakes that are within or intersect the zone boundary,
+#'          and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed as
+#'          sum of lake area
+#'          \item *_latewisconsinglaciation_glaciation: zone glaciation status during
+#'          the late Wisconsin glaciation (Glaciated, Not_Glaciated, Partially)
+#'      }
+#'      \item Stream Connectivity Metrics
+#'      \itemize{
+#'          \item *_streamdensity_streams_**: all streams (NHDFlowline minus artifical lines through lakes)
+#'          within the zone expressed as sum of length in meters (** = sum_lengthm) or density
+#'          in meters per hectare (** = mperha)
+#'          \item *_streamdensity_headwaters_*: headwater streams (1st-3rd Strahler order) within the zone
+#'          expressed as sum of length in meters (** = sum_lengthm) or density
+#'          in meters per hectare (** = mperha)
+#'          \item *_streamdensity_midreaches_*: Midreach streams (4th-6th Strahler order) within the zone
+#'          expressed as sum of length in meters (** = sum_lengthm) or density
+#'          in meters per hectare (** = mperha)
+#'          \item *_streamdensity_rivers_*: large river-streams (>6th Strahler order) within the zone
+#'          expressed as sum of length in meters (** = sum_lengthm) or density
+#'          in meters per hectare (** = mperha)
+#'          \item *_canalditchdensity_**: canals within the zone,
+#'          expressed as sum of length in meters (** = sum_lengthm) or density
+#'          in meters per hectare (** = mperha)
+#'          }
+#'      \item Wetland Connectivity Metrics
+#'      \itemize{
+#'          \item *_wl_allwetlands**_***: ** = undissolved, dissolved, *** = avgsize_ha, count
+#'          \item *_wl_allwetlands**_overlapping_***: ** = undissolved, dissolved; *** = area_ha, area_pct
+#'          \item *_wl_allwetlands**_contributing_area_ha: ** = undissolved, dissolved
+#'          \item *_wl_isolatedwetlandsundissolved_***: ** = undissolved, dissolved, *** = avgsize_ha, count
+#'          \item *_wl_isolatedwetlandsundissolved_overlapping_***: ** = undissolved, dissolved; *** = area_ha, area_pct
+#'          \item *_wl_isolatedwetlandsundissolved_contributing_area_ha: ** = undissolved, dissolved
+#'          \item *_wl_singlewetlandsundissolved_***: ** = undissolved, dissolved, *** = avgsize_ha, count
+#'          \item *_wl_singlewetlandsundissolved_overlapping_***: ** = undissolved, dissolved; *** = area_ha, area_pct
+#'          \item *_wl_singlewetlandsundissolved_contributing_area_ha: ** = undissolved, dissolved
+#'          \item *_wl_connectedwetlandsundissolved_***: ** = undissolved, dissolved, *** = avgsize_ha, count
+#'          \item *_wl_connectedwetlandsundissolved_overlapping_***: ** = undissolved, dissolved; *** = area_ha, area_pct
+#'          \item *_wl_connectedwetlandsundissolved_contributing_area_ha: ** = undissolved, dissolved
+#'          \item *_wl_forestedwetlandsundissolved_***: ** = undissolved, dissolved, *** = avgsize_ha, count
+#'          \item *_wl_forestedwetlandsundissolved_overlapping_***: ** = undissolved, dissolved; *** = area_ha, area_pct
+#'          \item *_wl_forestedwetlandsundissolved_contributing_area_ha: ** = undissolved, dissolved
+#'          \item *_wl_scrubshrubwetlandsundissolved_***: ** = undissolved, dissolved, *** = avgsize_ha, count
+#'          \item *_wl_scrubshrubwetlandsundissolved_overlapping_***: ** = undissolved, dissolved; *** = area_ha, area_pct
+#'          \item *_wl_scrubshrubwetlandsundissolved_contributing_area_ha: ** = undissolved, dissolved
+#'          \item *_wl_openwaterwetlandsundissolved_***: ** = undissolved, dissolved, *** = avgsize_ha, count
+#'          \item *_wl_openwaterwetlandsundissolved_overlapping_***: ** = undissolved, dissolved; *** = area_ha, area_pct
+#'          \item *_wl_openwaterwetlandsundissolved_contributing_area_ha: ** = undissolved, dissolved
+#'          \item *_wl_regimefwetlandsundissolved_***: ** = undissolved, dissolved, *** = avgsize_ha, count
+#'          \item *_wl_regimefwetlandsundissolved_overlapping_***: ** = undissolved, dissolved; *** = area_ha, area_pct
+#'          \item *_wl_regimefwetlandsundissolved_contributing_area_ha: ** = undissolved, dissolved
+#'          \item *_wl_regimegwetlandsundissolved_***: ** = undissolved, dissolved, *** = avgsize_ha, count
+#'          \item *_wl_regimegwetlandsundissolved_overlapping_***: ** = undissolved, dissolved; *** = area_ha, area_pct
+#'          \item *_wl_regimegwetlandsundissolved_contributing_area_ha: ** = undissolved, dissolved
+#'          \item *_wl_regimeawetlandsundissolved_***: ** = undissolved, dissolved, *** = avgsize_ha, count
+#'          \item *_wl_regimeawetlandsundissolved_overlapping_***: ** = undissolved, dissolved; *** = area_ha, area_pct
+#'          \item *_wl_regimeawetlandsundissolved_contributing_area_ha: ** = undissolved, dissolved
+#'          \item *_wl_regimecwetlandsundissolved_***: ** = undissolved, dissolved, *** = avgsize_ha, count
+#'          \item *_wl_regimecwetlandsundissolved_overlapping_***: ** = undissolved, dissolved; *** = area_ha, area_pct
+#'          \item *_wl_regimecwetlandsundissolved_contributing_area_ha: ** = undissolved, dissolved
+#'          \item *_wl_regimehwetlandsundissolved_***: ** = undissolved, dissolved, *** = avgsize_ha, count
+#'          \item *_wl_regimehwetlandsundissolved_overlapping_***: ** = undissolved, dissolved; *** = area_ha, area_pct
+#'          \item *_wl_regimehwetlandsundissolved_contributing_area_ha: ** = undissolved, dissolved
+#'     }
+#'     }
+#'
+#' @docType data
+#' @keywords datasets
+#' @name conn
+#' @aliases connectivity buffer100m.conn lakes4ha.buffer100m.com hu12.conn hu8.conn hu4.conn edu.conn county.conn state.conn
+#' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
+NULL
+
+
+
+#'
 #' Lake Attributes
 #'
 #' A dataset containing attributes of all lakes in LAGOS >1 hectare.
@@ -344,3 +482,35 @@ NULL
 #' @name lagoslakes
 #' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
 NULL
+
+#' Secchi (Water Clarity) Data
+#'
+#' A dataset containing Secchi disk observations from lakes.
+#'
+#' There is some overlap between the Secchi values reported in table 'secchi'
+#' and table 'epi.nut'. The 'epi.nutr' table only contains Secchi observations when
+#' there were additional nutrient data collected at the same time.
+#'
+#' @format A data frame with 913319 observations of 12 variables:
+#' \itemize{
+#'      \item eventida1087: unique combination of programid, lakeid, and date for each sampling event
+#'      \item lagoslakeid:
+#'      \item programname: name of the sampling/monitoring program that collected the data
+#'      \item programtype: categorical description of the type of sampling/monitoring effort
+#'      \item lagosversion: current version of LAGOS that the data record belongs to
+#'      \item sampledate: date at which the sample was collected, stored in date format (YYYY-MM-DD)
+#'      \item secchi: Secchi depth in meters
+#'      \item secchi_censorcode: identifies whether a Secchi value is censored and the censor type
+#'      \item secchi_qual: data flags from the source program
+#'      \item secchi_methodinfo: flag to indicate variables that were sampled using different methods. "SECCHI_VIEW" =
+#'      viewing box used to measure Secchi depth, "SECCHI_VIEW_UNKNOWN" = unknown whether viewing box was used, "NA" = no viewing
+#'      box used to measure Secchi depth.
+#'      \item sampleyear: year (4-digit) of sampling event
+#'      \item samplemonth: month (1 through 12) of sampling event
+#'      }
+#' @docType data
+#' @keywords datasets
+#' @name secchi
+#' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
+NULL
+
