@@ -514,3 +514,35 @@ NULL
 #' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
 NULL
 
+#' LAGOS sources
+#'
+#' A dataset identifying the sources of limnological data in LAGOS.
+#'
+#' @format A data frame with 87 observations of 19 variables:
+#' \itemize{
+#'      \item programid: unique LAGOS program identifier
+#'      \item programname: name of the sampling/monitoring program that collected the data
+#'      \item metadataid: unique metadata identifier associated with
+#'      \item sourceid
+#'      \item sourcename
+#'      \item composite
+#'      \item programtype: categorical description of the type of sampling/monitoring effort
+#'      \item fundingsource
+#'      \item labtype
+#'      \item programlink
+#'      \item programstatus
+#'      \item dataprovider
+#'      \item organization
+#'      \item sourcedescription
+#'      \item beg_yr
+#'      \item end_yr
+#'      \item state_name
+#'      \item lakecount
+#'      \item variable_list
+#'      }
+#' @docType data
+#' @keywords datasets
+#' @name source
+#' @aliases programs lagos.source.programs source.programs lagos.source
+#' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
+NULL
