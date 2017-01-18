@@ -177,10 +177,15 @@ NULL
 #' CHAG Datasets
 #'
 #' Datasets containing information on climate, hydrology, atmospheric deposition, and
-#' groundwater characteristics calculated at various LAGOS spatial extents (see ?scales).
+#' surficial geology characteristics calculated at hu12, hu8, hu4, edu, county and
+#' state spatial extents (see ?scales).
 #'
 #' Original data sources and layers from which each metric was derived can be found in
-#' additional file 5 of Soranno et al. (2015).
+#' \href{https://static-content.springer.com/esm/art%3A10.1186%2Fs13742-015-0067-4/MediaObjects/13742_2015_67_MOESM5_ESM.xlsx}{additional file 5}
+#' of Soranno et al. (2015). Briefly, climate data
+#' came from the PRISM climate group, hydrology metrics were derived from United States Geologic
+#' Survey (USGS) data, atmospheric deposition was from the National Atmospheric Deposition program,
+#' and surficial geology were derived from layers USGS data.
 #'
 #' @format Data frames with all or a subset of the following variables. Number of observations is
 #' equal to the number of zones in each spatial scale (see Details below). Wildcard options
