@@ -1,0 +1,48 @@
+---
+title: "Importing and Structure of LAGOS"
+author: "Samantha Oliver"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Importing and Structure of LAGOS}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## LAGOS Overview
+The Lake Multi-Scaled Geospatial and Temporal Database (LAGOS) is a 
+combination of three data modules (LAGOSlocus, LAGOSlimno, LAGOSgeo) designed to be of use for researchers and managers to [insert line from paper]. The database includes information about lakes in a lake-rich region of 17 states in the United States, including Minnesota, Iowa, Wisconsin, Illinois, Missouri, Michigan, Indiana, Ohio, Pennsylvania, New York, New Jersey, Connecticut, New Hampshire, Rhode Island, Massachusetts, Vermont, and Maine. LAGOS contains a complete census of 
+all lakes greater than 4 hectares in the region with supporting 
+ecological context information. Additionally, for a subset of lakes, LAGOS contains water quality data. 
+
+### LAGOSlocus
+
+### LAGOSlimno
+LAGOSlimno is an integration of preexisting water quality data from disparate sources, including state, federal, tribal, and university organizations. 
+
+### LAGOSgeo
+LAGOSgeo is an integration of information describing the air, water, and 
+land (hereafter, ecological context) surrounding lakes. LAGOSgeo contains
+three themes of data that describe the ecological context of each lake: CHAG (climate, hyrology, atmospheric deposition, and surficial geology), 
+CONN (stream, wetland, and lake surficial connectivity), and LULC (land use/land cover). 
+
+Each theme of LAGOSgeo was calculated at mutliple spatial extents (see below). The table names of each extent-theme combination [extent].[theme]
+(e.g., state.chag, hu4.conn, iws.lulc). Each theme and table within LAGOSgeo is connected to a help file and can be viewed by calling either
+the theme or table name (e.g., '?state.chag' or '?chag').
+
+
+
+
+
+
+## Structure of LAGOS
+## anytime you need help - ?
+
+## LAGOS locus
+
+## LAGOS geo
+## LAGOS geo themes
+
+## LAGOS limno
+
+
