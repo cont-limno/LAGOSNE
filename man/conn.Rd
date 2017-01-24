@@ -2,7 +2,7 @@
 % Please edit documentation in R/LAGOS-package.R
 \docType{data}
 \name{conn}
-\alias{buffer100m.conn}
+\alias{buffer500m.conn}
 \alias{conn}
 \alias{connectivity}
 \alias{county.conn}
@@ -10,12 +10,13 @@
 \alias{hu12.conn}
 \alias{hu4.conn}
 \alias{hu8.conn}
-\alias{lakes4ha.buffer100m.com}
+\alias{iws.conn}
+\alias{lakes4ha.buffer500m.conn}
 \alias{state.conn}
 \title{Connectivity Datasets}
 \format{Data frames with all or a subset of the following variables. Number of observations is
-equal to the number of zones in each spatial scale (see ?scales). Wildcard options
-include a subset of the LAGOS spatial scales (* = lakes4ha_buffer500m,
+equal to the number of zones in each spatial extent (see ?extents). Wildcard options
+include a subset of the LAGOS spatial extents (* = lakes4ha_buffer500m, iws,
 hu12, hu8, hu4, edu, county, state) and additional wildcards described below.
 \itemize{
      \item Identifiers and Zone Metadata
@@ -138,7 +139,7 @@ hu12, hu8, hu4, edu, county, state) and additional wildcards described below.
 \description{
 Datasets containing lake, stream, and wetland abundance and connectivity metrics calculated
 at the 500m buffer (lakes4ha.buffer500m.conn), HUC12 (hu12.conn), HUC8 (hu8.conn),
-HUC4 (hu4.conn), EDU (edu.conn), county (county.conn) and state (state.conn) scale.
+HUC4 (hu4.conn), EDU (edu.conn), county (county.conn) and state (state.conn) extents.
 }
 \references{
 Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}

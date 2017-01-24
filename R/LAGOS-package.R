@@ -285,11 +285,11 @@ NULL
 #'
 #' Datasets containing lake, stream, and wetland abundance and connectivity metrics calculated
 #' at the 500m buffer (lakes4ha.buffer500m.conn), HUC12 (hu12.conn), HUC8 (hu8.conn),
-#' HUC4 (hu4.conn), EDU (edu.conn), county (county.conn) and state (state.conn) scale.
+#' HUC4 (hu4.conn), EDU (edu.conn), county (county.conn) and state (state.conn) extents.
 #'
 #' @format Data frames with all or a subset of the following variables. Number of observations is
-#' equal to the number of zones in each spatial scale (see ?scales). Wildcard options
-#' include a subset of the LAGOS spatial scales (* = lakes4ha_buffer500m,
+#' equal to the number of zones in each spatial extent (see ?extents). Wildcard options
+#' include a subset of the LAGOS spatial extents (* = lakes4ha_buffer500m, iws,
 #' hu12, hu8, hu4, edu, county, state) and additional wildcards described below.
 #' \itemize{
 #'      \item Identifiers and Zone Metadata
@@ -413,7 +413,7 @@ NULL
 #' @docType data
 #' @keywords datasets
 #' @name conn
-#' @aliases connectivity buffer100m.conn lakes4ha.buffer100m.com hu12.conn hu8.conn hu4.conn edu.conn county.conn state.conn
+#' @aliases connectivity buffer500m.conn lakes4ha.buffer500m.conn iws.conn hu12.conn hu8.conn hu4.conn edu.conn county.conn state.conn
 #' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
 NULL
 

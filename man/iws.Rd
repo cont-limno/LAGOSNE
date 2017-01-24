@@ -6,18 +6,18 @@
 \alias{buffer500m}
 \alias{county}
 \alias{edu}
+\alias{extent}
+\alias{extents}
 \alias{hu12}
 \alias{hu4}
 \alias{hu8}
 \alias{iws}
 \alias{lakes4ha.buffer100m}
 \alias{lakes4ha.buffer500m}
-\alias{scale}
-\alias{scales}
 \alias{state}
-\title{LAGOS Spatial Scale Metadata}
+\title{LAGOS Spatial Extent Metadata}
 \format{Data frames with all or a subset of the following variables. Number of observations is
-equal to the number of zones in each spatial scale (see Details below).
+equal to the number of zones in each spatial extent (see Details below).
 \itemize{
     \item *_nhdid: permanent lake-specific identifier from the National Hydrography
     Dataset (* = lakes4ha_buffer100m, lakes4ha_buffer500m, iws)
@@ -34,39 +34,38 @@ equal to the number of zones in each spatial scale (see Details below).
     \item *_ha_in_usa: area (ha) of polygon within the US boundary (* = iws, hu12, edu)
     \item *_pct_in_nwi: percent of polygon within the USFWS National Wetland Inventory (NWI) boundary (* = hu12, hu8, hu4, edu, county, state)
     \item *_ha_in_nwi: area (ha) of polygon within the USFWS National Wetland Inventory (NWI) boundary (* = hu12, hu8, hu4, edu, county, state)
-    \item *_zoneid: a unique identifier for each IWS in LAGOS, numbered 1:n with scale prefix (e.g., HU12_1) (* = iws, hu12, hu8, hu4, edu, county, state)
+    \item *_zoneid: a unique identifier for each IWS in LAGOS, numbered 1:n with extent prefix (e.g., HU12_1) (* = iws, hu12, hu8, hu4, edu, county, state)
     \item *_lagoslakeid: LAGOS unique identifier for focal lake (* = lakes4ha_buffer100m, lakes_buffer500m, iws, )
     \item hu4_states: states that intersect hu4 zone polygon
     \item state: 2-letter state abbreviation
     \item county_state: state where county is located
     }}
 \description{
-Data frames containing metadata for each spatial scale at which ecological context
-data are derived in LAGOS. The spatial scales include 100m buffers (lakes4ha.buffer100m),
+Data frames containing metadata for each spatial extent at which ecological context
+data are derived in LAGOS. The spatial extents include 100m buffers (lakes4ha.buffer100m),
 500m buffers (lakes4ha.buffer500m), interlake watersheds (iws), hydrologic units (hu12, hu8,
 hu4), ecological drainage units (edu), counties (county), and states (state). Each abbreviation
 is the name of the data frame, with all or a subset of the following variables. For more information
-about derivation of each spatial scale, see Details below or [insert supp docs] from Soranno et al. 2015.
+about derivation of each spatial extent, see Details below or [insert supp docs] from Soranno et al. 2015.
 }
 \details{
-The nine LAGOS spatial scales were used to summarize the ecological context of each lake.
+The nine LAGOS spatial extents were used to summarize the ecological context of each lake.
 Ecological context themes include land use/land cover (LULC), connectivity (CONN), and
 climate, hydrology, atmospheric deposition, and groundwater (CHAG). Not all themes
-were derived at all scales due to scaling issues (e.g., scale of measurement larger than
-size of zone). Briefly:
+were derived at all extents due to data availability. Briefly:
 \itemize{
     \item iws: a dataframe with 51065 observations of 12 variables. The area of land
     that drains directly into a lake, and into all upstream-connected, permanent streams
     to that lake exclusive of any upstream lake watersheds for lakes ≥ 10 ha that are
     connected via permanent streams.  For details on how the watersheds were delineated,
-    see additional file 8 in Soranno et al. (2015). Themes derived at the iws scale include
+    see additional file 8 in Soranno et al. (2015). Themes derived at the iws extent include
     LULC and CONN
     \item lakes4ha.buffer100m: a dataframe with 51065 of 3 variables. Buffers are a
     100 m equidistant buffer of the land that is 100 m from the lake shoreline, calculated
-    using the ArcGIS Buffer tool. Themes derived at the 100m buffer scale include LULC.
+    using the ArcGIS Buffer tool. Themes derived at the 100m buffer extent include LULC.
     \item lakes4ha.buffer500m: a dataframe with 51065 of 3 variables. Buffers are a
     500 m equidistant buffer of the land that is 500 m from the lake shoreline, calculated
-    using the ArcGIS Buffer tool. Themes derived at the 500m buffer scale include LULC and
+    using the ArcGIS Buffer tool. Themes derived at the 500m buffer extent include LULC and
     CONN.
     \item hu12: a dataframe with 20257 observations of 11 variables. The Watershed Boundary
     Dataset defines boundaries based on surface water drainage and creates nested Hydrologic
@@ -75,27 +74,27 @@ size of zone). Briefly:
     level of classificiation. HUC12s are defined along natural hydrologic breaks based
     on land surface and surface-water flow and they have a single flow outlet except in
     frontal, lake, braided-stream, or closed-basin hydrologic units. Themes derived at the
-    HUC12 scale include LULC, CONN and CHAG.
+    HUC12 extent include LULC, CONN and CHAG.
     \item hu8: a data frame with 511 observations of 9 variables. HUC8s are the fourth
     level of classificiation. Sometimes called 'watersheds', a HUC8 is a geographic area
     representing part or all of a surface drainage basin, a combination of drainage
-    basins, or a distinct hydrologic feature. Themes derived at the HUC8 scale include
+    basins, or a distinct hydrologic feature. Themes derived at the HUC8 extent include
     LULC, CONN, and CHAG.
     \item hu4: a data frame with 65 observations of 9 variables. HUC4s are the second level
     of classification, called a 'subregion'. A subregion includes the area drained by a
     river system, a reach of a river and its tributaries in that reach, a closed basin(s),
     or a group of streams forming a coastal drainage area. Themes derived at the HUC4
-    scale include LULC, CONN, and CHAG.
+    extent include LULC, CONN, and CHAG.
     \item edu: a data frame with 91 observations of 10 variables. Ecological drainage units
     (EDUs) follow the WBD boundaries, and are of roughly similar size to HUC6s.
     EDUs were delineated by grouping the HUC8 watersheds based on common zoogeographic
     history, and physiographic and climatic characteristics. Themes derived at the EDU
-    scale include LULC, CONN, and CHAG.
+    extent include LULC, CONN, and CHAG.
     \item county: a data frame with 955 observations of 8 variables. Counties (political
-    boundary) within the 17-state region of LAGOS. Themes derived at the county scale
+    boundary) within the 17-state region of LAGOS. Themes derived at the county extent
     include LULC, CONN, and CHAG.
     \item state: a dataframe with 17 observations of 7 variables. Themes derived at the
-    state scale include LULC, CONN, and CHAG.
+    state extent include LULC, CONN, and CHAG.
 }
 }
 \references{
