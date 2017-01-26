@@ -32,7 +32,7 @@ hu12, hu8, hu4, edu, county, state) and additional wildcards described below.
      \itemize{
          \item *_lakes_**_***: all lakes that are within or intersect the zone boundary
          and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha),
-         expressed as average lake area (** = agsize_ha) or count (** = count)
+         expressed as average lake area (*** = agsize_ha) or count (** = count)
          \item *_lakes_**_overlapping_***: all lakes that are clipped to the zone boundary
          and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
          as sum of lake area (*** = area_ha) or percent of zone area (*** = area_pct)
