@@ -76,11 +76,17 @@ land (hereafter, ecological context) surrounding lakes. LAGOSgeo contains
 three themes of data that describe the ecological context of each lake: CHAG (climate, hyrology, atmospheric deposition, and surficial geology), 
 CONN (stream, wetland, and lake surficial connectivity), and LULC (land use/land cover). Some of these metrics have temporal coverage (e.g., atmospheric deposition) whereas others represent average conditions over a period of time (e.g., 30-year climate normals).
 
-Each theme of LAGOSgeo was calculated at mutliple spatial extents (see below). The table names of each extent-theme combination [extent].[theme]
-(e.g., state.chag, hu4.conn, iws.lulc). Each theme and table within LAGOSgeo is connected to a help file and can be viewed by calling either
-the theme or table name (e.g., `?state.chag` or `?chag`). More detailed information about the spatial extents can be found in additional file 
+Each theme of LAGOSgeo was calculated at one or more of the nine spatial extents (see below). The table names of each extent-theme combination are formatted as  [extent].[theme] (e.g., state.chag, hu4.conn, iws.lulc). Each theme and table within LAGOSgeo is connected to a help file and can be viewed by calling either the theme or table name (e.g., `?state.chag` or `?chag`). More detailed information about the spatial extents can be found in the help file `?extents` and additional file [] of Soranno et al. 2015. 
 
 ####LAGOSgeo Spatial Extents
+In additional to the tables described below, all nine spatial extents have their own metadata table (see `?extents`), which provides things like zone area and unique identifiers. These tables are named using just the spatial extent (e.g., `state` or `iws`).
+1. Political Boundaries
+-county: Tables include `county.chag`, `county.conn`, and `county.lulc`
+-state: The 17-state region of the U.S. that contains LAGOS. Tables include `state.chag`, `county.conn`, and `county.lulc`.
+
+2. Ecological/Hydrological Boundaries
+-buffers: 100 meter or 500 meter buffers around each lake. 100m buffer tables include lakes4ha
+-iws: interlake watersheds
 
 ## LAGOS locus
 
