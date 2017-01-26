@@ -76,7 +76,7 @@ otherwise noted.
     }}
 \description{
 Datasets containing information on the land use and land cover (LULC) characteristics
-calculated at all LAGOS spatial extents (see ?scales) from the National Land Cover
+calculated at all LAGOS spatial classifications (see ?scales) from the National Land Cover
 Dataset (NLCD).
 }
 \details{

@@ -54,7 +54,7 @@ for surficial geology)
 \description{
 Datasets containing information on climate, hydrology, atmospheric deposition, and
 surficial geology characteristics calculated at hu12, hu8, hu4, edu, county and
-state spatial extents (see ?scales).
+state spatial classifications (see ?scales).
 }
 \details{
 Original data sources and layers from which each metric was derived can be found in

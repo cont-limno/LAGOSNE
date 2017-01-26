@@ -7,32 +7,32 @@
 #' @author \email{stachel2@msu.edu}
 NULL
 
-#' LAGOS Spatial Extent Metadata
+#' LAGOS Spatial Classifications Metadata
 #'
-#' Data frames containing metadata for each spatial extent at which ecological context
-#' data are derived in LAGOS. The spatial extents include 100m buffers (lakes4ha.buffer100m),
+#' Data frames containing metadata for each spatial classification at which ecological context
+#' data are derived in LAGOS. The spatial classifications include 100m buffers (lakes4ha.buffer100m),
 #' 500m buffers (lakes4ha.buffer500m), interlake watersheds (iws), hydrologic units (hu12, hu8,
 #' hu4), ecological drainage units (edu), counties (county), and states (state). Each abbreviation
 #' is the name of the data frame, with all or a subset of the following variables. For more information
-#' about derivation of each spatial extent, see Details below or [insert supp docs] from Soranno et al. 2015.
+#' about derivation of each spatial classification, see Details below or [insert supp docs] from Soranno et al. 2015.
 #'
-#' The nine LAGOS spatial extents were used to summarize the ecological context of each lake.
+#' The nine LAGOS spatial classifications were used to summarize the ecological context of each lake.
 #' Ecological context themes include land use/land cover (LULC), connectivity (CONN), and
 #' climate, hydrology, atmospheric deposition, and groundwater (CHAG). Not all themes
-#' were derived at all extents due to data availability. Briefly:
+#' were derived at all classifications due to data availability. Briefly:
 #' \itemize{
 #'     \item iws: a dataframe with 51065 observations of 12 variables. The area of land
 #'     that drains directly into a lake, and into all upstream-connected, permanent streams
 #'     to that lake exclusive of any upstream lake watersheds for lakes ≥ 10 ha that are
 #'     connected via permanent streams.  For details on how the watersheds were delineated,
-#'     see additional file 8 in Soranno et al. (2015). Themes derived at the iws extent include
+#'     see additional file 8 in Soranno et al. (2015). Themes derived at the iws classification include
 #'     LULC and CONN
 #'     \item lakes4ha.buffer100m: a dataframe with 51065 of 3 variables. Buffers are a
 #'     100 m equidistant buffer of the land that is 100 m from the lake shoreline, calculated
-#'     using the ArcGIS Buffer tool. Themes derived at the 100m buffer extent include LULC.
+#'     using the ArcGIS Buffer tool. Themes derived at the 100m buffer classification include LULC.
 #'     \item lakes4ha.buffer500m: a dataframe with 51065 of 3 variables. Buffers are a
 #'     500 m equidistant buffer of the land that is 500 m from the lake shoreline, calculated
-#'     using the ArcGIS Buffer tool. Themes derived at the 500m buffer extent include LULC and
+#'     using the ArcGIS Buffer tool. Themes derived at the 500m buffer classification include LULC and
 #'     CONN.
 #'     \item hu12: a dataframe with 20257 observations of 11 variables. The Watershed Boundary
 #'     Dataset defines boundaries based on surface water drainage and creates nested Hydrologic
@@ -41,39 +41,39 @@ NULL
 #'     level of classificiation. HUC12s are defined along natural hydrologic breaks based
 #'     on land surface and surface-water flow and they have a single flow outlet except in
 #'     frontal, lake, braided-stream, or closed-basin hydrologic units. Themes derived at the
-#'     HUC12 extent include LULC, CONN and CHAG.
+#'     HUC12 classification include LULC, CONN and CHAG.
 #'     \item hu8: a data frame with 511 observations of 9 variables. HUC8s are the fourth
 #'     level of classificiation. Sometimes called 'watersheds', a HUC8 is a geographic area
 #'     representing part or all of a surface drainage basin, a combination of drainage
-#'     basins, or a distinct hydrologic feature. Themes derived at the HUC8 extent include
+#'     basins, or a distinct hydrologic feature. Themes derived at the HUC8 classification include
 #'     LULC, CONN, and CHAG.
 #'     \item hu4: a data frame with 65 observations of 9 variables. HUC4s are the second level
 #'     of classification, called a 'subregion'. A subregion includes the area drained by a
 #'     river system, a reach of a river and its tributaries in that reach, a closed basin(s),
 #'     or a group of streams forming a coastal drainage area. Themes derived at the HUC4
-#'     extent include LULC, CONN, and CHAG.
+#'     classification include LULC, CONN, and CHAG.
 #'     \item edu: a data frame with 91 observations of 10 variables. Ecological drainage units
 #'     (EDUs) follow the WBD boundaries, and are of roughly similar size to HUC6s.
 #'     EDUs were delineated by grouping the HUC8 watersheds based on common zoogeographic
 #'     history, and physiographic and climatic characteristics. Themes derived at the EDU
-#'     extent include LULC, CONN, and CHAG.
+#'     classification include LULC, CONN, and CHAG.
 #'     \item county: a data frame with 955 observations of 8 variables. Counties (political
-#'     boundary) within the 17-state region of LAGOS. Themes derived at the county extent
+#'     boundary) within the 17-state region of LAGOS. Themes derived at the county classification
 #'     include LULC, CONN, and CHAG.
 #'     \item state: a dataframe with 17 observations of 7 variables. Themes derived at the
-#'     state extent include LULC, CONN, and CHAG.
+#'     state classification include LULC, CONN, and CHAG.
 #' }
 #'
 #' @format Data frames with all or a subset of the following variables. Number of observations is
-#' equal to the number of zones in each spatial extent (see Details below).
+#' equal to the number of zones in each spatial classification (see Details below).
 #' \itemize{
 #'     \item *_nhdid: permanent lake-specific identifier from the National Hydrography
 #'     Dataset (* = lakes4ha_buffer100m, lakes4ha_buffer500m, iws)
 #'     \item *_name: text name of the zone (* = iws, hu12, hu8, hu4, county, state)
 #'     \item hu*: unique zone identifier (* = 12, 8, 4)
-#'     \item *_ha: area of spatial extent in hectares (* = lakes4ha_buffer100m, lakes4ha_buffer500m, hu12, hu8, hu4, edu, county)
-#'     \item *_areaha: area of spatial extent in hectares (* = iws, )
-#'     \item *_perimkm: perimeter of spatial extent in kilometers (* = iws, )
+#'     \item *_ha: area of spatial classification in hectares (* = lakes4ha_buffer100m, lakes4ha_buffer500m, hu12, hu8, hu4, edu, county)
+#'     \item *_areaha: area of spatial classification in hectares (* = iws, )
+#'     \item *_perimkm: perimeter of spatial classification in kilometers (* = iws, )
 #'     \item *_lat: latitude of centroid of polygon in decimal degrees (NAD83) (* = iws, hu12, hu8, hu4, edu, county, state)
 #'     \item *_long: longitude of centroid of polygon in decimal degrees (NAD83) (* = iws, hu12, hu8, hu4, edu, county, state)
 #'     \item *_lakeareaha: lake area (ha) of focal lake within polygon (* = iws, )
@@ -82,7 +82,7 @@ NULL
 #'     \item *_ha_in_usa: area (ha) of polygon within the US boundary (* = iws, hu12, edu)
 #'     \item *_pct_in_nwi: percent of polygon within the USFWS National Wetland Inventory (NWI) boundary (* = hu12, hu8, hu4, edu, county, state)
 #'     \item *_ha_in_nwi: area (ha) of polygon within the USFWS National Wetland Inventory (NWI) boundary (* = hu12, hu8, hu4, edu, county, state)
-#'     \item *_zoneid: a unique identifier for each IWS in LAGOS, numbered 1:n with extent prefix (e.g., HU12_1) (* = iws, hu12, hu8, hu4, edu, county, state)
+#'     \item *_zoneid: a unique identifier for each IWS in LAGOS, numbered 1:n with classification prefix (e.g., HU12_1) (* = iws, hu12, hu8, hu4, edu, county, state)
 #'     \item *_lagoslakeid: LAGOS unique identifier for focal lake (* = lakes4ha_buffer100m, lakes_buffer500m, iws, )
 #'     \item hu4_states: states that intersect hu4 zone polygon
 #'     \item state: 2-letter state abbreviation
@@ -91,15 +91,15 @@ NULL
 #'
 #' @docType data
 #' @keywords datasets
-#' @name extents
+#' @name classifications
 #' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
-#' @aliases lakes4ha.buffer100m lakes4ha.buffer500m buffer100m buffer500m iws hu12 hu8 hu4 edu county state extent
+#' @aliases lakes4ha.buffer100m lakes4ha.buffer500m buffer100m buffer500m iws hu12 hu8 hu4 edu county state classification
 NULL
 
 #' Land Use Land Cover (LULC) Data Frames
 #'
 #' Datasets containing information on the land use and land cover (LULC) characteristics
-#' calculated at all LAGOS spatial extents (see ?scales) from the National Land Cover
+#' calculated at all LAGOS spatial classifications (see ?scales) from the National Land Cover
 #' Dataset (NLCD).
 #'
 #' Original data sources and layers from which each metric was derived can be found in additional file 5 of Soranno et al. (2015).
@@ -177,7 +177,7 @@ NULL
 #'
 #' Datasets containing information on climate, hydrology, atmospheric deposition, and
 #' surficial geology characteristics calculated at hu12, hu8, hu4, edu, county and
-#' state spatial extents (see ?scales).
+#' state spatial classifications (see ?scales).
 #'
 #' Original data sources and layers from which each metric was derived can be found in
 #' additional file 5 of Soranno et al. (2015). Briefly, climate data
@@ -285,11 +285,11 @@ NULL
 #'
 #' Datasets containing lake, stream, and wetland abundance and connectivity metrics calculated
 #' at the 500m buffer (lakes4ha.buffer500m.conn), HUC12 (hu12.conn), HUC8 (hu8.conn),
-#' HUC4 (hu4.conn), EDU (edu.conn), county (county.conn) and state (state.conn) extents.
+#' HUC4 (hu4.conn), EDU (edu.conn), county (county.conn) and state (state.conn) classifications.
 #'
 #' @format Data frames with all or a subset of the following variables. Number of observations is
-#' equal to the number of zones in each spatial extent (see ?extents). Wildcard options
-#' include a subset of the LAGOS spatial extents (* = lakes4ha_buffer500m, iws,
+#' equal to the number of zones in each spatial classification (see ?classifications). Wildcard options
+#' include a subset of the LAGOS spatial classifications (* = lakes4ha_buffer500m, iws,
 #' hu12, hu8, hu4, edu, county, state) and additional wildcards described below.
 #' \itemize{
 #'      \item Identifiers and Zone Metadata
