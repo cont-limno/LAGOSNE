@@ -417,9 +417,6 @@ NULL
 #' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
 NULL
 
-
-
-#'
 #' Lake Attributes
 #'
 #' A dataset containing attributes of all lakes in LAGOS >1 hectare.
