@@ -1,7 +1,7 @@
 Package: LAGOS
 Title: Tools for Interacting with the Lake Multi-scaled Geospatial and Temporal
     Database
-Version: 1.087.0
+Version: 1.087.1
 Authors@R: c(
     person("Joseph", "Stachelek", email = "stachel2@msu.edu", role = c("aut", "cre")),
     person("Samantha","Oliver", role = c("aut")),
@@ -13,7 +13,7 @@ Description: This package provides functions for interacting with the Lake
     Multi-scaled Geospatial and Temporal Database (LAGOS).
 Depends:
     R (>= 3.3.1)
-Imports: dplyr,rappdirs,lazyeval,purrr,reshape2,magrittr
+Imports: dplyr,rappdirs,lazyeval,purrr,reshape2,magrittr,sp
 Suggests: DBI (>= 0.5-12),ggplot2
 License: GPL
 Encoding: UTF-8
