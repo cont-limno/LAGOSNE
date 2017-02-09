@@ -278,6 +278,7 @@ NULL
 #' @docType data
 #' @keywords datasets
 #' @name epi.nutr
+#' @aliases nutrients chla colora doc phosphorus nitrogen
 #' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
 NULL
 
@@ -476,6 +477,7 @@ NULL
 #' @docType data
 #' @keywords datasets
 #' @name lagoslakes
+#' @aliases lakes
 #' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
 NULL
 
