@@ -30,9 +30,10 @@ Until the data exports have been loaded to Gigascience (or elsewhere) users must
 
 ``` r
 library(LAGOS)
-lagos_compile("1.087.0", format = "rds",
-  limno_folder = "~/Downloads/Version1.087.0",
-  geo_folder   = "~/Downloads/LAGOS_VER1.04")
+lagos_compile("1.087.1", format = "rds",
+  limno_folder = "~/Downloads/LAGOS-NE-LIMNO-EXPORT",
+  geo_folder   = "~/Downloads/LAGOS-NE-GEO-EXPORT",
+  locus_folder = "~/Downloads/LAGOS-NE-LOCUS-EXPORT")
 ```
 
 Usage
@@ -42,7 +43,7 @@ Usage
 
 ``` r
 library(LAGOS)
-#> Welcome to LAGOS version 1.087.0. To cite LAGOS in publications use: 
+#> Welcome to LAGOS version 1.087.1. To cite LAGOS in publications use: 
 #>  
 #> Soranno, P.A., Bissell, E.G., Cheruvelil, K.S., Christel, S.T., Collins,
 #>     S.M., Fergus, C.E., Filstrup, C.T., Lapierre, J.F., Lottig, N.R., Oliver,
@@ -56,30 +57,23 @@ library(LAGOS)
 ### Load data
 
 ``` r
-dt <- lagos_load(version = "1.087.0", format = "rds")
+dt <- lagos_load(version = "1.087.1", format = "rds")
 names(dt)
-#>  [1] "county"                   "county.chag"             
-#>  [3] "county.conn"              "county.lulc"             
-#>  [5] "edu"                      "edu.chag"                
-#>  [7] "edu.conn"                 "edu.lulc"                
-#>  [9] "hu4"                      "hu4.chag"                
-#> [11] "hu4.conn"                 "hu4.lulc"                
-#> [13] "hu8"                      "hu8.chag"                
-#> [15] "hu8.conn"                 "hu8.lulc"                
-#> [17] "hu12"                     "hu12.chag"               
-#> [19] "hu12.conn"                "hu12.lulc"               
-#> [21] "iws"                      "iws.conn"                
-#> [23] "iws.lulc"                 "state"                   
-#> [25] "state.chag"               "state.conn"              
-#> [27] "state.lulc"               "lakes4ha.buffer100m"     
-#> [29] "lakes4ha.buffer100m.lulc" "lakes4ha.buffer500m"     
-#> [31] "lakes4ha.buffer500m.conn" "lakes4ha.buffer500m.lulc"
-#> [33] "lagoslakes"               "epi.nutr"                
-#> [35] "lake.specific"            "secchi"                  
-#> [37] "lagos.source.program"     "name"                    
-#> [39] "type"                     "variables"               
-#> [41] "observations"             "identifier"              
-#> [43] "group"
+#>  [1] "county"               "county.chag"          "county.conn"         
+#>  [4] "county.lulc"          "edu"                  "edu.chag"            
+#>  [7] "edu.conn"             "edu.lulc"             "hu4"                 
+#> [10] "hu4.chag"             "hu4.conn"             "hu4.lulc"            
+#> [13] "hu8"                  "hu8.chag"             "hu8.conn"            
+#> [16] "hu8.lulc"             "hu12"                 "hu12.chag"           
+#> [19] "hu12.conn"            "hu12.lulc"            "iws"                 
+#> [22] "iws.conn"             "iws.lulc"             "state"               
+#> [25] "state.chag"           "state.conn"           "state.lulc"          
+#> [28] "buffer100m"           "buffer100m.lulc"      "buffer500m"          
+#> [31] "buffer500m.conn"      "buffer500m.lulc"      "epi.nutr"            
+#> [34] "lake.specific"        "secchi"               "lagos.censor.epi"    
+#> [37] "lagos.source.program" "locus"                "name"                
+#> [40] "type"                 "variables"            "observations"        
+#> [43] "identifier"           "group"
 ```
 
 #### Preview a table
@@ -93,13 +87,13 @@ head(dt$county)
 #> 4           IL Stephenson County         146269.3  146269.3    County_101
 #> 5           IL   Tazewell County         170204.0  170204.0    County_102
 #> 6           IL  Vermilion County         233543.6  233543.6    County_103
-#>   county_pct_in_nwi county_lat county_long
-#> 1               100   41.27225   -73.38940
-#> 2               100   40.59720   -88.22340
-#> 3               100   41.09336   -89.79749
-#> 4               100   42.35175   -89.66246
-#> 5               100   40.50731   -89.51343
-#> 6               100   40.18342   -87.73293
+#>   county_pct_in_nwi county_lat conty_long
+#> 1               100   41.27225  -73.38940
+#> 2               100   40.59720  -88.22340
+#> 3               100   41.09336  -89.79749
+#> 4               100   42.35175  -89.66246
+#> 5               100   40.50731  -89.51343
+#> 6               100   40.18342  -87.73293
 ```
 
 #### Read table metadata
@@ -113,6 +107,7 @@ help.search("datasets", package = "LAGOS")
 The following section is experimental. See [here](http://adv-r.had.co.nz/Subsetting.html) for a tutorial on convential `data.frame` subsetting.
 
 ``` r
+
 # select specific columns from a specific table
 dt_sub <- lagos_select(dt, table_column_nested =
                  list("epi.nutr" = c("lagoslakeid", "sampledate", "tp", "tn")))
@@ -137,12 +132,12 @@ names(dt_sub)
 #> [1] "epi.nutr" "hu4.chag"
 head(dt_sub$hu4.chag[,1:3])
 #>   hu4_dep_no3_1985_min hu4_dep_no3_1985_max hu4_dep_no3_1985_mean
-#> 1               9.3996              15.0864               11.4287
-#> 2               9.8849              17.7732               13.0572
-#> 3               9.0317              17.6846               11.8834
-#> 4              13.1816              16.2030               14.8271
-#> 5              12.8009              17.4017               14.4583
-#> 6              12.0282              17.0828               14.9805
+#> 1               7.2171              10.0448                7.9366
+#> 2               9.5538              21.1791               15.5290
+#> 3              15.5222              22.8936               19.6234
+#> 4               8.5831              31.3832               17.2809
+#> 5              15.6669              24.2653               19.0625
+#> 6              12.6550              26.8946               18.1940
 head(dt_sub$epi.nutr)
 #>   chla colora colort dkn doc nh4 no2 no2no3 srp tdn tdp tkn tn toc ton tp
 #> 1   NA     NA     NA  NA  NA  20  NA     20  NA  NA  NA  NA NA  NA  NA 30
