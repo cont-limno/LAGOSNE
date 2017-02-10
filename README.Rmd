@@ -44,9 +44,10 @@ Until the data exports have been loaded to Gigascience (or elsewhere) users must
 
 ```{r eval=FALSE} 
 library(LAGOS)
-lagos_compile("1.087.0", format = "rds",
-  limno_folder = "~/Downloads/Version1.087.0",
-  geo_folder   = "~/Downloads/LAGOS_VER1.04")
+lagos_compile("1.087.1", format = "rds",
+  limno_folder = "~/Downloads/LAGOS-NE-LIMNO-EXPORT",
+  geo_folder   = "~/Downloads/LAGOS-NE-GEO-EXPORT",
+  locus_folder = "~/Downloads/LAGOS-NE-LOCUS-EXPORT")
 ```
 
 ## Usage
@@ -60,7 +61,7 @@ library(LAGOS)
 ### Load data
 
 ```{r }
-dt <- lagos_load(version = "1.087.0", format = "rds")
+dt <- lagos_load(version = "1.087.1", format = "rds")
 names(dt)
 ```
 
@@ -81,6 +82,7 @@ help.search("datasets", package = "LAGOS")
 The following section is experimental. See [here](http://adv-r.had.co.nz/Subsetting.html) for a tutorial on convential `data.frame` subsetting.
 
 ```{r }
+
 # select specific columns from a specific table
 dt_sub <- lagos_select(dt, table_column_nested =
                  list("epi.nutr" = c("lagoslakeid", "sampledate", "tp", "tn")))

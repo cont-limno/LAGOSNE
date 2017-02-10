@@ -4,16 +4,19 @@
 \alias{lagos_compile}
 \title{Compile LAGOS data}
 \usage{
-lagos_compile(version, format = "rds", limno_folder = NA, geo_folder = NA)
+lagos_compile(version, format = "rds", limno_folder = NA, geo_folder = NA,
+  locus_folder = NA)
 }
 \arguments{
 \item{version}{character LAGOS database version string}
 
 \item{format}{character choice of "rds" or "sqlite"}
 
-\item{limno_folder}{file.path to limno export folder. optional.}
+\item{limno_folder}{file.path to limno export folder.}
 
-\item{geo_folder}{file.path to geo export folder. optional.}
+\item{geo_folder}{file.path to geo export folder.}
+
+\item{locus_folder}{file.path to locus export folder.}
 }
 \description{
 Compile LAGOS data from component flat files
@@ -21,8 +24,9 @@ Compile LAGOS data from component flat files
 \examples{
 \dontrun{
 lagos_compile("1.087.0", format = "rds",
- limno_folder = "~/Downloads/Version1.087.0",
- geo_folder   = "~/Downloads/LAGOS_VER1.04")
+ limno_folder = "~/Downloads/LAGOS-NE-LIMNO-EXPORT",
+ geo_folder   = "~/Downloads/LAGOS-NE-GEO-EXPORT",
+ locus_folder = "~/Downloads/LAGOS-NE-GEO-LOCUS-EXPORT")
 
 # Pending Gigascience availability
 lagos_compile("1.087.0", format = "rds")
