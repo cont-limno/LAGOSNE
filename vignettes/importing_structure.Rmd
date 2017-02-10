@@ -74,10 +74,10 @@ hist(n.years$nn, xlab = "Years of Observations Per Lake",
 LAGOSgeo is an integration of information describing the air, water, and 
 land (hereafter, ecological context) surrounding all lakes greater than or equal to 4 hectares in surface area in the LAGOS 17-state region. LAGOSgeo contains three themes of data that describe the ecological context of each lake: CHAG (climate, hyrology, atmospheric deposition, and surficial geology), CONN (stream, wetland, and lake surficial hydrologic connectivity), and LULC (land use/land cover). Some of these metrics have temporal coverage (e.g., atmospheric deposition) whereas others represent average conditions over a period of time (e.g., 30-year climate normals). The source data and metric derivation for 
 
-Each theme of LAGOSgeo was calculated at one or more of the nine spatial extents (see `?extents`). The table names of each extent-theme combination are formatted as  [extent].[theme] (e.g., state.chag, hu4.conn, iws.lulc). Each theme and table within LAGOSgeo is connected to a help file and can be viewed by calling either the theme or table name (e.g., `?state.chag` or `?chag`). 
+Each theme of LAGOSgeo was calculated at one or more of the nine spatial classifications (see `?classifications`). The table names of each classification-theme combination are formatted as  [classification].[theme] (e.g., state.chag, hu4.conn, iws.lulc). Each theme and table within LAGOSgeo is connected to a help file and can be viewed by calling either the theme or table name (e.g., `?state.chag` or `?chag`). 
 
-####Spatial Extents Layers
-In additional to the multiple tables describing ecological context at each spatial extent, we have provided the polygons for each spatial extent. [change to future location of shape files - for now link to HU4 files that were put on Github as part of the time series manuscript]
+####Spatial Classifications Layers
+In additional to the multiple tables describing ecological context at each spatial classification, we have provided the polygons for each spatial classification. [change to future location of shape files - for now link to HU4 files that were put on Github as part of the time series manuscript]
 ```{r, message = FALSE}
 library(rgdal)
 
@@ -87,7 +87,7 @@ plot(huc4, lty = 1, lwd=1, border=TRUE, col = "lightgray")
 ```
 
 ###LAGOSlocus
-LAGOSlocus provides a connection between all tables, as it contains metadata for the census population of lakes (all lakes greater than or equal to one hectare; n = `r nrow(dt$lake.specific)`) in the LAGOS region, with corresponding unique identifiers for the zone of each spatial extent in which the lake is located. Lakes were identified through the National Hydrography Dataset, and the table also includes data about the lake polygons themselves, including surface area and perimeter. For a subset of lakes where data were available, lake depth (mean and/or maximum) is also included. 
+LAGOSlocus provides a connection between all tables, as it contains metadata for the census population of lakes (all lakes greater than or equal to one hectare; n = `r nrow(dt$lake.specific)`) in the LAGOS region, with corresponding unique identifiers for the zone of each spatial classification in which the lake is located. Lakes were identified through the National Hydrography Dataset, and the table also includes data about the lake polygons themselves, including surface area and perimeter. For a subset of lakes where data were available, lake depth (mean and/or maximum) is also included. 
 
 
 
