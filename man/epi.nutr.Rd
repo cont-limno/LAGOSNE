@@ -2,7 +2,13 @@
 % Please edit documentation in R/LAGOS-package.R
 \docType{data}
 \name{epi.nutr}
+\alias{chla}
+\alias{colora}
+\alias{doc}
 \alias{epi.nutr}
+\alias{nitrogen}
+\alias{nutrients}
+\alias{phosphorus}
 \title{Epilimnion Water Quality Data}
 \format{A data frame with 289482 observations of 94 variables:
 \itemize{

@@ -3,6 +3,7 @@
 \docType{data}
 \name{lagoslakes}
 \alias{lagoslakes}
+\alias{lakes}
 \title{Lake Attributes}
 \format{A data frame with 141271 observations and 109 variables:
 \itemize{

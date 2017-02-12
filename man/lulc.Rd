@@ -64,9 +64,10 @@ otherwise noted.
    \item *_slope_***: The slope at each cell is the slope with respect to its immediate
    neighbors (10m scale). Cells in zone summarized as either the minimum, maximum, mean,
    or standard deviation (*** = min, max, mean, std)
-   \item *_tri_***: Terrain ruggedness index (TRI) at each cell in meters with repsect to
-   its immediate neighbors (10m scale). Cells in zone summarized as either the minimum,
-   maximum, mean, or standard deviation (*** = min, max, mean, std)
+   \item *_tri_***: Terrain ruggedness index (TRI) at each cell is the absolute difference in meters
+   between the elevation of the focal cell and its immediate neighbors (10m scale).
+   Cells in zone summarized as either the minimum, maximum, mean,
+   or standard deviation (*** = min, max, mean, std)
    \item *_zoneid: unique zone identifier (* = iws, hu12, hu8, hu4, edu, county, state)
    \item *_lagoslakeid: unique integer identifier for focal lake (* = lakes4ha_buffer100m,
    lakes4ha_buffer500m, iws)
