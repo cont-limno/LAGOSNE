@@ -24,8 +24,10 @@ data collection and integration. The nitty gritty details of such efforts (which
 The data are open-access and stored online as flat files [location]. You can retrieved and store all of the data on your local machine by using the following commands, which will store the data in the location returned by `rappdirs::user_data_dir`
 
 First, install and load the package. From RStudio, add a new version controlled project by selecting New Project > Version Control > Git and adding https://github.com/cont-limno/LAGOS.git to the repository URL box. Then select Create Project. From the R console, you can then install the package. 
-```{r, results = 'hide', message=FALSE}
+```{r, eval=FALSE, results = 'hide', message=FALSE}
 devtools::install()
+```
+```{r, results = 'hide', message=FALSE}
 library(LAGOS)
 ```
 Next, compile the data from a local location by setting the `limno_folder` and `geo_folder` to the location of the tables on your local computer. When LAGOS is published, this function will be altered to retrieve all data tables from Gigascience or wherever the data are published.
@@ -37,13 +39,13 @@ lagos_compile("1.087.0", format = "rds",
               geo_folder = "/Data/geo")
 ```
 Now that the data are stored locally, you can import them as a list.
-```{r}
+```{r }
 # Import LAGOS data into R
-dt <- lagos_load(version = "1.087.0", format = "rds")
+dt <- lagos_load(version = "1.087.1", format = "rds")
 ```
 ## LAGOS Structure
 As previously noted, LAGOS is comprised of three modules with multiple tables within each module. When LAGOS is imported using the above method, the tables are stored in a list, and you can see all table names using:
-```{r}
+```{r }
 names(dt)
 ```
 Below, we describe how each table fits within each module. 
@@ -56,6 +58,7 @@ Each observation of LAGOSlimno is a discrete sampling event, where one or more w
 ```{r, message=FALSE, results="hide"}
 library(dplyr)
 ```
+
 ```{r, fig.show = 'hold', fig.height = 4, fig.width = 4}
 # plot number of sampling events per lake
 n.events <- count(as.tbl(dt$epi.nutr), lagoslakeid)
@@ -78,7 +81,7 @@ Each theme of LAGOSgeo was calculated at one or more of the nine spatial classif
 
 ####Spatial Classifications Layers
 In additional to the multiple tables describing ecological context at each spatial classification, we have provided the polygons for each spatial classification. [change to future location of shape files - for now link to HU4 files that were put on Github as part of the time series manuscript]
-```{r, message = FALSE}
+```{r, message = FALSE, eval=FALSE}
 library(rgdal)
 
 # get huc4 polygons from github
@@ -88,9 +91,3 @@ plot(huc4, lty = 1, lwd=1, border=TRUE, col = "lightgray")
 
 ###LAGOSlocus
 LAGOSlocus provides a connection between all tables, as it contains metadata for the census population of lakes (all lakes greater than or equal to one hectare; n = `r nrow(dt$lake.specific)`) in the LAGOS region, with corresponding unique identifiers for the zone of each spatial classification in which the lake is located. Lakes were identified through the National Hydrography Dataset, and the table also includes data about the lake polygons themselves, including surface area and perimeter. For a subset of lakes where data were available, lake depth (mean and/or maximum) is also included. 
-
-
-
-
-
-
