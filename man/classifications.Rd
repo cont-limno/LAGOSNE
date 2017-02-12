@@ -14,6 +14,7 @@
 \alias{iws}
 \alias{lakes4ha.buffer100m}
 \alias{lakes4ha.buffer500m}
+\alias{scales}
 \alias{state}
 \title{LAGOS Spatial Classifications Metadata}
 \format{Data frames with all or a subset of the following variables. Number of observations is
