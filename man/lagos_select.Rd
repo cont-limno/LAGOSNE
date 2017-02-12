@@ -4,26 +4,15 @@
 \alias{lagos_select}
 \title{lagos_select}
 \usage{
-lagos_select(dt, scale = NULL, category = NULL,
-  table_column_nested = NULL)
+lagos_select(table = NULL, vars = NULL, categories = NULL,
+  dt = lagos_load("1.087.1"))
 }
 \arguments{
-\item{dt}{data.frame}
+\item{table}{character name of a dt table}
 
-\item{scale}{what spatial scale should be kept. Scale refers to the spatial extent at which the variable was calculated. For detailed descriptions of each spatial scale, see Additional File 7 of Soranno et al. (2015). Possible scales include:
-\itemize{
-    \item "county" - political divisions within states
-    \item "edu" - ecological drainage units, delineated regions which generally share biotic, geographic and climatic characteristics.
-    \item "hu4" - the second level of classification from the nested watershed boundary dataset, called a subregion, with 65 HU4s in the LAGOS study extent.
-    \item "hu8" - the fourth level of classification from the nested watershed boundary dataset, called a watershed, with 511 HU8s in the LAGOS study extent.
-    \item "hu12" - the sixth level of classification from the nested watershed boundary dataset, with 20257 HU12s in the LAGOS study extent.
-    \item "state" - states of the U.S., with 17 states in the LAGOS study extent.
-    \item "iws" - interlake watersheds, defined as the area of land that drains directly into a lake, with a watershed for each 51065 lakes in the LAGOS study extent.
-    \item "buffer100m" - a 100 meter buffer around the lake polygon, with a buffer for each 51065 lakes in the LAGOS study extent
-    \item "buffer500m" - a 500 meter buffer around the lake polygon, with a buffer for each 51065 lakes in the LAGOS study extent
-}}
+\item{vars}{character vector of specific column names to select from table}
 
-\item{category}{what type of variables should be kept. Note not all scale-category options are available. Variable categories include:
+\item{categories}{what type of variables should be kept. Note not all scale-category options are available. Variable categories include:
 \itemize{
     \item "water.quality" - includes all in-situ chemistry, chlorophyll, and water clarity measurements.
     \item "deposition" - all atmospheric deposition variables from the .chag tables
@@ -40,46 +29,27 @@ lagos_select(dt, scale = NULL, category = NULL,
     \item "streams" - all stream/river connectivity metrics from the .conn tables
 }}
 
-\item{table_column_nested}{nested list of tables and table-columns to select from LAGOS}
+\item{dt}{data.frame}
 }
 \description{
 Select and merge columns based on a nested list of LAGOS tables and column names.
 }
 \examples{
 \dontrun{
-dt <- lagos_load("1.054.1")
+dt <- lagos_load("1.087.1")
 
-# select only from limno
-dt_reduced <- lagos_select(dt, table_column_nested =
-                list("epi.nutr" = c("tp", "tn")))
+# specific variables
+head(lagos_select(table = "epi.nutr", vars = c("tp", "tn")))
+head(dt_reduced <- lagos_select(table = "iws.lulc", vars = c("iws_nlcd2011_pct_95")))
 
-# select only from geo
-dt_reduced <- lagos_select(dt, table_column_nested =
-                list("iws.lulc" = c("iws_nlcd2011_pct_95")))
+# categories
+head(lagos_select(table = "epi.nutr", categories = "waterquality"))
+head(lagos_select(table = "county.chag", categories = "hydrology"))
+head(lagos_select(table = "hu4.chag", categories = "deposition"))
 
-# select individual table-columns from limno and geo
-table_columns <- list("epi.nutr" = c("tp", "tn"),
-                   "iws.lulc" = c("iws_nlcd2011_pct_95"))
-dt_reduced    <- lagos_select(dt, table_column_nested = table_columns)
+# mix of specific variables and categories
+head(lagos_select(table = "epi.nutr", vars = "lagoslakeid", categories = c("waterquality")))
 
-# select from specific tables using keywords
-dt_reduced <- lagos_select(dt, table_column_nested = list("epi.nutr" = "waterquality"))
-
-# select from multiple specific tables using keywords
-table_columns <- list("epi.nutr" = c("waterquality"),
-                   "hu4.chag" = c("deposition"))
-dt_reduced    <- lagos_select(dt, table_column_nested = table_columns)
-
-# select based non-specific tables using keywords
-dt_reduced <- lagos_select(dt, scale = "HU4",
-               category = c("waterquality", "deposition"))
-
-dt_reduced <- lagos_select(dt, scale = "county", category = c("hydrology"))
-
-# select based on inexact keywords and exact table specification
-table_columns <- list("epi.nutr" = c("doc", "lagoslakeid"))
-dt_reduced    <- lagos_select(dt, scale = "HU4", category = c("deposition"),
-                  table_column_nested = table_columns)
 }
 }
 

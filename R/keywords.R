@@ -1,3 +1,10 @@
+waterquality <- c(
+  "chla", "colora", "colort", "dkn", "doc", "nh4",
+  "no2", "no2no3", "srp", "tdn", "tdp", "tkn", "tn",
+  "toc", "ton", "tp")
+
+# devtools::use_data(waterquality)
+
 keyword_full_key <- function(){
   res <- data.frame(rbind(
     c("waterquality", "chla"),
@@ -40,23 +47,7 @@ keyword_partial_key <- function(){
     c("lulc2001", "nlcd2001"),
     c("lulc2006", "nlcd2006"),
     c("lulc2011", "nlcd2011"),
-    c("streams", "streamdensity"),
-    c("waterquality", "chla"),
-    c("waterquality", "colora"),
-    c("waterquality", "colort"),
-    c("waterquality", "dkn"),
-    c("waterquality", "doc"),
-    c("waterquality", "nh4"),
-    c("waterquality", "no2"),
-    c("waterquality", "no2no3"),
-    c("waterquality", "srp"),
-    c("waterquality", "tdn"),
-    c("waterquality", "tdp"),
-    c("waterquality", "tkn"),
-    c("waterquality", "tn"),
-    c("waterquality", "toc"),
-    c("waterquality", "ton"),
-    c("waterquality", "tp")
+    c("streams", "streamdensity")
     # ,c("waterquality", "secchi")
   ), stringsAsFactors = FALSE)
 

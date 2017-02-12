@@ -8,36 +8,56 @@ test_that("lagos_select works", {
 
   dt <- readRDS("lagos_test_subset.rds")
 
+  # specific variables
+  dt_reduced <- lagos_select(table = "epi.nutr", vars = c("tp", "tn"))
+  expect_equal(ncol(dt_reduced), 2)
+
+  dt_reduced <- lagos_select(table = "iws.lulc",
+                             vars = c("iws_nlcd2011_pct_95"))
+  expect_equal(ncol(dt_reduced), 1)
+
+  # categories
+  dt_reduced <- lagos_select(table = "epi.nutr", categories = "waterquality")
+  expect_equal(ncol(dt_reduced), 16)
+  dt_reduced <- lagos_select(table = "county.chag", categories = "hydrology")
+  expect_equal(ncol(dt_reduced), 4)
+  dt_reduced <- lagos_select(table = "hu4.chag", categories = "deposition")
+  expect_equal(ncol(dt_reduced), 72)
+
+  # mix of specific variables and categories
+  dt_reduced <- lagos_select(table = "epi.nutr", vars = "lagoslakeid", categories = c("waterquality"))
+  expect_equal(ncol(dt_reduced), 17)
+
   # select only from limno
-  dt_reduced <- lagos_select(dt,
-                  table_column_nested = list("epi.nutr" = c("tp", "tn")))
-  expect_equal(ncol(dt_reduced$epi.nutr), 2)
-
-  # select only from geo
-  dt_reduced <- lagos_select(dt, table_column_nested =
-                   list("iws.lulc" = c("iws_nlcd2011_pct_95")))
-  expect_equal(ncol(dt_reduced$iws.lulc), 1)
-
-  # select individual table-columns from limno and geo
-  table_columns <- list("epi.nutr" = c("tp", "tn"),
-                      "iws.lulc" = c("iws_nlcd2011_pct_95"))
-  dt_reduced    <- lagos_select(dt, table_column_nested = table_columns)
-  expect_equal(length(dt_reduced), 2)
-  expect_equal(ncol(dt_reduced$epi.nutr), 2)
-  expect_equal(ncol(dt_reduced$iws.lulc), 1)
-
-  # select from specific tables using keywords
-  dt_reduced <- lagos_select(dt,
-                  table_column_nested = list("epi.nutr" = "waterquality"))
-  expect_equal(length(dt_reduced), 1)
-  expect_equal(ncol(dt_reduced$epi.nutr), 16)
-
-  # select from multiple specific tables using keywords
-  table_columns <- list("epi.nutr" = c("waterquality"),
-                        "hu4.chag" = c("deposition"))
-  dt_reduced    <- lagos_select(dt, table_column_nested = table_columns)
-  expect_equal(length(dt_reduced), 2)
-  expect_equal(ncol(dt_reduced$epi.nutr), 16)
+  # dt_reduced <- lagos_select(dt,
+  #                 table_column_nested = list("epi.nutr" = c("tp", "tn")))
+  # expect_equal(ncol(dt_reduced$epi.nutr), 2)
+  #
+  # # select only from geo
+  # dt_reduced <- lagos_select(dt, table_column_nested =
+  #                  list("iws.lulc" = c("iws_nlcd2011_pct_95")))
+  # expect_equal(ncol(dt_reduced$iws.lulc), 1)
+  #
+  # # select individual table-columns from limno and geo
+  # table_columns <- list("epi.nutr" = c("tp", "tn"),
+  #                     "iws.lulc" = c("iws_nlcd2011_pct_95"))
+  # dt_reduced    <- lagos_select(dt, table_column_nested = table_columns)
+  # expect_equal(length(dt_reduced), 2)
+  # expect_equal(ncol(dt_reduced$epi.nutr), 2)
+  # expect_equal(ncol(dt_reduced$iws.lulc), 1)
+  #
+  # # select from specific tables using keywords
+  # dt_reduced <- lagos_select(dt,
+  #                 table_column_nested = list("epi.nutr" = "waterquality"))
+  # expect_equal(length(dt_reduced), 1)
+  # expect_equal(ncol(dt_reduced$epi.nutr), 16)
+  #
+  # # select from multiple specific tables using keywords
+  # table_columns <- list("epi.nutr" = c("waterquality"),
+  #                       "hu4.chag" = c("deposition"))
+  # dt_reduced    <- lagos_select(dt, table_column_nested = table_columns)
+  # expect_equal(length(dt_reduced), 2)
+  # expect_equal(ncol(dt_reduced$epi.nutr), 16)
 
   # comment out this failing test, jsta: 2017-01-05
   # select from a single non-specific table using keywords
@@ -52,11 +72,11 @@ test_that("lagos_select works", {
   # expect_equal(ncol(dt_reduced$epi.nutr), 16)
 
   # select based on a mix of inexact keywords and exact table specifications
-  table_columns <- list("epi.nutr" = c("doc", "lagoslakeid"))
-  dt_reduced    <- lagos_select(dt, scale = "HU4", category = c("deposition"),
-                     table_column_nested = table_columns)
-  expect_equal(length(dt_reduced), 2)
-  expect_equal(ncol(dt_reduced$epi.nutr), 2)
+  # table_columns <- list("epi.nutr" = c("doc", "lagoslakeid"))
+  # dt_reduced    <- lagos_select(dt, scale = "HU4", category = c("deposition"),
+  #                    table_column_nested = table_columns)
+  # expect_equal(length(dt_reduced), 2)
+  # expect_equal(ncol(dt_reduced$epi.nutr), 2)
 
   # comment out this failing test, jsta: 2017-01-05
   # select from a mix of keywords and exact columns
@@ -78,20 +98,12 @@ test_that("lagos fails well", {
   dt <- readRDS("lagos_test_subset.rds")
 
   expect_error(
-    lagos_select(dt, scale = "gibberish", category = "hydrology"),
-    "The 'gibberish' scale does not exist!"
-  )
-
-  expect_error(
-    lagos_select(dt, scale = "hu4", category = "gibberish"),
+    lagos_select(table = "epi.nutr", categories = "gibberish"),
     "The 'gibberish' category does not exist!"
   )
 
   expect_error(
-    lagos_select(dt,
-      table_column_nested = list(
-        "epi.nutr" = c("gibberish", "tn"),
-        "iws.lulc" = c("iws_nlcd2011_pct_95"))),
+    lagos_select(table = "epi.nutr",  vars = c("gibberish", "tn")),
     "The 'epi.nutr' table does not contain a 'gibberish' column!"
   )
 
