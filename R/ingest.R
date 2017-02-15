@@ -57,6 +57,7 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA, locus_fold
   # Importing Lagos Geo data ####
   lakes.geo <- load_lagos_txt(geo_path("LakesGeo"))
 
+  # Importing Lagos Geo county data
   county       <- load_lagos_txt(geo_path("county_"))
   county.chag  <- load_lagos_txt(geo_path("county_chag"))
   county.conn  <- load_lagos_txt(geo_path("county_conn"))
@@ -67,7 +68,6 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA, locus_fold
   edu.chag     <- load_lagos_txt(geo_path("edu_chag"))
   edu.conn     <- load_lagos_txt(geo_path("edu_conn"))
   edu.lulc     <- load_lagos_txt(geo_path("edu_lulc"))
-
 
   # Importing Lagos Geo huc4 data
   hu4          <- load_lagos_txt(geo_path("hu4_"),
@@ -103,34 +103,11 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA, locus_fold
 
   # Importing lake buffer data ####
 
-  buffer100m <- load_lagos_txt(geo_path("buffer100m_"))
-
-  names(buffer100m)[names(buffer100m) ==
-    "buffer100m_lagoslakeid"] <- "lagoslakeid"
-
-  buffer100m.lulc <-
-    load_lagos_txt(geo_path("buffer100m_lulc"))
-
-  names(buffer100m.lulc)[names(buffer100m.lulc) ==
-    "buffer100m_lagoslakeid"] <- "lagoslakeid"
-
-  buffer500m <- load_lagos_txt(geo_path("buffer500m _"),
-                                    sep = ",")
-
-  names(buffer500m)[names(buffer500m) ==
-    "buffer500m_lagoslakeid"] <- "lagoslakeid"
-
-  buffer500m.conn <-
-    load_lagos_txt(geo_path("buffer500m_conn"))
-
-  names(buffer500m.conn)[names(buffer500m.conn) ==
-    "buffer500m_lagoslakeid"] <- "lagoslakeid"
-
-  buffer500m.lulc <-
-    load_lagos_txt(geo_path("buffers500m_lulc"))
-
-  names(buffer500m.lulc)[names(buffer500m.lulc) ==
-    "buffers500m_lagoslakeid"] <- "lagoslakeid"
+  buffer100m      <- load_lagos_txt(geo_path("buffer100m_"))
+  buffer100m.lulc <- load_lagos_txt(geo_path("buffer100m_lulc"))
+  buffer500m      <- load_lagos_txt(geo_path("buffer500m_"))
+  buffer500m.conn <- load_lagos_txt(geo_path("buffer500m_conn"))
+  buffer500m.lulc <- load_lagos_txt(geo_path("buffer500m_lulc"))
 
   geo <- list(county = county,
               county.chag = county.chag,

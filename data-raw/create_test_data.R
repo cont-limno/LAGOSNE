@@ -1,8 +1,8 @@
 # Create a testing dataset from compiled LAGOS database rds
 
-# LAGOS:::lagos_compile("1.054.1", "rds")
+# LAGOS:::lagos_compile("1.087.1", "rds")
 
-dt <- LAGOS::lagos_load("1.087.0")
+dt <- LAGOS::lagos_load("1.087.1")
 
 dt_subset <- purrr::map(dt, function(x) head(x, n = 2))
 
