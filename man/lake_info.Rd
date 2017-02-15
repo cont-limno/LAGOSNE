@@ -7,7 +7,7 @@
 lake_info(dt, name, state)
 }
 \arguments{
-\item{dt}{data.frame output of \code{\link[LAGOS]{lagos_load}}. Likely to be the \code{lake.specific} table.}
+\item{dt}{list of data.frames. output of \code{\link[LAGOS]{lagos_load}}.}
 
 \item{name}{character lake name not caps sensitive}
 
@@ -18,7 +18,8 @@ Return lake attribute information from its name and state
 }
 \examples{
 \dontrun{
-dt <- lagos_load("1.054.1")
+dt <- lagos_load("1.087.1")
+lake_info(dt, "Benton Pond", "Massachusetts")
 
   name = c("Oneida Lake", "Sunapee Lake", "Lake Mendota"),
   state = c("New York", "New Hampshire", "Wisconsin"))

@@ -4,7 +4,7 @@ test_that("lake_info works", {
   dt <- readRDS("lagos_test_subset.rds")
 
   expect_equal(nrow(
-    LAGOS::lake_info(dt$lake.specific, "Benton Pond", "Massachusetts")), 1)
+    LAGOS::lake_info(dt, "Benton Pond", "Massachusetts")), 1)
 
 })
 

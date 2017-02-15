@@ -6,6 +6,10 @@ dt <- LAGOS::lagos_load("1.087.1")
 
 dt_subset <- purrr::map(dt, function(x) head(x, n = 2))
 
+# manually add rows for lake_info test
+dt_subset$state <- rbind(dt_subset$state,
+                         dt$state[which(dt$state$state == "MA"),])
+
 # names(dt_subset)
 exclude_names <- c("lakes4ha.buffer100m",
                    "lakes4ha.buffer100m.lulc",
