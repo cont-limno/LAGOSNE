@@ -105,6 +105,7 @@ lagos_path <- function() paste0(rappdirs::user_data_dir(appname = "LAGOS",
                 appauthor = "LAGOS"), .Platform$file.sep)
 
 lagos_names <- function(dt) purrr::map(dt, names)
+# unlist(lapply(dt, function(x) length(grep("connect", names(x))))) # search tables for column
 
 #' query_lagos_names
 #' @description return a vector of table names whose associated tables have

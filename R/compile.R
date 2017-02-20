@@ -29,7 +29,7 @@ lagos_compile <- function(version, format = "rds", limno_folder = NA, geo_folder
   geo    <- ingest$geo
   limno  <- ingest$limno
   locus  <- ingest$locus
-  info   <- info_table(geo, limno)
+  # info   <- info_table(geo, limno)
 
   # dir.exists(lagos_path())
   dir.create(lagos_path(), recursive = TRUE, showWarnings = FALSE)
@@ -52,8 +52,7 @@ lagos_compile <- function(version, format = "rds", limno_folder = NA, geo_folder
 
     res <- list("geo" = geo,
                 "limno" = limno,
-                "locus" = list(locus),
-                "info" = info)
+                "locus" = list(locus))
     res <- purrr::flatten(res)
 
     outpath <- file.path(lagos_path(), paste0("data_", version, ".rds"))

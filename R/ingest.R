@@ -140,7 +140,8 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA, locus_fold
               buffer100m.lulc = buffer100m.lulc,
               buffer500m = buffer500m,
               buffer500m.conn = buffer500m.conn,
-              buffer500m.lulc = buffer500m.lulc)
+              buffer500m.lulc = buffer500m.lulc,
+              lakes.geo = lakes.geo)
 
   # Importing Lagos Locus data ####
   locus <- load_lagos_txt(locus_path("lakeslocus"))
