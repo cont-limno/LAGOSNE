@@ -6,6 +6,7 @@
 #' @param state character state name not caps sensitive
 #' @importFrom dplyr filter
 #' @importFrom lazyeval interp
+#' @importFrom utils adist
 #'
 #' @export
 #'
