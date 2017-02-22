@@ -10,6 +10,8 @@ The `LAGOS` package provides an R interface to download LAGOS data from remote d
 Installation
 ------------
 
+> This process will be much simpler after the package is made public.
+
 ### From RStudio
 
 #### GUI
@@ -24,7 +26,7 @@ New Project -&gt; Version Control -&gt; Git -&gt;
 
 ### Data
 
-Until the data exports have been loaded to Gigascience (or elsewhere) users must supply the path to their `limno` and `geo` data folders to the `lagos_compile` function (see example below). Eventually, users will be able to run `lagos_get` to supply `lagos_compile` with the flat files from GigaScience without having to deal with file paths. The **output** of `lagos_get` and `lagos_compile` is stored in the location returned by `rappdirs::user_data_dir`.
+Until the data exports have been loaded to the LTER data-store users must supply their `locus`, `limno` and `geo` data folders paths to the `lagos_compile` function (see example below). Eventually, users will be able to run `lagos_get` to supply `lagos_compile` with the flat files from LTER without having to deal with file paths. The **output** of `lagos_get` and `lagos_compile` is stored in the location returned by `rappdirs::user_data_dir`.
 
 ### Compile flat files
 
@@ -69,11 +71,9 @@ names(dt)
 #> [22] "iws.conn"             "iws.lulc"             "state"               
 #> [25] "state.chag"           "state.conn"           "state.lulc"          
 #> [28] "buffer100m"           "buffer100m.lulc"      "buffer500m"          
-#> [31] "buffer500m.conn"      "buffer500m.lulc"      "epi.nutr"            
-#> [34] "lake.specific"        "secchi"               "lagos.censor.epi"    
-#> [37] "lagos.source.program" "locus"                "name"                
-#> [40] "type"                 "variables"            "observations"        
-#> [43] "identifier"           "group"
+#> [31] "buffer500m.conn"      "buffer500m.lulc"      "lakes.geo"           
+#> [34] "epi.nutr"             "lake.specific"        "secchi"              
+#> [37] "lagos.censor.epi"     "lagos.source.program" "locus"
 ```
 
 #### Preview a table
@@ -104,41 +104,29 @@ help.search("datasets", package = "LAGOS")
 
 ### Select data
 
-The following section is experimental. See [here](http://adv-r.had.co.nz/Subsetting.html) for a tutorial on convential `data.frame` subsetting.
+See [here](http://adv-r.had.co.nz/Subsetting.html) for a comprehensive tutorial on generic `data.frame` subsetting.
 
 ``` r
+# specific variables
+ head(lagos_select(table = "epi.nutr", vars = c("tp", "tn")))
+#>   tp tn
+#> 1 30 NA
+#> 2 10 NA
+#> 3  5 NA
+#> 4  9 NA
+#> 5  5 NA
+#> 6 27 NA
+ head(lagos_select(table = "iws.lulc", vars = c("iws_nlcd2011_pct_95")))
+#>   iws_nlcd2011_pct_95
+#> 1                2.77
+#> 2                2.97
+#> 3                0.27
+#> 4                0.00
+#> 5                0.00
+#> 6                0.00
 
-# select specific columns from a specific table
-dt_sub <- lagos_select(dt, table_column_nested =
-                 list("epi.nutr" = c("lagoslakeid", "sampledate", "tp", "tn")))
-
-names(dt_sub)
-#> [1] "epi.nutr"
-head(dt_sub$epi.nutr)
-#>   lagoslakeid sampledate tp tn
-#> 1           2 1996-05-14 30 NA
-#> 2           2 1996-08-07 10 NA
-#> 3           2 2006-07-13  5 NA
-#> 4           2 2006-08-16  9 NA
-#> 5           2 2006-09-07  5 NA
-#> 6           3 2002-07-17 27 NA
-
-# select from specific tables using keywords (see help.search("lagos_select"))
-table_columns <- list("epi.nutr" = c("waterquality"),
-                      "hu4.chag" = c("deposition"))
-dt_sub    <- lagos_select(dt, table_column_nested = table_columns)
-
-names(dt_sub)
-#> [1] "epi.nutr" "hu4.chag"
-head(dt_sub$hu4.chag[,1:3])
-#>   hu4_dep_no3_1985_min hu4_dep_no3_1985_max hu4_dep_no3_1985_mean
-#> 1               7.2171              10.0448                7.9366
-#> 2               9.5538              21.1791               15.5290
-#> 3              15.5222              22.8936               19.6234
-#> 4               8.5831              31.3832               17.2809
-#> 5              15.6669              24.2653               19.0625
-#> 6              12.6550              26.8946               18.1940
-head(dt_sub$epi.nutr)
+# categories
+head(lagos_select(table = "epi.nutr", categories = "waterquality"))
 #>   chla colora colort dkn doc nh4 no2 no2no3 srp tdn tdp tkn tn toc ton tp
 #> 1   NA     NA     NA  NA  NA  20  NA     20  NA  NA  NA  NA NA  NA  NA 30
 #> 2   NA     NA     NA  NA  NA  20  NA     20  NA  NA  NA  NA NA  NA  NA 10
@@ -146,6 +134,53 @@ head(dt_sub$epi.nutr)
 #> 4  4.8     NA     15  NA  NA  NA  NA     NA  NA  NA  NA  NA NA  NA  NA  9
 #> 5  2.1     NA     NA  NA  NA  NA  NA     NA  NA  NA  NA  NA NA  NA  NA  5
 #> 6  6.6     15     NA  NA  NA  NA  NA     NA  NA  NA  NA  NA NA  NA  NA 27
+head(lagos_select(table = "county.chag", categories = "hydrology"))
+#>   county_baseflowindex_min county_baseflowindex_max
+#> 1                       45                       55
+#> 2                       30                       35
+#> 3                       28                       35
+#> 4                       34                       66
+#> 5                       22                       40
+#> 6                       28                       37
+#>   county_baseflowindex_mean county_baseflowindex_std
+#> 1                   48.3755                   1.8683
+#> 2                   32.6106                   1.4480
+#> 3                   31.5548                   1.3772
+#> 4                   53.1078                   4.6081
+#> 5                   32.4689                   4.1342
+#> 6                   34.4157                   1.1100
+head(lagos_select(table = "hu4.chag", categories = "deposition")[,1:4])
+#>   hu4_dep_no3_1985_min hu4_dep_no3_1985_max hu4_dep_no3_1985_mean
+#> 1               7.2171              10.0448                7.9366
+#> 2               9.5538              21.1791               15.5290
+#> 3              15.5222              22.8936               19.6234
+#> 4               8.5831              31.3832               17.2809
+#> 5              15.6669              24.2653               19.0625
+#> 6              12.6550              26.8946               18.1940
+#>   hu4_dep_no3_1985_std
+#> 1               0.3868
+#> 2               2.2330
+#> 3               1.3634
+#> 4               3.2954
+#> 5               1.5500
+#> 6               1.8389
+
+# mix of specific variables and categories
+head(lagos_select(table = "epi.nutr", vars = "lagoslakeid", categories = c("waterquality")))
+#>   lagoslakeid chla colora colort dkn doc nh4 no2 no2no3 srp tdn tdp tkn tn
+#> 1           2   NA     NA     NA  NA  NA  20  NA     20  NA  NA  NA  NA NA
+#> 2           2   NA     NA     NA  NA  NA  20  NA     20  NA  NA  NA  NA NA
+#> 3           2  3.9     NA     15  NA  NA  NA  NA     NA  NA  NA  NA  NA NA
+#> 4           2  4.8     NA     15  NA  NA  NA  NA     NA  NA  NA  NA  NA NA
+#> 5           2  2.1     NA     NA  NA  NA  NA  NA     NA  NA  NA  NA  NA NA
+#> 6           3  6.6     15     NA  NA  NA  NA  NA     NA  NA  NA  NA  NA NA
+#>   toc ton tp
+#> 1  NA  NA 30
+#> 2  NA  NA 10
+#> 3  NA  NA  5
+#> 4  NA  NA  9
+#> 5  NA  NA  5
+#> 6  NA  NA 27
 ```
 
 Published LAGOS subsets

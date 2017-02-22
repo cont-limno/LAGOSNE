@@ -24,6 +24,8 @@ The `LAGOS` package provides an R interface to download LAGOS data from remote d
 
 ## Installation
 
+> This process will be much simpler after the package is made public.
+
 ### From RStudio
 
 #### GUI
@@ -38,7 +40,7 @@ New Project -> Version Control -> Git ->
  
 ### Data
 
-Until the data exports have been loaded to Gigascience (or elsewhere) users must supply the path to their `limno` and `geo` data folders to the `lagos_compile` function (see example below). Eventually, users will be able to run `lagos_get` to supply `lagos_compile` with the flat files from GigaScience without having to deal with file paths. The __output__ of `lagos_get` and `lagos_compile` is stored in the location returned by `rappdirs::user_data_dir`.
+Until the data exports have been loaded to the LTER data-store users must supply their `locus`, `limno` and `geo` data folders paths to the `lagos_compile` function (see example below). Eventually, users will be able to run `lagos_get` to supply `lagos_compile` with the flat files from LTER without having to deal with file paths. The __output__ of `lagos_get` and `lagos_compile` is stored in the location returned by `rappdirs::user_data_dir`.
 
 ### Compile flat files
 
@@ -79,25 +81,20 @@ help.search("datasets", package = "LAGOS")
 
 ### Select data
 
-The following section is experimental. See [here](http://adv-r.had.co.nz/Subsetting.html) for a tutorial on convential `data.frame` subsetting.
+See [here](http://adv-r.had.co.nz/Subsetting.html) for a comprehensive tutorial on generic `data.frame` subsetting.
 
 ```{r }
+# specific variables
+ head(lagos_select(table = "epi.nutr", vars = c("tp", "tn")))
+ head(lagos_select(table = "iws.lulc", vars = c("iws_nlcd2011_pct_95")))
 
-# select specific columns from a specific table
-dt_sub <- lagos_select(dt, table_column_nested =
-                 list("epi.nutr" = c("lagoslakeid", "sampledate", "tp", "tn")))
+# categories
+head(lagos_select(table = "epi.nutr", categories = "waterquality"))
+head(lagos_select(table = "county.chag", categories = "hydrology"))
+head(lagos_select(table = "hu4.chag", categories = "deposition")[,1:4])
 
-names(dt_sub)
-head(dt_sub$epi.nutr)
-
-# select from specific tables using keywords (see help.search("lagos_select"))
-table_columns <- list("epi.nutr" = c("waterquality"),
-                      "hu4.chag" = c("deposition"))
-dt_sub    <- lagos_select(dt, table_column_nested = table_columns)
-
-names(dt_sub)
-head(dt_sub$hu4.chag[,1:3])
-head(dt_sub$epi.nutr)
+# mix of specific variables and categories
+head(lagos_select(table = "epi.nutr", vars = "lagoslakeid", categories = c("waterquality")))
 ```
 
 ## Published LAGOS subsets
