@@ -1,6 +1,5 @@
 Package: LAGOS
-Title: Tools for Interacting with the Lake Multi-scaled Geospatial and Temporal
-    Database
+Title: R interface to the LAke multi-scaled GeOSpatial & temporal database
 Version: 1.087.1
 Authors@R: c(
     person("Joseph", "Stachelek", email = "stachel2@msu.edu", role = c("aut", "cre")),
