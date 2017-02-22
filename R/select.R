@@ -26,7 +26,7 @@
 #'
 #' # specific variables
 #' head(lagos_select(table = "epi.nutr", vars = c("tp", "tn")))
-#' head(dt_reduced <- lagos_select(table = "iws.lulc", vars = c("iws_nlcd2011_pct_95")))
+#' head(lagos_select(table = "iws.lulc", vars = c("iws_nlcd2011_pct_95")))
 #'
 #' # categories
 #' head(lagos_select(table = "epi.nutr", categories = "waterquality"))
