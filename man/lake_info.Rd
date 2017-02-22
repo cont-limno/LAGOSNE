@@ -20,12 +20,13 @@ Return lake attribute information from its name and state
 \dontrun{
 dt <- lagos_load("1.087.1")
 lake_info(dt, "Benton Pond", "Massachusetts")
+lake_info(dt, "Sunapee Lake", "New Hampshire")
 
   name = c("Oneida Lake", "Sunapee Lake", "Lake Mendota"),
   state = c("New York", "New Hampshire", "Wisconsin"))
 
   apply(focal_lakes, 1, function(x) lake_info(
-    dt = dt$lake.specific, name = x[1], state = x[2]))
+    dt = dt, name = x[1], state = x[2]))
 }
 }
 
