@@ -34,5 +34,10 @@ lake_info <- function(dt, name, state){
   filter_criteria <- lazyeval::interp(~ agrepl(name, lagosname1,
                                                ignore.case = TRUE))
   dt_filter       <- dplyr::filter_(dt, filter_criteria)
+
+  if(nrow(dt_filter) < 1){
+    stop(paste0("Lake '", name, "' in ", state, " not found"))
+  }
+
   dt_filter[which.min(adist(dt_filter$lagosname1, name)),]
 }

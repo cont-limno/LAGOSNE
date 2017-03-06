@@ -15,7 +15,6 @@ load_lagos_txt <- function(file_name, sep = "\t", ...){
 
 #' info_table
 #' @description generate table summary statistics
-#' @export
 #' @author Masrour Farzan
 #' @param geo data.frame
 #' @param limno data.frame
@@ -96,8 +95,7 @@ get_if_not_exists <- function(url, destfile){
 
 stop_if_not_exists <- function(src_path) {
   if(!file.exists(src_path)){
-    stop(paste0("Dataset not found at: ", src_path,
-      "\n Try running the appropriate `lagos_get*` and/or `lagos_compile` commands."))
+    stop(paste0("Dataset not found at: ", src_path, "\n Try running the appropriate `lagos_get*` and/or `lagos_compile` commands."))
   }
 }
 
