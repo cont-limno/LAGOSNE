@@ -28,15 +28,19 @@ lake_info <- function(dt, name, state){
   dt$state$state_zoneid <- as.character(dt$state$state_zoneid)
   dt$state$state_name   <- as.character(dt$state$state_name)
 
-  locus_plus_state <- suppressMessages(dplyr::left_join(dt$locus, dt$state,
+  locus_state <- suppressMessages(dplyr::left_join(dt$locus, dt$state,
     by = c("state_zoneid")))
-  locus_plus_state_plus_conn <- suppressMessages(dplyr::left_join(
-    locus_plus_state, dt$iws.conn[,c("iws_lagoslakeid", "lakeconnection")],
+  locus_state_conn <- suppressMessages(dplyr::left_join(
+    locus_state, dt$iws.conn[,c("iws_lagoslakeid", "lakeconnection")],
+    by = c("lagoslakeid" = "iws_lagoslakeid")
+  ))
+  locus_state_conn_iws <- suppressMessages(dplyr::left_join(
+    locus_state_conn, dt$iws[,c("iws_lagoslakeid", "iws_ha")],
     by = c("lagoslakeid" = "iws_lagoslakeid")
   ))
 
   dt <- suppressMessages(dplyr::left_join(dt$lake.specific,
-          locus_plus_state_plus_conn))
+          locus_state_conn_iws))
 
   dt <- dt[grepl(state, dt$state_name),]
   filter_criteria <- lazyeval::interp(~ agrepl(name, lagosname1,
