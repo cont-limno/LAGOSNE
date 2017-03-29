@@ -3,7 +3,7 @@
 <h1 align="left">
 <img width="800" src="./inst/lagos_banner.png" alt="">
 </h1>
-[![Project Status: WIP - Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/LAGOS)](https://cran.r-project.org/package=LAGOS) [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/LAGOS)](https://cran.r-project.org/package=LAGOS)
+[![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/LAGOS)](https://cran.r-project.org/package=LAGOS) [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/LAGOS)](https://cran.r-project.org/package=LAGOS)
 
 The `LAGOS` package provides an R interface to download LAGOS data from remote databases, store this data locally, and perform a variety of filtering and subsetting operations.
 
@@ -107,6 +107,17 @@ head(dt$county)
 ``` r
 help.search("datasets", package = "LAGOS")
 ```
+
+| Package | Topic           | Title                                  |
+|:--------|:----------------|:---------------------------------------|
+| LAGOS   | chag            | CHAG Datasets                          |
+| LAGOS   | buffer100m      | LAGOS Spatial Classifications Metadata |
+| LAGOS   | buffer500m.conn | Connectivity Datasets                  |
+| LAGOS   | chla            | Epilimnion Water Quality Data          |
+| LAGOS   | lagoslakes      | Lake Attributes                        |
+| LAGOS   | county.lulc     | Land Use Land Cover (LULC) Data Frames |
+| LAGOS   | secchi          | Secchi (Water Clarity) Data            |
+| LAGOS   | lagos.source    | LAGOS sources                          |
 
 ### Select data
 

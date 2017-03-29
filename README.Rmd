@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 <img width="800" src="./inst/lagos_banner.png" alt="">
 </h1>
 
-[![Project Status: WIP - Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
+[![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/LAGOS)](https://cran.r-project.org/package=LAGOS) 
 [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/LAGOS)](https://cran.r-project.org/package=LAGOS)
 
@@ -36,7 +36,7 @@ New Project -> Version Control -> Git ->
 
 #### R prompt/console
 
-```{r eval=FALSE}
+```{r install,eval=FALSE}
 # install devtools if not found
 # install.packages("devtools")
 devtools::install()
@@ -81,15 +81,23 @@ head(dt$county)
 
 #### Read table metadata
 
+```{r load printr, echo=FALSE,message=FALSE,results='hide'}
+loadNamespace("printr")
+```
+
 ```{r Read metadata for individual tables}
 help.search("datasets", package = "LAGOS")
+```
+
+```{r unload printr, echo=FALSE}
+unloadNamespace("printr")
 ```
 
 ### Select data
 
 `lagos_select` is a convenience function whose primary purpose is to provide users with the ability to select subsets of LAGOS tables that correspond to specific keywords (see `LAGOS:::keyword_partial_key()`). See [here](http://adv-r.had.co.nz/Subsetting.html) for a comprehensive tutorial on generic `data.frame` subsetting.
 
-```{r }
+```{r demo select}
 # specific variables
  head(lagos_select(table = "epi.nutr", vars = c("tp", "tn")))
  head(lagos_select(table = "iws.lulc", vars = c("iws_nlcd2011_pct_95")))
@@ -105,12 +113,12 @@ head(lagos_select(table = "epi.nutr", vars = "lagoslakeid", categories = c("wate
 
 ## Published LAGOS subsets
 
-```{r eval = FALSE}
+```{r demo pulling other,eval = FALSE}
 # Oliver et al. 2015
 lagos_get_oliver_2015()
 ```
 
-```{r }
+```{r demo loading other}
 dt <- lagos_load_oliver_2015()
 head(dt)
 ```
