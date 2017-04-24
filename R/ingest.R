@@ -30,7 +30,8 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA, locus_fold
     # eventually replace this with EDI download
     geo_prefix <- paste0("data-raw/Geo", "/")
   }
-  geo_path    <- function(fname){paste0(geo_prefix, fname, "105.txt")}
+  geo_path    <- function(fname, geo_prefix){paste0(geo_prefix,
+                  fname, "105.txt")}
 
   if(!is.na(locus_folder)){
     locus_prefix <- paste0(locus_folder, "/", "LAGOSNE_")
@@ -45,69 +46,70 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA, locus_fold
                               colClasses = c(sampledate = "POSIXct"))
   lake.specific        <- load_lagos_txt(limno_path("lakeslimno"))
   secchi               <- load_lagos_txt(limno_path('secchi'))
-  lagos.censor.epi <- load_lagos_txt(limno_path('censorepi'))
+  # lagos.censor.epi <- load_lagos_txt(limno_path('censorepi'))
   lagos.source.program <- load_lagos_txt(limno_path('sourceprogram'))
 
   limno <- list(epi.nutr = epi.nutr,
                 lake.specific = lake.specific,
                 secchi = secchi,
-                lagos.censor.epi = lagos.censor.epi,
+                # lagos.censor.epi = lagos.censor.epi,
                 lagos.source.program = lagos.source.program)
 
   # Importing Lagos Geo data ####
-  lakes.geo <- load_lagos_txt(geo_path("LakesGeo"))
+  lakes.geo <- load_lagos_txt(
+                  geo_path("lakesgeo", paste0(geo_folder, "/", "lagosne_")))
 
   # Importing Lagos Geo county data
-  county       <- load_lagos_txt(geo_path("county_"))
-  county.chag  <- load_lagos_txt(geo_path("county_chag"))
-  county.conn  <- load_lagos_txt(geo_path("county_conn"))
-  county.lulc  <- load_lagos_txt(geo_path("county_lulc"))
+  county       <- load_lagos_txt(geo_path("county_", geo_prefix))
+  county.chag  <- load_lagos_txt(geo_path("county_chag", geo_prefix))
+  county.conn  <- load_lagos_txt(geo_path("county_conn", geo_prefix))
+  county.lulc  <- load_lagos_txt(geo_path("county_lulc", geo_prefix))
 
   # Importing Lagos Geo edu data
-  edu          <- load_lagos_txt(geo_path("edu_"))
-  edu.chag     <- load_lagos_txt(geo_path("edu_chag"))
-  edu.conn     <- load_lagos_txt(geo_path("edu_conn"))
-  edu.lulc     <- load_lagos_txt(geo_path("edu_lulc"))
+  edu          <- load_lagos_txt(geo_path("edu_", geo_prefix))
+  edu.chag     <- load_lagos_txt(geo_path("edu_chag", geo_prefix))
+  edu.conn     <- load_lagos_txt(geo_path("edu_conn", geo_prefix))
+  edu.lulc     <- load_lagos_txt(geo_path("edu_lulc", geo_prefix))
 
   # Importing Lagos Geo huc4 data
-  hu4          <- load_lagos_txt(geo_path("hu4_"),
+  hu4          <- load_lagos_txt(geo_path("hu4_", geo_prefix),
                                  colClasses = c("hu4" = "factor"))
-  hu4.chag     <- load_lagos_txt(geo_path("hu4_chag"))
-  hu4.conn     <- load_lagos_txt(geo_path("hu4_conn"), as.is = TRUE)
-  hu4.lulc     <- load_lagos_txt(geo_path("hu4_lulc"), as.is = TRUE)
+  hu4.chag     <- load_lagos_txt(geo_path("hu4_chag", geo_prefix))
+  hu4.conn     <- load_lagos_txt(geo_path("hu4_conn", geo_prefix), as.is = TRUE)
+  hu4.lulc     <- load_lagos_txt(geo_path("hu4_lulc", geo_prefix), as.is = TRUE)
 
   # Importing Lagos Geo huc4 data
-  hu8          <- load_lagos_txt(geo_path("hu8_"),
+  hu8          <- load_lagos_txt(geo_path("hu8_", geo_prefix),
                                  colClasses = c("hu8" = "factor"))
-  hu8.chag     <- load_lagos_txt(geo_path("hu8_chag"), as.is = TRUE)
-  hu8.conn     <- load_lagos_txt(geo_path("hu8_conn"), as.is = TRUE)
-  hu8.lulc     <- load_lagos_txt(geo_path("hu8_lulc"), as.is = TRUE)
+  hu8.chag     <- load_lagos_txt(geo_path("hu8_chag", geo_prefix), as.is = TRUE)
+  hu8.conn     <- load_lagos_txt(geo_path("hu8_conn", geo_prefix), as.is = TRUE)
+  hu8.lulc     <- load_lagos_txt(geo_path("hu8_lulc", geo_prefix), as.is = TRUE)
 
   # Importing Lagos Geo huc12 data
-  hu12         <- load_lagos_txt(geo_path("hu12_"),
+  hu12         <- load_lagos_txt(geo_path("hu12_", geo_prefix),
                                  colClasses = c("hu12" = "factor"))
-  hu12.chag    <-  load_lagos_txt(geo_path("hu12_chag"), as.is = TRUE)
-  hu12.conn    <-  load_lagos_txt(geo_path("hu12_conn"), as.is = TRUE)
-  hu12.lulc    <-  load_lagos_txt(geo_path("hu12_lulc"), as.is = TRUE)
+  hu12.chag    <-  load_lagos_txt(geo_path("hu12_chag", geo_prefix), as.is = TRUE)
+  hu12.conn    <-  load_lagos_txt(geo_path("hu12_conn", geo_prefix), as.is = TRUE)
+  hu12.lulc    <-  load_lagos_txt(geo_path("hu12_lulc", geo_prefix), as.is = TRUE)
 
   # Importing Lagos Geo iws data
-  iws          <- load_lagos_txt(geo_path("iws_"))
-  iws.conn     <- load_lagos_txt(geo_path("iws_conn"))
-  iws.lulc     <- load_lagos_txt(geo_path("iws_lulc"))
+  iws          <- load_lagos_txt(geo_path("iws_", geo_prefix))
+  iws.conn     <- load_lagos_txt(geo_path("iws_conn", geo_prefix))
+  iws.lulc     <- load_lagos_txt(geo_path("iws_lulc", geo_prefix))
 
   # Importing Lagos Geo state data
-  state        <- load_lagos_txt(geo_path("state_"))
-  state.chag   <- load_lagos_txt(geo_path("state_chag"))
-  state.conn   <- load_lagos_txt(geo_path("state_conn"))
-  state.lulc   <- load_lagos_txt(geo_path("state_lulc"))
+  state        <- load_lagos_txt(geo_path("state_", geo_prefix))
+  state.chag   <- load_lagos_txt(geo_path("state_chag", geo_prefix))
+  state.conn   <- load_lagos_txt(geo_path("state_conn", geo_prefix))
+  state.lulc   <- load_lagos_txt(geo_path("state_lulc", geo_prefix))
 
   # Importing lake buffer data ####
 
-  buffer100m      <- load_lagos_txt(geo_path("buffer100m_"))
-  buffer100m.lulc <- load_lagos_txt(geo_path("buffer100m_lulc"))
-  buffer500m      <- load_lagos_txt(geo_path("buffer500m_"))
-  buffer500m.conn <- load_lagos_txt(geo_path("buffer500m_conn"))
-  buffer500m.lulc <- load_lagos_txt(geo_path("buffer500m_lulc"))
+  buffer100m      <- load_lagos_txt(geo_path("buffer100m_", geo_prefix))
+  buffer100m.lulc <- load_lagos_txt(geo_path("buffer100m_lulc", geo_prefix))
+  buffer500m      <- load_lagos_txt(geo_path("buffer500m_", geo_prefix))
+  buffer500m.conn <- load_lagos_txt(geo_path("buffer500m_conn", geo_prefix))
+  buffer500m.lulc <- load_lagos_txt(geo_path("buffer500m_lulc", geo_prefix))
 
   geo <- list(county = county,
               county.chag = county.chag,
