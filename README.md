@@ -78,7 +78,7 @@ names(dt)
 #> [28] "buffer100m"           "buffer100m.lulc"      "buffer500m"          
 #> [31] "buffer500m.conn"      "buffer500m.lulc"      "lakes.geo"           
 #> [34] "epi.nutr"             "lake.specific"        "secchi"              
-#> [37] "lagos.censor.epi"     "lagos.source.program" "locus"
+#> [37] "lagos.source.program" "locus"
 ```
 
 #### Preview a table
