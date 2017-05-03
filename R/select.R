@@ -21,6 +21,7 @@
 #'     \item "streams" - all stream/river connectivity metrics from the .conn tables
 #' }
 #' @export
+#' @importFrom stats setNames
 #' @examples \dontrun{
 #' dt <- lagos_load("1.087.1")
 #'
