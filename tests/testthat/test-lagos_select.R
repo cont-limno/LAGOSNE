@@ -107,9 +107,9 @@ test_that("lagos fails well", {
     "The 'epi.nutr' table does not contain a 'gibberish' column!"
   )
 
-  # comment out this failing test, jsta: 2017-01-05
-  # expect_error(lagos_select(dt, scale = "iws",
-  #               category = c("deposition")),
-  #              "No 'deposition' data at the 'iws' scale.")
+  expect_error(
+    lagos_select(categories = c("waterquality"), vars = dt),
+    "'vars' must be entered as a character strin"
+  )
 
 })

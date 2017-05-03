@@ -40,6 +40,18 @@
 
 lagos_select <- function(table = NULL, vars = NULL, categories = NULL, dt = lagos_load("1.087.1")){
 
+  # sanitize inputs ####
+  is_not_char_args <- c(!(is.null(table) | is.character(table)),
+                        !(is.null(vars) | is.character(vars)),
+                        !(is.null(categories) | is.character(categories)))
+  is_not_char_args <- setNames(is_not_char_args,
+                               c("table", "vars", "categories"))
+
+  if(any(is_not_char_args)){
+    stop(paste0("'", names(which(is_not_char_args)),
+                "' must be entered as a character string"))
+  }
+
   is_vars_empty       <- is.null(vars)
   is_categories_empty <- is.null(categories)
 
@@ -65,7 +77,7 @@ lagos_select <- function(table = NULL, vars = NULL, categories = NULL, dt = lago
                 vars[vars_dont_exist], "' column!"))
   }
 
-  # select from dt
+  # select from dt ####
   res <- data.frame(dt[[table]][,vars])
   names(res) <- vars
   res
