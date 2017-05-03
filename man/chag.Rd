@@ -9,6 +9,7 @@
 \alias{edu.chag}
 \alias{county.chag}
 \alias{state.chag}
+\alias{deposition}
 \title{CHAG Datasets}
 \format{Data frames with all or a subset of the following variables. Number of observations is
 equal to the number of zones in each spatial scale (see Details below). Wildcard options
