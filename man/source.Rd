@@ -2,11 +2,11 @@
 % Please edit documentation in R/LAGOS-package.R
 \docType{data}
 \name{source}
-\alias{lagos.source}
-\alias{lagos.source.programs}
-\alias{programs}
 \alias{source}
+\alias{programs}
+\alias{lagos.source.programs}
 \alias{source.programs}
+\alias{lagos.source}
 \title{LAGOS sources}
 \format{A data frame with 87 observations of 19 variables:
 \itemize{
@@ -37,4 +37,3 @@ A dataset identifying the sources of limnological data in LAGOS.
 Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
 }
 \keyword{datasets}
-

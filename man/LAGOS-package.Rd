@@ -2,8 +2,8 @@
 % Please edit documentation in R/LAGOS-package.R
 \docType{package}
 \name{LAGOS-package}
-\alias{LAGOS}
 \alias{LAGOS-package}
+\alias{LAGOS}
 \title{R interface to the LAGOS lakes database}
 \description{
 R interface to the LAGOS lakes database
@@ -11,4 +11,3 @@ R interface to the LAGOS lakes database
 \author{
 \email{stachel2@msu.edu}
 }
-

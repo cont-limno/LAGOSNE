@@ -2,13 +2,15 @@
 % Please edit documentation in R/LAGOS-package.R
 \docType{data}
 \name{epi.nutr}
+\alias{epi.nutr}
+\alias{nutrients}
 \alias{chla}
 \alias{colora}
 \alias{doc}
-\alias{epi.nutr}
-\alias{nitrogen}
-\alias{nutrients}
 \alias{phosphorus}
+\alias{nitrogen}
+\alias{chlorophyll}
+\alias{waterquality}
 \title{Epilimnion Water Quality Data}
 \format{A data frame with 289482 observations of 94 variables:
 \itemize{
@@ -53,4 +55,3 @@ Each row is a sampling event, and lakes can have multiple sampling events.
 Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
 }
 \keyword{datasets}
-

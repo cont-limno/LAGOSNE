@@ -2,15 +2,15 @@
 % Please edit documentation in R/LAGOS-package.R
 \docType{data}
 \name{lulc}
-\alias{county.lulc}
-\alias{edu.lulc}
-\alias{hu12.lulc}
-\alias{hu4.lulc}
-\alias{hu8.lulc}
-\alias{iws.lulc}
+\alias{lulc}
 \alias{lakes4ha.buffer100m.lulc}
 \alias{lakes4ha.buffer500m.lulc}
-\alias{lulc}
+\alias{iws.lulc}
+\alias{hu12.lulc}
+\alias{hu8.lulc}
+\alias{hu4.lulc}
+\alias{edu.lulc}
+\alias{county.lulc}
 \alias{state.lulc}
 \title{Land Use Land Cover (LULC) Data Frames}
 \format{Data frames with all or a subset of the following variables. Number of observations is
@@ -87,4 +87,3 @@ Original data sources and layers from which each metric was derived can be found
 Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}; \href{http://www.mrlc.gov/nlcd2011.php}{National Land Cover Database},
 }
 \keyword{datasets}
-

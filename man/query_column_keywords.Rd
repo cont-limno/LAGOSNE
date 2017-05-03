@@ -22,4 +22,3 @@ dt <- lagos_load("1.054.1")
 query_column_keywords(dt, "epi.nutr", "waterquality")
 }
 }
-

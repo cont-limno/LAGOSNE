@@ -29,4 +29,3 @@ lake_info(dt, "Sunapee Lake", "New Hampshire")
     dt = dt, name = x[1], state = x[2]))
 }
 }
-

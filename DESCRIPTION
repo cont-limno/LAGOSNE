@@ -13,13 +13,12 @@ Description: This package provides functions for interacting with the Lake
 Depends:
     R (>= 3.3.1)
 Imports: dplyr,rappdirs,lazyeval,purrr,reshape2,magrittr,sp
-Suggests: DBI (>= 0.5-12),ggplot2,rgdal
-License: GPL
-Encoding: UTF-8
-LazyData: true
-RoxygenNote: 5.0.1
 Suggests: testthat,
     knitr,
     rmarkdown,
     devtools
+License: GPL
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
 VignetteBuilder: knitr

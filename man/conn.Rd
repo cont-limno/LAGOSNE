@@ -2,16 +2,16 @@
 % Please edit documentation in R/LAGOS-package.R
 \docType{data}
 \name{conn}
-\alias{buffer500m.conn}
 \alias{conn}
 \alias{connectivity}
-\alias{county.conn}
-\alias{edu.conn}
-\alias{hu12.conn}
-\alias{hu4.conn}
-\alias{hu8.conn}
-\alias{iws.conn}
+\alias{buffer500m.conn}
 \alias{lakes4ha.buffer500m.conn}
+\alias{iws.conn}
+\alias{hu12.conn}
+\alias{hu8.conn}
+\alias{hu4.conn}
+\alias{edu.conn}
+\alias{county.conn}
 \alias{state.conn}
 \title{Connectivity Datasets}
 \format{Data frames with all or a subset of the following variables. Number of observations is
@@ -145,4 +145,3 @@ HUC4 (hu4.conn), EDU (edu.conn), county (county.conn) and state (state.conn) cla
 Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
 }
 \keyword{datasets}
-

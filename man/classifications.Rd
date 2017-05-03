@@ -2,20 +2,20 @@
 % Please edit documentation in R/LAGOS-package.R
 \docType{data}
 \name{classifications}
-\alias{buffer100m}
-\alias{buffer500m}
-\alias{classification}
 \alias{classifications}
-\alias{county}
-\alias{edu}
-\alias{hu12}
-\alias{hu4}
-\alias{hu8}
-\alias{iws}
 \alias{lakes4ha.buffer100m}
 \alias{lakes4ha.buffer500m}
-\alias{scales}
+\alias{buffer100m}
+\alias{buffer500m}
+\alias{iws}
+\alias{hu12}
+\alias{hu8}
+\alias{hu4}
+\alias{edu}
+\alias{county}
 \alias{state}
+\alias{classification}
+\alias{scales}
 \title{LAGOS Spatial Classifications Metadata}
 \format{Data frames with all or a subset of the following variables. Number of observations is
 equal to the number of zones in each spatial classification (see Details below).
@@ -102,4 +102,3 @@ were derived at all classifications due to data availability. Briefly:
 Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
 }
 \keyword{datasets}
-

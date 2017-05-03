@@ -30,4 +30,3 @@ map("state", xlim = sp::bbox(res)[c(1,3)], ylim = sp::bbox(res)[c(2,4)])
 sp::plot(res, add = TRUE, pch = 19, cex = 0.05)
 }
 }
-

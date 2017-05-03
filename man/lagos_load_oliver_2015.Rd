@@ -17,4 +17,3 @@ lagos_load_oliver_2015
 lagos_load_oliver_2015()
 }
 }
-

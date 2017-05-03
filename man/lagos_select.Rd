@@ -52,4 +52,3 @@ head(lagos_select(table = "epi.nutr", vars = "lagoslakeid", categories = c("wate
 
 }
 }
-

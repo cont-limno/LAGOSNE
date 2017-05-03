@@ -3,11 +3,11 @@
 \docType{data}
 \name{chag}
 \alias{chag}
-\alias{county.chag}
-\alias{edu.chag}
 \alias{hu12.chag}
-\alias{hu4.chag}
 \alias{hu8.chag}
+\alias{hu4.chag}
+\alias{edu.chag}
+\alias{county.chag}
 \alias{state.chag}
 \title{CHAG Datasets}
 \format{Data frames with all or a subset of the following variables. Number of observations is
@@ -67,4 +67,3 @@ and surficial geology were derived from layers USGS data.
 Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
 }
 \keyword{datasets}
-

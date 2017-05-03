@@ -17,4 +17,3 @@ Retrieves LAGOS flat files from GigaDB.
 lagos_get()
 }
 }
-

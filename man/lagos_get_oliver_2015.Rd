@@ -24,4 +24,3 @@ Oliver SK, Soranno PA, Fergus EC, Wagner T, Webster KE, Scott C,
  Ecological Research Network.
  doi:10.6073/pasta/f00a245fd9461529b8cd9d992d7e3a2f
 }
-
