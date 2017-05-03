@@ -9,23 +9,25 @@ test_that("lagos_select works", {
   dt <- readRDS("lagos_test_subset.rds")
 
   # specific variables
-  dt_reduced <- lagos_select(table = "epi.nutr", vars = c("tp", "tn"))
+  dt_reduced <- lagos_select(table = "epi.nutr", vars = c("tp", "tn"), dt = dt)
   expect_equal(ncol(dt_reduced), 2)
 
   dt_reduced <- lagos_select(table = "iws.lulc",
-                             vars = c("iws_nlcd2011_pct_95"))
+                             vars = c("iws_nlcd2011_pct_95"), dt = dt)
   expect_equal(ncol(dt_reduced), 1)
 
   # categories
-  dt_reduced <- lagos_select(table = "epi.nutr", categories = "waterquality")
+  dt_reduced <- lagos_select(table = "epi.nutr", categories = "waterquality", dt = dt)
   expect_equal(ncol(dt_reduced), 16)
-  dt_reduced <- lagos_select(table = "county.chag", categories = "hydrology")
+
+  dt_reduced <- lagos_select(table = "state.chag", categories = "hydrology", dt = dt)
   expect_equal(ncol(dt_reduced), 4)
-  dt_reduced <- lagos_select(table = "hu4.chag", categories = "deposition")
+
+  dt_reduced <- lagos_select(table = "hu4.chag", categories = "deposition", dt = dt)
   expect_equal(ncol(dt_reduced), 72)
 
   # mix of specific variables and categories
-  dt_reduced <- lagos_select(table = "epi.nutr", vars = "lagoslakeid", categories = c("waterquality"))
+  dt_reduced <- lagos_select(table = "epi.nutr", vars = "lagoslakeid", categories = c("waterquality"), dt = dt)
   expect_equal(ncol(dt_reduced), 17)
 
   # select only from limno
@@ -98,12 +100,12 @@ test_that("lagos fails well", {
   dt <- readRDS("lagos_test_subset.rds")
 
   expect_error(
-    lagos_select(table = "epi.nutr", categories = "gibberish"),
+    lagos_select(table = "epi.nutr", categories = "gibberish", dt = dt),
     "The 'gibberish' category does not exist!"
   )
 
   expect_error(
-    lagos_select(table = "epi.nutr",  vars = c("gibberish", "tn")),
+    lagos_select(table = "epi.nutr",  vars = c("gibberish", "tn"), dt = dt),
     "The 'epi.nutr' table does not contain a 'gibberish' column!"
   )
 
