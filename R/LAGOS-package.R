@@ -279,7 +279,7 @@ NULL
 #' @docType data
 #' @keywords datasets
 #' @name epi.nutr
-#' @aliases nutrients chla colora doc phosphorus nitrogen
+#' @aliases nutrients chla colora doc phosphorus nitrogen chlorophyll waterquality
 #' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
 NULL
 
