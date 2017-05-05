@@ -200,7 +200,6 @@ NULL
 #'    \item *_baseflowindex_***: % of streamflow that can be attributed to ground-water discharge into streams in the zone (baseflow/totalflow *100)
 #'    \item *_groundwaterrecharge_***: mean annual natural groundwater recharge (mm/yr) in zone - Baseflow multiplied by mean annual runoff
 #'    \item *_runoff_***: average annual runoff (in/yr) in the zone, 1951-80
-#'    \item *_saturationoverlandflow_***: percent of saturation overland flow in total streamflow
 #'    \item *_prism_ppt_30yr_normal_800mm2_annual_***: 30-yr long-term (normal) annual mean precipitation (mm/yr) for zone
 #'    \item *_prism_tmax_30yr_normal_800mm2_annual_***: 30-yr long-term (normal) annual maximum temperature (⁰C) for zone
 #'    \item *_prism_tmean_30yr_normal_800mm2_annual_***: 30-yr long-term (normal) annual mean temperature (⁰C) for zone
@@ -270,7 +269,6 @@ NULL
 #'             \item *_detectionlimit: the detection limit used by the source program for each water quality parameter (* = all water quality parameters listed above). For example, "chla_detectionlimit" is the name of the variable that reports detection limits for chlorophyll a observations.
 #'             \item *_labmethodname: analytical procedure, from a standards body if available for each water quality parameter (* = all water quality parameters listed above). For example, "chla_labmethodname" is the variable name for lab methods associated with each chlorophyll a observation.
 #'             \item chla_methodinfo: flag to indicate variable was sampled using different methods. "CHLA_UNFILTERED" means that a sample was
-#'             \item nh4_methodinfo: flag to indicate variable was sampled using different methods. "DISSOLVED" means that a sample was
 #'             \item secchi_methodinfo: flag to indicate variable was sampled using different methods. "SECCHI_VIEW" means that Secchi depth was measured using a viewer box, whereas "SECCHI_VIEW_UNKNOWN" reports observations where it is unclear if a Secchi viewer box was used. A secchi observation without a methodinfo code means the Secchi depth was made without the viewer box.
 #'             \item sampleyear: year (4-digit) in which sample was collected
 #'             \item samplemonth: month in which sample was collected
