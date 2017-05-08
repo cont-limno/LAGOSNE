@@ -31,7 +31,7 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA, locus_fold
     geo_prefix <- paste0("data-raw/Geo", "/")
   }
   geo_path    <- function(fname, geo_prefix){paste0(geo_prefix,
-                  fname, "105.txt")}
+                  fname, "105.csv")}
 
   if(!is.na(locus_folder)){
     locus_prefix <- paste0(locus_folder, "/", "LAGOSNE_")
@@ -57,7 +57,7 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA, locus_fold
 
   # Importing Lagos Geo data ####
   lakes.geo <- load_lagos_txt(
-                  geo_path("lakesgeo", paste0(geo_folder, "/", "lagosne_")))
+                  geo_path("lakesgeo", paste0(geo_folder, "/", "LAGOSNE_")))
 
   # Importing Lagos Geo county data
   county       <- load_lagos_txt(geo_path("county_", geo_prefix))
