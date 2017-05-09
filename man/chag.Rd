@@ -28,7 +28,6 @@ for surficial geology)
    \item *_baseflowindex_***: % of streamflow that can be attributed to ground-water discharge into streams in the zone (baseflow/totalflow *100)
    \item *_groundwaterrecharge_***: mean annual natural groundwater recharge (mm/yr) in zone - Baseflow multiplied by mean annual runoff
    \item *_runoff_***: average annual runoff (in/yr) in the zone, 1951-80
-   \item *_saturationoverlandflow_***: percent of saturation overland flow in total streamflow
    \item *_prism_ppt_30yr_normal_800mm2_annual_***: 30-yr long-term (normal) annual mean precipitation (mm/yr) for zone
    \item *_prism_tmax_30yr_normal_800mm2_annual_***: 30-yr long-term (normal) annual maximum temperature (⁰C) for zone
    \item *_prism_tmean_30yr_normal_800mm2_annual_***: 30-yr long-term (normal) annual mean temperature (⁰C) for zone
