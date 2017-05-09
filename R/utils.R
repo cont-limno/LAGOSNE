@@ -126,7 +126,7 @@ lagos_names <- function(dt) purrr::map(dt, names)
 #' query_lagos_names(dt, "_dep_", "hu4")
 #' query_lagos_names(dt, "chla")
 #' query_lagos_names(dt, "secchi")
-#'
+#' query_lagos_names(dt, "conn")
 #' }
 query_lagos_names <- function(dt, grep_string, scale = NA){
 
