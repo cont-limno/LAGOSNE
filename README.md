@@ -110,13 +110,13 @@ help.search("datasets", package = "LAGOS")
 | Package | Topic           | Title                                  |
 |:--------|:----------------|:---------------------------------------|
 | LAGOS   | chag            | CHAG Datasets                          |
-| LAGOS   | buffer100m      | LAGOS Spatial Classifications Metadata |
-| LAGOS   | buffer500m.conn | Connectivity Datasets                  |
-| LAGOS   | chla            | Epilimnion Water Quality Data          |
+| LAGOS   | classifications | LAGOS Spatial Classifications Metadata |
+| LAGOS   | conn            | Connectivity Datasets                  |
+| LAGOS   | epi.nutr        | Epilimnion Water Quality Data          |
 | LAGOS   | lagoslakes      | Lake Attributes                        |
-| LAGOS   | county.lulc     | Land Use Land Cover (LULC) Data Frames |
+| LAGOS   | lulc            | Land Use Land Cover (LULC) Data Frames |
 | LAGOS   | secchi          | Secchi (Water Clarity) Data            |
-| LAGOS   | lagos.source    | LAGOS sources                          |
+| LAGOS   | source          | LAGOS sources                          |
 
 ### Select data
 
