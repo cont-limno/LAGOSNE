@@ -170,7 +170,7 @@ NULL
 #' @docType data
 #' @keywords datasets
 #' @name lulc
-#' @aliases lakes4ha.buffer100m.lulc lakes4ha.buffer500m.lulc iws.lulc hu12.lulc hu8.lulc hu4.lulc edu.lulc county.lulc state.lulc topography
+#' @aliases lakes4ha.buffer100m.lulc lakes4ha.buffer500m.lulc iws.lulc hu12.lulc hu8.lulc hu4.lulc edu.lulc county.lulc state.lulc topography nlcd
 #' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}; \href{http://www.mrlc.gov/nlcd2011.php}{National Land Cover Database},
 NULL
 

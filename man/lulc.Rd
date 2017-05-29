@@ -13,6 +13,7 @@
 \alias{county.lulc}
 \alias{state.lulc}
 \alias{topography}
+\alias{nlcd}
 \title{Land Use Land Cover (LULC) Data Frames}
 \format{Data frames with all or a subset of the following variables. Number of observations is
 equal to the number of zones in each spatial scale (see Details below). Wildcard options

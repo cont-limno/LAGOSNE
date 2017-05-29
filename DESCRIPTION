@@ -12,11 +12,18 @@ Description: This package provides functions for interacting with the Lake
     Multi-scaled Geospatial and Temporal Database (LAGOS).
 Depends:
     R (>= 3.3.1)
-Imports: dplyr,rappdirs,lazyeval,purrr,reshape2,magrittr,sp
+Imports: dplyr, 
+    rappdirs,
+    lazyeval,
+    purrr,
+    reshape2,
+    magrittr,
+    sp
 Suggests: testthat,
     knitr,
     rmarkdown,
-    devtools
+    devtools,
+    prettydoc
 License: GPL
 Encoding: UTF-8
 LazyData: true
