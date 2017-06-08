@@ -40,7 +40,7 @@ lake_info <- function(dt, name, state){
     by = c("lagoslakeid" = "lagoslakeid")
   ))
 
-  dt <- suppressMessages(dplyr::left_join(dt$lake.specific,
+  dt <- suppressMessages(dplyr::left_join(dt$lakes.limno,
           locus_state_iws))
 
   dt <- dt[grepl(state, dt$state_name),]

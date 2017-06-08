@@ -77,7 +77,7 @@ names(dt)
 #> [25] "state.chag"           "state.conn"           "state.lulc"          
 #> [28] "buffer100m"           "buffer100m.lulc"      "buffer500m"          
 #> [31] "buffer500m.conn"      "buffer500m.lulc"      "lakes.geo"           
-#> [34] "epi.nutr"             "lake.specific"        "secchi"              
+#> [34] "epi.nutr"             "lakes.limno"          "secchi"              
 #> [37] "lagos.source.program" "locus"
 ```
 

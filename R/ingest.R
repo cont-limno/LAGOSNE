@@ -44,13 +44,13 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA, locus_fold
   # Importing Lagos limno data ####
   epi.nutr             <- load_lagos_txt(limno_path("epinutr"),
                               colClasses = c(sampledate = "POSIXct"))
-  lake.specific        <- load_lagos_txt(limno_path("lakeslimno"))
+  lakes.limno        <- load_lagos_txt(limno_path("lakeslimno"))
   secchi               <- load_lagos_txt(limno_path('secchi'))
   # lagos.censor.epi <- load_lagos_txt(limno_path('censorepi'))
   lagos.source.program <- load_lagos_txt(limno_path('sourceprogram'))
 
   limno <- list(epi.nutr = epi.nutr,
-                lake.specific = lake.specific,
+                lakes.limno = lakes.limno,
                 secchi = secchi,
                 # lagos.censor.epi = lagos.censor.epi,
                 lagos.source.program = lagos.source.program)

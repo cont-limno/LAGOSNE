@@ -22,8 +22,8 @@ Turn a LAGOS flat file into a spatial object using a reasonable
 }
 \examples{
 \dontrun{
-dt <- lagos_load("1.087.0")
-res <- coordinatize(dt$lake.specific)
+dt <- lagos_load("1.087.1")
+res <- coordinatize(dt$locus)
 
 library(maps)
 map("state", xlim = sp::bbox(res)[c(1,3)], ylim = sp::bbox(res)[c(2,4)])
