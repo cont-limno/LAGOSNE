@@ -281,6 +281,30 @@ NULL
 #' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
 NULL
 
+#' Water Quality Lakes
+#'
+#' A dataset containing depth and identifying information on lakes in the limno module.
+#'
+#' @format A data frame with 141265 observations of 8 variables:
+#' \itemize{
+#'             \item lagoslakeid:	    unique lake identifier developed for LAGOS-NE
+#'             \item nhdid:	          the 'Permanent_identifier' from the NHD, but is called the NHDID in LAGOS-NE
+#'             \item lagosname1:	    name of lake from source dataset used as the
+#'             authoritative lake name for LAGOS
+#'             \item meandepth:	      mean lake depth (meters)
+#'             \item meandepthsource:	source of mean depth data, see "LAGOSNE_sourceprogram10871.txt" for definitions
+#'             \item maxdepth:	      maximum lake depth (meters)
+#'             \item maxdepthsource:	source of maximum depth data, see "LAGOSNE_sourceprogram10871.txt" for definitions
+#'             \item legacyid:	      unique lake identifier from the original water quality source dataset, this is not standardized and each source dataset has its own system
+#'     }
+#'
+#' @docType data
+#' @keywords datasets
+#' @name lakes.limno
+#' @aliases meandepth maxdepth legacyid
+#' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
+NULL
+
 #' Connectivity Datasets
 #'
 #' Datasets containing lake, stream, and wetland abundance and connectivity metrics calculated
