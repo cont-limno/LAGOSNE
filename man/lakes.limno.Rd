@@ -9,37 +9,15 @@
 \title{Water Quality Lakes}
 \format{A data frame with 141265 observations of 8 variables:
 \itemize{
-            \item eventida1087: unique combination of programid, lakeid, and date for each sampling event in LAGOS
-            \item lagoslakeid: unique integer identifier for each lake in LAGOS
-            \item programname: name of the sampling/monitoring program that collected the data
-            \item programtype: categorical description of the type of sampling/monitoring effort (Federal Agency, LTER = Long Term Ecological Research program, National Survey Program, Non-Profit Agency, State Agency, State Agency/Citizen Monitoring Program, State Agency/University/Citizen Monitoring Program, State Agency/Citizen Monitoring Program, Tribal Agency, University)
-            \item lagosversion: current version of LAGOS that the data record belongs to
-            \item sampledate: date at which the sample was collected, stored in date format (YYYY-MM-DD)
-            \item chla: chlorophyll a (µg/l)
-            \item colora: color, apparent (PCU)
-            \item colort: color, true (PCU)
-            \item dkn: nitrogen, dissolved Kjeldahl  (µg/l as N)
-            \item doc: carbon, dissolved organic (µg/l as C)
-            \item nh4: nitrogen, ammonium NH4 (µg/l as N)
-            \item no2: nitrogen, nitrite NO2 (µg/l as N)
-            \item no2no3: nitrogen, nitrite NO2 + nitrate NO3 nitrogen (µg/l as N)
-            \item srp: phosphorus, soluble reactive  (µg/l as P)
-            \item tdn: nitrogen, total dissolved (µg/l as N)
-            \item tdp: phosphorus, total dissolved (µg/l as P)
-            \item tkn: nitrogen, total Kjeldahl (µg/l as N)
-            \item tn: nitrogen, total (µg/l as N)
-            \item toc: carbon, total organic (µg/l as C)
-            \item ton: nitrogen, total organic (µg/l as N)
-            \item tp: phosphorus, total (µg/l as P)
-            \item secchi: Secchi disk transparency (m)
-            \item *_qual: data flags from the source program for each water quality parameter (* = all water quality parameters listed above). For example, "chla_qual" is the variable name for the data flag for chlorophyll a observations.
-            \item *_censorcode: identifies whether a data value is censored and the censor type for each water quality parameter (* = all water quality parameters listed above). For example, "chla_censorcode" is the variable name for censor information regarding chlorophyll a observations.
-            \item *_detectionlimit: the detection limit used by the source program for each water quality parameter (* = all water quality parameters listed above). For example, "chla_detectionlimit" is the name of the variable that reports detection limits for chlorophyll a observations.
-            \item *_labmethodname: analytical procedure, from a standards body if available for each water quality parameter (* = all water quality parameters listed above). For example, "chla_labmethodname" is the variable name for lab methods associated with each chlorophyll a observation.
-            \item chla_methodinfo: flag to indicate variable was sampled using different methods. "CHLA_UNFILTERED" means that a sample was
-            \item secchi_methodinfo: flag to indicate variable was sampled using different methods. "SECCHI_VIEW" means that Secchi depth was measured using a viewer box, whereas "SECCHI_VIEW_UNKNOWN" reports observations where it is unclear if a Secchi viewer box was used. A secchi observation without a methodinfo code means the Secchi depth was made without the viewer box.
-            \item sampleyear: year (4-digit) in which sample was collected
-            \item samplemonth: month in which sample was collected
+            \item lagoslakeid:	    unique lake identifier developed for LAGOS-NE
+            \item nhdid:	          the 'Permanent_identifier' from the NHD, but is called the NHDID in LAGOS-NE
+            \item lagosname1:	    name of lake from source dataset used as the
+            authoritative lake name for LAGOS
+            \item meandepth:	      mean lake depth (meters)
+            \item meandepthsource:	source of mean depth data, see "LAGOSNE_sourceprogram10871.txt" for definitions
+            \item maxdepth:	      maximum lake depth (meters)
+            \item maxdepthsource:	source of maximum depth data, see "LAGOSNE_sourceprogram10871.txt" for definitions
+            \item legacyid:	      unique lake identifier from the original water quality source dataset, this is not standardized and each source dataset has its own system
     }}
 \description{
 A dataset containing depth and identifying information on lakes in the limno module.
