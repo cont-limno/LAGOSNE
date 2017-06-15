@@ -60,11 +60,11 @@ LAGOSlimno is an integration of preexisting water quality data from disparate so
 
 Each observation of LAGOSlimno is a discrete sampling event, where one or more water quality parameters were measured. Sampling events are tied to lakes that have a unique LAGOS and National Hydrography Dataset (NHD) identifier, and lakes can have single or multiple obervations of each parameter. There are `r length(unique(dt$epi.nutr$lagoslakeid))` and `r length(unique(dt$secchi$lagoslakeid))` unique lakes in `epi.nutr` and `secchi`, respectively, distributed across the 17-state region. 
 
-```{r, message=FALSE, results="hide"}
+```{r, message=FALSE, results="hide", echo=FALSE}
 library(dplyr)
 ```
 
-```{r, fig.show = 'hold', fig.height = 4, fig.width = 4}
+```{r, fig.show = 'hold', fig.height = 4, fig.width = 4, eval=FALSE}
 # plot number of sampling events per lake
 n.events <- count(as.tbl(dt$epi.nutr), lagoslakeid)
 hist(log10(n.events$n), xlab = "Sampling Events Per Lake", 
