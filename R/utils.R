@@ -1,7 +1,7 @@
 #' load_lagos_txt
 #' @description A wrapper for \code{\link[utils]{read.table}} with a default set of parameters.
 #' @param file_name character
-#' @param sep character seperator (tab or comma seperated values)
+#' @param sep character separator (tab or comma separated values)
 #' @param ... Options passed on to \code{\link[utils]{read.table}}
 #'
 #' @return data.frame

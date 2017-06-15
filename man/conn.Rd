@@ -80,7 +80,7 @@ hu12, hu8, hu4, edu, county, state) and additional wildcards described below.
      }
      \item Stream Connectivity Metrics
      \itemize{
-         \item *_streamdensity_streams_**: all streams (NHDFlowline minus artifical lines through lakes)
+         \item *_streamdensity_streams_**: all streams (NHDFlowline minus artificial lines through lakes)
          within the zone expressed as sum of length in meters (** = sum_lengthm) or density
          in meters per hectare (** = mperha)
          \item *_streamdensity_headwaters_*: headwater streams (1st-3rd Strahler order) within the zone

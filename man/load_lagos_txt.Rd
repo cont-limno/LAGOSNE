@@ -9,7 +9,7 @@ load_lagos_txt(file_name, sep = "\\t", ...)
 \arguments{
 \item{file_name}{character}
 
-\item{sep}{character seperator (tab or comma seperated values)}
+\item{sep}{character separator (tab or comma separated values)}
 
 \item{...}{Options passed on to \code{\link[utils]{read.table}}}
 }

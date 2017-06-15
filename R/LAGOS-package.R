@@ -377,7 +377,7 @@ NULL
 #'      }
 #'      \item Stream Connectivity Metrics
 #'      \itemize{
-#'          \item *_streamdensity_streams_**: all streams (NHDFlowline minus artifical lines through lakes)
+#'          \item *_streamdensity_streams_**: all streams (NHDFlowline minus artificial lines through lakes)
 #'          within the zone expressed as sum of length in meters (** = sum_lengthm) or density
 #'          in meters per hectare (** = mperha)
 #'          \item *_streamdensity_headwaters_*: headwater streams (1st-3rd Strahler order) within the zone
@@ -524,7 +524,7 @@ NULL
 #'              \item hu12:
 #'              \item hu8:
 #'              \item iws_areaha: area in hectares of iws in which focal lake is located
-#'              \item iws_perimkm: perimieter of iws in which focal lake is located
+#'              \item iws_perimkm: perimeter of iws in which focal lake is located
 #'              \item iws_pct_in_usa:
 #'              \item iws_ha_in_usa
 #'              \item iws_pct_in_nwi

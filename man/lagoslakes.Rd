@@ -39,7 +39,7 @@
              \item hu12:
              \item hu8:
              \item iws_areaha: area in hectares of iws in which focal lake is located
-             \item iws_perimkm: perimieter of iws in which focal lake is located
+             \item iws_perimkm: perimeter of iws in which focal lake is located
              \item iws_pct_in_usa:
              \item iws_ha_in_usa
              \item iws_pct_in_nwi
