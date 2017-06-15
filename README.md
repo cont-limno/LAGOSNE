@@ -19,7 +19,7 @@ devtools::install_github("cont-limno/LAGOS")
 
 Until the data exports have been loaded to the EDI data-store users must supply their `locus`, `limno` and `geo` data folders paths to the `lagos_compile` function. Replace the paths in the example below with the path to each respective folder on your system. Most people will have access to these folders through the Dropbox `CSI_LAGOS-exports/LAGOS-NE-EDI` folder. For example, the `limno_folder` would be assigned to something like: `C:/Users/FWL/Dropbox/CSI_LAGOS-exports/LAGOS-NE-EDI/LAGOS-NE-LIMNO-EXPORT`
 
-Eventually, users will be able to run `lagos_get` to supply `lagos_compile` with the flat files from the EDI data repository without having to deal with file paths. The **outputs** of `lagos_get` and `lagos_compile` are stored in the location returned by `rappdirs::user_data_dir`.
+Eventually, users will be able to run `lagos_get` to supply `lagos_compile` with the flat files from the EDI data repository without having to deal with file paths. The **outputs** of `lagos_get` and `lagos_compile` are stored in the location returned by `rappdirs::user_data_dir()`.
 
 ### Compile flat files
 
