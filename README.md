@@ -9,29 +9,17 @@ The `LAGOS` package provides an R interface to download LAGOS data from remote d
 Installation
 ------------
 
-> This process will be much simpler after the package is made public.
-
-### From RStudio
-
-#### GUI
-
-New Project -&gt; Version Control -&gt; Git -&gt;
-
-`https://github.com/cont-limno/LAGOS.git` -&gt; Create Project
-
-#### R prompt/console
-
 ``` r
 # install devtools if not found
 # install.packages("devtools")
-devtools::install()
+devtools::install_github("cont-limno/LAGOS")
 ```
 
 ### Data
 
-Until the data exports have been loaded to the LTER data-store users must supply their `locus`, `limno` and `geo` data folders paths to the `lagos_compile` function. Replace the paths in the example below with the path to each respective folder on your system. Most people will have access to these folders through the Dropbox `CSI_LAGOS-exports/LAGOS-NE-EDI` folder. For example, the `limno_folder` would be assigned to something like: `C:/Users/FWL/Dropbox/CSI_LAGOS-exports/LAGOS-NE-EDI/LAGOS-NE-LIMNO-EXPORT`
+Until the data exports have been loaded to the EDI data-store users must supply their `locus`, `limno` and `geo` data folders paths to the `lagos_compile` function. Replace the paths in the example below with the path to each respective folder on your system. Most people will have access to these folders through the Dropbox `CSI_LAGOS-exports/LAGOS-NE-EDI` folder. For example, the `limno_folder` would be assigned to something like: `C:/Users/FWL/Dropbox/CSI_LAGOS-exports/LAGOS-NE-EDI/LAGOS-NE-LIMNO-EXPORT`
 
-Eventually, users will be able to run `lagos_get` to supply `lagos_compile` with the flat files from LTER without having to deal with file paths. The **outputs** of `lagos_get` and `lagos_compile` are stored in the location returned by `rappdirs::user_data_dir`.
+Eventually, users will be able to run `lagos_get` to supply `lagos_compile` with the flat files from EDI without having to deal with file paths. The **outputs** of `lagos_get` and `lagos_compile` are stored in the location returned by `rappdirs::user_data_dir`.
 
 ### Compile flat files
 
@@ -114,6 +102,7 @@ help.search("datasets", package = "LAGOS")
 | LAGOS   | conn            | Connectivity Datasets                  |
 | LAGOS   | epi.nutr        | Epilimnion Water Quality Data          |
 | LAGOS   | lagoslakes      | Lake Attributes                        |
+| LAGOS   | lakes.limno     | Water Quality Lakes                    |
 | LAGOS   | lulc            | Land Use Land Cover (LULC) Data Frames |
 | LAGOS   | secchi          | Secchi (Water Clarity) Data            |
 | LAGOS   | source          | LAGOS sources                          |
