@@ -16,7 +16,6 @@ Imports: dplyr,
     rappdirs,
     lazyeval,
     purrr,
-    reshape2,
     magrittr,
     sp
 Suggests: testthat,
