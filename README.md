@@ -218,7 +218,7 @@ head(dt)
 Legacy Versions
 ---------------
 
-To install versions of `LAGOS` compatible with older versions of LAGOS-NE run the following command where `ref` is set to the desired version (in this case, its version 1.054.1):
+To install versions of `LAGOS` compatible with older versions of LAGOS-NE run the following command where `ref` is set to the desired version (in the example, it is version 1.054.1):
 
 ``` r
 # install devtools if not found
