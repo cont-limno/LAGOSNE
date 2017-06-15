@@ -39,10 +39,15 @@ lagos_compile("1.087.0", format = "rds",
               geo_folder = "/Data/geo")
 ```
 Now that the data are stored locally, you can import them as a list.
-```{r }
+```{r eval=FALSE}
 # Import LAGOS data into R
 dt <- lagos_load(version = "1.087.1", format = "rds")
 ```
+
+```{r echo=FALSE}
+dt <- readRDS("../tests/testthat/lagos_test_subset.rds")
+```
+
 ## LAGOS Structure
 As previously noted, LAGOS is comprised of three modules with multiple tables within each module. When LAGOS is imported using the above method, the tables are stored in a list, and you can see all table names using:
 ```{r }
