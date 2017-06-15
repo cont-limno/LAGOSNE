@@ -215,17 +215,15 @@ head(dt)
 #> 6        10.1
 ```
 
-Legacy code-base
-----------------
+Legacy Versions
+---------------
 
-The legacy code-base (minus the data) can be obtained by running the following commands in your shell:
+To install versions of `LAGOS` compatible with older versions of LAGOS-NE run the following command where `ref` is set to the desired version (in this case, its version 1.054.1):
 
-``` shell
-git clone https://github.com/cont-limno/LAGOS.git 
-
-cd LAGOS
-
-git checkout 553b0ba3875b29257aab1aaec71d3388070bd3e5
+``` r
+# install devtools if not found
+# install.packages("devtools")
+devtools::install_github("cont-limno/LAGOS", ref = "v1.054.1")
 ```
 
 References
