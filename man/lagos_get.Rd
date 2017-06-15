@@ -10,7 +10,7 @@ lagos_get(dest_folder = NA)
 \item{dest_folder}{file.path optional will default to the location returned by \code{\link[rappdirs]{user_data_dir}}.}
 }
 \description{
-Retrieves LAGOS flat files from GigaDB.
+Retrieves LAGOS flat files from EDI.
 }
 \examples{
 \dontrun{

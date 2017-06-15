@@ -30,7 +30,7 @@ devtools::install()
 ```{r, results = 'hide', message=FALSE}
 library(LAGOS)
 ```
-Next, compile the data from a local location by setting the `limno_folder` and `geo_folder` to the location of the tables on your local computer. When LAGOS is published, this function will be altered to retrieve all data tables from Gigascience or wherever the data are published.
+Next, compile the data from a local location by setting the `limno_folder` and `geo_folder` to the location of the tables on your local computer. When LAGOS is published, this function will be altered to retrieve all data tables from the EDI data repository.
 ```
 # Get LAGOS data prior to publication
 # Users must point to the path of their limno and geo data folders

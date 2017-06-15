@@ -16,7 +16,7 @@
 #'  geo_folder   = "~/Downloads/LAGOS-NE-GEO-EXPORT",
 #'  locus_folder = "~/Downloads/LAGOS-NE-GEO-LOCUS-EXPORT")
 #'
-#' # Pending Gigascience availability
+#' # Pending EDI availability
 #' lagos_compile("1.087.0", format = "rds")
 #' lagos_compile("1.087.0", format = "sqlite")
 #' }
