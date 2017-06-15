@@ -14,3 +14,4 @@ create_test_data.R
 ^README-.*\.png$
 ^man/readme.pdf$
 R/test.R
+^\.travis\.yml$
