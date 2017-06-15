@@ -3,7 +3,6 @@
 #'
 #' @export
 #' @description Retrieves LAGOS flat files from GigaDB.
-#' @import rappdirs
 #' @importFrom utils download.file
 #' @param dest_folder file.path optional will default to the location returned by \code{\link[rappdirs]{user_data_dir}}.
 #' @examples \dontrun{

@@ -39,7 +39,8 @@
 #'
 #' }
 
-lagos_select <- function(table = NULL, vars = NULL, categories = NULL, dt = lagos_load("1.087.1")){
+lagos_select <- function(table = NULL, vars = NULL, categories = NULL,
+                         dt = lagos_load("1.087.1")){
 
   # sanitize inputs ####
   is_not_char_args <- c(!(is.null(table) | is.character(table)),
@@ -96,16 +97,25 @@ expand_categories <- function(categories, available_vars){
                 "' category does not exist!"))
   }
 
-  key_subset <- lapply(categories, function(x) keyword_partial_key()[grep(x, keyword_partial_key()[,1]),])[[1]]$definition
-  key_full   <- lapply(categories, function(x) keyword_full_key()[grep(x, keyword_full_key()[,1]),])[[1]]$definition
+  key_subset <- lapply(
+    categories,
+    function(x) keyword_partial_key()[
+      grep(x, keyword_partial_key()[,1]),]
+    )[[1]]$definition
+
+  key_full   <- lapply(
+    categories,
+    function(x) keyword_full_key()[
+      grep(x, keyword_full_key()[,1]),]
+    )[[1]]$definition
 
   if(length(key_subset) > 0){
-    key_subset <- lapply(key_subset, function(x) available_vars[grep(x, available_vars)])[[1]]
+    key_subset <- lapply(
+      key_subset,
+      function(x) available_vars[grep(x, available_vars)])[[1]]
+
     key_full <- c(key_full, key_subset)
   }
 
 key_full
 }
-
-
-

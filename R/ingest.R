@@ -10,7 +10,8 @@
 #'lagos_ingest("1.087.1")
 #'}
 #'
-lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA, locus_folder = NA){
+lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA,
+                         locus_folder = NA){
 
   folder_version <- gsub("\\.", "", version)
 
@@ -106,12 +107,12 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA, locus_fold
   hu12         <- load_lagos_txt(geo_path("hu12_", geo_prefix),
                                  colClasses = c("hu12" = "factor"),
                                  sep = ",")
-  hu12.chag    <-  load_lagos_txt(geo_path("hu12_chag", geo_prefix), as.is = TRUE,
-                                  sep = ",")
-  hu12.conn    <-  load_lagos_txt(geo_path("hu12_conn", geo_prefix), as.is = TRUE,
-                                  sep = ",")
-  hu12.lulc    <-  load_lagos_txt(geo_path("hu12_lulc", geo_prefix), as.is = TRUE,
-                                  sep = ",")
+  hu12.chag    <-  load_lagos_txt(geo_path("hu12_chag", geo_prefix),
+                                  as.is = TRUE, sep = ",")
+  hu12.conn    <-  load_lagos_txt(geo_path("hu12_conn", geo_prefix),
+                                  as.is = TRUE, sep = ",")
+  hu12.lulc    <-  load_lagos_txt(geo_path("hu12_lulc", geo_prefix),
+                                  as.is = TRUE, sep = ",")
 
   # Importing Lagos Geo iws data
   iws          <- load_lagos_txt(geo_path("iws_", geo_prefix),

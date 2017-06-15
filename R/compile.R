@@ -21,7 +21,8 @@
 #' lagos_compile("1.087.0", format = "sqlite")
 #' }
 #'
-lagos_compile <- function(version, format = "rds", limno_folder = NA, geo_folder = NA, locus_folder = NA){
+lagos_compile <- function(version, format = "rds", limno_folder = NA,
+                                    geo_folder = NA, locus_folder = NA){
 
   ingest <- lagos_ingest(version = version, limno_folder = limno_folder,
                          geo_folder = geo_folder, locus_folder = locus_folder)

@@ -17,17 +17,21 @@ test_that("lagos_select works", {
   expect_equal(ncol(dt_reduced), 1)
 
   # categories
-  dt_reduced <- lagos_select(table = "epi.nutr", categories = "waterquality", dt = dt)
+  dt_reduced <- lagos_select(table = "epi.nutr",
+                             categories = "waterquality", dt = dt)
   expect_equal(ncol(dt_reduced), 16)
 
-  dt_reduced <- lagos_select(table = "state.chag", categories = "hydrology", dt = dt)
+  dt_reduced <- lagos_select(table = "state.chag",
+                             categories = "hydrology", dt = dt)
   expect_equal(ncol(dt_reduced), 4)
 
-  dt_reduced <- lagos_select(table = "hu4.chag", categories = "deposition", dt = dt)
+  dt_reduced <- lagos_select(table = "hu4.chag",
+                             categories = "deposition", dt = dt)
   expect_equal(ncol(dt_reduced), 72)
 
   # mix of specific variables and categories
-  dt_reduced <- lagos_select(table = "epi.nutr", vars = "lagoslakeid", categories = c("waterquality"), dt = dt)
+  dt_reduced <- lagos_select(table = "epi.nutr", vars = "lagoslakeid",
+                             categories = c("waterquality"), dt = dt)
   expect_equal(ncol(dt_reduced), 17)
 
   # select only from limno
