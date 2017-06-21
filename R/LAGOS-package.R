@@ -192,6 +192,7 @@ NULL
 #' years of measurement (** = 1985, 1990, 1995, 2000, 2005, 2010), and summary statistic or
 #' units (*** = min, max, mean, std for atmospheric deposition and hydrology; *** = ha, pct
 #' for surficial geology)
+#' @encoding UTF-8
 #' \itemize{
 #'    \item *_zoneid: unique zone identifier
 #'    \item *_dep_no3_**_***: nitrate ion wet deposition (kg/ha) in zone during specified year
@@ -315,6 +316,7 @@ NULL
 #' equal to the number of zones in each spatial classification (see ?classifications). Wildcard options
 #' include a subset of the LAGOS spatial classifications (* = lakes4ha_buffer500m, iws,
 #' hu12, hu8, hu4, edu, county, state) and additional wildcards described below.
+#' @encoding UTF-8
 #' \itemize{
 #'      \item Identifiers and Zone Metadata
 #'      \itemize{
