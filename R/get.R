@@ -5,26 +5,32 @@
 #' @description Retrieves LAGOS flat files from EDI.
 #' @importFrom utils download.file
 #' @param dest_folder file.path optional will default to the location returned by \code{\link[rappdirs]{user_data_dir}}.
+#' @param version character LAGOS database version string
 #' @examples \dontrun{
-#' lagos_get()
+#' lagos_get(version = "1.087.1")
 #' }
-lagos_get <- function(dest_folder = NA){
+lagos_get <- function(version, dest_folder = NA){
 
-  # replace with LAGOS path
-  baseurl <- "ftp://climb.genomics.cn/pub/10.5524/100001_101000/100244/"
+  baseurl <- "http://pasta-s.lternet.edu/package/data/eml/edi/"
 
-  # replace with LAGOS file names
-  files <- c("Cirflux_ScalingAndModeling_canopyLevelData_GigaScience.csv",
-                 "Cirflux_ScalingAndModeling_leafLevelData_GigaScience.csv")
+  locus_base  <- paste0(baseurl, c("100/2"))
+  locus_dir   <- get_lagos_module(locus_base, "locus")
 
-  # dir.exists(lagos_path())
+  limno_base <- paste0(baseurl, c("101/4"))
+  limno_dir  <- get_lagos_module(limno_base, "limno")
+
+  geo_base <- paste0(baseurl, c("99/2"))
+  geo_dir  <- get_lagos_module(geo_base, "geo")
+
   dir.create(lagos_path(), showWarnings = FALSE)
 
-  invisible(lapply(files, function(x) get_if_not_exists(paste0(baseurl, x),
-    paste0(lagos_path(), x))))
-
+  lagos_compile(version = version,
+                locus_folder = locus_dir,
+                limno_folder = limno_dir,
+                geo_folder = geo_dir,
+                dest_folder = dest_folder
+                )
 }
-
 
 #' lagos_get_oliver_2015
 #'

@@ -4,9 +4,11 @@
 \alias{lagos_get}
 \title{lagos_get}
 \usage{
-lagos_get(dest_folder = NA)
+lagos_get(version, dest_folder = NA)
 }
 \arguments{
+\item{version}{character LAGOS database version string}
+
 \item{dest_folder}{file.path optional will default to the location returned by \code{\link[rappdirs]{user_data_dir}}.}
 }
 \description{
@@ -14,6 +16,6 @@ Retrieves LAGOS flat files from EDI.
 }
 \examples{
 \dontrun{
-lagos_get()
+lagos_get(version = "1.087.1")
 }
 }

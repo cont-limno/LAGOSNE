@@ -182,3 +182,32 @@ query_column_keywords <- function(dt, table_name, keyword_string){
   dt_names[table_name][[1]][dt_names[table_name][[1]] %in% match]
 
 }
+
+#' @importFrom curl curl_fetch_memory
+#' @importFrom stringr str_extract
+get_file_names <- function(url){
+  handle <- curl::new_handle(nobody = TRUE)
+
+  headers <- curl::parse_headers(
+    curl::curl_fetch_memory(url, handle)$headers)
+  fname <- headers[grep("filename", headers)]
+
+  res <- stringr::str_extract(fname, "(?<=\\=)(.*?)\\.csv")
+  gsub('\\"', "", res)
+}
+
+get_lagos_module <- function(url, folder_name){
+  files <- suppressWarnings(paste0(url, "/",
+                            readLines(url)))
+  file_names <- sapply(files, get_file_names)
+
+  local_dir   <- file.path(tempdir(), folder_name)
+  dir.create(local_dir, showWarnings = FALSE)
+
+  file_paths <- file.path(local_dir, file_names)
+
+  invisible(lapply(seq_len(length(files)),
+    function(i) get_if_not_exists(files[i], file_paths[i])))
+
+  local_dir
+}

@@ -16,39 +16,28 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA,
   folder_version <- gsub("\\.", "", version)
 
   # Set-up paths ####
-  if(!is.na(limno_folder)){
-    limno_prefix <- paste0(limno_folder, "/", "LAGOSNE_")
-  }else{
-    # eventually replace this with EDI download
-    limno_prefix <- paste0("data-raw/Limno", folder_version, "/")
-  }
-  limno_path    <- function(fname){paste0(limno_prefix, fname,
-                    folder_version, ".txt")}
+  limno_prefix <- paste0(limno_folder, "/", "LAGOSNE_")
+  limno_path   <- function(fname){paste0(limno_prefix,
+                    fname, folder_version, ".csv")}
 
-  if(!is.na(geo_folder)){
-    geo_prefix <- paste0(geo_folder, "/", "LAGOSNE_")
-  }else{
-    # eventually replace this with EDI download
-    geo_prefix <- paste0("data-raw/Geo", "/")
-  }
-  geo_path    <- function(fname, geo_prefix){paste0(geo_prefix,
-                  fname, "105.csv")}
+  geo_prefix   <- paste0(geo_folder, "/", "LAGOSNE_")
+  geo_path     <- function(fname, geo_prefix){paste0(geo_prefix,
+                    fname, "105.csv")}
 
-  if(!is.na(locus_folder)){
-    locus_prefix <- paste0(locus_folder, "/", "LAGOSNE_")
-  }else{
-    # eventually replace this with EDI download
-    locus_prefix <- paste0("data-raw/Locus", "/")
-  }
-  locus_path    <- function(fname){paste0(locus_prefix, fname, "101.txt")}
+  locus_prefix <- paste0(locus_folder, "/", "LAGOSNE_")
+  locus_path   <- function(fname){paste0(locus_prefix,
+                    fname, "101.csv")}
 
   # Importing Lagos limno data ####
   epi.nutr             <- load_lagos_txt(limno_path("epinutr"),
-                              colClasses = c(sampledate = "POSIXct"))
-  lakes.limno        <- load_lagos_txt(limno_path("lakeslimno"))
-  secchi               <- load_lagos_txt(limno_path('secchi'))
-  # lagos.censor.epi <- load_lagos_txt(limno_path('censorepi'))
-  lagos.source.program <- load_lagos_txt(limno_path('sourceprogram'))
+                              colClasses = c(sampledate = "POSIXct"),
+                              sep = ",")
+  lakes.limno          <- load_lagos_txt(limno_path("lakeslimno"),
+                                       sep = ",")
+  secchi               <- load_lagos_txt(limno_path('secchi'),
+                                         sep = ",")
+  lagos.source.program <- load_lagos_txt(limno_path('sourceprogram'),
+                                         sep = ",")
 
   limno <- list(epi.nutr = epi.nutr,
                 lakes.limno = lakes.limno,
@@ -180,7 +169,7 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA,
               lakes.geo = lakes.geo)
 
   # Importing Lagos Locus data ####
-  locus <- load_lagos_txt(locus_path("lakeslocus"))
+  locus <- load_lagos_txt(locus_path("lakeslocus"), sep = ",")
 
   list("limno" = limno, "geo" = geo, "locus" = locus)
   }

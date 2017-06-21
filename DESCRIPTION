@@ -17,7 +17,9 @@ Imports: dplyr,
     lazyeval,
     purrr,
     magrittr,
-    sp
+    sp,
+    curl,
+    stringr
 Suggests: testthat,
     knitr,
     rmarkdown,
