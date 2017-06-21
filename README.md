@@ -17,18 +17,10 @@ devtools::install_github("cont-limno/LAGOS")
 
 ### Data
 
-Until the data exports have been loaded to the EDI data respository users must supply their `locus`, `limno` and `geo` data folders paths to the `lagos_compile` function. Replace the paths in the example below with the path to each respective folder on your system. Most people will have access to these folders through the Dropbox `CSI_LAGOS-exports/LAGOS-NE-EDI` folder. For example, the `limno_folder` would be assigned to something like: `C:/Users/FWL/Dropbox/CSI_LAGOS-exports/LAGOS-NE-EDI/LAGOS-NE-LIMNO-EXPORT`
-
-Eventually, users will be able to run `lagos_get` to supply `lagos_compile` with the flat files from the EDI data repository without having to deal with file paths. The **outputs** of `lagos_get` and `lagos_compile` are stored in the location returned by `rappdirs::user_data_dir()`.
-
-### Compile flat files
+The `lagos_get` function downloads the LAGOS files corresponding to the specified version from the [EDI data repository](https://portal.edirepository.org/nis/home.jsp). Files are stored in a temporary directory before being "compiled" to an `R` data format in the location returned by `rappdirs::user_data_dir()`. Data only needs to be downloaded one time per version per machine.
 
 ``` r
-library(LAGOS)
-lagos_compile("1.087.1", format = "rds",
-  limno_folder = "~/Downloads/LAGOS-NE-LIMNO-EXPORT",
-  geo_folder   = "~/Downloads/LAGOS-NE-GEO-EXPORT",
-  locus_folder = "~/Downloads/LAGOS-NE-LOCUS-EXPORT")
+lagos_get("1.087.1")
 ```
 
 Usage
@@ -52,7 +44,7 @@ library(LAGOS)
 ### Load data
 
 ``` r
-dt <- lagos_load(version = "1.087.1", format = "rds")
+dt <- lagos_load(version = "1.087.1")
 names(dt)
 #>  [1] "county"               "county.chag"          "county.conn"         
 #>  [4] "county.lulc"          "edu"                  "edu.chag"            
@@ -218,12 +210,26 @@ head(dt)
 Legacy Versions
 ---------------
 
+### R Package
+
 To install versions of `LAGOS` compatible with older versions of LAGOS-NE run the following command where `ref` is set to the desired version (in the example, it is version 1.054.1):
 
 ``` r
 # install devtools if not found
 # install.packages("devtools")
 devtools::install_github("cont-limno/LAGOS", ref = "v1.054.1")
+```
+
+### Data
+
+Until older datasets have been made a available in a public repository, LAGOS users will need to use the `lagos_compile` function (not `lagos_get`) and supply the path to their local `locus`, `limno` and `geo` data folders. Replace the paths in the example below with the path to each respective folder on your system. Most people will have access to these folders through Dropbox. For example, the `limno_folder` would be assigned to something like: `C:/Users/FWL/Dropbox/CSI_LAGOS-exports/LAGOS-NE-LIMNO-EXPORT`
+
+``` r
+library(LAGOS)
+lagos_compile("1.087.1", format = "rds",
+  limno_folder = "~/Downloads/LAGOS-NE-LIMNO-EXPORT",
+  geo_folder   = "~/Downloads/LAGOS-NE-GEO-EXPORT",
+  locus_folder = "~/Downloads/LAGOS-NE-LOCUS-EXPORT")
 ```
 
 References
