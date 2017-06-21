@@ -20,6 +20,7 @@ devtools::install_github("cont-limno/LAGOS")
 The `lagos_get` function downloads the LAGOS files corresponding to the specified version from the [EDI data repository](https://portal.edirepository.org/nis/home.jsp). Files are stored in a temporary directory before being "compiled" to an `R` data format in the location returned by `rappdirs::user_data_dir()`. Data only needs to be downloaded one time per version per machine.
 
 ``` r
+library(LAGOS)
 lagos_get("1.087.1")
 ```
 
