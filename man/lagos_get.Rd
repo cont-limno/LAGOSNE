@@ -4,10 +4,12 @@
 \alias{lagos_get}
 \title{lagos_get}
 \usage{
-lagos_get(version, dest_folder = NA)
+lagos_get(version, overwrite = FALSE, dest_folder = NA)
 }
 \arguments{
 \item{version}{character LAGOS database version string}
+
+\item{overwrite}{logical overwrite existing data for the specified version}
 
 \item{dest_folder}{file.path optional will default to the location returned by \code{\link[rappdirs]{user_data_dir}}.}
 }

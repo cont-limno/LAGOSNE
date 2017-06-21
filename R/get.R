@@ -6,10 +6,17 @@
 #' @importFrom utils download.file
 #' @param dest_folder file.path optional will default to the location returned by \code{\link[rappdirs]{user_data_dir}}.
 #' @param version character LAGOS database version string
+#' @param overwrite logical overwrite existing data for the specified version
 #' @examples \dontrun{
 #' lagos_get(version = "1.087.1")
 #' }
-lagos_get <- function(version, dest_folder = NA){
+lagos_get <- function(version, overwrite = FALSE, dest_folder = NA){
+
+  outpath <- file.path(lagos_path(), paste0("data_", version, ".rds"))
+  if(file.exists(outpath) & !overwrite){
+    stop("LAGOS data for this version already exists on the local machine.
+  Re-download if neccessary using the 'overwrite` argument.'")
+  }
 
   baseurl <- "http://pasta-s.lternet.edu/package/data/eml/edi/"
 
