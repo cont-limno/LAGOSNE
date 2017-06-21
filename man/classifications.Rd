@@ -57,7 +57,7 @@ were derived at all classifications due to data availability. Briefly:
 \itemize{
     \item iws: a dataframe with 51065 observations of 12 variables. The area of land
     that drains directly into a lake, and into all upstream-connected, permanent streams
-    to that lake exclusive of any upstream lake watersheds for lakes ≥ 10 ha that are
+    to that lake exclusive of any upstream lake watersheds for lakes greater than  10 ha that are
     connected via permanent streams.  For details on how the watersheds were delineated,
     see additional file 8 in Soranno et al. (2015). Themes derived at the iws classification include
     LULC and CONN

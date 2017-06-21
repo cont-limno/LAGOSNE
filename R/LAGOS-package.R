@@ -23,7 +23,7 @@ NULL
 #' \itemize{
 #'     \item iws: a dataframe with 51065 observations of 12 variables. The area of land
 #'     that drains directly into a lake, and into all upstream-connected, permanent streams
-#'     to that lake exclusive of any upstream lake watersheds for lakes ≥ 10 ha that are
+#'     to that lake exclusive of any upstream lake watersheds for lakes greater than  10 ha that are
 #'     connected via permanent streams.  For details on how the watersheds were delineated,
 #'     see additional file 8 in Soranno et al. (2015). Themes derived at the iws classification include
 #'     LULC and CONN
@@ -192,7 +192,6 @@ NULL
 #' years of measurement (** = 1985, 1990, 1995, 2000, 2005, 2010), and summary statistic or
 #' units (*** = min, max, mean, std for atmospheric deposition and hydrology; *** = ha, pct
 #' for surficial geology)
-#' @encoding UTF8
 #' \itemize{
 #'    \item *_zoneid: unique zone identifier
 #'    \item *_dep_no3_**_***: nitrate ion wet deposition (kg/ha) in zone during specified year
@@ -202,9 +201,9 @@ NULL
 #'    \item *_groundwaterrecharge_***: mean annual natural groundwater recharge (mm/yr) in zone - Baseflow multiplied by mean annual runoff
 #'    \item *_runoff_***: average annual runoff (in/yr) in the zone, 1951-80
 #'    \item *_prism_ppt_30yr_normal_800mm2_annual_***: 30-yr long-term (normal) annual mean precipitation (mm/yr) for zone
-#'    \item *_prism_tmax_30yr_normal_800mm2_annual_***: 30-yr long-term (normal) annual maximum temperature (⁰C) for zone
-#'    \item *_prism_tmean_30yr_normal_800mm2_annual_***: 30-yr long-term (normal) annual mean temperature (⁰C) for zone
-#'    \item *_prism_tmin_30yr_normal_800mm2_annual_***: 30-yr long-term (normal) annual minimum temperature  (⁰C) for zone
+#'    \item *_prism_tmax_30yr_normal_800mm2_annual_***: 30-yr long-term (normal) annual maximum temperature (deg C) for zone
+#'    \item *_prism_tmean_30yr_normal_800mm2_annual_***: 30-yr long-term (normal) annual mean temperature (deg C) for zone
+#'    \item *_prism_tmin_30yr_normal_800mm2_annual_***: 30-yr long-term (normal) annual minimum temperature  (deg C) for zone
 #'    \item *_surficialgeology_alluv_***: alluvial of all ages
 #'    \item *_surficialgeology_beach_***: beach deposits of Holocene age
 #'    \item *_surficialgeology_colluv_***: colluvium of all ages
@@ -316,7 +315,6 @@ NULL
 #' equal to the number of zones in each spatial classification (see ?classifications). Wildcard options
 #' include a subset of the LAGOS spatial classifications (* = lakes4ha_buffer500m, iws,
 #' hu12, hu8, hu4, edu, county, state) and additional wildcards described below.
-#' @encoding UTF8
 #' \itemize{
 #'      \item Identifiers and Zone Metadata
 #'      \itemize{
@@ -326,8 +324,8 @@ NULL
 #'      \item Lake Connectivity Metrics. Lake abundance metrics are derived for all lakes,
 #'      isolated lakes ("isolated" - no inflow or outflow streams), headwater lakes ("headwater" - no inflowing streams),
 #'      stream drainage lakes ("drstream" - lakes with inflowing stream(s), with or without outflows,
-#'      and no upstream lakes ≥10 ha), and lake drainage lakes ("drlakeStream" lakes with inflowing
-#'      stream(s) and at least one upstream lake ≥10 ha).
+#'      and no upstream lakes greater than 10 ha), and lake drainage lakes ("drlakeStream" lakes with inflowing
+#'      stream(s) and at least one upstream lake greater than 10 ha).
 #'      \itemize{
 #'          \item *_lakes_**_***: all lakes that are within or intersect the zone boundary
 #'          and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha),
