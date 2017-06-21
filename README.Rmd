@@ -23,7 +23,7 @@ The `LAGOS` package provides an R interface to download LAGOS-NE data from remot
 ```{r install,eval=FALSE}
 # install devtools if not found
 # install.packages("devtools")
-devtools::install_github("cont-limno/LAGOS")
+devtools::install_github("cont-limno/LAGOS", update_dependencies = TRUE)
 ```
  
 ### Data

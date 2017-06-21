@@ -12,7 +12,7 @@ Installation
 ``` r
 # install devtools if not found
 # install.packages("devtools")
-devtools::install_github("cont-limno/LAGOS")
+devtools::install_github("cont-limno/LAGOS", update_dependencies = TRUE)
 ```
 
 ### Data
