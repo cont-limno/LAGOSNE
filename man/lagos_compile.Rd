@@ -5,7 +5,7 @@
 \title{Compile LAGOS data}
 \usage{
 lagos_compile(version, format = "rds", limno_folder = NA, geo_folder = NA,
-  locus_folder = NA)
+  locus_folder = NA, dest_folder = NA)
 }
 \arguments{
 \item{version}{character LAGOS database version string}
@@ -17,20 +17,18 @@ lagos_compile(version, format = "rds", limno_folder = NA, geo_folder = NA,
 \item{geo_folder}{file.path to geo export folder.}
 
 \item{locus_folder}{file.path to locus export folder.}
+
+\item{dest_folder}{file.path optional will default to the location returned by \code{\link[rappdirs]{user_data_dir}}}
 }
 \description{
 Compile LAGOS data from component flat files
 }
 \examples{
 \dontrun{
-lagos_compile("1.087.0", format = "rds",
+lagos_compile("1.087.1", format = "rds",
  limno_folder = "~/Downloads/LAGOS-NE-LIMNO-EXPORT",
  geo_folder   = "~/Downloads/LAGOS-NE-GEO-EXPORT",
  locus_folder = "~/Downloads/LAGOS-NE-GEO-LOCUS-EXPORT")
-
-# Pending EDI availability
-lagos_compile("1.087.0", format = "rds")
-lagos_compile("1.087.0", format = "sqlite")
 }
 
 }
