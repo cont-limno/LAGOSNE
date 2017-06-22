@@ -227,7 +227,7 @@ Until older datasets have been made a available in a public repository, LAGOS us
 
 ``` r
 library(LAGOS)
-lagos_compile("1.087.1", format = "rds",
+lagos_compile("1.054.1", format = "rds",
   limno_folder = "~/Downloads/LAGOS-NE-LIMNO-EXPORT",
   geo_folder   = "~/Downloads/LAGOS-NE-GEO-EXPORT",
   locus_folder = "~/Downloads/LAGOS-NE-LOCUS-EXPORT")
