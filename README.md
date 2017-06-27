@@ -236,6 +236,8 @@ lagos_compile("1.054.1", format = "rds",
 References
 ----------
 
-Soranno, P.A., Bissell, E.G., Cheruvelil, K.S., Christel, S.T., Collins, S.M., Fergus, C.E., Filstrup, C.T., Lapierre, J.F., Lottig, N.R., Oliver, S.K., Scott, C.E., Smith, N.J., Stopyak, S., Yuan, S., Bremigan, M.T., Downing, J.A., Gries, C., Henry, E.H., Skaff, N.K., Stanley, E.H., Stow, C.A., Tan, P.N., Wagner, T. and Webster, K.E. 2015. Building a multi-scaled geospatial temporal ecology database from disparate data sources: fostering open science and data reuse. *Gigascience*, 4(1)
+Oliver, SK, PA Soranno, CE Fergus, T Wagner, K Webster, CE Scott, LA Winslow, J Downing, and EH Stanley. 2015. “LAGOS - Predicted and Observed Maximum Depth Values for Lakes in a 17-State Region of the U.S.” <https://dx.doi.org/10.6073/pasta/edc06bbae6db80e801b6e52253f2ea09>.
 
-Oliver SK, Soranno PA, Fergus CE, Wagner T, Webster K, Scott C, Winslow LA, Downing J, Stanley EH. 2015. LAGOS - Predicted and observed maximum depth values for lakes in a 17-state region of the U.S. DOI: 10.6073/pasta/edc06bbae6db80e801b6e52253f2ea09
+Soranno, PA, EG Bissell, KS Cheruvelil, ST Christel, SM Collins, CE Fergus, CT Filstrup, et al. 2015. “Building a Multi-Scaled Geospatial Temporal Ecology Database from Disparate Data Sources: Fostering Open Science and Data Reuse.” *Gigascience* 4 (1). <https://dx.doi.org/10.1186/s13742-015-0067-4>.
+
+Stachelek, J, and SK Oliver. 2017. *LAGOS: R Interface to the Lake Multi-Scaled Geospatial & Temporal Database*. <https://github.com/cont-limno/LAGOS>.
