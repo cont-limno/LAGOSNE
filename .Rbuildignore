@@ -15,3 +15,4 @@ create_test_data.R
 ^man/readme.pdf$
 R/test.R
 ^\.travis\.yml$
+LAGOS.bib
