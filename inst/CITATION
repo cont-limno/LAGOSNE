@@ -5,17 +5,17 @@ citEntry(entry = "Article",
     ecology database from disparate data sources: fostering open science and
     data reuse",
   author       = personList(
-                   as.person("Soranno P.A."),
-                   as.person("Bissell E.G."),
-                   as.person("Cheruvelil K.S."),
-                   as.person("Christel S.T."),
-                   as.person("Collins S.M."),
-                   as.person("Fergus C.E."),
-                   as.person("Filstrup C.T."),
-                   as.person("Lapierre J.F."),
-                   as.person("Lottig N.R."),
-                   as.person("Oliver S.K."),
-                   as.person("Scott C.E.")),
+                   person("P.A.", "Soranno"),
+                   person("E.G.", "Bissell"),
+                   person("K.S.", "Cheruvelil"),
+                   person("S.T.", "Christel"),
+                   person("S.M.", "Collins"),
+                   person("C.E.", "Fergus"),
+                   person("C.T.", "Filstrup"),
+                   person("J.F.", "Lapierre"),
+                   person("N.R.", "Lottig"),
+                   person("S.K.", "Oliver"),
+                   person("C.E.", "Scott")),
   journal      = "Gigascience",
   year         = "2015",
   volume       = "4",
@@ -27,4 +27,17 @@ citEntry(entry = "Article",
     S.K. and Scott, C.E., 2015. Building a multi-scaled geospatial temporal
     ecology database from disparate data sources: fostering open science and
     data reuse. Gigascience, 4(1)")
+)
+
+citEntry(entry = "Manual",
+  title        = "LAGOS: R interface to the LAke multi-scaled GeOSpatial & temporal database",
+  author       = personList(
+                   as.person("Joseph Stachelek"),
+                   as.person("Samantha Oliver")),
+  year         = "2017",
+  note         = "R package version 1.087.1",
+  url          = "https://github.com/cont-limno/LAGOS",
+  textVersion  =
+  paste("Stachelek J., Oliver S. 2017. LAGOS: R interface to the LAke multi-scaled GeOSpatial & temporal database. R package version 1.087.1. https://github.com/cont-limno/LAGOS
+  ")
 )
