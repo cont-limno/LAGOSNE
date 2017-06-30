@@ -29,14 +29,11 @@ lagos_compile <- function(version, format = "rds",
   geo    <- ingest$geo
   limno  <- ingest$limno
   locus  <- ingest$locus
-  # info   <- info_table(geo, limno)
 
-  # dir.exists(lagos_path())
   dir.create(lagos_path(), recursive = TRUE, showWarnings = FALSE)
 
   if(format == "sqlite"){
 
-    # unlink(paste0(lagos_path(), "/LAGOS.sqlite3"))
     my_db <- dplyr::src_sqlite(file.path(lagos_path(), "LAGOS.sqlite3"),
               create = TRUE)
 

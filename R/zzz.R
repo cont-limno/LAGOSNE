@@ -15,6 +15,6 @@
     sources: fostering open science and data reuse. Gigascience, 4(1)"
 
   packageStartupMessage(paste0("Welcome to LAGOS version ",
-    pkg.info["Version"] , ". To cite LAGOS in publications use: \n \n",
+    pkg.info["Version"], ". To cite LAGOS in publications use: \n \n",
     gigascience_cite))
 }

@@ -62,19 +62,42 @@
             "chla_censorcode" is the variable name for censor information
             regarding chlorophyll a observations.
             \itemize{
-                \item NC1: has detection limit and data value is above detection limit and has no qualifier or comments
-                \item NC2: has detection limit and data value is above detection limit, and has qualifier or comments
-                \item NC3: has no detection limit and has qualifier or comments
-                \item NC4: has no detection limit and has no qualifiers or comments
-                \item LE1: has detection limit, data value is less than or equal to detection limit, has qualifier or comments
-                \item LE2: has detection limit, data value is less than or equal to detection limit, has no qualifier or comments
-                \item LE3: has no detection limit, < than comes from source program, has qualifier or comments
-                \item LE4: has no detection limit, < than comes from source program, has no qualifier or comments
+                \item NC1: has detection limit and data value is above
+                detection limit and has no qualifier or comments
+                \item NC2: has detection limit and data value is above
+                detection limit, and has qualifier or comments
+                \item NC3: has no detection limit and has qualifier or
+                comments
+                \item NC4: has no detection limit and has no qualifiers or
+                comments
+                \item LE1: has detection limit, data value is less than or
+                equal to detection limit, has qualifier or comments
+                \item LE2: has detection limit, data value is less than or
+                equal to detection limit, has no qualifier or comments
+                \item LE3: has no detection limit, < than comes from source
+                program, has qualifier or comments
+                \item LE4: has no detection limit, < than comes from source
+                program, has no qualifier or comments
             }
-            \item *_detectionlimit: the detection limit used by the source program for each water quality parameter (* = all water quality parameters listed above). For example, "chla_detectionlimit" is the name of the variable that reports detection limits for chlorophyll a observations.
-            \item *_labmethodname: analytical procedure, from a standards body if available for each water quality parameter (* = all water quality parameters listed above). For example, "chla_labmethodname" is the variable name for lab methods associated with each chlorophyll a observation.
-            \item chla_methodinfo: flag to indicate variable was sampled using different methods. "CHLA_UNFILTERED" means that a sample was
-            \item secchi_methodinfo: flag to indicate variable was sampled using different methods. "SECCHI_VIEW" means that Secchi depth was measured using a viewer box, whereas "SECCHI_VIEW_UNKNOWN" reports observations where it is unclear if a Secchi viewer box was used. A secchi observation without a methodinfo code means the Secchi depth was made without the viewer box.
+            \item *_detectionlimit: the detection limit used by the source
+            program for each water quality parameter (* = all water quality
+            parameters listed above). For example, "chla_detectionlimit" is
+            the name of the variable that reports detection limits for
+            chlorophyll a observations.
+            \item *_labmethodname: analytical procedure, from a standards
+            body if available for each water quality parameter (* = all
+            water quality parameters listed above). For example,
+            "chla_labmethodname" is the variable name for lab methods
+            associated with each chlorophyll a observation.
+            \item chla_methodinfo: flag to indicate variable was sampled
+            using different methods. "CHLA_UNFILTERED" means that a sample
+            was
+            \item secchi_methodinfo: flag to indicate variable was sampled
+            using different methods. "SECCHI_VIEW" means that Secchi depth
+            was measured using a viewer box, whereas "SECCHI_VIEW_UNKNOWN"
+            reports observations where it is unclear if a Secchi viewer box
+            was used. A secchi observation without a methodinfo code means
+            the Secchi depth was made without the viewer box.
             \item sampleyear: year (4-digit) in which sample was collected
             \item samplemonth: month in which sample was collected
     }}

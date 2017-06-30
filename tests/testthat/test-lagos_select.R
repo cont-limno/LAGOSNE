@@ -86,7 +86,8 @@ test_that("lagos_select works", {
 
   # comment out this failing test, jsta: 2017-01-05
   # select from a mix of keywords and exact columns
-  # table_columns <- list("epi.nutr" = c("lagoslakeid", "sampledate", "waterquality"))
+  # table_columns <- list("epi.nutr" =
+  # c("lagoslakeid", "sampledate", "waterquality"))
   # dt_sub    <- lagos_select(dt, table_column_nested = table_columns)
   # expect_equal(ncol(dt_sub$epi.nutr), 18)
 

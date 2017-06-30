@@ -11,12 +11,14 @@
 \format{A data frame with 87 observations of 19 variables:
 \itemize{
      \item programid: unique LAGOS program identifier
-     \item programname: name of the sampling/monitoring program that collected the data
+     \item programname: name of the sampling/monitoring program that
+     collected the data
      \item metadataid: unique metadata identifier associated with
      \item sourceid
      \item sourcename
      \item composite
-     \item programtype: categorical description of the type of sampling/monitoring effort
+     \item programtype: categorical description of the type of sampling
+     /monitoring effort
      \item fundingsource
      \item labtype
      \item programlink

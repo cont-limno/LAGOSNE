@@ -17,33 +17,39 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA,
 
   # Set-up paths ####
   limno_prefix <- paste0(limno_folder, "/", "LAGOSNE_")
-  limno_path   <- function(fname){paste0(limno_prefix,
-                    fname, folder_version, ".csv")}
+  limno_path   <- function(fname){
+                    paste0(limno_prefix,
+                    fname, folder_version, ".csv")
+                  }
 
   geo_prefix   <- paste0(geo_folder, "/", "LAGOSNE_")
-  geo_path     <- function(fname, geo_prefix){paste0(geo_prefix,
-                    fname, "105.csv")}
+  geo_path     <- function(fname, geo_prefix){
+                    paste0(geo_prefix,
+                    fname, "105.csv")
+                  }
 
   locus_prefix <- paste0(locus_folder, "/", "LAGOSNE_")
-  locus_path   <- function(fname){paste0(locus_prefix,
-                    fname, "101.csv")}
+  locus_path   <- function(fname){
+                    paste0(locus_prefix,
+                    fname, "101.csv")
+                  }
 
   # Importing Lagos limno data ####
-  epi.nutr             <- load_lagos_txt(limno_path("epinutr"),
+  epi_nutr             <- load_lagos_txt(limno_path("epinutr"),
                               colClasses = c(sampledate = "POSIXct"),
                               sep = ",")
-  lakes.limno          <- load_lagos_txt(limno_path("lakeslimno"),
+  lakes_limno          <- load_lagos_txt(limno_path("lakeslimno"),
                                        sep = ",")
-  secchi               <- load_lagos_txt(limno_path('secchi'),
+  secchi               <- load_lagos_txt(limno_path("secchi"),
                                          sep = ",")
-  lagos.source.program <- load_lagos_txt(limno_path('sourceprogram'),
+  lagos_source_program <- load_lagos_txt(limno_path("sourceprogram"),
                                          sep = ",")
 
-  limno <- list(epi.nutr = epi.nutr,
-                lakes.limno = lakes.limno,
+  limno <- list(epi_nutr = epi_nutr,
+                lakes_limno = lakes_limno,
                 secchi = secchi,
                 # lagos.censor.epi = lagos.censor.epi,
-                lagos.source.program = lagos.source.program)
+                lagos_source_program = lagos_source_program)
 
   # Importing Lagos Geo data ####
   lakes.geo <- load_lagos_txt(

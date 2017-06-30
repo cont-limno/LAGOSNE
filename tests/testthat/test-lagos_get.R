@@ -10,4 +10,3 @@ test_that("lagos_get works", {
 
   expect_message(lagos_get())
 })
-

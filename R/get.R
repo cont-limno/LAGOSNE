@@ -56,7 +56,8 @@ lagos_get <- function(version, overwrite = FALSE, dest_folder = NA){
 lagos_get_oliver_2015 <- function(dest_folder){
   dir.create(lagos_path(), showWarnings = FALSE)
 
-  baseurl <- "http://pasta.lternet.edu/package/data/eml/knb-lter-ntl/320/4/4a283c25f3548c0f78d8a01658e4a353"
+  baseurl <- paste0("http://pasta.lternet.edu/package/data/eml/",
+                    "knb-lter-ntl/320/4/4a283c25f3548c0f78d8a01658e4a353")
 
   get_if_not_exists(baseurl, paste0(lagos_path(), "oliver_2015_depth.csv"))
 }

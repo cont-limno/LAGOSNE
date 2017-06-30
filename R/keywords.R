@@ -3,8 +3,6 @@ waterquality <- c(
   "no2", "no2no3", "srp", "tdn", "tdp", "tkn", "tn",
   "toc", "ton", "tp")
 
-# devtools::use_data(waterquality)
-
 keyword_full_key <- function(){
   res <- data.frame(rbind(
     c("waterquality", "chla"),

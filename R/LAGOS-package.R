@@ -360,19 +360,42 @@ NULL
 #'             "chla_censorcode" is the variable name for censor information
 #'             regarding chlorophyll a observations.
 #'             \itemize{
-#'                 \item NC1: has detection limit and data value is above detection limit and has no qualifier or comments
-#'                 \item NC2: has detection limit and data value is above detection limit, and has qualifier or comments
-#'                 \item NC3: has no detection limit and has qualifier or comments
-#'                 \item NC4: has no detection limit and has no qualifiers or comments
-#'                 \item LE1: has detection limit, data value is less than or equal to detection limit, has qualifier or comments
-#'                 \item LE2: has detection limit, data value is less than or equal to detection limit, has no qualifier or comments
-#'                 \item LE3: has no detection limit, < than comes from source program, has qualifier or comments
-#'                 \item LE4: has no detection limit, < than comes from source program, has no qualifier or comments
+#'                 \item NC1: has detection limit and data value is above
+#'                 detection limit and has no qualifier or comments
+#'                 \item NC2: has detection limit and data value is above
+#'                 detection limit, and has qualifier or comments
+#'                 \item NC3: has no detection limit and has qualifier or
+#'                 comments
+#'                 \item NC4: has no detection limit and has no qualifiers or
+#'                 comments
+#'                 \item LE1: has detection limit, data value is less than or
+#'                 equal to detection limit, has qualifier or comments
+#'                 \item LE2: has detection limit, data value is less than or
+#'                 equal to detection limit, has no qualifier or comments
+#'                 \item LE3: has no detection limit, < than comes from source
+#'                 program, has qualifier or comments
+#'                 \item LE4: has no detection limit, < than comes from source
+#'                 program, has no qualifier or comments
 #'             }
-#'             \item *_detectionlimit: the detection limit used by the source program for each water quality parameter (* = all water quality parameters listed above). For example, "chla_detectionlimit" is the name of the variable that reports detection limits for chlorophyll a observations.
-#'             \item *_labmethodname: analytical procedure, from a standards body if available for each water quality parameter (* = all water quality parameters listed above). For example, "chla_labmethodname" is the variable name for lab methods associated with each chlorophyll a observation.
-#'             \item chla_methodinfo: flag to indicate variable was sampled using different methods. "CHLA_UNFILTERED" means that a sample was
-#'             \item secchi_methodinfo: flag to indicate variable was sampled using different methods. "SECCHI_VIEW" means that Secchi depth was measured using a viewer box, whereas "SECCHI_VIEW_UNKNOWN" reports observations where it is unclear if a Secchi viewer box was used. A secchi observation without a methodinfo code means the Secchi depth was made without the viewer box.
+#'             \item *_detectionlimit: the detection limit used by the source
+#'             program for each water quality parameter (* = all water quality
+#'             parameters listed above). For example, "chla_detectionlimit" is
+#'             the name of the variable that reports detection limits for
+#'             chlorophyll a observations.
+#'             \item *_labmethodname: analytical procedure, from a standards
+#'             body if available for each water quality parameter (* = all
+#'             water quality parameters listed above). For example,
+#'             "chla_labmethodname" is the variable name for lab methods
+#'             associated with each chlorophyll a observation.
+#'             \item chla_methodinfo: flag to indicate variable was sampled
+#'             using different methods. "CHLA_UNFILTERED" means that a sample
+#'             was
+#'             \item secchi_methodinfo: flag to indicate variable was sampled
+#'             using different methods. "SECCHI_VIEW" means that Secchi depth
+#'             was measured using a viewer box, whereas "SECCHI_VIEW_UNKNOWN"
+#'             reports observations where it is unclear if a Secchi viewer box
+#'             was used. A secchi observation without a methodinfo code means
+#'             the Secchi depth was made without the viewer box.
 #'             \item sampleyear: year (4-digit) in which sample was collected
 #'             \item samplemonth: month in which sample was collected
 #'     }
@@ -386,19 +409,26 @@ NULL
 
 #' Water Quality Lakes
 #'
-#' A dataset containing depth and identifying information on lakes in the limno module.
+#' A dataset containing depth and identifying information on lakes in the limno
+#' module.
 #'
 #' @format A data frame with 141265 observations of 8 variables:
 #' \itemize{
-#'             \item lagoslakeid:	    unique lake identifier developed for LAGOS-NE
-#'             \item nhdid:	          the 'Permanent_identifier' from the NHD, but is called the NHDID in LAGOS-NE
-#'             \item lagosname1:	    name of lake from source dataset used as the
-#'             authoritative lake name for LAGOS
+#'             \item lagoslakeid:	    unique lake identifier developed for
+#'             LAGOS-NE
+#'             \item nhdid:	          the 'Permanent_identifier' from the NHD,
+#'             but is called the NHDID in LAGOS-NE
+#'             \item lagosname1:	    name of lake from source dataset used as
+#'             the authoritative lake name for LAGOS
 #'             \item meandepth:	      mean lake depth (meters)
-#'             \item meandepthsource:	source of mean depth data, see "lagos.source.program" for definitions
+#'             \item meandepthsource:	source of mean depth data, see
+#'             "lagos.source.program" for definitions
 #'             \item maxdepth:	      maximum lake depth (meters)
-#'             \item maxdepthsource:	source of maximum depth data, see "lagos.source.program" for definitions
-#'             \item legacyid:	      unique lake identifier from the original water quality source dataset, this is not standardized and each source dataset has its own system
+#'             \item maxdepthsource:	source of maximum depth data, see
+#'             "lagos.source.program" for definitions
+#'             \item legacyid:	      unique lake identifier from the original
+#'             water quality source dataset, this is not standardized and each
+#'             source dataset has its own system
 #'     }
 #'
 #' @docType data
@@ -530,7 +560,8 @@ NULL
 #'          \item *_wl_allwetlandsdissolved_**: all wetlands (regardless of
 #'          vegetation,
 #'          connection, or regime), expressed as average size in hectares
-#'          (** = avgsize_ha), total area of wetlands that is contained within or partially intersect the border of this zone
+#'          (** = avgsize_ha), total area of wetlands that is contained within
+#'          or partially intersect the border of this zone
 #'          (** = overlapping_area_ha),
 #'          total land area of this zone that is covered by all wetlands
 #'          (** = contributing_area_ha),
@@ -538,82 +569,154 @@ NULL
 #'          wetlands (** = overlapping_area_pct).
 #'          Before calculating this value, contiguous patches of different
 #'          types of wetlands were first dissolved to represent a single patch.
-#'          \item *_wl_allwetlandsundissolved_**: all wetlands (regardless of vegetation,
-#'          connection, or regime), expressed as count (** = count), average size in hectares (** = avgsize_ha), total area of wetlands that
-#'          is contained within or partially intersect the border of this zone (** = overlapping_area_ha),
-#'          total land area of this zone that is covered by all wetlands (** = contributing_area_ha),
-#'          or percent of land area of this zone that is covered by all wetlands (** = overlapping_area_pct).
+#'          \item *_wl_allwetlandsundissolved_**: all wetlands (regardless of
+#'          vegetation, connection, or regime), expressed as count
+#'          (** = count), average size in hectares (** = avgsize_ha), total
+#'          area of wetlands that is contained within or partially intersect
+#'          the border of this zone (** = overlapping_area_ha), total land area
+#'          of this zone that is covered by all wetlands
+#'          (** = contributing_area_ha), or percent of land area of this zone
+#'          that is covered by all wetlands (** = overlapping_area_pct).
 #'          Before calculating this value, contiguous patches of different
 #'          types of wetlands were first dissolved to represent a single patch.
-#'          \item *_wl_isolatedwetlandsundissolved_**: isolated wetland patches (no intersecting streams within a 30 m buffer of the wetland patch) in this zone.all wetlands (regardless of vegetation,
-#'          connection, or regime), expressed as count (** = count), average size in hectares (** = avgsize_ha), total area of wetlands that
-#'          is contained within or partially intersect the border of this zone (** = overlapping_area_ha),
-#'          total land area of this zone that is covered by this wetland type (** = contributing_area_ha),
-#'          or percent of land area of this zone that is covered by this wetland type (** = overlapping_area_pct).
-#'          The patches were left as delineated by the National Wetlands Inventory ("undissolved") for calculating this variable.
-#'          \item *_wl_singlewetlandsundissolved_**:  single wetland patches (intersected within a 30 m buffer
-#'          by a single first order stream) in this zone, expressed as count (** = count), average size in hectares (** = avgsize_ha), total area of wetlands that
-#'          is contained within or partially intersect the border of this zone (** = overlapping_area_ha),
-#'          total land area of this zone that is covered by this wetland type (** = contributing_area_ha),
-#'          or percent of land area of this zone that is covered by this wetland type (** = overlapping_area_pct).
-#'          The patches were left as delineated by the National Wetlands Inventory ("undissolved") for calculating this variable.
-#'          \item *_wl_connectedwetlandsundissolved_**: connected wetland patches (intersected within a 30 m buffer by a higher
-#'          order stream or by multiple streams) in this zone, expressed as count (** = count), average size in hectares (** = avgsize_ha), total area of wetlands that
-#'          is contained within or partially intersect the border of this zone (** = overlapping_area_ha),
-#'          total land area of this zone that is covered by this wetland type (** = contributing_area_ha),
-#'          or percent of land area of this zone that is covered by this wetland type (** = overlapping_area_pct).
-#'          The patches were left as delineated by the National Wetlands Inventory ("undissolved") for calculating this variable.
-#'          \item *_wl_forestedwetlandsundissolved_**:  forested wetland patches (dominated by woody vegetation 6m or taller)  in this zone,
-#'          expressed as count (** = count), average size in hectares (** = avgsize_ha), total area of wetlands that
-#'          is contained within or partially intersect the border of this zone (** = overlapping_area_ha),
-#'          total land area of this zone that is covered by this wetland type (** = contributing_area_ha),
-#'          or percent of land area of this zone that is covered by this wetland type (** = overlapping_area_pct).
-#'          The patches were left as delineated by the National Wetlands Inventory ("undissolved") for calculating this variable.
-#'          \item *_wl_scrubshrubwetlandsundissolved_**: scrub-shrub wetland patches (dominated by woody vegetation < 6m tall) in this zone,
-#'          expressed as count (** = count), average size in hectares (** = avgsize_ha), total area of wetlands that
-#'          is contained within or partially intersect the border of this zone (** = overlapping_area_ha),
-#'          total land area of this zone that is covered by this wetland type (** = contributing_area_ha),
-#'          or percent of land area of this zone that is covered by this wetland type (** = overlapping_area_pct).
-#'          The patches were left as delineated by the National Wetlands Inventory ("undissolved") for calculating this variable.
-#'          \item *_wl_openwaterwetlandsundissolved_**:  open water wetland patches (dominated by woody vegetation < 6m tall)  in this zone,
-#'          expressed as count (** = count), average size in hectares (** = avgsize_ha), total area of wetlands that
-#'          is contained within or partially intersect the border of this zone (** = overlapping_area_ha),
-#'          total land area of this zone that is covered by this wetland type (** = contributing_area_ha),
-#'          or percent of land area of this zone that is covered by this wetland type (** = overlapping_area_pct).
-#'          The patches were left as delineated by the National Wetlands Inventory ("undissolved") for calculating this variable.
-#'          \item *_wl_regimefwetlandsundissolved_**: regime f (semipermanently flooded) wetland patches where surface water persists
-#'          throughout the growing season in most years, expressed as count (** = count), average size in hectares (** = avgsize_ha), total area of wetlands that
-#'          is contained within or partially intersect the border of this zone (** = overlapping_area_ha),
-#'          total land area of this zone that is covered by this wetland type (** = contributing_area_ha),
-#'          or percent of land area of this zone that is covered by this wetland type (** = overlapping_area_pct).
-#'          The patches were left as delineated by the National Wetlands Inventory ("undissolved") for calculating this variable.
-#'          \item *_wl_regimegwetlandsundissolved_**: regime g (intermittently exposed) wetland patches where surface water persists
-#'          throughout the growing season in most years, expressed as count (** = count), average size in hectares (** = avgsize_ha), total area of wetlands that
-#'          is contained within or partially intersect the border of this zone (** = overlapping_area_ha),
-#'          total land area of this zone that is covered by this wetland type (** = contributing_area_ha),
-#'          percent of land area of this zone that is covered by this wetland type (** = overlapping_area_pct).
-#'          The patches were left as delineated by the National Wetlands Inventory ("undissolved") for calculating this variable.
-#'          \item *_wl_regimeawetlandsundissolved_**: regime a (temporarily flooded) wetland patches where surface water persists
-#'          throughout the growing season in most years, expressed as count (** = count), average size in hectares (** = avgsize_ha), total area of wetlands that
-#'          is contained within or partially intersect the border of this zone (** = overlapping_area_ha),
-#'          total land area of this zone that is covered by this wetland type (** = contributing_area_ha),
-#'          or percent of land area of this zone that is covered by this wetland type (** = overlapping_area_pct).
-#'          The patches were left as delineated by the National Wetlands Inventory ("undissolved") for calculating this variable.
-#'          \item *_wl_regimecwetlandsundissolved_**: regime c (seasonally flooded) wetland patches where surface water persists
-#'          throughout the growing season in most years, expressed as count (** = count), average size in hectares (** = avgsize_ha), total area of wetlands that
-#'          is contained within or partially intersect the border of this zone (** = overlapping_area_ha),
-#'          total land area of this zone that is covered by this wetland type (** = contributing_area_ha),
-#'          or percent of land area of this zone that is covered by this wetland type (** = overlapping_area_pct).
-#'          The patches were left as delineated by the National Wetlands Inventory ("undissolved") for calculating this variable.
-#'          \item *_wl_regimehwetlandsundissolved_**: regime h (permanently flooded) wetland patches where surface water persists
-#'          throughout the growing season in most years, expressed as count (** = count), average size in hectares (** = avgsize_ha), total area of wetlands that
-#'          is contained within or partially intersect the border of this zone (** = overlapping_area_ha),
-#'          total land area of this zone that is covered by this wetland type (** = contributing_area_ha),
+#'          \item *_wl_isolatedwetlandsundissolved_**: isolated wetland patches
+#'          (no intersecting streams within a 30 m buffer of the wetland patch)
+#'          in this zone.all wetlands (regardless of vegetation, connection,
+#'          or regime), expressed as count (** = count), average size in
+#'          hectares (** = avgsize_ha), total area of wetlands that
+#'          is contained within or partially intersect the border of this zone
+#'          (** = overlapping_area_ha), total land area of this zone that is
+#'          covered by this wetland type (** = contributing_area_ha), or
+#'          percent of land area of this zone that is covered by this wetland
+#'          type (** = overlapping_area_pct).
+#'          The patches were left as delineated by the National Wetlands
+#'          Inventory ("undissolved") for calculating this variable.
+#'          \item *_wl_singlewetlandsundissolved_**:  single wetland patches
+#'          (intersected within a 30 m buffer
+#'          by a single first order stream) in this zone, expressed as count
+#'          (** = count), average size in hectares (** = avgsize_ha), total
+#'          area of wetlands that
+#'          is contained within or partially intersect the border of this zone
+#'          (** = overlapping_area_ha),
+#'          total land area of this zone that is covered by this wetland type
+#'          (** = contributing_area_ha),
 #'          or percent of land area of this zone that is covered by this
 #'          wetland type (** = overlapping_area_pct).
 #'          The patches were left as delineated by the National Wetlands
 #'          Inventory ("undissolved") for calculating this variable.
-#'
+#'          \item *_wl_connectedwetlandsundissolved_**: connected wetland
+#'          patches (intersected within a 30 m buffer by a higher
+#'          order stream or by multiple streams) in this zone, expressed as
+#'          count (** = count), average size in hectares (** = avgsize_ha),
+#'          total area of wetlands that
+#'          is contained within or partially intersect the border of this zone
+#'          (** = overlapping_area_ha),
+#'          total land area of this zone that is covered by this wetland type
+#'          (** = contributing_area_ha),
+#'          or percent of land area of this zone that is covered by this
+#'          wetland type (** = overlapping_area_pct).
+#'          The patches were left as delineated by the National Wetlands
+#'          Inventory ("undissolved") for calculating this variable.
+#'          \item *_wl_forestedwetlandsundissolved_**:  forested wetland
+#'          patches (dominated by woody vegetation 6m or taller)  in this zone,
+#'          expressed as count (** = count), average size in hectares
+#'          (** = avgsize_ha), total area of wetlands that
+#'          is contained within or partially intersect the border of this zone
+#'          (** = overlapping_area_ha),
+#'          total land area of this zone that is covered by this wetland type
+#'          (** = contributing_area_ha),
+#'          or percent of land area of this zone that is covered by this
+#'          wetland type (** = overlapping_area_pct).
+#'          The patches were left as delineated by the National Wetlands
+#'          Inventory ("undissolved") for calculating this variable.
+#'          \item *_wl_scrubshrubwetlandsundissolved_**: scrub-shrub wetland
+#'          patches (dominated by woody vegetation < 6m tall) in this zone,
+#'          expressed as count (** = count), average size in hectares
+#'          (** = avgsize_ha), total area of wetlands that
+#'          is contained within or partially intersect the border of this zone
+#'          (** = overlapping_area_ha),
+#'          total land area of this zone that is covered by this wetland type
+#'          (** = contributing_area_ha),
+#'          or percent of land area of this zone that is covered by this
+#'          wetland type (** = overlapping_area_pct).
+#'          The patches were left as delineated by the National Wetlands
+#'          Inventory ("undissolved") for calculating this variable.
+#'          \item *_wl_openwaterwetlandsundissolved_**:  open water wetland
+#'          patches (dominated by woody vegetation < 6m tall)  in this zone,
+#'          expressed as count (** = count), average size in hectares
+#'          (** = avgsize_ha), total area of wetlands that
+#'          is contained within or partially intersect the border of this zone
+#'          (** = overlapping_area_ha),
+#'          total land area of this zone that is covered by this wetland type
+#'          (** = contributing_area_ha),
+#'          or percent of land area of this zone that is covered by this
+#'          wetland type (** = overlapping_area_pct).
+#'          The patches were left as delineated by the National Wetlands
+#'          Inventory ("undissolved") for calculating this variable.
+#'          \item *_wl_regimefwetlandsundissolved_**: regime f
+#'          (semipermanently flooded) wetland patches where surface water
+#'          persists throughout the growing season in most years, expressed as
+#'          count (** = count), average size in hectares (** = avgsize_ha),
+#'          total area of wetlands that
+#'          is contained within or partially intersect the border of this zone
+#'          (** = overlapping_area_ha),
+#'          total land area of this zone that is covered by this wetland type
+#'          (** = contributing_area_ha),
+#'          or percent of land area of this zone that is covered by this
+#'          wetland type (** = overlapping_area_pct).
+#'          The patches were left as delineated by the National Wetlands
+#'          Inventory ("undissolved") for calculating this variable.
+#'          \item *_wl_regimegwetlandsundissolved_**: regime g (intermittently
+#'          exposed) wetland patches where surface water persists
+#'          throughout the growing season in most years, expressed as count
+#'          (** = count), average size in hectares (** = avgsize_ha), total
+#'          area of wetlands that
+#'          is contained within or partially intersect the border of this zone
+#'          (** = overlapping_area_ha),
+#'          total land area of this zone that is covered by this wetland type
+#'          (** = contributing_area_ha),
+#'          percent of land area of this zone that is covered by this wetland
+#'          type (** = overlapping_area_pct).
+#'          The patches were left as delineated by the National Wetlands
+#'          Inventory ("undissolved") for calculating this variable.
+#'          \item *_wl_regimeawetlandsundissolved_**: regime a (temporarily
+#'          flooded) wetland patches where surface water persists
+#'          throughout the growing season in most years, expressed as count
+#'          (** = count), average size in hectares (** = avgsize_ha), total
+#'          area of wetlands that is contained within or partially intersect
+#'          the border of this zone (** = overlapping_area_ha),
+#'          total land area of this zone that is covered by this wetland type
+#'          (** = contributing_area_ha),
+#'          or percent of land area of this zone that is covered by this
+#'          wetland type (** = overlapping_area_pct).
+#'          The patches were left as delineated by the National Wetlands
+#'          Inventory ("undissolved") for calculating this variable.
+#'          \item *_wl_regimecwetlandsundissolved_**: regime c (seasonally
+#'          flooded) wetland patches where surface water persists
+#'          throughout the growing season in most years, expressed as count
+#'          (** = count), average size in hectares (** = avgsize_ha), total
+#'          area of wetlands that
+#'          is contained within or partially intersect the border of this zone
+#'          (** = overlapping_area_ha),
+#'          total land area of this zone that is covered by this wetland type
+#'          (** = contributing_area_ha),
+#'          or percent of land area of this zone that is covered by this
+#'          wetland type (** = overlapping_area_pct).
+#'          The patches were left as delineated by the National Wetlands
+#'          Inventory ("undissolved") for calculating this variable.
+#'          \item *_wl_regimehwetlandsundissolved_**: regime h (permanently
+#'          flooded) wetland patches where surface water persists
+#'          throughout the growing season in most years, expressed as count
+#'          (** = count), average size in hectares (** = avgsize_ha), total
+#'          area of wetlands that
+#'          is contained within or partially intersect the border of this zone
+#'          (** = overlapping_area_ha),
+#'          total land area of this zone that is covered by this wetland type
+#'          (** = contributing_area_ha),
+#'          or percent of land area of this zone that is covered by this
+#'          wetland type (** = overlapping_area_pct).
+#'          The patches were left as delineated by the National Wetlands
+#'          Inventory ("undissolved") for calculating this variable.
 #'
 #'     }
 #'}
@@ -710,17 +813,24 @@ NULL
 #'
 #' @format A data frame with 913319 observations of 12 variables:
 #' \itemize{
-#'      \item eventida1087: unique combination of programid, lakeid, and date for each sampling event
+#'      \item eventida1087: unique combination of programid, lakeid, and date
+#'      for each sampling event
 #'      \item lagoslakeid: unique LAGOS lake identifier
-#'      \item programname: name of the sampling/monitoring program that collected the data
-#'      \item programtype: categorical description of the type of sampling/monitoring effort
-#'      \item lagosversion: current version of LAGOS that the data record belongs to
+#'      \item programname: name of the sampling/monitoring program that
+#'      collected the data
+#'      \item programtype: categorical description of the type of sampling
+#'      /monitoring effort
+#'      \item lagosversion: current version of LAGOS that the data record
+#'      belongs to
 #'      \item sampledate: date at which the sample was collected, stored in date format (YYYY-MM-DD)
 #'      \item secchi: Secchi depth in meters
-#'      \item secchi_censorcode: identifies whether a Secchi value is censored and the censor type
+#'      \item secchi_censorcode: identifies whether a Secchi value is censored
+#'      and the censor type
 #'      \item secchi_qual: data flags from the source program
-#'      \item secchi_methodinfo: flag to indicate variables that were sampled using different methods. "SECCHI_VIEW" =
-#'      viewing box used to measure Secchi depth, "SECCHI_VIEW_UNKNOWN" = unknown whether viewing box was used, "NA" = no viewing
+#'      \item secchi_methodinfo: flag to indicate variables that were sampled
+#'      using different methods. "SECCHI_VIEW" =
+#'      viewing box used to measure Secchi depth, "SECCHI_VIEW_UNKNOWN" =
+#'      unknown whether viewing box was used, "NA" = no viewing
 #'      box used to measure Secchi depth.
 #'      \item sampleyear: year (4-digit) of sampling event
 #'      \item samplemonth: month (1 through 12) of sampling event
@@ -738,12 +848,14 @@ NULL
 #' @format A data frame with 87 observations of 19 variables:
 #' \itemize{
 #'      \item programid: unique LAGOS program identifier
-#'      \item programname: name of the sampling/monitoring program that collected the data
+#'      \item programname: name of the sampling/monitoring program that
+#'      collected the data
 #'      \item metadataid: unique metadata identifier associated with
 #'      \item sourceid
 #'      \item sourcename
 #'      \item composite
-#'      \item programtype: categorical description of the type of sampling/monitoring effort
+#'      \item programtype: categorical description of the type of sampling
+#'      /monitoring effort
 #'      \item fundingsource
 #'      \item labtype
 #'      \item programlink
@@ -763,4 +875,3 @@ NULL
 #' @aliases programs lagos.source.programs source.programs lagos.source
 #' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
 NULL
-

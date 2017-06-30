@@ -129,7 +129,8 @@ below.
          \item *_wl_allwetlandsdissolved_**: all wetlands (regardless of
          vegetation,
          connection, or regime), expressed as average size in hectares
-         (** = avgsize_ha), total area of wetlands that is contained within or partially intersect the border of this zone
+         (** = avgsize_ha), total area of wetlands that is contained within
+         or partially intersect the border of this zone
          (** = overlapping_area_ha),
          total land area of this zone that is covered by all wetlands
          (** = contributing_area_ha),
@@ -137,82 +138,154 @@ below.
          wetlands (** = overlapping_area_pct).
          Before calculating this value, contiguous patches of different
          types of wetlands were first dissolved to represent a single patch.
-         \item *_wl_allwetlandsundissolved_**: all wetlands (regardless of vegetation,
-         connection, or regime), expressed as count (** = count), average size in hectares (** = avgsize_ha), total area of wetlands that
-         is contained within or partially intersect the border of this zone (** = overlapping_area_ha),
-         total land area of this zone that is covered by all wetlands (** = contributing_area_ha),
-         or percent of land area of this zone that is covered by all wetlands (** = overlapping_area_pct).
+         \item *_wl_allwetlandsundissolved_**: all wetlands (regardless of
+         vegetation, connection, or regime), expressed as count
+         (** = count), average size in hectares (** = avgsize_ha), total
+         area of wetlands that is contained within or partially intersect
+         the border of this zone (** = overlapping_area_ha), total land area
+         of this zone that is covered by all wetlands
+         (** = contributing_area_ha), or percent of land area of this zone
+         that is covered by all wetlands (** = overlapping_area_pct).
          Before calculating this value, contiguous patches of different
          types of wetlands were first dissolved to represent a single patch.
-         \item *_wl_isolatedwetlandsundissolved_**: isolated wetland patches (no intersecting streams within a 30 m buffer of the wetland patch) in this zone.all wetlands (regardless of vegetation,
-         connection, or regime), expressed as count (** = count), average size in hectares (** = avgsize_ha), total area of wetlands that
-         is contained within or partially intersect the border of this zone (** = overlapping_area_ha),
-         total land area of this zone that is covered by this wetland type (** = contributing_area_ha),
-         or percent of land area of this zone that is covered by this wetland type (** = overlapping_area_pct).
-         The patches were left as delineated by the National Wetlands Inventory ("undissolved") for calculating this variable.
-         \item *_wl_singlewetlandsundissolved_**:  single wetland patches (intersected within a 30 m buffer
-         by a single first order stream) in this zone, expressed as count (** = count), average size in hectares (** = avgsize_ha), total area of wetlands that
-         is contained within or partially intersect the border of this zone (** = overlapping_area_ha),
-         total land area of this zone that is covered by this wetland type (** = contributing_area_ha),
-         or percent of land area of this zone that is covered by this wetland type (** = overlapping_area_pct).
-         The patches were left as delineated by the National Wetlands Inventory ("undissolved") for calculating this variable.
-         \item *_wl_connectedwetlandsundissolved_**: connected wetland patches (intersected within a 30 m buffer by a higher
-         order stream or by multiple streams) in this zone, expressed as count (** = count), average size in hectares (** = avgsize_ha), total area of wetlands that
-         is contained within or partially intersect the border of this zone (** = overlapping_area_ha),
-         total land area of this zone that is covered by this wetland type (** = contributing_area_ha),
-         or percent of land area of this zone that is covered by this wetland type (** = overlapping_area_pct).
-         The patches were left as delineated by the National Wetlands Inventory ("undissolved") for calculating this variable.
-         \item *_wl_forestedwetlandsundissolved_**:  forested wetland patches (dominated by woody vegetation 6m or taller)  in this zone,
-         expressed as count (** = count), average size in hectares (** = avgsize_ha), total area of wetlands that
-         is contained within or partially intersect the border of this zone (** = overlapping_area_ha),
-         total land area of this zone that is covered by this wetland type (** = contributing_area_ha),
-         or percent of land area of this zone that is covered by this wetland type (** = overlapping_area_pct).
-         The patches were left as delineated by the National Wetlands Inventory ("undissolved") for calculating this variable.
-         \item *_wl_scrubshrubwetlandsundissolved_**: scrub-shrub wetland patches (dominated by woody vegetation < 6m tall) in this zone,
-         expressed as count (** = count), average size in hectares (** = avgsize_ha), total area of wetlands that
-         is contained within or partially intersect the border of this zone (** = overlapping_area_ha),
-         total land area of this zone that is covered by this wetland type (** = contributing_area_ha),
-         or percent of land area of this zone that is covered by this wetland type (** = overlapping_area_pct).
-         The patches were left as delineated by the National Wetlands Inventory ("undissolved") for calculating this variable.
-         \item *_wl_openwaterwetlandsundissolved_**:  open water wetland patches (dominated by woody vegetation < 6m tall)  in this zone,
-         expressed as count (** = count), average size in hectares (** = avgsize_ha), total area of wetlands that
-         is contained within or partially intersect the border of this zone (** = overlapping_area_ha),
-         total land area of this zone that is covered by this wetland type (** = contributing_area_ha),
-         or percent of land area of this zone that is covered by this wetland type (** = overlapping_area_pct).
-         The patches were left as delineated by the National Wetlands Inventory ("undissolved") for calculating this variable.
-         \item *_wl_regimefwetlandsundissolved_**: regime f (semipermanently flooded) wetland patches where surface water persists
-         throughout the growing season in most years, expressed as count (** = count), average size in hectares (** = avgsize_ha), total area of wetlands that
-         is contained within or partially intersect the border of this zone (** = overlapping_area_ha),
-         total land area of this zone that is covered by this wetland type (** = contributing_area_ha),
-         or percent of land area of this zone that is covered by this wetland type (** = overlapping_area_pct).
-         The patches were left as delineated by the National Wetlands Inventory ("undissolved") for calculating this variable.
-         \item *_wl_regimegwetlandsundissolved_**: regime g (intermittently exposed) wetland patches where surface water persists
-         throughout the growing season in most years, expressed as count (** = count), average size in hectares (** = avgsize_ha), total area of wetlands that
-         is contained within or partially intersect the border of this zone (** = overlapping_area_ha),
-         total land area of this zone that is covered by this wetland type (** = contributing_area_ha),
-         percent of land area of this zone that is covered by this wetland type (** = overlapping_area_pct).
-         The patches were left as delineated by the National Wetlands Inventory ("undissolved") for calculating this variable.
-         \item *_wl_regimeawetlandsundissolved_**: regime a (temporarily flooded) wetland patches where surface water persists
-         throughout the growing season in most years, expressed as count (** = count), average size in hectares (** = avgsize_ha), total area of wetlands that
-         is contained within or partially intersect the border of this zone (** = overlapping_area_ha),
-         total land area of this zone that is covered by this wetland type (** = contributing_area_ha),
-         or percent of land area of this zone that is covered by this wetland type (** = overlapping_area_pct).
-         The patches were left as delineated by the National Wetlands Inventory ("undissolved") for calculating this variable.
-         \item *_wl_regimecwetlandsundissolved_**: regime c (seasonally flooded) wetland patches where surface water persists
-         throughout the growing season in most years, expressed as count (** = count), average size in hectares (** = avgsize_ha), total area of wetlands that
-         is contained within or partially intersect the border of this zone (** = overlapping_area_ha),
-         total land area of this zone that is covered by this wetland type (** = contributing_area_ha),
-         or percent of land area of this zone that is covered by this wetland type (** = overlapping_area_pct).
-         The patches were left as delineated by the National Wetlands Inventory ("undissolved") for calculating this variable.
-         \item *_wl_regimehwetlandsundissolved_**: regime h (permanently flooded) wetland patches where surface water persists
-         throughout the growing season in most years, expressed as count (** = count), average size in hectares (** = avgsize_ha), total area of wetlands that
-         is contained within or partially intersect the border of this zone (** = overlapping_area_ha),
-         total land area of this zone that is covered by this wetland type (** = contributing_area_ha),
+         \item *_wl_isolatedwetlandsundissolved_**: isolated wetland patches
+         (no intersecting streams within a 30 m buffer of the wetland patch)
+         in this zone.all wetlands (regardless of vegetation, connection,
+         or regime), expressed as count (** = count), average size in
+         hectares (** = avgsize_ha), total area of wetlands that
+         is contained within or partially intersect the border of this zone
+         (** = overlapping_area_ha), total land area of this zone that is
+         covered by this wetland type (** = contributing_area_ha), or
+         percent of land area of this zone that is covered by this wetland
+         type (** = overlapping_area_pct).
+         The patches were left as delineated by the National Wetlands
+         Inventory ("undissolved") for calculating this variable.
+         \item *_wl_singlewetlandsundissolved_**:  single wetland patches
+         (intersected within a 30 m buffer
+         by a single first order stream) in this zone, expressed as count
+         (** = count), average size in hectares (** = avgsize_ha), total
+         area of wetlands that
+         is contained within or partially intersect the border of this zone
+         (** = overlapping_area_ha),
+         total land area of this zone that is covered by this wetland type
+         (** = contributing_area_ha),
          or percent of land area of this zone that is covered by this
          wetland type (** = overlapping_area_pct).
          The patches were left as delineated by the National Wetlands
          Inventory ("undissolved") for calculating this variable.
-
+         \item *_wl_connectedwetlandsundissolved_**: connected wetland
+         patches (intersected within a 30 m buffer by a higher
+         order stream or by multiple streams) in this zone, expressed as
+         count (** = count), average size in hectares (** = avgsize_ha),
+         total area of wetlands that
+         is contained within or partially intersect the border of this zone
+         (** = overlapping_area_ha),
+         total land area of this zone that is covered by this wetland type
+         (** = contributing_area_ha),
+         or percent of land area of this zone that is covered by this
+         wetland type (** = overlapping_area_pct).
+         The patches were left as delineated by the National Wetlands
+         Inventory ("undissolved") for calculating this variable.
+         \item *_wl_forestedwetlandsundissolved_**:  forested wetland
+         patches (dominated by woody vegetation 6m or taller)  in this zone,
+         expressed as count (** = count), average size in hectares
+         (** = avgsize_ha), total area of wetlands that
+         is contained within or partially intersect the border of this zone
+         (** = overlapping_area_ha),
+         total land area of this zone that is covered by this wetland type
+         (** = contributing_area_ha),
+         or percent of land area of this zone that is covered by this
+         wetland type (** = overlapping_area_pct).
+         The patches were left as delineated by the National Wetlands
+         Inventory ("undissolved") for calculating this variable.
+         \item *_wl_scrubshrubwetlandsundissolved_**: scrub-shrub wetland
+         patches (dominated by woody vegetation < 6m tall) in this zone,
+         expressed as count (** = count), average size in hectares
+         (** = avgsize_ha), total area of wetlands that
+         is contained within or partially intersect the border of this zone
+         (** = overlapping_area_ha),
+         total land area of this zone that is covered by this wetland type
+         (** = contributing_area_ha),
+         or percent of land area of this zone that is covered by this
+         wetland type (** = overlapping_area_pct).
+         The patches were left as delineated by the National Wetlands
+         Inventory ("undissolved") for calculating this variable.
+         \item *_wl_openwaterwetlandsundissolved_**:  open water wetland
+         patches (dominated by woody vegetation < 6m tall)  in this zone,
+         expressed as count (** = count), average size in hectares
+         (** = avgsize_ha), total area of wetlands that
+         is contained within or partially intersect the border of this zone
+         (** = overlapping_area_ha),
+         total land area of this zone that is covered by this wetland type
+         (** = contributing_area_ha),
+         or percent of land area of this zone that is covered by this
+         wetland type (** = overlapping_area_pct).
+         The patches were left as delineated by the National Wetlands
+         Inventory ("undissolved") for calculating this variable.
+         \item *_wl_regimefwetlandsundissolved_**: regime f
+         (semipermanently flooded) wetland patches where surface water
+         persists throughout the growing season in most years, expressed as
+         count (** = count), average size in hectares (** = avgsize_ha),
+         total area of wetlands that
+         is contained within or partially intersect the border of this zone
+         (** = overlapping_area_ha),
+         total land area of this zone that is covered by this wetland type
+         (** = contributing_area_ha),
+         or percent of land area of this zone that is covered by this
+         wetland type (** = overlapping_area_pct).
+         The patches were left as delineated by the National Wetlands
+         Inventory ("undissolved") for calculating this variable.
+         \item *_wl_regimegwetlandsundissolved_**: regime g (intermittently
+         exposed) wetland patches where surface water persists
+         throughout the growing season in most years, expressed as count
+         (** = count), average size in hectares (** = avgsize_ha), total
+         area of wetlands that
+         is contained within or partially intersect the border of this zone
+         (** = overlapping_area_ha),
+         total land area of this zone that is covered by this wetland type
+         (** = contributing_area_ha),
+         percent of land area of this zone that is covered by this wetland
+         type (** = overlapping_area_pct).
+         The patches were left as delineated by the National Wetlands
+         Inventory ("undissolved") for calculating this variable.
+         \item *_wl_regimeawetlandsundissolved_**: regime a (temporarily
+         flooded) wetland patches where surface water persists
+         throughout the growing season in most years, expressed as count
+         (** = count), average size in hectares (** = avgsize_ha), total
+         area of wetlands that is contained within or partially intersect
+         the border of this zone (** = overlapping_area_ha),
+         total land area of this zone that is covered by this wetland type
+         (** = contributing_area_ha),
+         or percent of land area of this zone that is covered by this
+         wetland type (** = overlapping_area_pct).
+         The patches were left as delineated by the National Wetlands
+         Inventory ("undissolved") for calculating this variable.
+         \item *_wl_regimecwetlandsundissolved_**: regime c (seasonally
+         flooded) wetland patches where surface water persists
+         throughout the growing season in most years, expressed as count
+         (** = count), average size in hectares (** = avgsize_ha), total
+         area of wetlands that
+         is contained within or partially intersect the border of this zone
+         (** = overlapping_area_ha),
+         total land area of this zone that is covered by this wetland type
+         (** = contributing_area_ha),
+         or percent of land area of this zone that is covered by this
+         wetland type (** = overlapping_area_pct).
+         The patches were left as delineated by the National Wetlands
+         Inventory ("undissolved") for calculating this variable.
+         \item *_wl_regimehwetlandsundissolved_**: regime h (permanently
+         flooded) wetland patches where surface water persists
+         throughout the growing season in most years, expressed as count
+         (** = count), average size in hectares (** = avgsize_ha), total
+         area of wetlands that
+         is contained within or partially intersect the border of this zone
+         (** = overlapping_area_ha),
+         total land area of this zone that is covered by this wetland type
+         (** = contributing_area_ha),
+         or percent of land area of this zone that is covered by this
+         wetland type (** = overlapping_area_pct).
+         The patches were left as delineated by the National Wetlands
+         Inventory ("undissolved") for calculating this variable.
 
     }
 }}
