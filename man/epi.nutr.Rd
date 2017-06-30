@@ -11,6 +11,9 @@
 \alias{nitrogen}
 \alias{chlorophyll}
 \alias{waterquality}
+\alias{censorcode}
+\alias{qualifiers}
+\alias{detectionlimit}
 \title{Epilimnion Water Quality Data}
 \format{A data frame with 289482 observations of 93 variables:
 \itemize{
@@ -37,8 +40,18 @@
             \item ton: nitrogen, total organic (µg/l as N)
             \item tp: phosphorus, total (µg/l as P)
             \item secchi: Secchi disk transparency (m)
-            \item *_qual: data flags from the source program for each water quality parameter (* = all water quality parameters listed above). For example, "chla_qual" is the variable name for the data flag for chlorophyll a observations.
+            \item *_qual: data flags (qualifiers) from the source program for each water quality parameter (* = all water quality parameters listed above). For example, "chla_qual" is the variable name for the data flag for chlorophyll a observations.
             \item *_censorcode: identifies whether a data value is censored and the censor type for each water quality parameter (* = all water quality parameters listed above). For example, "chla_censorcode" is the variable name for censor information regarding chlorophyll a observations.
+            \itemize{
+                \item NC1: has detection limit and data value is above detection limit and has no qualifier or comments
+                \item NC2: has detection limit and data value is above detection limit, and has qualifier or comments
+                \item NC3: has no detection limit and has qualifier or comments
+                \item NC4: has no detection limit and has no qualifiers or comments
+                \item LE1: has detection limit, data value is less than or equal to detection limit, has qualifier or comments
+                \item LE2: has detection limit, data value is less than or equal to detection limit, has no qualifier or comments
+                \item LE3: has no detection limit, < than comes from source program, has qualifier or comments
+                \item LE4: has no detection limit, < than comes from source program, has no qualifier or comments
+            }
             \item *_detectionlimit: the detection limit used by the source program for each water quality parameter (* = all water quality parameters listed above). For example, "chla_detectionlimit" is the name of the variable that reports detection limits for chlorophyll a observations.
             \item *_labmethodname: analytical procedure, from a standards body if available for each water quality parameter (* = all water quality parameters listed above). For example, "chla_labmethodname" is the variable name for lab methods associated with each chlorophyll a observation.
             \item chla_methodinfo: flag to indicate variable was sampled using different methods. "CHLA_UNFILTERED" means that a sample was
