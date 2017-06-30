@@ -25,27 +25,29 @@ noted otherwise). Each variable is available at each scale, year, and unit
 unless otherwise noted.
 \itemize{
    \item *_nhdid (* = lakes4ha_buffer100m, lakes4ha_buffer500m, iws)
-   \item *_canopy2001_***: per pixel tree canopy percent measured 2001. Summary
-   statistics include minimum, maximum, mean and standard deviation (*** = min, max, mean,
-   std).
-   \item *_damdensity_***: dams in zone. Summary statistics include a point count,
-   points per hectare, and points per square kilometer (*** = pointcount, poinsperha,
-   pointspersqkm)
+   \item *_canopy2001_***: per pixel tree canopy percent measured 2001.
+    Summary statistics include minimum, maximum, mean and standard deviation
+    (*** = min, max, mean, std).
+   \item *_damdensity_***: dams in zone. Summary statistics include a point
+   count, points per hectare, and points per square kilometer
+   (*** = pointcount, poinsperha, pointspersqkm)
    \item *_nlcd**_***_0: No data
    \item *_nlcd**_***_11: Open water
    \item *_nlcd**_***_21: Residential, low intensity
    \item *_nlcd**_***_22: Residential, high intensity
    \item *_nlcd**_***_23: Commercial/industrial/transportation
-   \item *_nlcd**_***_24: Developed, high Intensity. Note, this variable was not
-   measured in 1992 (** = 2001, 2006, 2011)
+   \item *_nlcd**_***_24: Developed, high Intensity. Note, this variable was
+   not measured in 1992 (** = 2001, 2006, 2011)
    \item *_nlcd**_***_31: Bare rock/sand/clay
-   \item *_nlcd1992_***_32: Quarries/strip mines/gravel pits measured in 1992
+   \item *_nlcd1992_***_32: Quarries/strip mines/gravel pits measured in
+   1992
    \item *_nlcd1992_***_33: Transitional (barren) measured in 1992
    \item *_nlcd**_***_41: Deciduous forest
    \item *_nlcd**_***_42: Evergreen forest
    \item *_nlcd**_***_43: Mixed forest
    \item *_nlcd1992_***_51: Shrubland measured in 1992.
-   \item *_nlcd1992_***_52: Scrub/shrub. Note, this variable not measured in 1992
+   \item *_nlcd1992_***_52: Scrub/shrub. Note, this variable not measured in
+   1992
    (** = 2001, 2006, 2011)
    \item *_nlcd1992_***_61: Orchards/vineyards/other measured in 1992.
    \item *_nlcd**_***_71: Grasslands/herbaceous
@@ -53,30 +55,36 @@ unless otherwise noted.
    \item *_nlcd**_***_82: Row crops
    \item *_nlcd1992_***_83: Small grains measured in 1992.
    \item *_nlcd1992_***_85: Urban/recreational grasses measured in 1992.
-   \item *_nlcd**_***_90: Woody wetlands. Note, this variable not calculated in 1992
+   \item *_nlcd**_***_90: Woody wetlands. Note, this variable not calculated
+    in 1992
    (** = 2001, 2006, 2011). Equivalent code for 1992 = 91.
-   \item *_nlcd1992_***_91: Woody wetlands measured in 1992. Equivalent code for 2001,
-   2006 and 2011 = 90.
-   \item *_nlcd1992_***_92: Emergent herbaceous wetlands measured in 1992. Equivalent
-   code for 2001, 2006, and 2011 = 95.
-   \item *_nlcd**_***_95: Emergent herbaceous wetlands. Note, this variable not calculated
-    in 1992 (** = 2001, 2006, 2011). Equivalent code for 1992 = 92.
-   \item *_roaddensity_***: Roads within the zone, calculated as sum of the length in
-   meters, or sum of the length in meters divided by area of zone in hectares
-   (*** = sum_lengthm, density_mperha)
-   \item *_slope_***: The slope at each cell is the slope with respect to its immediate
-   neighbors (10m scale). Cells in zone summarized as either the minimum, maximum, mean,
-   or standard deviation (*** = min, max, mean, std)
-   \item *_tri_***: Terrain ruggedness index (TRI) at each cell is the absolute difference in meters
-   between the elevation of the focal cell and its immediate neighbors (10m scale).
+   \item *_nlcd1992_***_91: Woody wetlands measured in 1992. Equivalent code
+   for 2001, 2006 and 2011 = 90.
+   \item *_nlcd1992_***_92: Emergent herbaceous wetlands measured in 1992.
+   Equivalent code for 2001, 2006, and 2011 = 95.
+   \item *_nlcd**_***_95: Emergent herbaceous wetlands. Note, this variable
+   not calculated in 1992 (** = 2001, 2006, 2011). Equivalent code for
+   1992 = 92.
+   \item *_roaddensity_***: Roads within the zone, calculated as sum of the
+   length in meters, or sum of the length in meters divided by area of zone
+   in hectares (*** = sum_lengthm, density_mperha)
+   \item *_slope_***: The slope at each cell is the slope with respect to
+   its immediate neighbors (10m scale). Cells in zone summarized as either
+   the minimum, maximum, mean, or standard deviation (*** = min, max,
+   mean, std)
+   \item *_tri_***: Terrain ruggedness index (TRI) at each cell is the
+   absolute difference in meters between the elevation of the focal cell and
+   its immediate neighbors (10m scale).
    Cells in zone summarized as either the minimum, maximum, mean,
    or standard deviation (*** = min, max, mean, std)
-   \item *_zoneid: unique zone identifier (* = iws, hu12, hu8, hu4, edu, county, state)
-   \item *_lagoslakeid: unique integer identifier for focal lake (* = lakes4ha_buffer100m,
-   lakes4ha_buffer500m, iws)
-   \item lakeconnection: connectivity class of focal lake. Only in iws.lulc table.
-   \item borderiws: whether iws zone intersects Canadian border (1 = yes, NA = no). Only
-   in iws.lulc table.
+   \item *_zoneid: unique zone identifier (* = iws, hu12, hu8, hu4, edu,
+   county, state)
+   \item *_lagoslakeid: unique integer identifier for focal lake
+   (* = lakes4ha_buffer100m, lakes4ha_buffer500m, iws)
+   \item lakeconnection: connectivity class of focal lake. Only in iws.lulc
+   table.
+   \item borderiws: whether iws zone intersects Canadian border
+   (1 = yes, NA = no). Only in iws.lulc table.
     }}
 \description{
 Datasets containing information on the land use and land cover (LULC)

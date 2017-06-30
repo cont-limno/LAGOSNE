@@ -8,7 +8,8 @@
 \format{A data frame with 141271 observations and 109 variables:
 \itemize{
              \item lagoslakeid: unique lake identifier in LAGOS
-             \item nhdid: unique lake identifier from the National Hydrography Dataset (NHD)
+             \item nhdid: unique lake identifier from the National
+             Hydrography Dataset (NHD)
              \item nhd_lat: latitude of lake polygon centroid
              \item nhd_long: longitude of lake polygon centroid
              \item lake_area_ha: lake area in hectares
@@ -19,27 +20,38 @@
              \item lagosname1: lake name
              \item meandepth: mean depth in meters
              \item maxdepth: maximum depth in meters
-             \item iws_zoneid: zone ID of interlake watershed (IWS) in which focal lake is located
-             \item hu4_zoneid: zone ID of HUC4 in which focal lake is located
+             \item iws_zoneid: zone ID of interlake watershed (IWS) in which
+             focal lake is located
+             \item hu4_zoneid: zone ID of HUC4 in which focal lake is
+             located
              \item hu4_name: name of HUC4 in which focal lake is located
-             \item hu6_zoneid: zone ID of HUC6 in which focal lake is located
+             \item hu6_zoneid: zone ID of HUC6 in which focal lake is
+             located
              \item hu6_name: name of HUC6 in which focal lake is located
-             \item hu8_zoneid: zone ID of HUC8 in which focal lake is located
+             \item hu8_zoneid: zone ID of HUC8 in which focal lake is
+             located
              \item hu8_name: name of HUC8 in which focal lake is located
-             \item hu12_zoneid: zone ID of HU12 in which focal lake is located
+             \item hu12_zoneid: zone ID of HU12 in which focal lake is
+             located
              \item hu12_name: name of HUC12 in which focal lake is located
-             \item edu_zoneid: zone ID of ecological drainage unit (EDU) in which focal lake is located
+             \item edu_zoneid: zone ID of ecological drainage unit (EDU) in
+             which focal lake is located
              \item edu_name: name of EDU in which focal lake is located
-             \item county_zoneid: zone ID of county in which focal lake is located
-             \item county_name: name of county in which focal lake is located
+             \item county_zoneid: zone ID of county in which focal lake is
+             located
+             \item county_name: name of county in which focal lake is
+             located
              \item state_name: name of state in which focal lake is located
-             \item state_zoneid: two-letter abbreviation of state in which focal lake is located
+             \item state_zoneid: two-letter abbreviation of state in which
+             focal lake is located
              \item hu4:
              \item hu6:
              \item hu12:
              \item hu8:
-             \item iws_areaha: area in hectares of iws in which focal lake is located
-             \item iws_perimkm: perimeter of iws in which focal lake is located
+             \item iws_areaha: area in hectares of iws in which focal lake
+             is located
+             \item iws_perimkm: perimeter of iws in which focal lake is
+             located
              \item iws_pct_in_usa:
              \item iws_ha_in_usa
              \item iws_pct_in_nwi

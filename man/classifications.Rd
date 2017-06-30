@@ -21,26 +21,39 @@
 of observations is equal to the number of zones in each spatial
 classification (see Details below).
 \itemize{
-    \item *_nhdid: permanent lake-specific identifier from the National Hydrography
-    Dataset (* = lakes4ha_buffer100m, lakes4ha_buffer500m, iws)
+    \item *_nhdid: permanent lake-specific identifier from the National
+    Hydrography Dataset (* = lakes4ha_buffer100m, lakes4ha_buffer500m, iws)
     \item *_name: text name of the zone (* = iws, hu12, hu8, hu4,
     county, state)
     \item hu*: unique zone identifier (* = 12, 8, 4)
-    \item *_ha: area of spatial classification in hectares (* = lakes4ha_buffer100m, lakes4ha_buffer500m, hu12, hu8, hu4, edu, county)
+    \item *_ha: area of spatial classification in hectares
+    (* = lakes4ha_buffer100m, lakes4ha_buffer500m, hu12, hu8, hu4, edu,
+    county)
     \item *_areaha: area of spatial classification in hectares (* = iws, )
     \item *_perimkm: perimeter of spatial classification in kilometers
     (* = iws, )
     \item *_lat: latitude of centroid of polygon in decimal degrees (NAD83)
     (* = iws, hu12, hu8, hu4, edu, county, state)
-    \item *_long: longitude of centroid of polygon in decimal degrees (NAD83) (* = iws, hu12, hu8, hu4, edu, county, state)
-    \item *_lakeareaha: lake area (ha) of focal lake within polygon (* = iws, )
-    \item *_country: whether the polygon lies within the US ("US") or the US and Canada (US_CA) (* = hu12, edu)
-    \item *_pct_in_usa: percent of polygon within the US boundary (* = iws, hu12, edu)
-    \item *_ha_in_usa: area (ha) of polygon within the US boundary (* = iws, hu12, edu)
-    \item *_pct_in_nwi: percent of polygon within the USFWS National Wetland Inventory (NWI) boundary (* = hu12, hu8, hu4, edu, county, state)
-    \item *_ha_in_nwi: area (ha) of polygon within the USFWS National Wetland Inventory (NWI) boundary (* = hu12, hu8, hu4, edu, county, state)
-    \item *_zoneid: a unique identifier for each IWS in LAGOS, numbered 1:n with classification prefix (e.g., HU12_1) (* = iws, hu12, hu8, hu4, edu, county, state)
-    \item *_lagoslakeid: LAGOS unique identifier for focal lake (* = lakes4ha_buffer100m, lakes_buffer500m, iws, )
+    \item *_long: longitude of centroid of polygon in decimal degrees
+    (NAD83) (* = iws, hu12, hu8, hu4, edu, county, state)
+    \item *_lakeareaha: lake area (ha) of focal lake within polygon
+    (* = iws, )
+    \item *_country: whether the polygon lies within the US ("US") or the
+    US and Canada (US_CA) (* = hu12, edu)
+    \item *_pct_in_usa: percent of polygon within the US boundary (* = iws,
+    hu12, edu)
+    \item *_ha_in_usa: area (ha) of polygon within the US boundary (* = iws,
+    hu12, edu)
+    \item *_pct_in_nwi: percent of polygon within the USFWS National Wetland
+    Inventory (NWI) boundary (* = hu12, hu8, hu4, edu, county, state)
+    \item *_ha_in_nwi: area (ha) of polygon within the USFWS National
+    Wetland Inventory (NWI) boundary (* = hu12, hu8, hu4, edu, county,
+    state)
+    \item *_zoneid: a unique identifier for each IWS in LAGOS, numbered 1:n
+    with classification prefix (e.g., HU12_1) (* = iws, hu12, hu8, hu4, edu,
+    county, state)
+    \item *_lagoslakeid: LAGOS unique identifier for focal lake
+    (* = lakes4ha_buffer100m, lakes_buffer500m, iws, )
     \item hu4_states: states that intersect hu4 zone polygon
     \item state: 2-letter state abbreviation
     \item county_state: state where county is located

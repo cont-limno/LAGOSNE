@@ -14,17 +14,21 @@
 \alias{hydrology}
 \alias{geology}
 \title{CHAG Datasets}
-\format{Data frames with all or a subset of the following variables. Number of observations is
-equal to the number of zones in each spatial scale (see Details below). Wildcard options
-include a subset of the LAGOS spatial scales (* = hu12, hu8, hu4, edu, county, state),
-years of measurement (** = 1985, 1990, 1995, 2000, 2005, 2010), and summary statistic or
-units (*** = min, max, mean, std for atmospheric deposition and hydrology; *** = ha, pct
-for surficial geology)
+\format{Data frames with all or a subset of the following variables. Number
+of observations is equal to the number of zones in each spatial scale (see
+Details below). Wildcard options include a subset of the LAGOS spatial
+scales (* = hu12, hu8, hu4, edu, county, state), years of measurement
+(** = 1985, 1990, 1995, 2000, 2005, 2010), and summary statistic or
+units (*** = min, max, mean, std for atmospheric deposition and hydrology;
+ *** = ha, pct for surficial geology)
 \itemize{
    \item *_zoneid: unique zone identifier
-   \item *_dep_no3_**_***: nitrate ion wet deposition (kg/ha) in zone during specified year
-   \item *_dep_so4_**_***: sulfate ion wet deposition (kg/ha) in zone during specified year
-   \item *_dep_totaln_**_***: total inorganic nitrogen ion wet deposition (kg/ha) in zone during specified year
+   \item *_dep_no3_**_***: nitrate ion wet deposition (kg/ha) in zone during
+   specified year
+   \item *_dep_so4_**_***: sulfate ion wet deposition (kg/ha) in zone during
+    specified year
+   \item *_dep_totaln_**_***: total inorganic nitrogen ion wet deposition
+   (kg/ha) in zone during specified year
    \item *_baseflowindex_***: % of streamflow that can be attributed to ground-water discharge into streams in the zone (baseflow/totalflow *100)
    \item *_groundwaterrecharge_***: mean annual natural groundwater recharge (mm/yr) in zone - Baseflow multiplied by mean annual runoff
    \item *_runoff_***: average annual runoff (in/yr) in the zone, 1951-80
@@ -55,16 +59,17 @@ for surficial geology)
    \item *_surficialgeology_till_sand_***: till, sand of pre-Illinoian age, late Wisconsin and Holocene(?) age
 }}
 \description{
-Datasets containing information on climate, hydrology, atmospheric deposition, and
-surficial geology characteristics calculated at hu12, hu8, hu4, edu, county and
-state spatial classifications (see ?scales).
+Datasets containing information on climate, hydrology, atmospheric
+deposition, and surficial geology characteristics calculated at hu12, hu8,
+hu4, edu, county and state spatial classifications (see ?scales).
 }
 \details{
-Original data sources and layers from which each metric was derived can be found in
-additional file 5 of Soranno et al. (2015). Briefly, climate data
-came from the PRISM climate group, hydrology metrics were derived from United States Geologic
-Survey (USGS) data, atmospheric deposition was from the National Atmospheric Deposition program,
-and surficial geology were derived from layers USGS data.
+Original data sources and layers from which each metric was derived can be
+found in additional file 5 of Soranno et al. (2015). Briefly, climate data
+came from the PRISM climate group, hydrology metrics were derived from
+United States Geologic Survey (USGS) data, atmospheric deposition was from
+the National Atmospheric Deposition program, and surficial geology were
+derived from layers USGS data.
 }
 \references{
 Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}

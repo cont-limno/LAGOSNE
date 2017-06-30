@@ -14,36 +14,45 @@
 \alias{county.conn}
 \alias{state.conn}
 \title{Connectivity Datasets}
-\format{Data frames with all or a subset of the following variables. Number of observations is
-equal to the number of zones in each spatial classification (see ?classifications). Wildcard options
-include a subset of the LAGOS spatial classifications (* = lakes4ha_buffer500m, iws,
-hu12, hu8, hu4, edu, county, state) and additional wildcards described below.
+\format{Data frames with all or a subset of the following variables. Number
+of observations is equal to the number of zones in each spatial
+classification (see ?classifications). Wildcard options include a subset of
+the LAGOS spatial classifications (* = lakes4ha_buffer500m, iws,
+hu12, hu8, hu4, edu, county, state) and additional wildcards described
+below.
 \itemize{
      \item Identifiers and Zone Metadata
      \itemize{
          \item *_zoneid: unique zone identifier
-         \item *_nwiexclusions: zones that are not completely covered by the National Wetlands Inventory
+         \item *_nwiexclusions: zones that are not completely covered by
+         the National Wetlands Inventory
          }
-     \item Lake Connectivity Metrics. Lake abundance metrics are derived for all lakes,
-     isolated lakes ("isolated" - no inflow or outflow streams), headwater lakes ("headwater" - no inflowing streams),
-     stream drainage lakes ("drstream" - lakes with inflowing stream(s), with or without outflows,
-     and no upstream lakes greater than 10 ha), and lake drainage lakes ("drlakeStream" lakes with inflowing
-     stream(s) and at least one upstream lake greater than 10 ha).
+     \item Lake Connectivity Metrics. Lake abundance metrics are derived for
+     all lakes, isolated lakes ("isolated" - no inflow or outflow streams),
+     headwater lakes ("headwater" - no inflowing streams), stream
+     drainage lakes ("drstream" - lakes with inflowing stream(s), with or
+     without outflows, and no upstream lakes greater than 10 ha), and lake
+     drainage lakes ("drlakeStream" lakes with inflowing stream(s) and at
+     least one upstream lake greater than 10 ha).
      \itemize{
-         \item *_lakes_**_***: all lakes that are within or intersect the zone boundary
-         and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha),
-         expressed as average lake area (*** = agsize_ha) or count (** = count)
-         \item *_lakes_**_overlapping_***: all lakes that are clipped to the zone boundary
-         and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
-         as sum of lake area (*** = area_ha) or percent of zone area (*** = area_pct)
-         \item *_lakes_**_contributing_area_ha: all lakes that are within or intersect the zone boundary,
-         and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed as
-         sum of lake area
-         \item *_lakes_**_isolated_***: all isolated lakes that are within or intersect the zone boundary,
-         and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
-         as average size in hectares (*** = avgsize_ha) or count (*** = count
-         \item *_lakes_**_isolated_overlapping_***: all isolated lakes that are clipped to the zone boundary
-         and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
+         \item *_lakes_**_***: all lakes that are within or intersect the
+         zone boundary and are in a particular size class (** = lakes4ha,
+         lakes4to10ha, lakes10ha), expressed as average lake area
+         (*** = agsize_ha) or count (** = count)
+         \item *_lakes_**_overlapping_***: all lakes that are clipped to the
+         zone boundary and are in a particular size class (** = lakes4ha,
+         lakes4to10ha, lakes10ha), expressed as sum of lake area
+         (*** = area_ha) or percent of zone area (*** = area_pct)
+         \item *_lakes_**_contributing_area_ha: all lakes that are within or
+         intersect the zone boundary, and are in a particular size class
+         (** = lakes4ha, lakes4to10ha, lakes10ha), expressed as sum of lake
+          area
+         \item *_lakes_**_isolated_***: all isolated lakes that are within
+         or intersect the zone boundary, and are in a particular size class
+         (** = lakes4ha, lakes4to10ha, lakes10ha), expressed as average size
+          in hectares (*** = avgsize_ha) or count (*** = count
+         \item *_lakes_**_isolated_overlapping_***: all isolated lakes that
+         are clipped to the zone boundary and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
          as sum of lake area (*** = area_ha) or percent of zone area (*** = area_pct)
          \item *_lakes_**_isolated_contributing_area_ha: all isolated lakes that are within or intersect the zone boundary,
          and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed as
@@ -99,10 +108,12 @@ hu12, hu8, hu4, edu, county, state) and additional wildcards described below.
      \item Wetland Connectivity Metrics
      \itemize{
          \item *_wl_allwetlandsdissolved_**: all wetlands (regardless of vegetation,
-         connection, or regime), expressed as average size in hectares (** = avgsize_ha), total area of wetlands that
-         is contained within or partially intersect the border of this zone (** = overlapping_area_ha),
-         total land area of this zone that is covered by all wetlands (** = contributing_area_ha),
-         or percent of land area of this zone that is covered by all wetlands (** = overlapping_area_pct).
+         connection, or regime), expressed as average size in hectares (** = avgsize_ha), total area of wetlands that is contained within or partially intersect the border of this zone
+         (** = overlapping_area_ha),
+         total land area of this zone that is covered by all wetlands
+         (** = contributing_area_ha),
+         or percent of land area of this zone that is covered by all
+         wetlands (** = overlapping_area_pct).
          Before calculating this value, contiguous patches of different
          types of wetlands were first dissolved to represent a single patch.
          \item *_wl_allwetlandsundissolved_**: all wetlands (regardless of vegetation,
@@ -176,16 +187,19 @@ hu12, hu8, hu4, edu, county, state) and additional wildcards described below.
          throughout the growing season in most years, expressed as count (** = count), average size in hectares (** = avgsize_ha), total area of wetlands that
          is contained within or partially intersect the border of this zone (** = overlapping_area_ha),
          total land area of this zone that is covered by this wetland type (** = contributing_area_ha),
-         or percent of land area of this zone that is covered by this wetland type (** = overlapping_area_pct).
-         The patches were left as delineated by the National Wetlands Inventory ("undissolved") for calculating this variable.
+         or percent of land area of this zone that is covered by this
+         wetland type (** = overlapping_area_pct).
+         The patches were left as delineated by the National Wetlands
+         Inventory ("undissolved") for calculating this variable.
 
 
     }
 }}
 \description{
-Datasets containing lake, stream, and wetland abundance and connectivity metrics calculated
-at the 500m buffer (lakes4ha.buffer500m.conn), HUC12 (hu12.conn), HUC8 (hu8.conn),
-HUC4 (hu4.conn), EDU (edu.conn), county (county.conn) and state (state.conn) classifications.
+Datasets containing lake, stream, and wetland abundance and connectivity
+ metrics calculated at the 500m buffer (lakes4ha.buffer500m.conn), HUC12
+  (hu12.conn), HUC8 (hu8.conn), HUC4 (hu4.conn), EDU (edu.conn), county
+   (county.conn) and state (state.conn) classifications.
 }
 \references{
 Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}

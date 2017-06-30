@@ -80,26 +80,39 @@ NULL
 #' of observations is equal to the number of zones in each spatial
 #' classification (see Details below).
 #' \itemize{
-#'     \item *_nhdid: permanent lake-specific identifier from the National Hydrography
-#'     Dataset (* = lakes4ha_buffer100m, lakes4ha_buffer500m, iws)
+#'     \item *_nhdid: permanent lake-specific identifier from the National
+#'     Hydrography Dataset (* = lakes4ha_buffer100m, lakes4ha_buffer500m, iws)
 #'     \item *_name: text name of the zone (* = iws, hu12, hu8, hu4,
 #'     county, state)
 #'     \item hu*: unique zone identifier (* = 12, 8, 4)
-#'     \item *_ha: area of spatial classification in hectares (* = lakes4ha_buffer100m, lakes4ha_buffer500m, hu12, hu8, hu4, edu, county)
+#'     \item *_ha: area of spatial classification in hectares
+#'     (* = lakes4ha_buffer100m, lakes4ha_buffer500m, hu12, hu8, hu4, edu,
+#'     county)
 #'     \item *_areaha: area of spatial classification in hectares (* = iws, )
 #'     \item *_perimkm: perimeter of spatial classification in kilometers
 #'     (* = iws, )
 #'     \item *_lat: latitude of centroid of polygon in decimal degrees (NAD83)
 #'     (* = iws, hu12, hu8, hu4, edu, county, state)
-#'     \item *_long: longitude of centroid of polygon in decimal degrees (NAD83) (* = iws, hu12, hu8, hu4, edu, county, state)
-#'     \item *_lakeareaha: lake area (ha) of focal lake within polygon (* = iws, )
-#'     \item *_country: whether the polygon lies within the US ("US") or the US and Canada (US_CA) (* = hu12, edu)
-#'     \item *_pct_in_usa: percent of polygon within the US boundary (* = iws, hu12, edu)
-#'     \item *_ha_in_usa: area (ha) of polygon within the US boundary (* = iws, hu12, edu)
-#'     \item *_pct_in_nwi: percent of polygon within the USFWS National Wetland Inventory (NWI) boundary (* = hu12, hu8, hu4, edu, county, state)
-#'     \item *_ha_in_nwi: area (ha) of polygon within the USFWS National Wetland Inventory (NWI) boundary (* = hu12, hu8, hu4, edu, county, state)
-#'     \item *_zoneid: a unique identifier for each IWS in LAGOS, numbered 1:n with classification prefix (e.g., HU12_1) (* = iws, hu12, hu8, hu4, edu, county, state)
-#'     \item *_lagoslakeid: LAGOS unique identifier for focal lake (* = lakes4ha_buffer100m, lakes_buffer500m, iws, )
+#'     \item *_long: longitude of centroid of polygon in decimal degrees
+#'     (NAD83) (* = iws, hu12, hu8, hu4, edu, county, state)
+#'     \item *_lakeareaha: lake area (ha) of focal lake within polygon
+#'     (* = iws, )
+#'     \item *_country: whether the polygon lies within the US ("US") or the
+#'     US and Canada (US_CA) (* = hu12, edu)
+#'     \item *_pct_in_usa: percent of polygon within the US boundary (* = iws,
+#'     hu12, edu)
+#'     \item *_ha_in_usa: area (ha) of polygon within the US boundary (* = iws,
+#'     hu12, edu)
+#'     \item *_pct_in_nwi: percent of polygon within the USFWS National Wetland
+#'     Inventory (NWI) boundary (* = hu12, hu8, hu4, edu, county, state)
+#'     \item *_ha_in_nwi: area (ha) of polygon within the USFWS National
+#'     Wetland Inventory (NWI) boundary (* = hu12, hu8, hu4, edu, county,
+#'     state)
+#'     \item *_zoneid: a unique identifier for each IWS in LAGOS, numbered 1:n
+#'     with classification prefix (e.g., HU12_1) (* = iws, hu12, hu8, hu4, edu,
+#'     county, state)
+#'     \item *_lagoslakeid: LAGOS unique identifier for focal lake
+#'     (* = lakes4ha_buffer100m, lakes_buffer500m, iws, )
 #'     \item hu4_states: states that intersect hu4 zone polygon
 #'     \item state: 2-letter state abbreviation
 #'     \item county_state: state where county is located
@@ -131,27 +144,29 @@ NULL
 #' unless otherwise noted.
 #' \itemize{
 #'    \item *_nhdid (* = lakes4ha_buffer100m, lakes4ha_buffer500m, iws)
-#'    \item *_canopy2001_***: per pixel tree canopy percent measured 2001. Summary
-#'    statistics include minimum, maximum, mean and standard deviation (*** = min, max, mean,
-#'    std).
-#'    \item *_damdensity_***: dams in zone. Summary statistics include a point count,
-#'    points per hectare, and points per square kilometer (*** = pointcount, poinsperha,
-#'    pointspersqkm)
+#'    \item *_canopy2001_***: per pixel tree canopy percent measured 2001.
+#'     Summary statistics include minimum, maximum, mean and standard deviation
+#'     (*** = min, max, mean, std).
+#'    \item *_damdensity_***: dams in zone. Summary statistics include a point
+#'    count, points per hectare, and points per square kilometer
+#'    (*** = pointcount, poinsperha, pointspersqkm)
 #'    \item *_nlcd**_***_0: No data
 #'    \item *_nlcd**_***_11: Open water
 #'    \item *_nlcd**_***_21: Residential, low intensity
 #'    \item *_nlcd**_***_22: Residential, high intensity
 #'    \item *_nlcd**_***_23: Commercial/industrial/transportation
-#'    \item *_nlcd**_***_24: Developed, high Intensity. Note, this variable was not
-#'    measured in 1992 (** = 2001, 2006, 2011)
+#'    \item *_nlcd**_***_24: Developed, high Intensity. Note, this variable was
+#'    not measured in 1992 (** = 2001, 2006, 2011)
 #'    \item *_nlcd**_***_31: Bare rock/sand/clay
-#'    \item *_nlcd1992_***_32: Quarries/strip mines/gravel pits measured in 1992
+#'    \item *_nlcd1992_***_32: Quarries/strip mines/gravel pits measured in
+#'    1992
 #'    \item *_nlcd1992_***_33: Transitional (barren) measured in 1992
 #'    \item *_nlcd**_***_41: Deciduous forest
 #'    \item *_nlcd**_***_42: Evergreen forest
 #'    \item *_nlcd**_***_43: Mixed forest
 #'    \item *_nlcd1992_***_51: Shrubland measured in 1992.
-#'    \item *_nlcd1992_***_52: Scrub/shrub. Note, this variable not measured in 1992
+#'    \item *_nlcd1992_***_52: Scrub/shrub. Note, this variable not measured in
+#'    1992
 #'    (** = 2001, 2006, 2011)
 #'    \item *_nlcd1992_***_61: Orchards/vineyards/other measured in 1992.
 #'    \item *_nlcd**_***_71: Grasslands/herbaceous
@@ -159,30 +174,36 @@ NULL
 #'    \item *_nlcd**_***_82: Row crops
 #'    \item *_nlcd1992_***_83: Small grains measured in 1992.
 #'    \item *_nlcd1992_***_85: Urban/recreational grasses measured in 1992.
-#'    \item *_nlcd**_***_90: Woody wetlands. Note, this variable not calculated in 1992
+#'    \item *_nlcd**_***_90: Woody wetlands. Note, this variable not calculated
+#'     in 1992
 #'    (** = 2001, 2006, 2011). Equivalent code for 1992 = 91.
-#'    \item *_nlcd1992_***_91: Woody wetlands measured in 1992. Equivalent code for 2001,
-#'    2006 and 2011 = 90.
-#'    \item *_nlcd1992_***_92: Emergent herbaceous wetlands measured in 1992. Equivalent
-#'    code for 2001, 2006, and 2011 = 95.
-#'    \item *_nlcd**_***_95: Emergent herbaceous wetlands. Note, this variable not calculated
-#'     in 1992 (** = 2001, 2006, 2011). Equivalent code for 1992 = 92.
-#'    \item *_roaddensity_***: Roads within the zone, calculated as sum of the length in
-#'    meters, or sum of the length in meters divided by area of zone in hectares
-#'    (*** = sum_lengthm, density_mperha)
-#'    \item *_slope_***: The slope at each cell is the slope with respect to its immediate
-#'    neighbors (10m scale). Cells in zone summarized as either the minimum, maximum, mean,
-#'    or standard deviation (*** = min, max, mean, std)
-#'    \item *_tri_***: Terrain ruggedness index (TRI) at each cell is the absolute difference in meters
-#'    between the elevation of the focal cell and its immediate neighbors (10m scale).
+#'    \item *_nlcd1992_***_91: Woody wetlands measured in 1992. Equivalent code
+#'    for 2001, 2006 and 2011 = 90.
+#'    \item *_nlcd1992_***_92: Emergent herbaceous wetlands measured in 1992.
+#'    Equivalent code for 2001, 2006, and 2011 = 95.
+#'    \item *_nlcd**_***_95: Emergent herbaceous wetlands. Note, this variable
+#'    not calculated in 1992 (** = 2001, 2006, 2011). Equivalent code for
+#'    1992 = 92.
+#'    \item *_roaddensity_***: Roads within the zone, calculated as sum of the
+#'    length in meters, or sum of the length in meters divided by area of zone
+#'    in hectares (*** = sum_lengthm, density_mperha)
+#'    \item *_slope_***: The slope at each cell is the slope with respect to
+#'    its immediate neighbors (10m scale). Cells in zone summarized as either
+#'    the minimum, maximum, mean, or standard deviation (*** = min, max,
+#'    mean, std)
+#'    \item *_tri_***: Terrain ruggedness index (TRI) at each cell is the
+#'    absolute difference in meters between the elevation of the focal cell and
+#'    its immediate neighbors (10m scale).
 #'    Cells in zone summarized as either the minimum, maximum, mean,
 #'    or standard deviation (*** = min, max, mean, std)
-#'    \item *_zoneid: unique zone identifier (* = iws, hu12, hu8, hu4, edu, county, state)
-#'    \item *_lagoslakeid: unique integer identifier for focal lake (* = lakes4ha_buffer100m,
-#'    lakes4ha_buffer500m, iws)
-#'    \item lakeconnection: connectivity class of focal lake. Only in iws.lulc table.
-#'    \item borderiws: whether iws zone intersects Canadian border (1 = yes, NA = no). Only
-#'    in iws.lulc table.
+#'    \item *_zoneid: unique zone identifier (* = iws, hu12, hu8, hu4, edu,
+#'    county, state)
+#'    \item *_lagoslakeid: unique integer identifier for focal lake
+#'    (* = lakes4ha_buffer100m, lakes4ha_buffer500m, iws)
+#'    \item lakeconnection: connectivity class of focal lake. Only in iws.lulc
+#'    table.
+#'    \item borderiws: whether iws zone intersects Canadian border
+#'    (1 = yes, NA = no). Only in iws.lulc table.
 #'     }
 #'
 #' @docType data
@@ -194,27 +215,32 @@ NULL
 
 #' CHAG Datasets
 #'
-#' Datasets containing information on climate, hydrology, atmospheric deposition, and
-#' surficial geology characteristics calculated at hu12, hu8, hu4, edu, county and
-#' state spatial classifications (see ?scales).
+#' Datasets containing information on climate, hydrology, atmospheric
+#' deposition, and surficial geology characteristics calculated at hu12, hu8,
+#' hu4, edu, county and state spatial classifications (see ?scales).
 #'
-#' Original data sources and layers from which each metric was derived can be found in
-#' additional file 5 of Soranno et al. (2015). Briefly, climate data
-#' came from the PRISM climate group, hydrology metrics were derived from United States Geologic
-#' Survey (USGS) data, atmospheric deposition was from the National Atmospheric Deposition program,
-#' and surficial geology were derived from layers USGS data.
+#' Original data sources and layers from which each metric was derived can be
+#' found in additional file 5 of Soranno et al. (2015). Briefly, climate data
+#' came from the PRISM climate group, hydrology metrics were derived from
+#' United States Geologic Survey (USGS) data, atmospheric deposition was from
+#' the National Atmospheric Deposition program, and surficial geology were
+#' derived from layers USGS data.
 #'
-#' @format Data frames with all or a subset of the following variables. Number of observations is
-#' equal to the number of zones in each spatial scale (see Details below). Wildcard options
-#' include a subset of the LAGOS spatial scales (* = hu12, hu8, hu4, edu, county, state),
-#' years of measurement (** = 1985, 1990, 1995, 2000, 2005, 2010), and summary statistic or
-#' units (*** = min, max, mean, std for atmospheric deposition and hydrology; *** = ha, pct
-#' for surficial geology)
+#' @format Data frames with all or a subset of the following variables. Number
+#' of observations is equal to the number of zones in each spatial scale (see
+#' Details below). Wildcard options include a subset of the LAGOS spatial
+#' scales (* = hu12, hu8, hu4, edu, county, state), years of measurement
+#' (** = 1985, 1990, 1995, 2000, 2005, 2010), and summary statistic or
+#' units (*** = min, max, mean, std for atmospheric deposition and hydrology;
+#'  *** = ha, pct for surficial geology)
 #' \itemize{
 #'    \item *_zoneid: unique zone identifier
-#'    \item *_dep_no3_**_***: nitrate ion wet deposition (kg/ha) in zone during specified year
-#'    \item *_dep_so4_**_***: sulfate ion wet deposition (kg/ha) in zone during specified year
-#'    \item *_dep_totaln_**_***: total inorganic nitrogen ion wet deposition (kg/ha) in zone during specified year
+#'    \item *_dep_no3_**_***: nitrate ion wet deposition (kg/ha) in zone during
+#'    specified year
+#'    \item *_dep_so4_**_***: sulfate ion wet deposition (kg/ha) in zone during
+#'     specified year
+#'    \item *_dep_totaln_**_***: total inorganic nitrogen ion wet deposition
+#'    (kg/ha) in zone during specified year
 #'    \item *_baseflowindex_***: % of streamflow that can be attributed to ground-water discharge into streams in the zone (baseflow/totalflow *100)
 #'    \item *_groundwaterrecharge_***: mean annual natural groundwater recharge (mm/yr) in zone - Baseflow multiplied by mean annual runoff
 #'    \item *_runoff_***: average annual runoff (in/yr) in the zone, 1951-80
@@ -335,40 +361,50 @@ NULL
 
 #' Connectivity Datasets
 #'
-#' Datasets containing lake, stream, and wetland abundance and connectivity metrics calculated
-#' at the 500m buffer (lakes4ha.buffer500m.conn), HUC12 (hu12.conn), HUC8 (hu8.conn),
-#' HUC4 (hu4.conn), EDU (edu.conn), county (county.conn) and state (state.conn) classifications.
+#' Datasets containing lake, stream, and wetland abundance and connectivity
+#'  metrics calculated at the 500m buffer (lakes4ha.buffer500m.conn), HUC12
+#'   (hu12.conn), HUC8 (hu8.conn), HUC4 (hu4.conn), EDU (edu.conn), county
+#'    (county.conn) and state (state.conn) classifications.
 #'
-#' @format Data frames with all or a subset of the following variables. Number of observations is
-#' equal to the number of zones in each spatial classification (see ?classifications). Wildcard options
-#' include a subset of the LAGOS spatial classifications (* = lakes4ha_buffer500m, iws,
-#' hu12, hu8, hu4, edu, county, state) and additional wildcards described below.
+#' @format Data frames with all or a subset of the following variables. Number
+#' of observations is equal to the number of zones in each spatial
+#' classification (see ?classifications). Wildcard options include a subset of
+#' the LAGOS spatial classifications (* = lakes4ha_buffer500m, iws,
+#' hu12, hu8, hu4, edu, county, state) and additional wildcards described
+#' below.
 #' \itemize{
 #'      \item Identifiers and Zone Metadata
 #'      \itemize{
 #'          \item *_zoneid: unique zone identifier
-#'          \item *_nwiexclusions: zones that are not completely covered by the National Wetlands Inventory
+#'          \item *_nwiexclusions: zones that are not completely covered by
+#'          the National Wetlands Inventory
 #'          }
-#'      \item Lake Connectivity Metrics. Lake abundance metrics are derived for all lakes,
-#'      isolated lakes ("isolated" - no inflow or outflow streams), headwater lakes ("headwater" - no inflowing streams),
-#'      stream drainage lakes ("drstream" - lakes with inflowing stream(s), with or without outflows,
-#'      and no upstream lakes greater than 10 ha), and lake drainage lakes ("drlakeStream" lakes with inflowing
-#'      stream(s) and at least one upstream lake greater than 10 ha).
+#'      \item Lake Connectivity Metrics. Lake abundance metrics are derived for
+#'      all lakes, isolated lakes ("isolated" - no inflow or outflow streams),
+#'      headwater lakes ("headwater" - no inflowing streams), stream
+#'      drainage lakes ("drstream" - lakes with inflowing stream(s), with or
+#'      without outflows, and no upstream lakes greater than 10 ha), and lake
+#'      drainage lakes ("drlakeStream" lakes with inflowing stream(s) and at
+#'      least one upstream lake greater than 10 ha).
 #'      \itemize{
-#'          \item *_lakes_**_***: all lakes that are within or intersect the zone boundary
-#'          and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha),
-#'          expressed as average lake area (*** = agsize_ha) or count (** = count)
-#'          \item *_lakes_**_overlapping_***: all lakes that are clipped to the zone boundary
-#'          and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
-#'          as sum of lake area (*** = area_ha) or percent of zone area (*** = area_pct)
-#'          \item *_lakes_**_contributing_area_ha: all lakes that are within or intersect the zone boundary,
-#'          and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed as
-#'          sum of lake area
-#'          \item *_lakes_**_isolated_***: all isolated lakes that are within or intersect the zone boundary,
-#'          and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
-#'          as average size in hectares (*** = avgsize_ha) or count (*** = count
-#'          \item *_lakes_**_isolated_overlapping_***: all isolated lakes that are clipped to the zone boundary
-#'          and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
+#'          \item *_lakes_**_***: all lakes that are within or intersect the
+#'          zone boundary and are in a particular size class (** = lakes4ha,
+#'          lakes4to10ha, lakes10ha), expressed as average lake area
+#'          (*** = agsize_ha) or count (** = count)
+#'          \item *_lakes_**_overlapping_***: all lakes that are clipped to the
+#'          zone boundary and are in a particular size class (** = lakes4ha,
+#'          lakes4to10ha, lakes10ha), expressed as sum of lake area
+#'          (*** = area_ha) or percent of zone area (*** = area_pct)
+#'          \item *_lakes_**_contributing_area_ha: all lakes that are within or
+#'          intersect the zone boundary, and are in a particular size class
+#'          (** = lakes4ha, lakes4to10ha, lakes10ha), expressed as sum of lake
+#'           area
+#'          \item *_lakes_**_isolated_***: all isolated lakes that are within
+#'          or intersect the zone boundary, and are in a particular size class
+#'          (** = lakes4ha, lakes4to10ha, lakes10ha), expressed as average size
+#'           in hectares (*** = avgsize_ha) or count (*** = count
+#'          \item *_lakes_**_isolated_overlapping_***: all isolated lakes that
+#'          are clipped to the zone boundary and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
 #'          as sum of lake area (*** = area_ha) or percent of zone area (*** = area_pct)
 #'          \item *_lakes_**_isolated_contributing_area_ha: all isolated lakes that are within or intersect the zone boundary,
 #'          and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed as
@@ -424,10 +460,12 @@ NULL
 #'      \item Wetland Connectivity Metrics
 #'      \itemize{
 #'          \item *_wl_allwetlandsdissolved_**: all wetlands (regardless of vegetation,
-#'          connection, or regime), expressed as average size in hectares (** = avgsize_ha), total area of wetlands that
-#'          is contained within or partially intersect the border of this zone (** = overlapping_area_ha),
-#'          total land area of this zone that is covered by all wetlands (** = contributing_area_ha),
-#'          or percent of land area of this zone that is covered by all wetlands (** = overlapping_area_pct).
+#'          connection, or regime), expressed as average size in hectares (** = avgsize_ha), total area of wetlands that is contained within or partially intersect the border of this zone
+#'          (** = overlapping_area_ha),
+#'          total land area of this zone that is covered by all wetlands
+#'          (** = contributing_area_ha),
+#'          or percent of land area of this zone that is covered by all
+#'          wetlands (** = overlapping_area_pct).
 #'          Before calculating this value, contiguous patches of different
 #'          types of wetlands were first dissolved to represent a single patch.
 #'          \item *_wl_allwetlandsundissolved_**: all wetlands (regardless of vegetation,
@@ -501,8 +539,10 @@ NULL
 #'          throughout the growing season in most years, expressed as count (** = count), average size in hectares (** = avgsize_ha), total area of wetlands that
 #'          is contained within or partially intersect the border of this zone (** = overlapping_area_ha),
 #'          total land area of this zone that is covered by this wetland type (** = contributing_area_ha),
-#'          or percent of land area of this zone that is covered by this wetland type (** = overlapping_area_pct).
-#'          The patches were left as delineated by the National Wetlands Inventory ("undissolved") for calculating this variable.
+#'          or percent of land area of this zone that is covered by this
+#'          wetland type (** = overlapping_area_pct).
+#'          The patches were left as delineated by the National Wetlands
+#'          Inventory ("undissolved") for calculating this variable.
 #'
 #'
 #'     }
@@ -521,7 +561,8 @@ NULL
 #' @format A data frame with 141271 observations and 109 variables:
 #' \itemize{
 #'              \item lagoslakeid: unique lake identifier in LAGOS
-#'              \item nhdid: unique lake identifier from the National Hydrography Dataset (NHD)
+#'              \item nhdid: unique lake identifier from the National
+#'              Hydrography Dataset (NHD)
 #'              \item nhd_lat: latitude of lake polygon centroid
 #'              \item nhd_long: longitude of lake polygon centroid
 #'              \item lake_area_ha: lake area in hectares
@@ -532,27 +573,38 @@ NULL
 #'              \item lagosname1: lake name
 #'              \item meandepth: mean depth in meters
 #'              \item maxdepth: maximum depth in meters
-#'              \item iws_zoneid: zone ID of interlake watershed (IWS) in which focal lake is located
-#'              \item hu4_zoneid: zone ID of HUC4 in which focal lake is located
+#'              \item iws_zoneid: zone ID of interlake watershed (IWS) in which
+#'              focal lake is located
+#'              \item hu4_zoneid: zone ID of HUC4 in which focal lake is
+#'              located
 #'              \item hu4_name: name of HUC4 in which focal lake is located
-#'              \item hu6_zoneid: zone ID of HUC6 in which focal lake is located
+#'              \item hu6_zoneid: zone ID of HUC6 in which focal lake is
+#'              located
 #'              \item hu6_name: name of HUC6 in which focal lake is located
-#'              \item hu8_zoneid: zone ID of HUC8 in which focal lake is located
+#'              \item hu8_zoneid: zone ID of HUC8 in which focal lake is
+#'              located
 #'              \item hu8_name: name of HUC8 in which focal lake is located
-#'              \item hu12_zoneid: zone ID of HU12 in which focal lake is located
+#'              \item hu12_zoneid: zone ID of HU12 in which focal lake is
+#'              located
 #'              \item hu12_name: name of HUC12 in which focal lake is located
-#'              \item edu_zoneid: zone ID of ecological drainage unit (EDU) in which focal lake is located
+#'              \item edu_zoneid: zone ID of ecological drainage unit (EDU) in
+#'              which focal lake is located
 #'              \item edu_name: name of EDU in which focal lake is located
-#'              \item county_zoneid: zone ID of county in which focal lake is located
-#'              \item county_name: name of county in which focal lake is located
+#'              \item county_zoneid: zone ID of county in which focal lake is
+#'              located
+#'              \item county_name: name of county in which focal lake is
+#'              located
 #'              \item state_name: name of state in which focal lake is located
-#'              \item state_zoneid: two-letter abbreviation of state in which focal lake is located
+#'              \item state_zoneid: two-letter abbreviation of state in which
+#'              focal lake is located
 #'              \item hu4:
 #'              \item hu6:
 #'              \item hu12:
 #'              \item hu8:
-#'              \item iws_areaha: area in hectares of iws in which focal lake is located
-#'              \item iws_perimkm: perimeter of iws in which focal lake is located
+#'              \item iws_areaha: area in hectares of iws in which focal lake
+#'              is located
+#'              \item iws_perimkm: perimeter of iws in which focal lake is
+#'              located
 #'              \item iws_pct_in_usa:
 #'              \item iws_ha_in_usa
 #'              \item iws_pct_in_nwi
