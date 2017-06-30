@@ -52,53 +52,72 @@ below.
          (** = lakes4ha, lakes4to10ha, lakes10ha), expressed as average size
           in hectares (*** = avgsize_ha) or count (*** = count
          \item *_lakes_**_isolated_overlapping_***: all isolated lakes that
-         are clipped to the zone boundary and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
-         as sum of lake area (*** = area_ha) or percent of zone area (*** = area_pct)
-         \item *_lakes_**_isolated_contributing_area_ha: all isolated lakes that are within or intersect the zone boundary,
-         and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed as
-         sum of lake area
-          \item *_lakes_**_headwater_***: all headwater lakes that are within or intersect the zone boundary,
-         and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
-         as average size in hectares (*** = avgsize_ha) or count (*** = count
-         \item *_lakes_**_headwater_overlapping_***: all headwater lakes that are clipped to the zone boundary
-         and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
-         as sum of lake area (*** = area_ha) or percent of zone area (*** = area_pct)
-         \item *_lakes_**_headwater_contributing_area_ha: all headwater lakes that are within or intersect the zone boundary,
-         and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed as
-         sum of lake area
-         \item *_lakes_**_drstream_***: all drstream lakes that are within or intersect the zone boundary,
-         and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
-         as average size in hectares (*** = avgsize_ha) or count (*** = count
-         \item *_lakes_**_drstream_overlapping_***: all drstream lakes that are clipped to the zone boundary
-         and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
-         as sum of lake area (*** = area_ha) or percent of zone area (*** = area_pct)
-         \item *_lakes_**_drstream_contributing_area_ha: all drstream lakes that are within or intersect the zone boundary,
-         and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed as
-         sum of lake area
-         \item *_lakes_**_drlakestream_***: all drlakestream lakes that are within or intersect the zone boundary,
-         and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
-         as average size in hectares (*** = avgsize_ha) or count (*** = count
-         \item *_lakes_**_drlakestream_overlapping_***: all drlakestream lakes that are clipped to the zone boundary
-         and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
-         as sum of lake area (*** = area_ha) or percent of zone area (*** = area_pct)
-         \item *_lakes_**_drlakestream_contributing_area_ha: all drlakestream lakes that are within or intersect the zone boundary,
-         and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed as
-         sum of lake area
-         \item *_latewisconsinglaciation_glaciation: zone glaciation status during
-         the late Wisconsin glaciation (Glaciated, Not_Glaciated, Partially)
+         are clipped to the zone boundary and are in a particular size class
+         (** = lakes4ha, lakes4to10ha, lakes10ha), expressed as sum of lake
+         area (*** = area_ha) or percent of zone area (*** = area_pct)
+         \item *_lakes_**_isolated_contributing_area_ha: all isolated lakes
+         that are within or intersect the zone boundary, and are in a
+         particular size class (** = lakes4ha, lakes4to10ha, lakes10ha),
+         expressed as sum of lake area
+         \item *_lakes_**_headwater_***: all headwater lakes that are within
+         or intersect the zone boundary, and are in a particular size class
+         (** = lakes4ha, lakes4to10ha, lakes10ha), expressed as average
+         size in hectares (*** = avgsize_ha) or count (*** = count
+         \item *_lakes_**_headwater_overlapping_***: all headwater lakes
+         that are clipped to the zone boundary and are in a particular size
+         class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
+         as sum of lake area (*** = area_ha) or percent of zone area
+         (*** = area_pct)
+         \item *_lakes_**_headwater_contributing_area_ha: all headwater
+         lakes that are within or intersect the zone boundary, and are in a
+         particular size class (** = lakes4ha, lakes4to10ha, lakes10ha),
+         expressed as sum of lake area
+         \item *_lakes_**_drstream_***: all drstream lakes that are within
+         or intersect the zone boundary, and are in a particular size class
+         (** = lakes4ha, lakes4to10ha, lakes10ha), expressed as average
+         size in hectares (*** = avgsize_ha) or count (*** = count
+         \item *_lakes_**_drstream_overlapping_***: all drstream lakes that
+         are clipped to the zone boundary and are in a particular size class
+         (** = lakes4ha, lakes4to10ha, lakes10ha), expressed as sum of lake
+         area (*** = area_ha) or percent of zone area (*** = area_pct)
+         \item *_lakes_**_drstream_contributing_area_ha: all drstream lakes
+         that are within or intersect the zone boundary,
+         and are in a particular size class (** = lakes4ha, lakes4to10ha,
+          lakes10ha), expressed as sum of lake area
+         \item *_lakes_**_drlakestream_***: all drlakestream lakes that are
+         within or intersect the zone boundary, and are in a particular size
+         class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
+         as average size in hectares (*** = avgsize_ha) or
+         count (*** = count
+         \item *_lakes_**_drlakestream_overlapping_***: all drlakestream
+         lakes that are clipped to the zone boundary and are in a particular
+         size class (** = lakes4ha, lakes4to10ha,
+         lakes10ha), expressed as sum of lake area (*** = area_ha) or
+         percent of zone area (*** = area_pct)
+         \item *_lakes_**_drlakestream_contributing_area_ha: all
+         drlakestream lakes that are within or intersect the zone boundary,
+         and are in a particular size class (** = lakes4ha, lakes4to10ha,
+         lakes10ha), expressed as sum of lake area
+         \item *_latewisconsinglaciation_glaciation: zone glaciation status
+         during  the late Wisconsin glaciation (Glaciated, Not_Glaciated,
+          Partially)
      }
      \item Stream Connectivity Metrics
      \itemize{
-         \item *_streamdensity_streams_**: all streams (NHDFlowline minus artificial lines through lakes)
-         within the zone expressed as sum of length in meters (** = sum_lengthm) or density
-         in meters per hectare (** = mperha)
-         \item *_streamdensity_headwaters_*: headwater streams (1st-3rd Strahler order) within the zone
+         \item *_streamdensity_streams_**: all streams (NHDFlowline minus
+         artificial lines through lakes)
+         within the zone expressed as sum of length in meters
+         (** = sum_lengthm) or density in meters per hectare (** = mperha)
+         \item *_streamdensity_headwaters_*: headwater streams
+         (1st-3rd Strahler order) within the zone
          expressed as sum of length in meters (** = sum_lengthm) or density
          in meters per hectare (** = mperha)
-         \item *_streamdensity_midreaches_*: Midreach streams (4th-6th Strahler order) within the zone
+         \item *_streamdensity_midreaches_*: Midreach streams
+         (4th-6th Strahler order) within the zone
          expressed as sum of length in meters (** = sum_lengthm) or density
          in meters per hectare (** = mperha)
-         \item *_streamdensity_rivers_*: large river-streams (>6th Strahler order) within the zone
+         \item *_streamdensity_rivers_*: large river-streams (>6th Strahler
+         order) within the zone
          expressed as sum of length in meters (** = sum_lengthm) or density
          in meters per hectare (** = mperha)
          \item *_canalditchdensity_**: canals within the zone,
@@ -107,8 +126,10 @@ below.
          }
      \item Wetland Connectivity Metrics
      \itemize{
-         \item *_wl_allwetlandsdissolved_**: all wetlands (regardless of vegetation,
-         connection, or regime), expressed as average size in hectares (** = avgsize_ha), total area of wetlands that is contained within or partially intersect the border of this zone
+         \item *_wl_allwetlandsdissolved_**: all wetlands (regardless of
+         vegetation,
+         connection, or regime), expressed as average size in hectares
+         (** = avgsize_ha), total area of wetlands that is contained within or partially intersect the border of this zone
          (** = overlapping_area_ha),
          total land area of this zone that is covered by all wetlands
          (** = contributing_area_ha),

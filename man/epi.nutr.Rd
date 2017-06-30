@@ -17,12 +17,23 @@
 \title{Epilimnion Water Quality Data}
 \format{A data frame with 289482 observations of 93 variables:
 \itemize{
-            \item eventida1087: unique combination of programid, lakeid, and date for each sampling event in LAGOS
-            \item lagoslakeid: unique integer identifier for each lake in LAGOS
-            \item programname: name of the sampling/monitoring program that collected the data
-            \item programtype: categorical description of the type of sampling/monitoring effort (Federal Agency, LTER = Long Term Ecological Research program, National Survey Program, Non-Profit Agency, State Agency, State Agency/Citizen Monitoring Program, State Agency/University/Citizen Monitoring Program, State Agency/Citizen Monitoring Program, Tribal Agency, University)
-            \item lagosversion: current version of LAGOS that the data record belongs to
-            \item sampledate: date at which the sample was collected, stored in date format (YYYY-MM-DD)
+            \item eventida1087: unique combination of programid, lakeid, and
+            date for each sampling event in LAGOS
+            \item lagoslakeid: unique integer identifier for each lake in
+            LAGOS
+            \item programname: name of the sampling/monitoring program that
+            collected the data
+            \item programtype: categorical description of the type of
+            sampling/monitoring effort (Federal Agency, LTER = Long Term
+            Ecological Research program, National Survey Program, Non-Profit
+            Agency, State Agency, State Agency/Citizen Monitoring Program,
+            State Agency/University/Citizen Monitoring Program,
+            State Agency/Citizen Monitoring Program, Tribal Agency,
+            University)
+            \item lagosversion: current version of LAGOS that the data
+            record belongs to
+            \item sampledate: date at which the sample was collected, stored
+            in date format (YYYY-MM-DD)
             \item chla: chlorophyll a (µg/l)
             \item colora: color, apparent (PCU)
             \item colort: color, true (PCU)
@@ -30,7 +41,8 @@
             \item doc: carbon, dissolved organic (µg/l as C)
             \item nh4: nitrogen, ammonium NH4 (µg/l as N)
             \item no2: nitrogen, nitrite NO2 (µg/l as N)
-            \item no2no3: nitrogen, nitrite NO2 + nitrate NO3 nitrogen (µg/l as N)
+            \item no2no3: nitrogen, nitrite NO2 + nitrate NO3 nitrogen
+            (µg/l as N)
             \item srp: phosphorus, soluble reactive  (µg/l as P)
             \item tdn: nitrogen, total dissolved (µg/l as N)
             \item tdp: phosphorus, total dissolved (µg/l as P)
@@ -40,8 +52,15 @@
             \item ton: nitrogen, total organic (µg/l as N)
             \item tp: phosphorus, total (µg/l as P)
             \item secchi: Secchi disk transparency (m)
-            \item *_qual: data flags (qualifiers) from the source program for each water quality parameter (* = all water quality parameters listed above). For example, "chla_qual" is the variable name for the data flag for chlorophyll a observations.
-            \item *_censorcode: identifies whether a data value is censored and the censor type for each water quality parameter (* = all water quality parameters listed above). For example, "chla_censorcode" is the variable name for censor information regarding chlorophyll a observations.
+            \item *_qual: data flags (qualifiers) from the source program
+            for each water quality parameter (* = all water quality
+            parameters listed above). For example, "chla_qual" is the
+            variable name for the data flag for chlorophyll a observations.
+            \item *_censorcode: identifies whether a data value is censored
+            and the censor type for each water quality parameter (* = all
+            water quality parameters listed above). For example,
+            "chla_censorcode" is the variable name for censor information
+            regarding chlorophyll a observations.
             \itemize{
                 \item NC1: has detection limit and data value is above detection limit and has no qualifier or comments
                 \item NC2: has detection limit and data value is above detection limit, and has qualifier or comments
@@ -60,7 +79,8 @@
             \item samplemonth: month in which sample was collected
     }}
 \description{
-A dataset containing physical and chemical observations in the epilimnion (surface waters).
+A dataset containing physical and chemical observations in the epilimnion
+(surface waters).
 Each row is a sampling event, and lakes can have multiple sampling events.
 }
 \references{

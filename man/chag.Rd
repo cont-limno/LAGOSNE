@@ -29,34 +29,63 @@ units (*** = min, max, mean, std for atmospheric deposition and hydrology;
     specified year
    \item *_dep_totaln_**_***: total inorganic nitrogen ion wet deposition
    (kg/ha) in zone during specified year
-   \item *_baseflowindex_***: % of streamflow that can be attributed to ground-water discharge into streams in the zone (baseflow/totalflow *100)
-   \item *_groundwaterrecharge_***: mean annual natural groundwater recharge (mm/yr) in zone - Baseflow multiplied by mean annual runoff
+   \item *_baseflowindex_***: % of streamflow that can be attributed to
+   ground-water discharge into streams in the zone (baseflow/totalflow *100)
+   \item *_groundwaterrecharge_***: mean annual natural groundwater recharge
+   (mm/yr) in zone - Baseflow multiplied by mean annual runoff
    \item *_runoff_***: average annual runoff (in/yr) in the zone, 1951-80
-   \item *_prism_ppt_30yr_normal_800mm2_annual_***: 30-yr long-term (normal) annual mean precipitation (mm/yr) for zone
-   \item *_prism_tmax_30yr_normal_800mm2_annual_***: 30-yr long-term (normal) annual maximum temperature (deg C) for zone
-   \item *_prism_tmean_30yr_normal_800mm2_annual_***: 30-yr long-term (normal) annual mean temperature (deg C) for zone
-   \item *_prism_tmin_30yr_normal_800mm2_annual_***: 30-yr long-term (normal) annual minimum temperature  (deg C) for zone
+   \item *_prism_ppt_30yr_normal_800mm2_annual_***: 30-yr long-term (normal)
+    annual mean precipitation (mm/yr) for zone
+   \item *_prism_tmax_30yr_normal_800mm2_annual_***: 30-yr long-term
+   (normal) annual maximum temperature (deg C) for zone
+   \item *_prism_tmean_30yr_normal_800mm2_annual_***: 30-yr long-term
+   (normal) annual mean temperature (deg C) for zone
+   \item *_prism_tmin_30yr_normal_800mm2_annual_***: 30-yr long-term
+   (normal) annual minimum temperature  (deg C) for zone
    \item *_surficialgeology_alluv_***: alluvial of all ages
    \item *_surficialgeology_beach_***: beach deposits of Holocene age
    \item *_surficialgeology_colluv_***: colluvium of all ages
-   \item *_surficialgeology_dec_resid_***: decomposition residuum of all ages
+   \item *_surficialgeology_dec_resid_***: decomposition residuum of all
+   ages
    \item *_surficialgeology_eolian_***: silt (loess), sand of all ages
-   \item *_surficialgeology_gf_out_***: glaciofluvial (outwash) deposits of all ages
-   \item *_surficialgeology_grus_***: glaciated, granitic grus of Quaternary and Tertiary age
-   \item *_surficialgeology_ice_***: ice-contact depositives of lake Wisconsin and Holocene age
-   \item *_surficialgeology_lac_***: combination of: Glacial-lake clay and silt lake deposits of pre-Illinoian and Illinoin age; Glacial and postglacial lake deposits (delta, clay, silt and sand,  sand and gravel, density-current underflow-fan) of Holocene and late Wisconsin age; Beach sand and dune sand deposits of Holocene age; and Lake slack-water and alluvium deposits of pre-Illinoian, Illinoian, and late Wisconsin ages
-   \item *_surficialgeology_lac_clay_***: glacial and postglacial lake deposits (clay and silt) of Holocene and late Wisconsin age
-   \item *_surficialgeology_marine_***: coastal-plain marine deposits of Pleistocene and Pliocene ages, and glaciomarine deposits of late Wisconsin age
+   \item *_surficialgeology_gf_out_***: glaciofluvial (outwash) deposits of
+   all ages
+   \item *_surficialgeology_grus_***: glaciated, granitic grus of Quaternary
+   and Tertiary age
+   \item *_surficialgeology_ice_***: ice-contact depositives of lake
+   Wisconsin and Holocene age
+   \item *_surficialgeology_lac_***: combination of: Glacial-lake clay and
+   silt lake deposits of pre-Illinoian and Illinoin age; Glacial and
+   postglacial lake deposits (delta, clay, silt and sand,  sand and gravel,
+   density-current underflow-fan) of Holocene and late Wisconsin age; Beach
+   sand and dune sand deposits of Holocene age; and Lake slack-water and
+   alluvium deposits of pre-Illinoian, Illinoian, and late Wisconsin ages
+   \item *_surficialgeology_lac_clay_***: glacial and postglacial lake
+   deposits (clay and silt) of Holocene and late Wisconsin age
+   \item *_surficialgeology_marine_***: coastal-plain marine deposits of
+   Pleistocene and Pliocene ages, and glaciomarine deposits of late
+   Wisconsin age
    \item *_surficialgeologyy_open_water_***: open water
-   \item *_surficialgeology_other_***: surficial deposits, surficial materials, and bedrock masses that were deformed and (or) transported intact by glacial ice
-   \item *_surficialgeology_peat_mrsh_***: coastal or inland deposits of freshwater, brackish-water, peat and muck or freshwater swamps of Holocene and late Wisconsin age
-   \item *_surficialgeology_saprol_***: saprolite of quaternary and tertiary age on crystalline igneous and metamorphic rocks mostly
-   \item *_surficialgeology_solif_***: solifluction deposits of Holocene and late to middle Pleistocene age, and lake Wisconsin age
-   \item *_surficialgeology_solut_***: solution residuum of Quaternary and tertiary age
-   \item *_surficialgeology_till_clay_***: till, clay of pre-Illinoian age, late Wisconsin and Holocene(?) age
-   \item *_surficialgeology_till_loam_***: till, loam of pre-Illinoian, Illinoian, and late Wisconsin and Holocene(?) age
-   \item *_surficialgeology_till_oth_***: till, complex depositions of lake Wisconsin and Illinoian age
-   \item *_surficialgeology_till_sand_***: till, sand of pre-Illinoian age, late Wisconsin and Holocene(?) age
+   \item *_surficialgeology_other_***: surficial deposits, surficial
+   materials, and bedrock masses that were deformed and (or) transported
+   intact by glacial ice
+   \item *_surficialgeology_peat_mrsh_***: coastal or inland deposits of
+   freshwater, brackish-water, peat and muck or freshwater swamps of
+   Holocene and late Wisconsin age
+   \item *_surficialgeology_saprol_***: saprolite of quaternary and tertiary
+   age on crystalline igneous and metamorphic rocks mostly
+   \item *_surficialgeology_solif_***: solifluction deposits of Holocene and
+    late to middle Pleistocene age, and lake Wisconsin age
+   \item *_surficialgeology_solut_***: solution residuum of Quaternary and
+   tertiary age
+   \item *_surficialgeology_till_clay_***: till, clay of pre-Illinoian age,
+   late Wisconsin and Holocene(?) age
+   \item *_surficialgeology_till_loam_***: till, loam of pre-Illinoian,
+   Illinoian, and late Wisconsin and Holocene(?) age
+   \item *_surficialgeology_till_oth_***: till, complex depositions of lake
+   Wisconsin and Illinoian age
+   \item *_surficialgeology_till_sand_***: till, sand of pre-Illinoian age,
+   late Wisconsin and Holocene(?) age
 }}
 \description{
 Datasets containing information on climate, hydrology, atmospheric

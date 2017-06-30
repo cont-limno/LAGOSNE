@@ -241,34 +241,63 @@ NULL
 #'     specified year
 #'    \item *_dep_totaln_**_***: total inorganic nitrogen ion wet deposition
 #'    (kg/ha) in zone during specified year
-#'    \item *_baseflowindex_***: % of streamflow that can be attributed to ground-water discharge into streams in the zone (baseflow/totalflow *100)
-#'    \item *_groundwaterrecharge_***: mean annual natural groundwater recharge (mm/yr) in zone - Baseflow multiplied by mean annual runoff
+#'    \item *_baseflowindex_***: % of streamflow that can be attributed to
+#'    ground-water discharge into streams in the zone (baseflow/totalflow *100)
+#'    \item *_groundwaterrecharge_***: mean annual natural groundwater recharge
+#'    (mm/yr) in zone - Baseflow multiplied by mean annual runoff
 #'    \item *_runoff_***: average annual runoff (in/yr) in the zone, 1951-80
-#'    \item *_prism_ppt_30yr_normal_800mm2_annual_***: 30-yr long-term (normal) annual mean precipitation (mm/yr) for zone
-#'    \item *_prism_tmax_30yr_normal_800mm2_annual_***: 30-yr long-term (normal) annual maximum temperature (deg C) for zone
-#'    \item *_prism_tmean_30yr_normal_800mm2_annual_***: 30-yr long-term (normal) annual mean temperature (deg C) for zone
-#'    \item *_prism_tmin_30yr_normal_800mm2_annual_***: 30-yr long-term (normal) annual minimum temperature  (deg C) for zone
+#'    \item *_prism_ppt_30yr_normal_800mm2_annual_***: 30-yr long-term (normal)
+#'     annual mean precipitation (mm/yr) for zone
+#'    \item *_prism_tmax_30yr_normal_800mm2_annual_***: 30-yr long-term
+#'    (normal) annual maximum temperature (deg C) for zone
+#'    \item *_prism_tmean_30yr_normal_800mm2_annual_***: 30-yr long-term
+#'    (normal) annual mean temperature (deg C) for zone
+#'    \item *_prism_tmin_30yr_normal_800mm2_annual_***: 30-yr long-term
+#'    (normal) annual minimum temperature  (deg C) for zone
 #'    \item *_surficialgeology_alluv_***: alluvial of all ages
 #'    \item *_surficialgeology_beach_***: beach deposits of Holocene age
 #'    \item *_surficialgeology_colluv_***: colluvium of all ages
-#'    \item *_surficialgeology_dec_resid_***: decomposition residuum of all ages
+#'    \item *_surficialgeology_dec_resid_***: decomposition residuum of all
+#'    ages
 #'    \item *_surficialgeology_eolian_***: silt (loess), sand of all ages
-#'    \item *_surficialgeology_gf_out_***: glaciofluvial (outwash) deposits of all ages
-#'    \item *_surficialgeology_grus_***: glaciated, granitic grus of Quaternary and Tertiary age
-#'    \item *_surficialgeology_ice_***: ice-contact depositives of lake Wisconsin and Holocene age
-#'    \item *_surficialgeology_lac_***: combination of: Glacial-lake clay and silt lake deposits of pre-Illinoian and Illinoin age; Glacial and postglacial lake deposits (delta, clay, silt and sand,  sand and gravel, density-current underflow-fan) of Holocene and late Wisconsin age; Beach sand and dune sand deposits of Holocene age; and Lake slack-water and alluvium deposits of pre-Illinoian, Illinoian, and late Wisconsin ages
-#'    \item *_surficialgeology_lac_clay_***: glacial and postglacial lake deposits (clay and silt) of Holocene and late Wisconsin age
-#'    \item *_surficialgeology_marine_***: coastal-plain marine deposits of Pleistocene and Pliocene ages, and glaciomarine deposits of late Wisconsin age
+#'    \item *_surficialgeology_gf_out_***: glaciofluvial (outwash) deposits of
+#'    all ages
+#'    \item *_surficialgeology_grus_***: glaciated, granitic grus of Quaternary
+#'    and Tertiary age
+#'    \item *_surficialgeology_ice_***: ice-contact depositives of lake
+#'    Wisconsin and Holocene age
+#'    \item *_surficialgeology_lac_***: combination of: Glacial-lake clay and
+#'    silt lake deposits of pre-Illinoian and Illinoin age; Glacial and
+#'    postglacial lake deposits (delta, clay, silt and sand,  sand and gravel,
+#'    density-current underflow-fan) of Holocene and late Wisconsin age; Beach
+#'    sand and dune sand deposits of Holocene age; and Lake slack-water and
+#'    alluvium deposits of pre-Illinoian, Illinoian, and late Wisconsin ages
+#'    \item *_surficialgeology_lac_clay_***: glacial and postglacial lake
+#'    deposits (clay and silt) of Holocene and late Wisconsin age
+#'    \item *_surficialgeology_marine_***: coastal-plain marine deposits of
+#'    Pleistocene and Pliocene ages, and glaciomarine deposits of late
+#'    Wisconsin age
 #'    \item *_surficialgeologyy_open_water_***: open water
-#'    \item *_surficialgeology_other_***: surficial deposits, surficial materials, and bedrock masses that were deformed and (or) transported intact by glacial ice
-#'    \item *_surficialgeology_peat_mrsh_***: coastal or inland deposits of freshwater, brackish-water, peat and muck or freshwater swamps of Holocene and late Wisconsin age
-#'    \item *_surficialgeology_saprol_***: saprolite of quaternary and tertiary age on crystalline igneous and metamorphic rocks mostly
-#'    \item *_surficialgeology_solif_***: solifluction deposits of Holocene and late to middle Pleistocene age, and lake Wisconsin age
-#'    \item *_surficialgeology_solut_***: solution residuum of Quaternary and tertiary age
-#'    \item *_surficialgeology_till_clay_***: till, clay of pre-Illinoian age, late Wisconsin and Holocene(?) age
-#'    \item *_surficialgeology_till_loam_***: till, loam of pre-Illinoian, Illinoian, and late Wisconsin and Holocene(?) age
-#'    \item *_surficialgeology_till_oth_***: till, complex depositions of lake Wisconsin and Illinoian age
-#'    \item *_surficialgeology_till_sand_***: till, sand of pre-Illinoian age, late Wisconsin and Holocene(?) age
+#'    \item *_surficialgeology_other_***: surficial deposits, surficial
+#'    materials, and bedrock masses that were deformed and (or) transported
+#'    intact by glacial ice
+#'    \item *_surficialgeology_peat_mrsh_***: coastal or inland deposits of
+#'    freshwater, brackish-water, peat and muck or freshwater swamps of
+#'    Holocene and late Wisconsin age
+#'    \item *_surficialgeology_saprol_***: saprolite of quaternary and tertiary
+#'    age on crystalline igneous and metamorphic rocks mostly
+#'    \item *_surficialgeology_solif_***: solifluction deposits of Holocene and
+#'     late to middle Pleistocene age, and lake Wisconsin age
+#'    \item *_surficialgeology_solut_***: solution residuum of Quaternary and
+#'    tertiary age
+#'    \item *_surficialgeology_till_clay_***: till, clay of pre-Illinoian age,
+#'    late Wisconsin and Holocene(?) age
+#'    \item *_surficialgeology_till_loam_***: till, loam of pre-Illinoian,
+#'    Illinoian, and late Wisconsin and Holocene(?) age
+#'    \item *_surficialgeology_till_oth_***: till, complex depositions of lake
+#'    Wisconsin and Illinoian age
+#'    \item *_surficialgeology_till_sand_***: till, sand of pre-Illinoian age,
+#'    late Wisconsin and Holocene(?) age
 #'}
 #'
 #' @docType data
@@ -280,17 +309,29 @@ NULL
 
 #' Epilimnion Water Quality Data
 #'
-#' A dataset containing physical and chemical observations in the epilimnion (surface waters).
+#' A dataset containing physical and chemical observations in the epilimnion
+#' (surface waters).
 #' Each row is a sampling event, and lakes can have multiple sampling events.
 #'
 #' @format A data frame with 289482 observations of 93 variables:
 #' \itemize{
-#'             \item eventida1087: unique combination of programid, lakeid, and date for each sampling event in LAGOS
-#'             \item lagoslakeid: unique integer identifier for each lake in LAGOS
-#'             \item programname: name of the sampling/monitoring program that collected the data
-#'             \item programtype: categorical description of the type of sampling/monitoring effort (Federal Agency, LTER = Long Term Ecological Research program, National Survey Program, Non-Profit Agency, State Agency, State Agency/Citizen Monitoring Program, State Agency/University/Citizen Monitoring Program, State Agency/Citizen Monitoring Program, Tribal Agency, University)
-#'             \item lagosversion: current version of LAGOS that the data record belongs to
-#'             \item sampledate: date at which the sample was collected, stored in date format (YYYY-MM-DD)
+#'             \item eventida1087: unique combination of programid, lakeid, and
+#'             date for each sampling event in LAGOS
+#'             \item lagoslakeid: unique integer identifier for each lake in
+#'             LAGOS
+#'             \item programname: name of the sampling/monitoring program that
+#'             collected the data
+#'             \item programtype: categorical description of the type of
+#'             sampling/monitoring effort (Federal Agency, LTER = Long Term
+#'             Ecological Research program, National Survey Program, Non-Profit
+#'             Agency, State Agency, State Agency/Citizen Monitoring Program,
+#'             State Agency/University/Citizen Monitoring Program,
+#'             State Agency/Citizen Monitoring Program, Tribal Agency,
+#'             University)
+#'             \item lagosversion: current version of LAGOS that the data
+#'             record belongs to
+#'             \item sampledate: date at which the sample was collected, stored
+#'             in date format (YYYY-MM-DD)
 #'             \item chla: chlorophyll a (µg/l)
 #'             \item colora: color, apparent (PCU)
 #'             \item colort: color, true (PCU)
@@ -298,7 +339,8 @@ NULL
 #'             \item doc: carbon, dissolved organic (µg/l as C)
 #'             \item nh4: nitrogen, ammonium NH4 (µg/l as N)
 #'             \item no2: nitrogen, nitrite NO2 (µg/l as N)
-#'             \item no2no3: nitrogen, nitrite NO2 + nitrate NO3 nitrogen (µg/l as N)
+#'             \item no2no3: nitrogen, nitrite NO2 + nitrate NO3 nitrogen
+#'             (µg/l as N)
 #'             \item srp: phosphorus, soluble reactive  (µg/l as P)
 #'             \item tdn: nitrogen, total dissolved (µg/l as N)
 #'             \item tdp: phosphorus, total dissolved (µg/l as P)
@@ -308,8 +350,15 @@ NULL
 #'             \item ton: nitrogen, total organic (µg/l as N)
 #'             \item tp: phosphorus, total (µg/l as P)
 #'             \item secchi: Secchi disk transparency (m)
-#'             \item *_qual: data flags (qualifiers) from the source program for each water quality parameter (* = all water quality parameters listed above). For example, "chla_qual" is the variable name for the data flag for chlorophyll a observations.
-#'             \item *_censorcode: identifies whether a data value is censored and the censor type for each water quality parameter (* = all water quality parameters listed above). For example, "chla_censorcode" is the variable name for censor information regarding chlorophyll a observations.
+#'             \item *_qual: data flags (qualifiers) from the source program
+#'             for each water quality parameter (* = all water quality
+#'             parameters listed above). For example, "chla_qual" is the
+#'             variable name for the data flag for chlorophyll a observations.
+#'             \item *_censorcode: identifies whether a data value is censored
+#'             and the censor type for each water quality parameter (* = all
+#'             water quality parameters listed above). For example,
+#'             "chla_censorcode" is the variable name for censor information
+#'             regarding chlorophyll a observations.
 #'             \itemize{
 #'                 \item NC1: has detection limit and data value is above detection limit and has no qualifier or comments
 #'                 \item NC2: has detection limit and data value is above detection limit, and has qualifier or comments
@@ -404,53 +453,72 @@ NULL
 #'          (** = lakes4ha, lakes4to10ha, lakes10ha), expressed as average size
 #'           in hectares (*** = avgsize_ha) or count (*** = count
 #'          \item *_lakes_**_isolated_overlapping_***: all isolated lakes that
-#'          are clipped to the zone boundary and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
-#'          as sum of lake area (*** = area_ha) or percent of zone area (*** = area_pct)
-#'          \item *_lakes_**_isolated_contributing_area_ha: all isolated lakes that are within or intersect the zone boundary,
-#'          and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed as
-#'          sum of lake area
-#'           \item *_lakes_**_headwater_***: all headwater lakes that are within or intersect the zone boundary,
-#'          and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
-#'          as average size in hectares (*** = avgsize_ha) or count (*** = count
-#'          \item *_lakes_**_headwater_overlapping_***: all headwater lakes that are clipped to the zone boundary
-#'          and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
-#'          as sum of lake area (*** = area_ha) or percent of zone area (*** = area_pct)
-#'          \item *_lakes_**_headwater_contributing_area_ha: all headwater lakes that are within or intersect the zone boundary,
-#'          and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed as
-#'          sum of lake area
-#'          \item *_lakes_**_drstream_***: all drstream lakes that are within or intersect the zone boundary,
-#'          and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
-#'          as average size in hectares (*** = avgsize_ha) or count (*** = count
-#'          \item *_lakes_**_drstream_overlapping_***: all drstream lakes that are clipped to the zone boundary
-#'          and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
-#'          as sum of lake area (*** = area_ha) or percent of zone area (*** = area_pct)
-#'          \item *_lakes_**_drstream_contributing_area_ha: all drstream lakes that are within or intersect the zone boundary,
-#'          and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed as
-#'          sum of lake area
-#'          \item *_lakes_**_drlakestream_***: all drlakestream lakes that are within or intersect the zone boundary,
-#'          and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
-#'          as average size in hectares (*** = avgsize_ha) or count (*** = count
-#'          \item *_lakes_**_drlakestream_overlapping_***: all drlakestream lakes that are clipped to the zone boundary
-#'          and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
-#'          as sum of lake area (*** = area_ha) or percent of zone area (*** = area_pct)
-#'          \item *_lakes_**_drlakestream_contributing_area_ha: all drlakestream lakes that are within or intersect the zone boundary,
-#'          and are in a particular size class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed as
-#'          sum of lake area
-#'          \item *_latewisconsinglaciation_glaciation: zone glaciation status during
-#'          the late Wisconsin glaciation (Glaciated, Not_Glaciated, Partially)
+#'          are clipped to the zone boundary and are in a particular size class
+#'          (** = lakes4ha, lakes4to10ha, lakes10ha), expressed as sum of lake
+#'          area (*** = area_ha) or percent of zone area (*** = area_pct)
+#'          \item *_lakes_**_isolated_contributing_area_ha: all isolated lakes
+#'          that are within or intersect the zone boundary, and are in a
+#'          particular size class (** = lakes4ha, lakes4to10ha, lakes10ha),
+#'          expressed as sum of lake area
+#'          \item *_lakes_**_headwater_***: all headwater lakes that are within
+#'          or intersect the zone boundary, and are in a particular size class
+#'          (** = lakes4ha, lakes4to10ha, lakes10ha), expressed as average
+#'          size in hectares (*** = avgsize_ha) or count (*** = count
+#'          \item *_lakes_**_headwater_overlapping_***: all headwater lakes
+#'          that are clipped to the zone boundary and are in a particular size
+#'          class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
+#'          as sum of lake area (*** = area_ha) or percent of zone area
+#'          (*** = area_pct)
+#'          \item *_lakes_**_headwater_contributing_area_ha: all headwater
+#'          lakes that are within or intersect the zone boundary, and are in a
+#'          particular size class (** = lakes4ha, lakes4to10ha, lakes10ha),
+#'          expressed as sum of lake area
+#'          \item *_lakes_**_drstream_***: all drstream lakes that are within
+#'          or intersect the zone boundary, and are in a particular size class
+#'          (** = lakes4ha, lakes4to10ha, lakes10ha), expressed as average
+#'          size in hectares (*** = avgsize_ha) or count (*** = count
+#'          \item *_lakes_**_drstream_overlapping_***: all drstream lakes that
+#'          are clipped to the zone boundary and are in a particular size class
+#'          (** = lakes4ha, lakes4to10ha, lakes10ha), expressed as sum of lake
+#'          area (*** = area_ha) or percent of zone area (*** = area_pct)
+#'          \item *_lakes_**_drstream_contributing_area_ha: all drstream lakes
+#'          that are within or intersect the zone boundary,
+#'          and are in a particular size class (** = lakes4ha, lakes4to10ha,
+#'           lakes10ha), expressed as sum of lake area
+#'          \item *_lakes_**_drlakestream_***: all drlakestream lakes that are
+#'          within or intersect the zone boundary, and are in a particular size
+#'          class (** = lakes4ha, lakes4to10ha, lakes10ha), expressed
+#'          as average size in hectares (*** = avgsize_ha) or
+#'          count (*** = count
+#'          \item *_lakes_**_drlakestream_overlapping_***: all drlakestream
+#'          lakes that are clipped to the zone boundary and are in a particular
+#'          size class (** = lakes4ha, lakes4to10ha,
+#'          lakes10ha), expressed as sum of lake area (*** = area_ha) or
+#'          percent of zone area (*** = area_pct)
+#'          \item *_lakes_**_drlakestream_contributing_area_ha: all
+#'          drlakestream lakes that are within or intersect the zone boundary,
+#'          and are in a particular size class (** = lakes4ha, lakes4to10ha,
+#'          lakes10ha), expressed as sum of lake area
+#'          \item *_latewisconsinglaciation_glaciation: zone glaciation status
+#'          during  the late Wisconsin glaciation (Glaciated, Not_Glaciated,
+#'           Partially)
 #'      }
 #'      \item Stream Connectivity Metrics
 #'      \itemize{
-#'          \item *_streamdensity_streams_**: all streams (NHDFlowline minus artificial lines through lakes)
-#'          within the zone expressed as sum of length in meters (** = sum_lengthm) or density
-#'          in meters per hectare (** = mperha)
-#'          \item *_streamdensity_headwaters_*: headwater streams (1st-3rd Strahler order) within the zone
+#'          \item *_streamdensity_streams_**: all streams (NHDFlowline minus
+#'          artificial lines through lakes)
+#'          within the zone expressed as sum of length in meters
+#'          (** = sum_lengthm) or density in meters per hectare (** = mperha)
+#'          \item *_streamdensity_headwaters_*: headwater streams
+#'          (1st-3rd Strahler order) within the zone
 #'          expressed as sum of length in meters (** = sum_lengthm) or density
 #'          in meters per hectare (** = mperha)
-#'          \item *_streamdensity_midreaches_*: Midreach streams (4th-6th Strahler order) within the zone
+#'          \item *_streamdensity_midreaches_*: Midreach streams
+#'          (4th-6th Strahler order) within the zone
 #'          expressed as sum of length in meters (** = sum_lengthm) or density
 #'          in meters per hectare (** = mperha)
-#'          \item *_streamdensity_rivers_*: large river-streams (>6th Strahler order) within the zone
+#'          \item *_streamdensity_rivers_*: large river-streams (>6th Strahler
+#'          order) within the zone
 #'          expressed as sum of length in meters (** = sum_lengthm) or density
 #'          in meters per hectare (** = mperha)
 #'          \item *_canalditchdensity_**: canals within the zone,
@@ -459,8 +527,10 @@ NULL
 #'          }
 #'      \item Wetland Connectivity Metrics
 #'      \itemize{
-#'          \item *_wl_allwetlandsdissolved_**: all wetlands (regardless of vegetation,
-#'          connection, or regime), expressed as average size in hectares (** = avgsize_ha), total area of wetlands that is contained within or partially intersect the border of this zone
+#'          \item *_wl_allwetlandsdissolved_**: all wetlands (regardless of
+#'          vegetation,
+#'          connection, or regime), expressed as average size in hectares
+#'          (** = avgsize_ha), total area of wetlands that is contained within or partially intersect the border of this zone
 #'          (** = overlapping_area_ha),
 #'          total land area of this zone that is covered by all wetlands
 #'          (** = contributing_area_ha),
