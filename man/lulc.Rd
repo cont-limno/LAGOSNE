@@ -15,13 +15,14 @@
 \alias{topography}
 \alias{nlcd}
 \title{Land Use Land Cover (LULC) Data Frames}
-\format{Data frames with all or a subset of the following variables. Number of observations is
-equal to the number of zones in each spatial scale (see Details below). Wildcard options
-include the 9 LAGOS spatial scales (* = lakes4ha.buff100m, lakes4ha.buffer500m,
-iws, hu12, hu8, hu4, edu, county, state), year of measurement (** = 1992, 2001, 2006,
-2011), and unit of measurement in hectares or percent of zone area (*** = ha, pct unless
-noted otherwise). Each variable is available at each scale, year, and unit unless
-otherwise noted.
+\format{Data frames with all or a subset of the following variables. Number
+of observations is equal to the number of zones in each spatial scale
+(see Details below). Wildcard options include the 9 LAGOS spatial scales
+(* = lakes4ha.buff100m, lakes4ha.buffer500m, iws, hu12, hu8, hu4, edu,
+county, state), year of measurement (** = 1992, 2001, 2006, 2011), and unit
+of measurement in hectares or percent of zone area (*** = ha, pct unless
+noted otherwise). Each variable is available at each scale, year, and unit
+unless otherwise noted.
 \itemize{
    \item *_nhdid (* = lakes4ha_buffer100m, lakes4ha_buffer500m, iws)
    \item *_canopy2001_***: per pixel tree canopy percent measured 2001. Summary
@@ -78,12 +79,13 @@ otherwise noted.
    in iws.lulc table.
     }}
 \description{
-Datasets containing information on the land use and land cover (LULC) characteristics
-calculated at all LAGOS spatial classifications (see ?scales) from the National Land Cover
-Dataset (NLCD).
+Datasets containing information on the land use and land cover (LULC)
+characteristics calculated at all LAGOS spatial classifications
+(see ?scales) from the National Land Cover Dataset (NLCD).
 }
 \details{
-Original data sources and layers from which each metric was derived can be found in additional file 5 of Soranno et al. (2015).
+Original data sources and layers from which each metric was derived can be
+found in additional file 5 of Soranno et al. (2015).
 }
 \references{
 Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}; \href{http://www.mrlc.gov/nlcd2011.php}{National Land Cover Database},

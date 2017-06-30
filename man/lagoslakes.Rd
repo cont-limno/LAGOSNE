@@ -44,10 +44,11 @@
              \item iws_ha_in_usa
              \item iws_pct_in_nwi
              \item iws_ha_in_nwi
-             \item lakeconnectivity: connectivity of focal lake to upstream features
-             (DR_LakeStream = drainage lake with an upstream lake, DR_Stream = drainage lake
-             with upstream stream, Headwater = lake with outlet but no inlet, Isolated =
-             lake with no inlets or outlets)
+             \item lakeconnectivity: connectivity of focal lake to upstream
+             features (DR_LakeStream = drainage lake with an upstream lake,
+             DR_Stream = drainage lake with upstream stream,
+             Headwater = lake with outlet but no inlet,
+             Isolated = lake with no inlets or outlets)
              \item lakes4ha_upstreamlakes_upstream_lakes_4ha_count
              \item lakes4ha_upstreamlakes_upstream_lakes_4ha_area_ha
              \item lakes4ha_upstreamlakes_upstream_lakes_10ha_count

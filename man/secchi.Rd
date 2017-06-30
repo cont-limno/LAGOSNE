@@ -26,8 +26,8 @@ A dataset containing Secchi disk measurements from lakes.
 }
 \details{
 There is some overlap between the Secchi values reported in table 'secchi'
-and table 'epi.nut'. The 'epi.nutr' table only contains Secchi observations when
-there were additional nutrient data collected at the same time.
+and table 'epi.nut'. The 'epi.nutr' table only contains Secchi observations
+when there were additional nutrient data collected at the same time.
 }
 \references{
 Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}

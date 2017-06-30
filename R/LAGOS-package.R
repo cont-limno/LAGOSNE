@@ -50,39 +50,47 @@ NULL
 #'     have a single flow outlet except in frontal, lake, braided-stream, or
 #'     closed-basin hydrologic units. Themes derived at the HUC12
 #'     classification include LULC, CONN and CHAG.
-#'     \item hu8: a data frame with 511 observations of 9 variables. HUC8s are the fourth
-#'     level of classificiation. Sometimes called 'watersheds', a HUC8 is a geographic area
-#'     representing part or all of a surface drainage basin, a combination of drainage
-#'     basins, or a distinct hydrologic feature. Themes derived at the HUC8 classification include
+#'     \item hu8: a data frame with 511 observations of 9 variables. HUC8s are
+#'     the fourth level of classificiation. Sometimes called 'watersheds', a
+#'     HUC8 is a geographic area representing part or all of a surface
+#'     drainage basin, a combination of drainage basins, or a distinct
+#'     hydrologic feature. Themes derived at the HUC8 classification include
 #'     LULC, CONN, and CHAG.
-#'     \item hu4: a data frame with 65 observations of 9 variables. HUC4s are the second level
-#'     of classification, called a 'subregion'. A subregion includes the area drained by a
-#'     river system, a reach of a river and its tributaries in that reach, a closed basin(s),
-#'     or a group of streams forming a coastal drainage area. Themes derived at the HUC4
+#'     \item hu4: a data frame with 65 observations of 9 variables. HUC4s are
+#'     the second level of classification, called a 'subregion'. A subregion
+#'     includes the area drained by a river system, a reach of a river and its
+#'     tributaries in that reach, a closed basin(s), or a group of streams
+#'     forming a coastal drainage area. Themes derived at the HUC4
 #'     classification include LULC, CONN, and CHAG.
-#'     \item edu: a data frame with 91 observations of 10 variables. Ecological drainage units
-#'     (EDUs) follow the WBD boundaries, and are of roughly similar size to HUC6s.
-#'     EDUs were delineated by grouping the HUC8 watersheds based on common zoogeographic
-#'     history, and physiographic and climatic characteristics. Themes derived at the EDU
+#'     \item edu: a data frame with 91 observations of 10 variables.
+#'     Ecological drainage units (EDUs) follow the WBD boundaries, and are of
+#'     roughly similar size to HUC6s. EDUs were delineated by grouping the
+#'     HUC8 watersheds based on common zoogeographic history, and
+#'     physiographic and climatic characteristics. Themes derived at the EDU
 #'     classification include LULC, CONN, and CHAG.
-#'     \item county: a data frame with 955 observations of 8 variables. Counties (political
-#'     boundary) within the 17-state region of LAGOS. Themes derived at the county classification
-#'     include LULC, CONN, and CHAG.
-#'     \item state: a dataframe with 17 observations of 7 variables. Themes derived at the
-#'     state classification include LULC, CONN, and CHAG.
+#'     \item county: a data frame with 955 observations of 8 variables.
+#'     Counties (political boundary) within the 17-state region of LAGOS.
+#'     Themes derived at the county classification include LULC, CONN, and
+#'     CHAG.
+#'     \item state: a dataframe with 17 observations of 7 variables. Themes
+#'     derived at the state classification include LULC, CONN, and CHAG.
 #' }
 #'
-#' @format Data frames with all or a subset of the following variables. Number of observations is
-#' equal to the number of zones in each spatial classification (see Details below).
+#' @format Data frames with all or a subset of the following variables. Number
+#' of observations is equal to the number of zones in each spatial
+#' classification (see Details below).
 #' \itemize{
 #'     \item *_nhdid: permanent lake-specific identifier from the National Hydrography
 #'     Dataset (* = lakes4ha_buffer100m, lakes4ha_buffer500m, iws)
-#'     \item *_name: text name of the zone (* = iws, hu12, hu8, hu4, county, state)
+#'     \item *_name: text name of the zone (* = iws, hu12, hu8, hu4,
+#'     county, state)
 #'     \item hu*: unique zone identifier (* = 12, 8, 4)
 #'     \item *_ha: area of spatial classification in hectares (* = lakes4ha_buffer100m, lakes4ha_buffer500m, hu12, hu8, hu4, edu, county)
 #'     \item *_areaha: area of spatial classification in hectares (* = iws, )
-#'     \item *_perimkm: perimeter of spatial classification in kilometers (* = iws, )
-#'     \item *_lat: latitude of centroid of polygon in decimal degrees (NAD83) (* = iws, hu12, hu8, hu4, edu, county, state)
+#'     \item *_perimkm: perimeter of spatial classification in kilometers
+#'     (* = iws, )
+#'     \item *_lat: latitude of centroid of polygon in decimal degrees (NAD83)
+#'     (* = iws, hu12, hu8, hu4, edu, county, state)
 #'     \item *_long: longitude of centroid of polygon in decimal degrees (NAD83) (* = iws, hu12, hu8, hu4, edu, county, state)
 #'     \item *_lakeareaha: lake area (ha) of focal lake within polygon (* = iws, )
 #'     \item *_country: whether the polygon lies within the US ("US") or the US and Canada (US_CA) (* = hu12, edu)
@@ -106,19 +114,21 @@ NULL
 
 #' Land Use Land Cover (LULC) Data Frames
 #'
-#' Datasets containing information on the land use and land cover (LULC) characteristics
-#' calculated at all LAGOS spatial classifications (see ?scales) from the National Land Cover
-#' Dataset (NLCD).
+#' Datasets containing information on the land use and land cover (LULC)
+#' characteristics calculated at all LAGOS spatial classifications
+#' (see ?scales) from the National Land Cover Dataset (NLCD).
 #'
-#' Original data sources and layers from which each metric was derived can be found in additional file 5 of Soranno et al. (2015).
+#' Original data sources and layers from which each metric was derived can be
+#' found in additional file 5 of Soranno et al. (2015).
 #'
-#' @format Data frames with all or a subset of the following variables. Number of observations is
-#' equal to the number of zones in each spatial scale (see Details below). Wildcard options
-#' include the 9 LAGOS spatial scales (* = lakes4ha.buff100m, lakes4ha.buffer500m,
-#' iws, hu12, hu8, hu4, edu, county, state), year of measurement (** = 1992, 2001, 2006,
-#' 2011), and unit of measurement in hectares or percent of zone area (*** = ha, pct unless
-#' noted otherwise). Each variable is available at each scale, year, and unit unless
-#' otherwise noted.
+#' @format Data frames with all or a subset of the following variables. Number
+#' of observations is equal to the number of zones in each spatial scale
+#' (see Details below). Wildcard options include the 9 LAGOS spatial scales
+#' (* = lakes4ha.buff100m, lakes4ha.buffer500m, iws, hu12, hu8, hu4, edu,
+#' county, state), year of measurement (** = 1992, 2001, 2006, 2011), and unit
+#' of measurement in hectares or percent of zone area (*** = ha, pct unless
+#' noted otherwise). Each variable is available at each scale, year, and unit
+#' unless otherwise noted.
 #' \itemize{
 #'    \item *_nhdid (* = lakes4ha_buffer100m, lakes4ha_buffer500m, iws)
 #'    \item *_canopy2001_***: per pixel tree canopy percent measured 2001. Summary
@@ -547,10 +557,11 @@ NULL
 #'              \item iws_ha_in_usa
 #'              \item iws_pct_in_nwi
 #'              \item iws_ha_in_nwi
-#'              \item lakeconnectivity: connectivity of focal lake to upstream features
-#'              (DR_LakeStream = drainage lake with an upstream lake, DR_Stream = drainage lake
-#'              with upstream stream, Headwater = lake with outlet but no inlet, Isolated =
-#'              lake with no inlets or outlets)
+#'              \item lakeconnectivity: connectivity of focal lake to upstream
+#'              features (DR_LakeStream = drainage lake with an upstream lake,
+#'              DR_Stream = drainage lake with upstream stream,
+#'              Headwater = lake with outlet but no inlet,
+#'              Isolated = lake with no inlets or outlets)
 #'              \item lakes4ha_upstreamlakes_upstream_lakes_4ha_count
 #'              \item lakes4ha_upstreamlakes_upstream_lakes_4ha_area_ha
 #'              \item lakes4ha_upstreamlakes_upstream_lakes_10ha_count
@@ -572,8 +583,8 @@ NULL
 #' A dataset containing Secchi disk measurements from lakes.
 #'
 #' There is some overlap between the Secchi values reported in table 'secchi'
-#' and table 'epi.nut'. The 'epi.nutr' table only contains Secchi observations when
-#' there were additional nutrient data collected at the same time.
+#' and table 'epi.nut'. The 'epi.nutr' table only contains Secchi observations
+#' when there were additional nutrient data collected at the same time.
 #'
 #' @format A data frame with 913319 observations of 12 variables:
 #' \itemize{
