@@ -8,7 +8,8 @@
 #'@param limno_folder file.path to limno export folder.
 #'@param geo_folder file.path to geo export folder.
 #'@param locus_folder file.path to locus export folder.
-#'@param dest_folder file.path optional will default to the location returned by \code{\link[rappdirs]{user_data_dir}}
+#'@param dest_folder file.path optional will default to the location returned
+#'by \code{\link[rappdirs]{user_data_dir}}
 #'@importFrom utils read.table
 #'@importFrom rappdirs user_data_dir
 #'@examples \dontrun{

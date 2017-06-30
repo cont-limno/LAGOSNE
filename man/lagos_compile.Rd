@@ -18,7 +18,8 @@ lagos_compile(version, format = "rds", limno_folder = NA, geo_folder = NA,
 
 \item{locus_folder}{file.path to locus export folder.}
 
-\item{dest_folder}{file.path optional will default to the location returned by \code{\link[rappdirs]{user_data_dir}}}
+\item{dest_folder}{file.path optional will default to the location returned
+by \code{\link[rappdirs]{user_data_dir}}}
 }
 \description{
 Compile LAGOS data from component flat files

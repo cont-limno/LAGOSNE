@@ -42,40 +42,48 @@ equal to the number of zones in each spatial classification (see Details below).
     \item county_state: state where county is located
     }}
 \description{
-Data frames containing metadata for each spatial classification at which ecological context
-data are derived in LAGOS. The spatial classifications include 100m buffers (lakes4ha.buffer100m),
-500m buffers (lakes4ha.buffer500m), interlake watersheds (iws), hydrologic units (hu12, hu8,
-hu4), ecological drainage units (edu), counties (county), and states (state). Each abbreviation
-is the name of the data frame, with all or a subset of the following variables. For more information
-about derivation of each spatial classification, see Details below or [insert supp docs] from Soranno et al. 2015.
+Data frames containing metadata for each spatial classification at which
+ ecological context data are derived in LAGOS. The spatial classifications
+ include 100m buffers (lakes4ha.buffer100m),
+ 500m buffers (lakes4ha.buffer500m), interlake watersheds (iws),
+ hydrologic units (hu12, hu8, hu4), ecological drainage units (edu),
+ counties (county), and states (state). Each abbreviation is the name of the
+ data frame, with all or a subset of the following variables. For more
+ information about derivation of each spatial classification, see Details
+ below or [insert supp docs] from Soranno et al. 2015.
 }
 \details{
-The nine LAGOS spatial classifications were used to summarize the ecological context of each lake.
-Ecological context themes include land use/land cover (LULC), connectivity (CONN), and
-climate, hydrology, atmospheric deposition, and groundwater (CHAG). Not all themes
-were derived at all classifications due to data availability. Briefly:
+The nine LAGOS spatial classifications were used to summarize the ecological
+context of each lake. Ecological context themes include
+land use/land cover (LULC), connectivity (CONN), and climate, hydrology,
+atmospheric deposition, and groundwater (CHAG). Not all themes were derived
+at all classifications due to data availability. Briefly:
 \itemize{
-    \item iws: a dataframe with 51065 observations of 12 variables. The area of land
-    that drains directly into a lake, and into all upstream-connected, permanent streams
-    to that lake exclusive of any upstream lake watersheds for lakes greater than  10 ha that are
-    connected via permanent streams.  For details on how the watersheds were delineated,
-    see additional file 8 in Soranno et al. (2015). Themes derived at the iws classification include
-    LULC and CONN
-    \item lakes4ha.buffer100m: a dataframe with 51065 of 3 variables. Buffers are a
-    100 m equidistant buffer of the land that is 100 m from the lake shoreline, calculated
-    using the ArcGIS Buffer tool. Themes derived at the 100m buffer classification include LULC.
-    \item lakes4ha.buffer500m: a dataframe with 51065 of 3 variables. Buffers are a
-    500 m equidistant buffer of the land that is 500 m from the lake shoreline, calculated
-    using the ArcGIS Buffer tool. Themes derived at the 500m buffer classification include LULC and
-    CONN.
-    \item hu12: a dataframe with 20257 observations of 11 variables. The Watershed Boundary
-    Dataset defines boundaries based on surface water drainage and creates nested Hydrologic
-    Units (sometimes abbreviated and referred to as HUCs, which are hydrologic unit codes)
-    that are georeferenced to the USGS 1:24,000 topographic base map. HUC12s are the sixth
-    level of classificiation. HUC12s are defined along natural hydrologic breaks based
-    on land surface and surface-water flow and they have a single flow outlet except in
-    frontal, lake, braided-stream, or closed-basin hydrologic units. Themes derived at the
-    HUC12 classification include LULC, CONN and CHAG.
+    \item iws: a dataframe with 51065 observations of 12 variables. The area
+    of land that drains directly into a lake, and into all
+    upstream-connected, permanent streams to that lake exclusive of any
+    upstream lake watersheds for lakes greater than  10 ha that are
+    connected via permanent streams.  For details on how the watersheds were
+    delineated, see additional file 8 in Soranno et al. (2015). Themes
+    derived at the iws classification include LULC and CONN.
+    \item lakes4ha.buffer100m: a dataframe with 51065 of 3 variables.
+    Buffers are a 100 m equidistant buffer of the land that is 100 m from
+    the lake shoreline, calculated using the ArcGIS Buffer tool. Themes
+    derived at the 100m buffer classification include LULC.
+    \item lakes4ha.buffer500m: a dataframe with 51065 of 3 variables.
+    Buffers are a 500 m equidistant buffer of the land that is 500 m from
+    the lake shoreline, calculated using the ArcGIS Buffer tool. Themes
+    derived at the 500m buffer classification include LULC and CONN.
+    \item hu12: a dataframe with 20257 observations of 11 variables. The
+    Watershed Boundary Dataset defines boundaries based on surface water
+    drainage and creates nested Hydrologic Units (sometimes abbreviated and
+    referred to as HUCs, which are hydrologic unit codes) that are
+    georeferenced to the USGS 1:24,000 topographic base map. HUC12s are the
+    sixth level of classificiation. HUC12s are defined along natural
+    hydrologic breaks based on land surface and surface-water flow and they
+    have a single flow outlet except in frontal, lake, braided-stream, or
+    closed-basin hydrologic units. Themes derived at the HUC12
+    classification include LULC, CONN and CHAG.
     \item hu8: a data frame with 511 observations of 9 variables. HUC8s are the fourth
     level of classificiation. Sometimes called 'watersheds', a HUC8 is a geographic area
     representing part or all of a surface drainage basin, a combination of drainage
