@@ -44,6 +44,8 @@ library(LAGOS)
 
 ### Load data
 
+The `lagos_load` function returns a named list of `data.frame` objects. Use the `names()` function to see a list of available `data.frame`s.
+
 ``` r
 dt <- lagos_load(version = "1.087.1")
 names(dt)
