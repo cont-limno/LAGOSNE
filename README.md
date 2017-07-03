@@ -223,7 +223,7 @@ devtools::install_github("cont-limno/LAGOS", ref = "v1.054.1")
 
 ### Data
 
-Until older datasets have been made a available in a public repository, LAGOS users will need to use the `lagos_compile` function (not `lagos_get`) and supply the path to their local `locus`, `limno` and `geo` data folders. Replace the paths in the example below with the path to each respective folder on your system. Most people will have access to these folders through Dropbox. For example, the `limno_folder` would be assigned to something like: `C:/Users/FWL/Dropbox/CSI_LAGOS-exports/LAGOS-NE-LIMNO-EXPORT`
+Until older datasets have been made available in a public repository, LAGOS users will need to use the `lagos_compile` function (not `lagos_get`) and supply the path to their local `locus`, `limno` and `geo` data folders. Replace the paths in the example below with the path to each respective folder on your system. Most people will have access to these folders through Dropbox. For example, the `limno_folder` would be assigned to something like: `C:/Users/FWL/Dropbox/CSI_LAGOS-exports/LAGOS-NE-LIMNO-EXPORT`
 
 ``` r
 library(LAGOS)
