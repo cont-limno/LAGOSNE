@@ -14,7 +14,7 @@ lagos_select(table = NULL, vars = NULL, categories = NULL,
 
 \item{categories}{what type of variables should be kept. Note not all scale-category options are available. Variable categories include:
 \itemize{
-    \item "water.quality" - includes all in-situ chemistry, chlorophyll, and water clarity measurements.
+    \item "waterquality" - includes all in-situ chemistry, chlorophyll, and water clarity measurements from the epi.nutr table.
     \item "deposition" - all atmospheric deposition variables from the .chag tables
     \item "hydrology" - baseflow, groundwater, runoff, and overland flow variables from the .chag tables
     \item "climate" - 30-year normal precipitation and temperature variables from the .chag tables
