@@ -45,7 +45,7 @@ dt <- lagos_load(version = "1.087.1", format = "rds")
 ```
 
 ```{r echo=FALSE}
-data("lg_subset")
+data(lg_subset)
 dt <- lg_subset
 ```
 
