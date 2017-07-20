@@ -45,7 +45,8 @@ dt <- lagos_load(version = "1.087.1", format = "rds")
 ```
 
 ```{r echo=FALSE}
-dt <- readRDS("../tests/testthat/lagos_test_subset.rds")
+data("lg_subset")
+dt <- lg_subset
 ```
 
 ## LAGOS Structure

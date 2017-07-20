@@ -240,6 +240,6 @@ References
 
 Oliver, SK, PA Soranno, CE Fergus, T Wagner, K Webster, CE Scott, LA Winslow, J Downing, and EH Stanley. 2015. “LAGOS - Predicted and Observed Maximum Depth Values for Lakes in a 17-State Region of the U.S.” <https://dx.doi.org/10.6073/pasta/edc06bbae6db80e801b6e52253f2ea09>.
 
-Soranno, PA, EG Bissell, KS Cheruvelil, ST Christel, SM Collins, CE Fergus, CT Filstrup, et al. 2015. “Building a Multi-Scaled Geospatial Temporal Ecology Database from Disparate Data Sources: Fostering Open Science and Data Reuse.” *Gigascience* 4 (1). <https://dx.doi.org/10.1186/s13742-015-0067-4>.
+Soranno, PA, EG Bissell, KS Cheruvelil, ST Christel, SM Collins, CE Fergus, CT Filstrup, et al. 2015. “Building a Multi-Scaled Geospatial Temporal Ecology Database from Disparate Data Sources: Fostering Open Science and Data Reuse.” Gigascience 4 (1). <https://dx.doi.org/10.1186/s13742-015-0067-4>.
 
-Stachelek, J, and SK Oliver. 2017. *LAGOS: R Interface to the Lake Multi-Scaled Geospatial & Temporal Database*. <https://github.com/cont-limno/LAGOS>.
+Stachelek, J, and SK Oliver. 2017. LAGOS: R Interface to the Lake Multi-Scaled Geospatial & Temporal Database. <https://github.com/cont-limno/LAGOS>.

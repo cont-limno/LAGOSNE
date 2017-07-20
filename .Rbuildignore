@@ -16,3 +16,4 @@ create_test_data.R
 R/test.R
 ^\.travis\.yml$
 LAGOS.bib
+^docs$
