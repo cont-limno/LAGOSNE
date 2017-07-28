@@ -1,7 +1,7 @@
 waterquality <- c(
   "chla", "colora", "colort", "dkn", "doc", "nh4",
   "no2", "no2no3", "srp", "tdn", "tdp", "tkn", "tn",
-  "toc", "ton", "tp")
+  "toc", "ton", "tp", "secchi")
 
 keyword_full_key <- function(){
   res <- data.frame(rbind(
@@ -20,8 +20,8 @@ keyword_full_key <- function(){
     c("waterquality", "tn"),
     c("waterquality", "toc"),
     c("waterquality", "ton"),
-    c("waterquality", "tp")
-    # ,c("waterquality", "secchi")
+    c("waterquality", "tp"),
+    c("waterquality", "secchi")
   ), stringsAsFactors = FALSE)
 
   names(res) <- c("keyword", "definition")
