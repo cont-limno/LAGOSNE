@@ -134,6 +134,13 @@ head(lagos_select(table = "epi.nutr", categories = "waterquality"))
 #> 4  4.8     NA     15  NA  NA  NA  NA     NA  NA  NA  NA  NA NA  NA  NA  9
 #> 5  2.1     NA     NA  NA  NA  NA  NA     NA  NA  NA  NA  NA NA  NA  NA  5
 #> 6  6.6     15     NA  NA  NA  NA  NA     NA  NA  NA  NA  NA NA  NA  NA 27
+#>   secchi
+#> 1     NA
+#> 2     NA
+#> 3    6.5
+#> 4    5.8
+#> 5    6.1
+#> 6    2.4
 head(lagos_select(table = "county.chag", categories = "hydrology"))
 #>   county_baseflowindex_min county_baseflowindex_max
 #> 1                       45                       55
@@ -174,13 +181,13 @@ head(lagos_select(table = "epi.nutr", vars = "lagoslakeid", categories = c("wate
 #> 4           2  4.8     NA     15  NA  NA  NA  NA     NA  NA  NA  NA  NA NA
 #> 5           2  2.1     NA     NA  NA  NA  NA  NA     NA  NA  NA  NA  NA NA
 #> 6           3  6.6     15     NA  NA  NA  NA  NA     NA  NA  NA  NA  NA NA
-#>   toc ton tp
-#> 1  NA  NA 30
-#> 2  NA  NA 10
-#> 3  NA  NA  5
-#> 4  NA  NA  9
-#> 5  NA  NA  5
-#> 6  NA  NA 27
+#>   toc ton tp secchi
+#> 1  NA  NA 30     NA
+#> 2  NA  NA 10     NA
+#> 3  NA  NA  5    6.5
+#> 4  NA  NA  9    5.8
+#> 5  NA  NA  5    6.1
+#> 6  NA  NA 27    2.4
 ```
 
 Published LAGOS subsets
