@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{query_lagos_names}
 \alias{query_lagos_names}
-\title{query_lagos_names}
+\title{Query LAGOS names}
 \usage{
 query_lagos_names(dt, grep_string, scale = NA)
 }
@@ -22,12 +22,12 @@ query_lagos_names(dt, grep_string, scale = NA)
 }}
 }
 \description{
-return a vector of table names whose associated tables have
- columns that grep to query
+Return a vector of table names whose associated tables have
+ columns that grep to query.
 }
 \examples{
 \dontrun{
-dt <- lagos_load("1.054.1")
+dt <- lagos_load("1.087.1")
 query_lagos_names(dt, "_dep_")
 query_lagos_names(dt, "_dep_", "hu4")
 query_lagos_names(dt, "chla")

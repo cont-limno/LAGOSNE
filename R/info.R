@@ -1,15 +1,15 @@
 
-#' lake_info
-#' @description Return lake attribute information from its name and state
+#' Lake attribute information
+#'
+#' Return lake attribute information from its name and state.
+#'
 #' @param dt list of data.frames. output of \code{\link[LAGOS]{lagos_load}}.
 #' @param name character lake name not caps sensitive
 #' @param state character state name not caps sensitive
 #' @importFrom dplyr filter
 #' @importFrom lazyeval interp
 #' @importFrom utils adist
-#'
 #' @export
-#'
 #' @examples \dontrun{
 #' dt <- lagos_load("1.087.1")
 #' lake_info(dt, "Benton Pond", "Massachusetts")

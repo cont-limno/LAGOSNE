@@ -2,7 +2,7 @@
 % Please edit documentation in R/select.R
 \name{lagos_select}
 \alias{lagos_select}
-\title{lagos_select}
+\title{Select and filter LAGOS data}
 \usage{
 lagos_select(table = NULL, vars = NULL, categories = NULL,
   dt = lagos_load("1.087.1"))
@@ -32,7 +32,7 @@ lagos_select(table = NULL, vars = NULL, categories = NULL,
 \item{dt}{data.frame}
 }
 \description{
-Select and merge columns based on a nested list of LAGOS tables and column names.
+Select and filter LAGOS data with keyword helpers.
 }
 \examples{
 \dontrun{

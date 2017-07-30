@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>info_table — info_table • LAGOS</title>
+<title>Summarize all LAGOS flat files — info_table • LAGOS</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -98,35 +98,38 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>info_table</h1>
+    <h1>Summarize all LAGOS flat files</h1>
     </div>
 
     
-    <p>generate table summary statistics</p>
+    <p>Generate table summary statistics for all LAGOS data frames.</p>
     
 
-    <pre class="usage"><span class='fu'>info_table</span>(<span class='no'>geo</span>, <span class='no'>limno</span>)</pre>
+    <pre class="usage"><span class='fu'>info_table</span>(<span class='no'>lg</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>geo</th>
-      <td><p>data.frame</p></td>
-    </tr>
-    <tr>
-      <th>limno</th>
-      <td><p>data.frame</p></td>
+      <th>lg</th>
+      <td><p>list output of lagos_load</p></td>
     </tr>
     </table>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+<span class='no'>lg</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='lagos_load.html'>lagos_load</a></span>(<span class='st'>"1.087.1"</span>)
+<span class='kw pkg'>LAGOS</span><span class='kw ns'>:::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/LAGOS/topics/info_table'>info_table</a></span>(<span class='no'>lg</span>)
+<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-                </ul>
+            
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
     <h2>Author</h2>
     

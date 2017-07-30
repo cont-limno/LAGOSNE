@@ -116,9 +116,11 @@ lagos_path <- function() paste0(rappdirs::user_data_dir(appname = "LAGOS",
 lagos_names <- function(dt) purrr::map(dt, names)
 # unlist(lapply(dt, function(x) length(grep("connect", names(x))))) # search tables for column
 
-#' query_lagos_names
-#' @description return a vector of table names whose associated tables have
-#'  columns that grep to query
+#' Query LAGOS names
+#'
+#' Return a vector of table names whose associated tables have
+#'  columns that grep to query.
+#'
 #' @param dt data.frame output of \code{\link[LAGOS]{lagos_load}}
 #' @param grep_string character search string to grep to table column names
 #' @param scale character filter results by one of:
@@ -132,7 +134,7 @@ lagos_names <- function(dt) purrr::map(dt, names)
 #' }
 #' @export
 #' @examples \dontrun{
-#' dt <- lagos_load("1.054.1")
+#' dt <- lagos_load("1.087.1")
 #' query_lagos_names(dt, "_dep_")
 #' query_lagos_names(dt, "_dep_", "hu4")
 #' query_lagos_names(dt, "chla")
@@ -150,7 +152,6 @@ query_lagos_names <- function(dt, grep_string, scale = NA){
 
   if(!is.na(scale)){
     if(length(res_filtered) < 1 & length(res) > 1){
-      # browser()
       stop(paste0("The '", scale, "' scale does not exist!"))
     }
     res_filtered
@@ -159,14 +160,15 @@ query_lagos_names <- function(dt, grep_string, scale = NA){
   }
 }
 
-#' query_column_names
-#' @description return a vector of column names, given a table name and grep
-#'  query string
+#' Query columnnames
+#'
+#' Return a vector of column names, given a table name and grep query string.
+#'
 #' @param dt data.frame
 #' @param table_name character
 #' @param grep_string character
 #' @examples \dontrun{
-#' dt <- lagos_load("1.054.1")
+#' dt <- lagos_load("1.087.1")
 #' query_column_names(dt, "hu4.chag", "_dep_")
 #' query_column_names(dt, "county.chag", "baseflowindex")
 #' }
@@ -175,8 +177,10 @@ query_column_names <- function(dt, table_name, grep_string){
   dt_names[table_name][[1]][grep(grep_string, dt_names[table_name][[1]])]
 }
 
-#' query_column_keywords
-#' @description return a vector of column names, given a table name and keyword string
+#' Query column keywords
+#'
+#' Return a vector of column names, given a table name and keyword string.
+#'
 #' @param dt data.frame
 #' @param table_name character
 #' @param keyword_string character

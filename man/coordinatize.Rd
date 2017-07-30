@@ -2,7 +2,7 @@
 % Please edit documentation in R/coordinates.R
 \name{coordinatize}
 \alias{coordinatize}
-\title{coordinatize}
+\title{Convert a LAGOS flat file into a spatial object}
 \usage{
 coordinatize(dt, latname = "nhd_lat", longname = "nhd_long",
   projstring = "+init=epsg:4326")
@@ -17,8 +17,8 @@ coordinatize(dt, latname = "nhd_lat", longname = "nhd_long",
 \item{projstring}{character projection string; default is WGS84-lat-long}
 }
 \description{
-Turn a LAGOS flat file into a spatial object using a reasonable
- default projection
+This function turns a data.frame into a spatial object using a reasonable
+ default projection.
 }
 \examples{
 \dontrun{

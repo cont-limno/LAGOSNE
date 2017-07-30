@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{load_lagos_txt}
 \alias{load_lagos_txt}
-\title{load_lagos_txt}
+\title{Load LAGOS data from disk}
 \usage{
 load_lagos_txt(file_name, sep = "\\t", ...)
 }

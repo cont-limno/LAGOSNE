@@ -2,7 +2,7 @@
 % Please edit documentation in R/load.R
 \name{lagos_load}
 \alias{lagos_load}
-\title{lagos_load}
+\title{Load LAGOS data}
 \usage{
 lagos_load(version, format = "rds", fpath = NA)
 }
@@ -14,7 +14,7 @@ lagos_load(version, format = "rds", fpath = NA)
 \item{fpath}{file.path optionally specify custom location of LAGOS rds file}
 }
 \description{
-Load LAGOS files from local file system
+Load LAGOS data from local system files
 }
 \examples{
 \dontrun{

@@ -2,7 +2,7 @@
 % Please edit documentation in R/get.R
 \name{lagos_get_oliver_2015}
 \alias{lagos_get_oliver_2015}
-\title{lagos_get_oliver_2015}
+\title{Get depth data}
 \usage{
 lagos_get_oliver_2015(dest_folder)
 }
@@ -10,7 +10,7 @@ lagos_get_oliver_2015(dest_folder)
 \item{dest_folder}{file.path}
 }
 \description{
-lagos_get_oliver_2015
+Get depth data from Oliver et al. 2015
 }
 \examples{
 \dontrun{

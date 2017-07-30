@@ -2,7 +2,7 @@
 % Please edit documentation in R/load.R
 \name{lagos_load_oliver_2015}
 \alias{lagos_load_oliver_2015}
-\title{lagos_load_oliver_2015}
+\title{Load depth data}
 \usage{
 lagos_load_oliver_2015(fpath = NA)
 }
@@ -10,10 +10,17 @@ lagos_load_oliver_2015(fpath = NA)
 \item{fpath}{file.path optionally specify custom location of csv data file}
 }
 \description{
-lagos_load_oliver_2015
+Load depth data from Oliver et al. 2015.
 }
 \examples{
 \dontrun{
 lagos_load_oliver_2015()
 }
+}
+\references{
+Oliver SK, Soranno PA, Fergus EC, Wagner T, Webster KE, Scott C,
+ Winslow LA, Downing JA, Stanley EH. 2015. LAGOS - Predicted and observed
+ maximum depth values for lakes in a 17-state region of the U.S. Long Term
+ Ecological Research Network.
+ doi:10.6073/pasta/f00a245fd9461529b8cd9d992d7e3a2f
 }

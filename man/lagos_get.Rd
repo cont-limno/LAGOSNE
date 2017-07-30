@@ -2,7 +2,7 @@
 % Please edit documentation in R/get.R
 \name{lagos_get}
 \alias{lagos_get}
-\title{lagos_get}
+\title{Retrieve LAGOS flat files}
 \usage{
 lagos_get(version, overwrite = FALSE, dest_folder = NA)
 }
@@ -15,7 +15,7 @@ lagos_get(version, overwrite = FALSE, dest_folder = NA)
 by \code{\link[rappdirs]{user_data_dir}}.}
 }
 \description{
-Retrieves LAGOS flat files from EDI.
+Retrieve LAGOS flat files from EDI.
 }
 \examples{
 \dontrun{

@@ -1,6 +1,7 @@
-#' lagos_select
+#' Select and filter LAGOS data
 #'
-#' @description Select and merge columns based on a nested list of LAGOS tables and column names.
+#' Select and filter LAGOS data with keyword helpers.
+#'
 #' @param dt data.frame
 #' @param table character name of a dt table
 #' @param vars character vector of specific column names to select from table

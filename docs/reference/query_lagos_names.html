@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>query_lagos_names — query_lagos_names • LAGOS</title>
+<title>Query LAGOS names — query_lagos_names • LAGOS</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -98,12 +98,12 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>query_lagos_names</h1>
+    <h1>Query LAGOS names</h1>
     </div>
 
     
-    <p>return a vector of table names whose associated tables have
- columns that grep to query</p>
+    <p>Return a vector of table names whose associated tables have
+ columns that grep to query.</p>
     
 
     <pre class="usage"><span class='fu'>query_lagos_names</span>(<span class='no'>dt</span>, <span class='no'>grep_string</span>, <span class='kw'>scale</span> <span class='kw'>=</span> <span class='fl'>NA</span>)</pre>
@@ -135,7 +135,7 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='no'>dt</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='lagos_load.html'>lagos_load</a></span>(<span class='st'>"1.054.1"</span>)
+<span class='no'>dt</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='lagos_load.html'>lagos_load</a></span>(<span class='st'>"1.087.1"</span>)
 <span class='fu'>query_lagos_names</span>(<span class='no'>dt</span>, <span class='st'>"_dep_"</span>)
 <span class='fu'>query_lagos_names</span>(<span class='no'>dt</span>, <span class='st'>"_dep_"</span>, <span class='st'>"hu4"</span>)
 <span class='fu'>query_lagos_names</span>(<span class='no'>dt</span>, <span class='st'>"chla"</span>)

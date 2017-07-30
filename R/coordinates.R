@@ -1,7 +1,9 @@
 
-#' coordinatize
-#' @description Turn a LAGOS flat file into a spatial object using a reasonable
-#'  default projection
+#' Convert a LAGOS flat file into a spatial object
+#'
+#' This function turns a data.frame into a spatial object using a reasonable
+#'  default projection.
+#'
 #' @param dt data.frame
 #' @param latname character name of latitude column; default is "nhd_lat"
 #' @param longname character name of longitude column; defailt is "nhd_long"

@@ -1,5 +1,7 @@
-#' lagos_load
-#' @description Load LAGOS files from local file system
+#' Load LAGOS data
+#'
+#' Load LAGOS data from local system files
+#'
 #' @param version character LAGOS database version string
 #' @param format character choice of rds or sqlite
 #' @param fpath file.path optionally specify custom location of LAGOS rds file
@@ -41,12 +43,19 @@ lagos_load <- function(version, format = "rds", fpath = NA){
   }
 }
 
-#' lagos_load_oliver_2015
+#' Load depth data
+#'
+#' Load depth data from Oliver et al. 2015.
 #'
 #' @export
 #' @param fpath file.path optionally specify custom location of csv data file
 #' @importFrom utils read.csv
 #' @importFrom rappdirs user_data_dir
+#' @references Oliver SK, Soranno PA, Fergus EC, Wagner T, Webster KE, Scott C,
+#'  Winslow LA, Downing JA, Stanley EH. 2015. LAGOS - Predicted and observed
+#'  maximum depth values for lakes in a 17-state region of the U.S. Long Term
+#'  Ecological Research Network.
+#'  doi:10.6073/pasta/f00a245fd9461529b8cd9d992d7e3a2f
 #' @examples \dontrun{
 #' lagos_load_oliver_2015()
 #' }

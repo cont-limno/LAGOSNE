@@ -1,8 +1,9 @@
 
-#' lagos_get
+#' Retrieve LAGOS flat files
+#'
+#' Retrieve LAGOS flat files from EDI.
 #'
 #' @export
-#' @description Retrieves LAGOS flat files from EDI.
 #' @importFrom utils download.file
 #' @param dest_folder file.path optional will default to the location returned
 #' by \code{\link[rappdirs]{user_data_dir}}.
@@ -40,7 +41,9 @@ lagos_get <- function(version, overwrite = FALSE, dest_folder = NA){
                 )
 }
 
-#' lagos_get_oliver_2015
+#' Get depth data
+#'
+#' Get depth data from Oliver et al. 2015
 #'
 #' @export
 #' @param dest_folder file.path

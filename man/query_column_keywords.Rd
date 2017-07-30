@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{query_column_keywords}
 \alias{query_column_keywords}
-\title{query_column_keywords}
+\title{Query column keywords}
 \usage{
 query_column_keywords(dt, table_name, keyword_string)
 }
@@ -14,7 +14,7 @@ query_column_keywords(dt, table_name, keyword_string)
 \item{keyword_string}{character}
 }
 \description{
-return a vector of column names, given a table name and keyword string
+Return a vector of column names, given a table name and keyword string.
 }
 \examples{
 \dontrun{
