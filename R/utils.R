@@ -1,11 +1,12 @@
-#' load_lagos_txt
-#' @description A wrapper for \code{\link[utils]{read.table}} with a default set of parameters.
+#' Load LAGOS data from disk
+#'
+#' A wrapper for \code{\link[utils]{read.table}} with a default set of parameters.
+#'
 #' @param file_name character
 #' @param sep character separator (tab or comma separated values)
 #' @param ... Options passed on to \code{\link[utils]{read.table}}
 #'
 #' @return data.frame
-#' @export
 load_lagos_txt <- function(file_name, sep = "\t", ...){
 
   read.table(file_name, header = TRUE, sep = sep, quote = "", dec = ".",
@@ -180,16 +181,28 @@ query_column_names <- function(dt, table_name, grep_string){
 #' @param table_name character
 #' @param keyword_string character
 #' @examples \dontrun{
-#' dt <- lagos_load("1.054.1")
-#' query_column_keywords(dt, "epi.nutr", "waterquality")
+#' dt <- lagos_load("1.087.1")
+#' query_column_keywords(dt, "hu12.chag", "hydrology")
 #' }
 query_column_keywords <- function(dt, table_name, keyword_string){
+
+  if(!(keyword_string %in% keyword_partial_key()[,1])){
+    stop("keyword not found in keyword_partial_key()")
+  }
+
+  if(!(table_name %in% names(dt))){
+    stop("table not found in 'dt'")
+  }
+
   dt_names <- lagos_names(dt)
 
   match <- keyword_partial_key()[
     keyword_partial_key()[,1] %in% keyword_string, 2]
 
-  dt_names[table_name][[1]][dt_names[table_name][[1]] %in% match]
+  unlist(lapply(match,
+                function(x) dt_names[table_name][[1]][
+                  grep(x, dt_names[table_name][[1]])
+                ]))
 
 }
 
