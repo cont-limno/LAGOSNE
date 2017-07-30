@@ -2,17 +2,21 @@
 % Please edit documentation in R/utils.R
 \name{info_table}
 \alias{info_table}
-\title{info_table}
+\title{Summarize all LAGOS flat files}
 \usage{
-info_table(geo, limno)
+info_table(lg)
 }
 \arguments{
-\item{geo}{data.frame}
-
-\item{limno}{data.frame}
+\item{lg}{list output of lagos_load}
 }
 \description{
-generate table summary statistics
+Generate table summary statistics for all LAGOS data frames.
+}
+\examples{
+\dontrun{
+lg <- lagos_load("1.087.1")
+LAGOS:::info_table(lg)
+}
 }
 \author{
 Masrour Farzan

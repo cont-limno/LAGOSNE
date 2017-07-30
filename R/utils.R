@@ -13,13 +13,23 @@ load_lagos_txt <- function(file_name, sep = "\t", ...){
 
 }
 
-#' info_table
-#' @description generate table summary statistics
-#' @author Masrour Farzan
-#' @param geo data.frame
-#' @param limno data.frame
+#' Summarize all LAGOS flat files
 #'
-info_table <- function(geo, limno){
+#' Generate table summary statistics for all LAGOS data frames.
+#'
+#' @author Masrour Farzan
+#' @param lg list output of lagos_load
+#' @examples \dontrun{
+#' lg <- lagos_load("1.087.1")
+#' LAGOS:::info_table(lg)
+#' }
+info_table <- function(lg){
+
+  limno_names <- c("epi.nutr", "lakes.limno", "secchi")
+  geo_names   <- !(names(lg) %in% c(limno_names, "locus"))
+
+  limno <- lg[limno_names]
+  geo   <- lg[geo_names]
 
   name <- c(names(geo), names(limno))
   type <- c(rep("geo", length(geo)), rep("limno", length(limno)))
