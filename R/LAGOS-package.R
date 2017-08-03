@@ -409,7 +409,7 @@ NULL
 #' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
 NULL
 
-#' Water Quality Lakes
+#' Metadata for Lakes with Water Quality
 #'
 #' A dataset containing depth and identifying information on lakes in the limno
 #' module.
@@ -435,7 +435,38 @@ NULL
 #'
 #' @docType data
 #' @keywords datasets
-#' @name lakes.limno
+#' @name lakes_limno
+#' @aliases meandepth maxdepth legacyid
+#' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
+NULL
+
+#' Metadata for Lakes with Water Quality
+#'
+#' A dataset containing depth and identifying information on lakes in the limno
+#' module.
+#'
+#' @format A data frame with 141265 observations of 8 variables:
+#' \itemize{
+#'             \item lagoslakeid:	    unique lake identifier developed for
+#'             LAGOS-NE
+#'             \item nhdid:	          the 'Permanent_identifier' from the NHD,
+#'             but is called the NHDID in LAGOS-NE
+#'             \item lagosname1:	    name of lake from source dataset used as
+#'             the authoritative lake name for LAGOS
+#'             \item meandepth:	      mean lake depth (meters)
+#'             \item meandepthsource:	source of mean depth data, see
+#'             "lagos.source.program" for definitions
+#'             \item maxdepth:	      maximum lake depth (meters)
+#'             \item maxdepthsource:	source of maximum depth data, see
+#'             "lagos.source.program" for definitions
+#'             \item legacyid:	      unique lake identifier from the original
+#'             water quality source dataset, this is not standardized and each
+#'             source dataset has its own system
+#'     }
+#'
+#' @docType data
+#' @keywords datasets
+#' @name lakes_limno
 #' @aliases meandepth maxdepth legacyid
 #' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
 NULL
@@ -729,71 +760,43 @@ NULL
 #' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
 NULL
 
-#' Lake Attributes
+#' Lake Geospatial Attributes
 #'
-#' A dataset containing attributes of all lakes in LAGOS >1 hectare.
+#' A dataset containing geospatial attributes of all lakes in LAGOS >1 hectare.
 #'
 #' @format A data frame with 141271 observations and 109 variables:
 #' \itemize{
 #'              \item lagoslakeid: unique lake identifier in LAGOS
-#'              \item nhdid: unique lake identifier from the National
+#'              \item lakes_nhdid: unique lake identifier from the National
 #'              Hydrography Dataset (NHD)
-#'              \item nhd_lat: latitude of lake polygon centroid
-#'              \item nhd_long: longitude of lake polygon centroid
-#'              \item lake_area_ha: lake area in hectares
-#'              \item lake_perim_meters: lake perimeter in meters
-#'              \item nhd_fcode:
-#'              \item nhd_ftype:
-#'              \item greatlakes:
-#'              \item lagosname1: lake name
-#'              \item meandepth: mean depth in meters
-#'              \item maxdepth: maximum depth in meters
 #'              \item iws_zoneid: zone ID of interlake watershed (IWS) in which
 #'              focal lake is located
 #'              \item hu4_zoneid: zone ID of HUC4 in which focal lake is
 #'              located
-#'              \item hu4_name: name of HUC4 in which focal lake is located
 #'              \item hu6_zoneid: zone ID of HUC6 in which focal lake is
 #'              located
-#'              \item hu6_name: name of HUC6 in which focal lake is located
 #'              \item hu8_zoneid: zone ID of HUC8 in which focal lake is
 #'              located
-#'              \item hu8_name: name of HUC8 in which focal lake is located
 #'              \item hu12_zoneid: zone ID of HU12 in which focal lake is
 #'              located
-#'              \item hu12_name: name of HUC12 in which focal lake is located
 #'              \item edu_zoneid: zone ID of ecological drainage unit (EDU) in
 #'              which focal lake is located
-#'              \item edu_name: name of EDU in which focal lake is located
 #'              \item county_zoneid: zone ID of county in which focal lake is
 #'              located
-#'              \item county_name: name of county in which focal lake is
 #'              located
-#'              \item state_name: name of state in which focal lake is located
 #'              \item state_zoneid: two-letter abbreviation of state in which
 #'              focal lake is located
-#'              \item hu4:
-#'              \item hu6:
-#'              \item hu12:
-#'              \item hu8:
-#'              \item iws_areaha: area in hectares of iws in which focal lake
-#'              is located
-#'              \item iws_perimkm: perimeter of iws in which focal lake is
-#'              located
-#'              \item iws_pct_in_usa:
-#'              \item iws_ha_in_usa
-#'              \item iws_pct_in_nwi
-#'              \item iws_ha_in_nwi
+#'              \item upstream_lakes_4ha_count
+#'              \item upstream_lakes_4ha_area_ha
+#'              \item upstream_lakes_10ha_count
+#'              \item upstream_lakes_10ha_area_ha
+#'              \item latewisconsinglaciation_glacial
 #'              \item lakeconnectivity: connectivity of focal lake to upstream
 #'              features (DR_LakeStream = drainage lake with an upstream lake,
 #'              DR_Stream = drainage lake with upstream stream,
 #'              Headwater = lake with outlet but no inlet,
 #'              Isolated = lake with no inlets or outlets)
-#'              \item lakes4ha_upstreamlakes_upstream_lakes_4ha_count
-#'              \item lakes4ha_upstreamlakes_upstream_lakes_4ha_area_ha
-#'              \item lakes4ha_upstreamlakes_upstream_lakes_10ha_count
-#'              \item lakes4ha_upstreamlakes_upstream_lakes_10ha_area_ha
-#'              \item lakes4ha_latewisconsinglaciation_glacial
+
 #'              \item iws_nwiexclusions
 #'              \item samplemonth
 #'     }
