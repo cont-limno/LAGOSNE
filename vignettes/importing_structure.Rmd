@@ -58,25 +58,7 @@ Below, we describe how each table fits within each module.
 ### LAGOSlimno
 LAGOSlimno is an integration of preexisting water quality data from disparate sources, including state, federal, tribal, and university organizations. Water chemistry (various species of nitrogen, phosphorus, and carbon) and transparency (Secchi disk measurement) are the main features of the `epi.nutr` table, but also include metadata about those measurements. `?epi.nutr` gives the names of all variables and metadata (including units). Because many unique sampling events only included Secchi depth, a separate table of all Secchi measurements is included (see `?secchi`). `epi.nutr` does contain Secchi observations that are in `secchi`, but only if additional water quality measurements were taken during the same sampling event.
 
-Each observation of LAGOSlimno is a discrete sampling event, where one or more water quality parameters were measured. Sampling events are tied to lakes that have a unique LAGOS and National Hydrography Dataset (NHD) identifier, and lakes can have single or multiple obervations of each parameter. There are `r length(unique(dt$epi.nutr$lagoslakeid))` and `r length(unique(dt$secchi$lagoslakeid))` unique lakes in `epi.nutr` and `secchi`, respectively, distributed across the 17-state region. 
-
-```{r, message=FALSE, results="hide", echo=FALSE}
-library(dplyr)
-```
-
-```{r, fig.show = 'hold', fig.height = 4, fig.width = 4, eval=FALSE}
-# plot number of sampling events per lake
-n.events <- count(as.tbl(dt$epi.nutr), lagoslakeid)
-hist(log10(n.events$n), xlab = "Sampling Events Per Lake", 
-     xaxt = 'n', main = '', mgp = c(2,.8,0), bty = 'n')
-axis(1, labels = c(1,10,100,1000), at = c(0,1,2,3))
-
-# plot number of years of observations per lake
-n.years <- count(as.tbl(dt$epi.nutr), lagoslakeid, sampleyear)
-n.years <- count(n.years, lagoslakeid)
-hist(n.years$nn, xlab = "Years of Observations Per Lake", 
-     main = '', mgp = c(2,.8,0), breaks = 15, bty = 'n')
-```
+Each observation of LAGOSlimno is a discrete sampling event, where one or more water quality parameters were measured. Sampling events are tied to lakes that have a unique LAGOS and National Hydrography Dataset (NHD) identifier, and lakes can have single or multiple obervations of each parameter. There are 12,934 and 12,712 unique lakes in `epi.nutr` and `secchi`, respectively, distributed across the 17-state region. 
 
 ### LAGOSgeo
 LAGOSgeo is an integration of information describing the air, water, and 
