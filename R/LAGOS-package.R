@@ -440,34 +440,47 @@ NULL
 #' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
 NULL
 
-#' Metadata for Lakes with Water Quality
+#' Metadata for all lakes > 1ha
 #'
-#' A dataset containing depth and identifying information on lakes in the limno
-#' module.
+#' A dataset containing identifying information for all lakes > 1ha. This includes
+#' lake name, lake size (area and perimeter), location (lat/long), elevation,
+#' and codes identifying zones in which the lake is located.
 #'
-#' @format A data frame with 141265 observations of 8 variables:
+#' @format A data frame with 141265 observations of 17 variables:
 #' \itemize{
-#'             \item lagoslakeid:	    unique lake identifier developed for
-#'             LAGOS-NE
-#'             \item nhdid:	          the 'Permanent_identifier' from the NHD,
+#'             \item lagoslakeid: unique identifier for each lake in LAGOS-NE.
+#'             For each row of data in this table, the lagoslakeid identifies the focal lake
+#'             for which other measures are calculated
+#'             \item nhdid: the 'Permanent_identifier' from the NHD,
 #'             but is called the NHDID in LAGOS-NE
-#'             \item lagosname1:	    name of lake from source dataset used as
-#'             the authoritative lake name for LAGOS
-#'             \item meandepth:	      mean lake depth (meters)
-#'             \item meandepthsource:	source of mean depth data, see
-#'             "lagos.source.program" for definitions
-#'             \item maxdepth:	      maximum lake depth (meters)
-#'             \item maxdepthsource:	source of maximum depth data, see
-#'             "lagos.source.program" for definitions
-#'             \item legacyid:	      unique lake identifier from the original
-#'             water quality source dataset, this is not standardized and each
-#'             source dataset has its own system
+#'             \item gnis_name: lake name from the GNIS database
+#'             \item nhd_lat: latitude of centroid of the NHD lake polygon in decimal
+#'             degrees (NAD83)
+#'             \item nhd_long: longitude of centroid of the NHD lake polygon in decimal
+#'             degrees (NAD83)
+#'             \item lake_area_ha: surface area (in hectares) of lake waterbody polygon from NHD
+#'             \item lake_perim_meters: perimeter (in meters) of lake waterbody polygon from the NHD
+#'             \item nhd_fcode: NHD five-digit integer code with feature code plus additional
+#'             characteristics/values
+#'             \item nhd_ftype: NHD three-digit integer code providing a unique identifier of feature
+#'             type for the waterbody
+#'             \item iws_zoneid: the  unique ID of the IWS that is estimated for the focal lake
+#'             in the row of data that is identified by the lagoslakeid.
+#'             \item hu4_zoneid: the unique ID of the HU4 zone that the focal lake is located within
+#'             \item hu6_zoneid: the unique ID of the HU6 zone that the focal lake is located within
+#'             \item hu8_zoneid: the unique ID of the HU8 zone that the focal lake is located within
+#'             \item hu12_zoneid: the unique ID of the HU12 zone that the focal lake is located within
+#'             \item edu_zoneid: the unique ID of the EDU zone that the focal lake is located within
+#'             \item county_zoneid: the unique ID of the county that the focal lake is located within
+#'             \item state_zoneid: the unique ID of the state that the focal lake is located within
+#'             \item elevation_m: the elevation of the lake centroid, in meters (referenced to the
+#'             North American Vertical Datum of 1988 (NAVD88)) and obtained from the National Elevation Dataset
 #'     }
 #'
 #' @docType data
 #' @keywords datasets
-#' @name lakes_limno
-#' @aliases meandepth maxdepth legacyid
+#' @name locus
+#' @aliases location
 #' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
 NULL
 
