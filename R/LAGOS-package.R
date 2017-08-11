@@ -411,7 +411,7 @@ NULL
 
 #' Metadata for Lakes with Water Quality
 #'
-#' A dataset containing depth and identifying information on lakes in the limno
+#' A dataset containing depth and names for lakes included in the limno
 #' module.
 #'
 #' @format A data frame with 141265 observations of 8 variables:
@@ -760,11 +760,12 @@ NULL
 #' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
 NULL
 
-#' Lake Geospatial Attributes
+#' Lake Geospatial Metadata
 #'
-#' A dataset containing geospatial attributes of all lakes in LAGOS >1 hectare.
+#' A dataset containing geospatial identifiers, upstream lake connectivity, and
+#' wetland connectivity of all lakes in LAGOS >1 hectare.
 #'
-#' @format A data frame with 141271 observations and 109 variables:
+#' @format A data frame with 141271 observations and 31 variables:
 #' \itemize{
 #'              \item lagoslakeid: unique lake identifier in LAGOS
 #'              \item lakes_nhdid: unique lake identifier from the National
@@ -783,22 +784,49 @@ NULL
 #'              which focal lake is located
 #'              \item county_zoneid: zone ID of county in which focal lake is
 #'              located
-#'              located
 #'              \item state_zoneid: two-letter abbreviation of state in which
 #'              focal lake is located
-#'              \item upstream_lakes_4ha_count
-#'              \item upstream_lakes_4ha_area_ha
-#'              \item upstream_lakes_10ha_count
-#'              \item upstream_lakes_10ha_area_ha
-#'              \item latewisconsinglaciation_glacial
-#'              \item lakeconnectivity: connectivity of focal lake to upstream
+#'              \item upstream_lakes_4ha_count: count of lakes >= 4 ha upstream of the focal lake,
+#'              connected via the NHD network of all surface flow connections
+#'              (defined as ephemeral, intermittent, or permanent streams, or any other connections)
+#'              \item upstream_lakes_4ha_area_ha: total area of lakes >= 4 ha upstream of the focal lake,
+#'              connected via the NHD network of all surface flow connections
+#'              (defined as ephemeral, intermittent, or permanent streams, or any other connections)
+#'              \item upstream_lakes_10ha_count: count of lakes >= 10 ha upstream of the focal lake,
+#'              connected via the NHD network of all surface flow connections
+#'              (defined as ephemeral, intermittent, or permanent streams, or any other connections)
+#'              \item upstream_lakes_10ha_area_ha: total area of lakes >= 10ha upstream of the focal lake,
+#'              connected via the NHD network of all surface flow connections
+#'              (defined as ephemeral, intermittent, or permanent streams, or any other connections)
+#'              \item latewisconsinglaciation_glacial: glaciation status during the Late Wisconsin glaciation,
+#'              where 'Glaciated' where the whole zone was glaciated, 'Not_Glaciated' where the whole zone
+#'              was not glaciated, and 'Partially_Glaciated' where a part of the zone was glaciated
+#'              \item wlconnections_allwetlands_*: the wetland polygons that interesect or are
+#'              within 30 m buffer around a lake shoreline, measured as count, area (ha), or sum of
+#'              shoreline length (km) that intersects or touches wetland polygons
+#'              (* = count, contributing_area_ha, shoreline_km).
+#'              \item wlconnections_forestedwetlands_count: the forested wetland polygons that interesect or are
+#'              within 30 m buffer around a lake shoreline, measured as count, area (ha), or sum of
+#'              shoreline length (km) that intersects or touches wetland polygons
+#'              (* = count, contributing_area_ha, shoreline_km).
+#'              \item wlconnections_scrubshrubwetlands_count: the scrub-shrub wetland polygons that interesect or are
+#'              within 30 m buffer around a lake shoreline, measured as count, area (ha), or sum of
+#'              shoreline length (km) that intersects or touches wetland polygons
+#'              (* = count, contributing_area_ha, shoreline_km).
+#'              \item wlconnections_openwaterwetlands_count: the open water wetland polygons that interesect or are
+#'              within 30 m buffer around a lake shoreline, measured as count, area (ha), or sum of
+#'              shoreline length (km) that intersects or touches wetland polygons
+#'              (* = count, contributing_area_ha, shoreline_km).
+#'              \item wlconnections_otherwetlands_count: the other-wetland polygons that interesect or are
+#'              within 30 m buffer around a lake shoreline, measured as count, area (ha), or sum of
+#'              shoreline length (km) that intersects or touches wetland polygons
+#'              (* = count, contributing_area_ha, shoreline_km).
+#'              \item lakeconnection: connectivity of focal lake to upstream
 #'              features (DR_LakeStream = drainage lake with an upstream lake,
 #'              DR_Stream = drainage lake with upstream stream,
 #'              Headwater = lake with outlet but no inlet,
 #'              Isolated = lake with no inlets or outlets)
 
-#'              \item iws_nwiexclusions
-#'              \item samplemonth
 #'     }
 #'
 #' @docType data
