@@ -96,8 +96,9 @@ help.search("datasets", package = "LAGOS")
 | LAGOS   | classifications | LAGOS Spatial Classifications Metadata |
 | LAGOS   | conn            | Connectivity Datasets                  |
 | LAGOS   | epi.nutr        | Epilimnion Water Quality Data          |
-| LAGOS   | lagoslakes      | Lake Attributes                        |
-| LAGOS   | lakes.limno     | Water Quality Lakes                    |
+| LAGOS   | lagoslakes      | Lake Geospatial Metadata               |
+| LAGOS   | lakes\_limno    | Metadata for Lakes with Water Quality  |
+| LAGOS   | locus           | Metadata for all lakes &gt; 1ha        |
 | LAGOS   | lulc            | Land Use Land Cover (LULC) Data Frames |
 | LAGOS   | secchi          | Secchi (Water Clarity) Data            |
 | LAGOS   | source          | LAGOS sources                          |
