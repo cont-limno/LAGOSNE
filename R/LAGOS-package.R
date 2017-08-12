@@ -409,9 +409,9 @@ NULL
 #' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
 NULL
 
-#' Water Quality Lakes
+#' Metadata for Lakes with Water Quality
 #'
-#' A dataset containing depth and identifying information on lakes in the limno
+#' A dataset containing depth and names for lakes included in the limno
 #' module.
 #'
 #' @format A data frame with 141265 observations of 8 variables:
@@ -435,8 +435,52 @@ NULL
 #'
 #' @docType data
 #' @keywords datasets
-#' @name lakes.limno
-#' @aliases meandepth maxdepth legacyid
+#' @name lakes_limno
+#' @aliases meandepth maxdepth legacyid depth
+#' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
+NULL
+
+#' Metadata for all lakes > 1ha
+#'
+#' A dataset containing identifying information for all lakes > 1ha. This includes
+#' lake name, lake size (area and perimeter), location (lat/long), elevation,
+#' and codes identifying zones in which the lake is located.
+#'
+#' @format A data frame with 141265 observations of 17 variables:
+#' \itemize{
+#'             \item lagoslakeid: unique identifier for each lake in LAGOS-NE.
+#'             For each row of data in this table, the lagoslakeid identifies the focal lake
+#'             for which other measures are calculated
+#'             \item nhdid: the 'Permanent_identifier' from the NHD,
+#'             but is called the NHDID in LAGOS-NE
+#'             \item gnis_name: lake name from the GNIS database
+#'             \item nhd_lat: latitude of centroid of the NHD lake polygon in decimal
+#'             degrees (NAD83)
+#'             \item nhd_long: longitude of centroid of the NHD lake polygon in decimal
+#'             degrees (NAD83)
+#'             \item lake_area_ha: surface area (in hectares) of lake waterbody polygon from NHD
+#'             \item lake_perim_meters: perimeter (in meters) of lake waterbody polygon from the NHD
+#'             \item nhd_fcode: NHD five-digit integer code with feature code plus additional
+#'             characteristics/values
+#'             \item nhd_ftype: NHD three-digit integer code providing a unique identifier of feature
+#'             type for the waterbody
+#'             \item iws_zoneid: the  unique ID of the IWS that is estimated for the focal lake
+#'             in the row of data that is identified by the lagoslakeid.
+#'             \item hu4_zoneid: the unique ID of the HU4 zone that the focal lake is located within
+#'             \item hu6_zoneid: the unique ID of the HU6 zone that the focal lake is located within
+#'             \item hu8_zoneid: the unique ID of the HU8 zone that the focal lake is located within
+#'             \item hu12_zoneid: the unique ID of the HU12 zone that the focal lake is located within
+#'             \item edu_zoneid: the unique ID of the EDU zone that the focal lake is located within
+#'             \item county_zoneid: the unique ID of the county that the focal lake is located within
+#'             \item state_zoneid: the unique ID of the state that the focal lake is located within
+#'             \item elevation_m: the elevation of the lake centroid, in meters (referenced to the
+#'             North American Vertical Datum of 1988 (NAVD88)) and obtained from the National Elevation Dataset
+#'     }
+#'
+#' @docType data
+#' @keywords datasets
+#' @name locus
+#' @aliases location
 #' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
 NULL
 
@@ -729,73 +773,73 @@ NULL
 #' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
 NULL
 
-#' Lake Attributes
+#' Lake Geospatial Metadata
 #'
-#' A dataset containing attributes of all lakes in LAGOS >1 hectare.
+#' A dataset containing geospatial identifiers, upstream lake connectivity, and
+#' wetland connectivity of all lakes in LAGOS >1 hectare.
 #'
-#' @format A data frame with 141271 observations and 109 variables:
+#' @format A data frame with 141271 observations and 31 variables:
 #' \itemize{
 #'              \item lagoslakeid: unique lake identifier in LAGOS
-#'              \item nhdid: unique lake identifier from the National
+#'              \item lakes_nhdid: unique lake identifier from the National
 #'              Hydrography Dataset (NHD)
-#'              \item nhd_lat: latitude of lake polygon centroid
-#'              \item nhd_long: longitude of lake polygon centroid
-#'              \item lake_area_ha: lake area in hectares
-#'              \item lake_perim_meters: lake perimeter in meters
-#'              \item nhd_fcode:
-#'              \item nhd_ftype:
-#'              \item greatlakes:
-#'              \item lagosname1: lake name
-#'              \item meandepth: mean depth in meters
-#'              \item maxdepth: maximum depth in meters
 #'              \item iws_zoneid: zone ID of interlake watershed (IWS) in which
 #'              focal lake is located
 #'              \item hu4_zoneid: zone ID of HUC4 in which focal lake is
 #'              located
-#'              \item hu4_name: name of HUC4 in which focal lake is located
 #'              \item hu6_zoneid: zone ID of HUC6 in which focal lake is
 #'              located
-#'              \item hu6_name: name of HUC6 in which focal lake is located
 #'              \item hu8_zoneid: zone ID of HUC8 in which focal lake is
 #'              located
-#'              \item hu8_name: name of HUC8 in which focal lake is located
 #'              \item hu12_zoneid: zone ID of HU12 in which focal lake is
 #'              located
-#'              \item hu12_name: name of HUC12 in which focal lake is located
 #'              \item edu_zoneid: zone ID of ecological drainage unit (EDU) in
 #'              which focal lake is located
-#'              \item edu_name: name of EDU in which focal lake is located
 #'              \item county_zoneid: zone ID of county in which focal lake is
 #'              located
-#'              \item county_name: name of county in which focal lake is
-#'              located
-#'              \item state_name: name of state in which focal lake is located
 #'              \item state_zoneid: two-letter abbreviation of state in which
 #'              focal lake is located
-#'              \item hu4:
-#'              \item hu6:
-#'              \item hu12:
-#'              \item hu8:
-#'              \item iws_areaha: area in hectares of iws in which focal lake
-#'              is located
-#'              \item iws_perimkm: perimeter of iws in which focal lake is
-#'              located
-#'              \item iws_pct_in_usa:
-#'              \item iws_ha_in_usa
-#'              \item iws_pct_in_nwi
-#'              \item iws_ha_in_nwi
-#'              \item lakeconnectivity: connectivity of focal lake to upstream
+#'              \item upstream_lakes_4ha_count: count of lakes >= 4 ha upstream of the focal lake,
+#'              connected via the NHD network of all surface flow connections
+#'              (defined as ephemeral, intermittent, or permanent streams, or any other connections)
+#'              \item upstream_lakes_4ha_area_ha: total area of lakes >= 4 ha upstream of the focal lake,
+#'              connected via the NHD network of all surface flow connections
+#'              (defined as ephemeral, intermittent, or permanent streams, or any other connections)
+#'              \item upstream_lakes_10ha_count: count of lakes >= 10 ha upstream of the focal lake,
+#'              connected via the NHD network of all surface flow connections
+#'              (defined as ephemeral, intermittent, or permanent streams, or any other connections)
+#'              \item upstream_lakes_10ha_area_ha: total area of lakes >= 10ha upstream of the focal lake,
+#'              connected via the NHD network of all surface flow connections
+#'              (defined as ephemeral, intermittent, or permanent streams, or any other connections)
+#'              \item latewisconsinglaciation_glacial: glaciation status during the Late Wisconsin glaciation,
+#'              where 'Glaciated' where the whole zone was glaciated, 'Not_Glaciated' where the whole zone
+#'              was not glaciated, and 'Partially_Glaciated' where a part of the zone was glaciated
+#'              \item wlconnections_allwetlands_*: the wetland polygons that interesect or are
+#'              within 30 m buffer around a lake shoreline, measured as count, area (ha), or sum of
+#'              shoreline length (km) that intersects or touches wetland polygons
+#'              (* = count, contributing_area_ha, shoreline_km).
+#'              \item wlconnections_forestedwetlands_count: the forested wetland polygons that interesect or are
+#'              within 30 m buffer around a lake shoreline, measured as count, area (ha), or sum of
+#'              shoreline length (km) that intersects or touches wetland polygons
+#'              (* = count, contributing_area_ha, shoreline_km).
+#'              \item wlconnections_scrubshrubwetlands_count: the scrub-shrub wetland polygons that interesect or are
+#'              within 30 m buffer around a lake shoreline, measured as count, area (ha), or sum of
+#'              shoreline length (km) that intersects or touches wetland polygons
+#'              (* = count, contributing_area_ha, shoreline_km).
+#'              \item wlconnections_openwaterwetlands_count: the open water wetland polygons that interesect or are
+#'              within 30 m buffer around a lake shoreline, measured as count, area (ha), or sum of
+#'              shoreline length (km) that intersects or touches wetland polygons
+#'              (* = count, contributing_area_ha, shoreline_km).
+#'              \item wlconnections_otherwetlands_count: the other-wetland polygons that interesect or are
+#'              within 30 m buffer around a lake shoreline, measured as count, area (ha), or sum of
+#'              shoreline length (km) that intersects or touches wetland polygons
+#'              (* = count, contributing_area_ha, shoreline_km).
+#'              \item lakeconnection: connectivity of focal lake to upstream
 #'              features (DR_LakeStream = drainage lake with an upstream lake,
 #'              DR_Stream = drainage lake with upstream stream,
 #'              Headwater = lake with outlet but no inlet,
 #'              Isolated = lake with no inlets or outlets)
-#'              \item lakes4ha_upstreamlakes_upstream_lakes_4ha_count
-#'              \item lakes4ha_upstreamlakes_upstream_lakes_4ha_area_ha
-#'              \item lakes4ha_upstreamlakes_upstream_lakes_10ha_count
-#'              \item lakes4ha_upstreamlakes_upstream_lakes_10ha_area_ha
-#'              \item lakes4ha_latewisconsinglaciation_glacial
-#'              \item iws_nwiexclusions
-#'              \item samplemonth
+
 #'     }
 #'
 #' @docType data

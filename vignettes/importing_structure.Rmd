@@ -17,67 +17,48 @@ vignette: >
 The Lake Multi-Scaled Geospatial and Temporal Database (LAGOS) is a 
 combination of three data modules (LAGOSlocus, LAGOSlimno, LAGOSgeo) designed to be of use for researchers and managers to [insert line from paper]. The database includes information about lakes in a lake-rich region of 17 states in the United States, including Minnesota, Iowa, Wisconsin, Illinois, Missouri, Michigan, Indiana, Ohio, Pennsylvania, New York, New Jersey, Connecticut, New Hampshire, Rhode Island, Massachusetts, Vermont, and Maine. LAGOS contains a complete census of all lakes greater than 4 hectares in the region with supporting ecological context information. Additionally, for a subset of lakes, LAGOS contains water quality data. The LAGOS package was built so that future data users could easily retrieve and manipulate the data, as well as easily access metadata. 
 
-## Accessing LAGOS
 LAGOS is the product of many thousands of human hours over the course of 
 data collection and integration. The nitty gritty details of such efforts (which we highly recommend!) can be found in two locations. The details describing how LAGOS was built, including sources and metric derivations, can be found in Soranno et al. 2015. The details of the data themselves, along with the data, can be found in Soranno et al. 2017. 
 
-The data are open-access and stored online as flat files [location]. You can retrieved and store all of the data on your local machine by using the following commands, which will store the data in the location returned by `rappdirs::user_data_dir`
+## Accessing LAGOS
+Following [these instructions](https://github.com/cont-limno/LAGOS), install the LAGOS package and download the data from the online repository. The data are open-access and stored online as flat files [location]. The data only need to be downloaded once, and will be stored locally at the location returned by `rappdirs::user_data_dir`
 
-First, install and load the package. From RStudio, add a new version controlled project by selecting New Project > Version Control > Git and adding https://github.com/cont-limno/LAGOS.git to the repository URL box. Then select Create Project. From the R console, you can then install the package. 
-```{r, eval=FALSE, results = 'hide', message=FALSE}
-devtools::install()
-```
-```{r, results = 'hide', message=FALSE}
-library(LAGOS)
-```
-Next, compile the data from a local location by setting the `limno_folder` and `geo_folder` to the location of the tables on your local computer. When LAGOS is published, this function will be altered to retrieve all data tables from the EDI data repository.
-```
-# Get LAGOS data prior to publication
-# Users must point to the path of their limno and geo data folders
-lagos_compile("1.087.0", format = "rds", 
-              limno_folder = "/Data/limno",
-              geo_folder = "/Data/geo")
-```
 Now that the data are stored locally, you can import them as a list.
 ```{r eval=FALSE}
 # Import LAGOS data into R
 dt <- lagos_load(version = "1.087.1", format = "rds")
 ```
 
-```{r echo=FALSE}
+```{r, message=FALSE, results='hide', echo=FALSE}
+library(LAGOS)
 data(lg_subset)
 dt <- lg_subset
 ```
 
 ## LAGOS Structure
-As previously noted, LAGOS is comprised of three modules with multiple tables within each module. When LAGOS is imported using the above method, the tables are stored in a list, and you can see all table names using:
+As previously noted, LAGOS is comprised of three modules with multiple tables within each module. When LAGOS is imported using the above method, the tables are stored in a list, and you can get information about each table in a few ways:
 ```{r }
 names(dt)
 ```
+
+```{r load printr, echo=FALSE,message=FALSE,results='hide'}
+loadNamespace("printr")
+```
+
+```{r Read metadata for individual tables}
+help.search("datasets", package = "LAGOS")
+```
+
+```{r unload printr, echo=FALSE}
+unloadNamespace("printr")
+```
+
 Below, we describe how each table fits within each module. 
 
 ### LAGOSlimno
 LAGOSlimno is an integration of preexisting water quality data from disparate sources, including state, federal, tribal, and university organizations. Water chemistry (various species of nitrogen, phosphorus, and carbon) and transparency (Secchi disk measurement) are the main features of the `epi.nutr` table, but also include metadata about those measurements. `?epi.nutr` gives the names of all variables and metadata (including units). Because many unique sampling events only included Secchi depth, a separate table of all Secchi measurements is included (see `?secchi`). `epi.nutr` does contain Secchi observations that are in `secchi`, but only if additional water quality measurements were taken during the same sampling event.
 
-Each observation of LAGOSlimno is a discrete sampling event, where one or more water quality parameters were measured. Sampling events are tied to lakes that have a unique LAGOS and National Hydrography Dataset (NHD) identifier, and lakes can have single or multiple obervations of each parameter. There are `r length(unique(dt$epi.nutr$lagoslakeid))` and `r length(unique(dt$secchi$lagoslakeid))` unique lakes in `epi.nutr` and `secchi`, respectively, distributed across the 17-state region. 
-
-```{r, message=FALSE, results="hide", echo=FALSE}
-library(dplyr)
-```
-
-```{r, fig.show = 'hold', fig.height = 4, fig.width = 4, eval=FALSE}
-# plot number of sampling events per lake
-n.events <- count(as.tbl(dt$epi.nutr), lagoslakeid)
-hist(log10(n.events$n), xlab = "Sampling Events Per Lake", 
-     xaxt = 'n', main = '', mgp = c(2,.8,0), bty = 'n')
-axis(1, labels = c(1,10,100,1000), at = c(0,1,2,3))
-
-# plot number of years of observations per lake
-n.years <- count(as.tbl(dt$epi.nutr), lagoslakeid, sampleyear)
-n.years <- count(n.years, lagoslakeid)
-hist(n.years$nn, xlab = "Years of Observations Per Lake", 
-     main = '', mgp = c(2,.8,0), breaks = 15, bty = 'n')
-```
+Each observation of LAGOSlimno is a discrete sampling event, where one or more water quality parameters were measured. Sampling events are tied to lakes that have a unique LAGOS and National Hydrography Dataset (NHD) identifier, and lakes can have single or multiple obervations of each parameter. There are 12,934 and 12,712 unique lakes in `epi.nutr` and `secchi`, respectively, distributed across the 17-state region. 
 
 ### LAGOSgeo
 LAGOSgeo is an integration of information describing the air, water, and 
