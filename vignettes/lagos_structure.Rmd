@@ -1,5 +1,5 @@
 ---
-title: "Importing and Structure of LAGOS"
+title: "The Structure of LAGOS"
 author: "Samantha Oliver"
 date: "`r Sys.Date()`"
 output: 
@@ -8,7 +8,7 @@ output:
     toc: true
 
 vignette: >
-  %\VignetteIndexEntry{Importing and Structure of LAGOS}
+  %\VignetteIndexEntry{The Structure of LAGOS}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -29,10 +29,9 @@ Now that the data are stored locally, you can import them as a list.
 dt <- lagos_load(version = "1.087.1", format = "rds")
 ```
 
-```{r, message=FALSE, results='hide', echo=FALSE}
+```{r, message=FALSE, echo=FALSE}
 library(LAGOS)
-data(lg_subset)
-dt <- lg_subset
+dt <- lagos_load("1.087.1")
 ```
 
 ## LAGOS Structure

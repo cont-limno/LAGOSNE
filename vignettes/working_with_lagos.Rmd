@@ -1,0 +1,74 @@
+---
+title: "Working with LAGOS"
+author: "Joseph Stachelek"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Working with LAGOS}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+The following document presents two analyses to demonstrate use of the `LAGOS` package.
+
+To begin, we load LAGOS data with `lagos_load`:
+
+```{r lagos_load}
+library(LAGOS)
+
+dt <- lagos_load("1.087.1")
+```
+
+## Boxplot of average chlorophyll by state
+
+The first analysis involves contructing a boxplot of average lake chlorophyll by state. To begin, we join the nutrient water quality tabel (`epi.nutr`) to the location information for each lake in the `locus` table. Next, we join the output to the `state` table to obtain state abbreviations that correspond to each lake. Finally, we filter the dataset to exclude any lakes that do not fall within a state. 
+
+```{r avg_chl_by_state, message=FALSE, results = 'hide', warning = FALSE}
+library(dplyr)
+library(ggplot2)
+
+lg <- left_join(dt$epi.nutr, dt$locus)
+lg <- left_join(lg, dt$state)
+lg <- group_by(lg, state)
+lg <- filter(lg, !is.na(state))
+```
+
+```{r }
+state_easting <- summarize(lg, 
+                    mean_easting = mean(nhd_long, na.rm = TRUE))
+state_easting <- arrange(state_easting, mean_easting)
+
+lg$state <- factor(lg$state, levels = state_easting$state)
+
+ggplot(lg) + 
+  geom_boxplot(aes(x = state, y = chla), outlier.shape = NA) + 
+  ylim(c(0, 80)) + ylab("Chlorophyll a (ug/L)")
+
+```
+
+## Map average chlorophyll in Pennsylvania
+
+```{r pa_chl_map}
+library(maps)
+library(sf)
+
+states <- st_as_sf(map("state", plot = FALSE, fill = TRUE))
+pa <- filter(states, ID == "pennsylvania")
+
+pa_chl <- filter(lg, state == "PA")
+pa_chl <- group_by(pa_chl, lagoslakeid)
+pa_chl <- summarize(pa_chl, 
+                      mean_chl  = mean(chla, na.rm = TRUE), 
+                      mean_long = mean(nhd_long, na.rm = TRUE), 
+                      mean_lat  = mean(nhd_lat, na.rm = TRUE))
+pa_chl <- filter(pa_chl, !is.na(mean_chl))
+
+pa_chl <- st_as_sf(pa_chl, coords = c("mean_long", "mean_lat"), crs = 4326)
+
+ggplot() + 
+  geom_sf(data = pa) +
+  geom_sf(data = pa_chl, aes(color = log(mean_chl))) + 
+  theme_bw() + scale_color_gradient(low = "white", high = "darkgreen") +
+  labs(color = "log(Chlorophyll a (ug/L))")
+
+```

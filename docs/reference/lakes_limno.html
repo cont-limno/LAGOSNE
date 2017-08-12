@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Query LAGOS names — query_lagos_names • LAGOS</title>
+<title>Metadata for Lakes with Water Quality — lakes_limno • LAGOS</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -95,58 +95,49 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Query LAGOS names</h1>
+    <h1>Metadata for Lakes with Water Quality</h1>
     </div>
 
     
-    <p>Return a vector of table names whose associated tables have
- columns that grep to query.</p>
+    <p>A dataset containing depth and names for lakes included in the limno
+module.</p>
     
 
-    <pre class="usage"><span class='fu'>query_lagos_names</span>(<span class='no'>dt</span>, <span class='no'>grep_string</span>, <span class='kw'>scale</span> <span class='kw'>=</span> <span class='fl'>NA</span>)</pre>
+        
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+
+    <p>A data frame with 141265 observations of 8 variables:</p><ul>
+<li><p>lagoslakeid:	    unique lake identifier developed for
+            LAGOS-NE</p></li>
+<li><p>nhdid:	          the 'Permanent_identifier' from the NHD,
+            but is called the NHDID in LAGOS-NE</p></li>
+<li><p>lagosname1:	    name of lake from source dataset used as
+            the authoritative lake name for LAGOS</p></li>
+<li><p>meandepth:	      mean lake depth (meters)</p></li>
+<li><p>meandepthsource:	source of mean depth data, see
+            "lagos.source.program" for definitions</p></li>
+<li><p>maxdepth:	      maximum lake depth (meters)</p></li>
+<li><p>maxdepthsource:	source of maximum depth data, see
+            "lagos.source.program" for definitions</p></li>
+<li><p>legacyid:	      unique lake identifier from the original
+            water quality source dataset, this is not standardized and each
+            source dataset has its own system</p></li>
+</ul>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>dt</th>
-      <td><p>data.frame output of <code><a href='lagos_load.html'>lagos_load</a></code></p></td>
-    </tr>
-    <tr>
-      <th>grep_string</th>
-      <td><p>character search string to grep to table column names</p></td>
-    </tr>
-    <tr>
-      <th>scale</th>
-      <td><p>character filter results by one of:</p><ul>
-<li><p>county</p></li>
-<li><p>edu</p></li>
-<li><p>hu4</p></li>
-<li><p>hu8</p></li>
-<li><p>hu12</p></li>
-<li><p>state</p></li>
-</ul></td>
-    </tr>
-    </table>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+
+    <p>Soranno et al. (2015) <a href='https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4'>Gigascience 4:28</a></p>
     
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='no'>dt</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='lagos_load.html'>lagos_load</a></span>(<span class='st'>"1.087.1"</span>)
-<span class='fu'>query_lagos_names</span>(<span class='no'>dt</span>, <span class='st'>"_dep_"</span>)
-<span class='fu'>query_lagos_names</span>(<span class='no'>dt</span>, <span class='st'>"_dep_"</span>, <span class='st'>"hu4"</span>)
-<span class='fu'>query_lagos_names</span>(<span class='no'>dt</span>, <span class='st'>"chla"</span>)
-<span class='fu'>query_lagos_names</span>(<span class='no'>dt</span>, <span class='st'>"secchi"</span>)
-<span class='fu'>query_lagos_names</span>(<span class='no'>dt</span>, <span class='st'>"conn"</span>)
-<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-            
-      <li><a href="#examples">Examples</a></li>
-    </ul>
+      
+      <li><a href="#format">Format</a></li>
+
+      <li><a href="#references">References</a></li>
+          </ul>
 
   </div>
 </div>

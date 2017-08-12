@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Query LAGOS names — query_lagos_names • LAGOS</title>
+<title>Metadata for all lakes &gt; 1ha — locus • LAGOS</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -95,58 +95,62 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Query LAGOS names</h1>
+    <h1>Metadata for all lakes &gt; 1ha</h1>
     </div>
 
     
-    <p>Return a vector of table names whose associated tables have
- columns that grep to query.</p>
+    <p>A dataset containing identifying information for all lakes &gt; 1ha. This includes
+lake name, lake size (area and perimeter), location (lat/long), elevation,
+and codes identifying zones in which the lake is located.</p>
     
 
-    <pre class="usage"><span class='fu'>query_lagos_names</span>(<span class='no'>dt</span>, <span class='no'>grep_string</span>, <span class='kw'>scale</span> <span class='kw'>=</span> <span class='fl'>NA</span>)</pre>
+        
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+
+    <p>A data frame with 141265 observations of 17 variables:</p><ul>
+<li><p>lagoslakeid: unique identifier for each lake in LAGOS-NE.
+            For each row of data in this table, the lagoslakeid identifies the focal lake
+            for which other measures are calculated</p></li>
+<li><p>nhdid: the 'Permanent_identifier' from the NHD,
+            but is called the NHDID in LAGOS-NE</p></li>
+<li><p>gnis_name: lake name from the GNIS database</p></li>
+<li><p>nhd_lat: latitude of centroid of the NHD lake polygon in decimal
+            degrees (NAD83)</p></li>
+<li><p>nhd_long: longitude of centroid of the NHD lake polygon in decimal
+            degrees (NAD83)</p></li>
+<li><p>lake_area_ha: surface area (in hectares) of lake waterbody polygon from NHD</p></li>
+<li><p>lake_perim_meters: perimeter (in meters) of lake waterbody polygon from the NHD</p></li>
+<li><p>nhd_fcode: NHD five-digit integer code with feature code plus additional
+            characteristics/values</p></li>
+<li><p>nhd_ftype: NHD three-digit integer code providing a unique identifier of feature
+            type for the waterbody</p></li>
+<li><p>iws_zoneid: the  unique ID of the IWS that is estimated for the focal lake
+            in the row of data that is identified by the lagoslakeid.</p></li>
+<li><p>hu4_zoneid: the unique ID of the HU4 zone that the focal lake is located within</p></li>
+<li><p>hu6_zoneid: the unique ID of the HU6 zone that the focal lake is located within</p></li>
+<li><p>hu8_zoneid: the unique ID of the HU8 zone that the focal lake is located within</p></li>
+<li><p>hu12_zoneid: the unique ID of the HU12 zone that the focal lake is located within</p></li>
+<li><p>edu_zoneid: the unique ID of the EDU zone that the focal lake is located within</p></li>
+<li><p>county_zoneid: the unique ID of the county that the focal lake is located within</p></li>
+<li><p>state_zoneid: the unique ID of the state that the focal lake is located within</p></li>
+<li><p>elevation_m: the elevation of the lake centroid, in meters (referenced to the
+            North American Vertical Datum of 1988 (NAVD88)) and obtained from the National Elevation Dataset</p></li>
+</ul>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>dt</th>
-      <td><p>data.frame output of <code><a href='lagos_load.html'>lagos_load</a></code></p></td>
-    </tr>
-    <tr>
-      <th>grep_string</th>
-      <td><p>character search string to grep to table column names</p></td>
-    </tr>
-    <tr>
-      <th>scale</th>
-      <td><p>character filter results by one of:</p><ul>
-<li><p>county</p></li>
-<li><p>edu</p></li>
-<li><p>hu4</p></li>
-<li><p>hu8</p></li>
-<li><p>hu12</p></li>
-<li><p>state</p></li>
-</ul></td>
-    </tr>
-    </table>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+
+    <p>Soranno et al. (2015) <a href='https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4'>Gigascience 4:28</a></p>
     
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='no'>dt</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='lagos_load.html'>lagos_load</a></span>(<span class='st'>"1.087.1"</span>)
-<span class='fu'>query_lagos_names</span>(<span class='no'>dt</span>, <span class='st'>"_dep_"</span>)
-<span class='fu'>query_lagos_names</span>(<span class='no'>dt</span>, <span class='st'>"_dep_"</span>, <span class='st'>"hu4"</span>)
-<span class='fu'>query_lagos_names</span>(<span class='no'>dt</span>, <span class='st'>"chla"</span>)
-<span class='fu'>query_lagos_names</span>(<span class='no'>dt</span>, <span class='st'>"secchi"</span>)
-<span class='fu'>query_lagos_names</span>(<span class='no'>dt</span>, <span class='st'>"conn"</span>)
-<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-            
-      <li><a href="#examples">Examples</a></li>
-    </ul>
+      
+      <li><a href="#format">Format</a></li>
+
+      <li><a href="#references">References</a></li>
+          </ul>
 
   </div>
 </div>
