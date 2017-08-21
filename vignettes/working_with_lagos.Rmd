@@ -27,7 +27,7 @@ The first analysis involves contructing a boxplot of average lake chlorophyll by
 library(dplyr)
 library(ggplot2)
 
-lg <- left_join(dt$epi.nutr, dt$locus)
+lg <- left_join(dt$epi_nutr, dt$locus)
 lg <- left_join(lg, dt$state)
 lg <- group_by(lg, state)
 lg <- filter(lg, !is.na(state))
