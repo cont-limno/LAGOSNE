@@ -40,4 +40,4 @@ dt_subset <- dt_subset[!(names(dt_subset) %in% exclude_names)]
 saveRDS(dt_subset, "tests/testthat/lagos_test_subset.rds")
 
 lg_subset <- dt_subset
-devtools::use_data(lg_subset)
+devtools::use_data(lg_subset, overwrite = TRUE)
