@@ -32,7 +32,7 @@ test_that("lagos_select works", {
   # mix of specific variables and categories
   dt_reduced <- lagos_select(table = "epi_nutr", vars = "lagoslakeid",
                              categories = c("waterquality"), dt = dt)
-  expect_equal(ncol(dt_reduced), 17)
+  expect_equal(ncol(dt_reduced), 18)
 
   # select only from limno
   # dt_reduced <- lagos_select(dt,
