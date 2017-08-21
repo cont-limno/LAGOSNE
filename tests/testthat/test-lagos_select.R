@@ -19,7 +19,7 @@ test_that("lagos_select works", {
   # categories
   dt_reduced <- lagos_select(table = "epi_nutr",
                              categories = "waterquality", dt = dt)
-  expect_equal(ncol(dt_reduced), 16)
+  expect_equal(ncol(dt_reduced), 17)
 
   dt_reduced <- lagos_select(table = "state.chag",
                              categories = "hydrology", dt = dt)
