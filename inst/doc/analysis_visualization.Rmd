@@ -1,0 +1,18 @@
+---
+title: "Analysis and Visualization"
+author: "Joseph Stachelek"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Analysis and Visualization}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Analysis
+
+### HUC Averaging
+
+## Visualization
+
+### Maps
