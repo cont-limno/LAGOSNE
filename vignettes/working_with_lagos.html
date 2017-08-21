@@ -76,9 +76,17 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <p>The following document presents two analyses to demonstrate use of the <code>LAGOS</code> package.</p>
 <p>To begin, we load LAGOS data with <code>lagos_load</code>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(LAGOS)
-
-dt &lt;-<span class="st"> </span><span class="kw">lagos_load</span>(<span class="st">&quot;1.087.1&quot;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(LAGOS)</code></pre></div>
+<pre><code>## Welcome to LAGOS version 1.087.1. To cite LAGOS in publications use: 
+##  
+## Soranno, P.A., Bissell, E.G., Cheruvelil, K.S., Christel, S.T., Collins,
+##     S.M., Fergus, C.E., Filstrup, C.T., Lapierre, J.F., Lottig, N.R., Oliver,
+##     S.K., Scott, C.E., Smith, N.J., Stopyak, S., Yuan, S., Bremigan, M.T.,
+##     Downing, J.A., Gries, C., Henry, E.H., Skaff, N.K., Stanley, E.H.,
+##     Stow, C.A., Tan, P.N., Wagner, T. and Webster, K.E. 2015. Building a
+##     multi-scaled geospatial temporal ecology database from disparate data
+##     sources: fostering open science and data reuse. Gigascience, 4(1)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dt &lt;-<span class="st"> </span><span class="kw">lagos_load</span>(<span class="st">&quot;1.087.1&quot;</span>)</code></pre></div>
 <div id="boxplot-of-average-chlorophyll-by-state" class="section level2">
 <h2>Boxplot of average chlorophyll by state</h2>
 <p>The first analysis involves contructing a boxplot of average lake chlorophyll by state. To begin, we join the nutrient water quality table (<code>epi.nutr</code>) to the location information for each lake in the <code>locus</code> table. Next, we join the output to the <code>state</code> table to obtain state abbreviations that correspond to each lake. Finally, we filter the dataset to exclude any lakes that do not fall within a state.</p>
