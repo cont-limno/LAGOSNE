@@ -9,7 +9,7 @@ test_that("lagos_select works", {
   dt <- readRDS("lagos_test_subset.rds")
 
   # specific variables
-  dt_reduced <- lagos_select(table = "epi.nutr", vars = c("tp", "tn"), dt = dt)
+  dt_reduced <- lagos_select(table = "epi_nutr", vars = c("tp", "tn"), dt = dt)
   expect_equal(ncol(dt_reduced), 2)
 
   dt_reduced <- lagos_select(table = "iws.lulc",
@@ -17,7 +17,7 @@ test_that("lagos_select works", {
   expect_equal(ncol(dt_reduced), 1)
 
   # categories
-  dt_reduced <- lagos_select(table = "epi.nutr",
+  dt_reduced <- lagos_select(table = "epi_nutr",
                              categories = "waterquality", dt = dt)
   expect_equal(ncol(dt_reduced), 16)
 
@@ -30,7 +30,7 @@ test_that("lagos_select works", {
   expect_equal(ncol(dt_reduced), 72)
 
   # mix of specific variables and categories
-  dt_reduced <- lagos_select(table = "epi.nutr", vars = "lagoslakeid",
+  dt_reduced <- lagos_select(table = "epi_nutr", vars = "lagoslakeid",
                              categories = c("waterquality"), dt = dt)
   expect_equal(ncol(dt_reduced), 17)
 

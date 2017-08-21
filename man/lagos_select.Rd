@@ -39,16 +39,16 @@ Select and filter LAGOS data with keyword helpers.
 dt <- lagos_load("1.087.1")
 
 # specific variables
-head(lagos_select(table = "epi.nutr", vars = c("tp", "tn")))
+head(lagos_select(table = "epi_nutr", vars = c("tp", "tn")))
 head(lagos_select(table = "iws.lulc", vars = c("iws_nlcd2011_pct_95")))
 
 # categories
-head(lagos_select(table = "epi.nutr", categories = "waterquality"))
+head(lagos_select(table = "epi_nutr", categories = "waterquality"))
 head(lagos_select(table = "county.chag", categories = "hydrology"))
 head(lagos_select(table = "hu4.chag", categories = "deposition"))
 
 # mix of specific variables and categories
-head(lagos_select(table = "epi.nutr", vars = "lagoslakeid", categories = c("waterquality")))
+head(lagos_select(table = "epi_nutr", vars = "lagoslakeid", categories = c("waterquality")))
 
 }
 }
