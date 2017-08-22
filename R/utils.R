@@ -26,7 +26,7 @@ load_lagos_txt <- function(file_name, sep = "\t", ...){
 #' }
 info_table <- function(lg){
 
-  limno_names <- c("epi.nutr", "lakes_limno", "secchi")
+  limno_names <- c("epi_nutr", "lakes_limno", "secchi")
   geo_names   <- !(names(lg) %in% c(limno_names, "locus"))
 
   limno <- lg[limno_names]
