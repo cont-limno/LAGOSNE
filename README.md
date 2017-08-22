@@ -60,8 +60,8 @@ names(dt)
 #> [25] "state.chag"           "state.conn"           "state.lulc"          
 #> [28] "buffer100m"           "buffer100m.lulc"      "buffer500m"          
 #> [31] "buffer500m.conn"      "buffer500m.lulc"      "lakes.geo"           
-#> [34] "epi.nutr"             "lakes.limno"          "secchi"              
-#> [37] "lagos.source.program" "locus"
+#> [34] "epi_nutr"             "lakes_limno"          "secchi"              
+#> [37] "lagos_source_program" "locus"
 ```
 
 #### Preview a table
@@ -109,7 +109,7 @@ help.search("datasets", package = "LAGOS")
 
 ``` r
 # specific variables
- head(lagos_select(table = "epi.nutr", vars = c("tp", "tn")))
+ head(lagos_select(table = "epi_nutr", vars = c("tp", "tn")))
 #>   tp tn
 #> 1 30 NA
 #> 2 10 NA
@@ -127,7 +127,7 @@ help.search("datasets", package = "LAGOS")
 #> 6                0.00
 
 # categories
-head(lagos_select(table = "epi.nutr", categories = "waterquality"))
+head(lagos_select(table = "epi_nutr", categories = "waterquality"))
 #>   chla colora colort dkn doc nh4 no2 no2no3 srp tdn tdp tkn tn toc ton tp
 #> 1   NA     NA     NA  NA  NA  20  NA     20  NA  NA  NA  NA NA  NA  NA 30
 #> 2   NA     NA     NA  NA  NA  20  NA     20  NA  NA  NA  NA NA  NA  NA 10
@@ -174,7 +174,7 @@ head(lagos_select(table = "hu4.chag", categories = "deposition")[,1:4])
 #> 6               1.8389
 
 # mix of specific variables and categories
-head(lagos_select(table = "epi.nutr", vars = "lagoslakeid", categories = c("waterquality")))
+head(lagos_select(table = "epi_nutr", vars = "lagoslakeid", categories = c("waterquality")))
 #>   lagoslakeid chla colora colort dkn doc nh4 no2 no2no3 srp tdn tdp tkn tn
 #> 1           2   NA     NA     NA  NA  NA  20  NA     20  NA  NA  NA  NA NA
 #> 2           2   NA     NA     NA  NA  NA  20  NA     20  NA  NA  NA  NA NA

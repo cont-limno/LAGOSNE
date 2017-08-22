@@ -13,9 +13,9 @@
 #' dt2 <- lagos_load("1.054.2")
 #'
 #'compare_columns <- function(num){
-#'  identical(dt2$epi.nutr[,num], dt$epi.nutr[,num])
+#'  identical(dt2$epi_nutr[,num], dt$epi_nutr[,num])
 #'}
-#'names(dt2$epi.nutr)[sapply(13:94, compare_columns)]
+#'names(dt2$epi_nutr)[sapply(13:94, compare_columns)]
 #'
 #' }
 lagos_load <- function(version, format = "rds", fpath = NA){
