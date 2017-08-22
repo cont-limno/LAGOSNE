@@ -17,3 +17,4 @@ R/test.R
 ^\.travis\.yml$
 LAGOS.bib
 ^docs$
+vignettes/Makefile

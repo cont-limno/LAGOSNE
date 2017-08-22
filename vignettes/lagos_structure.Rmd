@@ -2,7 +2,7 @@
 title: "The Structure of LAGOS"
 author: "Samantha Oliver"
 date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
+output: md_document
 vignette: >
   %\VignetteIndexEntry{The Structure of LAGOS}
   %\VignetteEngine{knitr::rmarkdown}
