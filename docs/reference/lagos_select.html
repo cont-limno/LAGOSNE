@@ -119,7 +119,7 @@
     <tr>
       <th>categories</th>
       <td><p>what type of variables should be kept. Note not all scale-category options are available. Variable categories include:</p><ul>
-<li><p>"waterquality" - includes all in-situ chemistry, chlorophyll, and water clarity measurements from the epi.nutr table.</p></li>
+<li><p>"waterquality" - includes all in-situ chemistry, chlorophyll, and water clarity measurements from the epi_nutr table.</p></li>
 <li><p>"deposition" - all atmospheric deposition variables from the .chag tables</p></li>
 <li><p>"hydrology" - baseflow, groundwater, runoff, and overland flow variables from the .chag tables</p></li>
 <li><p>"climate" - 30-year normal precipitation and temperature variables from the .chag tables</p></li>
@@ -146,16 +146,16 @@
 <span class='no'>dt</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='lagos_load.html'>lagos_load</a></span>(<span class='st'>"1.087.1"</span>)
 
 <span class='co'># specific variables</span>
-<span class='fu'>head</span>(<span class='fu'>lagos_select</span>(<span class='kw'>table</span> <span class='kw'>=</span> <span class='st'>"epi.nutr"</span>, <span class='kw'>vars</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"tp"</span>, <span class='st'>"tn"</span>)))
+<span class='fu'>head</span>(<span class='fu'>lagos_select</span>(<span class='kw'>table</span> <span class='kw'>=</span> <span class='st'>"epi_nutr"</span>, <span class='kw'>vars</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"tp"</span>, <span class='st'>"tn"</span>)))
 <span class='fu'>head</span>(<span class='fu'>lagos_select</span>(<span class='kw'>table</span> <span class='kw'>=</span> <span class='st'>"iws.lulc"</span>, <span class='kw'>vars</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"iws_nlcd2011_pct_95"</span>)))
 
 <span class='co'># categories</span>
-<span class='fu'>head</span>(<span class='fu'>lagos_select</span>(<span class='kw'>table</span> <span class='kw'>=</span> <span class='st'>"epi.nutr"</span>, <span class='kw'>categories</span> <span class='kw'>=</span> <span class='st'>"waterquality"</span>))
+<span class='fu'>head</span>(<span class='fu'>lagos_select</span>(<span class='kw'>table</span> <span class='kw'>=</span> <span class='st'>"epi_nutr"</span>, <span class='kw'>categories</span> <span class='kw'>=</span> <span class='st'>"waterquality"</span>))
 <span class='fu'>head</span>(<span class='fu'>lagos_select</span>(<span class='kw'>table</span> <span class='kw'>=</span> <span class='st'>"county.chag"</span>, <span class='kw'>categories</span> <span class='kw'>=</span> <span class='st'>"hydrology"</span>))
 <span class='fu'>head</span>(<span class='fu'>lagos_select</span>(<span class='kw'>table</span> <span class='kw'>=</span> <span class='st'>"hu4.chag"</span>, <span class='kw'>categories</span> <span class='kw'>=</span> <span class='st'>"deposition"</span>))
 
 <span class='co'># mix of specific variables and categories</span>
-<span class='fu'>head</span>(<span class='fu'>lagos_select</span>(<span class='kw'>table</span> <span class='kw'>=</span> <span class='st'>"epi.nutr"</span>, <span class='kw'>vars</span> <span class='kw'>=</span> <span class='st'>"lagoslakeid"</span>, <span class='kw'>categories</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"waterquality"</span>)))
+<span class='fu'>head</span>(<span class='fu'>lagos_select</span>(<span class='kw'>table</span> <span class='kw'>=</span> <span class='st'>"epi_nutr"</span>, <span class='kw'>vars</span> <span class='kw'>=</span> <span class='st'>"lagoslakeid"</span>, <span class='kw'>categories</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"waterquality"</span>)))
 
 <span class='co'># }</span></pre>
   </div>

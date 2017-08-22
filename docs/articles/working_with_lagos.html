@@ -75,7 +75,7 @@
       <h1>Working with LAGOS</h1>
                         <h4 class="author">Joseph Stachelek</h4>
             
-            <h4 class="date">2017-08-12</h4>
+            <h4 class="date">2017-08-22</h4>
           </div>
 
     
@@ -101,7 +101,7 @@
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(dplyr)
 <span class="kw">library</span>(ggplot2)
 
-lg &lt;-<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/join.html">left_join</a></span>(dt<span class="op">$</span>epi.nutr, dt<span class="op">$</span>locus)
+lg &lt;-<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/join.html">left_join</a></span>(dt<span class="op">$</span>epi_nutr, dt<span class="op">$</span>locus)
 lg &lt;-<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/join.html">left_join</a></span>(lg, dt<span class="op">$</span>state)
 lg &lt;-<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(lg, state)
 lg &lt;-<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(lg, <span class="op">!</span><span class="kw">is.na</span>(state))</code></pre></div>
@@ -114,11 +114,10 @@ lg &lt;-<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyvers
 state_easting &lt;-<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span>(state_easting, mean_easting)
 
 lg<span class="op">$</span>state &lt;-<span class="st"> </span><span class="kw">factor</span>(lg<span class="op">$</span>state, <span class="dt">levels =</span> state_easting<span class="op">$</span>state)</code></pre></div>
-<p>Finally, we contruct a boxplot with <code>ggplot</code>.</p>
+<p>Finally, we contruct a boxplot with <code>ggplot</code>:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(lg) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_boxplot">geom_boxplot</a></span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">x =</span> state, <span class="dt">y =</span> chla), <span class="dt">outlier.shape =</span> <span class="ot">NA</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/lims">ylim</a></span>(<span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">80</span>)) <span class="op">+</span><span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/labs">ylab</a></span>(<span class="st">"Chlorophyll a (ug/L)"</span>)</code></pre></div>
-<pre><code>## Warning: Removed 88232 rows containing non-finite values (stat_boxplot).</code></pre>
 <p><img src="working_with_lagos_files/figure-html/unnamed-chunk-2-1.png" width="672"></p>
 </div>
 <div id="map-of-average-chlorophyll-in-pennsylvania" class="section level2">
@@ -126,11 +125,11 @@ lg<span class="op">$</span>state &lt;-<span class="st"> </span><span class="kw">
 <a href="#map-of-average-chlorophyll-in-pennsylvania" class="anchor"></a>Map of average chlorophyll in Pennsylvania</h2>
 <p>The second analysis involves contructing a map of average lake chlorophyll concentration in Pennsylvania lakes. To begin, we use the <code>maps</code> and <code>sf</code> package to obtain a geographic outline of the state.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(maps)
-<span class="kw">library</span>(sf)</code></pre></div>
-<pre><code>## Linking to GEOS 3.5.1, GDAL 2.2.1, proj.4 4.9.2</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">states &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/sf/topics/st_as_sf">st_as_sf</a></span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/maps/topics/map">map</a></span>(<span class="st">"state"</span>, <span class="dt">plot =</span> <span class="ot">FALSE</span>, <span class="dt">fill =</span> <span class="ot">TRUE</span>))
+<span class="kw">library</span>(sf)
+
+states &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/sf/topics/st_as_sf">st_as_sf</a></span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/maps/topics/map">map</a></span>(<span class="st">"state"</span>, <span class="dt">plot =</span> <span class="ot">FALSE</span>, <span class="dt">fill =</span> <span class="ot">TRUE</span>))
 pa &lt;-<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(states, ID <span class="op">==</span><span class="st"> "pennsylvania"</span>)</code></pre></div>
-<p>Next, filter our output from the previous analysis to only include PA lakes and calculate mean chlorophyll for each lake.</p>
+<p>Next, we filter the output from the previous analysis to only include PA lakes and calculate mean chlorophyll for each lake:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pa_chl &lt;-<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(lg, state <span class="op">==</span><span class="st"> "PA"</span>)
 pa_chl &lt;-<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(pa_chl, lagoslakeid)
 pa_chl &lt;-<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span>(pa_chl, 

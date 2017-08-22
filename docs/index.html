@@ -128,8 +128,8 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <span class="co">#&gt; [25] "state.chag"           "state.conn"           "state.lulc"          </span>
 <span class="co">#&gt; [28] "buffer100m"           "buffer100m.lulc"      "buffer500m"          </span>
 <span class="co">#&gt; [31] "buffer500m.conn"      "buffer500m.lulc"      "lakes.geo"           </span>
-<span class="co">#&gt; [34] "epi.nutr"             "lakes.limno"          "secchi"              </span>
-<span class="co">#&gt; [37] "lagos.source.program" "locus"</span></code></pre></div>
+<span class="co">#&gt; [34] "epi_nutr"             "lakes_limno"          "secchi"              </span>
+<span class="co">#&gt; [37] "lagos_source_program" "locus"</span></code></pre></div>
 <div id="preview-a-table" class="section level4">
 <h4 class="hasAnchor">
 <a href="#preview-a-table" class="anchor"></a>Preview a table</h4>
@@ -219,7 +219,7 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <a href="#select-data" class="anchor"></a>Select data</h3>
 <p><code>lagos_select</code> is a convenience function whose primary purpose is to provide users with the ability to select subsets of LAGOS tables that correspond to specific keywords (see <code>LAGOS:::keyword_partial_key()</code>). See <a href="http://adv-r.had.co.nz/Subsetting.html">here</a> for a comprehensive tutorial on generic <code>data.frame</code> subsetting.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># specific variables</span>
- <span class="kw">head</span>(<span class="kw"><a href="reference/lagos_select.html">lagos_select</a></span>(<span class="dt">table =</span> <span class="st">"epi.nutr"</span>, <span class="dt">vars =</span> <span class="kw">c</span>(<span class="st">"tp"</span>, <span class="st">"tn"</span>)))
+ <span class="kw">head</span>(<span class="kw"><a href="reference/lagos_select.html">lagos_select</a></span>(<span class="dt">table =</span> <span class="st">"epi_nutr"</span>, <span class="dt">vars =</span> <span class="kw">c</span>(<span class="st">"tp"</span>, <span class="st">"tn"</span>)))
 <span class="co">#&gt;   tp tn</span>
 <span class="co">#&gt; 1 30 NA</span>
 <span class="co">#&gt; 2 10 NA</span>
@@ -237,7 +237,7 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <span class="co">#&gt; 6                0.00</span>
 
 <span class="co"># categories</span>
-<span class="kw">head</span>(<span class="kw"><a href="reference/lagos_select.html">lagos_select</a></span>(<span class="dt">table =</span> <span class="st">"epi.nutr"</span>, <span class="dt">categories =</span> <span class="st">"waterquality"</span>))
+<span class="kw">head</span>(<span class="kw"><a href="reference/lagos_select.html">lagos_select</a></span>(<span class="dt">table =</span> <span class="st">"epi_nutr"</span>, <span class="dt">categories =</span> <span class="st">"waterquality"</span>))
 <span class="co">#&gt;   chla colora colort dkn doc nh4 no2 no2no3 srp tdn tdp tkn tn toc ton tp</span>
 <span class="co">#&gt; 1   NA     NA     NA  NA  NA  20  NA     20  NA  NA  NA  NA NA  NA  NA 30</span>
 <span class="co">#&gt; 2   NA     NA     NA  NA  NA  20  NA     20  NA  NA  NA  NA NA  NA  NA 10</span>
@@ -284,7 +284,7 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <span class="co">#&gt; 6               1.8389</span>
 
 <span class="co"># mix of specific variables and categories</span>
-<span class="kw">head</span>(<span class="kw"><a href="reference/lagos_select.html">lagos_select</a></span>(<span class="dt">table =</span> <span class="st">"epi.nutr"</span>, <span class="dt">vars =</span> <span class="st">"lagoslakeid"</span>, <span class="dt">categories =</span> <span class="kw">c</span>(<span class="st">"waterquality"</span>)))
+<span class="kw">head</span>(<span class="kw"><a href="reference/lagos_select.html">lagos_select</a></span>(<span class="dt">table =</span> <span class="st">"epi_nutr"</span>, <span class="dt">vars =</span> <span class="st">"lagoslakeid"</span>, <span class="dt">categories =</span> <span class="kw">c</span>(<span class="st">"waterquality"</span>)))
 <span class="co">#&gt;   lagoslakeid chla colora colort dkn doc nh4 no2 no2no3 srp tdn tdp tkn tn</span>
 <span class="co">#&gt; 1           2   NA     NA     NA  NA  NA  20  NA     20  NA  NA  NA  NA NA</span>
 <span class="co">#&gt; 2           2   NA     NA     NA  NA  NA  20  NA     20  NA  NA  NA  NA NA</span>

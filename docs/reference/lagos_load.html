@@ -128,9 +128,9 @@
 <span class='no'>dt2</span> <span class='kw'>&lt;-</span> <span class='fu'>lagos_load</span>(<span class='st'>"1.054.2"</span>)
 
 <span class='no'>compare_columns</span> <span class='kw'>&lt;-</span> <span class='kw'>function</span>(<span class='no'>num</span>){
- <span class='fu'>identical</span>(<span class='no'>dt2</span>$<span class='no'>epi.nutr</span>[,<span class='no'>num</span>], <span class='no'>dt</span>$<span class='no'>epi.nutr</span>[,<span class='no'>num</span>])
+ <span class='fu'>identical</span>(<span class='no'>dt2</span>$<span class='no'>epi_nutr</span>[,<span class='no'>num</span>], <span class='no'>dt</span>$<span class='no'>epi_nutr</span>[,<span class='no'>num</span>])
 }
-<span class='fu'>names</span>(<span class='no'>dt2</span>$<span class='no'>epi.nutr</span>)[<span class='fu'>sapply</span>(<span class='fl'>13</span>:<span class='fl'>94</span>, <span class='no'>compare_columns</span>)]
+<span class='fu'>names</span>(<span class='no'>dt2</span>$<span class='no'>epi_nutr</span>)[<span class='fu'>sapply</span>(<span class='fl'>13</span>:<span class='fl'>94</span>, <span class='no'>compare_columns</span>)]
 
 <span class='co'># }</span></pre>
   </div>
