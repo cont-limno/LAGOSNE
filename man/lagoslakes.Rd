@@ -41,23 +41,23 @@
              \item latewisconsinglaciation_glacial: glaciation status during the Late Wisconsin glaciation,
              where 'Glaciated' where the whole zone was glaciated, 'Not_Glaciated' where the whole zone
              was not glaciated, and 'Partially_Glaciated' where a part of the zone was glaciated
-             \item wlconnections_allwetlands_*: the wetland polygons that interesect or are
+             \item wlconnections_allwetlands_*: the wetland polygons that intersect or are
              within 30 m buffer around a lake shoreline, measured as count, area (ha), or sum of
              shoreline length (km) that intersects or touches wetland polygons
              (* = count, contributing_area_ha, shoreline_km).
-             \item wlconnections_forestedwetlands_count: the forested wetland polygons that interesect or are
+             \item wlconnections_forestedwetlands_count: the forested wetland polygons that intersect or are
              within 30 m buffer around a lake shoreline, measured as count, area (ha), or sum of
              shoreline length (km) that intersects or touches wetland polygons
              (* = count, contributing_area_ha, shoreline_km).
-             \item wlconnections_scrubshrubwetlands_count: the scrub-shrub wetland polygons that interesect or are
+             \item wlconnections_scrubshrubwetlands_count: the scrub-shrub wetland polygons that intersect or are
              within 30 m buffer around a lake shoreline, measured as count, area (ha), or sum of
              shoreline length (km) that intersects or touches wetland polygons
              (* = count, contributing_area_ha, shoreline_km).
-             \item wlconnections_openwaterwetlands_count: the open water wetland polygons that interesect or are
+             \item wlconnections_openwaterwetlands_count: the open water wetland polygons that intersect or are
              within 30 m buffer around a lake shoreline, measured as count, area (ha), or sum of
              shoreline length (km) that intersects or touches wetland polygons
              (* = count, contributing_area_ha, shoreline_km).
-             \item wlconnections_otherwetlands_count: the other-wetland polygons that interesect or are
+             \item wlconnections_otherwetlands_count: the other-wetland polygons that intersect or are
              within 30 m buffer around a lake shoreline, measured as count, area (ha), or sum of
              shoreline length (km) that intersects or touches wetland polygons
              (* = count, contributing_area_ha, shoreline_km).

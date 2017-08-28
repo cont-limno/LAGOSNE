@@ -65,7 +65,7 @@ units (*** = min, max, mean, std for atmospheric deposition and hydrology;
    \item *_surficialgeology_marine_***: coastal-plain marine deposits of
    Pleistocene and Pliocene ages, and glaciomarine deposits of late
    Wisconsin age
-   \item *_surficialgeologyy_open_water_***: open water
+   \item *_surficialgeology_open_water_***: open water
    \item *_surficialgeology_other_***: surficial deposits, surficial
    materials, and bedrock masses that were deformed and (or) transported
    intact by glacial ice
