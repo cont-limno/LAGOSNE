@@ -18,14 +18,10 @@ data collection and integration. The nitty gritty details of such efforts (which
 Following [these instructions](https://github.com/cont-limno/LAGOS), install the LAGOS package and download the data from the online repository. The data are open-access and stored online as flat files [location]. The data only need to be downloaded once, and will be stored locally at the location returned by `rappdirs::user_data_dir`
 
 Now that the data are stored locally, you can import them as a list.
-```{r eval=FALSE}
-# Import LAGOS data into R
-dt <- lagos_load(version = "1.087.1", format = "rds")
-```
-
-```{r, message=FALSE, echo=FALSE}
+```{r eval=TRUE, message=FALSE}
 library(LAGOS)
-dt <- lagos_load("1.087.1")
+# Import LAGOS data into R
+dt <- lagos_load(version = "1.087.1")
 ```
 
 ## LAGOS Structure
@@ -70,4 +66,4 @@ plot(huc4, lty = 1, lwd=1, border=TRUE, col = "lightgray")
 ```
 
 ### LAGOSlocus
-LAGOSlocus provides a connection between all tables, as it contains metadata for the census population of lakes (all lakes greater than or equal to one hectare; n = `r nrow(dt$lakes.limno)`) in the LAGOS region, with corresponding unique identifiers for the zone of each spatial classification in which the lake is located. Lakes were identified through the National Hydrography Dataset, and the table also includes data about the lake polygons themselves, including surface area and perimeter. For a subset of lakes where data were available, lake depth (mean and/or maximum) is also included. 
+LAGOSlocus provides a connection between all tables, as it contains metadata for the census population of lakes (all lakes greater than or equal to one hectare; n = `r nrow(dt$lakes_limno)`) in the LAGOS region, with corresponding unique identifiers for the zone of each spatial classification in which the lake is located. Lakes were identified through the National Hydrography Dataset, and the table also includes data about the lake polygons themselves, including surface area and perimeter. For a subset of lakes where data were available, lake depth (mean and/or maximum) is also included. 
