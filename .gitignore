@@ -5,3 +5,6 @@
 docx
 inst/doc
 vignettes/Makefile
+Makefile
+data/waterquality.rda
+lagos_r_package_meeting_notes
