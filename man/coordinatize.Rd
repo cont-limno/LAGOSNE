@@ -4,8 +4,7 @@
 \alias{coordinatize}
 \title{Convert a LAGOS flat file into a spatial object}
 \usage{
-coordinatize(dt, latname = "nhd_lat", longname = "nhd_long",
-  projstring = "+init=epsg:4326")
+coordinatize(dt, latname = "nhd_lat", longname = "nhd_long", crs = 4326)
 }
 \arguments{
 \item{dt}{data.frame}
@@ -14,7 +13,7 @@ coordinatize(dt, latname = "nhd_lat", longname = "nhd_long",
 
 \item{longname}{character name of longitude column; defailt is "nhd_long"}
 
-\item{projstring}{character projection string; default is WGS84-lat-long}
+\item{crs}{numeric epsg code; default is 4326 WGS84-lat-long}
 }
 \description{
 This function turns a data.frame into a spatial object using a reasonable
@@ -26,7 +25,7 @@ dt <- lagos_load("1.087.1")
 res <- coordinatize(dt$locus)
 
 library(maps)
-map("state", xlim = sp::bbox(res)[c(1,3)], ylim = sp::bbox(res)[c(2,4)])
-sp::plot(res, add = TRUE, pch = 19, cex = 0.05)
+map("state", xlim = c(-97.90363, -66.99892), ylim = c(34.61761, 49.41941))
+plot(res$geometry, add = TRUE, pch = 19, cex = 0.05)
 }
 }

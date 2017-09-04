@@ -7,22 +7,20 @@
 #' @param dt data.frame
 #' @param latname character name of latitude column; default is "nhd_lat"
 #' @param longname character name of longitude column; defailt is "nhd_long"
-#' @param projstring character projection string; default is WGS84-lat-long
-#' @importFrom sp coordinates proj4string CRS
+#' @param crs numeric epsg code; default is 4326 WGS84-lat-long
+#' @importFrom sf st_as_sf
 #' @export
 #' @examples \dontrun{
 #' dt <- lagos_load("1.087.1")
 #' res <- coordinatize(dt$locus)
 #'
 #' library(maps)
-#' map("state", xlim = sp::bbox(res)[c(1,3)], ylim = sp::bbox(res)[c(2,4)])
-#' sp::plot(res, add = TRUE, pch = 19, cex = 0.05)
+#' map("state", xlim = c(-97.90363, -66.99892), ylim = c(34.61761, 49.41941))
+#' plot(res$geometry, add = TRUE, pch = 19, cex = 0.05)
 #' }
 coordinatize <- function(dt, latname = "nhd_lat", longname = "nhd_long",
-                         projstring = "+init=epsg:4326"){
+                         crs = 4326){
 
-  sp::coordinates(dt) <- c(longname, latname)
-  sp::proj4string(dt) <- sp::CRS(projstring)
-
+  dt <- sf::st_as_sf(dt, coords = c(longname, latname), crs = crs)
   dt
 }
