@@ -5,7 +5,7 @@
 #'
 #' @export
 #' @importFrom utils download.file
-#' @param dest_folder file.path optional will default to the location returned
+#' @param dest_folder file.path not implemented yet
 #' by \code{\link[rappdirs]{user_data_dir}}.
 #' @param version character LAGOS database version string
 #' @param overwrite logical overwrite existing data for the specified version
@@ -20,7 +20,7 @@ lagos_get <- function(version, overwrite = FALSE, dest_folder = NA){
   Re-download if neccessary using the 'overwrite` argument.'")
   }
 
-  baseurl <- "http://pasta-s.lternet.edu/package/data/eml/edi/"
+  baseurl <- "http://pasta.lternet.edu/package/data/eml/edi/"
 
   locus_base  <- paste0(baseurl, c("100/1"))
   locus_dir   <- get_lagos_module(locus_base, "locus")
@@ -46,7 +46,7 @@ lagos_get <- function(version, overwrite = FALSE, dest_folder = NA){
 #' Get depth data from Oliver et al. 2015
 #'
 #' @export
-#' @param dest_folder file.path
+#' @param dest_folder file.path not implemented yet
 #' @references Oliver SK, Soranno PA, Fergus EC, Wagner T, Webster KE, Scott C,
 #'  Winslow LA, Downing JA, Stanley EH. 2015. LAGOS - Predicted and observed
 #'  maximum depth values for lakes in a 17-state region of the U.S. Long Term
