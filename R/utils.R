@@ -226,6 +226,7 @@ get_file_names <- function(url){
 get_lagos_module <- function(url, folder_name){
   files <- suppressWarnings(paste0(url, "/",
                             readLines(url)))
+
   file_names <- sapply(files, get_file_names)
 
   local_dir   <- file.path(tempdir(), folder_name)

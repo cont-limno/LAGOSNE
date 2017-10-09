@@ -11,7 +11,7 @@ lagos_get(version, overwrite = FALSE, dest_folder = NA)
 
 \item{overwrite}{logical overwrite existing data for the specified version}
 
-\item{dest_folder}{file.path optional will default to the location returned
+\item{dest_folder}{file.path not implemented yet
 by \code{\link[rappdirs]{user_data_dir}}.}
 }
 \description{

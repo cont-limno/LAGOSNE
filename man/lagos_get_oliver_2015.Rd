@@ -7,7 +7,7 @@
 lagos_get_oliver_2015(dest_folder)
 }
 \arguments{
-\item{dest_folder}{file.path}
+\item{dest_folder}{file.path not implemented yet}
 }
 \description{
 Get depth data from Oliver et al. 2015
