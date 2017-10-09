@@ -2,7 +2,7 @@ Package: LAGOS
 Title: R interface to the LAke multi-scaled GeOSpatial & temporal database
 Version: 1.087.1
 Authors@R: c(
-    person("Joseph", "Stachelek", email = "stachel2@msu.edu", role = c("aut", "cre")),
+    person("Joseph", "Stachelek", email = "lagos.lakes.contact@gmail.com", role = c("aut", "cre")),
     person("Samantha","Oliver", role = c("aut")),
     person("Farzan","Masrour", role = c("aut"))
     )
