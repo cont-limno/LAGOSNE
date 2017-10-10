@@ -95,7 +95,7 @@ help.search("datasets", package = "LAGOS")
 | LAGOS   | chag            | CHAG Datasets                          |
 | LAGOS   | classifications | LAGOS Spatial Classifications Metadata |
 | LAGOS   | conn            | Connectivity Datasets                  |
-| LAGOS   | epi.nutr        | Epilimnion Water Quality Data          |
+| LAGOS   | epi\_nutr       | Epilimnion Water Quality Data          |
 | LAGOS   | lagoslakes      | Lake Geospatial Metadata               |
 | LAGOS   | lakes\_limno    | Metadata for Lakes with Water Quality  |
 | LAGOS   | locus           | Metadata for all lakes &gt; 1ha        |
