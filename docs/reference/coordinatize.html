@@ -103,8 +103,7 @@
  default projection.</p>
     
 
-    <pre class="usage"><span class='fu'>coordinatize</span>(<span class='no'>dt</span>, <span class='kw'>latname</span> <span class='kw'>=</span> <span class='st'>"nhd_lat"</span>, <span class='kw'>longname</span> <span class='kw'>=</span> <span class='st'>"nhd_long"</span>,
-  <span class='kw'>projstring</span> <span class='kw'>=</span> <span class='st'>"+init=epsg:4326"</span>)</pre>
+    <pre class="usage"><span class='fu'>coordinatize</span>(<span class='no'>dt</span>, <span class='kw'>latname</span> <span class='kw'>=</span> <span class='st'>"nhd_lat"</span>, <span class='kw'>longname</span> <span class='kw'>=</span> <span class='st'>"nhd_long"</span>, <span class='kw'>crs</span> <span class='kw'>=</span> <span class='fl'>4326</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -122,8 +121,8 @@
       <td><p>character name of longitude column; defailt is "nhd_long"</p></td>
     </tr>
     <tr>
-      <th>projstring</th>
-      <td><p>character projection string; default is WGS84-lat-long</p></td>
+      <th>crs</th>
+      <td><p>numeric epsg code; default is 4326 WGS84-lat-long</p></td>
     </tr>
     </table>
     
@@ -134,8 +133,8 @@
 <span class='no'>res</span> <span class='kw'>&lt;-</span> <span class='fu'>coordinatize</span>(<span class='no'>dt</span>$<span class='no'>locus</span>)
 
 <span class='fu'>library</span>(<span class='no'>maps</span>)
-<span class='fu'><a href='http://www.rdocumentation.org/packages/maps/topics/map'>map</a></span>(<span class='st'>"state"</span>, <span class='kw'>xlim</span> <span class='kw'>=</span> <span class='kw pkg'>sp</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/sp/topics/bbox'>bbox</a></span>(<span class='no'>res</span>)[<span class='fu'>c</span>(<span class='fl'>1</span>,<span class='fl'>3</span>)], <span class='kw'>ylim</span> <span class='kw'>=</span> <span class='kw pkg'>sp</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/sp/topics/bbox'>bbox</a></span>(<span class='no'>res</span>)[<span class='fu'>c</span>(<span class='fl'>2</span>,<span class='fl'>4</span>)])
-<span class='kw pkg'>sp</span><span class='kw ns'>::</span><span class='fu'>plot</span>(<span class='no'>res</span>, <span class='kw'>add</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>pch</span> <span class='kw'>=</span> <span class='fl'>19</span>, <span class='kw'>cex</span> <span class='kw'>=</span> <span class='fl'>0.05</span>)
+<span class='fu'><a href='http://www.rdocumentation.org/packages/maps/topics/map'>map</a></span>(<span class='st'>"state"</span>, <span class='kw'>xlim</span> <span class='kw'>=</span> <span class='fu'>c</span>(-<span class='fl'>97.90363</span>, -<span class='fl'>66.99892</span>), <span class='kw'>ylim</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>34.61761</span>, <span class='fl'>49.41941</span>))
+<span class='fu'>plot</span>(<span class='no'>res</span>$<span class='no'>geometry</span>, <span class='kw'>add</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>pch</span> <span class='kw'>=</span> <span class='fl'>19</span>, <span class='kw'>cex</span> <span class='kw'>=</span> <span class='fl'>0.05</span>)
 <span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

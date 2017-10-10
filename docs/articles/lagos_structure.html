@@ -75,7 +75,7 @@
       <h1>The Structure of LAGOS</h1>
                         <h4 class="author">Samantha Oliver</h4>
             
-            <h4 class="date">2017-08-28</h4>
+            <h4 class="date">2017-10-10</h4>
           </div>
 
     
@@ -92,8 +92,9 @@
 <a href="#accessing-lagos" class="anchor"></a>Accessing LAGOS</h2>
 <p>Following <a href="https://github.com/cont-limno/LAGOS">these instructions</a>, install the LAGOS package and download the data from the online repository. The data are open-access and stored online as flat files [location]. The data only need to be downloaded once, and will be stored locally at the location returned by <code><a href="http://www.rdocumentation.org/packages/rappdirs/topics/user_data_dir">rappdirs::user_data_dir</a></code></p>
 <p>Now that the data are stored locally, you can import them as a list.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Import LAGOS data into R</span>
-dt &lt;-<span class="st"> </span><span class="kw"><a href="../reference/lagos_load.html">lagos_load</a></span>(<span class="dt">version =</span> <span class="st">"1.087.1"</span>, <span class="dt">format =</span> <span class="st">"rds"</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(LAGOS)
+<span class="co"># Import LAGOS data into R</span>
+dt &lt;-<span class="st"> </span><span class="kw"><a href="../reference/lagos_load.html">lagos_load</a></span>(<span class="dt">version =</span> <span class="st">"1.087.1"</span>)</code></pre></div>
 </div>
 <div id="lagos-structure" class="section level2">
 <h2 class="hasAnchor">
@@ -138,7 +139,7 @@ dt &lt;-<span class="st"> </span><span class="kw"><a href="../reference/lagos_lo
 </tr>
 <tr class="even">
 <td align="left">LAGOS</td>
-<td align="left">epi.nutr</td>
+<td align="left">epi_nutr</td>
 <td align="left">Epilimnion Water Quality Data</td>
 </tr>
 <tr class="odd">
@@ -199,7 +200,7 @@ dt &lt;-<span class="st"> </span><span class="kw"><a href="../reference/lagos_lo
 <div id="lagoslocus" class="section level3">
 <h3 class="hasAnchor">
 <a href="#lagoslocus" class="anchor"></a>LAGOSlocus</h3>
-<p>LAGOSlocus provides a connection between all tables, as it contains metadata for the census population of lakes (all lakes greater than or equal to one hectare; n = ) in the LAGOS region, with corresponding unique identifiers for the zone of each spatial classification in which the lake is located. Lakes were identified through the National Hydrography Dataset, and the table also includes data about the lake polygons themselves, including surface area and perimeter. For a subset of lakes where data were available, lake depth (mean and/or maximum) is also included.</p>
+<p>LAGOSlocus provides a connection between all tables, as it contains metadata for the census population of lakes (all lakes greater than or equal to one hectare; n = 141265) in the LAGOS region, with corresponding unique identifiers for the zone of each spatial classification in which the lake is located. Lakes were identified through the National Hydrography Dataset, and the table also includes data about the lake polygons themselves, including surface area and perimeter. For a subset of lakes where data were available, lake depth (mean and/or maximum) is also included.</p>
 </div>
 </div>
 </div>
