@@ -33,9 +33,15 @@ unless otherwise noted.
    (*** = pointcount, poinsperha, pointspersqkm)
    \item *_nlcd**_***_0: No data
    \item *_nlcd**_***_11: Open water
-   \item *_nlcd**_***_21: Residential, low intensity
-   \item *_nlcd**_***_22: Residential, high intensity
-   \item *_nlcd**_***_23: Commercial/industrial/transportation
+   \item *_nlcd1992_***_21: Residential, low intensity
+   \item *_nlcd**_***_21: Developed, open space. Note, this variable was
+   not measured in 1992 (** = 2001, 2006, 2011)
+   \item *_nlcd1992_***_22: Residential, high intensity
+   \item *_nlcd**_***_22: Developed, low intensity. Note, this variable was
+   not measured in 1992 (** = 2001, 2006, 2011)
+   \item *_nlcd1992_***_23: Commercial/industrial/transportation
+   \item *_nlcd**_***_23: Developed, medium intensity. Note, this variable was
+   not measured in 1992 (** = 2001, 2006, 2011)
    \item *_nlcd**_***_24: Developed, high Intensity. Note, this variable was
    not measured in 1992 (** = 2001, 2006, 2011)
    \item *_nlcd**_***_31: Bare rock/sand/clay
