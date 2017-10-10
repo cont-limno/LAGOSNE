@@ -96,8 +96,8 @@ info_table <- function(lg){
 
 }
 
-get_if_not_exists <- function(url, destfile){
-  if(!file.exists(destfile)){
+get_if_not_exists <- function(url, destfile, overwrite){
+  if(!file.exists(destfile) | overwrite){
     download.file(url, destfile)
   }else{
     message(paste0("A local copy of ", url, " already exists on disk"))
@@ -223,7 +223,7 @@ get_file_names <- function(url){
   gsub('\\"', "", res)
 }
 
-get_lagos_module <- function(url, folder_name){
+get_lagos_module <- function(url, folder_name, overwrite){
   files <- suppressWarnings(paste0(url, "/",
                             readLines(url)))
 
@@ -235,7 +235,7 @@ get_lagos_module <- function(url, folder_name){
   file_paths <- file.path(local_dir, file_names)
 
   invisible(lapply(seq_len(length(files)),
-    function(i) get_if_not_exists(files[i], file_paths[i])))
+    function(i) get_if_not_exists(files[i], file_paths[i], overwrite)))
 
   local_dir
 }

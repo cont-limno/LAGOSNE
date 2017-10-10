@@ -23,13 +23,13 @@ lagos_get <- function(version, overwrite = FALSE, dest_folder = NA){
   baseurl <- "http://pasta.lternet.edu/package/data/eml/edi/"
 
   locus_base  <- paste0(baseurl, c("100/4"))
-  locus_dir   <- get_lagos_module(locus_base, "locus")
+  locus_dir   <- get_lagos_module(locus_base, "locus", overwrite)
 
   limno_base <- paste0(baseurl, c("101/2"))
-  limno_dir  <- get_lagos_module(limno_base, "limno")
+  limno_dir  <- get_lagos_module(limno_base, "limno", overwrite)
 
   geo_base <- paste0(baseurl, c("99/5"))
-  geo_dir  <- get_lagos_module(geo_base, "geo")
+  geo_dir  <- get_lagos_module(geo_base, "geo", overwrite)
 
   dir.create(lagos_path(), showWarnings = FALSE)
 
