@@ -8,8 +8,9 @@ Authors@R: c(
     )
 URL: https://github.com/cont-limno/LAGOS
 BugReports: https://github.com/cont-limno/LAGOS/issues
-Description: This package provides functions for interacting with the Lake
-    Multi-scaled Geospatial and Temporal Database (LAGOS).
+Description: Client for programmatic access to the 'Lake
+    Multi-scaled Geospatial and Temporal' database <https://lagoslakes.org>, with functions
+    for accessing lake water quality and ecological context data for the US.
 Depends:
     R (>= 3.3.1)
 Imports: dplyr (>= 0.7.0), 
