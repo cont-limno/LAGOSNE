@@ -18,3 +18,4 @@ R/test.R
 LAGOS.bib
 ^docs$
 vignettes/Makefile
+^cran-comments\.md$
