@@ -39,6 +39,11 @@
 #' head(lagos_select(table = "epi_nutr", vars = "lagoslakeid", categories = c("waterquality")))
 #'
 #' }
+#' data("lg_subset")
+#' head(lagos_select(table = "epi_nutr",
+#'                   vars = c("lagoslakeid", "sampledate"),
+#'                   categories = c("waterquality"),
+#'                   dt = lg_subset))
 
 lagos_select <- function(table = NULL, vars = NULL, categories = NULL,
                          dt = lagos_load("1.087.1")){
