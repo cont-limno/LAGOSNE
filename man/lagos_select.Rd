@@ -51,9 +51,4 @@ head(lagos_select(table = "hu4.chag", categories = "deposition"))
 head(lagos_select(table = "epi_nutr", vars = "lagoslakeid", categories = c("waterquality")))
 
 }
-data("lg_subset")
-head(lagos_select(table = "epi_nutr",
-                  vars = c("lagoslakeid", "sampledate"),
-                  categories = c("waterquality"),
-                  dt = lg_subset))
 }

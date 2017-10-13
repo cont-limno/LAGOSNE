@@ -21,8 +21,7 @@
 #'   apply(focal_lakes, 1, function(x) lake_info(
 #'     dt = dt, name = x[1], state = x[2]))
 #' }
-#' data("lg_subset")
-#' lake_info(lg_subset, "Benton Pond", "Massachusetts")
+
 lake_info <- function(dt, name, state){
   dt$locus$state_zoneid <- as.character(dt$locus$state_zoneid)
   dt$state$state_zoneid <- as.character(dt$state$state_zoneid)

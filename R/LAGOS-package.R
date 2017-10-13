@@ -927,3 +927,13 @@ NULL
 #' @aliases programs lagos.source.programs source.programs lagos.source
 #' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
 NULL
+
+#' LAGOS subset
+#'
+#' A dataset with the first two rows of many LAGOS tables
+#'
+#' @docType data
+#' @keywords datasets
+#' @name lg_subset
+#' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
+"lg_subset"

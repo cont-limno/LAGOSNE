@@ -27,6 +27,4 @@ lake_info(dt, "Sunapee Lake", "New Hampshire")
   apply(focal_lakes, 1, function(x) lake_info(
     dt = dt, name = x[1], state = x[2]))
 }
-data("lg_subset")
-lake_info(lg_subset, "Benton Pond", "Massachusetts")
 }
