@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Load LAGOSNE data from disk — load_lagos_txt • LAGOSNE</title>
+<title>LAGOSNE subset — lg_subset • LAGOSNE</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -98,44 +98,32 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Load LAGOSNE data from disk</h1>
+    <h1>LAGOSNE subset</h1>
     </div>
 
     
-    <p>A wrapper for <code><a href='http://www.rdocumentation.org/packages/utils/topics/read.table'>read.table</a></code> with a default set of parameters.</p>
+    <p>A dataset with the first two rows of many LAGOSNE tables</p>
     
 
-    <pre class="usage"><span class='fu'>load_lagos_txt</span>(<span class='no'>file_name</span>, <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>"\t"</span>, <span class='no'>...</span>)</pre>
-    
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>file_name</th>
-      <td><p>character</p></td>
-    </tr>
-    <tr>
-      <th>sep</th>
-      <td><p>character separator (tab or comma separated values)</p></td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td><p>Options passed on to <code><a href='http://www.rdocumentation.org/packages/utils/topics/read.table'>read.table</a></code></p></td>
-    </tr>
-    </table>
-    
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+    <pre class="usage"><span class='no'>lg_subset</span></pre>
+        
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>data.frame</p>
+    <p>An object of class <code>list</code> of length 26.</p>
+    
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+
+    <p>Soranno et al. (2015) <a href='https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4'>Gigascience 4:28</a></p>
     
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
       
-      <li><a href="#value">Value</a></li>
+      <li><a href="#format">Format</a></li>
+
+      <li><a href="#references">References</a></li>
           </ul>
 
   </div>

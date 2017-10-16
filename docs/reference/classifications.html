@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>LAGOS Spatial Classifications Metadata — classifications • LAGOS</title>
+<title>LAGOSNE Spatial Classifications Metadata — classifications • LAGOSNE</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -47,7 +47,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">LAGOS</a>
+      <a class="navbar-brand" href="../index.html">LAGOSNE</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -68,18 +68,21 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/lagos_structure.html">The Structure of LAGOS</a>
+      <a href="../articles/lagosne_structure.html">The Structure of LAGOSNE</a>
     </li>
     <li>
-      <a href="../articles/working_with_lagos.html">Working with LAGOS</a>
+      <a href="../articles/working_with_lagosne.html">Working with LAGOSNE</a>
     </li>
   </ul>
+</li>
+<li>
+  <a href="../news/index.html">News</a>
 </li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/cont-limno/LAGOS">
+  <a href="https://github.com/cont-limno/LAGOSNE">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -95,12 +98,12 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>LAGOS Spatial Classifications Metadata</h1>
+    <h1>LAGOSNE Spatial Classifications Metadata</h1>
     </div>
 
     
     <p>Data frames containing metadata for each spatial classification at which
- ecological context data are derived in LAGOS. The spatial classifications
+ ecological context data are derived in LAGOSNE. The spatial classifications
  include 100m buffers (lakes4ha.buffer100m),
  500m buffers (lakes4ha.buffer500m), interlake watersheds (iws),
  hydrologic units (hu12, hu8, hu4), ecological drainage units (edu),
@@ -144,10 +147,10 @@ classification (see Details below).</p><ul>
 <li><p>*_ha_in_nwi: area (ha) of polygon within the USFWS National
     Wetland Inventory (NWI) boundary (* = hu12, hu8, hu4, edu, county,
     state)</p></li>
-<li><p>*_zoneid: a unique identifier for each IWS in LAGOS, numbered 1:n
+<li><p>*_zoneid: a unique identifier for each IWS in LAGOSNE, numbered 1:n
     with classification prefix (e.g., HU12_1) (* = iws, hu12, hu8, hu4, edu,
     county, state)</p></li>
-<li><p>*_lagoslakeid: LAGOS unique identifier for focal lake
+<li><p>*_lagoslakeid: LAGOSNE unique identifier for focal lake
     (* = lakes4ha_buffer100m, lakes_buffer500m, iws, )</p></li>
 <li><p>hu4_states: states that intersect hu4 zone polygon</p></li>
 <li><p>state: 2-letter state abbreviation</p></li>
@@ -156,7 +159,7 @@ classification (see Details below).</p><ul>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The nine LAGOS spatial classifications were used to summarize the ecological
+    <p>The nine LAGOSNE spatial classifications were used to summarize the ecological
 context of each lake. Ecological context themes include
 land use/land cover (LULC), connectivity (CONN), and climate, hydrology,
 atmospheric deposition, and groundwater (CHAG). Not all themes were derived
@@ -205,7 +208,7 @@ at all classifications due to data availability. Briefly:</p><ul>
     physiographic and climatic characteristics. Themes derived at the EDU
     classification include LULC, CONN, and CHAG.</p></li>
 <li><p>county: a data frame with 955 observations of 8 variables.
-    Counties (political boundary) within the 17-state region of LAGOS.
+    Counties (political boundary) within the 17-state region of LAGOSNE.
     Themes derived at the county classification include LULC, CONN, and
     CHAG.</p></li>
 <li><p>state: a dataframe with 17 observations of 7 variables. Themes

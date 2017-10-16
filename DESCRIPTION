@@ -2,8 +2,13 @@ Package: LAGOSNE
 Title: Interface to the Lake Multi-scaled Geospatial and Temporal Database
 Version: 1.0.0
 Authors@R: c(
-    person("Joseph", "Stachelek", email = "stachel2@msu.edu", role = c("aut", "cre")),
-    person("Samantha","Oliver", role = c("aut")),
+    person("Joseph", "Stachelek", 
+    email = "stachel2@msu.edu", 
+    role = c("aut", "cre"), 
+    comment = c(ORCID = c("0000-0002-5924-2464"))),
+    person("Samantha","Oliver", 
+    role = c("aut"), 
+    comment = c(ORCID = c("0000-0001-5668-1165"))),
     person("Farzan","Masrour", role = c("aut"))
     )
 URL: https://github.com/cont-limno/LAGOSNE

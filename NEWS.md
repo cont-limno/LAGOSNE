@@ -1,5 +1,6 @@
-# LAGOS 1.087.1
+# LAGOSNE 1.0.0
 
+* Package name and functions changed to LAGOSNE
 * Initial CRAN submission
 
 

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Convert a LAGOSNE flat file into a spatial object — coordinatize • LAGOSNE</title>
+<title>Select and filter LAGOSNE data — lagosne_select • LAGOSNE</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -98,34 +98,48 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Convert a LAGOSNE flat file into a spatial object</h1>
+    <h1>Select and filter LAGOSNE data</h1>
     </div>
 
     
-    <p>This function turns a data.frame into a spatial object using a reasonable
- default projection.</p>
+    <p>Select and filter LAGOSNE data with keyword helpers.</p>
     
 
-    <pre class="usage"><span class='fu'>coordinatize</span>(<span class='no'>dt</span>, <span class='kw'>latname</span> <span class='kw'>=</span> <span class='st'>"nhd_lat"</span>, <span class='kw'>longname</span> <span class='kw'>=</span> <span class='st'>"nhd_long"</span>, <span class='kw'>crs</span> <span class='kw'>=</span> <span class='fl'>4326</span>)</pre>
+    <pre class="usage"><span class='fu'>lagosne_select</span>(<span class='kw'>table</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>vars</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>categories</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>dt</span> <span class='kw'>=</span> <span class='fu'><a href='lagosne_load.html'>lagosne_load</a></span>(<span class='st'>"1.087.1"</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
+      <th>table</th>
+      <td><p>character name of a dt table</p></td>
+    </tr>
+    <tr>
+      <th>vars</th>
+      <td><p>character vector of specific column names to select from table</p></td>
+    </tr>
+    <tr>
+      <th>categories</th>
+      <td><p>what type of variables should be kept. Note not all scale-category options are available. Variable categories include:</p><ul>
+<li><p>"waterquality" - includes all in-situ chemistry, chlorophyll, and water clarity measurements from the epi_nutr table.</p></li>
+<li><p>"deposition" - all atmospheric deposition variables from the .chag tables</p></li>
+<li><p>"hydrology" - baseflow, groundwater, runoff, and overland flow variables from the .chag tables</p></li>
+<li><p>"climate" - 30-year normal precipitation and temperature variables from the .chag tables</p></li>
+<li><p>"geology" - all surficial geology variables from the .chag tables</p></li>
+<li><p>"topography" - Terrain Roughness Index and slope variables from the .lulc tables</p></li>
+<li><p>"lulc1992" - all 1992 land use/land cover variables from the .lulc tables</p></li>
+<li><p>"lulc2001" - all 2001 land use/land cover variables from the .lulc tables</p></li>
+<li><p>"lulc2006" - all 2006 land use/land cover variables from the .lulc tables</p></li>
+<li><p>"lulc2011" - all 2011 land use/land cover variables from the .lulc tables</p></li>
+<li><p>"lakes" - all lake connectivity metrics from the .conn tables</p></li>
+<li><p>"wetlands" - all wetland connectivity metrics from the .conn tables</p></li>
+<li><p>"streams" - all stream/river connectivity metrics from the .conn tables</p></li>
+</ul></td>
+    </tr>
+    <tr>
       <th>dt</th>
       <td><p>data.frame</p></td>
-    </tr>
-    <tr>
-      <th>latname</th>
-      <td><p>character name of latitude column; default is "nhd_lat"</p></td>
-    </tr>
-    <tr>
-      <th>longname</th>
-      <td><p>character name of longitude column; defailt is "nhd_long"</p></td>
-    </tr>
-    <tr>
-      <th>crs</th>
-      <td><p>numeric epsg code; default is 4326 WGS84-lat-long</p></td>
     </tr>
     </table>
     
@@ -133,11 +147,19 @@
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='co'># NOT RUN {</span>
 <span class='no'>dt</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='LAGOSNE-deprecated.html'>lagos_load</a></span>(<span class='st'>"1.087.1"</span>)
-<span class='no'>res</span> <span class='kw'>&lt;-</span> <span class='fu'>coordinatize</span>(<span class='no'>dt</span>$<span class='no'>locus</span>)
 
-<span class='fu'>library</span>(<span class='no'>maps</span>)
-<span class='fu'><a href='http://www.rdocumentation.org/packages/maps/topics/map'>map</a></span>(<span class='st'>"state"</span>, <span class='kw'>xlim</span> <span class='kw'>=</span> <span class='fu'>c</span>(-<span class='fl'>97.90363</span>, -<span class='fl'>66.99892</span>), <span class='kw'>ylim</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>34.61761</span>, <span class='fl'>49.41941</span>))
-<span class='fu'>plot</span>(<span class='no'>res</span>$<span class='no'>geometry</span>, <span class='kw'>add</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>pch</span> <span class='kw'>=</span> <span class='fl'>19</span>, <span class='kw'>cex</span> <span class='kw'>=</span> <span class='fl'>0.05</span>)
+<span class='co'># specific variables</span>
+<span class='fu'>head</span>(<span class='fu'>lagosne_select</span>(<span class='kw'>table</span> <span class='kw'>=</span> <span class='st'>"epi_nutr"</span>, <span class='kw'>vars</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"tp"</span>, <span class='st'>"tn"</span>)))
+<span class='fu'>head</span>(<span class='fu'>lagosne_select</span>(<span class='kw'>table</span> <span class='kw'>=</span> <span class='st'>"iws.lulc"</span>, <span class='kw'>vars</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"iws_nlcd2011_pct_95"</span>)))
+
+<span class='co'># categories</span>
+<span class='fu'>head</span>(<span class='fu'>lagosne_select</span>(<span class='kw'>table</span> <span class='kw'>=</span> <span class='st'>"epi_nutr"</span>, <span class='kw'>categories</span> <span class='kw'>=</span> <span class='st'>"waterquality"</span>))
+<span class='fu'>head</span>(<span class='fu'>lagosne_select</span>(<span class='kw'>table</span> <span class='kw'>=</span> <span class='st'>"county.chag"</span>, <span class='kw'>categories</span> <span class='kw'>=</span> <span class='st'>"hydrology"</span>))
+<span class='fu'>head</span>(<span class='fu'>lagosne_select</span>(<span class='kw'>table</span> <span class='kw'>=</span> <span class='st'>"hu4.chag"</span>, <span class='kw'>categories</span> <span class='kw'>=</span> <span class='st'>"deposition"</span>))
+
+<span class='co'># mix of specific variables and categories</span>
+<span class='fu'>head</span>(<span class='fu'>lagosne_select</span>(<span class='kw'>table</span> <span class='kw'>=</span> <span class='st'>"epi_nutr"</span>, <span class='kw'>vars</span> <span class='kw'>=</span> <span class='st'>"lagoslakeid"</span>, <span class='kw'>categories</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"waterquality"</span>)))
+
 <span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Summarize all LAGOS flat files — info_table • LAGOS</title>
+<title>Summarize all LAGOSNE flat files — info_table • LAGOSNE</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -47,7 +47,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">LAGOS</a>
+      <a class="navbar-brand" href="../index.html">LAGOSNE</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -68,18 +68,21 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/lagos_structure.html">The Structure of LAGOS</a>
+      <a href="../articles/lagosne_structure.html">The Structure of LAGOSNE</a>
     </li>
     <li>
-      <a href="../articles/working_with_lagos.html">Working with LAGOS</a>
+      <a href="../articles/working_with_lagosne.html">Working with LAGOSNE</a>
     </li>
   </ul>
+</li>
+<li>
+  <a href="../news/index.html">News</a>
 </li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/cont-limno/LAGOS">
+  <a href="https://github.com/cont-limno/LAGOSNE">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -95,11 +98,11 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Summarize all LAGOS flat files</h1>
+    <h1>Summarize all LAGOSNE flat files</h1>
     </div>
 
     
-    <p>Generate table summary statistics for all LAGOS data frames.</p>
+    <p>Generate table summary statistics for all LAGOSNE data frames.</p>
     
 
     <pre class="usage"><span class='fu'>info_table</span>(<span class='no'>lg</span>)</pre>
@@ -109,15 +112,15 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>lg</th>
-      <td><p>list output of lagos_load</p></td>
+      <td><p>list output of lagosne_load</p></td>
     </tr>
     </table>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='no'>lg</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='lagos_load.html'>lagos_load</a></span>(<span class='st'>"1.087.1"</span>)
-<span class='kw pkg'>LAGOS</span><span class='kw ns'>:::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/LAGOS/topics/info_table'>info_table</a></span>(<span class='no'>lg</span>)
+<span class='no'>lg</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='lagosne_load.html'>lagosne_load</a></span>(<span class='st'>"1.087.1"</span>)
+<span class='kw pkg'>LAGOSNE</span><span class='kw ns'>:::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/LAGOSNE/topics/info_table'>info_table</a></span>(<span class='no'>lg</span>)
 <span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

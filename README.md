@@ -2,7 +2,7 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 <img src="./inst/lagos_banner2.png" width="100%" />
 
-[![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active) [![Travis-CI Build Status](https://travis-ci.org/cont-limno/LAGOS.svg?branch=master)](https://travis-ci.org/cont-limno/LAGOS) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/LAGOS)](https://cran.r-project.org/package=LAGOS) [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/LAGOS)](https://cran.r-project.org/package=LAGOS)
+[![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active) [![Travis-CI Build Status](https://travis-ci.org/cont-limno/LAGOSNE.svg?branch=master)](https://travis-ci.org/cont-limno/LAGOSNE) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/LAGOSNE)](https://cran.r-project.org/package=LAGOSNE) [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/LAGOSNE)](https://cran.r-project.org/package=LAGOSNE)
 
 The `LAGOSNE` package provides an R interface to download LAGOS-NE data from remote databases, store this data locally, and perform a variety of filtering and subsetting operations.
 
@@ -20,7 +20,7 @@ devtools::install_github("cont-limno/LAGOSNE", update_dependencies = TRUE)
 
 ### Data
 
-The `lagosne_get` function downloads the LAGOS files corresponding to the specified version from the [EDI data repository](https://portal.edirepository.org/nis/home.jsp). Files are stored in a temporary directory before being "compiled" to an `R` data format in the location returned by `rappdirs::user_data_dir()`. Data only needs to be downloaded one time per version per machine.
+The `lagosne_get` function downloads the LAGOSNE files corresponding to the specified version from the [EDI data repository](https://portal.edirepository.org/nis/home.jsp). Files are stored in a temporary directory before being "compiled" to an `R` data format in the location returned by `rappdirs::user_data_dir()`. Data only needs to be downloaded one time per version per machine.
 
 ``` r
 library(LAGOSNE)
@@ -34,7 +34,7 @@ Usage
 
 ``` r
 library(LAGOSNE)
-#> Welcome to LAGOS version 1.87.1. To cite LAGOS in publications use: 
+#> Welcome to LAGOSNE version 1.0.0. To cite LAGOSNE in publications use: 
 #>  
 #> Soranno, P.A., Bissell, E.G., Cheruvelil, K.S., Christel, S.T., Collins,
 #>     S.M., Fergus, C.E., Filstrup, C.T., Lapierre, J.F., Lottig, N.R., Oliver,
@@ -195,8 +195,8 @@ head(lagosne_select(table = "epi_nutr", vars = "lagoslakeid", categories = c("wa
 #> 6  NA  NA 27    2.4
 ```
 
-Published LAGOS subsets
------------------------
+Published LAGOSNE subsets
+-------------------------
 
 ``` r
 # Oliver et al. 2015
@@ -227,17 +227,17 @@ Legacy Versions
 
 ### R Package
 
-To install versions of `LAGOS` compatible with older versions of LAGOS-NE run the following command where `ref` is set to the desired version (in the example, it is version 1.054.1):
+To install versions of `LAGOSNE` compatible with older versions of LAGOS-NE run the following command where `ref` is set to the desired version (in the example, it is version 1.054.1):
 
 ``` r
 # install devtools if not found
 # install.packages("devtools")
-devtools::install_github("cont-limno/LAGOS", ref = "v1.054.1")
+devtools::install_github("cont-limno/LAGOSNE", ref = "v1.054.1")
 ```
 
 ### Data
 
-Until older datasets have been made available in a public repository, LAGOS users will need to use the `lagosne_compile` function (not `lagosne_get`) and supply the path to their local `locus`, `limno` and `geo` data folders. Replace the paths in the example below with the path to each respective folder on your system. Most people will have access to these folders through Dropbox. For example, the `limno_folder` would be assigned to something like: `C:/Users/FWL/Dropbox/CSI_LAGOS-exports/LAGOS-NE-LIMNO-EXPORT`
+Until older datasets have been made available in a public repository, LAGOSNE users will need to use the `lagosne_compile` function (not `lagosne_get`) and supply the path to their local `locus`, `limno` and `geo` data folders. Replace the paths in the example below with the path to each respective folder on your system. Most people will have access to these folders through Dropbox. For example, the `limno_folder` would be assigned to something like: `C:/Users/FWL/Dropbox/CSI_LAGOS-exports/LAGOS-NE-LIMNO-EXPORT`
 
 ``` r
 library(LAGOSNE)
@@ -254,4 +254,4 @@ Oliver, SK, PA Soranno, CE Fergus, T Wagner, K Webster, CE Scott, LA Winslow, J 
 
 Soranno, PA, EG Bissell, KS Cheruvelil, ST Christel, SM Collins, CE Fergus, CT Filstrup, et al. 2015. “Building a Multi-Scaled Geospatial Temporal Ecology Database from Disparate Data Sources: Fostering Open Science and Data Reuse.” Gigascience 4 (1). <https://dx.doi.org/10.1186/s13742-015-0067-4>.
 
-Stachelek, J, and SK Oliver. 2017. LAGOS: R Interface to the Lake Multi-Scaled Geospatial & Temporal Database. <https://github.com/cont-limno/LAGOS>.
+Stachelek, J, and SK Oliver. 2017. LAGOSNE: R Interface to the Lake Multi-Scaled Geospatial & Temporal Database. <https://github.com/cont-limno/LAGOSNE>.

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Load LAGOSNE data from disk — load_lagos_txt • LAGOSNE</title>
+<title>Load LAGOSNE data — lagosne_load • LAGOSNE</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -98,45 +98,52 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Load LAGOSNE data from disk</h1>
+    <h1>Load LAGOSNE data</h1>
     </div>
 
     
-    <p>A wrapper for <code><a href='http://www.rdocumentation.org/packages/utils/topics/read.table'>read.table</a></code> with a default set of parameters.</p>
+    <p>Load LAGOSNE data from local system files</p>
     
 
-    <pre class="usage"><span class='fu'>load_lagos_txt</span>(<span class='no'>file_name</span>, <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>"\t"</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>lagosne_load</span>(<span class='no'>version</span>, <span class='kw'>format</span> <span class='kw'>=</span> <span class='st'>"rds"</span>, <span class='kw'>fpath</span> <span class='kw'>=</span> <span class='fl'>NA</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>file_name</th>
-      <td><p>character</p></td>
+      <th>version</th>
+      <td><p>character LAGOSNE database version string</p></td>
     </tr>
     <tr>
-      <th>sep</th>
-      <td><p>character separator (tab or comma separated values)</p></td>
+      <th>format</th>
+      <td><p>character choice of rds or sqlite</p></td>
     </tr>
     <tr>
-      <th>...</th>
-      <td><p>Options passed on to <code><a href='http://www.rdocumentation.org/packages/utils/topics/read.table'>read.table</a></code></p></td>
+      <th>fpath</th>
+      <td><p>file.path optionally specify custom location of LAGOSNE rds file</p></td>
     </tr>
     </table>
     
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>data.frame</p>
-    
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+<span class='no'>dt</span>  <span class='kw'>&lt;-</span> <span class='fu'>lagosne_load</span>(<span class='st'>"1.054.1"</span>)
+<span class='no'>dt2</span> <span class='kw'>&lt;-</span> <span class='fu'>lagosne_load</span>(<span class='st'>"1.054.2"</span>)
 
+<span class='no'>compare_columns</span> <span class='kw'>&lt;-</span> <span class='kw'>function</span>(<span class='no'>num</span>){
+ <span class='fu'>identical</span>(<span class='no'>dt2</span>$<span class='no'>epi_nutr</span>[,<span class='no'>num</span>], <span class='no'>dt</span>$<span class='no'>epi_nutr</span>[,<span class='no'>num</span>])
+}
+<span class='fu'>names</span>(<span class='no'>dt2</span>$<span class='no'>epi_nutr</span>)[<span class='fu'>sapply</span>(<span class='fl'>13</span>:<span class='fl'>94</span>, <span class='no'>compare_columns</span>)]
+
+<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#value">Value</a></li>
-          </ul>
+            
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

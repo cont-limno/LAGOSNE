@@ -1,4 +1,4 @@
-citHeader("To cite LAGOS in publications use:")
+citHeader("To cite LAGOSNE in publications use:")
 
 citEntry(entry = "Article",
   title        = "Building a multi-scaled geospatial temporal
@@ -30,14 +30,14 @@ citEntry(entry = "Article",
 )
 
 citEntry(entry = "Manual",
-  title        = "LAGOS: R interface to the LAke multi-scaled GeOSpatial & temporal database",
+  title        = "LAGOSNE: Interface to the LAke multi-scaled GeOSpatial & temporal database",
   author       = personList(
                    as.person("Joseph Stachelek"),
                    as.person("Samantha Oliver")),
   year         = "2017",
-  note         = "R package version 1.087.1",
+  note         = "R package version 1.0.0",
   url          = "https://github.com/cont-limno/LAGOS",
   textVersion  =
-  paste("Stachelek J., Oliver S. 2017. LAGOS: R interface to the LAke multi-scaled GeOSpatial & temporal database. R package version 1.087.1. https://github.com/cont-limno/LAGOS
+  paste("Stachelek J., Oliver S. 2017. LAGOSNE: Interface to the LAke multi-scaled GeOSpatial & temporal database. R package version 1.0.0. https://github.com/cont-limno/LAGOSNE
   ")
 )
