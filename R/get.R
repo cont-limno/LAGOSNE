@@ -46,6 +46,7 @@ lagosne_get <- function(version, overwrite = FALSE, dest_folder = NA){
 #'
 #' @export
 #' @param dest_folder file.path not implemented yet
+#' @param overwrite logical overwrite existing data?
 #' @references Oliver SK, Soranno PA, Fergus EC, Wagner T, Webster KE, Scott C,
 #'  Winslow LA, Downing JA, Stanley EH. 2015. LAGOS - Predicted and observed
 #'  maximum depth values for lakes in a 17-state region of the U.S. Long Term
@@ -55,11 +56,11 @@ lagosne_get <- function(version, overwrite = FALSE, dest_folder = NA){
 #' @examples \dontrun{
 #' lagos_get_oliver_2015()
 #' }
-lagos_get_oliver_2015 <- function(dest_folder){
+lagos_get_oliver_2015 <- function(dest_folder, overwrite = FALSE){
   dir.create(lagos_path(), showWarnings = FALSE)
 
   baseurl <- paste0("http://pasta.lternet.edu/package/data/eml/",
                     "knb-lter-ntl/320/4/4a283c25f3548c0f78d8a01658e4a353")
 
-  get_if_not_exists(baseurl, paste0(lagos_path(), "oliver_2015_depth.csv"))
+  get_if_not_exists(baseurl, paste0(lagos_path(), "oliver_2015_depth.csv"), overwrite = overwrite)
 }

@@ -9,6 +9,8 @@
 
 * This is a new release.
 
+* All examples are wrapped in dontrun tags. They require a sizeable data download.
+
 ## Reverse dependencies
 
 This is a new release, so there are no reverse dependencies.

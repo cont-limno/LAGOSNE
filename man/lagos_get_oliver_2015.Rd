@@ -4,10 +4,12 @@
 \alias{lagos_get_oliver_2015}
 \title{Get depth data}
 \usage{
-lagos_get_oliver_2015(dest_folder)
+lagos_get_oliver_2015(dest_folder, overwrite = FALSE)
 }
 \arguments{
 \item{dest_folder}{file.path not implemented yet}
+
+\item{overwrite}{logical overwrite existing data?}
 }
 \description{
 Get depth data from Oliver et al. 2015

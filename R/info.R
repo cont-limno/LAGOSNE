@@ -3,7 +3,7 @@
 #'
 #' Return lake attribute information from its name and state.
 #'
-#' @param dt list of data.frames. output of \code{\link[LAGOS]{lagos_load}}.
+#' @param dt list of data.frames. output of \code{\link[LAGOSNE]{lagosne_load}}.
 #' @param name character lake name not caps sensitive
 #' @param state character state name not caps sensitive
 #' @importFrom dplyr filter

@@ -7,7 +7,7 @@
 lake_info(dt, name, state)
 }
 \arguments{
-\item{dt}{list of data.frames. output of \code{\link[LAGOS]{lagos_load}}.}
+\item{dt}{list of data.frames. output of \code{\link[LAGOSNE]{lagosne_load}}.}
 
 \item{name}{character lake name not caps sensitive}
 
