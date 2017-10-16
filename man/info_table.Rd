@@ -2,20 +2,20 @@
 % Please edit documentation in R/utils.R
 \name{info_table}
 \alias{info_table}
-\title{Summarize all LAGOS flat files}
+\title{Summarize all LAGOSNE flat files}
 \usage{
 info_table(lg)
 }
 \arguments{
-\item{lg}{list output of lagos_load}
+\item{lg}{list output of lagosne_load}
 }
 \description{
-Generate table summary statistics for all LAGOS data frames.
+Generate table summary statistics for all LAGOSNE data frames.
 }
 \examples{
 \dontrun{
-lg <- lagos_load("1.087.1")
-LAGOS:::info_table(lg)
+lg <- lagosne_load("1.087.1")
+LAGOSNE:::info_table(lg)
 }
 }
 \author{

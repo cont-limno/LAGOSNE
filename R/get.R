@@ -1,18 +1,17 @@
-
-#' Retrieve LAGOS flat files
+#' Retrieve LAGOSNE flat files
 #'
-#' Retrieve LAGOS flat files from EDI.
+#' Retrieve LAGOSNE flat files from EDI.
 #'
 #' @export
 #' @importFrom utils download.file
 #' @param dest_folder file.path not implemented yet
 #' by \code{\link[rappdirs]{user_data_dir}}.
-#' @param version character LAGOS database version string
+#' @param version character LAGOSNE database version string
 #' @param overwrite logical overwrite existing data for the specified version
 #' @examples \dontrun{
-#' lagos_get(version = "1.087.1")
+#' lagosne_get(version = "1.087.1")
 #' }
-lagos_get <- function(version, overwrite = FALSE, dest_folder = NA){
+lagosne_get <- function(version, overwrite = FALSE, dest_folder = NA){
 
   outpath <- file.path(lagos_path(), paste0("data_", version, ".rds"))
   if(file.exists(outpath) & !overwrite){
@@ -33,7 +32,7 @@ lagos_get <- function(version, overwrite = FALSE, dest_folder = NA){
 
   dir.create(lagos_path(), showWarnings = FALSE)
 
-  lagos_compile(version = version,
+  lagosne_compile(version = version,
                 locus_folder = locus_dir,
                 limno_folder = limno_dir,
                 geo_folder = geo_dir,

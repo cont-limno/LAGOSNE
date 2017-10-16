@@ -1,5 +1,5 @@
 
-#' Convert a LAGOS flat file into a spatial object
+#' Convert a LAGOSNE flat file into a spatial object
 #'
 #' This function turns a data.frame into a spatial object using a reasonable
 #'  default projection.

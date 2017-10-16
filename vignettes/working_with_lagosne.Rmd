@@ -1,5 +1,5 @@
 ---
-title: "Working with LAGOS"
+title: "Working with LAGOSNE"
 author: "Joseph Stachelek"
 date: "`r Sys.Date()`"
 output: 
@@ -7,14 +7,14 @@ output:
       fig_caption: yes
 ---
 
-The following document presents two analyses to demonstrate use of the `LAGOS` package.
+The following document presents two analyses to demonstrate use of the `LAGOSNE` package.
 
-To begin, we load LAGOS data with `lagos_load`:
+To begin, we load LAGOSNE data with `lagosne_load`:
 
 ```{r lagos_load}
-library(LAGOS)
+library(LAGOSNE)
 
-dt <- lagos_load("1.087.1")
+dt <- lagosne_load("1.087.1")
 ```
 
 ## Boxplot of average chlorophyll by state

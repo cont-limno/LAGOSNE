@@ -1,9 +1,9 @@
 
-#'@name lagos_compile
-#'@title Compile LAGOS data
+#'@name lagosne_compile
+#'@title Compile LAGOSNE data
 #'@export
-#'@description Compile LAGOS data from component flat files
-#'@param version character LAGOS database version string
+#'@description Compile LAGOSNE data from component flat files
+#'@param version character LAGOSNE database version string
 #'@param format character choice of "rds" or "sqlite"
 #'@param limno_folder file.path to limno export folder.
 #'@param geo_folder file.path to geo export folder.
@@ -13,13 +13,13 @@
 #'@importFrom utils read.table
 #'@importFrom rappdirs user_data_dir
 #'@examples \dontrun{
-#' lagos_compile("1.087.1", format = "rds",
+#' lagosne_compile("1.087.1", format = "rds",
 #'  limno_folder = "~/Downloads/LAGOS-NE-LIMNO-EXPORT",
 #'  geo_folder   = "~/Downloads/LAGOS-NE-GEO-EXPORT",
 #'  locus_folder = "~/Downloads/LAGOS-NE-GEO-LOCUS-EXPORT")
 #' }
 #'
-lagos_compile <- function(version, format = "rds",
+lagosne_compile <- function(version, format = "rds",
                           limno_folder = NA, geo_folder = NA,
                           locus_folder = NA, dest_folder = NA){
 
@@ -55,6 +55,6 @@ lagos_compile <- function(version, format = "rds",
     outpath <- file.path(lagos_path(), paste0("data_", version, ".rds"))
 
     saveRDS(res, outpath)
-    message(paste0("LAGOS compiled to ", outpath))
+    message(paste0("LAGOSNE compiled to ", outpath))
   }
 }

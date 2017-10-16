@@ -1,16 +1,16 @@
-#' R interface to the LAGOS lakes database
-#' @name LAGOS-package
-#' @aliases LAGOS
+#' Interface to the LAGOSNE lakes database
+#' @name LAGOSNE-package
+#' @aliases LAGOSNE
 #' @docType package
 #' @importFrom magrittr %>%
-#' @title R interface to the LAGOS lakes database
+#' @title R interface to the LAGOSNE lakes database
 #' @author \email{stachel2@msu.edu}
 NULL
 
-#' LAGOS Spatial Classifications Metadata
+#' LAGOSNE Spatial Classifications Metadata
 #'
 #' Data frames containing metadata for each spatial classification at which
-#'  ecological context data are derived in LAGOS. The spatial classifications
+#'  ecological context data are derived in LAGOSNE. The spatial classifications
 #'  include 100m buffers (lakes4ha.buffer100m),
 #'  500m buffers (lakes4ha.buffer500m), interlake watersheds (iws),
 #'  hydrologic units (hu12, hu8, hu4), ecological drainage units (edu),
@@ -19,7 +19,7 @@ NULL
 #'  information about derivation of each spatial classification, see Details
 #'  below or [insert supp docs] from Soranno et al. 2015.
 #'
-#' The nine LAGOS spatial classifications were used to summarize the ecological
+#' The nine LAGOSNE spatial classifications were used to summarize the ecological
 #' context of each lake. Ecological context themes include
 #' land use/land cover (LULC), connectivity (CONN), and climate, hydrology,
 #' atmospheric deposition, and groundwater (CHAG). Not all themes were derived
@@ -69,7 +69,7 @@ NULL
 #'     physiographic and climatic characteristics. Themes derived at the EDU
 #'     classification include LULC, CONN, and CHAG.
 #'     \item county: a data frame with 955 observations of 8 variables.
-#'     Counties (political boundary) within the 17-state region of LAGOS.
+#'     Counties (political boundary) within the 17-state region of LAGOSNE.
 #'     Themes derived at the county classification include LULC, CONN, and
 #'     CHAG.
 #'     \item state: a dataframe with 17 observations of 7 variables. Themes
@@ -108,10 +108,10 @@ NULL
 #'     \item *_ha_in_nwi: area (ha) of polygon within the USFWS National
 #'     Wetland Inventory (NWI) boundary (* = hu12, hu8, hu4, edu, county,
 #'     state)
-#'     \item *_zoneid: a unique identifier for each IWS in LAGOS, numbered 1:n
+#'     \item *_zoneid: a unique identifier for each IWS in LAGOSNE, numbered 1:n
 #'     with classification prefix (e.g., HU12_1) (* = iws, hu12, hu8, hu4, edu,
 #'     county, state)
-#'     \item *_lagoslakeid: LAGOS unique identifier for focal lake
+#'     \item *_lagoslakeid: LAGOSNE unique identifier for focal lake
 #'     (* = lakes4ha_buffer100m, lakes_buffer500m, iws, )
 #'     \item hu4_states: states that intersect hu4 zone polygon
 #'     \item state: 2-letter state abbreviation
@@ -128,7 +128,7 @@ NULL
 #' Land Use Land Cover (LULC) Data Frames
 #'
 #' Datasets containing information on the land use and land cover (LULC)
-#' characteristics calculated at all LAGOS spatial classifications
+#' characteristics calculated at all LAGOSNE spatial classifications
 #' (see ?scales) from the National Land Cover Dataset (NLCD).
 #'
 #' Original data sources and layers from which each metric was derived can be
@@ -136,7 +136,7 @@ NULL
 #'
 #' @format Data frames with all or a subset of the following variables. Number
 #' of observations is equal to the number of zones in each spatial scale
-#' (see Details below). Wildcard options include the 9 LAGOS spatial scales
+#' (see Details below). Wildcard options include the 9 LAGOSNE spatial scales
 #' (* = lakes4ha.buff100m, lakes4ha.buffer500m, iws, hu12, hu8, hu4, edu,
 #' county, state), year of measurement (** = 1992, 2001, 2006, 2011), and unit
 #' of measurement in hectares or percent of zone area (*** = ha, pct unless
@@ -234,7 +234,7 @@ NULL
 #'
 #' @format Data frames with all or a subset of the following variables. Number
 #' of observations is equal to the number of zones in each spatial scale (see
-#' Details below). Wildcard options include a subset of the LAGOS spatial
+#' Details below). Wildcard options include a subset of the LAGOSNE spatial
 #' scales (* = hu12, hu8, hu4, edu, county, state), years of measurement
 #' (** = 1985, 1990, 1995, 2000, 2005, 2010), and summary statistic or
 #' units (*** = min, max, mean, std for atmospheric deposition and hydrology;
@@ -322,9 +322,9 @@ NULL
 #' @format A data frame with 289482 observations of 93 variables:
 #' \itemize{
 #'             \item eventida1087: unique combination of programid, lakeid, and
-#'             date for each sampling event in LAGOS
+#'             date for each sampling event in LAGOSNE
 #'             \item lagoslakeid: unique integer identifier for each lake in
-#'             LAGOS
+#'             LAGOSNE
 #'             \item programname: name of the sampling/monitoring program that
 #'             collected the data
 #'             \item programtype: categorical description of the type of
@@ -334,7 +334,7 @@ NULL
 #'             State Agency/University/Citizen Monitoring Program,
 #'             State Agency/Citizen Monitoring Program, Tribal Agency,
 #'             University)
-#'             \item lagosversion: current version of LAGOS that the data
+#'             \item lagosversion: current version of LAGOSNE that the data
 #'             record belongs to
 #'             \item sampledate: date at which the sample was collected, stored
 #'             in date format (YYYY-MM-DD)
@@ -356,7 +356,7 @@ NULL
 #'             \item ton: nitrogen, total organic (µg/l as N)
 #'             \item tp: phosphorus, total (µg/l as P)
 #'             \item secchi: Secchi disk transparency (m). More secchi data
-#'             from additional lakes is available from the \link[LAGOS]{secchi}
+#'             from additional lakes is available from the \link[LAGOSNE]{secchi}
 #'             table.
 #'             \item *_qual: data flags (qualifiers) from the source program
 #'             for each water quality parameter (* = all water quality
@@ -427,7 +427,7 @@ NULL
 #'             \item nhdid:	          the 'Permanent_identifier' from the NHD,
 #'             but is called the NHDID in LAGOS-NE
 #'             \item lagosname1:	    name of lake from source dataset used as
-#'             the authoritative lake name for LAGOS
+#'             the authoritative lake name for LAGOSNE
 #'             \item meandepth:	      mean lake depth (meters)
 #'             \item meandepthsource:	source of mean depth data, see
 #'             "lagos.source.program" for definitions
@@ -500,7 +500,7 @@ NULL
 #' @format Data frames with all or a subset of the following variables. Number
 #' of observations is equal to the number of zones in each spatial
 #' classification (see ?classifications). Wildcard options include a subset of
-#' the LAGOS spatial classifications (* = lakes4ha_buffer500m, iws,
+#' the LAGOSNE spatial classifications (* = lakes4ha_buffer500m, iws,
 #' hu12, hu8, hu4, edu, county, state) and additional wildcards described
 #' below.
 #' \itemize{
@@ -782,11 +782,11 @@ NULL
 #' Lake Geospatial Metadata
 #'
 #' A dataset containing geospatial identifiers, upstream lake connectivity, and
-#' wetland connectivity of all lakes in LAGOS >1 hectare.
+#' wetland connectivity of all lakes in LAGOSNE >1 hectare.
 #'
 #' @format A data frame with 141271 observations and 31 variables:
 #' \itemize{
-#'              \item lagoslakeid: unique lake identifier in LAGOS
+#'              \item lagoslakeid: unique lake identifier in LAGOSNE
 #'              \item lakes_nhdid: unique lake identifier from the National
 #'              Hydrography Dataset (NHD)
 #'              \item iws_zoneid: zone ID of interlake watershed (IWS) in which
@@ -867,12 +867,12 @@ NULL
 #' \itemize{
 #'      \item eventida1087: unique combination of programid, lakeid, and date
 #'      for each sampling event
-#'      \item lagoslakeid: unique LAGOS lake identifier
+#'      \item lagoslakeid: unique LAGOSNE lake identifier
 #'      \item programname: name of the sampling/monitoring program that
 #'      collected the data
 #'      \item programtype: categorical description of the type of sampling
 #'      /monitoring effort
-#'      \item lagosversion: current version of LAGOS that the data record
+#'      \item lagosversion: current version of LAGOSNE that the data record
 #'      belongs to
 #'      \item sampledate: date at which the sample was collected, stored in date format (YYYY-MM-DD)
 #'      \item secchi: Secchi depth in meters
@@ -893,13 +893,13 @@ NULL
 #' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
 NULL
 
-#' LAGOS sources
+#' LAGOSNE sources
 #'
-#' A dataset identifying the sources of limnological data in LAGOS.
+#' A dataset identifying the sources of limnological data in LAGOSNE.
 #'
 #' @format A data frame with 87 observations of 19 variables:
 #' \itemize{
-#'      \item programid: unique LAGOS program identifier
+#'      \item programid: unique LAGOSNE program identifier
 #'      \item programname: name of the sampling/monitoring program that
 #'      collected the data
 #'      \item metadataid: unique metadata identifier associated with
@@ -928,9 +928,9 @@ NULL
 #' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
 NULL
 
-#' LAGOS subset
+#' LAGOSNE subset
 #'
-#' A dataset with the first two rows of many LAGOS tables
+#' A dataset with the first two rows of many LAGOSNE tables
 #'
 #' @docType data
 #' @keywords datasets

@@ -2,7 +2,7 @@
 % Please edit documentation in R/coordinates.R
 \name{coordinatize}
 \alias{coordinatize}
-\title{Convert a LAGOS flat file into a spatial object}
+\title{Convert a LAGOSNE flat file into a spatial object}
 \usage{
 coordinatize(dt, latname = "nhd_lat", longname = "nhd_long", crs = 4326)
 }

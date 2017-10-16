@@ -2,7 +2,7 @@
 
 # LAGOS:::lagos_compile("1.087.1", "rds")
 
-dt <- LAGOS::lagos_load("1.087.1")
+dt <- LAGOSNE::lagosne_load("1.087.1")
 
 dt_subset <- purrr::map(dt, function(x) head(x, n = 2))
 

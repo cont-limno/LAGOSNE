@@ -2,13 +2,13 @@
 % Please edit documentation in R/ingest.R
 \name{lagos_ingest}
 \alias{lagos_ingest}
-\title{Ingest LAGOS flat files}
+\title{Ingest LAGOSNE flat files}
 \usage{
 lagos_ingest(version, limno_folder = NA, geo_folder = NA,
   locus_folder = NA)
 }
 \arguments{
-\item{version}{character LAGOS database version string}
+\item{version}{character LAGOSNE database version string}
 
 \item{limno_folder}{file.path to limno export folder. optional.}
 
@@ -17,7 +17,7 @@ lagos_ingest(version, limno_folder = NA, geo_folder = NA,
 \item{locus_folder}{file.path to locus export folder. optional.}
 }
 \description{
-Ingest LAGOS data from component flat files
+Ingest LAGOSNE data from component flat files
 }
 \examples{
 \dontrun{

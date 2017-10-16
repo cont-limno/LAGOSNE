@@ -1,13 +1,13 @@
-Package: LAGOS
-Title: R interface to the LAke multi-scaled GeOSpatial & temporal database
-Version: 1.087.1
+Package: LAGOSNE
+Title: Interface to the Lake Multi-scaled Geospatial and Temporal Database
+Version: 1.0.0
 Authors@R: c(
     person("Joseph", "Stachelek", email = "stachel2@msu.edu", role = c("aut", "cre")),
     person("Samantha","Oliver", role = c("aut")),
     person("Farzan","Masrour", role = c("aut"))
     )
-URL: https://github.com/cont-limno/LAGOS
-BugReports: https://github.com/cont-limno/LAGOS/issues
+URL: https://github.com/cont-limno/LAGOSNE
+BugReports: https://github.com/cont-limno/LAGOSNE/issues
 Description: Client for programmatic access to the 'Lake
     Multi-scaled Geospatial and Temporal' database <https://lagoslakes.org>, with functions
     for accessing lake water quality and ecological context data for the US.

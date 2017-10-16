@@ -18,7 +18,7 @@ Return a vector of column names, given a table name and grep query string.
 }
 \examples{
 \dontrun{
-dt <- lagos_load("1.087.1")
+dt <- lagosne_load("1.087.1")
 query_column_names(dt, "hu4.chag", "_dep_")
 query_column_names(dt, "county.chag", "baseflowindex")
 }

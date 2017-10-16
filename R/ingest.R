@@ -1,7 +1,7 @@
 #'@name lagos_ingest
-#'@title Ingest LAGOS flat files
-#'@description Ingest LAGOS data from component flat files
-#'@param version character LAGOS database version string
+#'@title Ingest LAGOSNE flat files
+#'@description Ingest LAGOSNE data from component flat files
+#'@param version character LAGOSNE database version string
 #'@param limno_folder file.path to limno export folder. optional.
 #'@param geo_folder file.path to geo export folder. optional.
 #'@param locus_folder file.path to locus export folder. optional.

@@ -4,24 +4,27 @@
 
 [![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active) [![Travis-CI Build Status](https://travis-ci.org/cont-limno/LAGOS.svg?branch=master)](https://travis-ci.org/cont-limno/LAGOS) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/LAGOS)](https://cran.r-project.org/package=LAGOS) [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/LAGOS)](https://cran.r-project.org/package=LAGOS)
 
-The `LAGOS` package provides an R interface to download LAGOS-NE data from remote databases, store this data locally, and perform a variety of filtering and subsetting operations.
+The `LAGOSNE` package provides an R interface to download LAGOS-NE data from remote databases, store this data locally, and perform a variety of filtering and subsetting operations.
 
 Installation
 ------------
 
 ``` r
-# install devtools if not found
-# install.packages("devtools")
-devtools::install_github("cont-limno/LAGOS", update_dependencies = TRUE)
+# install stable version from CRAN
+install.packages("LAGOSNE")
+
+# install development version from Github
+# install devtools if not found - install.packages("devtools")
+devtools::install_github("cont-limno/LAGOSNE", update_dependencies = TRUE)
 ```
 
 ### Data
 
-The `lagos_get` function downloads the LAGOS files corresponding to the specified version from the [EDI data repository](https://portal.edirepository.org/nis/home.jsp). Files are stored in a temporary directory before being "compiled" to an `R` data format in the location returned by `rappdirs::user_data_dir()`. Data only needs to be downloaded one time per version per machine.
+The `lagosne_get` function downloads the LAGOS files corresponding to the specified version from the [EDI data repository](https://portal.edirepository.org/nis/home.jsp). Files are stored in a temporary directory before being "compiled" to an `R` data format in the location returned by `rappdirs::user_data_dir()`. Data only needs to be downloaded one time per version per machine.
 
 ``` r
-library(LAGOS)
-lagos_get("1.087.1")
+library(LAGOSNE)
+lagosne_get("1.087.1")
 ```
 
 Usage
@@ -30,8 +33,8 @@ Usage
 ### Load Package
 
 ``` r
-library(LAGOS)
-#> Welcome to LAGOS version 1.087.1. To cite LAGOS in publications use: 
+library(LAGOSNE)
+#> Welcome to LAGOS version 1.87.1. To cite LAGOS in publications use: 
 #>  
 #> Soranno, P.A., Bissell, E.G., Cheruvelil, K.S., Christel, S.T., Collins,
 #>     S.M., Fergus, C.E., Filstrup, C.T., Lapierre, J.F., Lottig, N.R., Oliver,
@@ -44,10 +47,10 @@ library(LAGOS)
 
 ### Load data
 
-The `lagos_load` function returns a named list of `data.frame` objects. Use the `names()` function to see a list of available `data.frame`s.
+The `lagosne_load` function returns a named list of `data.frame` objects. Use the `names()` function to see a list of available `data.frame`s.
 
 ``` r
-dt <- lagos_load(version = "1.087.1")
+dt <- lagosne_load(version = "1.087.1")
 names(dt)
 #>  [1] "county"               "county.chag"          "county.conn"         
 #>  [4] "county.lulc"          "edu"                  "edu.chag"            
@@ -87,29 +90,30 @@ head(dt$county)
 #### Read table metadata
 
 ``` r
-help.search("datasets", package = "LAGOS")
+help.search("datasets", package = "LAGOSNE")
 ```
 
-| Package | Topic           | Title                                  |
-|:--------|:----------------|:---------------------------------------|
-| LAGOS   | chag            | CHAG Datasets                          |
-| LAGOS   | classifications | LAGOS Spatial Classifications Metadata |
-| LAGOS   | conn            | Connectivity Datasets                  |
-| LAGOS   | epi\_nutr       | Epilimnion Water Quality Data          |
-| LAGOS   | lagoslakes      | Lake Geospatial Metadata               |
-| LAGOS   | lakes\_limno    | Metadata for Lakes with Water Quality  |
-| LAGOS   | locus           | Metadata for all lakes &gt; 1ha        |
-| LAGOS   | lulc            | Land Use Land Cover (LULC) Data Frames |
-| LAGOS   | secchi          | Secchi (Water Clarity) Data            |
-| LAGOS   | source          | LAGOS sources                          |
+| Package | Topic           | Title                                    |
+|:--------|:----------------|:-----------------------------------------|
+| LAGOSNE | chag            | CHAG Datasets                            |
+| LAGOSNE | classifications | LAGOSNE Spatial Classifications Metadata |
+| LAGOSNE | conn            | Connectivity Datasets                    |
+| LAGOSNE | epi\_nutr       | Epilimnion Water Quality Data            |
+| LAGOSNE | lagoslakes      | Lake Geospatial Metadata                 |
+| LAGOSNE | lakes\_limno    | Metadata for Lakes with Water Quality    |
+| LAGOSNE | lg\_subset      | LAGOSNE subset                           |
+| LAGOSNE | locus           | Metadata for all lakes &gt; 1ha          |
+| LAGOSNE | lulc            | Land Use Land Cover (LULC) Data Frames   |
+| LAGOSNE | secchi          | Secchi (Water Clarity) Data              |
+| LAGOSNE | source          | LAGOSNE sources                          |
 
 ### Select data
 
-`lagos_select` is a convenience function whose primary purpose is to provide users with the ability to select subsets of LAGOS tables that correspond to specific keywords (see `LAGOS:::keyword_partial_key()`). See [here](http://adv-r.had.co.nz/Subsetting.html) for a comprehensive tutorial on generic `data.frame` subsetting.
+`lagosne_select` is a convenience function whose primary purpose is to provide users with the ability to select subsets of LAGOS tables that correspond to specific keywords (see `LAGOS:::keyword_partial_key()`). See [here](http://adv-r.had.co.nz/Subsetting.html) for a comprehensive tutorial on generic `data.frame` subsetting.
 
 ``` r
 # specific variables
- head(lagos_select(table = "epi_nutr", vars = c("tp", "tn")))
+ head(lagosne_select(table = "epi_nutr", vars = c("tp", "tn")))
 #>   tp tn
 #> 1 30 NA
 #> 2 10 NA
@@ -117,7 +121,7 @@ help.search("datasets", package = "LAGOS")
 #> 4  9 NA
 #> 5  5 NA
 #> 6 27 NA
- head(lagos_select(table = "iws.lulc", vars = c("iws_nlcd2011_pct_95")))
+ head(lagosne_select(table = "iws.lulc", vars = c("iws_nlcd2011_pct_95")))
 #>   iws_nlcd2011_pct_95
 #> 1                2.77
 #> 2                2.97
@@ -127,7 +131,7 @@ help.search("datasets", package = "LAGOS")
 #> 6                0.00
 
 # categories
-head(lagos_select(table = "epi_nutr", categories = "waterquality"))
+head(lagosne_select(table = "epi_nutr", categories = "waterquality"))
 #>   chla colora colort dkn doc nh4 no2 no2no3 srp tdn tdp tkn tn toc ton tp
 #> 1   NA     NA     NA  NA  NA  20  NA     20  NA  NA  NA  NA NA  NA  NA 30
 #> 2   NA     NA     NA  NA  NA  20  NA     20  NA  NA  NA  NA NA  NA  NA 10
@@ -142,7 +146,7 @@ head(lagos_select(table = "epi_nutr", categories = "waterquality"))
 #> 4    5.8
 #> 5    6.1
 #> 6    2.4
-head(lagos_select(table = "county.chag", categories = "hydrology"))
+head(lagosne_select(table = "county.chag", categories = "hydrology"))
 #>   county_baseflowindex_min county_baseflowindex_max
 #> 1                       45                       55
 #> 2                       30                       35
@@ -157,7 +161,7 @@ head(lagos_select(table = "county.chag", categories = "hydrology"))
 #> 4                   53.1078                   4.6081
 #> 5                   32.4689                   4.1342
 #> 6                   34.4157                   1.1100
-head(lagos_select(table = "hu4.chag", categories = "deposition")[,1:4])
+head(lagosne_select(table = "hu4.chag", categories = "deposition")[,1:4])
 #>   hu4_dep_no3_1985_min hu4_dep_no3_1985_max hu4_dep_no3_1985_mean
 #> 1               7.2171              10.0448                7.9366
 #> 2               9.5538              21.1791               15.5290
@@ -174,7 +178,7 @@ head(lagos_select(table = "hu4.chag", categories = "deposition")[,1:4])
 #> 6               1.8389
 
 # mix of specific variables and categories
-head(lagos_select(table = "epi_nutr", vars = "lagoslakeid", categories = c("waterquality")))
+head(lagosne_select(table = "epi_nutr", vars = "lagoslakeid", categories = c("waterquality")))
 #>   lagoslakeid chla colora colort dkn doc nh4 no2 no2no3 srp tdn tdp tkn tn
 #> 1           2   NA     NA     NA  NA  NA  20  NA     20  NA  NA  NA  NA NA
 #> 2           2   NA     NA     NA  NA  NA  20  NA     20  NA  NA  NA  NA NA
@@ -233,11 +237,11 @@ devtools::install_github("cont-limno/LAGOS", ref = "v1.054.1")
 
 ### Data
 
-Until older datasets have been made available in a public repository, LAGOS users will need to use the `lagos_compile` function (not `lagos_get`) and supply the path to their local `locus`, `limno` and `geo` data folders. Replace the paths in the example below with the path to each respective folder on your system. Most people will have access to these folders through Dropbox. For example, the `limno_folder` would be assigned to something like: `C:/Users/FWL/Dropbox/CSI_LAGOS-exports/LAGOS-NE-LIMNO-EXPORT`
+Until older datasets have been made available in a public repository, LAGOS users will need to use the `lagosne_compile` function (not `lagosne_get`) and supply the path to their local `locus`, `limno` and `geo` data folders. Replace the paths in the example below with the path to each respective folder on your system. Most people will have access to these folders through Dropbox. For example, the `limno_folder` would be assigned to something like: `C:/Users/FWL/Dropbox/CSI_LAGOS-exports/LAGOS-NE-LIMNO-EXPORT`
 
 ``` r
-library(LAGOS)
-lagos_compile("1.054.1", format = "rds",
+library(LAGOSNE)
+lagosne_compile("1.054.1", format = "rds",
   limno_folder = "~/Downloads/LAGOS-NE-LIMNO-EXPORT",
   geo_folder   = "~/Downloads/LAGOS-NE-GEO-EXPORT",
   locus_folder = "~/Downloads/LAGOS-NE-LOCUS-EXPORT")

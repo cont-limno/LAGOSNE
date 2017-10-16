@@ -1,6 +1,6 @@
-#' Select and filter LAGOS data
+#' Select and filter LAGOSNE data
 #'
-#' Select and filter LAGOS data with keyword helpers.
+#' Select and filter LAGOSNE data with keyword helpers.
 #'
 #' @param dt data.frame
 #' @param table character name of a dt table
@@ -27,21 +27,21 @@
 #' dt <- lagos_load("1.087.1")
 #'
 #' # specific variables
-#' head(lagos_select(table = "epi_nutr", vars = c("tp", "tn")))
-#' head(lagos_select(table = "iws.lulc", vars = c("iws_nlcd2011_pct_95")))
+#' head(lagosne_select(table = "epi_nutr", vars = c("tp", "tn")))
+#' head(lagosne_select(table = "iws.lulc", vars = c("iws_nlcd2011_pct_95")))
 #'
 #' # categories
-#' head(lagos_select(table = "epi_nutr", categories = "waterquality"))
-#' head(lagos_select(table = "county.chag", categories = "hydrology"))
-#' head(lagos_select(table = "hu4.chag", categories = "deposition"))
+#' head(lagosne_select(table = "epi_nutr", categories = "waterquality"))
+#' head(lagosne_select(table = "county.chag", categories = "hydrology"))
+#' head(lagosne_select(table = "hu4.chag", categories = "deposition"))
 #'
 #' # mix of specific variables and categories
-#' head(lagos_select(table = "epi_nutr", vars = "lagoslakeid", categories = c("waterquality")))
+#' head(lagosne_select(table = "epi_nutr", vars = "lagoslakeid", categories = c("waterquality")))
 #'
 #' }
 
-lagos_select <- function(table = NULL, vars = NULL, categories = NULL,
-                         dt = lagos_load("1.087.1")){
+lagosne_select <- function(table = NULL, vars = NULL, categories = NULL,
+                         dt = lagosne_load("1.087.1")){
 
   # sanitize inputs ####
   is_not_char_args <- c(!(is.null(table) | is.character(table)),

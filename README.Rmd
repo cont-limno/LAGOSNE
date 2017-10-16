@@ -18,23 +18,26 @@ knitr::include_graphics("./inst/lagos_banner2.png")
 
 [![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active) [![Travis-CI Build Status](https://travis-ci.org/cont-limno/LAGOS.svg?branch=master)](https://travis-ci.org/cont-limno/LAGOS) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/LAGOS)](https://cran.r-project.org/package=LAGOS) [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/LAGOS)](https://cran.r-project.org/package=LAGOS)
 
-The `LAGOS` package provides an R interface to download LAGOS-NE data from remote databases, store this data locally, and perform a variety of filtering and subsetting operations.
+The `LAGOSNE` package provides an R interface to download LAGOS-NE data from remote databases, store this data locally, and perform a variety of filtering and subsetting operations.
 
 ## Installation
 
 ```{r install,eval=FALSE}
-# install devtools if not found
-# install.packages("devtools")
-devtools::install_github("cont-limno/LAGOS", update_dependencies = TRUE)
+# install stable version from CRAN
+install.packages("LAGOSNE")
+
+# install development version from Github
+# install devtools if not found - install.packages("devtools")
+devtools::install_github("cont-limno/LAGOSNE", update_dependencies = TRUE)
 ```
  
 ### Data
 
-The `lagos_get` function downloads the LAGOS files corresponding to the specified version from the [EDI data repository](https://portal.edirepository.org/nis/home.jsp). Files are stored in a temporary directory before being "compiled" to an `R` data format in the location returned by `rappdirs::user_data_dir()`. Data only needs to be downloaded one time per version per machine. 
+The `lagosne_get` function downloads the LAGOS files corresponding to the specified version from the [EDI data repository](https://portal.edirepository.org/nis/home.jsp). Files are stored in a temporary directory before being "compiled" to an `R` data format in the location returned by `rappdirs::user_data_dir()`. Data only needs to be downloaded one time per version per machine. 
 
 ```{r get_data, eval=FALSE}
-library(LAGOS)
-lagos_get("1.087.1")
+library(LAGOSNE)
+lagosne_get("1.087.1")
 ```
 
 ## Usage
@@ -42,15 +45,15 @@ lagos_get("1.087.1")
 ### Load Package
 
 ```{r load library} 
-library(LAGOS)
+library(LAGOSNE)
 ```
 
 ### Load data
 
-The `lagos_load` function returns a named list of `data.frame` objects. Use the `names()` function to see a list of available `data.frame`s.
+The `lagosne_load` function returns a named list of `data.frame` objects. Use the `names()` function to see a list of available `data.frame`s.
 
 ```{r load data}
-dt <- lagos_load(version = "1.087.1")
+dt <- lagosne_load(version = "1.087.1")
 names(dt)
 ```
 
@@ -67,7 +70,7 @@ loadNamespace("printr")
 ```
 
 ```{r Read metadata for individual tables}
-help.search("datasets", package = "LAGOS")
+help.search("datasets", package = "LAGOSNE")
 ```
 
 ```{r unload printr, echo=FALSE}
@@ -76,20 +79,20 @@ unloadNamespace("printr")
 
 ### Select data
 
-`lagos_select` is a convenience function whose primary purpose is to provide users with the ability to select subsets of LAGOS tables that correspond to specific keywords (see `LAGOS:::keyword_partial_key()`). See [here](http://adv-r.had.co.nz/Subsetting.html) for a comprehensive tutorial on generic `data.frame` subsetting.
+`lagosne_select` is a convenience function whose primary purpose is to provide users with the ability to select subsets of LAGOS tables that correspond to specific keywords (see `LAGOS:::keyword_partial_key()`). See [here](http://adv-r.had.co.nz/Subsetting.html) for a comprehensive tutorial on generic `data.frame` subsetting.
 
 ```{r demo select}
 # specific variables
- head(lagos_select(table = "epi_nutr", vars = c("tp", "tn")))
- head(lagos_select(table = "iws.lulc", vars = c("iws_nlcd2011_pct_95")))
+ head(lagosne_select(table = "epi_nutr", vars = c("tp", "tn")))
+ head(lagosne_select(table = "iws.lulc", vars = c("iws_nlcd2011_pct_95")))
 
 # categories
-head(lagos_select(table = "epi_nutr", categories = "waterquality"))
-head(lagos_select(table = "county.chag", categories = "hydrology"))
-head(lagos_select(table = "hu4.chag", categories = "deposition")[,1:4])
+head(lagosne_select(table = "epi_nutr", categories = "waterquality"))
+head(lagosne_select(table = "county.chag", categories = "hydrology"))
+head(lagosne_select(table = "hu4.chag", categories = "deposition")[,1:4])
 
 # mix of specific variables and categories
-head(lagos_select(table = "epi_nutr", vars = "lagoslakeid", categories = c("waterquality")))
+head(lagosne_select(table = "epi_nutr", vars = "lagoslakeid", categories = c("waterquality")))
 ```
 
 ## Published LAGOS subsets
@@ -118,11 +121,11 @@ devtools::install_github("cont-limno/LAGOS", ref = "v1.054.1")
 
 ### Data
 
-Until older datasets have been made available in a public repository, LAGOS users will need to use the `lagos_compile` function (not `lagos_get`) and supply the path to their local `locus`, `limno` and `geo` data folders. Replace the paths in the example below with the path to each respective folder on your system. Most people will have access to these folders through Dropbox. For example, the `limno_folder` would be assigned to something like: `C:/Users/FWL/Dropbox/CSI_LAGOS-exports/LAGOS-NE-LIMNO-EXPORT`
+Until older datasets have been made available in a public repository, LAGOS users will need to use the `lagosne_compile` function (not `lagosne_get`) and supply the path to their local `locus`, `limno` and `geo` data folders. Replace the paths in the example below with the path to each respective folder on your system. Most people will have access to these folders through Dropbox. For example, the `limno_folder` would be assigned to something like: `C:/Users/FWL/Dropbox/CSI_LAGOS-exports/LAGOS-NE-LIMNO-EXPORT`
 
 ```{r eval=FALSE}
-library(LAGOS)
-lagos_compile("1.054.1", format = "rds",
+library(LAGOSNE)
+lagosne_compile("1.054.1", format = "rds",
   limno_folder = "~/Downloads/LAGOS-NE-LIMNO-EXPORT",
   geo_folder   = "~/Downloads/LAGOS-NE-GEO-EXPORT",
   locus_folder = "~/Downloads/LAGOS-NE-LOCUS-EXPORT")

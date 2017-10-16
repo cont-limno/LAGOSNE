@@ -1,4 +1,4 @@
-#' Load LAGOS data from disk
+#' Load LAGOSNE data from disk
 #'
 #' A wrapper for \code{\link[utils]{read.table}} with a default set of parameters.
 #'
@@ -14,15 +14,15 @@ load_lagos_txt <- function(file_name, sep = "\t", ...){
 
 }
 
-#' Summarize all LAGOS flat files
+#' Summarize all LAGOSNE flat files
 #'
-#' Generate table summary statistics for all LAGOS data frames.
+#' Generate table summary statistics for all LAGOSNE data frames.
 #'
 #' @author Masrour Farzan
-#' @param lg list output of lagos_load
+#' @param lg list output of lagosne_load
 #' @examples \dontrun{
-#' lg <- lagos_load("1.087.1")
-#' LAGOS:::info_table(lg)
+#' lg <- lagosne_load("1.087.1")
+#' LAGOSNE:::info_table(lg)
 #' }
 info_table <- function(lg){
 
@@ -110,18 +110,18 @@ stop_if_not_exists <- function(src_path) {
   }
 }
 
-lagos_path <- function() paste0(rappdirs::user_data_dir(appname = "LAGOS",
-                appauthor = "LAGOS"), .Platform$file.sep)
+lagos_path <- function() paste0(rappdirs::user_data_dir(appname = "LAGOSNE",
+                appauthor = "LAGOSNE"), .Platform$file.sep)
 
 lagos_names <- function(dt) purrr::map(dt, names)
 # unlist(lapply(dt, function(x) length(grep("connect", names(x))))) # search tables for column
 
-#' Query LAGOS names
+#' Query LAGOSNE names
 #'
 #' Return a vector of table names whose associated tables have
 #'  columns that grep to query.
 #'
-#' @param dt data.frame output of \code{\link[LAGOS]{lagos_load}}
+#' @param dt data.frame output of \code{\link[LAGOSNE]{lagosne_load}}
 #' @param grep_string character search string to grep to table column names
 #' @param scale character filter results by one of:
 #' \itemize{
@@ -134,7 +134,7 @@ lagos_names <- function(dt) purrr::map(dt, names)
 #' }
 #' @export
 #' @examples \dontrun{
-#' dt <- lagos_load("1.087.1")
+#' dt <- lagosne_load("1.087.1")
 #' query_lagos_names(dt, "_dep_")
 #' query_lagos_names(dt, "_dep_", "hu4")
 #' query_lagos_names(dt, "chla")
@@ -168,7 +168,7 @@ query_lagos_names <- function(dt, grep_string, scale = NA){
 #' @param table_name character
 #' @param grep_string character
 #' @examples \dontrun{
-#' dt <- lagos_load("1.087.1")
+#' dt <- lagosne_load("1.087.1")
 #' query_column_names(dt, "hu4.chag", "_dep_")
 #' query_column_names(dt, "county.chag", "baseflowindex")
 #' }
@@ -185,7 +185,7 @@ query_column_names <- function(dt, table_name, grep_string){
 #' @param table_name character
 #' @param keyword_string character
 #' @examples \dontrun{
-#' dt <- lagos_load("1.087.1")
+#' dt <- lagosne_load("1.087.1")
 #' query_column_keywords(dt, "hu12.chag", "hydrology")
 #' }
 query_column_keywords <- function(dt, table_name, keyword_string){
