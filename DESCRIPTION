@@ -13,8 +13,8 @@ Authors@R: c(
     )
 URL: https://github.com/cont-limno/LAGOSNE
 BugReports: https://github.com/cont-limno/LAGOSNE/issues
-Description: Client for programmatic access to the 'Lake
-    Multi-scaled Geospatial and Temporal' database <https://lagoslakes.org>, with functions
+Description: Client for programmatic access to the Lake
+    Multi-scaled Geospatial and Temporal database <https://lagoslakes.org>, with functions
     for accessing lake water quality and ecological context data for the US.
 Depends:
     R (>= 3.3.1)
