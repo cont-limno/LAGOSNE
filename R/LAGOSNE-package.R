@@ -309,7 +309,7 @@ NULL
 #' @docType data
 #' @keywords datasets
 #' @name chag
-#' @aliases hu12.chag hu8.chag hu4.chag edu.chag county.chag state.chag deposition climate hydrology geology
+#' @aliases hu12.chag hu8.chag hu4.chag edu.chag county.chag state.chag deposition climate hydrology geology baseflow
 #' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
 NULL
 

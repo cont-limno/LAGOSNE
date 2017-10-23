@@ -13,6 +13,7 @@
 \alias{climate}
 \alias{hydrology}
 \alias{geology}
+\alias{baseflow}
 \title{CHAG Datasets}
 \format{Data frames with all or a subset of the following variables. Number
 of observations is equal to the number of zones in each spatial scale (see
