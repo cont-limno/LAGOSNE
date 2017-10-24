@@ -15,7 +15,7 @@ install.packages("LAGOSNE")
 
 # install development version from Github
 # install devtools if not found - install.packages("devtools")
-devtools::install_github("cont-limno/LAGOSNE", update_dependencies = TRUE)
+# devtools::install_github("cont-limno/LAGOSNE", update_dependencies = TRUE)
 ```
 
 ### Data
@@ -34,7 +34,7 @@ Usage
 
 ``` r
 library(LAGOSNE)
-#> Welcome to LAGOSNE version 1.0.0. To cite LAGOSNE in publications use: 
+#> Welcome to LAGOSNE version 1.0.9. To cite LAGOSNE in publications use: 
 #>  
 #> Soranno, P.A., Bissell, E.G., Cheruvelil, K.S., Christel, S.T., Collins,
 #>     S.M., Fergus, C.E., Filstrup, C.T., Lapierre, J.F., Lottig, N.R., Oliver,

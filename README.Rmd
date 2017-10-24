@@ -28,7 +28,7 @@ install.packages("LAGOSNE")
 
 # install development version from Github
 # install devtools if not found - install.packages("devtools")
-devtools::install_github("cont-limno/LAGOSNE", update_dependencies = TRUE)
+# devtools::install_github("cont-limno/LAGOSNE", update_dependencies = TRUE)
 ```
  
 ### Data
