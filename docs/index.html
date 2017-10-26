@@ -95,7 +95,7 @@
 <div id="data" class="section level3">
 <h3 class="hasAnchor">
 <a href="#data" class="anchor"></a>Data</h3>
-<p>The <code>lagosne_get</code> function downloads the LAGOSNE files corresponding to the specified version from the <a href="https://portal.edirepository.org/nis/home.jsp">EDI data repository</a>. Files are stored in a temporary directory before being “compiled” to an <code>R</code> data format in the location returned by <code><a href="http://www.rdocumentation.org/packages/rappdirs/topics/user_data_dir">rappdirs::user_data_dir()</a></code>. Data only needs to be downloaded one time per version per machine.</p>
+<p>The <code>lagosne_get</code> function downloads the LAGOSNE files corresponding to the specified version from the <a href="https://portal.edirepository.org/nis/home.jsp">EDI data repository</a>. Files are stored in a temporary directory before being “compiled” to an <code>R</code> data format in the location returned by <code><a href="http://www.rdocumentation.org/packages/rappdirs/topics/user_data_dir">rappdirs::user_data_dir()</a></code>. Data only needs to be downloaded one time per version per machine. <strong>The latest version of the <code>LAGOSNE</code> dataset is <code>1.087.1</code>.</strong></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(LAGOSNE)
 <span class="kw"><a href="reference/lagosne_get.html">lagosne_get</a></span>(<span class="st">"1.087.1"</span>)</code></pre></div>
 </div>

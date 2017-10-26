@@ -33,7 +33,7 @@ install.packages("LAGOSNE")
  
 ### Data
 
-The `lagosne_get` function downloads the LAGOSNE files corresponding to the specified version from the [EDI data repository](https://portal.edirepository.org/nis/home.jsp). Files are stored in a temporary directory before being "compiled" to an `R` data format in the location returned by `rappdirs::user_data_dir()`. Data only needs to be downloaded one time per version per machine. 
+The `lagosne_get` function downloads the LAGOSNE files corresponding to the specified version from the [EDI data repository](https://portal.edirepository.org/nis/home.jsp). Files are stored in a temporary directory before being "compiled" to an `R` data format in the location returned by `rappdirs::user_data_dir()`. Data only needs to be downloaded one time per version per machine. **The latest version of the `LAGOSNE` dataset is `1.087.1`.**
 
 ```{r get_data, eval=FALSE}
 library(LAGOSNE)
