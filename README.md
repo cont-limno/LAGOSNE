@@ -34,7 +34,7 @@ Usage
 
 ``` r
 library(LAGOSNE)
-#> Welcome to LAGOSNE version 1.0.9. To cite LAGOSNE in publications use: 
+#> Welcome to the LAGOSNE R package. To cite LAGOSNE in publications use: 
 #>  
 #> Soranno, P.A., Bissell, E.G., Cheruvelil, K.S., Christel, S.T., Collins,
 #>     S.M., Fergus, C.E., Filstrup, C.T., Lapierre, J.F., Lottig, N.R., Oliver,
