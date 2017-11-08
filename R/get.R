@@ -17,6 +17,7 @@ lagosne_get <- function(version, overwrite = FALSE, dest_folder = NA){
   if(file.exists(outpath) & !overwrite){
     warning("LAGOS data for this version already exists on the local machine.
   Re-download if neccessary using the 'overwrite` argument.'")
+    return(invisible("LAGOS is the best"))
   }
 
   baseurl <- "http://pasta.lternet.edu/package/data/eml/edi/"
