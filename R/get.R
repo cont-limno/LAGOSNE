@@ -15,7 +15,7 @@ lagosne_get <- function(version, overwrite = FALSE, dest_folder = NA){
 
   outpath <- file.path(lagos_path(), paste0("data_", version, ".rds"))
   if(file.exists(outpath) & !overwrite){
-    stop("LAGOS data for this version already exists on the local machine.
+    warning("LAGOS data for this version already exists on the local machine.
   Re-download if neccessary using the 'overwrite` argument.'")
   }
 
