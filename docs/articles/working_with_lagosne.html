@@ -78,7 +78,7 @@
       <h1>Working with LAGOSNE</h1>
                         <h4 class="author">Joseph Stachelek</h4>
             
-            <h4 class="date">2017-10-26</h4>
+            <h4 class="date">2017-11-11</h4>
           </div>
 
     
@@ -86,17 +86,9 @@
 <div class="contents">
 <p>The following document presents two analyses to demonstrate use of the <code>LAGOSNE</code> package.</p>
 <p>To begin, we load LAGOSNE data with <code>lagosne_load</code>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(LAGOSNE)</code></pre></div>
-<pre><code>## Welcome to the LAGOSNE R package. To cite LAGOSNE in publications use: 
-##  
-## Soranno, P.A., Bissell, E.G., Cheruvelil, K.S., Christel, S.T., Collins,
-##     S.M., Fergus, C.E., Filstrup, C.T., Lapierre, J.F., Lottig, N.R., Oliver,
-##     S.K., Scott, C.E., Smith, N.J., Stopyak, S., Yuan, S., Bremigan, M.T.,
-##     Downing, J.A., Gries, C., Henry, E.H., Skaff, N.K., Stanley, E.H.,
-##     Stow, C.A., Tan, P.N., Wagner, T. and Webster, K.E. 2015. Building a
-##     multi-scaled geospatial temporal ecology database from disparate data
-##     sources: fostering open science and data reuse. Gigascience, 4(1)</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dt &lt;-<span class="st"> </span><span class="kw"><a href="../reference/lagosne_load.html">lagosne_load</a></span>(<span class="st">"1.087.1"</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(LAGOSNE)
+
+dt &lt;-<span class="st"> </span><span class="kw"><a href="../reference/lagosne_load.html">lagosne_load</a></span>(<span class="st">"1.087.1"</span>)</code></pre></div>
 <div id="boxplot-of-average-chlorophyll-by-state" class="section level2">
 <h2 class="hasAnchor">
 <a href="#boxplot-of-average-chlorophyll-by-state" class="anchor"></a>Boxplot of average chlorophyll by state</h2>
@@ -148,7 +140,6 @@ pa_chl &lt;-<span class="st"> </span><span class="kw"><a href="http://dplyr.tidy
 <span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggsf">geom_sf</a></span>(<span class="dt">data =</span> pa_chl, <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">color =</span> <span class="kw">log</span>(mean_chl))) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggtheme">theme_bw</a></span>() <span class="op">+</span><span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/scale_gradient">scale_color_gradient</a></span>(<span class="dt">low =</span> <span class="st">"white"</span>, <span class="dt">high =</span> <span class="st">"darkgreen"</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/labs">labs</a></span>(<span class="dt">color =</span> <span class="st">"log(Chlorophyll a (ug/L))"</span>)</code></pre></div>
-<pre><code>## although coordinates are longitude/latitude, st_intersection assumes that they are planar</code></pre>
 <p><img src="working_with_lagosne_files/figure-html/unnamed-chunk-4-1.png" width="672"></p>
 </div>
 </div>

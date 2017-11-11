@@ -34,15 +34,6 @@ Usage
 
 ``` r
 library(LAGOSNE)
-#> Welcome to the LAGOSNE R package. To cite LAGOSNE in publications use: 
-#>  
-#> Soranno, P.A., Bissell, E.G., Cheruvelil, K.S., Christel, S.T., Collins,
-#>     S.M., Fergus, C.E., Filstrup, C.T., Lapierre, J.F., Lottig, N.R., Oliver,
-#>     S.K., Scott, C.E., Smith, N.J., Stopyak, S., Yuan, S., Bremigan, M.T.,
-#>     Downing, J.A., Gries, C., Henry, E.H., Skaff, N.K., Stanley, E.H.,
-#>     Stow, C.A., Tan, P.N., Wagner, T. and Webster, K.E. 2015. Building a
-#>     multi-scaled geospatial temporal ecology database from disparate data
-#>     sources: fostering open science and data reuse. Gigascience, 4(1)
 ```
 
 ### Load data
