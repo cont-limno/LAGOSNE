@@ -14,6 +14,8 @@
     multi-scaled geospatial temporal ecology database from disparate data
     sources: fostering open science and data reuse. Gigascience, 4(1)"
 
-  packageStartupMessage(paste0("Welcome to the LAGOSNE R package. To cite LAGOSNE in publications use: \n \n",
+  if(interactive()){
+    packageStartupMessage(paste0("Welcome to the LAGOSNE R package. To cite LAGOSNE in publications use: \n \n",
     gigascience_cite))
+  }
 }
