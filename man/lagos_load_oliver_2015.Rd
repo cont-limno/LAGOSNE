@@ -12,6 +12,22 @@ lagos_load_oliver_2015(fpath = NA)
 \description{
 Load depth data from Oliver et al. 2015.
 }
+\details{
+#' @format A data frame with 50607 observations of 8 variables:
+\itemize{
+       \item lagoslakeid: unique identifier for each lake in LAGOS-NE.
+            For each row of data in this table, the lagoslakeid identifies the focal lake
+            for which other measures are calculated
+       \item nhdid: the 'Permanent_identifier' from the NHD,
+            but is called the NHDID in LAGOS-NE
+       \item hu4id: the unique ID of the HU4 zone that the focal lake is located within
+       \item lat_decimal: lattitude geographic coordinate in decimal degrees
+       \item long_decimal: longitude geographic coordinate in decimal degrees
+       \item area: lake area in hectares
+       \item zmaxobs: observed maximum lake depth (meters)
+       \item zmaxpredict: predicted maximum lake depth (meters)
+    }
+}
 \examples{
 \dontrun{
 lagos_load_oliver_2015()

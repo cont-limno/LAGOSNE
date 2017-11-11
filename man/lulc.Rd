@@ -3,8 +3,8 @@
 \docType{data}
 \name{lulc}
 \alias{lulc}
-\alias{lakes4ha.buffer100m.lulc}
-\alias{lakes4ha.buffer500m.lulc}
+\alias{buffer100m.lulc}
+\alias{buffer500m.lulc}
 \alias{iws.lulc}
 \alias{hu12.lulc}
 \alias{hu8.lulc}

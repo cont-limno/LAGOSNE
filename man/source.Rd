@@ -7,6 +7,7 @@
 \alias{lagos.source.programs}
 \alias{source.programs}
 \alias{lagos.source}
+\alias{lagos_source_program}
 \title{LAGOSNE sources}
 \format{A data frame with 87 observations of 19 variables:
 \itemize{

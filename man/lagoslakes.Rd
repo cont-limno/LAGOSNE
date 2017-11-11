@@ -3,7 +3,7 @@
 \docType{data}
 \name{lagoslakes}
 \alias{lagoslakes}
-\alias{lakes}
+\alias{lakes.geo}
 \title{Lake Geospatial Metadata}
 \format{A data frame with 141271 observations and 31 variables:
 \itemize{
