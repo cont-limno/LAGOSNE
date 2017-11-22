@@ -247,4 +247,4 @@ Soranno, P.A., Bacon, L.C., Beauchene, M., Bednar, K.E., Bissell, E.G., Boudreau
 
 Soranno, PA, EG Bissell, KS Cheruvelil, ST Christel, SM Collins, CE Fergus, CT Filstrup, et al. 2015. “Building a Multi-Scaled Geospatial Temporal Ecology Database from Disparate Data Sources: Fostering Open Science and Data Reuse.” Gigascience 4 (1). <https://dx.doi.org/10.1186/s13742-015-0067-4>.
 
-Stachelek, J, and SK Oliver. 2017. LAGOSNE: R Interface to the Lake Multi-Scaled Geospatial & Temporal Database. <https://github.com/cont-limno/LAGOSNE>.
+Stachelek, J, and SK Oliver. 2017. LAGOSNE: Interface to the Lake Multi-Scaled Geospatial and Temporal Database. <https://github.com/cont-limno/LAGOSNE>.

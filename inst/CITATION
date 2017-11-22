@@ -30,7 +30,7 @@ citEntry(entry = "Article",
 )
 
 citEntry(entry = "Manual",
-  title        = "LAGOSNE: Interface to the LAke multi-scaled GeOSpatial & temporal database",
+  title        = "LAGOSNE: Interface to the Lake Multi-Scaled Geospatial and Temporal Database",
   author       = personList(
                    as.person("Joseph Stachelek"),
                    as.person("Samantha Oliver")),
@@ -38,6 +38,6 @@ citEntry(entry = "Manual",
   note         = "R package version 1.0.0",
   url          = "https://cran.r-project.org/package=LAGOSNE",
   textVersion  =
-  paste("Stachelek J., Oliver S. 2017. LAGOSNE: Interface to the LAke multi-scaled GeOSpatial & temporal database. R package version 1.0.0. https://cran.r-project.org/package=LAGOSNE
+  paste("Stachelek J., Oliver S. 2017. LAGOSNE: Interface to the Lake Multi-scaled Geospatial and Temporal Database. R package version 1.0.0. https://cran.r-project.org/package=LAGOSNE
   ")
 )
