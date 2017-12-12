@@ -223,9 +223,9 @@ get_file_names <- function(url){
   gsub('\\"', "", res)
 }
 
-get_lagos_module <- function(url, folder_name, overwrite){
-  files <- suppressWarnings(paste0(url, "/",
-                            readLines(url)))
+get_lagos_module <- function(edi_url, pasta_url, folder_name, overwrite){
+  files <- suppressWarnings(paste0(edi_url, "&entityid=",
+                            readLines(pasta_url)))
 
   file_names <- sapply(files, get_file_names)
 
