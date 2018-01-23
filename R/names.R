@@ -1,19 +1,33 @@
 
-#' Display names
+#' Convert table names for display
 #'
+#' @importFrom tidyr unnest
+#' @importFrom tibble enframe
+#' @export
 #' @examples \dontrun{
 #' lg <- lagosne_load("1.087.1")
-#' display_names(lg$iws)
-#'
+#' display_names(names(lg$iws))
+#' display_names(names(lg$hu4))
+#' display_names(names(lg$locus))
+#' }
 display_names <- function(nms_raw){
+
+  # nms_raw <- names(lg$locus)
+    if(class(nms_raw) != "character"){
+      stop("This function on works on character vectors.")
+    }
 
     nms <- data.frame(raw = nms_raw,
                     formatted = NA,
                     stringsAsFactors = FALSE)
 
   # tidy prefixes
-  prefixes_key <- data.frame(prefix = c("hu4_", "iws_", "gibberish"),
-                             replacement = c("", "", ""),
+  prefixes_key <- data.frame(prefix      = c("hu4_", "iws_", "state_",
+                                             "nhd_", "hu8_", "hu12_",
+                                             "edu_", "county_", "hu6_"),
+                             replacement = c("", "", "",
+                                             "", "", "",
+                                             "", "", ""),
                              stringsAsFactors = FALSE)
 
   prefix_matches <- list()
@@ -44,31 +58,42 @@ display_names <- function(nms_raw){
                                   "Mean Depth", "ID"),
                     stringsAsFactors = FALSE)
   nms <- merge(nms, name_key, all.x = TRUE)
-  nms$formatted[is.na(nms$formatted)] <- nms$raw[is.na(nms$formatted)]
+
+  nms$formatted[is.na(nms$formatted)] <-
+              nms$raw[is.na(nms$formatted)]
   nms$cleaned[is.na(nms$cleaned)] <- nms$formatted[is.na(nms$cleaned)]
 
   # match suffixes to a key
-  suffixes_key <- data.frame(raw = c("_count", "_ha", "_km"),
-                             formatted = c(" (n)", " (ha)", " (km)"),
+  suffixes_key <- data.frame(raw       = c("_count$", "_ha$", "_km$",
+                                           "_m$"),
+                             formatted = c(" (n)", " (ha)", " (km)",
+                                           " (m)"),
                              stringsAsFactors = FALSE)
 
   for(i in seq_along(suffixes_key$raw)){
-    nms$formatted <- gsub(suffixes_key$raw[i],
+    nms$cleaned <- gsub(suffixes_key$raw[i],
                suffixes_key$formatted[i],
-               nms$formatted, fixed = TRUE)
+               nms$cleaned, fixed = FALSE)
   }
 
   # detect name collisions
   # if collision add formatted prefixes back to collisions
   nms_collisions <- as.character(sapply(seq_len(nrow(nms)), function(x){
     if(length(which(nms$cleaned[x] == nms$cleaned)) > 1){
-      paste0(nms$cleaned[x], " (", nms$prefix[x], ")")
+      paste0(nms$cleaned[x], " (", gsub("_", "", nms$prefix[x]), ")")
     }}))
+
   nms$cleaned[which(nms_collisions != "NULL")] <- nms_collisions[
     which(nms_collisions != "NULL")]
 
   # sort back to original order
   nms <- nms[match(nms_raw, nms$raw),]
 
-  nms$formatted
+  # formatting
+  nms$cleaned[!(nms$cleaned %in% nms_raw)] <-
+    capitalize(nms$cleaned[!(nms$cleaned %in% nms_raw)])
+  nms$cleaned[!(nms$cleaned %in% nms_raw)] <- gsub("_", " ",
+                              nms$cleaned[!(nms$cleaned %in% nms_raw)])
+
+  nms$cleaned
 }

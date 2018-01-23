@@ -239,3 +239,10 @@ get_lagos_module <- function(edi_url, pasta_url, folder_name, overwrite){
 
   local_dir
 }
+
+# from the Hmisc package
+capitalize <- function(string) {
+  capped <- grep("^[A-Z]", string, invert = TRUE)
+  substr(string[capped], 1, 1) <- toupper(substr(string[capped], 1, 1))
+  return(string)
+}
