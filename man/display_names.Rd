@@ -6,6 +6,9 @@
 \usage{
 display_names(nms_raw)
 }
+\arguments{
+\item{nms_raw}{character vector of column names}
+}
 \description{
 Convert table names for display
 }
@@ -14,5 +17,6 @@ Convert table names for display
 lg <- lagosne_load("1.087.1")
 display_names(names(lg$iws))
 display_names(names(lg$hu4))
+display_names(names(lg$locus))
 }
 }

@@ -1,6 +1,8 @@
 
 #' Convert table names for display
 #'
+#' @param nms_raw character vector of column names
+#'
 #' @importFrom tidyr unnest
 #' @importFrom tibble enframe
 #' @export
