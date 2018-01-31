@@ -4,7 +4,7 @@
 \alias{lake_info}
 \title{Lake attribute information}
 \usage{
-lake_info(dt, name, state)
+lake_info(dt, name = NA, state = NA, lagoslakeid = NA)
 }
 \arguments{
 \item{dt}{list of data.frames. output of \code{\link[LAGOSNE]{lagosne_load}}.}
@@ -12,13 +12,16 @@ lake_info(dt, name, state)
 \item{name}{character lake name not caps sensitive}
 
 \item{state}{character state name not caps sensitive}
+
+\item{lagoslakeid}{numeric lake id}
 }
 \description{
 Return lake attribute information from its name and state.
 }
 \examples{
 \dontrun{
-dt <- lagos_load("1.087.1")
+dt <- lagosne_load("1.087.1")
+lake_info(dt, lagoslakeid = 4314)
 lake_info(dt, "Sunapee Lake", "New Hampshire")
 
   name = c("Oneida Lake", "Sunapee Lake", "Lake Mendota"),

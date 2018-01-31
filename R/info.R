@@ -6,12 +6,14 @@
 #' @param dt list of data.frames. output of \code{\link[LAGOSNE]{lagosne_load}}.
 #' @param name character lake name not caps sensitive
 #' @param state character state name not caps sensitive
+#' @param lagoslakeid numeric lake id
 #' @importFrom dplyr filter
 #' @importFrom lazyeval interp
 #' @importFrom utils adist
 #' @export
 #' @examples \dontrun{
-#' dt <- lagos_load("1.087.1")
+#' dt <- lagosne_load("1.087.1")
+#' lake_info(dt, lagoslakeid = 4314)
 #' lake_info(dt, "Sunapee Lake", "New Hampshire")
 #'
 # focal_lakes <- data.frame(
@@ -22,7 +24,24 @@
 #'     dt = dt, name = x[1], state = x[2]))
 #' }
 
-lake_info <- function(dt, name, state){
+lake_info <- function(dt, name = NA, state = NA, lagoslakeid = NA){
+
+  if(class(dt) != "list"){
+    stop("dt must be a list (created by the lagosne_load function).")
+  }
+
+  if((is.na(name) & !is.na(state)) | (!is.na(name) & is.na(state))){
+    stop("Must provide either a name AND state or lagoslakeid.")
+  }
+
+  if(!is.na(lagoslakeid)){
+    state <- as.character(
+      dt$locus[dt$locus$lagoslakeid == lagoslakeid, "state_zoneid"])
+    state <- as.character(dt$state[dt$state$state_zoneid == state, "state_name"])
+    name  <- as.character(
+      dt$locus[dt$locus$lagoslakeid == lagoslakeid, "gnis_name"])
+  }
+
   dt$locus$state_zoneid <- as.character(dt$locus$state_zoneid)
   dt$state$state_zoneid <- as.character(dt$state$state_zoneid)
   dt$state$state_name   <- as.character(dt$state$state_name)
@@ -42,6 +61,8 @@ lake_info <- function(dt, name, state){
 
   dt <- suppressMessages(dplyr::left_join(dt$lakes_limno,
           locus_state_iws))
+
+  # ---- filtering ----
 
   dt <- dt[grepl(state, dt$state_name),]
   filter_criteria <- lazyeval::interp(~ agrepl(name, lagosname1,
