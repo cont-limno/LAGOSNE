@@ -105,7 +105,7 @@
     <p>Return lake attribute information from its name and state.</p>
     
 
-    <pre class="usage"><span class='fu'>lake_info</span>(<span class='no'>dt</span>, <span class='no'>name</span>, <span class='no'>state</span>)</pre>
+    <pre class="usage"><span class='fu'>lake_info</span>(<span class='no'>dt</span>, <span class='kw'>name</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>state</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>lagoslakeid</span> <span class='kw'>=</span> <span class='fl'>NA</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -122,12 +122,17 @@
       <th>state</th>
       <td><p>character state name not caps sensitive</p></td>
     </tr>
+    <tr>
+      <th>lagoslakeid</th>
+      <td><p>numeric lake id</p></td>
+    </tr>
     </table>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"># NOT RUN {
-dt <- lagos_load("1.087.1")
+dt <- lagosne_load("1.087.1")
+lake_info(dt, lagoslakeid = 4314)
 lake_info(dt, "Sunapee Lake", "New Hampshire")
 
   name = c("Oneida Lake", "Sunapee Lake", "Lake Mendota"),
