@@ -16,6 +16,7 @@
 \alias{state}
 \alias{classification}
 \alias{scales}
+\alias{lakeareaha}
 \title{LAGOSNE Spatial Classifications Metadata}
 \format{Data frames with all or a subset of the following variables. Number
 of observations is equal to the number of zones in each spatial
@@ -36,7 +37,7 @@ classification (see Details below).
     (* = iws, hu12, hu8, hu4, edu, county, state)
     \item *_long: longitude of centroid of polygon in decimal degrees
     (NAD83) (* = iws, hu12, hu8, hu4, edu, county, state)
-    \item *_lakeareaha: lake area (ha) of focal lake within polygon
+    \item *_lakeareaha: lake area (ha) of focal lake associated with polygon
     (* = iws, )
     \item *_country: whether the polygon lies within the US ("US") or the
     US and Canada (US_CA) (* = hu12, edu)
