@@ -21,3 +21,4 @@ vignettes/Makefile
 ^cran-comments\.md$
 vignettes/lagosne_structure.Rmd
 vignettes/working_with_lagosne.Rmd
+.gitattributes
