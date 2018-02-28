@@ -22,6 +22,7 @@ Return lake attribute information from its name and state.
 \dontrun{
 dt <- lagosne_load("1.087.1")
 lake_info(dt, lagoslakeid = 4314)
+lake_info(dt, lagoslakeid = 7441)
 lake_info(dt, "Sunapee Lake", "New Hampshire")
 
   name = c("Oneida Lake", "Sunapee Lake", "Lake Mendota"),
