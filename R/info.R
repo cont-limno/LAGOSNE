@@ -15,6 +15,7 @@
 #' dt <- lagosne_load("1.087.1")
 #' lake_info(dt, lagoslakeid = 4314)
 #' lake_info(dt, lagoslakeid = 7441)
+#' lake_info(dt, lagoslakeid = 4686)
 #' lake_info(dt, "Sunapee Lake", "New Hampshire")
 #'
 # focal_lakes <- data.frame(
@@ -67,6 +68,11 @@ lake_info <- function(dt, name = NA, state = NA, lagoslakeid = NA){
   # ---- filtering ----
 
   dt <- dt[grepl(state, dt$state_name),]
+
+  if(is.na(name)){
+    name  <- as.character(
+      dt[dt$lagoslakeid == lagoslakeid, "lagosname1"])
+  }
 
   filter_criteria <- lazyeval::interp(~ agrepl(name, lagosname1,
                                                ignore.case = TRUE,
