@@ -7,9 +7,9 @@ output:
       fig_caption: yes
 ---
 
-The following document presents two analyses to demonstrate use of the `LAGOSNE` package.
+The following document demonstrates use of the `LAGOSNE` package with two analyses:
 
-To begin, we load LAGOSNE data with `lagosne_load`:
+Before we can begin, we must load LAGOSNE data with `lagosne_load`:
 
 ```{r lagos_load}
 library(LAGOSNE)
@@ -19,7 +19,7 @@ dt <- lagosne_load("1.087.1")
 
 ## Boxplot of average chlorophyll by state
 
-The first analysis involves contructing a boxplot of average lake chlorophyll by state. To begin, we join the nutrient water quality table (`epi.nutr`) to the location information for each lake in the `locus` table. Next, we join the output to the `state` table to obtain state abbreviations that correspond to each lake. Finally, we filter the dataset to exclude any lakes that do not fall within a state. 
+The first analysis involves constructing a boxplot of average lake chlorophyll by state. To begin, we join the nutrient water quality table (`epi.nutr`) to the location information for each lake in the `locus` table. Next, we join the output to the `state` table to obtain state abbreviations that correspond to each lake. Finally, we filter the dataset to exclude any lakes that do not fall within a state. 
 
 ```{r avg_chl_by_state, message=FALSE, results = 'hide', warning = FALSE}
 library(dplyr)
@@ -40,7 +40,6 @@ state_easting <- summarize(lg,
 state_easting <- arrange(state_easting, mean_easting)
 
 lg$state <- factor(lg$state, levels = state_easting$state)
-
 ```
 
 Finally, we contruct a boxplot with `ggplot`:
@@ -54,7 +53,7 @@ ggplot(lg) +
 
 ## Map of average chlorophyll in Pennsylvania
 
-The second analysis involves contructing a map of average lake chlorophyll concentration in Pennsylvania lakes. To begin, we use the `maps` and `sf` package to obtain a geographic outline of the state.  
+The second analysis involves constructing a map of average lake chlorophyll concentration in Pennsylvania lakes. To begin, we use the `maps` and `sf` package to obtain a geographic outline of the state.  
 
 ```{r pa_chl_map, message=FALSE, results = 'hide'}
 library(maps)
