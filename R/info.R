@@ -16,6 +16,7 @@
 #' lake_info(dt, lagoslakeid = 4314)
 #' lake_info(dt, lagoslakeid = 7441)
 #' lake_info(dt, lagoslakeid = 4686)
+#' lake_info(dt, lagoslakeid = 8016)
 #' lake_info(dt, "Sunapee Lake", "New Hampshire")
 #'
 # focal_lakes <- data.frame(
@@ -74,10 +75,14 @@ lake_info <- function(dt, name = NA, state = NA, lagoslakeid = NA){
       dt[dt$lagoslakeid == lagoslakeid, "lagosname1"])
   }
 
-  filter_criteria <- lazyeval::interp(~ agrepl(name, lagosname1,
+  dt_filter <- dt[which(dt$lagoslakeid == lagoslakeid),]
+
+  if(is.na(lagoslakeid)){
+    filter_criteria <- lazyeval::interp(~ agrepl(name, lagosname1,
                                                ignore.case = TRUE,
                                                max.distance = 0.1))
-  dt_filter       <- dplyr::filter_(dt, filter_criteria)
+    dt_filter       <- dplyr::filter_(dt, filter_criteria)
+  }
 
   if(nrow(dt_filter) == 0){
     filter_criteria <- lazyeval::interp(~ agrepl(name, gnis_name,
