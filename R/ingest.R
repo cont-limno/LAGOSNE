@@ -36,8 +36,9 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA,
 
   # Importing Lagos limno data ####
   epi_nutr             <- load_lagos_txt(limno_path("epinutr"),
-                              colClasses = c(sampledate = "POSIXct"),
                               sep = ",")
+  epi_nutr$sampledate  <- as.Date(strptime(dt$sampledate, format = "%m/%d/%Y"))
+
   lakes_limno          <- load_lagos_txt(limno_path("lakeslimno"),
                                        sep = ",")
   secchi               <- load_lagos_txt(limno_path("secchi"),
