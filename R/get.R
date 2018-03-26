@@ -22,20 +22,22 @@ lagosne_get <- function(version, overwrite = FALSE, dest_folder = NA){
 
     edi_baseurl <- "https://portal.edirepository.org/nis/dataviewer?packageid="
     pasta_baseurl <- "http://pasta.lternet.edu/package/data/eml/edi/"
-    
+
     locus_base_edi  <- paste0(edi_baseurl, c("edi.100.4"))
     locus_base_pasta <- paste0(pasta_baseurl, "100/4")
     locus_dir   <- get_lagos_module(locus_base_edi, locus_base_pasta, "locus", overwrite)
-    
+
     limno_base_edi <- paste0(edi_baseurl, c("edi.101.2"))
     limno_base_pasta <- paste0(pasta_baseurl, "101/2")
     limno_dir  <- get_lagos_module(limno_base_edi, limno_base_pasta, "limno", overwrite)
-    
+
     geo_base_edi <- paste0(edi_baseurl, c("edi.99.5"))
     geo_base_pasta <- paste0(pasta_baseurl, "99/5")
     geo_dir  <- get_lagos_module(geo_base_edi, geo_base_pasta, "geo", overwrite)
-  
+
   dir.create(lagos_path(), showWarnings = FALSE)
+
+  message("LAGOSNE downloaded. Now compressing to native R object ...")
 
   lagosne_compile(version = version,
                 locus_folder = locus_dir,
