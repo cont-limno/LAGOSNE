@@ -20,20 +20,23 @@ lagosne_get <- function(version, overwrite = FALSE, dest_folder = NA){
     return(invisible("LAGOS is the best"))
   }
 
-    edi_baseurl <- "https://portal.edirepository.org/nis/dataviewer?packageid="
+    edi_baseurl   <- "https://portal.edirepository.org/nis/dataviewer?packageid="
     pasta_baseurl <- "http://pasta.lternet.edu/package/data/eml/edi/"
 
-    locus_base_edi  <- paste0(edi_baseurl, c("edi.100.4"))
+    locus_base_edi   <- paste0(edi_baseurl, c("edi.100.4"))
     locus_base_pasta <- paste0(pasta_baseurl, "100/4")
-    locus_dir   <- get_lagos_module(locus_base_edi, locus_base_pasta, "locus", overwrite)
+    locus_dir        <- get_lagos_module(locus_base_edi, locus_base_pasta,
+                                         "locus", overwrite)
 
-    limno_base_edi <- paste0(edi_baseurl, c("edi.101.2"))
+    limno_base_edi   <- paste0(edi_baseurl, c("edi.101.2"))
     limno_base_pasta <- paste0(pasta_baseurl, "101/2")
-    limno_dir  <- get_lagos_module(limno_base_edi, limno_base_pasta, "limno", overwrite)
+    limno_dir        <- get_lagos_module(limno_base_edi, limno_base_pasta,
+                                         "limno", overwrite)
 
-    geo_base_edi <- paste0(edi_baseurl, c("edi.99.5"))
+    geo_base_edi   <- paste0(edi_baseurl, c("edi.99.5"))
     geo_base_pasta <- paste0(pasta_baseurl, "99/5")
-    geo_dir  <- get_lagos_module(geo_base_edi, geo_base_pasta, "geo", overwrite)
+    geo_dir        <- get_lagos_module(geo_base_edi, geo_base_pasta,
+                                       "geo", overwrite)
 
   dir.create(lagos_path(), showWarnings = FALSE)
 
@@ -42,9 +45,13 @@ lagosne_get <- function(version, overwrite = FALSE, dest_folder = NA){
   lagosne_compile(version = version,
                 locus_folder = locus_dir,
                 limno_folder = limno_dir,
-                geo_folder = geo_dir,
-                dest_folder = dest_folder
+                geo_folder   = geo_dir,
+                dest_folder  = dest_folder
                 )
+
+  return(invisible(list(locus_folder = locus_dir,
+                        limno_folder = limno_dir,
+                        geo_folder   = geo_dir)))
 }
 
 #' Get depth data
