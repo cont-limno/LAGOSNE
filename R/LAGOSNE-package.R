@@ -930,10 +930,19 @@ NULL
 
 #' LAGOSNE subset
 #'
-#' A dataset with the first two rows of many LAGOSNE tables
+#' A dataset with the first two rows of many of the LAGOSNE tables
 #'
 #' @docType data
 #' @keywords datasets
 #' @name lg_subset
 #' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
 "lg_subset"
+
+#' LAGOSNE extent
+#'
+#' A simple features polygons representing the geographical extent of the LAGOSNE dataset
+#' @docType data
+#' @keywords datasets
+#' @name lg_extent
+#' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
+"lg_extent"
