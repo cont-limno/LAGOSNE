@@ -67,8 +67,9 @@ lake_info <- function(dt, name = NA, state = NA, lagoslakeid = NA){
           locus_state_iws))
 
   # ---- filtering ----
-
-  dt <- dt[grepl(state, dt$state_name),]
+  if(length(state) > 0){ # ! OUT_OF_COUNTY_STATE
+    dt <- dt[grepl(state, dt$state_name),]
+  }
 
   if(is.na(name)){
     name  <- as.character(
@@ -96,4 +97,5 @@ lake_info <- function(dt, name = NA, state = NA, lagoslakeid = NA){
   }
 
   dt_filter[which.min(adist(dt_filter$lagosname1, name)),]
+
 }

@@ -6,6 +6,10 @@ test_that("lake_info works", {
   expect_equal(nrow(
     lake_info(dt, "Benton Pond", "Massachusetts")), 1)
 
+  # not in test dataset
+  # expect_equal(nrow(
+  #   lake_info(dt, lagoslakeid = 6302)), 1)
+
 })
 
 test_that("lake_info fails well", {
