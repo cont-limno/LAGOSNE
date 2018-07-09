@@ -27,7 +27,8 @@ Imports: dplyr (>= 0.7.0),
     curl (>= 2.7.0),
     stringr (>= 1.2.0), 
     tibble,
-    tidyr
+    tidyr,
+    memoise
 Suggests: testthat,
     knitr,
     rmarkdown,

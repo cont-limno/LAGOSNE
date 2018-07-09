@@ -18,13 +18,6 @@ Load LAGOSNE data from local system files
 }
 \examples{
 \dontrun{
-dt  <- lagosne_load("1.054.1")
-dt2 <- lagosne_load("1.054.2")
-
-compare_columns <- function(num){
- identical(dt2$epi_nutr[,num], dt$epi_nutr[,num])
-}
-names(dt2$epi_nutr)[sapply(13:94, compare_columns)]
-
+dt  <- lagosne_load("1.087.1")
 }
 }
