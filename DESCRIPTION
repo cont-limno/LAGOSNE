@@ -28,7 +28,8 @@ Imports: dplyr (>= 0.7.0),
     stringr (>= 1.2.0), 
     tibble,
     tidyr,
-    memoise
+    memoise,
+    rlang
 Suggests: testthat,
     knitr,
     rmarkdown,

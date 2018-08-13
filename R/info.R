@@ -10,21 +10,20 @@
 #' @importFrom dplyr filter
 #' @importFrom lazyeval interp
 #' @importFrom utils adist
+#' @importFrom rlang .data
 #' @export
 #' @examples \dontrun{
 #' dt <- lagosne_load("1.087.1")
 #' lake_info(dt, lagoslakeid = 4314)
 #' lake_info(dt, lagoslakeid = 7441)
+#' lake_info(dt, lagoslakeid = 244)
 #' lake_info(dt, lagoslakeid = 4686)
 #' lake_info(dt, lagoslakeid = 8016)
+#' lake_info(dt, lagoslakeid = c(4686, 8016))
+#'
 #' lake_info(dt, "Sunapee Lake", "New Hampshire")
-#'
-# focal_lakes <- data.frame(
-#'   name = c("Oneida Lake", "Sunapee Lake", "Lake Mendota"),
-#'   state = c("New York", "New Hampshire", "Wisconsin"))
-#'
-#'   apply(focal_lakes, 1, function(x) lake_info(
-#'     dt = dt, name = x[1], state = x[2]))
+#' lake_info(dt, name = c("Sunapee Lake", "Oneida Lake"),
+#'               state = c("New Hampshire", "New York"))
 #' }
 
 lake_info <- function(dt, name = NA, state = NA, lagoslakeid = NA){
@@ -33,17 +32,33 @@ lake_info <- function(dt, name = NA, state = NA, lagoslakeid = NA){
     stop("dt must be a list (created by the lagosne_load function).")
   }
 
-  if((is.na(name) & !is.na(state)) | (!is.na(name) & is.na(state))){
-    stop("Must provide either a name AND state or lagoslakeid.")
+  if((all(is.na(name)) & !all(is.na(state))) |
+     (!all(is.na(name)) & all(is.na(state)))){
+    stop("Must provide either a name AND state OR lagoslakeid.")
   }
 
-  if(!is.na(lagoslakeid)){
-    state <- as.character(
-      dt$locus[dt$locus$lagoslakeid == lagoslakeid, "state_zoneid"])
+  # create data.frame of lake and state names
+  if(!all(is.na(lagoslakeid))){
+    name_state <- data.frame(lagoslakeid = lagoslakeid, stringsAsFactors = FALSE)
 
-    state <- as.character(dt$state[dt$state$state_zoneid == state, "state_name"])
-    name  <- as.character(
-      dt$locus[dt$locus$lagoslakeid == lagoslakeid, "gnis_name"])
+    suppressWarnings(
+    name_state <- dplyr::left_join(name_state,
+                                   dplyr::select(dt$locus, .data$lagoslakeid,
+                                                 .data$state_zoneid, .data$gnis_name),
+                                   by = "lagoslakeid"))
+    suppressWarnings(
+    name_state <- dplyr::left_join(name_state,
+                                   dplyr::select(dt$state,
+                                                 .data$state_zoneid, .data$state_name),
+                                   by = "state_zoneid"))
+
+    name_state <- dplyr::mutate(name_state,
+                                name = .data$gnis_name, state = .data$state_name)
+    name_state <- dplyr::select(name_state, .data$name, .data$state, .data$lagoslakeid)
+  }else{
+    lagoslakeid <- rep(NA, length(state))
+    name_state <- data.frame(name = name, state = state, lagoslakeid = lagoslakeid,
+                             stringsAsFactors = FALSE)
   }
 
   dt$locus$state_zoneid <- as.character(dt$locus$state_zoneid)
@@ -67,21 +82,24 @@ lake_info <- function(dt, name = NA, state = NA, lagoslakeid = NA){
           locus_state_iws))
 
   # ---- filtering ----
-  if(length(state) > 0){ # ! OUT_OF_COUNTY_STATE
-    dt <- dt[grepl(state, dt$state_name),]
-  }
+  do.call("rbind", apply(name_state, 1, function(x){
+    lake_info_(dt = dt, name = x[1], state = x[2], llid = x[3])
+  }))
+}
+
+lake_info_ <- function(dt, name, state, llid){
 
   if(is.na(name)){
     name  <- as.character(
-      dt[dt$lagoslakeid == lagoslakeid, "lagosname1"])
+      dt[dt$lagoslakeid == llid, "lagosname1"])
   }
 
-  dt_filter <- dt[which(dt$lagoslakeid == lagoslakeid),]
+  dt_filter <- dt[which(dt$lagoslakeid == llid),]
 
-  if(is.na(lagoslakeid)){
+  if(is.na(llid)){
     filter_criteria <- lazyeval::interp(~ agrepl(name, lagosname1,
-                                               ignore.case = TRUE,
-                                               max.distance = 0.1))
+                                                 ignore.case = TRUE,
+                                                 max.distance = 0.1))
     dt_filter       <- dplyr::filter_(dt, filter_criteria)
   }
 
@@ -92,10 +110,9 @@ lake_info <- function(dt, name = NA, state = NA, lagoslakeid = NA){
     dt_filter       <- dplyr::filter_(dt, filter_criteria)
   }
 
-  if(nrow(dt_filter) < 1){
+  if(nrow(dt_filter) < 1 & !is.na(state)){
     stop(paste0("Lake '", name, "' in ", state, " not found"))
   }
 
   dt_filter[which.min(adist(dt_filter$lagosname1, name)),]
-
 }
