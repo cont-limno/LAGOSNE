@@ -1,32 +1,17 @@
 citHeader("To cite LAGOSNE in publications use:")
 
 citEntry(entry = "Article",
-  title        = "Building a multi-scaled geospatial temporal
-    ecology database from disparate data sources: fostering open science and
-    data reuse",
+  title        = "LAGOS-NE: a multi-scaled geospatial and temporal database of lake ecological context and water quality for thousands of US lakes",
   author       = personList(
                    person("P.A.", "Soranno"),
-                   person("E.G.", "Bissell"),
-                   person("K.S.", "Cheruvelil"),
-                   person("S.T.", "Christel"),
-                   person("S.M.", "Collins"),
-                   person("C.E.", "Fergus"),
-                   person("C.T.", "Filstrup"),
-                   person("J.F.", "Lapierre"),
-                   person("N.R.", "Lottig"),
-                   person("S.K.", "Oliver"),
-                   person("C.E.", "Scott")),
+                   person("al.", "et.")),
   journal      = "Gigascience",
-  year         = "2015",
-  volume       = "4",
-  number       = "1",
+  year         = "2017",
+  volume       = "6",
+  number       = "12",
 
   textVersion  =
-  paste("Soranno, P.A., Bissell, E.G., Cheruvelil, K.S., Christel, S.T., Collins,
-    S.M., Fergus, C.E., Filstrup, C.T., Lapierre, J.F., Lottig, N.R., Oliver,
-    S.K. and Scott, C.E., 2015. Building a multi-scaled geospatial temporal
-    ecology database from disparate data sources: fostering open science and
-    data reuse. Gigascience, 4(1)")
+  paste("Soranno, P.A., et. al., 2017. LAGOS-NE: a multi-scaled geospatial and temporal database of lake ecological context and water quality for thousands of US lakes. Gigascience, 6(12)")
 )
 
 citEntry(entry = "Manual",
@@ -35,9 +20,9 @@ citEntry(entry = "Manual",
                    as.person("Joseph Stachelek"),
                    as.person("Samantha Oliver")),
   year         = "2017",
-  note         = "R package version 1.0.0",
+  note         = "R package version 1.1.0",
   url          = "https://cran.r-project.org/package=LAGOSNE",
   textVersion  =
-  paste("Stachelek J., Oliver S. 2017. LAGOSNE: Interface to the Lake Multi-scaled Geospatial and Temporal Database. R package version 1.0.0. https://cran.r-project.org/package=LAGOSNE
+  paste("Stachelek J., Oliver S. 2017. LAGOSNE: Interface to the Lake Multi-scaled Geospatial and Temporal Database. R package version 1.1.0. https://cran.r-project.org/package=LAGOSNE
   ")
 )
