@@ -37,6 +37,10 @@ lake_info <- function(dt, name = NA, state = NA, lagoslakeid = NA){
     stop("Must provide either a name AND state OR lagoslakeid.")
   }
 
+  if(any(!(tolower(state) %in% tolower(datasets::state.name)))){
+    stop("The state variable must by an unabbreivated character string from datasets::state.name")
+  }
+
   # create data.frame of lake and state names
   if(!all(is.na(lagoslakeid))){
     name_state <- data.frame(lagoslakeid = lagoslakeid, stringsAsFactors = FALSE)
