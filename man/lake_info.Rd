@@ -2,7 +2,7 @@
 % Please edit documentation in R/info.R
 \name{lake_info}
 \alias{lake_info}
-\title{Lake attribute information}
+\title{Get a summary of lake attribute information}
 \usage{
 lake_info(dt, name = NA, state = NA, lagoslakeid = NA)
 }
@@ -16,7 +16,7 @@ lake_info(dt, name = NA, state = NA, lagoslakeid = NA)
 \item{lagoslakeid}{numeric lake id}
 }
 \description{
-Return lake attribute information from its name and state.
+Return lake attribute information from its name and state or its lagoslakeid.
 }
 \examples{
 \dontrun{

@@ -1,7 +1,7 @@
 
-#' Lake attribute information
+#' Get a summary of lake attribute information
 #'
-#' Return lake attribute information from its name and state.
+#' Return lake attribute information from its name and state or its lagoslakeid.
 #'
 #' @param dt list of data.frames. output of \code{\link[LAGOSNE]{lagosne_load}}.
 #' @param name character lake name not caps sensitive
