@@ -4,6 +4,10 @@ citEntry(entry = "Article",
   title        = "LAGOS-NE: a multi-scaled geospatial and temporal database of lake ecological context and water quality for thousands of US lakes",
   author       = personList(
                    person("P.A.", "Soranno"),
+                   person("L.C.", "Bacon"),
+                   person("M.", "Beauchene"),
+                   person("K.E.", "Bednar"),
+                   person("E.G.", "Bissell"),
                    person("al.", "et.")),
   journal      = "Gigascience",
   year         = "2017",
@@ -11,7 +15,7 @@ citEntry(entry = "Article",
   number       = "12",
 
   textVersion  =
-  paste("Soranno, P.A., et. al., 2017. LAGOS-NE: a multi-scaled geospatial and temporal database of lake ecological context and water quality for thousands of US lakes. Gigascience, 6(12)")
+  paste("Soranno, P.A., L.C. Bacon, M. Beauchene, K.E. Bednar, E.G. Bissell, et. al., 2017. LAGOS-NE: a multi-scaled geospatial and temporal database of lake ecological context and water quality for thousands of US lakes. Gigascience, 6(12)")
 )
 
 citEntry(entry = "Manual",
