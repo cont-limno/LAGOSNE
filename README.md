@@ -92,6 +92,7 @@ help.search("datasets", package = "LAGOSNE")
 | LAGOSNE | epi\_nutr       | Epilimnion Water Quality Data            |
 | LAGOSNE | lagoslakes      | Lake Geospatial Metadata                 |
 | LAGOSNE | lakes\_limno    | Metadata for Lakes with Water Quality    |
+| LAGOSNE | lg\_extent      | LAGOSNE extent                           |
 | LAGOSNE | lg\_subset      | LAGOSNE subset                           |
 | LAGOSNE | locus           | Metadata for all lakes &gt; 1ha          |
 | LAGOSNE | lulc            | Land Use Land Cover (LULC) Data Frames   |
