@@ -37,7 +37,7 @@ lake_info <- function(dt, name = NA, state = NA, lagoslakeid = NA){
     stop("Must provide either a name AND state OR lagoslakeid.")
   }
 
-  if(is.na(lagoslakeid) & any(!(tolower(state) %in% tolower(datasets::state.name)))){
+  if(any(is.na(lagoslakeid)) & any(!(tolower(state) %in% tolower(datasets::state.name)))){
     stop("The state variable must by an unabbreivated character string from datasets::state.name")
   }
 
@@ -98,20 +98,24 @@ lake_info_ <- function(dt, name, state, llid){
       dt[dt$lagoslakeid == llid, "lagosname1"])
   }
 
-  dt_filter <- dt[which(dt$lagoslakeid == llid),]
+  # dt_filter       <- dt[which(dt$lagoslakeid == llid),]
+  dt_filter       <- dt[dt$state_name %in% state,]
 
   if(is.na(llid)){
     filter_criteria <- lazyeval::interp(~ agrepl(name, lagosname1,
                                                  ignore.case = TRUE,
                                                  max.distance = 0.1))
-    dt_filter       <- dplyr::filter_(dt, filter_criteria)
+    # dt_filter       <- dplyr::filter(dt, !is.na(state_name))
+    dt_filter       <- dplyr::filter_(dt_filter, filter_criteria)
+  }else{
+    dt_filter <- dplyr::filter(dt, lagoslakeid == llid)
   }
 
   if(nrow(dt_filter) == 0){
     filter_criteria <- lazyeval::interp(~ agrepl(name, gnis_name,
                                                  ignore.case = TRUE,
                                                  max.distance = 0.1))
-    dt_filter       <- dplyr::filter_(dt, filter_criteria)
+    dt_filter       <- dplyr::filter_(dt_filter, filter_criteria)
   }
 
   if(nrow(dt_filter) < 1 & !is.na(state)){
