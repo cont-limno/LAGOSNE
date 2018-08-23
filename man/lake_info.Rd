@@ -26,6 +26,8 @@ lake_info(dt, lagoslakeid = 7441)
 lake_info(dt, lagoslakeid = 244)
 lake_info(dt, lagoslakeid = 4686)
 lake_info(dt, lagoslakeid = 8016)
+lake_info(dt, lagoslakeid = c(1441))
+lake_info(dt, lagoslakeid = c(125428, 1441))
 lake_info(dt, lagoslakeid = c(4686, 8016))
 
 lake_info(dt, "Sunapee Lake", "New Hampshire")

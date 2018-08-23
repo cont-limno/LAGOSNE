@@ -19,6 +19,8 @@
 #' lake_info(dt, lagoslakeid = 244)
 #' lake_info(dt, lagoslakeid = 4686)
 #' lake_info(dt, lagoslakeid = 8016)
+#' lake_info(dt, lagoslakeid = c(1441))
+#' lake_info(dt, lagoslakeid = c(125428, 1441))
 #' lake_info(dt, lagoslakeid = c(4686, 8016))
 #'
 #' lake_info(dt, "Sunapee Lake", "New Hampshire")
@@ -46,19 +48,21 @@ lake_info <- function(dt, name = NA, state = NA, lagoslakeid = NA){
     name_state <- data.frame(lagoslakeid = lagoslakeid, stringsAsFactors = FALSE)
 
     suppressWarnings(
-    name_state <- dplyr::left_join(name_state,
-                                   dplyr::select(dt$locus, .data$lagoslakeid,
-                                                 .data$state_zoneid, .data$gnis_name),
-                                   by = "lagoslakeid"))
+    name_state <- dplyr::left_join(
+      name_state,
+      dplyr::select(dt$locus, .data$lagoslakeid,
+                              .data$state_zoneid, .data$gnis_name),
+                               by = "lagoslakeid"))
     suppressWarnings(
-    name_state <- dplyr::left_join(name_state,
-                                   dplyr::select(dt$state,
-                                                 .data$state_zoneid, .data$state_name),
-                                   by = "state_zoneid"))
+    name_state <- dplyr::left_join(
+      name_state,
+      dplyr::select(dt$state, .data$state_zoneid, .data$state_name),
+                  by = "state_zoneid"))
 
     name_state <- dplyr::mutate(name_state,
                                 name = .data$gnis_name, state = .data$state_name)
-    name_state <- dplyr::select(name_state, .data$name, .data$state, .data$lagoslakeid)
+    name_state <- dplyr::select(name_state,
+                                .data$name, .data$state, .data$lagoslakeid)
   }else{
     lagoslakeid <- rep(NA, length(state))
     name_state <- data.frame(name = name, state = state, lagoslakeid = lagoslakeid,
@@ -108,7 +112,7 @@ lake_info_ <- function(dt, name, state, llid){
     # dt_filter       <- dplyr::filter(dt, !is.na(state_name))
     dt_filter       <- dplyr::filter_(dt_filter, filter_criteria)
   }else{
-    dt_filter <- dplyr::filter(dt, lagoslakeid == llid)
+    dt_filter <- dplyr::filter(dt, lagoslakeid == as.numeric(llid))
   }
 
   if(nrow(dt_filter) == 0){
