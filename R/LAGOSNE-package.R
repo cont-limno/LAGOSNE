@@ -121,7 +121,7 @@ NULL
 #' @docType data
 #' @keywords datasets
 #' @name classifications
-#' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
+#' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
 #' @aliases lakes4ha.buffer100m lakes4ha.buffer500m buffer100m buffer500m iws hu12 hu8 hu4 edu county state classification scales lakeareaha
 NULL
 
@@ -216,7 +216,7 @@ NULL
 #' @keywords datasets
 #' @name lulc
 #' @aliases buffer100m.lulc buffer500m.lulc iws.lulc hu12.lulc hu8.lulc hu4.lulc edu.lulc county.lulc state.lulc topography nlcd
-#' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}; \href{http://www.mrlc.gov/nlcd2011.php}{National Land Cover Database},
+#' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}; \href{http://www.mrlc.gov/nlcd2011.php}{National Land Cover Database},
 NULL
 
 #' CHAG Datasets
@@ -310,7 +310,7 @@ NULL
 #' @keywords datasets
 #' @name chag
 #' @aliases hu12.chag hu8.chag hu4.chag edu.chag county.chag state.chag deposition climate hydrology geology baseflow runoff
-#' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
+#' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
 NULL
 
 #' Epilimnion Water Quality Data
@@ -412,7 +412,7 @@ NULL
 #' @keywords datasets
 #' @name epi_nutr
 #' @aliases nutrients chla colora doc phosphorus nitrogen chlorophyll waterquality censorcode qualifiers detectionlimit
-#' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
+#' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
 NULL
 
 #' Metadata for Lakes with Water Quality
@@ -443,7 +443,7 @@ NULL
 #' @keywords datasets
 #' @name lakes_limno
 #' @aliases meandepth maxdepth legacyid depth
-#' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
+#' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
 NULL
 
 #' Metadata for all lakes > 1ha
@@ -487,7 +487,7 @@ NULL
 #' @keywords datasets
 #' @name locus
 #' @aliases location
-#' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
+#' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
 NULL
 
 #' Connectivity Datasets
@@ -776,7 +776,7 @@ NULL
 #' @keywords datasets
 #' @name conn
 #' @aliases connectivity buffer500m.conn lakes4ha.buffer500m.conn iws.conn hu12.conn hu8.conn hu4.conn edu.conn county.conn state.conn
-#' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
+#' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
 NULL
 
 #' Lake Geospatial Metadata
@@ -852,7 +852,7 @@ NULL
 #' @keywords datasets
 #' @name lagoslakes
 #' @aliases lakes.geo
-#' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
+#' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
 NULL
 
 #' Secchi (Water Clarity) Data
@@ -890,7 +890,7 @@ NULL
 #' @docType data
 #' @keywords datasets
 #' @name secchi
-#' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
+#' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
 NULL
 
 #' LAGOSNE sources
@@ -925,7 +925,7 @@ NULL
 #' @keywords datasets
 #' @name source
 #' @aliases programs lagos.source.programs source.programs lagos.source lagos_source_program
-#' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
+#' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
 NULL
 
 #' LAGOSNE subset
@@ -935,7 +935,7 @@ NULL
 #' @docType data
 #' @keywords datasets
 #' @name lg_subset
-#' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
+#' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
 "lg_subset"
 
 #' LAGOSNE extent
@@ -944,5 +944,5 @@ NULL
 #' @docType data
 #' @keywords datasets
 #' @name lg_extent
-#' @references Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
+#' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
 "lg_extent"

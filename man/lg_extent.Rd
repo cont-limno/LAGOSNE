@@ -12,6 +12,6 @@ lg_extent
 A simple features polygons representing the geographical extent of the LAGOSNE dataset
 }
 \references{
-Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}
+Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
 }
 \keyword{datasets}

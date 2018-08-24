@@ -102,6 +102,6 @@ Original data sources and layers from which each metric was derived can be
 found in additional file 5 of Soranno et al. (2015).
 }
 \references{
-Soranno et al. (2015) \href{https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0067-4}{Gigascience 4:28}; \href{http://www.mrlc.gov/nlcd2011.php}{National Land Cover Database},
+Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}; \href{http://www.mrlc.gov/nlcd2011.php}{National Land Cover Database},
 }
 \keyword{datasets}
