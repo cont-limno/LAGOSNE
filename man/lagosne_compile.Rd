@@ -12,17 +12,17 @@ lagosne_compile(version, format = "rds", limno_folder = NA,
 
 \item{format}{character choice of "rds" or "sqlite"}
 
-\item{limno_folder}{file.path to limno export folder.}
+\item{limno_folder}{file.path to limno export folder}
 
-\item{geo_folder}{file.path to geo export folder.}
+\item{geo_folder}{file.path to geo export folder}
 
-\item{locus_folder}{file.path to locus export folder.}
+\item{locus_folder}{file.path to locus export folder}
 
 \item{dest_folder}{file.path optional will default to the location returned
 by \code{\link[rappdirs]{user_data_dir}}}
 }
 \description{
-Compile LAGOSNE data from component flat files
+Compile LAGOSNE data from component flat files. This function should rarely be called directly outside of manual updating of source data.
 }
 \examples{
 \dontrun{

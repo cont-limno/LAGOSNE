@@ -1,17 +1,21 @@
 
 #'@name lagosne_compile
 #'@title Compile LAGOSNE data
-#'@export
-#'@description Compile LAGOSNE data from component flat files
+#'
+#'@description Compile LAGOSNE data from component flat files. This function should rarely be called directly outside of manual updating of source data.
+#'
 #'@param version character LAGOSNE database version string
 #'@param format character choice of "rds" or "sqlite"
-#'@param limno_folder file.path to limno export folder.
-#'@param geo_folder file.path to geo export folder.
-#'@param locus_folder file.path to locus export folder.
+#'@param limno_folder file.path to limno export folder
+#'@param geo_folder file.path to geo export folder
+#'@param locus_folder file.path to locus export folder
 #'@param dest_folder file.path optional will default to the location returned
 #'by \code{\link[rappdirs]{user_data_dir}}
+#'
 #'@importFrom utils read.table
 #'@importFrom rappdirs user_data_dir
+#'@export
+#'
 #'@examples \dontrun{
 #' lagosne_compile("1.087.1", format = "rds",
 #'  limno_folder = "~/Downloads/LAGOS-NE-LIMNO-EXPORT",

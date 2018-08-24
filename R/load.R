@@ -14,17 +14,13 @@
 #' dt  <- lagosne_load("1.087.1")
 #' }
 lagosne_load <- memoise::memoise(function(version, format = "rds", fpath = NA){
-
   if(!is.na(fpath)){
-
     if(format == "sqlite"){
       dplyr::src_sqlite(fpath)
     }else{
       readRDS(fpath)
     }
-
   }else{
-
     if(format == "sqlite"){
       sqlite_path <- paste0(lagos_path(), "LAGOS.sqlite3")
       stop_if_not_exists(sqlite_path)
@@ -34,7 +30,6 @@ lagosne_load <- memoise::memoise(function(version, format = "rds", fpath = NA){
       stop_if_not_exists(rds_path)
       readRDS(rds_path)
     }
-
   }
 })
 

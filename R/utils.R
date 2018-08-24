@@ -106,7 +106,7 @@ get_if_not_exists <- function(url, destfile, overwrite){
 
 stop_if_not_exists <- function(src_path) {
   if(!file.exists(src_path)){
-    stop(paste0("Dataset not found at: ", src_path, "\n Try running the appropriate `lagos_get*` and/or `lagos_compile` commands."))
+    stop(paste0("Dataset not found at: ", src_path, "\n Try running the `lagosne_get*` command."))
   }
 }
 
