@@ -246,3 +246,10 @@ capitalize <- function(string) {
   substr(string[capped], 1, 1) <- toupper(substr(string[capped], 1, 1))
   return(string)
 }
+
+pad_huc_ids <- function(dt, col_name, len){
+  id_num <- as.numeric(dt[, col_name])
+  res <- formatC(id_num, width = len, digits = 0, format = "f", flag = "0")
+  dt[,col_name] <- as.character(res)
+  dt
+}

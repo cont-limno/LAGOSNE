@@ -82,6 +82,7 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA,
   hu4          <- load_lagos_txt(geo_path("hu4_", geo_prefix),
                                  colClasses = c("hu4" = "factor"),
                                  sep = ",")
+  hu4          <- pad_huc_ids(hu4, "hu4", 4)
   hu4.chag     <- load_lagos_txt(geo_path("hu4_chag", geo_prefix),
                                  sep = ",")
   hu4.conn     <- load_lagos_txt(geo_path("hu4_conn", geo_prefix), as.is = TRUE,
@@ -93,6 +94,7 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA,
   hu8          <- load_lagos_txt(geo_path("hu8_", geo_prefix),
                                  colClasses = c("hu8" = "factor"),
                                  sep = ",")
+  hu8          <- pad_huc_ids(hu8, "hu8", 8)
   hu8.chag     <- load_lagos_txt(geo_path("hu8_chag", geo_prefix), as.is = TRUE,
                                  sep = ",")
   hu8.conn     <- load_lagos_txt(geo_path("hu8_conn", geo_prefix), as.is = TRUE,
@@ -104,6 +106,7 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA,
   hu12         <- load_lagos_txt(geo_path("hu12_", geo_prefix),
                                  colClasses = c("hu12" = "factor"),
                                  sep = ",")
+  hu12          <- pad_huc_ids(hu12, "hu12", 12)
   hu12.chag    <-  load_lagos_txt(geo_path("hu12_chag", geo_prefix),
                                   as.is = TRUE, sep = ",")
   hu12.conn    <-  load_lagos_txt(geo_path("hu12_conn", geo_prefix),
