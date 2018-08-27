@@ -76,9 +76,13 @@ lagosne_select <- function(table = NULL, vars = NULL, categories = NULL,
   vars_dont_exist <- !(vars %in% available_vars)
 
   if(any(vars_dont_exist)){
-    stop(paste0("The '", table, "' table does not contain a '",
-                vars[vars_dont_exist], "' column!"))
+    warning(paste0("The '", table, "' table does not contain a '",
+                paste(vars[vars_dont_exist], collapse = ", or "), "' column!"))
   }
+
+  vars <- vars[!vars_dont_exist]
+
+
 
   # select from dt ####
   res <- data.frame(dt[[table]][,vars])
@@ -89,7 +93,6 @@ lagosne_select <- function(table = NULL, vars = NULL, categories = NULL,
 
 # given a list of categories return all vars in lagos that grep to their partial key value
 expand_categories <- function(categories, available_vars){
-
   categories_dont_exist <- !(categories %in% keyword_partial_key()$keyword) &
     !(categories %in% keyword_full_key()$keyword)
 
@@ -98,22 +101,21 @@ expand_categories <- function(categories, available_vars){
                 "' category does not exist!"))
   }
 
-  key_subset <- lapply(
+  key_subset <- unlist(lapply(
     categories,
     function(x) keyword_partial_key()[
-      grep(x, keyword_partial_key()[,1]),]
-    )[[1]]$definition
+      grep(x, keyword_partial_key()[,1]), "definition"]
+    ))
 
-  key_full   <- lapply(
+  key_full   <- unlist(lapply(
     categories,
     function(x) keyword_full_key()[
-      grep(x, keyword_full_key()[,1]),]
-    )[[1]]$definition
+      grep(x, keyword_full_key()[,1]), "definition"]))
 
   if(length(key_subset) > 0){
-    key_subset <- lapply(
+    key_subset <- unlist(lapply(
       key_subset,
-      function(x) available_vars[grep(x, available_vars)])[[1]]
+      function(x) available_vars[grep(x, available_vars)]))
 
     key_full <- c(key_full, key_subset)
   }

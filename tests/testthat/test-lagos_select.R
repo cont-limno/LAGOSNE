@@ -6,6 +6,7 @@ test_that("lagos_select works", {
   skip_on_travis()
   skip_on_appveyor()
 
+  # dt <- readRDS("tests/testthat/lagos_test_subset.rds")
   dt <- readRDS("lagos_test_subset.rds")
 
   # specific variables
@@ -23,7 +24,7 @@ test_that("lagos_select works", {
 
   dt_reduced <- lagosne_select(table = "state.chag",
                              categories = "hydrology", dt = dt)
-  expect_equal(ncol(dt_reduced), 4)
+  expect_equal(ncol(dt_reduced), 12)
 
   dt_reduced <- lagosne_select(table = "hu4.chag",
                              categories = "deposition", dt = dt)
@@ -109,9 +110,9 @@ test_that("lagos fails well", {
     "The 'gibberish' category does not exist!"
   )
 
-  expect_error(
-    lagosne_select(table = "epi.nutr",  vars = c("gibberish", "tn"), dt = dt),
-    "The 'epi.nutr' table does not contain a 'gibberish' column!"
+  expect_warning(
+    lagosne_select(table = "epi_nutr",  vars = c("gibberish", "tn"), dt = dt),
+    "The 'epi_nutr' table does not contain a 'gibberish' column!"
   )
 
   expect_error(

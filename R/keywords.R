@@ -21,7 +21,8 @@ keyword_full_key <- function(){
     c("waterquality", "toc"),
     c("waterquality", "ton"),
     c("waterquality", "tp"),
-    c("waterquality", "secchi")
+    c("waterquality", "secchi"),
+    c("id", "lagoslakeid")
   ), stringsAsFactors = FALSE)
 
   names(res) <- c("keyword", "definition")
@@ -30,6 +31,8 @@ keyword_full_key <- function(){
 
 keyword_partial_key <- function(){
   res <- data.frame(rbind(
+    c("id", "eventid"),
+    c("id", "_zoneid"),
     c("deposition", "_dep_"),
     c("climate", "prism"),
     c("hydrology", "baseflowindex"),

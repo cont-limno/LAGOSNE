@@ -87,12 +87,14 @@ unloadNamespace("printr")
  head(lagosne_select(table = "iws.lulc", vars = c("iws_nlcd2011_pct_95")))
 
 # categories
+head(lagosne_select(table = "locus", categories = "id"))
 head(lagosne_select(table = "epi_nutr", categories = "waterquality"))
 head(lagosne_select(table = "county.chag", categories = "hydrology"))
 head(lagosne_select(table = "hu4.chag", categories = "deposition")[,1:4])
 
 # mix of specific variables and categories
-head(lagosne_select(table = "epi_nutr", vars = "lagoslakeid", categories = c("waterquality")))
+head(lagosne_select(table = "epi_nutr", vars = "programname", 
+                    categories = c("id", "waterquality")))
 ```
 
 ## Published LAGOSNE subsets

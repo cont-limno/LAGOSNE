@@ -123,6 +123,21 @@ help.search("datasets", package = "LAGOSNE")
 #> 6                0.00
 
 # categories
+head(lagosne_select(table = "locus", categories = "id"))
+#>   lagoslakeid iws_zoneid hu4_zoneid hu6_zoneid hu8_zoneid hu12_zoneid
+#> 1           1  IWS_45400     HU4_12     HU6_15     HU8_49  HU12_16694
+#> 2           2  IWS_41585      HU4_7     HU6_10     HU8_41  HU12_16612
+#> 3           3  IWS_44511     HU4_12     HU6_15     HU8_49  HU12_16694
+#> 4           4  IWS_42712     HU4_10     HU6_11     HU8_35  HU12_16625
+#> 5           5  IWS_42817     HU4_10     HU6_11     HU8_35  HU12_16621
+#> 6           6  IWS_43912     HU4_11     HU6_12     HU8_47  HU12_16684
+#>   edu_zoneid county_zoneid state_zoneid
+#> 1     EDU_75    County_319      State_2
+#> 2     EDU_27    County_319      State_2
+#> 3     EDU_75    County_319      State_2
+#> 4     EDU_58    County_326      State_2
+#> 5     EDU_58    County_322      State_2
+#> 6     EDU_27    County_331      State_2
 head(lagosne_select(table = "epi_nutr", categories = "waterquality"))
 #>   chla colora colort dkn doc nh4 no2 no2no3 srp tdn tdp tkn tn toc ton tp
 #> 1   NA     NA     NA  NA  NA  20  NA     20  NA  NA  NA  NA NA  NA  NA 30
@@ -153,6 +168,27 @@ head(lagosne_select(table = "county.chag", categories = "hydrology"))
 #> 4                   53.1078                   4.6081
 #> 5                   32.4689                   4.1342
 #> 6                   34.4157                   1.1100
+#>   county_groundwaterrecharge_min county_groundwaterrecharge_max
+#> 1                            242                            333
+#> 2                             70                             87
+#> 3                             63                             79
+#> 4                             76                            149
+#> 5                             49                             90
+#> 6                             69                            101
+#>   county_groundwaterrecharge_mean county_groundwaterrecharge_std
+#> 1                        287.8918                        13.2835
+#> 2                         77.6043                         3.5242
+#> 3                         70.8356                         3.1289
+#> 4                        119.9809                         9.9839
+#> 5                         72.9695                         9.3241
+#> 6                         86.4779                         4.2264
+#>   county_runoff_min county_runoff_max county_runoff_mean county_runoff_std
+#> 1           19.9786           25.2231            23.4650            0.9777
+#> 2            9.4569            9.9058             9.6548            0.1075
+#> 3            8.6985            8.8649             8.7751            0.0424
+#> 4            8.7637            9.0521             8.9578            0.0758
+#> 5            8.7336            9.0239             8.9134            0.0680
+#> 6            9.7732           10.8360            10.0258            0.2073
 head(lagosne_select(table = "hu4.chag", categories = "deposition")[,1:4])
 #>   hu4_dep_no3_1985_min hu4_dep_no3_1985_max hu4_dep_no3_1985_mean
 #> 1               7.2171              10.0448                7.9366
@@ -170,21 +206,22 @@ head(lagosne_select(table = "hu4.chag", categories = "deposition")[,1:4])
 #> 6               1.8389
 
 # mix of specific variables and categories
-head(lagosne_select(table = "epi_nutr", vars = "lagoslakeid", categories = c("waterquality")))
-#>   lagoslakeid chla colora colort dkn doc nh4 no2 no2no3 srp tdn tdp tkn tn
-#> 1           2   NA     NA     NA  NA  NA  20  NA     20  NA  NA  NA  NA NA
-#> 2           2   NA     NA     NA  NA  NA  20  NA     20  NA  NA  NA  NA NA
-#> 3           2  3.9     NA     15  NA  NA  NA  NA     NA  NA  NA  NA  NA NA
-#> 4           2  4.8     NA     15  NA  NA  NA  NA     NA  NA  NA  NA  NA NA
-#> 5           2  2.1     NA     NA  NA  NA  NA  NA     NA  NA  NA  NA  NA NA
-#> 6           3  6.6     15     NA  NA  NA  NA  NA     NA  NA  NA  NA  NA NA
-#>   toc ton tp secchi
-#> 1  NA  NA 30     NA
-#> 2  NA  NA 10     NA
-#> 3  NA  NA  5    6.5
-#> 4  NA  NA  9    5.8
-#> 5  NA  NA  5    6.1
-#> 6  NA  NA 27    2.4
+head(lagosne_select(table = "epi_nutr", vars = "programname", 
+                    categories = c("id", "waterquality")))
+#>        programname lagoslakeid chla colora colort dkn doc nh4 no2 no2no3
+#> 1      MA_DEP_CHEM           2   NA     NA     NA  NA  NA  20  NA     20
+#> 2      MA_DEP_CHEM           2   NA     NA     NA  NA  NA  20  NA     20
+#> 3 MA_DEP_2005_2010           2  3.9     NA     15  NA  NA  NA  NA     NA
+#> 4 MA_DEP_2005_2010           2  4.8     NA     15  NA  NA  NA  NA     NA
+#> 5 MA_DEP_2005_2010           2  2.1     NA     NA  NA  NA  NA  NA     NA
+#> 6      MA_DEP_CHEM           3  6.6     15     NA  NA  NA  NA  NA     NA
+#>   srp tdn tdp tkn tn toc ton tp secchi eventida1087
+#> 1  NA  NA  NA  NA NA  NA  NA 30     NA            4
+#> 2  NA  NA  NA  NA NA  NA  NA 10     NA            5
+#> 3  NA  NA  NA  NA NA  NA  NA  5    6.5            6
+#> 4  NA  NA  NA  NA NA  NA  NA  9    5.8            7
+#> 5  NA  NA  NA  NA NA  NA  NA  5    6.1            8
+#> 6  NA  NA  NA  NA NA  NA  NA 27    2.4            9
 ```
 
 Published LAGOSNE subsets
