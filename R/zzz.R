@@ -13,3 +13,5 @@
     gigascience_cite))
   }
 }
+
+utils::globalVariables(c('lagoslakeid'))
