@@ -1,6 +1,6 @@
 # Create a testing dataset from compiled LAGOS database rds
 
-# LAGOS:::lagos_compile("1.087.1", "rds")
+# LAGOSNE:::lagos_compile("1.087.1", "rds")
 
 dt <- LAGOSNE::lagosne_load("1.087.1")
 

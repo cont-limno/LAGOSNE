@@ -79,7 +79,7 @@ unloadNamespace("printr")
 
 ### Select data
 
-`lagosne_select` is a convenience function whose primary purpose is to provide users with the ability to select subsets of LAGOS tables that correspond to specific keywords (see `LAGOS:::keyword_partial_key()`). See [here](http://adv-r.had.co.nz/Subsetting.html) for a comprehensive tutorial on generic `data.frame` subsetting.
+`lagosne_select` is a convenience function whose primary purpose is to provide users with the ability to select subsets of LAGOS tables that correspond to specific keywords (see `LAGOSNE:::keyword_partial_key()` and `LAGOSNE:::keyword_full_key()`). See [here](http://adv-r.had.co.nz/Subsetting.html) for a comprehensive tutorial on generic `data.frame` subsetting.
 
 ```{r demo select}
 # specific variables
