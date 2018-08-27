@@ -6,11 +6,17 @@
 
 * Increased functionality and stability of the `lake_info` function
 
+* Added ability to pass multiple categories to `lagosne_select` (#44)
+
 ## MINOR IMPROVEMENTS
 
 * Include a polygon data object (`lg_extent`) representing the `LAGOSNE` footprint
 
 * Parse dates as formatted strings rather than factors (#43)
+
+## BUG FIXES
+
+* Pad HUC ID codes to be fixed length (#76)
 
 # LAGOSNE 1.1.0
 

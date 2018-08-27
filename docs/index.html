@@ -232,7 +232,7 @@
 <div id="select-data" class="section level3">
 <h3 class="hasAnchor">
 <a href="#select-data" class="anchor"></a>Select data</h3>
-<p><code>lagosne_select</code> is a convenience function whose primary purpose is to provide users with the ability to select subsets of LAGOS tables that correspond to specific keywords (see <code>LAGOS:::keyword_partial_key()</code>). See <a href="http://adv-r.had.co.nz/Subsetting.html">here</a> for a comprehensive tutorial on generic <code>data.frame</code> subsetting.</p>
+<p><code>lagosne_select</code> is a convenience function whose primary purpose is to provide users with the ability to select subsets of LAGOS tables that correspond to specific keywords (see <code>LAGOSNE:::keyword_partial_key()</code> and <code>LAGOSNE:::keyword_full_key()</code>). See <a href="http://adv-r.had.co.nz/Subsetting.html">here</a> for a comprehensive tutorial on generic <code>data.frame</code> subsetting.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># specific variables</span>
  <span class="kw">head</span>(<span class="kw"><a href="reference/lagosne_select.html">lagosne_select</a></span>(<span class="dt">table =</span> <span class="st">"epi_nutr"</span>, <span class="dt">vars =</span> <span class="kw">c</span>(<span class="st">"tp"</span>, <span class="st">"tn"</span>)))
 <span class="co">#&gt;   tp tn</span>
@@ -252,6 +252,21 @@
 <span class="co">#&gt; 6                0.00</span>
 
 <span class="co"># categories</span>
+<span class="kw">head</span>(<span class="kw"><a href="reference/lagosne_select.html">lagosne_select</a></span>(<span class="dt">table =</span> <span class="st">"locus"</span>, <span class="dt">categories =</span> <span class="st">"id"</span>))
+<span class="co">#&gt;   lagoslakeid iws_zoneid hu4_zoneid hu6_zoneid hu8_zoneid hu12_zoneid</span>
+<span class="co">#&gt; 1           1  IWS_45400     HU4_12     HU6_15     HU8_49  HU12_16694</span>
+<span class="co">#&gt; 2           2  IWS_41585      HU4_7     HU6_10     HU8_41  HU12_16612</span>
+<span class="co">#&gt; 3           3  IWS_44511     HU4_12     HU6_15     HU8_49  HU12_16694</span>
+<span class="co">#&gt; 4           4  IWS_42712     HU4_10     HU6_11     HU8_35  HU12_16625</span>
+<span class="co">#&gt; 5           5  IWS_42817     HU4_10     HU6_11     HU8_35  HU12_16621</span>
+<span class="co">#&gt; 6           6  IWS_43912     HU4_11     HU6_12     HU8_47  HU12_16684</span>
+<span class="co">#&gt;   edu_zoneid county_zoneid state_zoneid</span>
+<span class="co">#&gt; 1     EDU_75    County_319      State_2</span>
+<span class="co">#&gt; 2     EDU_27    County_319      State_2</span>
+<span class="co">#&gt; 3     EDU_75    County_319      State_2</span>
+<span class="co">#&gt; 4     EDU_58    County_326      State_2</span>
+<span class="co">#&gt; 5     EDU_58    County_322      State_2</span>
+<span class="co">#&gt; 6     EDU_27    County_331      State_2</span>
 <span class="kw">head</span>(<span class="kw"><a href="reference/lagosne_select.html">lagosne_select</a></span>(<span class="dt">table =</span> <span class="st">"epi_nutr"</span>, <span class="dt">categories =</span> <span class="st">"waterquality"</span>))
 <span class="co">#&gt;   chla colora colort dkn doc nh4 no2 no2no3 srp tdn tdp tkn tn toc ton tp</span>
 <span class="co">#&gt; 1   NA     NA     NA  NA  NA  20  NA     20  NA  NA  NA  NA NA  NA  NA 30</span>
@@ -282,6 +297,27 @@
 <span class="co">#&gt; 4                   53.1078                   4.6081</span>
 <span class="co">#&gt; 5                   32.4689                   4.1342</span>
 <span class="co">#&gt; 6                   34.4157                   1.1100</span>
+<span class="co">#&gt;   county_groundwaterrecharge_min county_groundwaterrecharge_max</span>
+<span class="co">#&gt; 1                            242                            333</span>
+<span class="co">#&gt; 2                             70                             87</span>
+<span class="co">#&gt; 3                             63                             79</span>
+<span class="co">#&gt; 4                             76                            149</span>
+<span class="co">#&gt; 5                             49                             90</span>
+<span class="co">#&gt; 6                             69                            101</span>
+<span class="co">#&gt;   county_groundwaterrecharge_mean county_groundwaterrecharge_std</span>
+<span class="co">#&gt; 1                        287.8918                        13.2835</span>
+<span class="co">#&gt; 2                         77.6043                         3.5242</span>
+<span class="co">#&gt; 3                         70.8356                         3.1289</span>
+<span class="co">#&gt; 4                        119.9809                         9.9839</span>
+<span class="co">#&gt; 5                         72.9695                         9.3241</span>
+<span class="co">#&gt; 6                         86.4779                         4.2264</span>
+<span class="co">#&gt;   county_runoff_min county_runoff_max county_runoff_mean county_runoff_std</span>
+<span class="co">#&gt; 1           19.9786           25.2231            23.4650            0.9777</span>
+<span class="co">#&gt; 2            9.4569            9.9058             9.6548            0.1075</span>
+<span class="co">#&gt; 3            8.6985            8.8649             8.7751            0.0424</span>
+<span class="co">#&gt; 4            8.7637            9.0521             8.9578            0.0758</span>
+<span class="co">#&gt; 5            8.7336            9.0239             8.9134            0.0680</span>
+<span class="co">#&gt; 6            9.7732           10.8360            10.0258            0.2073</span>
 <span class="kw">head</span>(<span class="kw"><a href="reference/lagosne_select.html">lagosne_select</a></span>(<span class="dt">table =</span> <span class="st">"hu4.chag"</span>, <span class="dt">categories =</span> <span class="st">"deposition"</span>)[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>])
 <span class="co">#&gt;   hu4_dep_no3_1985_min hu4_dep_no3_1985_max hu4_dep_no3_1985_mean</span>
 <span class="co">#&gt; 1               7.2171              10.0448                7.9366</span>
@@ -299,21 +335,22 @@
 <span class="co">#&gt; 6               1.8389</span>
 
 <span class="co"># mix of specific variables and categories</span>
-<span class="kw">head</span>(<span class="kw"><a href="reference/lagosne_select.html">lagosne_select</a></span>(<span class="dt">table =</span> <span class="st">"epi_nutr"</span>, <span class="dt">vars =</span> <span class="st">"lagoslakeid"</span>, <span class="dt">categories =</span> <span class="kw">c</span>(<span class="st">"waterquality"</span>)))
-<span class="co">#&gt;   lagoslakeid chla colora colort dkn doc nh4 no2 no2no3 srp tdn tdp tkn tn</span>
-<span class="co">#&gt; 1           2   NA     NA     NA  NA  NA  20  NA     20  NA  NA  NA  NA NA</span>
-<span class="co">#&gt; 2           2   NA     NA     NA  NA  NA  20  NA     20  NA  NA  NA  NA NA</span>
-<span class="co">#&gt; 3           2  3.9     NA     15  NA  NA  NA  NA     NA  NA  NA  NA  NA NA</span>
-<span class="co">#&gt; 4           2  4.8     NA     15  NA  NA  NA  NA     NA  NA  NA  NA  NA NA</span>
-<span class="co">#&gt; 5           2  2.1     NA     NA  NA  NA  NA  NA     NA  NA  NA  NA  NA NA</span>
-<span class="co">#&gt; 6           3  6.6     15     NA  NA  NA  NA  NA     NA  NA  NA  NA  NA NA</span>
-<span class="co">#&gt;   toc ton tp secchi</span>
-<span class="co">#&gt; 1  NA  NA 30     NA</span>
-<span class="co">#&gt; 2  NA  NA 10     NA</span>
-<span class="co">#&gt; 3  NA  NA  5    6.5</span>
-<span class="co">#&gt; 4  NA  NA  9    5.8</span>
-<span class="co">#&gt; 5  NA  NA  5    6.1</span>
-<span class="co">#&gt; 6  NA  NA 27    2.4</span></code></pre></div>
+<span class="kw">head</span>(<span class="kw"><a href="reference/lagosne_select.html">lagosne_select</a></span>(<span class="dt">table =</span> <span class="st">"epi_nutr"</span>, <span class="dt">vars =</span> <span class="st">"programname"</span>, 
+                    <span class="dt">categories =</span> <span class="kw">c</span>(<span class="st">"id"</span>, <span class="st">"waterquality"</span>)))
+<span class="co">#&gt;        programname lagoslakeid chla colora colort dkn doc nh4 no2 no2no3</span>
+<span class="co">#&gt; 1      MA_DEP_CHEM           2   NA     NA     NA  NA  NA  20  NA     20</span>
+<span class="co">#&gt; 2      MA_DEP_CHEM           2   NA     NA     NA  NA  NA  20  NA     20</span>
+<span class="co">#&gt; 3 MA_DEP_2005_2010           2  3.9     NA     15  NA  NA  NA  NA     NA</span>
+<span class="co">#&gt; 4 MA_DEP_2005_2010           2  4.8     NA     15  NA  NA  NA  NA     NA</span>
+<span class="co">#&gt; 5 MA_DEP_2005_2010           2  2.1     NA     NA  NA  NA  NA  NA     NA</span>
+<span class="co">#&gt; 6      MA_DEP_CHEM           3  6.6     15     NA  NA  NA  NA  NA     NA</span>
+<span class="co">#&gt;   srp tdn tdp tkn tn toc ton tp secchi eventida1087</span>
+<span class="co">#&gt; 1  NA  NA  NA  NA NA  NA  NA 30     NA            4</span>
+<span class="co">#&gt; 2  NA  NA  NA  NA NA  NA  NA 10     NA            5</span>
+<span class="co">#&gt; 3  NA  NA  NA  NA NA  NA  NA  5    6.5            6</span>
+<span class="co">#&gt; 4  NA  NA  NA  NA NA  NA  NA  9    5.8            7</span>
+<span class="co">#&gt; 5  NA  NA  NA  NA NA  NA  NA  5    6.1            8</span>
+<span class="co">#&gt; 6  NA  NA  NA  NA NA  NA  NA 27    2.4            9</span></code></pre></div>
 </div>
 </div>
 <div id="published-lagosne-subsets" class="section level2">
