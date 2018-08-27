@@ -9,6 +9,6 @@ test_that("lagos_load fails well", {
   expect_error(lagosne_load("gibberish"),
     paste0("Dataset not found at: ",
     paste0(lagos_path(), "data_", "gibberish", ".rds"),
-    "\n Try running the appropriate `lagos_get*` and/or `lagos_compile` commands."),
+    "\n Try running the `lagosne_get` command."),
     fixed = TRUE)
 })
