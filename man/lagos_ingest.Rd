@@ -24,6 +24,6 @@ Ingest LAGOSNE data from component flat files
 lagosne_ingest("1.087.1",
  limno_folder = "~/Downloads/LAGOS-NE-LIMNO-EXPORT",
  geo_folder   = "~/Downloads/LAGOS-NE-GEO-EXPORT",
- locus_folder = "~/Downloads/LAGOS-NE-GEO-LOCUS-EXPORT")
+ locus_folder = "~/Downloads/LAGOS-NE-LOCUS-EXPORT")
 }
 }
