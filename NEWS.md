@@ -18,6 +18,8 @@
 
 * Pad HUC ID codes to be fixed length (#76)
 
+* All factor fields are now of type character (#82)
+
 # LAGOSNE 1.1.0
 
 ## MINOR IMPROVEMENTS
