@@ -10,7 +10,8 @@
 load_lagos_txt <- function(file_name, sep = "\t", ...){
 
   read.table(file_name, header = TRUE, sep = sep, quote = "\"",
-             dec = ".", strip.white = TRUE, comment.char = "")
+             dec = ".", strip.white = TRUE, comment.char = "",
+             stringsAsFactors = FALSE)
 
 }
 

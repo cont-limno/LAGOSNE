@@ -29,7 +29,7 @@ Compile LAGOSNE data from component flat files. This function should rarely be c
 lagosne_compile("1.087.1", format = "rds",
  limno_folder = "~/Downloads/LAGOS-NE-LIMNO-EXPORT",
  geo_folder   = "~/Downloads/LAGOS-NE-GEO-EXPORT",
- locus_folder = "~/Downloads/LAGOS-NE-GEO-LOCUS-EXPORT")
+ locus_folder = "~/Downloads/LAGOS-NE-LOCUS-EXPORT")
 }
 
 }

@@ -7,9 +7,11 @@
 #'@param locus_folder file.path to locus export folder. optional.
 #'@importFrom utils read.table
 #'@examples \dontrun{
-#'lagos_ingest("1.087.1")
+#' lagosne_ingest("1.087.1",
+#'  limno_folder = "~/Downloads/LAGOS-NE-LIMNO-EXPORT",
+#'  geo_folder   = "~/Downloads/LAGOS-NE-GEO-EXPORT",
+#'  locus_folder = "~/Downloads/LAGOS-NE-GEO-LOCUS-EXPORT")
 #'}
-#'
 lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA,
                          locus_folder = NA){
 
