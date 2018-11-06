@@ -4,11 +4,9 @@
 \alias{query_lagos_names}
 \title{Query LAGOSNE names}
 \usage{
-query_lagos_names(dt, grep_string, scale = NA)
+query_lagos_names(grep_string, scale = NA, dt = lagosne_load())
 }
 \arguments{
-\item{dt}{data.frame output of \code{\link[LAGOSNE]{lagosne_load}}}
-
 \item{grep_string}{character search string to grep to table column names}
 
 \item{scale}{character filter results by one of:
@@ -20,6 +18,8 @@ query_lagos_names(dt, grep_string, scale = NA)
     \item hu12
     \item state
 }}
+
+\item{dt}{data.frame output of \code{\link[LAGOSNE]{lagosne_load}}}
 }
 \description{
 Return a vector of table names whose associated tables have
@@ -27,11 +27,10 @@ Return a vector of table names whose associated tables have
 }
 \examples{
 \dontrun{
-dt <- lagosne_load("1.087.1")
-query_lagos_names(dt, "_dep_")
-query_lagos_names(dt, "_dep_", "hu4")
-query_lagos_names(dt, "chla")
-query_lagos_names(dt, "secchi")
-query_lagos_names(dt, "conn")
+query_lagos_names("_dep_")
+query_lagos_names("_dep_", "hu4")
+query_lagos_names("chla")
+query_lagos_names("secchi")
+query_lagos_names("conn")
 }
 }

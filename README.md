@@ -74,6 +74,13 @@ names(dt)
 #> [37] "lagos_source_program" "locus"
 ```
 
+#### Locate tables with a variable
+
+``` r
+query_lagos_names("secchi")
+#> [1] "epi_nutr" "secchi"
+```
+
 #### Preview a table
 
 ``` r

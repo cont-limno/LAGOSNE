@@ -135,14 +135,13 @@ lagos_names <- function(dt) purrr::map(dt, names)
 #' }
 #' @export
 #' @examples \dontrun{
-#' dt <- lagosne_load("1.087.1")
-#' query_lagos_names(dt, "_dep_")
-#' query_lagos_names(dt, "_dep_", "hu4")
-#' query_lagos_names(dt, "chla")
-#' query_lagos_names(dt, "secchi")
-#' query_lagos_names(dt, "conn")
+#' query_lagos_names("_dep_")
+#' query_lagos_names("_dep_", "hu4")
+#' query_lagos_names("chla")
+#' query_lagos_names("secchi")
+#' query_lagos_names("conn")
 #' }
-query_lagos_names <- function(dt, grep_string, scale = NA){
+query_lagos_names <- function(grep_string, scale = NA, dt = lagosne_load()){
 
   dt_names <- lagos_names(dt)
   names_matches <- unlist(lapply(dt_names,

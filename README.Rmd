@@ -57,6 +57,12 @@ dt <- lagosne_load()
 names(dt)
 ```
 
+#### Locate tables with a variable 
+
+```{r }
+query_lagos_names("secchi")
+```
+
 #### Preview a table
 
 ```{r preview table}
