@@ -53,7 +53,7 @@ library(LAGOSNE)
 The `lagosne_load` function returns a named list of `data.frame` objects. Use the `names()` function to see a list of available `data.frame`s.
 
 ```{r load data}
-dt <- lagosne_load(version = "1.087.1")
+dt <- lagosne_load()
 names(dt)
 ```
 
@@ -61,6 +61,12 @@ names(dt)
 
 ```{r preview table}
 head(dt$county)
+```
+
+#### Preview a specific lake
+
+```{r lake_info}
+lake_info(name = "Mendota", state = "Wisconsin")
 ```
 
 #### Read table metadata
@@ -83,8 +89,8 @@ unloadNamespace("printr")
 
 ```{r demo select}
 # specific variables
- head(lagosne_select(table = "epi_nutr", vars = c("tp", "tn")))
- head(lagosne_select(table = "iws.lulc", vars = c("iws_nlcd2011_pct_95")))
+head(lagosne_select(table = "epi_nutr", vars = c("tp", "tn")))
+head(lagosne_select(table = "iws.lulc", vars = c("iws_nlcd2011_pct_95")))
 
 # categories
 head(lagosne_select(table = "locus", categories = "id"))

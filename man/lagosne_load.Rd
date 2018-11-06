@@ -4,7 +4,7 @@
 \alias{lagosne_load}
 \title{Load LAGOSNE data}
 \usage{
-lagosne_load(version, format = "rds", fpath = NA)
+lagosne_load(version = lagosne_version(), format = "rds", fpath = NA)
 }
 \arguments{
 \item{version}{character LAGOSNE database version string}

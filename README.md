@@ -1,13 +1,22 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
 <img src="./inst/lagos_banner2.png" width="100%" />
 
-[![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active) [![Travis-CI Build Status](https://travis-ci.org/cont-limno/LAGOSNE.svg?branch=master)](https://travis-ci.org/cont-limno/LAGOSNE) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/LAGOSNE)](https://cran.r-project.org/package=LAGOSNE) [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/LAGOSNE)](https://cran.r-project.org/package=LAGOSNE)
+[![Project Status: Active - The project has reached a stable, usable
+state and is being actively
+developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+[![Travis-CI Build
+Status](https://travis-ci.org/cont-limno/LAGOSNE.svg?branch=master)](https://travis-ci.org/cont-limno/LAGOSNE)
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/LAGOSNE)](https://cran.r-project.org/package=LAGOSNE)
+[![CRAN RStudio mirror
+downloads](http://cranlogs.r-pkg.org/badges/LAGOSNE)](https://cran.r-project.org/package=LAGOSNE)
 
-The `LAGOSNE` package provides an R interface to download LAGOS-NE data from remote databases, store this data locally, and perform a variety of filtering and subsetting operations.
+The `LAGOSNE` package provides an R interface to download LAGOS-NE data
+from remote databases, store this data locally, and perform a variety of
+filtering and subsetting operations.
 
-Installation
-------------
+## Installation
 
 ``` r
 # install stable version from CRAN
@@ -20,15 +29,20 @@ install.packages("LAGOSNE")
 
 ### Data
 
-The `lagosne_get` function downloads the LAGOSNE files corresponding to the specified version from the [EDI data repository](https://portal.edirepository.org/nis/home.jsp). Files are stored in a temporary directory before being "compiled" to an `R` data format in the location returned by `rappdirs::user_data_dir()`. Data only needs to be downloaded one time per version per machine. **The latest version of the `LAGOSNE` dataset is `1.087.1`.**
+The `lagosne_get` function downloads the LAGOSNE files corresponding to
+the specified version from the [EDI data
+repository](https://portal.edirepository.org/nis/home.jsp). Files are
+stored in a temporary directory before being “compiled” to an `R` data
+format in the location returned by `rappdirs::user_data_dir()`. Data
+only needs to be downloaded one time per version per machine. **The
+latest version of the `LAGOSNE` dataset is `1.087.1`.**
 
 ``` r
 library(LAGOSNE)
 lagosne_get("1.087.1")
 ```
 
-Usage
------
+## Usage
 
 ### Load Package
 
@@ -38,10 +52,12 @@ library(LAGOSNE)
 
 ### Load data
 
-The `lagosne_load` function returns a named list of `data.frame` objects. Use the `names()` function to see a list of available `data.frame`s.
+The `lagosne_load` function returns a named list of `data.frame`
+objects. Use the `names()` function to see a list of available
+`data.frame`s.
 
 ``` r
-dt <- lagosne_load(version = "1.087.1")
+dt <- lagosne_load()
 names(dt)
 #>  [1] "county"               "county.chag"          "county.conn"         
 #>  [4] "county.lulc"          "edu"                  "edu.chag"            
@@ -78,6 +94,24 @@ head(dt$county)
 #> 6               100   40.18342  -87.73293
 ```
 
+#### Preview a specific lake
+
+``` r
+lake_info(name = "Mendota", state = "Wisconsin")
+#>   lagoslakeid     nhdid   lagosname1 meandepth meandepthsource maxdepth
+#> 1        5371 143249470 LAKE MENDOTA      12.8  WI_LTER_SECCHI     25.3
+#>   maxdepthsource legacyid    gnis_name  nhd_lat  nhd_long lake_area_ha
+#> 1 WI_LTER_SECCHI   805400 Lake Mendota 43.10773 -89.42273     3961.152
+#>   lake_perim_meters nhd_fcode nhd_ftype iws_zoneid hu4_zoneid hu6_zoneid
+#> 1          38422.28     39004       390  IWS_32193     HU4_34     HU6_46
+#>   hu8_zoneid hu12_zoneid edu_zoneid county_zoneid state_zoneid elevation_m
+#> 1    HU8_186  HU12_11998     EDU_57    County_912      State_9     257.987
+#>   state state_name state_lat state_long state_pct_in_nwi state_ha_in_nwi
+#> 1    WI  Wisconsin  44.63733  -90.01184              100        14529517
+#>   state_ha lakeconnection   iws_ha
+#> 1 14529517  DR_LakeStream 24360.32
+```
+
 #### Read table metadata
 
 ``` r
@@ -85,7 +119,7 @@ help.search("datasets", package = "LAGOSNE")
 ```
 
 | Package | Topic           | Title                                    |
-|:--------|:----------------|:-----------------------------------------|
+| :------ | :-------------- | :--------------------------------------- |
 | LAGOSNE | chag            | CHAG Datasets                            |
 | LAGOSNE | classifications | LAGOSNE Spatial Classifications Metadata |
 | LAGOSNE | conn            | Connectivity Datasets                    |
@@ -94,18 +128,23 @@ help.search("datasets", package = "LAGOSNE")
 | LAGOSNE | lakes\_limno    | Metadata for Lakes with Water Quality    |
 | LAGOSNE | lg\_extent      | LAGOSNE extent                           |
 | LAGOSNE | lg\_subset      | LAGOSNE subset                           |
-| LAGOSNE | locus           | Metadata for all lakes &gt; 1ha          |
+| LAGOSNE | locus           | Metadata for all lakes \> 1ha            |
 | LAGOSNE | lulc            | Land Use Land Cover (LULC) Data Frames   |
 | LAGOSNE | secchi          | Secchi (Water Clarity) Data              |
 | LAGOSNE | source          | LAGOSNE sources                          |
 
 ### Select data
 
-`lagosne_select` is a convenience function whose primary purpose is to provide users with the ability to select subsets of LAGOS tables that correspond to specific keywords (see `LAGOSNE:::keyword_partial_key()` and `LAGOSNE:::keyword_full_key()`). See [here](http://adv-r.had.co.nz/Subsetting.html) for a comprehensive tutorial on generic `data.frame` subsetting.
+`lagosne_select` is a convenience function whose primary purpose is to
+provide users with the ability to select subsets of LAGOS tables that
+correspond to specific keywords (see `LAGOSNE:::keyword_partial_key()`
+and `LAGOSNE:::keyword_full_key()`). See
+[here](http://adv-r.had.co.nz/Subsetting.html) for a comprehensive
+tutorial on generic `data.frame` subsetting.
 
 ``` r
 # specific variables
- head(lagosne_select(table = "epi_nutr", vars = c("tp", "tn")))
+head(lagosne_select(table = "epi_nutr", vars = c("tp", "tn")))
 #>   tp tn
 #> 1 30 NA
 #> 2 10 NA
@@ -113,7 +152,7 @@ help.search("datasets", package = "LAGOSNE")
 #> 4  9 NA
 #> 5  5 NA
 #> 6 27 NA
- head(lagosne_select(table = "iws.lulc", vars = c("iws_nlcd2011_pct_95")))
+head(lagosne_select(table = "iws.lulc", vars = c("iws_nlcd2011_pct_95")))
 #>   iws_nlcd2011_pct_95
 #> 1                2.77
 #> 2                2.97
@@ -224,8 +263,7 @@ head(lagosne_select(table = "epi_nutr", vars = "programname",
 #> 6  NA  NA  NA  NA NA  NA  NA 27    2.4            9
 ```
 
-Published LAGOSNE subsets
--------------------------
+## Published LAGOSNE subsets
 
 ``` r
 # Oliver et al. 2015
@@ -251,12 +289,13 @@ head(dt)
 #> 6        10.1
 ```
 
-Legacy Versions
----------------
+## Legacy Versions
 
 ### R Package
 
-To install versions of `LAGOSNE` compatible with older versions of LAGOS-NE run the following command where `ref` is set to the desired version (in the example, it is version 1.054.1):
+To install versions of `LAGOSNE` compatible with older versions of
+LAGOS-NE run the following command where `ref` is set to the desired
+version (in the example, it is version 1.054.1):
 
 ``` r
 # install devtools if not found
@@ -266,7 +305,14 @@ devtools::install_github("cont-limno/LAGOSNE", ref = "v1.054.1")
 
 ### Data
 
-Until older datasets have been made available in a public repository, LAGOSNE users will need to use the `lagosne_compile` function (not `lagosne_get`) and supply the path to their local `locus`, `limno` and `geo` data folders. Replace the paths in the example below with the path to each respective folder on your system. Most people will have access to these folders through Dropbox. For example, the `limno_folder` would be assigned to something like: `C:/Users/FWL/Dropbox/CSI_LAGOS-exports/LAGOS-NE-LIMNO-EXPORT`
+Until older datasets have been made available in a public repository,
+LAGOSNE users will need to use the `lagosne_compile` function (not
+`lagosne_get`) and supply the path to their local `locus`, `limno` and
+`geo` data folders. Replace the paths in the example below with the path
+to each respective folder on your system. Most people will have access
+to these folders through Dropbox. For example, the `limno_folder` would
+be assigned to something like:
+`C:/Users/FWL/Dropbox/CSI_LAGOS-exports/LAGOS-NE-LIMNO-EXPORT`
 
 ``` r
 library(LAGOSNE)
@@ -276,19 +322,42 @@ lagosne_compile("1.054.1", format = "rds",
   locus_folder = "~/Downloads/LAGOS-NE-LOCUS-EXPORT")
 ```
 
-References
-----------
+## References
 
-Oliver, SK, PA Soranno, CE Fergus, T Wagner, K Webster, CE Scott, LA Winslow, J Downing, and EH Stanley. 2015. “LAGOS - Predicted and Observed Maximum Depth Values for Lakes in a 17-State Region of the U.S.” <https://dx.doi.org/10.6073/pasta/edc06bbae6db80e801b6e52253f2ea09>.
+Oliver, SK, PA Soranno, CE Fergus, T Wagner, K Webster, CE Scott, LA
+Winslow, J Downing, and EH Stanley. 2015. “LAGOS - Predicted and
+Observed Maximum Depth Values for Lakes in a 17-State Region of the
+U.S.”
+<https://dx.doi.org/10.6073/pasta/edc06bbae6db80e801b6e52253f2ea09>.
 
-Soranno, P.A., Bacon, L.C., Beauchene, M., Bednar, K.E., Bissell, E.G., Boudreau, C.K., Boyer, M.G., Bremigan, M.T., Carpenter, S.R., Carr, J.W. Cheruvelil, K.S., and ... , 2017. LAGOS-NE: A multi-scaled geospatial and temporal database of lake ecological context and water quality for thousands of US lakes. GigaScience, <https://doi.org/10.1093/gigascience/gix101>
+Soranno, P.A., Bacon, L.C., Beauchene, M., Bednar, K.E., Bissell, E.G.,
+Boudreau, C.K., Boyer, M.G., Bremigan, M.T., Carpenter, S.R., Carr, J.W.
+Cheruvelil, K.S., and … , 2017. LAGOS-NE: A multi-scaled geospatial and
+temporal database of lake ecological context and water quality for
+thousands of US lakes. GigaScience,
+<https://doi.org/10.1093/gigascience/gix101>
 
-Soranno, PA, EG Bissell, KS Cheruvelil, ST Christel, SM Collins, CE Fergus, CT Filstrup, et al. 2015. “Building a Multi-Scaled Geospatial Temporal Ecology Database from Disparate Data Sources: Fostering Open Science and Data Reuse.” Gigascience 4 (1). <https://dx.doi.org/10.1186/s13742-015-0067-4>.
+Soranno, PA, EG Bissell, KS Cheruvelil, ST Christel, SM Collins, CE
+Fergus, CT Filstrup, et al. 2015. “Building a Multi-Scaled Geospatial
+Temporal Ecology Database from Disparate Data Sources: Fostering Open
+Science and Data Reuse.” Gigascience 4 (1).
+<https://dx.doi.org/10.1186/s13742-015-0067-4>.
 
-Stachelek, J, and SK Oliver. 2017. LAGOSNE: Interface to the Lake Multi-Scaled Geospatial and Temporal Database. <https://github.com/cont-limno/LAGOSNE>.
+Stachelek, J, and SK Oliver. 2017. LAGOSNE: Interface to the Lake
+Multi-Scaled Geospatial and Temporal Database.
+<https://github.com/cont-limno/LAGOSNE>.
 
-Soranno P, Cheruvelil K. 2017. LAGOS-NE-LOCUS v1.01: a module for LAGOS-NE, a multi-scaled geospatial and temporal database of lake ecological context and water quality for thousands of U.S. Lakes: 1925–2013. Environmental Data Initiative. <http://doi.org/ckpj>
+Soranno P, Cheruvelil K. 2017. LAGOS-NE-LOCUS v1.01: a module for
+LAGOS-NE, a multi-scaled geospatial and temporal database of lake
+ecological context and water quality for thousands of U.S. Lakes:
+1925–2013. Environmental Data Initiative. <http://doi.org/ckpj>
 
-Soranno P, Cheruvelil K. 2017. LAGOS-NE-LIMNO v1.087.1: a module for LAGOS-NE, a multi-scaled geospatial and temporal database of lake ecological context and water quality for thousands of U.S. Lakes: 1925–2013. Environmental Data Initiative. <http://doi.org/ckpk>.
+Soranno P, Cheruvelil K. 2017. LAGOS-NE-LIMNO v1.087.1: a module for
+LAGOS-NE, a multi-scaled geospatial and temporal database of lake
+ecological context and water quality for thousands of U.S. Lakes:
+1925–2013. Environmental Data Initiative. <http://doi.org/ckpk>.
 
-Soranno P, Cheruvelil K. 2017. LAGOS-NE-GEO v1.05: a module for LAGOS-NE, a multi-scaled geospatial and temporal database of lake ecological context and water quality for thousands of U.S. Lakes: 1925–2013. Environmental Data Initiative. <http://doi.org/ckpm>
+Soranno P, Cheruvelil K. 2017. LAGOS-NE-GEO v1.05: a module for
+LAGOS-NE, a multi-scaled geospatial and temporal database of lake
+ecological context and water quality for thousands of U.S. Lakes:
+1925–2013. Environmental Data Initiative. <http://doi.org/ckpm>

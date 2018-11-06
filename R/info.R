@@ -13,22 +13,21 @@
 #' @importFrom rlang .data
 #' @export
 #' @examples \dontrun{
-#' dt <- lagosne_load("1.087.1")
-#' lake_info(dt, lagoslakeid = 4314)
-#' lake_info(dt, lagoslakeid = 7441)
-#' lake_info(dt, lagoslakeid = 244)
-#' lake_info(dt, lagoslakeid = 4686)
-#' lake_info(dt, lagoslakeid = 8016)
-#' lake_info(dt, lagoslakeid = c(1441))
-#' lake_info(dt, lagoslakeid = c(125428, 1441))
-#' lake_info(dt, lagoslakeid = c(4686, 8016))
+#' lake_info(lagoslakeid = 4314)
+#' lake_info(lagoslakeid = 7441)
+#' lake_info(lagoslakeid = 244)
+#' lake_info(lagoslakeid = 4686)
+#' lake_info(lagoslakeid = 8016)
+#' lake_info(lagoslakeid = c(1441))
+#' lake_info(lagoslakeid = c(125428, 1441))
+#' lake_info(lagoslakeid = c(4686, 8016))
 #'
-#' lake_info(dt, "Sunapee Lake", "New Hampshire")
-#' lake_info(dt, name = c("Sunapee Lake", "Oneida Lake"),
+#' lake_info(name = "Sunapee Lake", state = "New Hampshire")
+#' lake_info(name = c("Sunapee Lake", "Oneida Lake"),
 #'               state = c("New Hampshire", "New York"))
 #' }
 
-lake_info <- function(dt, name = NA, state = NA, lagoslakeid = NA){
+lake_info <- function(lagoslakeid = NA, name = NA, state = NA, dt = lagosne_load()){
 
   if(class(dt) != "list"){
     stop("dt must be a list (created by the lagosne_load function).")

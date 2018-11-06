@@ -13,7 +13,8 @@
 #' @examples \dontrun{
 #' dt  <- lagosne_load("1.087.1")
 #' }
-lagosne_load <- memoise::memoise(function(version, format = "rds", fpath = NA){
+lagosne_load <- memoise::memoise(function(version = lagosne_version(),
+                                          format = "rds", fpath = NA){
   if(!is.na(fpath)){
     if(format == "sqlite"){
       dplyr::src_sqlite(fpath)

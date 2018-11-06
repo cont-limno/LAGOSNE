@@ -4,34 +4,34 @@
 \alias{lake_info}
 \title{Get a summary of lake attribute information}
 \usage{
-lake_info(dt, name = NA, state = NA, lagoslakeid = NA)
+lake_info(lagoslakeid = NA, name = NA, state = NA,
+  dt = lagosne_load())
 }
 \arguments{
-\item{dt}{list of data.frames. output of \code{\link[LAGOSNE]{lagosne_load}}.}
+\item{lagoslakeid}{numeric lake id}
 
 \item{name}{character lake name not caps sensitive}
 
 \item{state}{character state name not caps sensitive}
 
-\item{lagoslakeid}{numeric lake id}
+\item{dt}{list of data.frames. output of \code{\link[LAGOSNE]{lagosne_load}}.}
 }
 \description{
 Return lake attribute information from its name and state or its lagoslakeid.
 }
 \examples{
 \dontrun{
-dt <- lagosne_load("1.087.1")
-lake_info(dt, lagoslakeid = 4314)
-lake_info(dt, lagoslakeid = 7441)
-lake_info(dt, lagoslakeid = 244)
-lake_info(dt, lagoslakeid = 4686)
-lake_info(dt, lagoslakeid = 8016)
-lake_info(dt, lagoslakeid = c(1441))
-lake_info(dt, lagoslakeid = c(125428, 1441))
-lake_info(dt, lagoslakeid = c(4686, 8016))
+lake_info(lagoslakeid = 4314)
+lake_info(lagoslakeid = 7441)
+lake_info(lagoslakeid = 244)
+lake_info(lagoslakeid = 4686)
+lake_info(lagoslakeid = 8016)
+lake_info(lagoslakeid = c(1441))
+lake_info(lagoslakeid = c(125428, 1441))
+lake_info(lagoslakeid = c(4686, 8016))
 
-lake_info(dt, "Sunapee Lake", "New Hampshire")
-lake_info(dt, name = c("Sunapee Lake", "Oneida Lake"),
+lake_info(name = "Sunapee Lake", state = "New Hampshire")
+lake_info(name = c("Sunapee Lake", "Oneida Lake"),
               state = c("New Hampshire", "New York"))
 }
 }

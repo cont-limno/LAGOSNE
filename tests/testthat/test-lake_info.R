@@ -4,7 +4,7 @@ test_that("lake_info works", {
   dt <- readRDS("lagos_test_subset.rds")
 
   expect_equal(nrow(
-    lake_info(dt, "Benton Pond", "Massachusetts")), 1)
+    lake_info(name = "Benton Pond", state = "Massachusetts", dt = dt)), 1)
 
   # not in test dataset
   # expect_equal(nrow(
@@ -15,7 +15,7 @@ test_that("lake_info works", {
 test_that("lake_info fails well", {
   dt <- readRDS("lagos_test_subset.rds")
 
-  expect_error(lake_info(dt, "gibberish", "Wisconsin"),
+  expect_error(lake_info(name = "gibberish", state = "Wisconsin", dt = dt),
                "Lake 'gibberish' in Wisconsin not found")
 
 })

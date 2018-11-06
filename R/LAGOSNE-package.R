@@ -7,6 +7,13 @@
 #' @author \email{stachel2@msu.edu}
 NULL
 
+#' Latest LAGOSNE version
+#' @name lagosne_version
+#' @export
+#' @examples
+#' lagosne_version()
+lagosne_version <- function(){"1.087.1"}
+
 #' LAGOSNE Spatial Classifications Metadata
 #'
 #' Data frames containing metadata for each spatial classification at which
