@@ -29,7 +29,8 @@ Imports: dplyr (>= 0.7.0),
     tibble,
     tidyr,
     memoise,
-    rlang
+    rlang,
+    progress
 Suggests: testthat,
     knitr,
     rmarkdown,

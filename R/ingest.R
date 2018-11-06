@@ -6,6 +6,7 @@
 #'@param geo_folder file.path to geo export folder. optional.
 #'@param locus_folder file.path to locus export folder. optional.
 #'@importFrom utils read.table
+#'@importFrom progress progress_bar
 #'@examples \dontrun{
 #' lagosne_ingest("1.087.1",
 #'  limno_folder = "~/Downloads/LAGOS-NE-LIMNO-EXPORT",
@@ -14,6 +15,10 @@
 #'}
 lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA,
                          locus_folder = NA){
+
+  pb <- progress::progress_bar$new(format = "  Reading :type [:bar]",
+                         total = 9,
+                         clear = FALSE)
 
   folder_version <- gsub("\\.", "", version)
 
@@ -37,6 +42,7 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA,
                   }
 
   # Importing Lagos limno data ####
+  pb$tick(tokens = list(type = "limno data"))
   epi_nutr             <- load_lagos_txt(limno_path("epinutr"),
                               sep = ",")
   epi_nutr$sampledate  <- as.Date(strptime(epi_nutr$sampledate,
@@ -61,6 +67,7 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA,
                   sep = ",")
 
   # Importing Lagos Geo county data
+  pb$tick(tokens = list(type = "geo county data"))
   county       <- load_lagos_txt(geo_path("county_", geo_prefix),
                                  sep = ",")
   county.chag  <- load_lagos_txt(geo_path("county_chag", geo_prefix),
@@ -71,6 +78,7 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA,
                                  sep = ",")
 
   # Importing Lagos Geo edu data
+  pb$tick(tokens = list(type = "geo edu data"))
   edu          <- load_lagos_txt(geo_path("edu_", geo_prefix),
                                  sep = ",")
   edu.chag     <- load_lagos_txt(geo_path("edu_chag", geo_prefix),
@@ -81,6 +89,7 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA,
                                  sep = ",")
 
   # Importing Lagos Geo huc4 data
+  pb$tick(tokens = list(type = "geo huc4 data"))
   hu4          <- load_lagos_txt(geo_path("hu4_", geo_prefix),
                                  colClasses = c("hu4" = "factor"),
                                  sep = ",")
@@ -92,7 +101,8 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA,
   hu4.lulc     <- load_lagos_txt(geo_path("hu4_lulc", geo_prefix), as.is = TRUE,
                                  sep = ",")
 
-  # Importing Lagos Geo huc4 data
+  # Importing Lagos Geo huc8 data
+  pb$tick(tokens = list(type = "geo huc8 data"))
   hu8          <- load_lagos_txt(geo_path("hu8_", geo_prefix),
                                  colClasses = c("hu8" = "factor"),
                                  sep = ",")
@@ -105,6 +115,7 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA,
                                  sep = ",")
 
   # Importing Lagos Geo huc12 data
+  pb$tick(tokens = list(type = "geo huc12 data"))
   hu12         <- load_lagos_txt(geo_path("hu12_", geo_prefix),
                                  colClasses = c("hu12" = "factor"),
                                  sep = ",")
@@ -117,6 +128,7 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA,
                                   as.is = TRUE, sep = ",")
 
   # Importing Lagos Geo iws data
+  pb$tick(tokens = list(type = "geo iws data"))
   iws          <- load_lagos_txt(geo_path("iws_", geo_prefix),
                                  sep = ",")
   iws.conn     <- load_lagos_txt(geo_path("iws_conn", geo_prefix),
@@ -135,7 +147,7 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA,
                                  sep = ",")
 
   # Importing lake buffer data ####
-
+  pb$tick(tokens = list(type = "geo buffer data"))
   buffer100m      <- load_lagos_txt(geo_path("buffer100m_", geo_prefix),
                                     sep = ",")
   buffer100m.lulc <- load_lagos_txt(geo_path("buffer100m_lulc", geo_prefix),
@@ -182,6 +194,7 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA,
               lakes.geo = lakes.geo)
 
   # Importing Lagos Locus data ####
+  pb$tick(tokens = list(type = "lake locus data"))
   locus <- load_lagos_txt(locus_path("lakeslocus"), sep = ",")
 
   list("limno" = limno, "geo" = geo, "locus" = locus)
