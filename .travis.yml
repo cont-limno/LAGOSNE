@@ -37,6 +37,7 @@ addons:
       - libproj-dev
       - libudunits2-dev
       - libgeos-dev
+      - libgdal-dev
 
 #env
 env:
