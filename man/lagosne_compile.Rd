@@ -4,13 +4,11 @@
 \alias{lagosne_compile}
 \title{Compile LAGOSNE data}
 \usage{
-lagosne_compile(version, format = "rds", limno_folder = NA,
-  geo_folder = NA, locus_folder = NA, dest_folder = NA)
+lagosne_compile(version, limno_folder = NA, geo_folder = NA,
+  locus_folder = NA, dest_folder = NA)
 }
 \arguments{
 \item{version}{character LAGOSNE database version string}
-
-\item{format}{character choice of "rds" or "sqlite"}
 
 \item{limno_folder}{file.path to limno export folder}
 
@@ -26,7 +24,7 @@ Compile LAGOSNE data from component flat files. This function should rarely be c
 }
 \examples{
 \dontrun{
-lagosne_compile("1.087.1", format = "rds",
+lagosne_compile("1.087.1"
  limno_folder = "~/Downloads/LAGOS-NE-LIMNO-EXPORT",
  geo_folder   = "~/Downloads/LAGOS-NE-GEO-EXPORT",
  locus_folder = "~/Downloads/LAGOS-NE-LOCUS-EXPORT")

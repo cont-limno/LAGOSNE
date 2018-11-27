@@ -4,21 +4,23 @@
 \alias{lagosne_get}
 \title{Retrieve LAGOSNE flat files}
 \usage{
-lagosne_get(version, overwrite = FALSE, dest_folder = NA)
+lagosne_get(version = lagosne_version(), overwrite = FALSE,
+  dest_folder = tempdir())
 }
 \arguments{
 \item{version}{character LAGOSNE database version string}
 
 \item{overwrite}{logical overwrite existing data for the specified version}
 
-\item{dest_folder}{file.path not implemented yet
-by \code{\link[rappdirs]{user_data_dir}}.}
+\item{dest_folder}{file.path to save data. Default to a temporary folder.
+Recommended to set to LAGOSNE:::lagos_path() so that data persists between
+R sessions.}
 }
 \description{
 Retrieve LAGOSNE flat files from EDI.
 }
 \examples{
 \dontrun{
-lagosne_get(version = "1.087.1")
+lagosne_get()
 }
 }

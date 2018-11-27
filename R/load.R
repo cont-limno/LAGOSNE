@@ -3,34 +3,22 @@
 #' Load LAGOSNE data from local system files
 #'
 #' @param version character LAGOSNE database version string
-#' @param format character choice of rds or sqlite
 #' @param fpath file.path optionally specify custom location of LAGOSNE rds file
 #' @export
 #' @importFrom rappdirs user_data_dir
-#' @importFrom dplyr src_sqlite
 #' @importFrom memoise memoise
 #'
 #' @examples \dontrun{
 #' dt  <- lagosne_load("1.087.1")
 #' }
 lagosne_load <- memoise::memoise(function(version = lagosne_version(),
-                                          format = "rds", fpath = NA){
+                                          fpath = NA){
   if(!is.na(fpath)){
-    if(format == "sqlite"){
-      dplyr::src_sqlite(fpath)
-    }else{
       readRDS(fpath)
-    }
   }else{
-    if(format == "sqlite"){
-      sqlite_path <- paste0(lagos_path(), "LAGOS.sqlite3")
-      stop_if_not_exists(sqlite_path)
-      dplyr::src_sqlite(sqlite_path)
-    }else{
-      rds_path <- paste0(lagos_path(), "data_", version, ".rds")
-      stop_if_not_exists(rds_path)
-      readRDS(rds_path)
-    }
+    rds_path <- paste0(lagos_path(), "data_", version, ".rds")
+    stop_if_not_exists(rds_path)
+    readRDS(rds_path)
   }
 })
 

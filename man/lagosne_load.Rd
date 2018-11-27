@@ -4,12 +4,10 @@
 \alias{lagosne_load}
 \title{Load LAGOSNE data}
 \usage{
-lagosne_load(version = lagosne_version(), format = "rds", fpath = NA)
+lagosne_load(version = lagosne_version(), fpath = NA)
 }
 \arguments{
 \item{version}{character LAGOSNE database version string}
-
-\item{format}{character choice of rds or sqlite}
 
 \item{fpath}{file.path optionally specify custom location of LAGOSNE rds file}
 }

@@ -5,7 +5,6 @@
 #'@description Compile LAGOSNE data from component flat files. This function should rarely be called directly outside of manual updating of source data.
 #'
 #'@param version character LAGOSNE database version string
-#'@param format character choice of "rds" or "sqlite"
 #'@param limno_folder file.path to limno export folder
 #'@param geo_folder file.path to geo export folder
 #'@param locus_folder file.path to locus export folder
@@ -17,13 +16,13 @@
 #'@export
 #'
 #'@examples \dontrun{
-#' lagosne_compile("1.087.1", format = "rds",
+#' lagosne_compile("1.087.1"
 #'  limno_folder = "~/Downloads/LAGOS-NE-LIMNO-EXPORT",
 #'  geo_folder   = "~/Downloads/LAGOS-NE-GEO-EXPORT",
 #'  locus_folder = "~/Downloads/LAGOS-NE-LOCUS-EXPORT")
 #' }
 #'
-lagosne_compile <- function(version, format = "rds",
+lagosne_compile <- function(version,
                           limno_folder = NA, geo_folder = NA,
                           locus_folder = NA, dest_folder = NA){
 
@@ -36,29 +35,13 @@ lagosne_compile <- function(version, format = "rds",
 
   dir.create(lagos_path(), recursive = TRUE, showWarnings = FALSE)
 
-  if(format == "sqlite"){
+  res <- list("geo" = geo,
+              "limno" = limno,
+              "locus" = list(locus))
+  res <- purrr::flatten(res)
 
-    my_db <- dplyr::src_sqlite(file.path(lagos_path(), "LAGOS.sqlite3"),
-              create = TRUE)
+  outpath <- file.path(dest_folder, paste0("data_", version, ".rds"))
 
-    invisible(lapply(seq_along(geo),
-      function(i, dt = geo) dplyr::copy_to(my_db, dt[[i]], names(dt)[[i]],
-      temporary = FALSE)))
-
-    invisible(lapply(seq_along(limno),
-      function(i, dt = limno) dplyr::copy_to(my_db, dt[[i]], names(dt)[[i]],
-      temporary = FALSE)))
-
-  }else{
-
-    res <- list("geo" = geo,
-                "limno" = limno,
-                "locus" = list(locus))
-    res <- purrr::flatten(res)
-
-    outpath <- file.path(lagos_path(), paste0("data_", version, ".rds"))
-
-    saveRDS(res, outpath)
-    message(paste0("LAGOSNE compiled to ", outpath))
-  }
+  saveRDS(res, outpath)
+  message(paste0("LAGOSNE compiled to ", outpath))
 }
