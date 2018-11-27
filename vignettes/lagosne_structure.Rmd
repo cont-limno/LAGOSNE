@@ -29,7 +29,6 @@ dt <- lagosne_load(version = "1.087.1")
 ```
 
 ```{r echo=FALSE}
-data("lg_subset")
 dt <- lg_subset
 ```
 
