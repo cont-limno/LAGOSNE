@@ -5,7 +5,6 @@
 \alias{conn}
 \alias{connectivity}
 \alias{buffer500m.conn}
-\alias{lakes4ha.buffer500m.conn}
 \alias{iws.conn}
 \alias{hu12.conn}
 \alias{hu8.conn}
@@ -17,7 +16,7 @@
 \format{Data frames with all or a subset of the following variables. Number
 of observations is equal to the number of zones in each spatial
 classification (see ?classifications). Wildcard options include a subset of
-the LAGOSNE spatial classifications (* = lakes4ha_buffer500m, iws,
+the LAGOSNE spatial classifications (* = buffer500m, iws,
 hu12, hu8, hu4, edu, county, state) and additional wildcards described
 below.
 \itemize{
@@ -291,7 +290,7 @@ below.
 }}
 \description{
 Datasets containing lake, stream, and wetland abundance and connectivity
- metrics calculated at the 500m buffer (lakes4ha.buffer500m.conn), HUC12
+ metrics calculated at the 500m buffer (buffer500m.conn), HUC12
   (hu12.conn), HUC8 (hu8.conn), HUC4 (hu4.conn), EDU (edu.conn), county
    (county.conn) and state (state.conn) classifications.
 }

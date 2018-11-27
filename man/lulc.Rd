@@ -18,13 +18,13 @@
 \format{Data frames with all or a subset of the following variables. Number
 of observations is equal to the number of zones in each spatial scale
 (see Details below). Wildcard options include the 9 LAGOSNE spatial scales
-(* = lakes4ha.buff100m, lakes4ha.buffer500m, iws, hu12, hu8, hu4, edu,
+(* = buffer100m, buffer500m, iws, hu12, hu8, hu4, edu,
 county, state), year of measurement (** = 1992, 2001, 2006, 2011), and unit
 of measurement in hectares or percent of zone area (*** = ha, pct unless
 noted otherwise). Each variable is available at each scale, year, and unit
 unless otherwise noted.
 \itemize{
-   \item *_nhdid (* = lakes4ha_buffer100m, lakes4ha_buffer500m, iws)
+   \item *_nhdid (* = buffer100m, buffer500m, iws)
    \item *_canopy2001_***: per pixel tree canopy percent measured 2001.
     Summary statistics include minimum, maximum, mean and standard deviation
     (*** = min, max, mean, std).
@@ -85,8 +85,7 @@ unless otherwise noted.
    or standard deviation (*** = min, max, mean, std)
    \item *_zoneid: unique zone identifier (* = iws, hu12, hu8, hu4, edu,
    county, state)
-   \item *_lagoslakeid: unique integer identifier for focal lake
-   (* = lakes4ha_buffer100m, lakes4ha_buffer500m, iws)
+   \item lagoslakeid: unique integer identifier for focal lake
    \item lakeconnection: connectivity class of focal lake. Only in iws.lulc
    table.
    \item borderiws: whether iws zone intersects Canadian border

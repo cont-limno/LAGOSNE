@@ -18,8 +18,8 @@ lagosne_version <- function(){"1.087.1"}
 #'
 #' Data frames containing metadata for each spatial classification at which
 #'  ecological context data are derived in LAGOSNE. The spatial classifications
-#'  include 100m buffers (lakes4ha.buffer100m),
-#'  500m buffers (lakes4ha.buffer500m), interlake watersheds (iws),
+#'  include 100m buffers (buffer100m),
+#'  500m buffers (buffer500m), interlake watersheds (iws),
 #'  hydrologic units (hu12, hu8, hu4), ecological drainage units (edu),
 #'  counties (county), and states (state). Each abbreviation is the name of the
 #'  data frame, with all or a subset of the following variables. For more
@@ -39,11 +39,11 @@ lagosne_version <- function(){"1.087.1"}
 #'     connected via permanent streams.  For details on how the watersheds were
 #'     delineated, see additional file 8 in Soranno et al. (2015). Themes
 #'     derived at the iws classification include LULC and CONN.
-#'     \item lakes4ha.buffer100m: a dataframe with 51065 of 3 variables.
+#'     \item buffer100m: a dataframe with 51065 of 3 variables.
 #'     Buffers are a 100 m equidistant buffer of the land that is 100 m from
 #'     the lake shoreline, calculated using the ArcGIS Buffer tool. Themes
 #'     derived at the 100m buffer classification include LULC.
-#'     \item lakes4ha.buffer500m: a dataframe with 51065 of 3 variables.
+#'     \item buffer500m: a dataframe with 51065 of 3 variables.
 #'     Buffers are a 500 m equidistant buffer of the land that is 500 m from
 #'     the lake shoreline, calculated using the ArcGIS Buffer tool. Themes
 #'     derived at the 500m buffer classification include LULC and CONN.
@@ -88,12 +88,12 @@ lagosne_version <- function(){"1.087.1"}
 #' classification (see Details below).
 #' \itemize{
 #'     \item *_nhdid: permanent lake-specific identifier from the National
-#'     Hydrography Dataset (* = lakes4ha_buffer100m, lakes4ha_buffer500m, iws)
+#'     Hydrography Dataset (* = buffer100m, buffer500m, iws)
 #'     \item *_name: text name of the zone (* = iws, hu12, hu8, hu4,
 #'     county, state)
 #'     \item hu*: unique zone identifier (* = 12, 8, 4)
 #'     \item *_ha: area of spatial classification in hectares
-#'     (* = lakes4ha_buffer100m, lakes4ha_buffer500m, hu12, hu8, hu4, edu,
+#'     (* = buffer100m, buffer500m, hu12, hu8, hu4, edu,
 #'     county)
 #'     \item *_areaha: area of spatial classification in hectares (* = iws, )
 #'     \item *_perimkm: perimeter of spatial classification in kilometers
@@ -118,8 +118,7 @@ lagosne_version <- function(){"1.087.1"}
 #'     \item *_zoneid: a unique identifier for each IWS in LAGOSNE, numbered 1:n
 #'     with classification prefix (e.g., HU12_1) (* = iws, hu12, hu8, hu4, edu,
 #'     county, state)
-#'     \item *_lagoslakeid: LAGOSNE unique identifier for focal lake
-#'     (* = lakes4ha_buffer100m, lakes_buffer500m, iws, )
+#'     \item lagoslakeid: LAGOSNE unique identifier for focal lake
 #'     \item hu4_states: states that intersect hu4 zone polygon
 #'     \item state: 2-letter state abbreviation
 #'     \item county_state: state where county is located
@@ -129,7 +128,7 @@ lagosne_version <- function(){"1.087.1"}
 #' @keywords datasets
 #' @name classifications
 #' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
-#' @aliases lakes4ha.buffer100m lakes4ha.buffer500m buffer100m buffer500m iws hu12 hu8 hu4 edu county state classification scales lakeareaha
+#' @aliases buffer100m buffer500m iws hu12 hu8 hu4 edu county state classification scales lakeareaha
 NULL
 
 #' Land Use Land Cover (LULC) Data Frames
@@ -144,13 +143,13 @@ NULL
 #' @format Data frames with all or a subset of the following variables. Number
 #' of observations is equal to the number of zones in each spatial scale
 #' (see Details below). Wildcard options include the 9 LAGOSNE spatial scales
-#' (* = lakes4ha.buff100m, lakes4ha.buffer500m, iws, hu12, hu8, hu4, edu,
+#' (* = buffer100m, buffer500m, iws, hu12, hu8, hu4, edu,
 #' county, state), year of measurement (** = 1992, 2001, 2006, 2011), and unit
 #' of measurement in hectares or percent of zone area (*** = ha, pct unless
 #' noted otherwise). Each variable is available at each scale, year, and unit
 #' unless otherwise noted.
 #' \itemize{
-#'    \item *_nhdid (* = lakes4ha_buffer100m, lakes4ha_buffer500m, iws)
+#'    \item *_nhdid (* = buffer100m, buffer500m, iws)
 #'    \item *_canopy2001_***: per pixel tree canopy percent measured 2001.
 #'     Summary statistics include minimum, maximum, mean and standard deviation
 #'     (*** = min, max, mean, std).
@@ -211,8 +210,7 @@ NULL
 #'    or standard deviation (*** = min, max, mean, std)
 #'    \item *_zoneid: unique zone identifier (* = iws, hu12, hu8, hu4, edu,
 #'    county, state)
-#'    \item *_lagoslakeid: unique integer identifier for focal lake
-#'    (* = lakes4ha_buffer100m, lakes4ha_buffer500m, iws)
+#'    \item lagoslakeid: unique integer identifier for focal lake
 #'    \item lakeconnection: connectivity class of focal lake. Only in iws.lulc
 #'    table.
 #'    \item borderiws: whether iws zone intersects Canadian border
@@ -500,14 +498,14 @@ NULL
 #' Connectivity Datasets
 #'
 #' Datasets containing lake, stream, and wetland abundance and connectivity
-#'  metrics calculated at the 500m buffer (lakes4ha.buffer500m.conn), HUC12
+#'  metrics calculated at the 500m buffer (buffer500m.conn), HUC12
 #'   (hu12.conn), HUC8 (hu8.conn), HUC4 (hu4.conn), EDU (edu.conn), county
 #'    (county.conn) and state (state.conn) classifications.
 #'
 #' @format Data frames with all or a subset of the following variables. Number
 #' of observations is equal to the number of zones in each spatial
 #' classification (see ?classifications). Wildcard options include a subset of
-#' the LAGOSNE spatial classifications (* = lakes4ha_buffer500m, iws,
+#' the LAGOSNE spatial classifications (* = buffer500m, iws,
 #' hu12, hu8, hu4, edu, county, state) and additional wildcards described
 #' below.
 #' \itemize{
@@ -782,7 +780,7 @@ NULL
 #' @docType data
 #' @keywords datasets
 #' @name conn
-#' @aliases connectivity buffer500m.conn lakes4ha.buffer500m.conn iws.conn hu12.conn hu8.conn hu4.conn edu.conn county.conn state.conn
+#' @aliases connectivity buffer500m.conn iws.conn hu12.conn hu8.conn hu4.conn edu.conn county.conn state.conn
 #' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
 NULL
 
