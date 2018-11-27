@@ -1,3 +1,5 @@
+^tic\.R$
+^appveyor\.yml$
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^data-raw$
