@@ -35,11 +35,11 @@ repository](https://portal.edirepository.org/nis/home.jsp). Files are
 stored in a temporary directory before being “compiled” to an `R` data
 format in the location returned by `rappdirs::user_data_dir()`. Data
 only needs to be downloaded one time per version per machine. **The
-latest version of the `LAGOSNE` dataset is `1.087.1`.**
+latest version of the `LAGOSNE` dataset is 1.087.1.**
 
 ``` r
 library(LAGOSNE)
-lagosne_get("1.087.1")
+lagosne_get()
 ```
 
 ## Usage
@@ -53,71 +53,55 @@ library(LAGOSNE)
 ### Load data
 
 The `lagosne_load` function returns a named list of `data.frame`
-objects. Use the `names()` function to see a list of available
-`data.frame`s.
+objects. Use the `names()` function to see a list of available data
+frames `names(dt)`.
 
 ``` r
 dt <- lagosne_load()
-names(dt)
-#>  [1] "county"               "county.chag"          "county.conn"         
-#>  [4] "county.lulc"          "edu"                  "edu.chag"            
-#>  [7] "edu.conn"             "edu.lulc"             "hu4"                 
-#> [10] "hu4.chag"             "hu4.conn"             "hu4.lulc"            
-#> [13] "hu8"                  "hu8.chag"             "hu8.conn"            
-#> [16] "hu8.lulc"             "hu12"                 "hu12.chag"           
-#> [19] "hu12.conn"            "hu12.lulc"            "iws"                 
-#> [22] "iws.conn"             "iws.lulc"             "state"               
-#> [25] "state.chag"           "state.conn"           "state.lulc"          
-#> [28] "buffer100m"           "buffer100m.lulc"      "buffer500m"          
-#> [31] "buffer500m.conn"      "buffer500m.lulc"      "lakes.geo"           
-#> [34] "epi_nutr"             "lakes_limno"          "secchi"              
-#> [37] "lagos_source_program" "locus"
 ```
 
 #### Locate tables with a variable
 
 ``` r
 query_lagos_names("secchi")
-#> [1] "epi_nutr" "secchi"
 ```
+
+    #> [1] "epi_nutr" "secchi"
 
 #### Preview a table
 
 ``` r
-head(dt$county)
-#>   county_state       county_name county_ha_in_nwi county_ha county_zoneid
-#> 1           CT  Fairfield County         167421.8  168044.3      County_1
-#> 2           IL       Ford County         125912.3  125912.3     County_10
-#> 3           IL      Stark County          74682.0   74682.0    County_100
-#> 4           IL Stephenson County         146269.3  146269.3    County_101
-#> 5           IL   Tazewell County         170204.0  170204.0    County_102
-#> 6           IL  Vermilion County         233543.6  233543.6    County_103
-#>   county_pct_in_nwi county_lat conty_long
-#> 1               100   41.27225  -73.38940
-#> 2               100   40.59720  -88.22340
-#> 3               100   41.09336  -89.79749
-#> 4               100   42.35175  -89.66246
-#> 5               100   40.50731  -89.51343
-#> 6               100   40.18342  -87.73293
+head(dt$state)
+#>    state    state_name state_zoneid state_lat state_long state_pct_in_nwi
+#> 1     ME         Maine      State_1  45.38166  -69.23067              100
+#> 2     CT   Connecticut     State_10  41.62171  -72.72643              100
+#> 10    MA Massachusetts      State_2  42.25762  -71.81240              100
+#>    state_ha_in_nwi state_ha
+#> 1          8412288  8412288
+#> 2          1287793  1287793
+#> 10         2101262  2101262
 ```
 
 #### Preview a specific lake
 
 ``` r
-lake_info(name = "Mendota", state = "Wisconsin")
-#>   lagoslakeid     nhdid   lagosname1 meandepth meandepthsource maxdepth
-#> 1        5371 143249470 LAKE MENDOTA      12.8  WI_LTER_SECCHI     25.3
-#>   maxdepthsource legacyid    gnis_name  nhd_lat  nhd_long lake_area_ha
-#> 1 WI_LTER_SECCHI   805400 Lake Mendota 43.10773 -89.42273     3961.152
-#>   lake_perim_meters nhd_fcode nhd_ftype iws_zoneid hu4_zoneid hu6_zoneid
-#> 1          38422.28     39004       390  IWS_32193     HU4_34     HU6_46
-#>   hu8_zoneid hu12_zoneid edu_zoneid county_zoneid state_zoneid elevation_m
-#> 1    HU8_186  HU12_11998     EDU_57    County_912      State_9     257.987
-#>   state state_name state_lat state_long state_pct_in_nwi state_ha_in_nwi
-#> 1    WI  Wisconsin  44.63733  -90.01184              100        14529517
-#>   state_ha lakeconnection   iws_ha
-#> 1 14529517  DR_LakeStream 24360.32
+lake_info(name = "Benton Pond", state = "Massachusetts")
+# or using a lagoslakeid
+# lake_info(lagoslakeid = 2)
 ```
+
+    #>   lagoslakeid     nhdid  lagosname1 meandepth meandepthsource maxdepth
+    #> 1           2 123632625 BENTON POND        NA                      6.1
+    #>           maxdepthsource legacyid   gnis_name  nhd_lat  nhd_long
+    #> 1 MA_DFW_bathymetry_maps    W0347 Benton Pond 42.18409 -73.04728
+    #>   lake_area_ha lake_perim_meters nhd_fcode nhd_ftype iws_zoneid hu4_zoneid
+    #> 1      24.8659          2938.701     39009       390  IWS_41585      HU4_7
+    #>   hu6_zoneid hu8_zoneid hu12_zoneid edu_zoneid county_zoneid state_zoneid
+    #> 1     HU6_10     HU8_41  HU12_16612     EDU_27    County_319      State_2
+    #>   elevation_m state    state_name state_lat state_long state_pct_in_nwi
+    #> 1     447.835    MA Massachusetts  42.25762   -71.8124              100
+    #>   state_ha_in_nwi state_ha lakeconnection iws_ha
+    #> 1         2101262  2101262      Headwater     NA
 
 #### Read table metadata
 
@@ -152,122 +136,17 @@ tutorial on generic `data.frame` subsetting.
 ``` r
 # specific variables
 head(lagosne_select(table = "epi_nutr", vars = c("tp", "tn")))
-#>   tp tn
-#> 1 30 NA
-#> 2 10 NA
-#> 3  5 NA
-#> 4  9 NA
-#> 5  5 NA
-#> 6 27 NA
 head(lagosne_select(table = "iws.lulc", vars = c("iws_nlcd2011_pct_95")))
-#>   iws_nlcd2011_pct_95
-#> 1                2.77
-#> 2                2.97
-#> 3                0.27
-#> 4                0.00
-#> 5                0.00
-#> 6                0.00
 
 # categories
 head(lagosne_select(table = "locus", categories = "id"))
-#>   lagoslakeid iws_zoneid hu4_zoneid hu6_zoneid hu8_zoneid hu12_zoneid
-#> 1           1  IWS_45400     HU4_12     HU6_15     HU8_49  HU12_16694
-#> 2           2  IWS_41585      HU4_7     HU6_10     HU8_41  HU12_16612
-#> 3           3  IWS_44511     HU4_12     HU6_15     HU8_49  HU12_16694
-#> 4           4  IWS_42712     HU4_10     HU6_11     HU8_35  HU12_16625
-#> 5           5  IWS_42817     HU4_10     HU6_11     HU8_35  HU12_16621
-#> 6           6  IWS_43912     HU4_11     HU6_12     HU8_47  HU12_16684
-#>   edu_zoneid county_zoneid state_zoneid
-#> 1     EDU_75    County_319      State_2
-#> 2     EDU_27    County_319      State_2
-#> 3     EDU_75    County_319      State_2
-#> 4     EDU_58    County_326      State_2
-#> 5     EDU_58    County_322      State_2
-#> 6     EDU_27    County_331      State_2
 head(lagosne_select(table = "epi_nutr", categories = "waterquality"))
-#>   chla colora colort dkn doc nh4 no2 no2no3 srp tdn tdp tkn tn toc ton tp
-#> 1   NA     NA     NA  NA  NA  20  NA     20  NA  NA  NA  NA NA  NA  NA 30
-#> 2   NA     NA     NA  NA  NA  20  NA     20  NA  NA  NA  NA NA  NA  NA 10
-#> 3  3.9     NA     15  NA  NA  NA  NA     NA  NA  NA  NA  NA NA  NA  NA  5
-#> 4  4.8     NA     15  NA  NA  NA  NA     NA  NA  NA  NA  NA NA  NA  NA  9
-#> 5  2.1     NA     NA  NA  NA  NA  NA     NA  NA  NA  NA  NA NA  NA  NA  5
-#> 6  6.6     15     NA  NA  NA  NA  NA     NA  NA  NA  NA  NA NA  NA  NA 27
-#>   secchi
-#> 1     NA
-#> 2     NA
-#> 3    6.5
-#> 4    5.8
-#> 5    6.1
-#> 6    2.4
 head(lagosne_select(table = "county.chag", categories = "hydrology"))
-#>   county_baseflowindex_min county_baseflowindex_max
-#> 1                       45                       55
-#> 2                       30                       35
-#> 3                       28                       35
-#> 4                       34                       66
-#> 5                       22                       40
-#> 6                       28                       37
-#>   county_baseflowindex_mean county_baseflowindex_std
-#> 1                   48.3755                   1.8683
-#> 2                   32.6106                   1.4480
-#> 3                   31.5548                   1.3772
-#> 4                   53.1078                   4.6081
-#> 5                   32.4689                   4.1342
-#> 6                   34.4157                   1.1100
-#>   county_groundwaterrecharge_min county_groundwaterrecharge_max
-#> 1                            242                            333
-#> 2                             70                             87
-#> 3                             63                             79
-#> 4                             76                            149
-#> 5                             49                             90
-#> 6                             69                            101
-#>   county_groundwaterrecharge_mean county_groundwaterrecharge_std
-#> 1                        287.8918                        13.2835
-#> 2                         77.6043                         3.5242
-#> 3                         70.8356                         3.1289
-#> 4                        119.9809                         9.9839
-#> 5                         72.9695                         9.3241
-#> 6                         86.4779                         4.2264
-#>   county_runoff_min county_runoff_max county_runoff_mean county_runoff_std
-#> 1           19.9786           25.2231            23.4650            0.9777
-#> 2            9.4569            9.9058             9.6548            0.1075
-#> 3            8.6985            8.8649             8.7751            0.0424
-#> 4            8.7637            9.0521             8.9578            0.0758
-#> 5            8.7336            9.0239             8.9134            0.0680
-#> 6            9.7732           10.8360            10.0258            0.2073
 head(lagosne_select(table = "hu4.chag", categories = "deposition")[,1:4])
-#>   hu4_dep_no3_1985_min hu4_dep_no3_1985_max hu4_dep_no3_1985_mean
-#> 1               7.2171              10.0448                7.9366
-#> 2               9.5538              21.1791               15.5290
-#> 3              15.5222              22.8936               19.6234
-#> 4               8.5831              31.3832               17.2809
-#> 5              15.6669              24.2653               19.0625
-#> 6              12.6550              26.8946               18.1940
-#>   hu4_dep_no3_1985_std
-#> 1               0.3868
-#> 2               2.2330
-#> 3               1.3634
-#> 4               3.2954
-#> 5               1.5500
-#> 6               1.8389
 
 # mix of specific variables and categories
 head(lagosne_select(table = "epi_nutr", vars = "programname", 
                     categories = c("id", "waterquality")))
-#>        programname lagoslakeid chla colora colort dkn doc nh4 no2 no2no3
-#> 1      MA_DEP_CHEM           2   NA     NA     NA  NA  NA  20  NA     20
-#> 2      MA_DEP_CHEM           2   NA     NA     NA  NA  NA  20  NA     20
-#> 3 MA_DEP_2005_2010           2  3.9     NA     15  NA  NA  NA  NA     NA
-#> 4 MA_DEP_2005_2010           2  4.8     NA     15  NA  NA  NA  NA     NA
-#> 5 MA_DEP_2005_2010           2  2.1     NA     NA  NA  NA  NA  NA     NA
-#> 6      MA_DEP_CHEM           3  6.6     15     NA  NA  NA  NA  NA     NA
-#>   srp tdn tdp tkn tn toc ton tp secchi eventida1087
-#> 1  NA  NA  NA  NA NA  NA  NA 30     NA            4
-#> 2  NA  NA  NA  NA NA  NA  NA 10     NA            5
-#> 3  NA  NA  NA  NA NA  NA  NA  5    6.5            6
-#> 4  NA  NA  NA  NA NA  NA  NA  9    5.8            7
-#> 5  NA  NA  NA  NA NA  NA  NA  5    6.1            8
-#> 6  NA  NA  NA  NA NA  NA  NA 27    2.4            9
 ```
 
 ## Published LAGOSNE subsets
@@ -275,25 +154,7 @@ head(lagosne_select(table = "epi_nutr", vars = "programname",
 ``` r
 # Oliver et al. 2015
 lagos_get_oliver_2015()
-```
-
-``` r
-dt <- lagos_load_oliver_2015()
-head(dt)
-#>   lagoslakeid     nhdid hu4id lat_decimal long_decimal   area zmaxobs
-#> 1           1  50524769   202    42.54739    -73.17425 114.95     2.7
-#> 2           2 123632625   108    42.18409    -73.04728  24.87     6.1
-#> 3           3  50524793   202    42.53081    -73.19155  75.41     1.8
-#> 4           4 135695054   109    42.45435    -71.14079   9.26     5.2
-#> 5           5 135693974   109    42.60405    -70.82267  14.00     3.4
-#> 6           6 122373608   110    42.14209    -72.11992  80.29    13.7
-#>   zmaxpredict
-#> 1        10.6
-#> 2         7.1
-#> 3         8.6
-#> 4         3.7
-#> 5         5.4
-#> 6        10.1
+head(lagos_load_oliver_2015())
 ```
 
 ## Legacy Versions

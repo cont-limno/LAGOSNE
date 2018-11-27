@@ -33,46 +33,59 @@ install.packages("LAGOSNE")
  
 ### Data
 
-The `lagosne_get` function downloads the LAGOSNE files corresponding to the specified version from the [EDI data repository](https://portal.edirepository.org/nis/home.jsp). Files are stored in a temporary directory before being "compiled" to an `R` data format in the location returned by `rappdirs::user_data_dir()`. Data only needs to be downloaded one time per version per machine. **The latest version of the `LAGOSNE` dataset is `1.087.1`.**
+The `lagosne_get` function downloads the LAGOSNE files corresponding to the specified version from the [EDI data repository](https://portal.edirepository.org/nis/home.jsp). Files are stored in a temporary directory before being "compiled" to an `R` data format in the location returned by `rappdirs::user_data_dir()`. Data only needs to be downloaded one time per version per machine. **The latest version of the `LAGOSNE` dataset is `r LAGOSNE::lagosne_version()`.**
 
 ```{r get_data, eval=FALSE}
 library(LAGOSNE)
-lagosne_get("1.087.1")
+lagosne_get()
 ```
 
 ## Usage
 
 ### Load Package
 
-```{r load library} 
+```{r load_library} 
 library(LAGOSNE)
 ```
 
 ### Load data
 
-The `lagosne_load` function returns a named list of `data.frame` objects. Use the `names()` function to see a list of available `data.frame`s.
+The `lagosne_load` function returns a named list of `data.frame` objects. Use the `names()` function to see a list of available data frames `names(dt)`.
 
-```{r load data}
+```{r load_data, eval=FALSE}
 dt <- lagosne_load()
-names(dt)
+```
+
+```{r load_data_cached, eval=TRUE, echo=FALSE}
+data("lg_subset")
+dt <- lg_subset
 ```
 
 #### Locate tables with a variable 
-
-```{r }
+```{r eval=FALSE}
 query_lagos_names("secchi")
+```
+
+```{r echo=FALSE}
+query_lagos_names("secchi", dt = dt)
 ```
 
 #### Preview a table
 
 ```{r preview table}
-head(dt$county)
+head(dt$state)
 ```
 
 #### Preview a specific lake
 
-```{r lake_info}
-lake_info(name = "Mendota", state = "Wisconsin")
+```{r lake_info, eval = FALSE}
+lake_info(name = "Benton Pond", state = "Massachusetts")
+# or using a lagoslakeid
+# lake_info(lagoslakeid = 2)
+```
+
+```{r lake_info_cached, echo = FALSE}
+lake_info(name = "Benton Pond", state = "Massachusetts", dt = dt)
 ```
 
 #### Read table metadata
@@ -93,7 +106,7 @@ unloadNamespace("printr")
 
 `lagosne_select` is a convenience function whose primary purpose is to provide users with the ability to select subsets of LAGOS tables that correspond to specific keywords (see `LAGOSNE:::keyword_partial_key()` and `LAGOSNE:::keyword_full_key()`). See [here](http://adv-r.had.co.nz/Subsetting.html) for a comprehensive tutorial on generic `data.frame` subsetting.
 
-```{r demo select}
+```{r demo_select, eval=FALSE}
 # specific variables
 head(lagosne_select(table = "epi_nutr", vars = c("tp", "tn")))
 head(lagosne_select(table = "iws.lulc", vars = c("iws_nlcd2011_pct_95")))
@@ -111,14 +124,10 @@ head(lagosne_select(table = "epi_nutr", vars = "programname",
 
 ## Published LAGOSNE subsets
 
-```{r demo pulling other,eval = FALSE}
+```{r demo_pulling_other, eval = FALSE}
 # Oliver et al. 2015
 lagos_get_oliver_2015()
-```
-
-```{r demo loading other}
-dt <- lagos_load_oliver_2015()
-head(dt)
+head(lagos_load_oliver_2015())
 ```
 
 ## Legacy Versions
