@@ -18,11 +18,19 @@ data collection and integration. The nitty gritty details of such efforts (which
 ## Accessing LAGOSNE
 Following [these instructions](https://github.com/cont-limno/LAGOSNE), install the LAGOSNE package and download the data from the online repository. The data are open-access and stored online as flat files [location]. The data only need to be downloaded once, and will be stored locally at the location returned by `rappdirs::user_data_dir`
 
-Now that the data are stored locally, you can import them as a list.
-```{r eval=TRUE, message=FALSE}
+```{r }
 library(LAGOSNE)
+```
+
+Now that the data are stored locally, you can import them as a list.
+```{r eval=FALSE, message=FALSE}
 # Import LAGOSNE data into R
 dt <- lagosne_load(version = "1.087.1")
+```
+
+```{r echo=FALSE}
+data("lg_subset")
+dt <- lg_subset
 ```
 
 ## LAGOSNE Structure
