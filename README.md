@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-<img src="./inst/lagos_banner2.png" width="100%" />
+<img src="https://raw.githubusercontent.com/cont-limno/LAGOSNE/master/inst/lagos_banner2.png" width="100%" />
 
 [![Project Status: Active - The project has reached a stable, usable
 state and is being actively
