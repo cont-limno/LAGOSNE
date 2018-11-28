@@ -36,7 +36,8 @@ Suggests: testthat,
     rmarkdown,
     devtools,
     R.rsp,
-    printr
+    printr,
+    ggplot2
 License: GPL
 Encoding: UTF-8
 LazyData: true
