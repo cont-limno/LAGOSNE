@@ -13,7 +13,11 @@ knitr::opts_chunk$set(
 ```
 
 ```{r echo=FALSE, out.width="100%"}
-knitr::include_graphics(system.file("lagos_banner2.png", package = "LAGOSNE"))
+if(file.exists("./inst/lagos_banner2.png")){
+  knitr::include_graphics("./inst/lagos_banner2.png")
+}else{
+  knitr::include_graphics(system.file("lagos_banner2.png", package = "LAGOSNE"))
+}
 ```
 
 [![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active) [![Travis-CI Build Status](https://travis-ci.org/cont-limno/LAGOSNE.svg?branch=master)](https://travis-ci.org/cont-limno/LAGOSNE) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/LAGOSNE)](https://cran.r-project.org/package=LAGOSNE) [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/LAGOSNE)](https://cran.r-project.org/package=LAGOSNE)
