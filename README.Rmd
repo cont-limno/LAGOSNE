@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 if(file.exists("./inst/lagos_banner2.png")){
   knitr::include_graphics("./inst/lagos_banner2.png")
 }else{
-  knitr::include_graphics(system.file("lagos_banner2.png", package = "LAGOSNE"))
+  knitr::include_graphics("https://raw.githubusercontent.com/cont-limno/LAGOSNE/master/inst/lagos_banner2.png")
 }
 ```
 
