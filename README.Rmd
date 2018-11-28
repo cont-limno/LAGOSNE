@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 ```
 
 ```{r echo=FALSE, out.width="100%"}
-knitr::include_graphics("./inst/lagos_banner2.png")
+knitr::include_graphics(system.file("lagos_banner2.png", package = "LAGOSNE"))
 ```
 
 [![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active) [![Travis-CI Build Status](https://travis-ci.org/cont-limno/LAGOSNE.svg?branch=master)](https://travis-ci.org/cont-limno/LAGOSNE) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/LAGOSNE)](https://cran.r-project.org/package=LAGOSNE) [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/LAGOSNE)](https://cran.r-project.org/package=LAGOSNE)
@@ -54,14 +54,15 @@ The `lagosne_load` function returns a named list of `data.frame` objects. Use th
 
 ```{r load_data, eval=FALSE}
 dt <- lagosne_load()
+names(dt)
 ```
 
 ```{r load_data_cached, eval=TRUE, echo=FALSE}
-data("lg_subset")
-dt <- lg_subset
+dt <- readRDS(system.file("lagos_test_subset.rds", package = "LAGOSNE"))
+names(dt)
 ```
 
-#### Locate tables with a variable 
+#### Locate tables containing a variable 
 ```{r eval=FALSE}
 query_lagos_names("secchi")
 ```
@@ -79,13 +80,13 @@ head(dt$state)
 #### Preview a specific lake
 
 ```{r lake_info, eval = FALSE}
-lake_info(name = "Benton Pond", state = "Massachusetts")
+lake_info(name = "Pine Lake", state = "Iowa")
 # or using a lagoslakeid
-# lake_info(lagoslakeid = 2)
+# lake_info(lagoslakeid = 4389)
 ```
 
 ```{r lake_info_cached, echo = FALSE}
-lake_info(name = "Benton Pond", state = "Massachusetts", dt = dt)
+lake_info(name = "Pine Lake", state = "Iowa", dt = dt)
 ```
 
 #### Read table metadata
@@ -106,20 +107,19 @@ unloadNamespace("printr")
 
 `lagosne_select` is a convenience function whose primary purpose is to provide users with the ability to select subsets of LAGOS tables that correspond to specific keywords (see `LAGOSNE:::keyword_partial_key()` and `LAGOSNE:::keyword_full_key()`). See [here](http://adv-r.had.co.nz/Subsetting.html) for a comprehensive tutorial on generic `data.frame` subsetting.
 
-```{r demo_select, eval=FALSE}
+```{r demo_select, eval=TRUE}
 # specific variables
-head(lagosne_select(table = "epi_nutr", vars = c("tp", "tn")))
-head(lagosne_select(table = "iws.lulc", vars = c("iws_nlcd2011_pct_95")))
+head(lagosne_select(table = "epi_nutr", vars = c("tp", "tn"), dt = dt))
+head(lagosne_select(table = "iws.lulc", vars = c("iws_nlcd2011_pct_95"), dt = dt))
 
 # categories
-head(lagosne_select(table = "locus", categories = "id"))
-head(lagosne_select(table = "epi_nutr", categories = "waterquality"))
-head(lagosne_select(table = "county.chag", categories = "hydrology"))
-head(lagosne_select(table = "hu4.chag", categories = "deposition")[,1:4])
+head(lagosne_select(table = "locus", categories = "id", dt = dt))
+head(lagosne_select(table = "epi_nutr", categories = "waterquality", dt = dt))
+head(lagosne_select(table = "hu4.chag", categories = "deposition", dt = dt)[,1:4])
 
 # mix of specific variables and categories
 head(lagosne_select(table = "epi_nutr", vars = "programname", 
-                    categories = c("id", "waterquality")))
+                    categories = c("id", "waterquality"), dt = dt))
 ```
 
 ## Published LAGOSNE subsets

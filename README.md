@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-<img src="./inst/lagos_banner2.png" width="100%" />
+<img src="/home/jose/R/x86_64-pc-linux-gnu-library/3.5/LAGOSNE/lagos_banner2.png" width="100%" />
 
 [![Project Status: Active - The project has reached a stable, usable
 state and is being actively
@@ -58,9 +58,24 @@ frames `names(dt)`.
 
 ``` r
 dt <- lagosne_load()
+names(dt)
 ```
 
-#### Locate tables with a variable
+    #>  [1] "county"               "county.chag"          "county.conn"         
+    #>  [4] "county.lulc"          "edu"                  "edu.chag"            
+    #>  [7] "edu.conn"             "edu.lulc"             "hu4"                 
+    #> [10] "hu4.chag"             "hu4.conn"             "hu4.lulc"            
+    #> [13] "hu8"                  "hu8.chag"             "hu8.conn"            
+    #> [16] "hu8.lulc"             "hu12"                 "hu12.chag"           
+    #> [19] "hu12.conn"            "hu12.lulc"            "iws"                 
+    #> [22] "iws.conn"             "iws.lulc"             "state"               
+    #> [25] "state.chag"           "state.conn"           "state.lulc"          
+    #> [28] "buffer100m"           "buffer100m.lulc"      "buffer500m"          
+    #> [31] "buffer500m.conn"      "buffer500m.lulc"      "lakes.geo"           
+    #> [34] "epi_nutr"             "lakes_limno"          "secchi"              
+    #> [37] "lagos_source_program" "locus"
+
+#### Locate tables containing a variable
 
 ``` r
 query_lagos_names("secchi")
@@ -72,36 +87,34 @@ query_lagos_names("secchi")
 
 ``` r
 head(dt$state)
-#>    state    state_name state_zoneid state_lat state_long state_pct_in_nwi
-#> 1     ME         Maine      State_1  45.38166  -69.23067              100
-#> 2     CT   Connecticut     State_10  41.62171  -72.72643              100
-#> 10    MA Massachusetts      State_2  42.25762  -71.81240              100
-#>    state_ha_in_nwi state_ha
-#> 1          8412288  8412288
-#> 2          1287793  1287793
-#> 10         2101262  2101262
+#>   state    state_name state_zoneid state_lat state_long state_pct_in_nwi
+#> 1    IA          Iowa     State_13  42.07456  -93.49983              100
+#> 2    MA Massachusetts      State_2  42.25762  -71.81240              100
+#>   state_ha_in_nwi state_ha
+#> 1        14573561 14573561
+#> 2         2101262  2101262
 ```
 
 #### Preview a specific lake
 
 ``` r
-lake_info(name = "Benton Pond", state = "Massachusetts")
+lake_info(name = "Pine Lake", state = "Iowa")
 # or using a lagoslakeid
-# lake_info(lagoslakeid = 2)
+# lake_info(lagoslakeid = 4389)
 ```
 
-    #>   lagoslakeid     nhdid  lagosname1 meandepth meandepthsource maxdepth
-    #> 1           2 123632625 BENTON POND        NA                      6.1
-    #>           maxdepthsource legacyid   gnis_name  nhd_lat  nhd_long
-    #> 1 MA_DFW_bathymetry_maps    W0347 Benton Pond 42.18409 -73.04728
-    #>   lake_area_ha lake_perim_meters nhd_fcode nhd_ftype iws_zoneid hu4_zoneid
-    #> 1      24.8659          2938.701     39009       390  IWS_41585      HU4_7
-    #>   hu6_zoneid hu8_zoneid hu12_zoneid edu_zoneid county_zoneid state_zoneid
-    #> 1     HU6_10     HU8_41  HU12_16612     EDU_27    County_319      State_2
-    #>   elevation_m state    state_name state_lat state_long state_pct_in_nwi
-    #> 1     447.835    MA Massachusetts  42.25762   -71.8124              100
-    #>   state_ha_in_nwi state_ha lakeconnection iws_ha
-    #> 1         2101262  2101262      Headwater     NA
+    #>   lagoslakeid     nhdid      lagosname1 meandepth meandepthsource maxdepth
+    #> 2        4510 155845265 UPPER PINE LAKE      2.21    IA_CHEMISTRY     4.88
+    #>   maxdepthsource legacyid gnis_name  nhd_lat  nhd_long lake_area_ha
+    #> 2   IA_CHEMISTRY      122 Pine Lake 42.37833 -93.05967     36.07355
+    #>   lake_perim_meters nhd_fcode nhd_ftype iws_zoneid hu4_zoneid hu6_zoneid
+    #> 2          5671.001     39004       390  IWS_51040     HU4_57     HU6_78
+    #>   hu8_zoneid hu12_zoneid edu_zoneid county_zoneid state_zoneid elevation_m
+    #> 2    HU8_400   HU12_3008     EDU_23    County_275     State_13      300.23
+    #>   state state_name state_lat state_long state_pct_in_nwi state_ha_in_nwi
+    #> 2    IA       Iowa  42.07456  -93.49983              100        14573561
+    #>   state_ha lakeconnection   iws_ha
+    #> 2 14573561      DR_Stream 3593.379
 
 #### Read table metadata
 
@@ -135,18 +148,46 @@ tutorial on generic `data.frame` subsetting.
 
 ``` r
 # specific variables
-head(lagosne_select(table = "epi_nutr", vars = c("tp", "tn")))
-head(lagosne_select(table = "iws.lulc", vars = c("iws_nlcd2011_pct_95")))
+head(lagosne_select(table = "epi_nutr", vars = c("tp", "tn"), dt = dt))
+#>       tp     tn
+#> 1  24.00     NA
+#> 2 136.56 3521.7
+head(lagosne_select(table = "iws.lulc", vars = c("iws_nlcd2011_pct_95"), dt = dt))
+#>   iws_nlcd2011_pct_95
+#> 1                0.04
 
 # categories
-head(lagosne_select(table = "locus", categories = "id"))
-head(lagosne_select(table = "epi_nutr", categories = "waterquality"))
-head(lagosne_select(table = "county.chag", categories = "hydrology"))
-head(lagosne_select(table = "hu4.chag", categories = "deposition")[,1:4])
+head(lagosne_select(table = "locus", categories = "id", dt = dt))
+#>   lagoslakeid iws_zoneid hu4_zoneid hu6_zoneid hu8_zoneid hu12_zoneid
+#> 1        3201       <NA>     HU4_11     HU6_12     HU8_47  HU12_16312
+#> 2        4510  IWS_51040     HU4_57     HU6_78    HU8_400   HU12_3008
+#>   edu_zoneid county_zoneid state_zoneid
+#> 1     EDU_27    County_331      State_2
+#> 2     EDU_23    County_275     State_13
+head(lagosne_select(table = "epi_nutr", categories = "waterquality", dt = dt))
+#>    chla colora colort dkn doc nh4 no2 no2no3 srp tdn tdp tkn     tn toc
+#> 1 62.00     40     NA  NA  NA  NA  NA     NA  NA  NA  NA  NA     NA  NA
+#> 2 30.64     NA     NA  NA  NA  NA  NA 1619.6  NA  NA  NA  NA 3521.7  NA
+#>   ton     tp secchi
+#> 1  NA  24.00   2.10
+#> 2  NA 136.56   0.65
+head(lagosne_select(table = "hu4.chag", categories = "deposition", dt = dt)[,1:4])
+#>   hu4_dep_no3_1985_min hu4_dep_no3_1985_max hu4_dep_no3_1985_mean
+#> 1               7.2171              10.0448                7.9366
+#> 2               9.5538              21.1791               15.5290
+#>   hu4_dep_no3_1985_std
+#> 1               0.3868
+#> 2               2.2330
 
 # mix of specific variables and categories
 head(lagosne_select(table = "epi_nutr", vars = "programname", 
-                    categories = c("id", "waterquality")))
+                    categories = c("id", "waterquality"), dt = dt))
+#>    programname lagoslakeid  chla colora colort dkn doc nh4 no2 no2no3 srp
+#> 1  MA_DEP_CHEM        3201 62.00     40     NA  NA  NA  NA  NA     NA  NA
+#> 2 IA_CHEMISTRY        4510 30.64     NA     NA  NA  NA  NA  NA 1619.6  NA
+#>   tdn tdp tkn     tn toc ton     tp secchi eventida1087
+#> 1  NA  NA  NA     NA  NA  NA  24.00   2.10        70686
+#> 2  NA  NA  NA 3521.7  NA  NA 136.56   0.65       100949
 ```
 
 ## Published LAGOSNE subsets

@@ -13,8 +13,12 @@ Before we can begin, we must load LAGOSNE data with `lagosne_load`:
 
 ```{r lagos_load, eval=FALSE}
 library(LAGOSNE)
-
 dt <- lagosne_load("1.087.1")
+```
+
+```{r lagos_load_cached, echo=FALSE}
+library(LAGOSNE)
+dt <- readRDS(system.file("lagos_test_subset.rds", package = "LAGOSNE"))
 ```
 
 ## Boxplot of average chlorophyll by state
@@ -31,10 +35,9 @@ lg <- group_by(lg, state)
 lg <- filter(lg, !is.na(state))
 ```
 
-Now, the `levels` of the `state` factor column are in alphabetical order by default. We need to reorder the factor levels from East to West in preparation for plotting.
+Now, the `state` column is of `character` type so will be in alphabetical order by default. We need to cast this column as a factor and reorder its levels from East to West in preparation for plotting.
 
 ```{r eval=FALSE}
-levels(lg$state)
 state_easting <- summarize(lg, 
                     mean_easting = mean(nhd_long, na.rm = TRUE))
 state_easting <- arrange(state_easting, mean_easting)
@@ -48,7 +51,6 @@ Finally, we contruct a boxplot with `ggplot`:
 ggplot(lg) + 
   geom_boxplot(aes(x = state, y = chla), outlier.shape = NA) + 
   ylim(c(0, 80)) + ylab("Chlorophyll a (ug/L)")
-
 ```
 
 ## Map of average chlorophyll in Pennsylvania
@@ -60,7 +62,7 @@ library(maps)
 library(sf)
 
 states <- st_as_sf(map("state", plot = FALSE, fill = TRUE))
-pa <- filter(states, ID == "pennsylvania")
+pa     <- filter(states, ID == "pennsylvania")
 ```
 
 Next, we filter the output from the previous analysis to only include PA lakes and calculate mean chlorophyll for each lake: 
@@ -85,5 +87,4 @@ ggplot() +
   geom_sf(data = pa_chl, aes(color = log(mean_chl))) + 
   theme_bw() + scale_color_gradient(low = "white", high = "darkgreen") +
   labs(color = "log(Chlorophyll a (ug/L))")
-
 ```
