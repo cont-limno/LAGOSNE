@@ -24,4 +24,3 @@ vignettes/Makefile
 vignettes/lagosne_structure.Rmd
 vignettes/working_with_lagosne.Rmd
 .gitattributes
-vignettes/*.Rmd

@@ -25,11 +25,11 @@ library(LAGOSNE)
 Now that the data are stored locally, you can import them as a list.
 ```{r eval=FALSE, message=FALSE}
 # Import LAGOSNE data into R
-dt <- lagosne_load(version = "1.087.1")
+dt <- lagosne_load()
 ```
 
 ```{r echo=FALSE}
-dt <- lg_subset
+dt <- readRDS(system.file("lagos_test_subset.rds", package = "LAGOSNE"))
 ```
 
 ## LAGOSNE Structure

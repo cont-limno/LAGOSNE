@@ -2,7 +2,7 @@
 
 # LAGOSNE:::lagos_compile("1.087.1", "rds")
 
-dt <- LAGOSNE::lagosne_load("1.087.1")
+dt <- LAGOSNE::lagosne_load()
 
 dt_subset <- purrr::map(dt, function(x) head(x, n = 2))
 
@@ -38,6 +38,7 @@ exclude_names <- c("lakes4ha.buffer100m",
 dt_subset <- dt_subset[!(names(dt_subset) %in% exclude_names)]
 
 saveRDS(dt_subset, "tests/testthat/lagos_test_subset.rds")
+saveRDS(dt_subset, "inst/lagos_test_subset.rds")
 
 lg_subset <- dt_subset
 devtools::use_data(lg_subset, overwrite = TRUE)
