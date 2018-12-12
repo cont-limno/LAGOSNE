@@ -24,8 +24,8 @@ lagosne_version <- function(){"1.087.1"}
 #'  counties (county), and states (state). Each abbreviation is the name of the
 #'  data frame, with all or a subset of the following variables. For more
 #'  information about derivation of each spatial classification, see Details
-#'  below or \url{https://doi.org/10.1186/s13742-015-0067-4} from Soranno
-#'  et al. 2015.
+#'  below or \href{https://doi.org/10.1186/s13742-015-0067-4}{Additional file 7}
+#'  from Soranno et al. 2015.
 #'
 #' The nine LAGOSNE spatial classifications were used to summarize the ecological
 #' context of each lake. Ecological context themes include
@@ -130,6 +130,7 @@ lagosne_version <- function(){"1.087.1"}
 #' @name classifications
 #' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
 #' @aliases buffer100m buffer500m iws hu12 hu8 hu4 edu county state classification scales lakeareaha
+#' @seealso \code{\link[LAGOSNE]{conn}} \code{\link{chag}} \code{\link{lulc}}
 NULL
 
 #' Land Use Land Cover (LULC) Data Frames
