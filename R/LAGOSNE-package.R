@@ -24,7 +24,8 @@ lagosne_version <- function(){"1.087.1"}
 #'  counties (county), and states (state). Each abbreviation is the name of the
 #'  data frame, with all or a subset of the following variables. For more
 #'  information about derivation of each spatial classification, see Details
-#'  below or [insert supp docs] from Soranno et al. 2015.
+#'  below or \url{https://doi.org/10.1186/s13742-015-0067-4} from Soranno
+#'  et al. 2015.
 #'
 #' The nine LAGOSNE spatial classifications were used to summarize the ecological
 #' context of each lake. Ecological context themes include
