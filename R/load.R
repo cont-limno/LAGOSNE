@@ -2,7 +2,7 @@
 #'
 #' Load LAGOSNE data from local system files
 #'
-#' @param version character LAGOSNE database version string
+#' @param version character LAGOSNE database version string. Defaults to \code{\link{lagosne_version}}
 #' @param fpath file.path optionally specify custom location of LAGOSNE rds file
 #' @export
 #' @importFrom rappdirs user_data_dir
@@ -11,8 +11,13 @@
 #' @examples \dontrun{
 #' dt  <- lagosne_load("1.087.1")
 #' }
-lagosne_load <- memoise::memoise(function(version = lagosne_version(),
+lagosne_load <- memoise::memoise(function(version = NULL,
                                           fpath = NA){
+  if(is.null(version)){
+    version <- lagosne_version()
+    message(paste0("Loading LAGOSNE version: ", version))
+  }
+
   if(!is.na(fpath)){
       readRDS(fpath)
   }else{
