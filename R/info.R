@@ -27,7 +27,8 @@
 #'               state = c("New Hampshire", "New York"))
 #' }
 
-lake_info <- function(lagoslakeid = NA, name = NA, state = NA, dt = lagosne_load()){
+lake_info <- memoise::memoise(function(lagoslakeid = NA, name = NA, state = NA,
+                                       dt = lagosne_load()){
 
   if(class(dt) != "list"){
     stop("dt must be a list (created by the lagosne_load function).")
@@ -92,7 +93,7 @@ lake_info <- function(lagoslakeid = NA, name = NA, state = NA, dt = lagosne_load
   do.call("rbind", apply(name_state, 1, function(x){
     lake_info_(dt = dt, name = x[1], state = x[2], llid = x[3])
   }))
-}
+})
 
 lake_info_ <- function(dt, name, state, llid){
 
