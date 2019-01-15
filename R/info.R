@@ -18,6 +18,7 @@
 #' lake_info(lagoslakeid = 244)
 #' lake_info(lagoslakeid = 4686)
 #' lake_info(lagoslakeid = 8016)
+#' lake_info(lagoslakeid = 21864)
 #' lake_info(lagoslakeid = c(1441))
 #' lake_info(lagoslakeid = c(125428, 1441))
 #' lake_info(lagoslakeid = c(4686, 8016))
@@ -39,7 +40,8 @@ lake_info <- memoise::memoise(function(lagoslakeid = NA, name = NA, state = NA,
     stop("Must provide either a name AND state OR lagoslakeid.")
   }
 
-  if(any(is.na(lagoslakeid)) & any(!(tolower(state) %in% tolower(datasets::state.name)))){
+  if(any(is.na(lagoslakeid)) &
+     any(!(tolower(state) %in% tolower(datasets::state.name)))){
     stop("The state variable must by an unabbreivated character string from datasets::state.name")
   }
 
@@ -96,7 +98,6 @@ lake_info <- memoise::memoise(function(lagoslakeid = NA, name = NA, state = NA,
 })
 
 lake_info_ <- function(dt, name, state, llid){
-
   if(is.na(name)){
     name  <- as.character(
       dt[dt$lagoslakeid == llid, "lagosname1"])
