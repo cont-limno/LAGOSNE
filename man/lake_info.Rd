@@ -34,7 +34,12 @@ lake_info(lagoslakeid = c(1441))
 lake_info(lagoslakeid = c(125428, 1441))
 lake_info(lagoslakeid = c(4686, 8016))
 
+# fuzzy matching to lake name
 lake_info(name = "Duck Lake", state = "Michigan")
+# exact matching to lake name
+lake_info(name = "Duck Lake", state = "Michigan",
+          max.distance = list(all = 0))
+
 lake_info(name = "Sunapee Lake", state = "New Hampshire")
 lake_info(name = c("Sunapee Lake", "Oneida Lake"),
               state = c("New Hampshire", "New York"))
