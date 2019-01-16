@@ -5,7 +5,7 @@
 \title{Get a summary of lake attribute information}
 \usage{
 lake_info(lagoslakeid = NA, name = NA, state = NA,
-  dt = lagosne_load())
+  dt = lagosne_load(), ...)
 }
 \arguments{
 \item{lagoslakeid}{numeric lake id}
@@ -15,6 +15,9 @@ lake_info(lagoslakeid = NA, name = NA, state = NA,
 \item{state}{character state name not caps sensitive}
 
 \item{dt}{list of data.frames. output of \code{\link[LAGOSNE]{lagosne_load}}.}
+
+\item{\dots}{arguments passed to \code{\link[base]{agrepl}} to fuzzy match
+lake name}
 }
 \description{
 Return lake attribute information from its name and state or its lagoslakeid.
@@ -26,11 +29,12 @@ lake_info(lagoslakeid = 7441)
 lake_info(lagoslakeid = 244)
 lake_info(lagoslakeid = 4686)
 lake_info(lagoslakeid = 8016)
-lake_info(lagoslakeid = 21864)
+lake_info(lagoslakeid = c(21864, 2317))
 lake_info(lagoslakeid = c(1441))
 lake_info(lagoslakeid = c(125428, 1441))
 lake_info(lagoslakeid = c(4686, 8016))
 
+lake_info(name = "Duck Lake", state = "Michigan")
 lake_info(name = "Sunapee Lake", state = "New Hampshire")
 lake_info(name = c("Sunapee Lake", "Oneida Lake"),
               state = c("New Hampshire", "New York"))

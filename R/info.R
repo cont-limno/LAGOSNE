@@ -7,6 +7,8 @@
 #' @param name character lake name not caps sensitive
 #' @param state character state name not caps sensitive
 #' @param lagoslakeid numeric lake id
+#' @param \dots arguments passed to \code{\link[base]{agrepl}} to fuzzy match
+#' lake name
 #' @importFrom dplyr filter
 #' @importFrom lazyeval interp
 #' @importFrom utils adist
@@ -18,18 +20,19 @@
 #' lake_info(lagoslakeid = 244)
 #' lake_info(lagoslakeid = 4686)
 #' lake_info(lagoslakeid = 8016)
-#' lake_info(lagoslakeid = 21864)
+#' lake_info(lagoslakeid = c(21864, 2317))
 #' lake_info(lagoslakeid = c(1441))
 #' lake_info(lagoslakeid = c(125428, 1441))
 #' lake_info(lagoslakeid = c(4686, 8016))
 #'
+#' lake_info(name = "Duck Lake", state = "Michigan")
 #' lake_info(name = "Sunapee Lake", state = "New Hampshire")
 #' lake_info(name = c("Sunapee Lake", "Oneida Lake"),
 #'               state = c("New Hampshire", "New York"))
 #' }
 
 lake_info <- memoise::memoise(function(lagoslakeid = NA, name = NA, state = NA,
-                                       dt = lagosne_load()){
+                                       dt = lagosne_load(), ...){
 
   if(class(dt) != "list"){
     stop("dt must be a list (created by the lagosne_load function).")
@@ -67,8 +70,9 @@ lake_info <- memoise::memoise(function(lagoslakeid = NA, name = NA, state = NA,
                                 .data$name, .data$state, .data$lagoslakeid)
   }else{
     lagoslakeid <- rep(NA, length(state))
-    name_state <- data.frame(name = name, state = state, lagoslakeid = lagoslakeid,
-                             stringsAsFactors = FALSE)
+    name_state  <- data.frame(name = name, state = state,
+                              lagoslakeid = lagoslakeid,
+                              stringsAsFactors = FALSE)
   }
 
   dt$locus$state_zoneid <- as.character(dt$locus$state_zoneid)
@@ -93,11 +97,12 @@ lake_info <- memoise::memoise(function(lagoslakeid = NA, name = NA, state = NA,
 
   # ---- filtering ----
   do.call("rbind", apply(name_state, 1, function(x){
-    lake_info_(dt = dt, name = x[1], state = x[2], llid = x[3])
+    lake_info_(dt = dt, name = x[1], state = x[2], llid = x[3], ...)
   }))
 })
 
-lake_info_ <- function(dt, name, state, llid){
+lake_info_ <- function(dt, name, state, llid, ...){
+
   if(is.na(name)){
     name  <- as.character(
       dt[dt$lagoslakeid == llid, "lagosname1"])
@@ -107,9 +112,10 @@ lake_info_ <- function(dt, name, state, llid){
   dt_filter       <- dt[dt$state_name %in% state,]
 
   if(is.na(llid)){
-    filter_criteria <- lazyeval::interp(~ agrepl(name, lagosname1,
+    filter_criteria <- lazyeval::interp(~ agrepl(name,
+                                                 lagosname1,
                                                  ignore.case = TRUE,
-                                                 max.distance = 0.1))
+                                                 ...))
     # dt_filter       <- dplyr::filter(dt, !is.na(state_name))
     dt_filter       <- dplyr::filter_(dt_filter, filter_criteria)
   }else{
@@ -118,8 +124,7 @@ lake_info_ <- function(dt, name, state, llid){
 
   if(nrow(dt_filter) == 0){
     filter_criteria <- lazyeval::interp(~ agrepl(name, gnis_name,
-                                                 ignore.case = TRUE,
-                                                 max.distance = 0.1))
+                                                 ignore.case = TRUE, ...))
     dt_filter       <- dplyr::filter_(dt_filter, filter_criteria)
   }
 
@@ -127,5 +132,6 @@ lake_info_ <- function(dt, name, state, llid){
     stop(paste0("Lake '", name, "' in ", state, " not found"))
   }
 
-  dt_filter[which.min(adist(dt_filter$lagosname1, name)),]
+  # dt_filter[which.min(adist(dt_filter$lagosname1, name)),]
+  dt_filter
 }

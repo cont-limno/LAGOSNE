@@ -13,6 +13,18 @@ test_that("lake_info works", {
 
 })
 
+test_that("lake_info works with corner cases", {
+  skip_on_cran()
+  skip_on_travis()
+  skip_on_appveyor()
+
+  # multiple matches
+  expect_equal(nrow(
+    lake_info(name = "Duck Lake", state = "Michigan",
+              max.distance = list(all = 0))), 7)
+
+})
+
 test_that("lake_info fails well", {
   dt <- readRDS("lagos_test_subset.rds")
 
