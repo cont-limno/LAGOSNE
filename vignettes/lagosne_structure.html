@@ -11,7 +11,7 @@
 
 <meta name="author" content="Samantha Oliver and Joseph Stachelek" />
 
-<meta name="date" content="2018-02-20" />
+<meta name="date" content="2019-01-22" />
 
 <title>The Structure of LAGOSNE</title>
 
@@ -92,8 +92,14 @@ img {
 .tabbed-pane {
   padding-top: 12px;
 }
+.html-widget {
+  margin-bottom: 20px;
+}
 button.code-folding-btn:focus {
   outline: none;
+}
+summary {
+  display: list-item;
 }
 </style>
 
@@ -102,14 +108,74 @@ button.code-folding-btn:focus {
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
 </script>
 
 <!-- code folding -->
-
 
 
 
@@ -121,7 +187,7 @@ $(document).ready(function () {
 
 <h1 class="title toc-ignore">The Structure of LAGOSNE</h1>
 <h4 class="author"><em>Samantha Oliver and Joseph Stachelek</em></h4>
-<h4 class="date"><em>2018-02-20</em></h4>
+<h4 class="date"><em>2019-01-22</em></h4>
 
 </div>
 
@@ -134,10 +200,10 @@ $(document).ready(function () {
 <div id="accessing-lagosne" class="section level2">
 <h2>Accessing LAGOSNE</h2>
 <p>Following <a href="https://github.com/cont-limno/LAGOSNE">these instructions</a>, install the LAGOSNE package and download the data from the online repository. The data are open-access and stored online as flat files [location]. The data only need to be downloaded once, and will be stored locally at the location returned by <code>rappdirs::user_data_dir</code></p>
+<pre class="r"><code>library(LAGOSNE)</code></pre>
 <p>Now that the data are stored locally, you can import them as a list.</p>
-<pre class="r"><code>library(LAGOSNE)
-# Import LAGOSNE data into R
-dt &lt;- lagosne_load(version = &quot;1.087.1&quot;)</code></pre>
+<pre class="r"><code># Import LAGOSNE data into R
+dt &lt;- lagosne_load()</code></pre>
 </div>
 <div id="lagosne-structure" class="section level2">
 <h2>LAGOSNE Structure</h2>
@@ -198,25 +264,30 @@ dt &lt;- lagosne_load(version = &quot;1.087.1&quot;)</code></pre>
 </tr>
 <tr class="odd">
 <td align="left">LAGOSNE</td>
+<td align="left">lg_extent</td>
+<td align="left">LAGOSNE extent</td>
+</tr>
+<tr class="even">
+<td align="left">LAGOSNE</td>
 <td align="left">lg_subset</td>
 <td align="left">LAGOSNE subset</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">LAGOSNE</td>
 <td align="left">locus</td>
 <td align="left">Metadata for all lakes &gt; 1ha</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">LAGOSNE</td>
 <td align="left">lulc</td>
 <td align="left">Land Use Land Cover (LULC) Data Frames</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">LAGOSNE</td>
 <td align="left">secchi</td>
 <td align="left">Secchi (Water Clarity) Data</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">LAGOSNE</td>
 <td align="left">source</td>
 <td align="left">LAGOSNE sources</td>
@@ -270,20 +341,20 @@ plot(huc4, lty = 1, lwd=1, border=TRUE, col = &quot;lightgray&quot;)</code></pre
 <li>locus</li>
 </ul>
 </blockquote>
-<p>LAGOSlocus provides a connection between all tables, as it contains metadata for the census population of lakes (all lakes greater than or equal to one hectare; n = 141265) in the LAGOSNE region, with corresponding unique identifiers for the zone of each spatial classification in which the lake is located. Lakes were identified through the National Hydrography Dataset, and the table also includes data about the lake polygons themselves, including surface area and perimeter. For a subset of lakes where data were available, lake depth (mean and/or maximum) is also included.</p>
+<p>LAGOSlocus provides a connection between all tables, as it contains metadata for the census population of lakes (all lakes greater than or equal to one hectare; n = 2) in the LAGOSNE region, with corresponding unique identifiers for the zone of each spatial classification in which the lake is located. Lakes were identified through the National Hydrography Dataset, and the table also includes data about the lake polygons themselves, including surface area and perimeter. For a subset of lakes where data were available, lake depth (mean and/or maximum) is also included.</p>
 </div>
 </div>
 <div id="references" class="section level2 unnumbered">
 <h2>References</h2>
 <div id="refs" class="references">
 <div id="ref-LAGOSgeo">
-<p>Soranno, PA, and KS Cheruvelil. 2017a. “LAGOS-NE-GEO v1.05: A Module for LAGOS-NE, a Multi-Scaled Geospatial and Temporal Database of Lake Ecological Context and Water Quality for Thousands of U.S. Lakes: 1925–2013.” <a href="http://doi.org/ckpm" class="uri">http://doi.org/ckpm</a>.</p>
+<p>Soranno, PA, and KS Cheruvelil. 2017a. “LAGOS-NE-GEO v1.05: A Module for LAGOS-NE, a Multi-Scaled Geospatial and Temporal Database of Lake Ecological Context and Water Quality for Thousands of U.s. Lakes: 1925–2013.” <a href="http://doi.org/ckpm" class="uri">http://doi.org/ckpm</a>.</p>
 </div>
 <div id="ref-LAGOSlimno">
-<p>———. 2017b. “LAGOS-NE-LIMNO v1.087.1: A Module for LAGOS-NE, a Multi-Scaled Geospatial and Temporal Database of Lake Ecological Context and Water Quality for Thousands of U.S. Lakes: 1925–2013.” <a href="http://doi.org/ckpk" class="uri">http://doi.org/ckpk</a>.</p>
+<p>———. 2017b. “LAGOS-NE-LIMNO v1.087.1: A Module for LAGOS-NE, a Multi-Scaled Geospatial and Temporal Database of Lake Ecological Context and Water Quality for Thousands of U.s. Lakes: 1925–2013.” <a href="http://doi.org/ckpk" class="uri">http://doi.org/ckpk</a>.</p>
 </div>
 <div id="ref-LAGOSlocus">
-<p>———. 2017c. “LAGOS-NE-LOCUS V1.01: A Module for LAGOS-NE, a Multi-Scaled Geospatial and Temporal Database of Lake Ecological Context and Water Quality for Thousands of U.S. Lakes: 1925–2013.” <a href="http://doi.org/ckpj" class="uri">http://doi.org/ckpj</a>.</p>
+<p>———. 2017c. “LAGOS-NE-LOCUS V1.01: A Module for LAGOS-NE, a Multi-Scaled Geospatial and Temporal Database of Lake Ecological Context and Water Quality for Thousands of U.s. Lakes: 1925–2013.” <a href="http://doi.org/ckpj" class="uri">http://doi.org/ckpj</a>.</p>
 </div>
 <div id="ref-data-LAGOS">
 <p>Soranno, PA, EG Bissell, KS Cheruvelil, ST Christel, SM Collins, CE Fergus, CT Filstrup, et al. 2015. “Building a Multi-Scaled Geospatial Temporal Ecology Database from Disparate Data Sources: Fostering Open Science and Data Reuse.” <em>Gigascience</em> 4 (1). <a href="https://dx.doi.org/10.1186/s13742-015-0067-4" class="uri">https://dx.doi.org/10.1186/s13742-015-0067-4</a>.</p>

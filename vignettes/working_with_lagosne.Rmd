@@ -45,7 +45,7 @@ state_easting <- arrange(state_easting, mean_easting)
 lg$state <- factor(lg$state, levels = state_easting$state)
 ```
 
-Finally, we contruct a boxplot with `ggplot`:
+Finally, we construct a boxplot with `ggplot`:
 
 ```{r warning=FALSE, eval=TRUE}
 ggplot(lg) + 
