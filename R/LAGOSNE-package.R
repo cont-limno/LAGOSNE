@@ -157,7 +157,7 @@ NULL
 #'     (*** = min, max, mean, std).
 #'    \item *_damdensity_***: dams in zone. Summary statistics include a point
 #'    count, points per hectare, and points per square kilometer
-#'    (*** = pointcount, poinsperha, pointspersqkm)
+#'    (*** = pointcount, pointsperha, pointspersqkm)
 #'    \item *_nlcd**_***_0: No data
 #'    \item *_nlcd**_***_11: Open water
 #'    \item *_nlcd1992_***_21: Residential, low intensity

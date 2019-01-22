@@ -12,7 +12,7 @@ coordinatize(dt, latname = "nhd_lat", longname = "nhd_long",
 
 \item{latname}{character name of latitude column; default is "nhd_lat"}
 
-\item{longname}{character name of longitude column; defailt is "nhd_long"}
+\item{longname}{character name of longitude column; default is "nhd_long"}
 
 \item{crs}{numeric epsg code; default is 4326 WGS84-lat-long}
 }

@@ -6,7 +6,7 @@
 #'
 #' @param dt data.frame
 #' @param latname character name of latitude column; default is "nhd_lat"
-#' @param longname character name of longitude column; defailt is "nhd_long"
+#' @param longname character name of longitude column; default is "nhd_long"
 #' @param crs numeric epsg code; default is 4326 WGS84-lat-long
 #' @importFrom sf st_as_sf
 #' @export
