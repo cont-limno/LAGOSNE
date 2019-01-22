@@ -4,7 +4,7 @@
 
 * Major speed up on repeated calls to `lagosne_load` because results are now cached (memoized)
 
-* Increased functionality and stability of the `lake_info` function
+* Increased functionality and stability of the `lake_info` function (#92)
 
 * Added ability to pass multiple categories to `lagosne_select` (#44)
 
@@ -19,6 +19,8 @@
 * Pad HUC ID codes to be fixed length (#76)
 
 * All factor fields are now of type character (#82)
+
+* `lake_info` now returns multiple matches to lake names (#92)
 
 # LAGOSNE 1.1.0
 
