@@ -1,6 +1,6 @@
 Package: LAGOSNE
 Title: Interface to the Lake Multi-Scaled Geospatial and Temporal Database
-Version: 1.1.9
+Version: 1.2.0
 Authors@R: c(
     person("Joseph", "Stachelek", 
     email = "stachel2@msu.edu", 
