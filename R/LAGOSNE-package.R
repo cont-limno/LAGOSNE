@@ -223,7 +223,7 @@ NULL
 #' @keywords datasets
 #' @name lulc
 #' @aliases buffer100m.lulc buffer500m.lulc iws.lulc hu12.lulc hu8.lulc hu4.lulc edu.lulc county.lulc state.lulc topography nlcd
-#' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}; \href{http://www.mrlc.gov/nlcd2011.php}{National Land Cover Database},
+#' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12};
 NULL
 
 #' CHAG Datasets
