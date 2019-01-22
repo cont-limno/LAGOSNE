@@ -44,3 +44,4 @@ LazyData: true
 RoxygenNote: 6.1.1
 VignetteBuilder: R.rsp,
     knitr
+Language: en-US
