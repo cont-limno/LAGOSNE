@@ -15,7 +15,7 @@
 \alias{geology}
 \alias{baseflow}
 \alias{runoff}
-\title{CHAG Datasets}
+\title{Climate, Hydrology, Atmospheric, and Geologic (CHAG) Datasets}
 \format{Data frames with all or a subset of the following variables. Number
 of observations is equal to the number of zones in each spatial scale (see
 Details below). Wildcard options include a subset of the LAGOSNE spatial

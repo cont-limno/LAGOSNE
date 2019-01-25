@@ -226,7 +226,7 @@ NULL
 #' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12};
 NULL
 
-#' CHAG Datasets
+#' Climate, Hydrology, Atmospheric, and Geologic (CHAG) Datasets
 #'
 #' Datasets containing information on climate, hydrology, atmospheric
 #' deposition, and surficial geology characteristics calculated at hu12, hu8,
