@@ -21,7 +21,7 @@ Ingest LAGOSNE data from component flat files
 }
 \examples{
 \dontrun{
-lagosne_ingest("1.087.1",
+lagos_ingest("1.087.1",
  limno_folder = "~/Downloads/LAGOS-NE-LIMNO-EXPORT",
  geo_folder   = "~/Downloads/LAGOS-NE-GEO-EXPORT",
  locus_folder = "~/Downloads/LAGOS-NE-LOCUS-EXPORT")

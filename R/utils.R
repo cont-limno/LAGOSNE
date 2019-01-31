@@ -12,7 +12,6 @@ load_lagos_txt <- function(file_name, sep = "\t", ...){
   read.table(file_name, header = TRUE, sep = sep, quote = "\"",
              dec = ".", strip.white = TRUE, comment.char = "",
              stringsAsFactors = FALSE)
-
 }
 
 #' Summarize all LAGOSNE flat files
@@ -252,4 +251,15 @@ pad_huc_ids <- function(dt, col_name, len){
   res <- formatC(id_num, width = len, digits = 0, format = "f", flag = "0")
   dt[,col_name] <- as.character(res)
   dt
+}
+
+format_nonscientific <- function(x){
+  if(is.na(as.numeric(x))){
+    x
+  }else{
+    trimws(
+      format(
+        as.numeric(x), scientific = FALSE, drop0trailing = TRUE)
+    )
+  }
 }

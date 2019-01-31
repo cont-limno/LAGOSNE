@@ -8,7 +8,7 @@
 #'@importFrom utils read.table
 #'@importFrom progress progress_bar
 #'@examples \dontrun{
-#' lagosne_ingest("1.087.1",
+#' lagos_ingest("1.087.1",
 #'  limno_folder = "~/Downloads/LAGOS-NE-LIMNO-EXPORT",
 #'  geo_folder   = "~/Downloads/LAGOS-NE-GEO-EXPORT",
 #'  locus_folder = "~/Downloads/LAGOS-NE-LOCUS-EXPORT")
@@ -50,6 +50,9 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA,
 
   lakes_limno          <- load_lagos_txt(limno_path("lakeslimno"),
                                        sep = ",")
+  lakes_limno$legacyid <-
+    suppressWarnings(sapply(lakes_limno$legacyid, format_nonscientific))
+
   secchi               <- load_lagos_txt(limno_path("secchi"),
                                          sep = ",")
   lagos_source_program <- load_lagos_txt(limno_path("sourceprogram"),
