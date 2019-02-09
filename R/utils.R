@@ -263,3 +263,83 @@ format_nonscientific <- function(x){
     )
   }
 }
+
+tidy_name_prefixes <- function(nms){
+
+  prefixes_key <- data.frame(prefix      = c("hu4_", "iws_", "state_",
+                                             "nhd_", "hu8_", "hu12_",
+                                             "edu_", "county_", "hu6_",
+                                             "^lakes_",
+                                             "tp_", "toc_", "tn_", "tkn_",
+                                             "tdp_", "tdn_", "srp_",
+                                             "secchi_", "no2no3_", "no2_",
+                                             "nh4_", "doc_", "dkn_", "colort_",
+                                             "colora_", "chla_", "ton_"),
+                             stringsAsFactors = FALSE)
+  prefixes_key$replacement <- rep("", nrow(prefixes_key))
+
+  prefix_matches <- list()
+  for(i in seq_along(prefixes_key$prefix)){
+    prefix_matches[[i]] <- stringr::str_which(
+      nms$raw, prefixes_key$prefix[i])
+  }
+
+  prefix_matches <- tidyr::unnest(tibble::enframe(prefix_matches))
+  prefix_matches <- apply(prefix_matches, 1, function(x)
+    c(nms$raw[x[2]], prefixes_key$prefix[x[1]]))
+  prefix_matches <- data.frame(t(prefix_matches), stringsAsFactors = FALSE)
+
+  if(nrow(prefix_matches) != 0 & ncol(prefix_matches) != 0){
+    names(prefix_matches) <- c("raw", "prefix")
+    nms <- merge(nms, prefix_matches, all.x = TRUE)
+  }
+
+  for(i in seq_along(nms$formatted[!is.na(nms$prefix)])){
+    nms$formatted[!is.na(nms$prefix)][i] <-
+      gsub(
+        nms$prefix[!is.na(nms$prefix)][i], "",
+        nms$raw[!is.na(nms$prefix)][i])
+  }
+  nms$formatted[is.na(nms$formatted)] <- nms$raw[is.na(nms$formatted)]
+
+  nms
+}
+
+key_names <- function(nms){
+  # match cleaned names to a key
+  name_key <- data.frame(formatted  = c("ha", "perimkm",
+                                        "maxdepth", "lake_perim_meters",
+                                        "lakeareaha", "samplemonth",
+                                        "sampleyear", "sampledate",
+                                        "meandepth", "zoneid"),
+                         cleaned = c("Area (ha)", "Perimeter (km)",
+                                     "Max Depth", "Perimeter (m)",
+                                     "Lake Area (ha)", "Month",
+                                     "Year", "Date",
+                                     "Mean Depth", "ID"),
+                         stringsAsFactors = FALSE)
+  nms <- merge(nms, name_key, all.x = TRUE)
+
+  nms$formatted[is.na(nms$formatted)] <-
+    nms$raw[is.na(nms$formatted)]
+  nms$cleaned[is.na(nms$cleaned)] <- nms$formatted[is.na(nms$cleaned)]
+
+  nms
+}
+
+tidy_name_suffixes <- function(nms){
+  # match suffixes to a key
+  suffixes_key <- data.frame(raw       = c("_count$", "_ha$", "_km$",
+                                           "_m$"),
+                             formatted = c(" (n)", " (ha)", " (km)",
+                                           " (m)"),
+                             stringsAsFactors = FALSE)
+
+  for(i in seq_along(suffixes_key$raw)){
+    nms$cleaned <- gsub(suffixes_key$raw[i],
+                        suffixes_key$formatted[i],
+                        nms$cleaned, fixed = FALSE)
+  }
+
+  nms
+}

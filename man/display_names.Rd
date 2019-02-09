@@ -16,7 +16,11 @@ Convert table names for display
 \dontrun{
 lg <- lagosne_load("1.087.1")
 cbind(names(lg$iws), display_names(names(lg$iws)))
+cbind(names(lg$county.chag), display_names(names(lg$county.chag)))
 cbind(names(lg$hu4), display_names(names(lg$hu4)))
 cbind(names(lg$locus), display_names(names(lg$locus)))
+cbind(names(lg$epi_nutr), display_names(names(lg$epi_nutr)))
+cbind(names(lg$lakes_limno), display_names(names(lg$lakes_limno)))
+cbind(names(lg$lakes.geo), display_names(names(lg$lakes.geo)))
 }
 }
