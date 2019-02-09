@@ -15,8 +15,8 @@ Convert table names for display
 \examples{
 \dontrun{
 lg <- lagosne_load("1.087.1")
-display_names(names(lg$iws))
-display_names(names(lg$hu4))
-display_names(names(lg$locus))
+cbind(names(lg$iws), display_names(names(lg$iws)))
+cbind(names(lg$hu4), display_names(names(lg$hu4)))
+cbind(names(lg$locus), display_names(names(lg$locus)))
 }
 }
