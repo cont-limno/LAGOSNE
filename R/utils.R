@@ -330,9 +330,12 @@ key_names <- function(nms){
 tidy_name_suffixes <- function(nms){
   # match suffixes to a key
   suffixes_key <- data.frame(raw       = c("_count$", "_ha$", "_km$",
-                                           "_m$"),
+                                           "_m$", "_pct$", "_mperha$",
+                                           "_pointsperha$", "_pointspersqkm$",
+                                           "_pointcount$"),
                              formatted = c(" (n)", " (ha)", " (km)",
-                                           " (m)"),
+                                           " (m)", " (%)", " (n/ha)",
+                                           " (n/ha)", " (n/km2)", " (n)"),
                              stringsAsFactors = FALSE)
 
   for(i in seq_along(suffixes_key$raw)){
