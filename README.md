@@ -1,8 +1,6 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-<img src="https://raw.githubusercontent.com/cont-limno/LAGOSNE/master/inst/lagos_banner2.png" width="100%" />
-
 [![Project Status: Active - The project has reached a stable, usable
 state and is being actively
 developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
@@ -12,9 +10,20 @@ Status](https://travis-ci.org/cont-limno/LAGOSNE.svg?branch=master)](https://tra
 [![CRAN RStudio mirror
 downloads](http://cranlogs.r-pkg.org/badges/LAGOSNE)](https://cran.r-project.org/package=LAGOSNE)
 
-The `LAGOSNE` package provides an R interface to download LAGOS-NE data
-from remote databases, store this data locally, and perform a variety of
-filtering and subsetting operations.
+# LAGOSNE <img src="man/figures/logo.png" align="right" height=140/>
+
+The `LAGOSNE` package provides an R interface to download LAGOS-NE data,
+store this data locally, and perform a variety of filtering and
+subsetting operations.
+
+LAGOS-NE contains data for 51,101 lakes and reservoirs larger than 4 ha
+in 17 lake-rich US states. The database includes 3 data modules for:
+lake location and physical characteristics for all lakes; ecological
+context (i.e., the land use, geologic, climatic, and hydrologic setting
+of lakes) for all lakes; and in situ measurements of lake water quality
+for a subset of the lakes from the past 3 decades for approximately
+2,600-12,000 lakes depending on the variable (see Soranno et al. 2017
+[below](https://github.com/cont-limno/LAGOSNE#references)).
 
 ## Installation
 
@@ -109,17 +118,17 @@ lake_info(name = "Pine Lake", state = "Iowa")
 ```
 
     #>   lagoslakeid     nhdid      lagosname1 meandepth meandepthsource maxdepth
-    #> 2        4510 155845265 UPPER PINE LAKE      2.21    IA_CHEMISTRY     4.88
+    #> 1        4510 155845265 UPPER PINE LAKE      2.21    IA_CHEMISTRY     4.88
     #>   maxdepthsource legacyid gnis_name  nhd_lat  nhd_long lake_area_ha
-    #> 2   IA_CHEMISTRY      122 Pine Lake 42.37833 -93.05967     36.07355
+    #> 1   IA_CHEMISTRY      122 Pine Lake 42.37833 -93.05967     36.07355
     #>   lake_perim_meters nhd_fcode nhd_ftype iws_zoneid hu4_zoneid hu6_zoneid
-    #> 2          5671.001     39004       390  IWS_51040     HU4_57     HU6_78
+    #> 1          5671.001     39004       390  IWS_51040     HU4_57     HU6_78
     #>   hu8_zoneid hu12_zoneid edu_zoneid county_zoneid state_zoneid elevation_m
-    #> 2    HU8_400   HU12_3008     EDU_23    County_275     State_13      300.23
+    #> 1    HU8_400   HU12_3008     EDU_23    County_275     State_13      300.23
     #>   state state_name state_lat state_long state_pct_in_nwi state_ha_in_nwi
-    #> 2    IA       Iowa  42.07456  -93.49983              100        14573561
+    #> 1    IA       Iowa  42.07456  -93.49983              100        14573561
     #>   state_ha lakeconnection   iws_ha
-    #> 2 14573561      DR_Stream 3593.379
+    #> 1 14573561      DR_Stream 3593.379
 
 #### Read table metadata
 

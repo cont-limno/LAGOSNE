@@ -12,13 +12,13 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r echo=FALSE, out.width="100%"}
-knitr::include_graphics("https://raw.githubusercontent.com/cont-limno/LAGOSNE/master/inst/lagos_banner2.png")
-```
-
 [![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active) [![Travis-CI Build Status](https://travis-ci.org/cont-limno/LAGOSNE.svg?branch=master)](https://travis-ci.org/cont-limno/LAGOSNE) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/LAGOSNE)](https://cran.r-project.org/package=LAGOSNE) [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/LAGOSNE)](https://cran.r-project.org/package=LAGOSNE)
 
-The `LAGOSNE` package provides an R interface to download LAGOS-NE data from remote databases, store this data locally, and perform a variety of filtering and subsetting operations.
+# LAGOSNE <img src="man/figures/logo.png" align="right" height=140/>
+
+The `LAGOSNE` package provides an R interface to download LAGOS-NE data, store this data locally, and perform a variety of filtering and subsetting operations.
+
+LAGOS-NE contains data for 51,101 lakes and reservoirs larger than 4 ha in 17 lake-rich US states. The database includes 3 data modules for: lake location and physical characteristics for all lakes; ecological context (i.e., the land use, geologic, climatic, and hydrologic setting of lakes) for all lakes; and in situ measurements of lake water quality for a subset of the lakes from the past 3 decades for approximately 2,600-12,000 lakes depending on the variable (see Soranno et al. 2017 [below](https://github.com/cont-limno/LAGOSNE#references)).
 
 ## Installation
 
