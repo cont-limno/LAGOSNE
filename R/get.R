@@ -16,7 +16,7 @@ lagosne_get <- function(version = lagosne_version(), overwrite = FALSE,
                         dest_folder = tempdir()){
 
   if(dest_folder != lagos_path()){
-    message("Set dest_folder to LAGOSNE:::lagos_path() so that data persists
+    warning("Set dest_folder to LAGOSNE:::lagos_path() so that data persists
 between R sessions. \n")
   }
 
