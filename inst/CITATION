@@ -30,3 +30,5 @@ citEntry(entry = "Manual",
   paste("Stachelek J., Oliver S. 2017. LAGOSNE: Interface to the Lake Multi-scaled Geospatial and Temporal Database. R package version 1.1.0. https://cran.r-project.org/package=LAGOSNE
   ")
 )
+
+citFooter("For other citations, such as those for individual data modules see: https://lagoslakes.org \n")
