@@ -130,6 +130,6 @@ at all classifications due to data availability. Briefly:
 Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
 }
 \seealso{
-\code{\link[LAGOSNE]{conn}} \code{\link{chag}} \code{\link{lulc}}
+\code{\link[LAGOSNE]{conn}} \code{\link[LAGOSNE]{lakes.geo}} \code{\link{chag}} \code{\link{lulc}}
 }
 \keyword{datasets}

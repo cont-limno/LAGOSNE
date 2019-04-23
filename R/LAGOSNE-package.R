@@ -130,7 +130,7 @@ lagosne_version <- function(){"1.087.1"}
 #' @name classifications
 #' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
 #' @aliases buffer100m buffer500m iws hu12 hu8 hu4 edu county state classification scales lakeareaha
-#' @seealso \code{\link[LAGOSNE]{conn}} \code{\link{chag}} \code{\link{lulc}}
+#' @seealso \code{\link[LAGOSNE]{conn}} \code{\link[LAGOSNE]{lakes.geo}} \code{\link{chag}} \code{\link{lulc}}
 NULL
 
 #' Land Use Land Cover (LULC) Data Frames
@@ -223,6 +223,7 @@ NULL
 #' @keywords datasets
 #' @name lulc
 #' @aliases buffer100m.lulc buffer500m.lulc iws.lulc hu12.lulc hu8.lulc hu4.lulc edu.lulc county.lulc state.lulc topography nlcd
+#' @seealso \code{\link[LAGOSNE]{lakes.geo}}
 #' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12};
 NULL
 
@@ -450,6 +451,7 @@ NULL
 #' @keywords datasets
 #' @name lakes_limno
 #' @aliases meandepth maxdepth legacyid depth
+#' @seealso \code{\link[LAGOSNE]{lakes.geo}}
 #' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
 NULL
 
@@ -494,6 +496,7 @@ NULL
 #' @keywords datasets
 #' @name locus
 #' @aliases location
+#' @seealso \code{\link[LAGOSNE]{lakes.geo}}
 #' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
 NULL
 
@@ -783,6 +786,7 @@ NULL
 #' @keywords datasets
 #' @name conn
 #' @aliases connectivity buffer500m.conn iws.conn hu12.conn hu8.conn hu4.conn edu.conn county.conn state.conn
+#' @seealso \code{\link[LAGOSNE]{lakes.geo}}
 #' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
 NULL
 

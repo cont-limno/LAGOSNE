@@ -297,4 +297,7 @@ Datasets containing lake, stream, and wetland abundance and connectivity
 \references{
 Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
 }
+\seealso{
+\code{\link[LAGOSNE]{lakes.geo}}
+}
 \keyword{datasets}
