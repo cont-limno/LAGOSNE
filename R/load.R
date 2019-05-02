@@ -68,3 +68,30 @@ lagos_load_oliver_2015 <- function(fpath = NA){
     read.csv(fpath, stringsAsFactors = FALSE)
   }
 }
+
+#' Load depth data from Collins et al. 2017.
+#'
+#' @export
+#' @param fpath file.path optionally specify custom location of csv data file
+#' @importFrom utils read.csv
+#' @importFrom rappdirs user_data_dir
+#'
+#' @references Collins S., S. Oliver, J. Lapierre, E. Stanley, J. Jones,
+#'  T. Wagner, P. Soranno. 2016. LAGOS - Lake nitrogen, phosphorus,
+#'  stoichiometry, and geospatial data for a 17-state region of the U.S..
+#'  Environmental Data Initiative.
+#'  doi:10.6073/pasta/3abb4a56e76a52a12a366a338fc07dd8.
+#' @examples \dontrun{
+#' lg <- lagos_load_collins_2017()
+#' }
+lagos_load_collins_2017 <- function(fpath = NA){
+  destdir <- rappdirs::user_data_dir("LAGOSNE")
+  dir.create(destdir, showWarnings = FALSE)
+
+  if(is.na(fpath)){
+    read.csv(paste0(destdir, .Platform$file.sep, "collins_2017.csv"),
+             stringsAsFactors = FALSE)
+  }else{
+    read.csv(fpath, stringsAsFactors = FALSE)
+  }
+}

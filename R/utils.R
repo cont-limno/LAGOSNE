@@ -347,3 +347,13 @@ tidy_name_suffixes <- function(nms){
 
   nms
 }
+
+url_exists <- function(url){
+  handle <- curl::new_handle(nobody = TRUE)
+
+  tryCatch(
+    length(curl::parse_headers(
+      curl::curl_fetch_memory(url, handle)$headers)) > 0,
+    error = function(e) FALSE
+  )
+}
