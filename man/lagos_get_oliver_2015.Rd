@@ -2,7 +2,7 @@
 % Please edit documentation in R/get.R
 \name{lagos_get_oliver_2015}
 \alias{lagos_get_oliver_2015}
-\title{Get depth data}
+\title{Get depth data from Oliver et al. 2015}
 \usage{
 lagos_get_oliver_2015(dest_folder, overwrite = FALSE)
 }

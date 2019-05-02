@@ -2,18 +2,8 @@
 % Please edit documentation in R/load.R
 \name{lagos_load_oliver_2015}
 \alias{lagos_load_oliver_2015}
-\title{Load depth data}
-\usage{
-lagos_load_oliver_2015(fpath = NA)
-}
-\arguments{
-\item{fpath}{file.path optionally specify custom location of csv data file}
-}
-\description{
-Load depth data from Oliver et al. 2015.
-}
-\details{
-#' @format A data frame with 50607 observations of 8 variables:
+\title{Load depth data from Oliver et al. 2015.}
+\format{A data frame with 50607 observations of 8 variables:
 \itemize{
        \item lagoslakeid: unique identifier for each lake in LAGOS-NE.
             For each row of data in this table, the lagoslakeid identifies the focal lake
@@ -26,7 +16,15 @@ Load depth data from Oliver et al. 2015.
        \item area: lake area in hectares
        \item zmaxobs: observed maximum lake depth (meters)
        \item zmaxpredict: predicted maximum lake depth (meters)
-    }
+    }}
+\usage{
+lagos_load_oliver_2015(fpath = NA)
+}
+\arguments{
+\item{fpath}{file.path optionally specify custom location of csv data file}
+}
+\description{
+Load depth data from Oliver et al. 2015.
 }
 \examples{
 \dontrun{

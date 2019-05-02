@@ -61,8 +61,6 @@ between R sessions. \n")
                         geo_folder   = geo_dir)))
 }
 
-#' Get depth data
-#'
 #' Get depth data from Oliver et al. 2015
 #'
 #' @export

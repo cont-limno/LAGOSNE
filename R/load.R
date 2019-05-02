@@ -27,11 +27,9 @@ lagosne_load <- memoise::memoise(function(version = NULL,
   }
 })
 
-#' Load depth data
-#'
 #' Load depth data from Oliver et al. 2015.
 #'
-#' #' @format A data frame with 50607 observations of 8 variables:
+#' @format A data frame with 50607 observations of 8 variables:
 #' \itemize{
 #'        \item lagoslakeid: unique identifier for each lake in LAGOS-NE.
 #'             For each row of data in this table, the lagoslakeid identifies the focal lake
