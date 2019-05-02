@@ -96,9 +96,10 @@ info_table <- function(lg){
 
 }
 
+#' @importFrom curl curl_download
 get_if_not_exists <- function(url, destfile, overwrite){
   if(!file.exists(destfile) | overwrite){
-    download.file(url, destfile)
+    curl::curl_download(url, destfile)
   }else{
     message(paste0("A local copy of ", url, " already exists on disk"))
   }
