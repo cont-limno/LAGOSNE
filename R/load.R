@@ -69,7 +69,7 @@ lagos_load_oliver_2015 <- function(fpath = NA){
   }
 }
 
-#' Load depth data from Collins et al. 2017.
+#' Load LAGOSNE snapshot from Collins et al. 2017.
 #'
 #' @export
 #' @param fpath file.path optionally specify custom location of csv data file

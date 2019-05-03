@@ -2,7 +2,7 @@
 % Please edit documentation in R/load.R
 \name{lagos_load_collins_2017}
 \alias{lagos_load_collins_2017}
-\title{Load depth data from Collins et al. 2017.}
+\title{Load LAGOSNE snapshot from Collins et al. 2017.}
 \usage{
 lagos_load_collins_2017(fpath = NA)
 }
@@ -10,7 +10,7 @@ lagos_load_collins_2017(fpath = NA)
 \item{fpath}{file.path optionally specify custom location of csv data file}
 }
 \description{
-Load depth data from Collins et al. 2017.
+Load LAGOSNE snapshot from Collins et al. 2017.
 }
 \examples{
 \dontrun{
