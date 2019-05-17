@@ -136,20 +136,20 @@ lake_info(name = "Pine Lake", state = "Iowa")
 help.search("datasets", package = "LAGOSNE")
 ```
 
-| Package | Topic           | Title                                    |
-| :------ | :-------------- | :--------------------------------------- |
-| LAGOSNE | chag            | CHAG Datasets                            |
-| LAGOSNE | classifications | LAGOSNE Spatial Classifications Metadata |
-| LAGOSNE | conn            | Connectivity Datasets                    |
-| LAGOSNE | epi\_nutr       | Epilimnion Water Quality Data            |
-| LAGOSNE | lagoslakes      | Lake Geospatial Metadata                 |
-| LAGOSNE | lakes\_limno    | Metadata for Lakes with Water Quality    |
-| LAGOSNE | lg\_extent      | LAGOSNE extent                           |
-| LAGOSNE | lg\_subset      | LAGOSNE subset                           |
-| LAGOSNE | locus           | Metadata for all lakes \> 1ha            |
-| LAGOSNE | lulc            | Land Use Land Cover (LULC) Data Frames   |
-| LAGOSNE | secchi          | Secchi (Water Clarity) Data              |
-| LAGOSNE | source          | LAGOSNE sources                          |
+| Package | Topic           | Title                                                         |
+| :------ | :-------------- | :------------------------------------------------------------ |
+| LAGOSNE | chag            | Climate, Hydrology, Atmospheric, and Geologic (CHAG) Datasets |
+| LAGOSNE | classifications | LAGOSNE Spatial Classifications Metadata                      |
+| LAGOSNE | conn            | Connectivity Datasets                                         |
+| LAGOSNE | epi\_nutr       | Epilimnion Water Quality Data                                 |
+| LAGOSNE | lagoslakes      | Lake Geospatial Metadata                                      |
+| LAGOSNE | lakes\_limno    | Metadata for Lakes with Water Quality                         |
+| LAGOSNE | lg\_extent      | LAGOSNE extent                                                |
+| LAGOSNE | lg\_subset      | LAGOSNE subset                                                |
+| LAGOSNE | locus           | Metadata for all lakes \> 1ha                                 |
+| LAGOSNE | lulc            | Land Use Land Cover (LULC) Data Frames                        |
+| LAGOSNE | secchi          | Secchi (Water Clarity) Data                                   |
+| LAGOSNE | source          | LAGOSNE sources                                               |
 
 ### Select data
 
