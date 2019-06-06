@@ -239,7 +239,7 @@ be assigned to something like:
 
 ``` r
 library(LAGOSNE)
-lagosne_compile("1.054.1", format = "rds",
+lagosne_compile("1.054.1",
   limno_folder = "~/Downloads/LAGOS-NE-LIMNO-EXPORT",
   geo_folder   = "~/Downloads/LAGOS-NE-GEO-EXPORT",
   locus_folder = "~/Downloads/LAGOS-NE-LOCUS-EXPORT")
