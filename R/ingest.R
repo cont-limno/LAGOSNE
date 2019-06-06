@@ -23,10 +23,10 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA,
   folder_version <- gsub("\\.", "", version)
 
   # Set-up paths ####
-  limno_prefix <- paste0(limno_folder, "/", "LAGOSNE_")
+  limno_prefix <- paste0(limno_folder, "/")
   limno_path   <- function(fname){
                     paste0(limno_prefix,
-                    fname, folder_version, ".csv")
+                           fname, "_", folder_version, ".csv")
                   }
 
   geo_prefix   <- paste0(geo_folder, "/", "LAGOSNE_")
@@ -43,9 +43,9 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA,
 
   # Importing Lagos limno data ####
   pb$tick(tokens = list(type = "limno data"))
-  epi_nutr             <- load_lagos_txt(limno_path("epinutr"),
+  epi_nutr             <- load_lagos_txt(limno_path("epi_waterquality"),
                               sep = ",")
-  epi_nutr$sampledate  <- as.Date(strptime(epi_nutr$sampledate,
+  epi_nutr$sampledate  <- as.Date(strptime(epi_nutr$date,
                                            format = "%m/%d/%Y"))
 
   lakes_limno          <- load_lagos_txt(limno_path("lakeslimno"),
@@ -53,15 +53,11 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA,
   lakes_limno$legacyid <-
     suppressWarnings(sapply(lakes_limno$legacyid, format_nonscientific))
 
-  secchi               <- load_lagos_txt(limno_path("secchi"),
-                                         sep = ",")
-  lagos_source_program <- load_lagos_txt(limno_path("sourceprogram"),
+  lagos_source_program <- load_lagos_txt(limno_path("source_program"),
                                          sep = ",")
 
   limno <- list(epi_nutr = epi_nutr,
                 lakes_limno = lakes_limno,
-                secchi = secchi,
-                # lagos.censor.epi = lagos.censor.epi,
                 lagos_source_program = lagos_source_program)
 
   # Importing Lagos Geo data ####

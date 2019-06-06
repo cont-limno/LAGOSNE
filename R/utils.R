@@ -111,6 +111,7 @@ stop_if_not_exists <- function(src_path) {
   }
 }
 
+#' @export
 lagos_path <- function() paste0(rappdirs::user_data_dir(appname = "LAGOSNE",
                 appauthor = "LAGOSNE"), .Platform$file.sep)
 

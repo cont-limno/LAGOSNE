@@ -19,12 +19,17 @@
 #' lagosne_compile("1.087.1",
 #'  limno_folder = "~/Downloads/LAGOS-NE-LIMNO-EXPORT",
 #'  geo_folder   = "~/Downloads/LAGOS-NE-GEO-EXPORT",
-#'  locus_folder = "~/Downloads/LAGOS-NE-LOCUS-EXPORT")
+#'  locus_folder = "~/Downloads/LAGOS-NE-LOCUS-EXPORT",
+#'  dest_folder = lagos_path())
 #' }
 #'
 lagosne_compile <- function(version,
                           limno_folder = NA, geo_folder = NA,
                           locus_folder = NA, dest_folder = NA){
+
+  if(is.na(dest_folder)){
+    stop("Set the dest_folder argument to a folder on your local machine. Recommended setting is lagos_path().")
+  }
 
   ingest <- lagos_ingest(version = version, limno_folder = limno_folder,
                          geo_folder = geo_folder, locus_folder = locus_folder)
