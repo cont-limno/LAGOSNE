@@ -1,3 +1,17 @@
+# LAGOSNE 1.3.0
+
+## MAJOR IMPROVEMENTS
+
+* Added a new published LAGOSNE dataset from Collins et al. 2017
+
+## MINOR IMPROVEMENTS
+
+* Added documentation seealso cross-reference links
+
+## BUG FIXES
+
+* Fixed truncation of lake legacyids due to scientific notation
+
 # LAGOSNE 1.2.0
 
 ## MAJOR IMPROVEMENTS
