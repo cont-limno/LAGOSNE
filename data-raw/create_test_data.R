@@ -1,3 +1,5 @@
+library(dplyr)
+
 # Create a testing dataset from compiled LAGOS database rds
 
 dt        <- LAGOSNE::lagosne_load()
