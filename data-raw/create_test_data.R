@@ -12,7 +12,7 @@ llids <- left_join(dplyr::select(dt$epi_nutr, lagoslakeid, chla),
   dplyr::filter(state %in% c("MA", "IA")) %>%
   dplyr::filter(!is.na(chla)) %>%
   group_by(state) %>%
-  dplyr::sample_n(1)
+  dplyr::filter(lagoslakeid %in% c(3201, 4510))
 
 dt_subset <- purrr::map(dt, function(x){
   if("lagoslakeid" %in% names(x)){
