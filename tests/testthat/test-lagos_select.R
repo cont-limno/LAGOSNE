@@ -117,7 +117,7 @@ test_that("lagos fails well", {
 
   expect_error(
     lagosne_select(categories = c("waterquality"), vars = dt),
-    "'vars' must be entered as a character strin"
+    "'vars' must be entered as a character string"
   )
 
 })
