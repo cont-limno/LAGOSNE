@@ -45,7 +45,7 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA,
   pb$tick(tokens = list(type = "limno data"))
   epi_nutr             <- load_lagos_txt(limno_path("epi_waterquality"),
                               sep = ",")
-  epi_nutr$sampledate  <- as.Date(strptime(epi_nutr$date,
+  epi_nutr$date  <- as.Date(strptime(epi_nutr$date,
                                            format = "%m/%d/%Y"))
 
   lakes_limno          <- load_lagos_txt(limno_path("lakeslimno"),
