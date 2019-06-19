@@ -111,6 +111,9 @@ stop_if_not_exists <- function(src_path) {
   }
 }
 
+#' lagos_path
+#'
+#' Return the cross-platform data path designated for LAGOSNE.
 #' @export
 lagos_path <- function() paste0(rappdirs::user_data_dir(appname = "LAGOSNE",
                 appauthor = "LAGOSNE"), .Platform$file.sep)
