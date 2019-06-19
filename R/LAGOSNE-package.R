@@ -363,9 +363,7 @@ NULL
 #'             \item toc: carbon, total organic (µg/l as C)
 #'             \item ton: nitrogen, total organic (µg/l as N)
 #'             \item tp: phosphorus, total (µg/l as P)
-#'             \item secchi: Secchi disk transparency (m). More secchi data
-#'             from additional lakes is available from the \link[LAGOSNE]{secchi}
-#'             table.
+#'             \item secchi: Secchi disk transparency (m).
 #'             \item *_qual: data flags (qualifiers) from the source program
 #'             for each water quality parameter (* = all water quality
 #'             parameters listed above). For example, "chla_qual" is the
