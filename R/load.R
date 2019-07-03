@@ -15,7 +15,11 @@ lagosne_load <- memoise::memoise(function(version = NULL,
                                           fpath = NA){
   if(is.null(version)){
     version <- lagosne_version()
-    message(paste0("Loading LAGOSNE version: ", version))
+    if(interactive()){
+      message(paste0("Loading LAGOSNE version: ", version))
+    }else{
+      warning(paste0("LAGOSNE version unspecified, loading version: ", version))
+    }
   }
 
   if(!is.na(fpath)){
