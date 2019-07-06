@@ -36,7 +36,7 @@
 #'               state = c("New Hampshire", "New York"))
 #' }
 
-lake_info <- memoise::memoise(function(lagoslakeid = NA, name = NA, state = NA,
+lake_info <- function(lagoslakeid = NA, name = NA, state = NA,
                                        dt = lagosne_load(), ...){
 
   if(class(dt) != "list"){
@@ -104,7 +104,7 @@ lake_info <- memoise::memoise(function(lagoslakeid = NA, name = NA, state = NA,
   do.call("rbind", apply(name_state, 1, function(x){
     lake_info_(dt = dt, name = x[1], state = x[2], llid = x[3], ...)
   }))
-})
+}
 
 lake_info_ <- function(dt, name, state, llid, ...){
 
