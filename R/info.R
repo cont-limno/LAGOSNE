@@ -55,7 +55,8 @@ lake_info <- function(lagoslakeid = NA, name = NA, state = NA,
 
   # create data.frame of lake and state names
   if(!all(is.na(lagoslakeid))){
-    name_state <- data.frame(lagoslakeid = lagoslakeid, stringsAsFactors = FALSE)
+    name_state <- data.frame(lagoslakeid = as.integer(lagoslakeid),
+                             stringsAsFactors = FALSE)
 
     suppressWarnings(
     name_state <- dplyr::left_join(
