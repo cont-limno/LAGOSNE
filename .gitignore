@@ -9,3 +9,4 @@ data/waterquality.rda
 lagos_r_package_meeting_notes
 inst/doc
 CRAN-RELEASE
+export_script/
