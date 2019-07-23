@@ -49,7 +49,7 @@ one time per version per machine. Each `LAGOSNE`
 has a unique version number. However, only the limno module has been
 dynamically updated. Therefore the `LAGOSNE` `R` package uses the limno
 module version number to check-out specific datasets. **The latest
-version of the `LAGOSNE` dataset is 1.087.1.**
+version of the `LAGOSNE` dataset is 1.087.3.**
 
 ``` r
 library(LAGOSNE)
@@ -86,8 +86,8 @@ names(dt)
     #> [25] "state.chag"           "state.conn"           "state.lulc"          
     #> [28] "buffer100m"           "buffer100m.lulc"      "buffer500m"          
     #> [31] "buffer500m.conn"      "buffer500m.lulc"      "lakes.geo"           
-    #> [34] "epi_nutr"             "lakes_limno"          "secchi"              
-    #> [37] "lagos_source_program" "locus"
+    #> [34] "epi_nutr"             "lakes_limno"          "lagos_source_program"
+    #> [37] "locus"
 
 #### Locate tables containing a variable
 
@@ -95,7 +95,7 @@ names(dt)
 query_lagos_names("secchi")
 ```
 
-    #> [1] "epi_nutr" "secchi"
+    #> [1] "epi_nutr"
 
 #### Preview a table
 
@@ -117,10 +117,10 @@ lake_info(name = "Pine Lake", state = "Iowa")
 # lake_info(lagoslakeid = 4389)
 ```
 
-    #>   lagoslakeid     nhdid      lagosname1 meandepth meandepthsource maxdepth
-    #> 1        4510 155845265 UPPER PINE LAKE      2.21    IA_CHEMISTRY     4.88
-    #>   maxdepthsource legacyid gnis_name  nhd_lat  nhd_long lake_area_ha
-    #> 1   IA_CHEMISTRY      122 Pine Lake 42.37833 -93.05967     36.07355
+    #>   lagoslakeid     nhdid  nhd_lat  nhd_long      lagosname1 meandepth
+    #> 1        4510 155845265 42.37833 -93.05967 UPPER PINE LAKE      2.21
+    #>   meandepthsource maxdepth maxdepthsource legacyid gnis_name lake_area_ha
+    #> 1    IA_CHEMISTRY     4.88   IA_CHEMISTRY      122 Pine Lake     36.07355
     #>   lake_perim_meters nhd_fcode nhd_ftype iws_zoneid hu4_zoneid hu6_zoneid
     #> 1          5671.001     39004       390  IWS_51040     HU4_57     HU6_78
     #>   hu8_zoneid hu12_zoneid edu_zoneid county_zoneid state_zoneid elevation_m
@@ -148,7 +148,6 @@ help.search("datasets", package = "LAGOSNE")
 | LAGOSNE | lg\_subset      | LAGOSNE subset                                                |
 | LAGOSNE | locus           | Metadata for all lakes \> 1ha                                 |
 | LAGOSNE | lulc            | Land Use Land Cover (LULC) Data Frames                        |
-| LAGOSNE | secchi          | Secchi (Water Clarity) Data                                   |
 | LAGOSNE | source          | LAGOSNE sources                                               |
 
 ### Select data
@@ -164,7 +163,7 @@ tutorial on generic `data.frame` subsetting.
 # specific variables
 head(lagosne_select(table = "epi_nutr", vars = c("tp", "tn"), dt = dt))
 #>       tp     tn
-#> 1  24.00     NA
+#> 1  29.00     NA
 #> 2 136.56 3521.7
 head(lagosne_select(table = "iws.lulc", vars = c("iws_nlcd2011_pct_95"), dt = dt))
 #>   iws_nlcd2011_pct_95
@@ -180,10 +179,10 @@ head(lagosne_select(table = "locus", categories = "id", dt = dt))
 #> 2     EDU_23    County_275     State_13
 head(lagosne_select(table = "epi_nutr", categories = "waterquality", dt = dt))
 #>    chla colora colort dkn doc nh4 no2 no2no3 srp tdn tdp tkn     tn toc
-#> 1 62.00     40     NA  NA  NA  NA  NA     NA  NA  NA  NA  NA     NA  NA
+#> 1 16.60     60     NA  NA  NA  NA  NA     NA  NA  NA  NA  NA     NA  NA
 #> 2 30.64     NA     NA  NA  NA  NA  NA 1619.6  NA  NA  NA  NA 3521.7  NA
 #>   ton     tp secchi
-#> 1  NA  24.00   2.10
+#> 1  NA  29.00   1.70
 #> 2  NA 136.56   0.65
 head(lagosne_select(table = "hu4.chag", categories = "deposition", dt = dt)[,1:4])
 #>   hu4_dep_no3_1985_min hu4_dep_no3_1985_max hu4_dep_no3_1985_mean
@@ -196,12 +195,12 @@ head(lagosne_select(table = "hu4.chag", categories = "deposition", dt = dt)[,1:4
 # mix of specific variables and categories
 head(lagosne_select(table = "epi_nutr", vars = "programname", 
                     categories = c("id", "waterquality"), dt = dt))
-#>    programname lagoslakeid  chla colora colort dkn doc nh4 no2 no2no3 srp
-#> 1  MA_DEP_CHEM        3201 62.00     40     NA  NA  NA  NA  NA     NA  NA
-#> 2 IA_CHEMISTRY        4510 30.64     NA     NA  NA  NA  NA  NA 1619.6  NA
-#>   tdn tdp tkn     tn toc ton     tp secchi eventida1087
-#> 1  NA  NA  NA     NA  NA  NA  24.00   2.10        70686
-#> 2  NA  NA  NA 3521.7  NA  NA 136.56   0.65       100949
+#>   programname lagoslakeid  chla colora colort dkn doc nh4 no2 no2no3 srp
+#> 1      MA_DEP        3201 16.60     60     NA  NA  NA  NA  NA     NA  NA
+#> 2     IA_CHEM        4510 30.64     NA     NA  NA  NA  NA  NA 1619.6  NA
+#>   tdn tdp tkn     tn toc ton     tp secchi eventida10873
+#> 1  NA  NA  NA     NA  NA  NA  29.00   1.70         45773
+#> 2  NA  NA  NA 3521.7  NA  NA 136.56   0.65         64904
 ```
 
 ## Published LAGOSNE subsets
