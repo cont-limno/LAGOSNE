@@ -21,6 +21,11 @@ Retrieve LAGOSNE flat files from EDI.
 }
 \examples{
 \dontrun{
-lagosne_get()
+# default to latest version
+lagosne_get(dest_folder = LAGOSNE:::lagos_path())
+
+# get specific version
+# - recommended to install corresponding package version
+# - See README
 }
 }

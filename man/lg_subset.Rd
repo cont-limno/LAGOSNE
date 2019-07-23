@@ -4,7 +4,7 @@
 \name{lg_subset}
 \alias{lg_subset}
 \title{LAGOSNE subset}
-\format{An object of class \code{list} of length 38.}
+\format{An object of class \code{list} of length 37.}
 \usage{
 lg_subset
 }
