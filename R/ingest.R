@@ -49,8 +49,8 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA,
   epi_nutr$sampledate  <- as.Date(strptime(epi_nutr$sampledate,
                                            format = "%m/%d/%Y"))
 
-  lakes_limno          <- load_lagos_txt(limno_path("lakeslimno"),
-                                       sep = ",")
+  lakes_limno          <- read.csv(limno_path("lakeslimno"),
+                                   stringsAsFactors = FALSE)
   lakes_limno$legacyid <-
     suppressWarnings(sapply(lakes_limno$legacyid, format_nonscientific))
 
