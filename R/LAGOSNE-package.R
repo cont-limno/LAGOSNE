@@ -12,7 +12,7 @@ NULL
 #' @export
 #' @examples
 #' lagosne_version()
-lagosne_version <- function(){"1.087.1"}
+lagosne_version <- function(){"1.087.3"}
 
 #' LAGOSNE Spatial Classifications Metadata
 #'
