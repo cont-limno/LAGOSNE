@@ -10,7 +10,12 @@
 #' @param version character LAGOSNE database version string
 #' @param overwrite logical overwrite existing data for the specified version
 #' @examples \dontrun{
-#' lagosne_get()
+#' # default to latest version
+#' lagosne_get(dest_folder = LAGOSNE:::lagos_path())
+#'
+#' # get specific version
+#' # - recommended to install corresponding package version
+#' # - See README
 #' }
 lagosne_get <- function(version = lagosne_version(), overwrite = FALSE,
                         dest_folder = tempdir()){
@@ -30,16 +35,19 @@ between R sessions. \n")
     edi_baseurl   <- "https://portal.edirepository.org/nis/dataviewer?packageid="
     pasta_baseurl <- "http://pasta.lternet.edu/package/data/eml/edi/"
 
+    message("Downloading the 'locus' module ...")
     locus_base_edi   <- paste0(edi_baseurl, c("edi.100.4"))
     locus_base_pasta <- paste0(pasta_baseurl, "100/4")
     locus_dir        <- get_lagos_module(locus_base_edi, locus_base_pasta,
                                          "locus", overwrite)
 
-    limno_base_edi   <- paste0(edi_baseurl, c("edi.101.2"))
-    limno_base_pasta <- paste0(pasta_baseurl, "101/2")
+    message("Downloading the 'limno' module ...")
+    limno_base_edi   <- paste0(edi_baseurl, c("edi.101.3"))
+    limno_base_pasta <- paste0(pasta_baseurl, "101/3")
     limno_dir        <- get_lagos_module(limno_base_edi, limno_base_pasta,
                                          "limno", overwrite)
 
+    message("Downloading the 'geo' module ...")
     geo_base_edi   <- paste0(edi_baseurl, c("edi.99.5"))
     geo_base_pasta <- paste0(pasta_baseurl, "99/5")
     geo_dir        <- get_lagos_module(geo_base_edi, geo_base_pasta,
