@@ -9,9 +9,10 @@
 #' @return data.frame
 load_lagos_txt <- function(file_name, sep = "\t", ...){
 
-  read.table(file_name, header = TRUE, sep = sep, quote = "\"",
+  suppressWarnings(
+    read.table(file_name, header = TRUE, sep = sep, quote = "\"",
              dec = ".", strip.white = TRUE, comment.char = "",
-             stringsAsFactors = FALSE)
+             stringsAsFactors = FALSE))
 }
 
 #' Summarize all LAGOSNE flat files
@@ -228,10 +229,13 @@ get_file_names <- function(url){
 }
 
 get_lagos_module <- function(edi_url, pasta_url, folder_name, overwrite){
+
   files <- suppressWarnings(paste0(edi_url, "&entityid=",
                             readLines(pasta_url)))
-
   file_names <- sapply(files, get_file_names)
+
+  files      <- files[!is.na(file_names)]
+  file_names <- file_names[!is.na(file_names)]
 
   local_dir   <- file.path(tempdir(), folder_name)
   dir.create(local_dir, showWarnings = FALSE)
@@ -239,7 +243,10 @@ get_lagos_module <- function(edi_url, pasta_url, folder_name, overwrite){
   file_paths <- file.path(local_dir, file_names)
 
   invisible(lapply(seq_len(length(files)),
-    function(i) get_if_not_exists(files[i], file_paths[i], overwrite)))
+    function(i){
+      message(paste0("Downloading ", file_names[i], " ..."))
+      get_if_not_exists(files[i], file_paths[i], overwrite)
+      }))
 
   local_dir
 }
