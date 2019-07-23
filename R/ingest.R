@@ -41,8 +41,9 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA,
                     fname, "101.csv")
                   }
 
-  # Importing Lagos limno data ####
+  # Importing LAGOS limno data ####
   pb$tick(tokens = list(type = "limno data"))
+
   epi_nutr             <- load_lagos_txt(limno_path("epi_waterquality"),
                               sep = ",")
   epi_nutr$sampledate  <- as.Date(strptime(epi_nutr$sampledate,
@@ -53,7 +54,7 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA,
   lakes_limno$legacyid <-
     suppressWarnings(sapply(lakes_limno$legacyid, format_nonscientific))
 
-  lagos_source_program <- load_lagos_txt(limno_path("source_program"),
+  lagos_source_program <- load_lagos_txt(limno_path("sourceprogram"),
                                          sep = ",")
 
   limno <- list(epi_nutr = epi_nutr,
