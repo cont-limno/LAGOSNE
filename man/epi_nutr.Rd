@@ -14,8 +14,9 @@
 \alias{censorcode}
 \alias{qualifiers}
 \alias{detectionlimit}
+\alias{secchi}
 \title{Epilimnion Water Quality Data}
-\format{A data frame with 289482 observations of 93 variables:
+\format{A data frame with observations of 93 variables:
 \itemize{
             \item eventida1087: unique combination of programid, lakeid, and
             date for each sampling event in LAGOSNE

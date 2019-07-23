@@ -327,7 +327,7 @@ NULL
 #' (surface waters).
 #' Each row is a sampling event, and lakes can have multiple sampling events.
 #'
-#' @format A data frame with 289482 observations of 93 variables:
+#' @format A data frame with observations of 93 variables:
 #' \itemize{
 #'             \item eventida1087: unique combination of programid, lakeid, and
 #'             date for each sampling event in LAGOSNE
@@ -417,7 +417,7 @@ NULL
 #' @docType data
 #' @keywords datasets
 #' @name epi_nutr
-#' @aliases nutrients chla colora doc phosphorus nitrogen chlorophyll waterquality censorcode qualifiers detectionlimit
+#' @aliases nutrients chla colora doc phosphorus nitrogen chlorophyll waterquality censorcode qualifiers detectionlimit secchi
 #' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
 NULL
 
@@ -426,7 +426,7 @@ NULL
 #' A dataset containing depth and names for lakes included in the limno
 #' module.
 #'
-#' @format A data frame with 141265 observations of 8 variables:
+#' @format A data frame with observations of 8 variables:
 #' \itemize{
 #'             \item lagoslakeid:	    unique lake identifier developed for
 #'             LAGOS-NE
@@ -868,7 +868,7 @@ NULL
 #'
 #' A dataset identifying the sources of limnological data in LAGOSNE.
 #'
-#' @format A data frame with 87 observations of 19 variables:
+#' @format A data frame with observations of 19 variables:
 #' \itemize{
 #'      \item programid: unique LAGOSNE program identifier
 #'      \item programname: name of the sampling/monitoring program that

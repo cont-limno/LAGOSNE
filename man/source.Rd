@@ -9,7 +9,7 @@
 \alias{lagos.source}
 \alias{lagos_source_program}
 \title{LAGOSNE sources}
-\format{A data frame with 87 observations of 19 variables:
+\format{A data frame with observations of 19 variables:
 \itemize{
      \item programid: unique LAGOSNE program identifier
      \item programname: name of the sampling/monitoring program that
