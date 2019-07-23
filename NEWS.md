@@ -1,16 +1,20 @@
-# LAGOSNE 1.3.0
+# LAGOSNE 2.0.0
 
 ## MAJOR IMPROVEMENTS
+
+* Added support for a new version of the LAGOSNE limno module `1.087.3`. A detailed breakdown of data changes are available from the [EDI data repository](https://portal.edirepository.org/nis/dataviewer?packageid=edi.101.3&entityid=d448003f31f07458f8ee59903dcc7da0)
 
 * Added a new published LAGOSNE dataset from Collins et al. 2017
 
 ## MINOR IMPROVEMENTS
 
-* Added documentation seealso cross-reference links
+* Added documentation `seealso` cross-reference links
 
 ## BUG FIXES
 
 * Fixed truncation of lake legacyids due to scientific notation
+
+* Fixed excessive memory usage from caching in `lake_info` (#103)
 
 # LAGOSNE 1.2.0
 
