@@ -12,7 +12,7 @@
 
 ## BUG FIXES
 
-* Fixed truncation of lake legacyids due to scientific notation
+* Fixed truncation of lake legacyids due to scientific notation (#96)
 
 * Fixed excessive memory usage from caching in `lake_info` (#103)
 
