@@ -17,7 +17,7 @@ Description: Client for programmatic access to the Lake
     Multi-scaled Geospatial and Temporal database <https://lagoslakes.org>, with functions
     for accessing lake water quality and ecological context data for the US.
 Depends:
-    R (>= 3.3)
+    R (>= 3.5.0)
 Imports: dplyr (>= 0.7.0), 
     rappdirs (>= 0.3.1),
     lazyeval (>= 0.2),
