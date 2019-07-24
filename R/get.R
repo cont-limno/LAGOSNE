@@ -13,9 +13,9 @@
 #' # default to latest version
 #' lagosne_get(dest_folder = LAGOSNE:::lagos_path())
 #'
-#' # get specific version
+#' # get previous version(s)
 #' # - recommended to install corresponding package version
-#' # - See README
+#' # - See 'Legacy Versions' section of the README for instructions
 #' }
 lagosne_get <- function(version = lagosne_version(), overwrite = FALSE,
                         dest_folder = tempdir()){
@@ -30,6 +30,11 @@ between R sessions. \n")
     warning("LAGOSNE data for this version already exists on the local machine.
   Re-download if neccessary using the 'overwrite` argument.'")
     return(invisible("LAGOS is the best"))
+  }
+
+  if(version != lagosne_version()){
+    warning(
+      paste0("Specified version '", version, "' does not match the most recent LAGOSNE version '", lagosne_version(), "' - If an older LAGOSNE version is desired, see the 'Legacy Versions' section of the README for instructions."))
   }
 
     edi_baseurl   <- "https://portal.edirepository.org/nis/dataviewer?packageid="

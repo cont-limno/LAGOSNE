@@ -24,8 +24,8 @@ Retrieve LAGOSNE flat files from EDI.
 # default to latest version
 lagosne_get(dest_folder = LAGOSNE:::lagos_path())
 
-# get specific version
+# get previous version(s)
 # - recommended to install corresponding package version
-# - See README
+# - See 'Legacy Versions' section of the README for instructions
 }
 }
