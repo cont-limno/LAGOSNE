@@ -10,3 +10,4 @@ lagos_r_package_meeting_notes
 inst/doc
 CRAN-RELEASE
 export_script/
+tests/testthat/test-lagos_ingest.R
