@@ -898,22 +898,3 @@ NULL
 #' @aliases programs lagos.source.programs source.programs lagos.source lagos_source_program
 #' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
 NULL
-
-#' LAGOSNE subset
-#'
-#' A dataset with the first two rows of many of the LAGOSNE tables
-#'
-#' @docType data
-#' @keywords datasets
-#' @name lg_subset
-#' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
-"lg_subset"
-
-#' LAGOSNE extent
-#'
-#' A simple features polygons representing the geographical extent of the LAGOSNE dataset
-#' @docType data
-#' @keywords datasets
-#' @name lg_extent
-#' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
-"lg_extent"
