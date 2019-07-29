@@ -2,7 +2,7 @@
 
 ## BUG FIXES
 
-* Fixed critical error in date conversion for `epi_nur` table.
+* Fixed critical error in date conversion for `epi_nutr` table.
 
 # LAGOSNE 2.0.0
 
