@@ -47,7 +47,7 @@ lagos_ingest <- function(version, limno_folder = NA, geo_folder = NA,
   epi_nutr             <- load_lagos_txt(limno_path("epi_waterquality"),
                               sep = ",")
   epi_nutr$sampledate  <- as.Date(strptime(epi_nutr$sampledate,
-                                           format = "%m/%d/%Y"))
+                                           format = "%Y-%m-%d"))
 
   lakes_limno          <- read.csv(limno_path("lakeslimno"),
                                    stringsAsFactors = FALSE)
