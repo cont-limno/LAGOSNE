@@ -1,3 +1,9 @@
+# LAGOSNE 2.0.1
+
+## BUG FIXES
+
+* Fixed critical error in date conversion for `epi_nur` table.
+
 # LAGOSNE 2.0.0
 
 ## MAJOR IMPROVEMENTS
