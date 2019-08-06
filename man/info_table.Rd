@@ -14,7 +14,7 @@ Generate table summary statistics for all LAGOSNE data frames.
 }
 \examples{
 \dontrun{
-lg <- lagosne_load("1.087.1")
+lg <- lagosne_load("1.087.3")
 LAGOSNE:::info_table(lg)
 }
 }

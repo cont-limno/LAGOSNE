@@ -436,10 +436,10 @@ NULL
 #'             the authoritative lake name for LAGOSNE
 #'             \item meandepth:	      mean lake depth (meters)
 #'             \item meandepthsource:	source of mean depth data, see
-#'             "lagos.source.program" for definitions
+#'             "lagos_source_program" for definitions
 #'             \item maxdepth:	      maximum lake depth (meters)
 #'             \item maxdepthsource:	source of maximum depth data, see
-#'             "lagos.source.program" for definitions
+#'             "lagos_source_program" for definitions
 #'             \item legacyid:	      unique lake identifier from the original
 #'             water quality source dataset, this is not standardized and each
 #'             source dataset has its own system
@@ -894,7 +894,7 @@ NULL
 #'      }
 #' @docType data
 #' @keywords datasets
-#' @name source
+#' @name lagos_source_program
 #' @aliases programs lagos.source.programs source.programs lagos.source lagos_source_program
 #' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
 NULL
