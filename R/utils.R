@@ -22,19 +22,19 @@ load_lagos_txt <- function(file_name, sep = "\t", ...){
 #' @author Masrour Farzan
 #' @param lg list output of lagosne_load
 #' @examples \dontrun{
-#' lg <- lagosne_load("1.087.1")
+#' lg <- lagosne_load("1.087.3")
 #' LAGOSNE:::info_table(lg)
 #' }
 info_table <- function(lg){
 
-  limno_names <- c("epi_nutr", "lakes_limno", "secchi")
-  geo_names   <- !(names(lg) %in% c(limno_names, "locus"))
+  limno_names <- c("epi_nutr", "lakes_limno")
+  geo_names   <- !(names(lg) %in% c(limno_names, "locus", "lagos_source_program"))
 
   limno <- lg[limno_names]
   geo   <- lg[geo_names]
 
-  name <- c(names(geo), names(limno))
-  type <- c(rep("geo", length(geo)), rep("limno", length(limno)))
+  name <- c(names(geo), names(limno), "lagos_source_program")
+  type <- c(rep("geo", length(geo)), rep("limno", length(limno)), "source")
   identifier <- c("county_zoneid","county_zoneid","county_zoneid",
                   "county_zoneid", "edu_zoneid", "edu_zoneid", "edu_zoneid",
                   "edu_zoneid", "hu4_zoneid", "hu4_zoneid", "hu4_zoneid",
@@ -44,49 +44,57 @@ info_table <- function(lg){
                   "state_zoneid", "state_zoneid", "state_zoneid",
                   "state_zoneid", "lagoslakeid", "lagoslakeid",
                   "lagoslakeid", "lagoslakeid", "lagoslakeid",
-                  "hub", "lagoslakeid, eventida10400, programname", "hub",
-                  "lagoslakeid, eventidc10400, programname")
-
-  if("lagos.source.program" %in% name){
-    identifier <- c(identifier, "programname, sourceid")
-  }else{
-    identifier <- c(identifier, "sourceid","programname, sourceid")
-  }
+                  "lagoslakeid", "lagoslakeid, eventida10873, programname",
+                  "lagoslakeid", "programname, sourceid")
 
   # number of variables of each data.frame in the list
   variables <- rep(0, length(name))
 
   for(i in seq_along(name)){
     if(type[i] == "geo"){
-      j <- which(names(geo) == name[i])
+      j            <- which(names(geo) == name[i])
       variables[i] <- ncol(geo[[j]])
     }else{
       j <- which(names(limno) == name[i])
-      variables[i] <- ncol(limno[[j]])
+      if(length(j) != 0){
+        variables[i] <- ncol(limno[[j]])
+      }else{
+        variables[i] <- ncol(lg[[
+          names(lg)[which(names(lg) == name[i])]]])
+      }
     }
   }
 
-
   # Number of observation of each dataframe in the table
   observations <- rep(0, length(name))
+
   for(i in seq_along(name)){
     if(type[i] == "geo"){
       j <- which(names(geo) == name[i])
       observations[i] <- nrow(geo[[j]])
     }else{
       j <- which(names(limno) == name[i])
-      observations[i] <- nrow(limno[[j]])
+
+      if(length(j) != 0){
+        observations[i] <- nrow(limno[[j]])
+      }else{
+        observations[i] <- nrow(lg[[
+          names(lg)[which(names(lg) == name[i])]]])
+      }
+
     }
   }
-  group <- c(1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3,
-             4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6,
-             7, 7, 7, 7, 10, 10, 10, 10, 10, 0, 11,
-             0, 11)
-  if("lagos.source.program" %in% name){
-    group <- c(group, 13)
-  }else{
-    group <- c(group, 13, 12)
-  }
+
+  group <- c(1, 1, 1, 1,
+             2, 2, 2, 2,
+             3, 3, 3, 3,
+             4, 4, 4, 4,
+             5, 5, 5, 5,
+             6, 6, 6,
+             7, 7, 7, 7,
+             10, 10, 10, 10, 10,
+             11, 11, 11,
+             13)
 
   data.frame(name= I(name),
     type= I(type),
