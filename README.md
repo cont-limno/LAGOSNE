@@ -136,19 +136,17 @@ lake_info(name = "Pine Lake", state = "Iowa")
 help.search("datasets", package = "LAGOSNE")
 ```
 
-| Package | Topic           | Title                                                         |
-| :------ | :-------------- | :------------------------------------------------------------ |
-| LAGOSNE | chag            | Climate, Hydrology, Atmospheric, and Geologic (CHAG) Datasets |
-| LAGOSNE | classifications | LAGOSNE Spatial Classifications Metadata                      |
-| LAGOSNE | conn            | Connectivity Datasets                                         |
-| LAGOSNE | epi\_nutr       | Epilimnion Water Quality Data                                 |
-| LAGOSNE | lagoslakes      | Lake Geospatial Metadata                                      |
-| LAGOSNE | lakes\_limno    | Metadata for Lakes with Water Quality                         |
-| LAGOSNE | lg\_extent      | LAGOSNE extent                                                |
-| LAGOSNE | lg\_subset      | LAGOSNE subset                                                |
-| LAGOSNE | locus           | Metadata for all lakes \> 1ha                                 |
-| LAGOSNE | lulc            | Land Use Land Cover (LULC) Data Frames                        |
-| LAGOSNE | source          | LAGOSNE sources                                               |
+| Package | Topic                  | Title                                                         |
+| :------ | :--------------------- | :------------------------------------------------------------ |
+| LAGOSNE | chag                   | Climate, Hydrology, Atmospheric, and Geologic (CHAG) Datasets |
+| LAGOSNE | classifications        | LAGOSNE Spatial Classifications Metadata                      |
+| LAGOSNE | conn                   | Connectivity Datasets                                         |
+| LAGOSNE | epi\_nutr              | Epilimnion Water Quality Data                                 |
+| LAGOSNE | lagos\_source\_program | LAGOSNE sources                                               |
+| LAGOSNE | lagoslakes             | Lake Geospatial Metadata                                      |
+| LAGOSNE | lakes\_limno           | Metadata for Lakes with Water Quality                         |
+| LAGOSNE | locus                  | Metadata for all lakes \> 1ha                                 |
+| LAGOSNE | lulc                   | Land Use Land Cover (LULC) Data Frames                        |
 
 ### Select data
 
@@ -250,19 +248,19 @@ Temporal Ecology Database from Disparate Data Sources: Fostering Open
 Science and Data Reuse.” Gigascience 4 (1).
 <https://dx.doi.org/10.1186/s13742-015-0067-4>.
 
-Stachelek, J, and SK Oliver. 2017. LAGOSNE: Interface to the Lake
-Multi-Scaled Geospatial and Temporal Database.
-<https://github.com/cont-limno/LAGOSNE>.
+Stachelek J., Oliver S. 2017. LAGOSNE: Interface to the Lake
+Multi-scaled Geospatial and Temporal Database. R package version 1.1.0.
+<https://cran.r-project.org/package=LAGOSNE>
 
 Soranno P, Cheruvelil K. 2017. LAGOS-NE-LOCUS v1.01: a module for
 LAGOS-NE, a multi-scaled geospatial and temporal database of lake
 ecological context and water quality for thousands of U.S. Lakes:
 1925–2013. Environmental Data Initiative. <http://doi.org/ckpj>
 
-Soranno P, Cheruvelil K. 2017. LAGOS-NE-LIMNO v1.087.1: a module for
+Soranno P, Cheruvelil K. 2019. LAGOS-NE-LIMNO v1.087.3: a module for
 LAGOS-NE, a multi-scaled geospatial and temporal database of lake
 ecological context and water quality for thousands of U.S. Lakes:
-1925–2013. Environmental Data Initiative. <http://doi.org/ckpk>.
+1925–2013. Environmental Data Initiative. <http://doi.org/c96q>.
 
 Soranno P, Cheruvelil K. 2017. LAGOS-NE-GEO v1.05: a module for
 LAGOS-NE, a multi-scaled geospatial and temporal database of lake
