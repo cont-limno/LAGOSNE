@@ -16,6 +16,6 @@ Load LAGOSNE data from local system files
 }
 \examples{
 \dontrun{
-dt  <- lagosne_load("1.087.1")
+dt  <- lagosne_load("1.087.3")
 }
 }

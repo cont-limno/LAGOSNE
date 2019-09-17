@@ -181,7 +181,7 @@ query_lagos_names <- function(grep_string, scale = NA, dt = lagosne_load()){
 #' @param table_name character
 #' @param grep_string character
 #' @examples \dontrun{
-#' dt <- lagosne_load("1.087.1")
+#' dt <- lagosne_load("1.087.3")
 #' query_column_names(dt, "hu4.chag", "_dep_")
 #' query_column_names(dt, "county.chag", "baseflowindex")
 #' }
@@ -198,7 +198,7 @@ query_column_names <- function(dt, table_name, grep_string){
 #' @param table_name character
 #' @param keyword_string character
 #' @examples \dontrun{
-#' dt <- lagosne_load("1.087.1")
+#' dt <- lagosne_load("1.087.3")
 #' query_column_keywords(dt, "hu12.chag", "hydrology")
 #' }
 query_column_keywords <- function(dt, table_name, keyword_string){

@@ -24,7 +24,7 @@
 #' @export
 #' @importFrom stats setNames
 #' @examples \dontrun{
-#' dt <- lagos_load("1.087.1")
+#' dt <- lagosne_load("1.087.3")
 #'
 #' # specific variables
 #' head(lagosne_select(table = "epi_nutr", vars = c("tp", "tn")))

@@ -18,7 +18,7 @@ Return a vector of column names, given a table name and keyword string.
 }
 \examples{
 \dontrun{
-dt <- lagosne_load("1.087.1")
+dt <- lagosne_load("1.087.3")
 query_column_keywords(dt, "hu12.chag", "hydrology")
 }
 }
