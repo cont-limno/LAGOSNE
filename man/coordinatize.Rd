@@ -22,7 +22,7 @@ This function turns a data.frame into a spatial object using a reasonable
 }
 \examples{
 \dontrun{
-dt <- lagos_load("1.087.1")
+dt <- lagosne_load("1.087.3")
 res <- coordinatize(dt$locus)
 
 library(maps)

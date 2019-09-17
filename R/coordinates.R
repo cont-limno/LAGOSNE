@@ -11,7 +11,7 @@
 #' @importFrom sf st_as_sf
 #' @export
 #' @examples \dontrun{
-#' dt <- lagos_load("1.087.1")
+#' dt <- lagosne_load("1.087.3")
 #' res <- coordinatize(dt$locus)
 #'
 #' library(maps)
@@ -21,6 +21,7 @@
 coordinatize <- function(dt, latname = "nhd_lat", longname = "nhd_long",
                          crs = 4326){
 
-  dt <- sf::st_as_sf(dt, coords = c(longname, latname), crs = crs)
+  dt   <- sf::st_as_sf(dt, coords = c(longname, latname), crs = crs,
+                       remove = FALSE)
   dt
 }
