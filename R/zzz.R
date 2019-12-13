@@ -1,6 +1,6 @@
 # zzz.R is the conventional location to define .onAttach()
 
-.onAttach <- function(lib, pkg){
+.onAttach <- function(libname, pkgname){
 
   pkg.info <- drop(read.dcf(file = system.file("DESCRIPTION",
                 package = "LAGOSNE"), fields = c("Title", "Version", "Date")))
@@ -15,3 +15,7 @@
 }
 
 utils::globalVariables(c('lagoslakeid'))
+
+.onLoad <- function(libname, pkgname) {
+  lagosne_load <<- memoise::memoise(lagosne_load)
+}

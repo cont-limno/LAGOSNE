@@ -11,8 +11,7 @@
 #' @examples \dontrun{
 #' dt  <- lagosne_load("1.087.3")
 #' }
-lagosne_load <- memoise::memoise(function(version = NULL,
-                                          fpath = NA){
+lagosne_load <- function(version = NULL, fpath = NA){
   if(is.null(version)){
     version <- lagosne_version()
     if(interactive()){
@@ -29,7 +28,7 @@ lagosne_load <- memoise::memoise(function(version = NULL,
     stop_if_not_exists(rds_path)
     readRDS(rds_path)
   }
-})
+}
 
 #' Load depth data from Oliver et al. 2015.
 #'
