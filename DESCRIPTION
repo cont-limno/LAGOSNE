@@ -30,7 +30,8 @@ Imports: dplyr (>= 0.7.0),
     tidyr,
     memoise,
     rlang,
-    progress
+    progress,
+    qs
 Suggests: testthat,
     knitr,
     rmarkdown,

@@ -7,6 +7,7 @@
 #' @export
 #' @importFrom rappdirs user_data_dir
 #' @importFrom memoise memoise
+#' @importFrom qs qread
 #'
 #' @examples \dontrun{
 #' dt  <- lagosne_load("1.087.3")
@@ -22,11 +23,11 @@ lagosne_load <- function(version = NULL, fpath = NA){
   }
 
   if(!is.na(fpath)){
-      readRDS(fpath)
+      qs::qread(fpath)
   }else{
-    rds_path <- paste0(lagos_path(), "data_", version, ".rds")
-    stop_if_not_exists(rds_path)
-    readRDS(rds_path)
+    qs_path <- paste0(lagos_path(), "data_", version, ".qs")
+    stop_if_not_exists(qs_path)
+    qs::qread(qs_path)
   }
 }
 
