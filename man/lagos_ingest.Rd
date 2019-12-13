@@ -4,8 +4,7 @@
 \alias{lagos_ingest}
 \title{Ingest LAGOSNE flat files}
 \usage{
-lagos_ingest(version, limno_folder = NA, geo_folder = NA,
-  locus_folder = NA)
+lagos_ingest(version, limno_folder = NA, geo_folder = NA, locus_folder = NA)
 }
 \arguments{
 \item{version}{character LAGOSNE database version string}

@@ -4,8 +4,11 @@
 \alias{lagosne_get}
 \title{Retrieve LAGOSNE flat files}
 \usage{
-lagosne_get(version = lagosne_version(), overwrite = FALSE,
-  dest_folder = tempdir())
+lagosne_get(
+  version = lagosne_version(),
+  overwrite = FALSE,
+  dest_folder = tempdir()
+)
 }
 \arguments{
 \item{version}{character LAGOSNE database version string}

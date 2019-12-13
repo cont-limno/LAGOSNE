@@ -4,8 +4,7 @@
 \alias{lake_info}
 \title{Get a summary of lake attribute information}
 \usage{
-lake_info(lagoslakeid = NA, name = NA, state = NA,
-  dt = lagosne_load(), ...)
+lake_info(lagoslakeid = NA, name = NA, state = NA, dt = lagosne_load(), ...)
 }
 \arguments{
 \item{lagoslakeid}{numeric lake id}

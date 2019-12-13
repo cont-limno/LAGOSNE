@@ -4,8 +4,12 @@
 \alias{lagosne_select}
 \title{Select and filter LAGOSNE data}
 \usage{
-lagosne_select(table = NULL, vars = NULL, categories = NULL,
-  dt = lagosne_load("1.087.1"))
+lagosne_select(
+  table = NULL,
+  vars = NULL,
+  categories = NULL,
+  dt = lagosne_load("1.087.1")
+)
 }
 \arguments{
 \item{table}{character name of a dt table}

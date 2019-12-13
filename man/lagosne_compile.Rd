@@ -4,8 +4,13 @@
 \alias{lagosne_compile}
 \title{Compile LAGOSNE data}
 \usage{
-lagosne_compile(version, limno_folder = NA, geo_folder = NA,
-  locus_folder = NA, dest_folder = NA)
+lagosne_compile(
+  version,
+  limno_folder = NA,
+  geo_folder = NA,
+  locus_folder = NA,
+  dest_folder = NA
+)
 }
 \arguments{
 \item{version}{character LAGOSNE database version string}

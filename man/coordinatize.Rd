@@ -4,8 +4,7 @@
 \alias{coordinatize}
 \title{Convert a LAGOSNE flat file into a spatial object}
 \usage{
-coordinatize(dt, latname = "nhd_lat", longname = "nhd_long",
-  crs = 4326)
+coordinatize(dt, latname = "nhd_lat", longname = "nhd_long", crs = 4326)
 }
 \arguments{
 \item{dt}{data.frame}
