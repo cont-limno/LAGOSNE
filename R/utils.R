@@ -120,9 +120,8 @@ stop_if_not_exists <- function(src_path) {
   }
 }
 
-#' lagos_path
-#'
 #' Return the cross-platform data path designated for LAGOSNE.
+#'
 #' @export
 lagos_path <- function() paste0(rappdirs::user_data_dir(appname = "LAGOSNE",
                 appauthor = "LAGOSNE"), .Platform$file.sep)
@@ -173,7 +172,7 @@ query_lagos_names <- function(grep_string, scale = NA, dt = lagosne_load()){
   }
 }
 
-#' Query columnnames
+#' Query column names
 #'
 #' Return a vector of column names, given a table name and grep query string.
 #'

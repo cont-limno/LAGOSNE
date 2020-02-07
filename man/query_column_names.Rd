@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{query_column_names}
 \alias{query_column_names}
-\title{Query columnnames}
+\title{Query column names}
 \usage{
 query_column_names(dt, table_name, grep_string)
 }

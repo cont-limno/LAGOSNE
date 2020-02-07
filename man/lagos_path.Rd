@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{lagos_path}
 \alias{lagos_path}
-\title{lagos_path}
+\title{Return the cross-platform data path designated for LAGOSNE.}
 \usage{
 lagos_path()
 }
