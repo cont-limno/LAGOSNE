@@ -2,7 +2,7 @@ library(concaveman)
 library(LAGOSNE)
 library(sf)
 
-dt <- LAGOSNE::lagosne_load("1.087.1")
+dt <- LAGOSNE::lagosne_load(lagosne_version())
 dt <- coordinatize(dt$locus)
 
 lg_extent <- concaveman(
