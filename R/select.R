@@ -2,7 +2,7 @@
 #'
 #' Select and filter LAGOSNE data with keyword helpers.
 #'
-#' @param dt data.frame
+#' @param dt data.frame of local copy of LAGOSNE data.  Can be loaded with \code{\link{lagosne_load}} and will use version as specified in \code{\link{lagosne_version}}.
 #' @param table character name of a dt table
 #' @param vars character vector of specific column names to select from table
 #' @param categories what type of variables should be kept. Note not all scale-category options are available. Variable categories include:
@@ -41,7 +41,7 @@
 #' }
 
 lagosne_select <- function(table = NULL, vars = NULL, categories = NULL,
-                         dt = lagosne_load("1.087.1")){
+                         dt = lagosne_load(lagosne_version())){
 
   # sanitize inputs ####
   is_not_char_args <- c(!(is.null(table) | is.character(table)),

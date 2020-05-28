@@ -8,7 +8,7 @@ lagosne_select(
   table = NULL,
   vars = NULL,
   categories = NULL,
-  dt = lagosne_load("1.087.1")
+  dt = lagosne_load(lagosne_version())
 )
 }
 \arguments{
@@ -33,7 +33,7 @@ lagosne_select(
     \item "streams" - all stream/river connectivity metrics from the .conn tables
 }}
 
-\item{dt}{data.frame}
+\item{dt}{data.frame of local copy of LAGOSNE data.  Can be loaded with \code{\link{lagosne_load}} and will use version as specified in \code{\link{lagosne_version}}.}
 }
 \description{
 Select and filter LAGOSNE data with keyword helpers.
