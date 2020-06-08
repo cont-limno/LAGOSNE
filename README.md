@@ -33,7 +33,7 @@ install.packages("LAGOSNE")
 
 # install development version from Github
 # install devtools if not found - install.packages("devtools")
-# devtools::install_github("cont-limno/LAGOSNE", update_dependencies = TRUE)
+# devtools::install_github("cont-limno/LAGOSNE", dependencies = TRUE)
 ```
 
 ### Data
@@ -136,17 +136,17 @@ lake_info(name = "Pine Lake", state = "Iowa")
 help.search("datasets", package = "LAGOSNE")
 ```
 
-| Package | Topic                  | Title                                                         |
-| :------ | :--------------------- | :------------------------------------------------------------ |
-| LAGOSNE | chag                   | Climate, Hydrology, Atmospheric, and Geologic (CHAG) Datasets |
-| LAGOSNE | classifications        | LAGOSNE Spatial Classifications Metadata                      |
-| LAGOSNE | conn                   | Connectivity Datasets                                         |
-| LAGOSNE | epi\_nutr              | Epilimnion Water Quality Data                                 |
-| LAGOSNE | lagos\_source\_program | LAGOSNE sources                                               |
-| LAGOSNE | lagoslakes             | Lake Geospatial Metadata                                      |
-| LAGOSNE | lakes\_limno           | Metadata for Lakes with Water Quality                         |
-| LAGOSNE | locus                  | Metadata for all lakes \> 1ha                                 |
-| LAGOSNE | lulc                   | Land Use Land Cover (LULC) Data Frames                        |
+| Package | Topic           | Title                                                         |
+| :------ | :-------------- | :------------------------------------------------------------ |
+| LAGOSNE | chag            | Climate, Hydrology, Atmospheric, and Geologic (CHAG) Datasets |
+| LAGOSNE | classifications | LAGOSNE Spatial Classifications Metadata                      |
+| LAGOSNE | conn            | Connectivity Datasets                                         |
+| LAGOSNE | epi\_nutr       | Epilimnion Water Quality Data                                 |
+| LAGOSNE | lagoslakes      | Lake Geospatial Metadata                                      |
+| LAGOSNE | lakes\_limno    | Metadata for Lakes with Water Quality                         |
+| LAGOSNE | locus           | Metadata for all lakes \> 1ha                                 |
+| LAGOSNE | lulc            | Land Use Land Cover (LULC) Data Frames                        |
+| LAGOSNE | source          | LAGOSNE sources                                               |
 
 ### Select data
 
@@ -176,12 +176,12 @@ head(lagosne_select(table = "locus", categories = "id", dt = dt))
 #> 1     EDU_27    County_331      State_2
 #> 2     EDU_23    County_275     State_13
 head(lagosne_select(table = "epi_nutr", categories = "waterquality", dt = dt))
-#>    chla colora colort dkn doc nh4 no2 no2no3 srp tdn tdp tkn     tn toc
-#> 1 16.60     60     NA  NA  NA  NA  NA     NA  NA  NA  NA  NA     NA  NA
-#> 2 30.64     NA     NA  NA  NA  NA  NA 1619.6  NA  NA  NA  NA 3521.7  NA
-#>   ton     tp secchi
-#> 1  NA  29.00   1.70
-#> 2  NA 136.56   0.65
+#>    chla colora colort dkn doc nh4 no2 no2no3 srp tdn tdp tkn     tn toc ton
+#> 1 16.60     60     NA  NA  NA  NA  NA     NA  NA  NA  NA  NA     NA  NA  NA
+#> 2 30.64     NA     NA  NA  NA  NA  NA 1619.6  NA  NA  NA  NA 3521.7  NA  NA
+#>       tp secchi
+#> 1  29.00   1.70
+#> 2 136.56   0.65
 head(lagosne_select(table = "hu4.chag", categories = "deposition", dt = dt)[,1:4])
 #>   hu4_dep_no3_1985_min hu4_dep_no3_1985_max hu4_dep_no3_1985_mean
 #> 1               7.2171              10.0448                7.9366
@@ -193,12 +193,12 @@ head(lagosne_select(table = "hu4.chag", categories = "deposition", dt = dt)[,1:4
 # mix of specific variables and categories
 head(lagosne_select(table = "epi_nutr", vars = "programname", 
                     categories = c("id", "waterquality"), dt = dt))
-#>   programname lagoslakeid  chla colora colort dkn doc nh4 no2 no2no3 srp
-#> 1      MA_DEP        3201 16.60     60     NA  NA  NA  NA  NA     NA  NA
-#> 2     IA_CHEM        4510 30.64     NA     NA  NA  NA  NA  NA 1619.6  NA
-#>   tdn tdp tkn     tn toc ton     tp secchi eventida10873
-#> 1  NA  NA  NA     NA  NA  NA  29.00   1.70         45773
-#> 2  NA  NA  NA 3521.7  NA  NA 136.56   0.65         64904
+#>   programname lagoslakeid  chla colora colort dkn doc nh4 no2 no2no3 srp tdn
+#> 1      MA_DEP        3201 16.60     60     NA  NA  NA  NA  NA     NA  NA  NA
+#> 2     IA_CHEM        4510 30.64     NA     NA  NA  NA  NA  NA 1619.6  NA  NA
+#>   tdp tkn     tn toc ton     tp secchi eventida10873
+#> 1  NA  NA     NA  NA  NA  29.00   1.70         45773
+#> 2  NA  NA 3521.7  NA  NA 136.56   0.65         64904
 ```
 
 ## Published LAGOSNE subsets

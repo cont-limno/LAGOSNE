@@ -28,7 +28,7 @@ install.packages("LAGOSNE")
 
 # install development version from Github
 # install devtools if not found - install.packages("devtools")
-# devtools::install_github("cont-limno/LAGOSNE", update_dependencies = TRUE)
+# devtools::install_github("cont-limno/LAGOSNE", dependencies = TRUE)
 ```
  
 ### Data
@@ -86,7 +86,9 @@ lake_info(name = "Pine Lake", state = "Iowa")
 ```
 
 ```{r lake_info_cached, echo = FALSE}
-lake_info(name = "Pine Lake", state = "Iowa", dt = dt)
+suppressWarnings(
+  lake_info(name = "Pine Lake", state = "Iowa", dt = dt)
+  )
 ```
 
 #### Read table metadata
