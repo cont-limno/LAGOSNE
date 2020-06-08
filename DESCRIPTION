@@ -1,6 +1,6 @@
 Package: LAGOSNE
 Title: Interface to the Lake Multi-Scaled Geospatial and Temporal Database
-Version: 2.0.1
+Version: 2.0.2
 Authors@R: c(
     person("Joseph", "Stachelek", 
     email = "stachel2@msu.edu", 
@@ -42,7 +42,7 @@ Suggests: testthat,
 License: GPL
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.0
 VignetteBuilder: R.rsp,
     knitr
 Language: en-US
