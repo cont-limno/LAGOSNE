@@ -10,6 +10,12 @@ Status](https://travis-ci.org/cont-limno/LAGOSNE.svg?branch=master)](https://tra
 [![CRAN RStudio mirror
 downloads](http://cranlogs.r-pkg.org/badges/LAGOSNE)](https://cran.r-project.org/package=LAGOSNE)
 
+[![NSF-1065786](https://img.shields.io/badge/NSF-1065786-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1065786)
+[![NSF-1638679](https://img.shields.io/badge/NSF-1638679-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1638679)
+[![NSF-1065649](https://img.shields.io/badge/NSF-1065649-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1065649)
+[![NSF-1065818](https://img.shields.io/badge/NSF-1065818-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1065818)
+[![NSF-1638554](https://img.shields.io/badge/NSF-1638554-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1638554)
+
 # LAGOSNE <img src="man/figures/logo.png" align="right" height=140/>
 
 The `LAGOSNE` package provides an R interface to download LAGOS-NE data,
@@ -136,17 +142,17 @@ lake_info(name = "Pine Lake", state = "Iowa")
 help.search("datasets", package = "LAGOSNE")
 ```
 
-| Package | Topic           | Title                                                         |
-| :------ | :-------------- | :------------------------------------------------------------ |
-| LAGOSNE | chag            | Climate, Hydrology, Atmospheric, and Geologic (CHAG) Datasets |
-| LAGOSNE | classifications | LAGOSNE Spatial Classifications Metadata                      |
-| LAGOSNE | conn            | Connectivity Datasets                                         |
-| LAGOSNE | epi\_nutr       | Epilimnion Water Quality Data                                 |
-| LAGOSNE | lagoslakes      | Lake Geospatial Metadata                                      |
-| LAGOSNE | lakes\_limno    | Metadata for Lakes with Water Quality                         |
-| LAGOSNE | locus           | Metadata for all lakes \> 1ha                                 |
-| LAGOSNE | lulc            | Land Use Land Cover (LULC) Data Frames                        |
-| LAGOSNE | source          | LAGOSNE sources                                               |
+| Package | Topic                  | Title                                                         |
+| :------ | :--------------------- | :------------------------------------------------------------ |
+| LAGOSNE | chag                   | Climate, Hydrology, Atmospheric, and Geologic (CHAG) Datasets |
+| LAGOSNE | classifications        | LAGOSNE Spatial Classifications Metadata                      |
+| LAGOSNE | conn                   | Connectivity Datasets                                         |
+| LAGOSNE | epi\_nutr              | Epilimnion Water Quality Data                                 |
+| LAGOSNE | lagos\_source\_program | LAGOSNE sources                                               |
+| LAGOSNE | lagoslakes             | Lake Geospatial Metadata                                      |
+| LAGOSNE | lakes\_limno           | Metadata for Lakes with Water Quality                         |
+| LAGOSNE | locus                  | Metadata for all lakes \> 1ha                                 |
+| LAGOSNE | lulc                   | Land Use Land Cover (LULC) Data Frames                        |
 
 ### Select data
 
