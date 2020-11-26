@@ -1,3 +1,17 @@
+# LAGOSNE 2.0.2
+
+## MAJOR IMPROVEMENTS
+
+* Massive increase in data loading speed using the `qs` package
+
+## BUG FIXES
+
+* Update data documentation and `lake_info` function for LAGOS version 1.087.3
+
+## MAINTENACE CHANGES
+
+* Turn off checking external URLs per CRAN policy
+
 # LAGOSNE 2.0.1
 
 ## BUG FIXES
