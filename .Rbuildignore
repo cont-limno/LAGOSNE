@@ -27,3 +27,4 @@ vignettes/working_with_lagosne.Rmd
 .gitattributes
 R/.logo.R
 export_script
+test.R
