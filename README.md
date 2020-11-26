@@ -143,7 +143,7 @@ help.search("datasets", package = "LAGOSNE")
 ```
 
 | Package | Topic                  | Title                                                         |
-| :------ | :--------------------- | :------------------------------------------------------------ |
+|:--------|:-----------------------|:--------------------------------------------------------------|
 | LAGOSNE | chag                   | Climate, Hydrology, Atmospheric, and Geologic (CHAG) Datasets |
 | LAGOSNE | classifications        | LAGOSNE Spatial Classifications Metadata                      |
 | LAGOSNE | conn                   | Connectivity Datasets                                         |
@@ -151,7 +151,7 @@ help.search("datasets", package = "LAGOSNE")
 | LAGOSNE | lagos\_source\_program | LAGOSNE sources                                               |
 | LAGOSNE | lagoslakes             | Lake Geospatial Metadata                                      |
 | LAGOSNE | lakes\_limno           | Metadata for Lakes with Water Quality                         |
-| LAGOSNE | locus                  | Metadata for all lakes \> 1ha                                 |
+| LAGOSNE | locus                  | Metadata for all lakes &gt; 1ha                               |
 | LAGOSNE | lulc                   | Land Use Land Cover (LULC) Data Frames                        |
 
 ### Select data
