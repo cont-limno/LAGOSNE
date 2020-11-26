@@ -3,8 +3,6 @@ context("lagos_get")
 test_that("lagosne_get urls are active", {
 
   skip_on_cran()
-  skip_on_travis()
-  skip_on_appveyor()
 
   # LAGOSNE_lakeslocus101.csv
   expect_true(
@@ -14,6 +12,8 @@ test_that("lagosne_get urls are active", {
 })
 
 test_that("external download urls are active", {
+  skip_on_cran()
+
   # collins et al. 2017
   expect_true(
     LAGOSNE:::url_exists(paste0("http://pasta.lternet.edu/package/data/eml/",
