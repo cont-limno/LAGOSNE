@@ -37,6 +37,8 @@ addons:
       - libudunits2-dev
       - libgeos-dev
       - libgdal-dev
+      - libharfbuzz-dev
+      - libfribidi-dev
 
 #env
 env:
