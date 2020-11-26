@@ -8,7 +8,8 @@
 \alias{legacyid}
 \alias{depth}
 \title{Metadata for Lakes with Water Quality}
-\format{A data frame with observations of 8 variables:
+\format{
+A data frame with observations of 8 variables:
 \itemize{
             \item lagoslakeid:	    unique lake identifier developed for
             LAGOS-NE
@@ -25,7 +26,8 @@
             \item legacyid:	      unique lake identifier from the original
             water quality source dataset, this is not standardized and each
             source dataset has its own system
-    }}
+    }
+}
 \description{
 A dataset containing depth and names for lakes included in the limno
 module.

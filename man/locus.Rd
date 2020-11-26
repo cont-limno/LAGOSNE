@@ -5,7 +5,8 @@
 \alias{locus}
 \alias{location}
 \title{Metadata for all lakes > 1ha}
-\format{A data frame with 141265 observations of 17 variables:
+\format{
+A data frame with 141265 observations of 17 variables:
 \itemize{
             \item lagoslakeid: unique identifier for each lake in LAGOS-NE.
             For each row of data in this table, the lagoslakeid identifies the focal lake
@@ -34,7 +35,8 @@
             \item state_zoneid: the unique ID of the state that the focal lake is located within
             \item elevation_m: the elevation of the lake centroid, in meters (referenced to the
             North American Vertical Datum of 1988 (NAVD88)) and obtained from the National Elevation Dataset
-    }}
+    }
+}
 \description{
 A dataset containing identifying information for all lakes > 1ha. This includes
 lake name, lake size (area and perimeter), location (lat/long), elevation,

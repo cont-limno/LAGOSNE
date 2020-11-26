@@ -8,7 +8,8 @@
 \alias{source.programs}
 \alias{lagos.source}
 \title{LAGOSNE sources}
-\format{A data frame with observations of 19 variables:
+\format{
+A data frame with observations of 19 variables:
 \itemize{
      \item programid: unique LAGOSNE program identifier
      \item programname: name of the sampling/monitoring program that
@@ -31,7 +32,8 @@
      \item state_name
      \item lakecount
      \item variable_list
-     }}
+     }
+}
 \description{
 A dataset identifying the sources of limnological data in LAGOSNE.
 }

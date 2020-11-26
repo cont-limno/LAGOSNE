@@ -5,7 +5,8 @@
 \alias{lagoslakes}
 \alias{lakes.geo}
 \title{Lake Geospatial Metadata}
-\format{A data frame with 141271 observations and 31 variables:
+\format{
+A data frame with 141271 observations and 31 variables:
 \itemize{
              \item lagoslakeid: unique lake identifier in LAGOSNE
              \item lakes_nhdid: unique lake identifier from the National
@@ -66,7 +67,8 @@
              DR_Stream = drainage lake with upstream stream,
              Headwater = lake with outlet but no inlet,
              Isolated = lake with no inlets or outlets)
-    }}
+    }
+}
 \description{
 A dataset containing geospatial identifiers, upstream lake connectivity, and
 wetland connectivity of all lakes in LAGOSNE >1 hectare.

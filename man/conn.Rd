@@ -13,7 +13,8 @@
 \alias{county.conn}
 \alias{state.conn}
 \title{Connectivity Datasets}
-\format{Data frames with all or a subset of the following variables. Number
+\format{
+Data frames with all or a subset of the following variables. Number
 of observations is equal to the number of zones in each spatial
 classification (see ?classifications). Wildcard options include a subset of
 the LAGOSNE spatial classifications (* = buffer500m, iws,
@@ -287,7 +288,8 @@ below.
          Inventory ("undissolved") for calculating this variable.
 
     }
-}}
+}
+}
 \description{
 Datasets containing lake, stream, and wetland abundance and connectivity
  metrics calculated at the 500m buffer (buffer500m.conn), HUC12

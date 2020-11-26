@@ -16,7 +16,8 @@
 \alias{detectionlimit}
 \alias{secchi}
 \title{Epilimnion Water Quality Data}
-\format{A data frame with observations of 93 variables:
+\format{
+A data frame with observations of 93 variables:
 \itemize{
             \item eventida1087: unique combination of programid, lakeid, and
             date for each sampling event in LAGOSNE
@@ -101,7 +102,8 @@
             the Secchi depth was made without the viewer box.
             \item sampleyear: year (4-digit) in which sample was collected
             \item samplemonth: month in which sample was collected
-    }}
+    }
+}
 \description{
 A dataset containing physical and chemical observations in the epilimnion
 (surface waters).

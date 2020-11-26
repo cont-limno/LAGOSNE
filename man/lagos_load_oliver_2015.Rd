@@ -3,7 +3,8 @@
 \name{lagos_load_oliver_2015}
 \alias{lagos_load_oliver_2015}
 \title{Load depth data from Oliver et al. 2015.}
-\format{A data frame with 50607 observations of 8 variables:
+\format{
+A data frame with 50607 observations of 8 variables:
 \itemize{
        \item lagoslakeid: unique identifier for each lake in LAGOS-NE.
             For each row of data in this table, the lagoslakeid identifies the focal lake
@@ -16,7 +17,8 @@
        \item area: lake area in hectares
        \item zmaxobs: observed maximum lake depth (meters)
        \item zmaxpredict: predicted maximum lake depth (meters)
-    }}
+    }
+}
 \usage{
 lagos_load_oliver_2015(fpath = NA)
 }

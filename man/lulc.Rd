@@ -15,7 +15,8 @@
 \alias{topography}
 \alias{nlcd}
 \title{Land Use Land Cover (LULC) Data Frames}
-\format{Data frames with all or a subset of the following variables. Number
+\format{
+Data frames with all or a subset of the following variables. Number
 of observations is equal to the number of zones in each spatial scale
 (see Details below). Wildcard options include the 9 LAGOSNE spatial scales
 (* = buffer100m, buffer500m, iws, hu12, hu8, hu4, edu,
@@ -90,7 +91,8 @@ unless otherwise noted.
    table.
    \item borderiws: whether iws zone intersects Canadian border
    (1 = yes, NA = no). Only in iws.lulc table.
-    }}
+    }
+}
 \description{
 Datasets containing information on the land use and land cover (LULC)
 characteristics calculated at all LAGOSNE spatial classifications

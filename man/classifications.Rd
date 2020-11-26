@@ -16,7 +16,8 @@
 \alias{scales}
 \alias{lakeareaha}
 \title{LAGOSNE Spatial Classifications Metadata}
-\format{Data frames with all or a subset of the following variables. Number
+\format{
+Data frames with all or a subset of the following variables. Number
 of observations is equal to the number of zones in each spatial
 classification (see Details below).
 \itemize{
@@ -55,7 +56,8 @@ classification (see Details below).
     \item hu4_states: states that intersect hu4 zone polygon
     \item state: 2-letter state abbreviation
     \item county_state: state where county is located
-    }}
+    }
+}
 \description{
 Data frames containing metadata for each spatial classification at which
  ecological context data are derived in LAGOSNE. The spatial classifications

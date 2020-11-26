@@ -16,7 +16,8 @@
 \alias{baseflow}
 \alias{runoff}
 \title{Climate, Hydrology, Atmospheric, and Geologic (CHAG) Datasets}
-\format{Data frames with all or a subset of the following variables. Number
+\format{
+Data frames with all or a subset of the following variables. Number
 of observations is equal to the number of zones in each spatial scale (see
 Details below). Wildcard options include a subset of the LAGOSNE spatial
 scales (* = hu12, hu8, hu4, edu, county, state), years of measurement
@@ -88,7 +89,8 @@ units (*** = min, max, mean, std for atmospheric deposition and hydrology;
    Wisconsin and Illinoian age
    \item *_surficialgeology_till_sand_***: till, sand of pre-Illinoian age,
    late Wisconsin and Holocene(?) age
-}}
+}
+}
 \description{
 Datasets containing information on climate, hydrology, atmospheric
 deposition, and surficial geology characteristics calculated at hu12, hu8,
