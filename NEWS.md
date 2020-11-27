@@ -8,7 +8,7 @@
 
 * Update data documentation and `lake_info` function for LAGOS version 1.087.3
 
-## MAINTENACE CHANGES
+## MAINTENANCE CHANGES
 
 * Turn off checking external URLs per CRAN policy
 
