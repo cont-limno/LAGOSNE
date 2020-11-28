@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-[![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active) [![Travis-CI Build Status](https://travis-ci.org/cont-limno/LAGOSNE.svg?branch=master)](https://travis-ci.org/cont-limno/LAGOSNE) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/LAGOSNE)](https://cran.r-project.org/package=LAGOSNE) [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/LAGOSNE)](https://cran.r-project.org/package=LAGOSNE) 
+[![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active) [![Travis-CI Build Status](https://travis-ci.org/cont-limno/LAGOSNE.svg?branch=master)](https://travis-ci.org/cont-limno/LAGOSNE) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/LAGOSNE)](https://cran.r-project.org/package=LAGOSNE) [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/LAGOSNE)](https://cran.r-project.org/package=LAGOSNE) 
 
 [![NSF-1065786](https://img.shields.io/badge/NSF-1065786-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1065786) [![NSF-1638679](https://img.shields.io/badge/NSF-1638679-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1638679) [![NSF-1065649](https://img.shields.io/badge/NSF-1065649-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1065649) [![NSF-1065818](https://img.shields.io/badge/NSF-1065818-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1065818) [![NSF-1638554](https://img.shields.io/badge/NSF-1638554-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1638554)
 

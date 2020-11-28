@@ -3,7 +3,7 @@
 
 [![Project Status: Active - The project has reached a stable, usable
 state and is being actively
-developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Travis-CI Build
 Status](https://travis-ci.org/cont-limno/LAGOSNE.svg?branch=master)](https://travis-ci.org/cont-limno/LAGOSNE)
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/LAGOSNE)](https://cran.r-project.org/package=LAGOSNE)
@@ -266,7 +266,8 @@ ecological context and water quality for thousands of U.S. Lakes:
 Soranno P, Cheruvelil K. 2019. LAGOS-NE-LIMNO v1.087.3: a module for
 LAGOS-NE, a multi-scaled geospatial and temporal database of lake
 ecological context and water quality for thousands of U.S. Lakes:
-1925–2013. Environmental Data Initiative. <https://doi.org/c96q>.
+1925–2013. Environmental Data Initiative.
+<https://doi.org/10.6073/PASTA/08C6F9311929F4874B01BCC64EB3B2D7>.
 
 Soranno P, Cheruvelil K. 2017. LAGOS-NE-GEO v1.05: a module for
 LAGOS-NE, a multi-scaled geospatial and temporal database of lake
