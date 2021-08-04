@@ -1,6 +1,6 @@
 ---
 title: "The Structure of LAGOSNE"
-author: "Samantha Oliver and Joseph Stachelek"
+author: "Samantha Oliver and Jemma Stachelek"
 date: "`r Sys.Date()`"
 output: 
   html_document:
@@ -93,7 +93,7 @@ library(rgdal)
 
 # get huc4 polygons from github
 load(url("https://github.com/limnoliver/CSI-Nutrient-Time-Series/blob/72c8269902e53c7ec6a2cfbe13a0239d13062dc8/Data/huc4.RData?raw=true"))
-plot(huc4, lty = 1, lwd=1, border=TRUE, col = "lightgray")
+plot(huc4, lty = 1, lwd = 1, border = TRUE, col = "lightgray")
 ```
 
 ### LAGOSlocus ^[@LAGOSlocus]

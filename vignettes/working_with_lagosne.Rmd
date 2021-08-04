@@ -1,6 +1,6 @@
 ---
 title: "Working with LAGOSNE"
-author: "Joseph Stachelek"
+author: "Jemma Stachelek"
 date: "`r Sys.Date()`"
 output: 
   html_document:
@@ -38,8 +38,8 @@ lg <- filter(lg, !is.na(state))
 Now, the `state` column is of `character` type so will be in alphabetical order by default. We need to cast this column as a factor and reorder its levels from East to West in preparation for plotting.
 
 ```{r eval=TRUE}
-state_easting <- summarize(lg, 
-                    mean_easting = mean(nhd_long, na.rm = TRUE))
+state_easting <- summarize(lg,
+  mean_easting = mean(nhd_long, na.rm = TRUE))
 state_easting <- arrange(state_easting, mean_easting)
 
 lg$state <- factor(lg$state, levels = state_easting$state)
@@ -48,8 +48,8 @@ lg$state <- factor(lg$state, levels = state_easting$state)
 Finally, we construct a boxplot with `ggplot`:
 
 ```{r warning=FALSE, eval=TRUE}
-ggplot(lg) + 
-  geom_boxplot(aes(x = state, y = chla), outlier.shape = NA) + 
+ggplot(lg) +
+  geom_boxplot(aes(x = state, y = chla), outlier.shape = NA) +
   ylim(c(0, 80)) + ylab("Chlorophyll a (ug/L)")
 ```
 
@@ -70,10 +70,10 @@ Next, we filter the output from the previous analysis to only include PA lakes a
 ```{r eval=FALSE}
 pa_chl <- filter(lg, state == "PA")
 pa_chl <- group_by(pa_chl, lagoslakeid)
-pa_chl <- summarize(pa_chl, 
-                      mean_chl  = mean(chla, na.rm = TRUE), 
-                      mean_long = mean(nhd_long, na.rm = TRUE), 
-                      mean_lat  = mean(nhd_lat, na.rm = TRUE))
+pa_chl <- summarize(pa_chl,
+  mean_chl  = mean(chla, na.rm = TRUE),
+  mean_long = mean(nhd_long, na.rm = TRUE),
+  mean_lat  = mean(nhd_lat, na.rm = TRUE))
 pa_chl <- filter(pa_chl, !is.na(mean_chl))
 ```
 
@@ -82,9 +82,9 @@ Finally, we turn our `data.frame` into an sf geospatial object using `st_as_sf` 
 ```{r eval=FALSE}
 pa_chl <- st_as_sf(pa_chl, coords = c("mean_long", "mean_lat"), crs = 4326)
 
-ggplot() + 
+ggplot() +
   geom_sf(data = pa) +
-  geom_sf(data = pa_chl, aes(color = log(mean_chl))) + 
+  geom_sf(data = pa_chl, aes(color = log(mean_chl))) +
   theme_bw() + scale_color_gradient(low = "white", high = "darkgreen") +
   labs(color = "log(Chlorophyll a (ug/L))")
 ```

@@ -21,7 +21,7 @@ citEntry(entry = "Article",
 citEntry(entry = "Manual",
   title        = "LAGOSNE: Interface to the Lake Multi-Scaled Geospatial and Temporal Database",
   author       = personList(
-                   as.person("Joseph Stachelek"),
+                   as.person("Jemma Stachelek"),
                    as.person("Samantha Oliver"),
                    as.person("Farzan Masrour")),
   year         = "2019",

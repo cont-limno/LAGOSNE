@@ -2,7 +2,7 @@ Package: LAGOSNE
 Title: Interface to the Lake Multi-Scaled Geospatial and Temporal Database
 Version: 2.0.2
 Authors@R: c(
-    person("Joseph", "Stachelek", 
+    person("Jemma", "Stachelek", 
     email = "stachel2@msu.edu", 
     role = c("aut", "cre"), 
     comment = c(ORCID = c("0000-0002-5924-2464"))),
