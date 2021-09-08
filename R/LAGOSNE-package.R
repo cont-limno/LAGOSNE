@@ -898,3 +898,10 @@ NULL
 #' @aliases programs lagos.source.programs source.programs lagos.source lagos_source_program
 #' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
 NULL
+
+#' The spatial extent of LAGOSNE data
+#'
+#' A dataset containing the spatial extent of LAGOSNE data.
+#'
+#' @format A single sf polygon
+"lg_extent"
