@@ -11,7 +11,8 @@ Authors@R: c(
     comment = c(ORCID = c("0000-0001-5668-1165"))),
     person("Farzan","Masrour", role = c("aut"))
     )
-URL: https://github.com/cont-limno/LAGOSNE
+URL: https://github.com/cont-limno/LAGOSNE,
+    https://cont-limno.github.io/LAGOSNE/
 BugReports: https://github.com/cont-limno/LAGOSNE/issues
 Description: Client for programmatic access to the Lake
     Multi-scaled Geospatial and Temporal database <https://lagoslakes.org>, with functions
@@ -42,7 +43,7 @@ Suggests: testthat,
 License: GPL
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.3
 VignetteBuilder: R.rsp,
     knitr
 Language: en-US

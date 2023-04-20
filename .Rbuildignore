@@ -28,3 +28,6 @@ vignettes/working_with_lagosne.Rmd
 R/.logo.R
 export_script
 test.R
+^_pkgdown\.yml$
+^pkgdown$
+^\.github$
