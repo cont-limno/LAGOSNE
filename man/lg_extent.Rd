@@ -7,10 +7,7 @@
 \format{
 A single sf polygon
 }
-\usage{
-lg_extent
-}
 \description{
 A dataset containing the spatial extent of LAGOSNE data.
 }
-\keyword{datasets}
+\keyword{data}

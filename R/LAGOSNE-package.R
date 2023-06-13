@@ -903,5 +903,8 @@ NULL
 #'
 #' A dataset containing the spatial extent of LAGOSNE data.
 #'
+#' @name lg_extent
 #' @format A single sf polygon
-"lg_extent"
+#' @docType data
+#' @keywords data
+NULL
