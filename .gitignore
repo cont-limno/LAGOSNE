@@ -13,3 +13,4 @@ export_script/
 tests/testthat/test-lagos_ingest.R
 test.R
 docs
+README.html
