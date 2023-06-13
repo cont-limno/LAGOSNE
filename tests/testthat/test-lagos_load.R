@@ -3,8 +3,7 @@ context("lagos_load")
 test_that("lagos_load fails well", {
 
   skip_on_cran()
-  skip_on_travis()
-  skip_on_appveyor()
+  skip_on_ci()
 
   expect_error(lagosne_load("gibberish"),
     paste0("Dataset not found at: ",
@@ -16,8 +15,7 @@ test_that("lagos_load fails well", {
 test_that("legacyids have non-scientific notation", {
 
   skip_on_cran()
-  skip_on_travis()
-  skip_on_appveyor()
+  skip_on_ci()
 
   lakes_limno <- lagosne_load()$lakes_limno
   expect_gt(
@@ -28,8 +26,7 @@ test_that("legacyids have non-scientific notation", {
 test_that("sampledate is parsed correctly", {
 
   skip_on_cran()
-  skip_on_travis()
-  skip_on_appveyor()
+  skip_on_ci()
 
   epi_nutr <- lagosne_load()$epi_nutr
 

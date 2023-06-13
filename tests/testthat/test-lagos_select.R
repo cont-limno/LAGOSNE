@@ -3,8 +3,7 @@ context("lagos_select")
 test_that("lagos_select works", {
 
   skip_on_cran()
-  skip_on_travis()
-  skip_on_appveyor()
+  skip_on_ci()
 
   # dt <- readRDS("tests/testthat/lagos_test_subset.rds")
   dt <- readRDS("lagos_test_subset.rds")
@@ -100,8 +99,7 @@ test_that("lagos_select works", {
 test_that("lagos fails well", {
 
   skip_on_cran()
-  skip_on_travis()
-  skip_on_appveyor()
+  skip_on_ci()
 
   dt <- readRDS("lagos_test_subset.rds")
 
