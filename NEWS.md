@@ -1,3 +1,9 @@
+# LAGOSNE 2.0.3
+
+## BUG FIXES
+
+* readLines was not able to correctly readl from pasta. Switched to httr::GET.
+
 # LAGOSNE 2.0.2
 
 ## MAJOR IMPROVEMENTS
