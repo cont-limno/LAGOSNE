@@ -39,7 +39,7 @@
 lake_info <- function(lagoslakeid = NA, name = NA, state = NA,
                                        dt = lagosne_load(), ...){
 
-  if(class(dt) != "list"){
+  if(!inherits(dt, "list")){
     stop("dt must be a list (created by the lagosne_load function).")
   }
 

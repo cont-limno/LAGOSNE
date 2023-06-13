@@ -21,7 +21,7 @@
 display_names <- function(nms_raw){
 
   # nms_raw <- names(lg$locus)
-  if(class(nms_raw) != "character"){
+  if(!inherits(nms_raw, "character")){
     stop("This function on works on character vectors.")
   }
 
