@@ -4,7 +4,7 @@ pkgdown_sha: ~
 articles:
   lagosne_structure: lagosne_structure.html
   working_with_lagosne: working_with_lagosne.html
-last_built: 2023-06-13T22:55Z
+last_built: 2023-06-15T21:51Z
 urls:
   reference: https://cont-limno.github.io/LAGOSNE/reference
   article: https://cont-limno.github.io/LAGOSNE/articles
