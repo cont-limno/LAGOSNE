@@ -3,7 +3,7 @@ Title: Interface to the Lake Multi-Scaled Geospatial and Temporal Database
 Version: 2.0.2
 Authors@R: c(
     person("Jemma", "Stachelek", 
-    email = "stachel2@msu.edu", 
+    email = "jemma.stachelek@gmail.com", 
     role = c("aut", "cre"), 
     comment = c(ORCID = c("0000-0002-5924-2464"))),
     person("Samantha","Oliver", 
