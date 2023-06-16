@@ -6,8 +6,14 @@ test_that("lagosne_get pasta urls are SSL connect-able (#114)", {
 
   pasta_baseurl <- "http://pasta.lternet.edu/package/data/eml/edi/"
   locus_base_pasta <- paste0(pasta_baseurl, "100/4")
-  id <- readLines(locus_base_pasta)
-  expect_equal(id, "ce274065dfb5b453c5696f715fe4e269")
+  id_readlines <- readLines(locus_base_pasta)
+  expect_equal(id_readlines, "ce274065dfb5b453c5696f715fe4e269")
+
+  pasta_baseurl <- "https://pasta.lternet.edu/package/data/eml/edi/"
+  locus_base_pasta <- paste0(pasta_baseurl, "100/4")
+  id_get <- httr::content(httr::GET(locus_base_pasta), encoding = "UTF-8")
+  id_get <- strsplit(id_get, "\n")[[1]]
+  expect_equal(id_readlines, id_get)
 })
 
 test_that("lagosne_get urls are active", {
