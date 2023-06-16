@@ -9,11 +9,11 @@ developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.re
 [![CRAN RStudio mirror
 downloads](http://cranlogs.r-pkg.org/badges/LAGOSNE)](https://cran.r-project.org/package=LAGOSNE)
 
-[![NSF-1065786](https://img.shields.io/badge/NSF-1065786-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1065786)
-[![NSF-1638679](https://img.shields.io/badge/NSF-1638679-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1638679)
-[![NSF-1065649](https://img.shields.io/badge/NSF-1065649-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1065649)
-[![NSF-1065818](https://img.shields.io/badge/NSF-1065818-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1065818)
-[![NSF-1638554](https://img.shields.io/badge/NSF-1638554-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1638554)
+[![NSF-1065786](https://img.shields.io/badge/NSF-1065786-blue.svg)](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1065786)
+[![NSF-1638679](https://img.shields.io/badge/NSF-1638679-blue.svg)](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1638679)
+[![NSF-1065649](https://img.shields.io/badge/NSF-1065649-blue.svg)](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1065649)
+[![NSF-1065818](https://img.shields.io/badge/NSF-1065818-blue.svg)](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1065818)
+[![NSF-1638554](https://img.shields.io/badge/NSF-1638554-blue.svg)](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1638554)
 
 # LAGOSNE <img src="man/figures/logo.png" align="right" height=140/>
 
@@ -150,7 +150,6 @@ help.search("datasets", package = "LAGOSNE")
 | LAGOSNE | lagos_source_program | LAGOSNE sources                                               |
 | LAGOSNE | lagoslakes           | Lake Geospatial Metadata                                      |
 | LAGOSNE | lakes_limno          | Metadata for Lakes with Water Quality                         |
-| LAGOSNE | lg_extent            | The spatial extent of LAGOSNE data                            |
 | LAGOSNE | locus                | Metadata for all lakes \> 1ha                                 |
 | LAGOSNE | lulc                 | Land Use Land Cover (LULC) Data Frames                        |
 
@@ -266,9 +265,11 @@ ecological context and water quality for thousands of U.S. Lakes:
 Soranno P, Cheruvelil K. 2019. LAGOS-NE-LIMNO v1.087.3: a module for
 LAGOS-NE, a multi-scaled geospatial and temporal database of lake
 ecological context and water quality for thousands of U.S. Lakes:
-1925–2013. Environmental Data Initiative. <https://doi.org/c96q>.
+1925–2013. Environmental Data Initiative.
+<https://doi.org/10.6073/PASTA/08C6F9311929F4874B01BCC64EB3B2D7>.
 
 Soranno P, Cheruvelil K. 2017. LAGOS-NE-GEO v1.05: a module for
 LAGOS-NE, a multi-scaled geospatial and temporal database of lake
 ecological context and water quality for thousands of U.S. Lakes:
-1925–2013. Environmental Data Initiative. <https://doi.org/ckpm>
+1925–2013. Environmental Data Initiative.
+<https://doi.org/10.6073/PASTA/16F4BDAA9607C845C0B261A580730A7A>
