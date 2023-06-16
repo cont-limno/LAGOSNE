@@ -1,11 +1,11 @@
 ## Test environments
-* local ubuntu 20 install, R 4.0.3
-* ubuntu 16 (on travis-ci), R 4.0.2
-* win-builder (devel and release)
+
+* ubuntu 20 (on ghactions), R 4.2.3
+* rhub (devel and release)
 
 ## R CMD check results
 
-0 errors | 0 warnings | 0 notes
+0 errors | 0 warnings | 0 note
 
 * Many examples are wrapped in dontrun tags. They require a sizeable data download.
 
