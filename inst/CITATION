@@ -2,13 +2,14 @@ citHeader("To cite LAGOSNE in publications use:")
 
 citEntry(entry = "Article",
   title        = "LAGOS-NE: a multi-scaled geospatial and temporal database of lake ecological context and water quality for thousands of US lakes",
-  author       = personList(
+  author       = c(
                    person("P.A.", "Soranno"),
                    person("L.C.", "Bacon"),
                    person("M.", "Beauchene"),
                    person("K.E.", "Bednar"),
                    person("E.G.", "Bissell"),
-                   person("al.", "et.")),
+                   person("al.", "et.")
+                  ),
   journal      = "Gigascience",
   year         = "2017",
   volume       = "6",
@@ -20,10 +21,11 @@ citEntry(entry = "Article",
 
 citEntry(entry = "Manual",
   title        = "LAGOSNE: Interface to the Lake Multi-Scaled Geospatial and Temporal Database",
-  author       = personList(
-                   as.person("Jemma Stachelek"),
-                   as.person("Samantha Oliver"),
-                   as.person("Farzan Masrour")),
+  author       = c(
+                   person("Jemma", "Stachelek", comment = c(ORCID = "0000-0002-5924-2464")),
+                   person("Samantha", "Oliver"),
+                   person("Farzan", "Masrour")
+                   ),
   year         = "2019",
   note         = "R package version 2.0.2",
   url          = "https://cran.r-project.org/package=LAGOSNE",
