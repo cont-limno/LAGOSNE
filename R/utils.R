@@ -237,8 +237,10 @@ get_file_names <- function(url){
 
 get_lagos_module <- function(edi_url, pasta_url, folder_name, overwrite){
 
-  files <- suppressWarnings(paste0(edi_url, "&entityid=",
-                            readLines(pasta_url)))
+  id <- httr::content(httr::GET(pasta_url), encoding = "UTF-8")
+  id <- strsplit(id, "\n")[[1]]
+  files <- suppressWarnings(paste0(edi_url, "&entityid=", id))
+
   file_names <- sapply(files, get_file_names)
 
   files      <- files[!is.na(file_names)]

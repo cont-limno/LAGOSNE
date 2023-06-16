@@ -38,7 +38,7 @@ between R sessions. \n")
   }
 
     edi_baseurl   <- "https://portal.edirepository.org/nis/dataviewer?packageid="
-    pasta_baseurl <- "http://pasta.lternet.edu/package/data/eml/edi/"
+    pasta_baseurl <- "https://pasta.lternet.edu/package/data/eml/edi/"
 
     message("Downloading the 'locus' module ...")
     locus_base_edi   <- paste0(edi_baseurl, c("edi.100.4"))

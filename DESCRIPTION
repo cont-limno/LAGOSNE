@@ -1,6 +1,6 @@
 Package: LAGOSNE
 Title: Interface to the Lake Multi-Scaled Geospatial and Temporal Database
-Version: 2.0.2
+Version: 2.0.3
 Authors@R: c(
     person("Jemma", "Stachelek", 
     email = "jemma.stachelek@gmail.com", 
@@ -32,7 +32,8 @@ Imports: dplyr (>= 0.7.0),
     memoise,
     rlang,
     progress,
-    qs
+    qs,
+    httr
 Suggests: testthat,
     knitr,
     rmarkdown,
