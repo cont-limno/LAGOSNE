@@ -260,7 +260,7 @@ Multi-scaled Geospatial and Temporal Database. R package version 1.1.0.
 Soranno P, Cheruvelil K. 2017. LAGOS-NE-LOCUS v1.01: a module for
 LAGOS-NE, a multi-scaled geospatial and temporal database of lake
 ecological context and water quality for thousands of U.S. Lakes:
-1925–2013. Environmental Data Initiative. <https://doi.org/ckpj>
+1925–2013. Environmental Data Initiative. <https://doi.org/10.6073/PASTA/0C23A789232AB4F92107E26F70A7D8EF>
 
 Soranno P, Cheruvelil K. 2019. LAGOS-NE-LIMNO v1.087.3: a module for
 LAGOS-NE, a multi-scaled geospatial and temporal database of lake
