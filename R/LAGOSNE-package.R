@@ -128,7 +128,7 @@ lagosne_version <- function(){"1.087.3"}
 #' @docType data
 #' @keywords datasets
 #' @name classifications
-#' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
+#' @references Soranno et al. (2017) \doi{10.1093/gigascience/gix101}Gigascience 6:12
 #' @aliases buffer100m buffer500m iws hu12 hu8 hu4 edu county state classification scales lakeareaha
 #' @seealso \code{\link[LAGOSNE]{conn}} \code{\link[LAGOSNE]{lakes.geo}} \code{\link{chag}} \code{\link{lulc}}
 NULL
