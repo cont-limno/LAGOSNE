@@ -74,6 +74,6 @@ A dataset containing geospatial identifiers, upstream lake connectivity, and
 wetland connectivity of all lakes in LAGOSNE >1 hectare.
 }
 \references{
-Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
+Soranno et al. (2017) \doi{10.1093/gigascience/gix101}
 }
 \keyword{datasets}

@@ -24,8 +24,7 @@ lagosne_version <- function(){"1.087.3"}
 #'  counties (county), and states (state). Each abbreviation is the name of the
 #'  data frame, with all or a subset of the following variables. For more
 #'  information about derivation of each spatial classification, see Details
-#'  below or \href{https://doi.org/10.1186/s13742-015-0067-4}{Additional file 7}
-#'  from Soranno et al. 2015.
+#'  below or Additional file 7 from \doi{10.1186/s13742-015-0067-4}.
 #'
 #' The nine LAGOSNE spatial classifications were used to summarize the ecological
 #' context of each lake. Ecological context themes include
@@ -128,7 +127,7 @@ lagosne_version <- function(){"1.087.3"}
 #' @docType data
 #' @keywords datasets
 #' @name classifications
-#' @references Soranno et al. (2017) \doi{10.1093/gigascience/gix101}Gigascience 6:12
+#' @references Soranno et al. (2017) \doi{10.1093/gigascience/gix101}
 #' @aliases buffer100m buffer500m iws hu12 hu8 hu4 edu county state classification scales lakeareaha
 #' @seealso \code{\link[LAGOSNE]{conn}} \code{\link[LAGOSNE]{lakes.geo}} \code{\link{chag}} \code{\link{lulc}}
 NULL
@@ -224,7 +223,7 @@ NULL
 #' @name lulc
 #' @aliases buffer100m.lulc buffer500m.lulc iws.lulc hu12.lulc hu8.lulc hu4.lulc edu.lulc county.lulc state.lulc topography nlcd
 #' @seealso \code{\link[LAGOSNE]{lakes.geo}}
-#' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12};
+#' @references Soranno et al. (2017) \doi{10.1093/gigascience/gix101}
 NULL
 
 #' Climate, Hydrology, Atmospheric, and Geologic (CHAG) Datasets
@@ -318,7 +317,7 @@ NULL
 #' @keywords datasets
 #' @name chag
 #' @aliases hu12.chag hu8.chag hu4.chag edu.chag county.chag state.chag deposition climate hydrology geology baseflow runoff
-#' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
+#' @references Soranno et al. (2017) \doi{10.1093/gigascience/gix101}
 NULL
 
 #' Epilimnion Water Quality Data
@@ -418,7 +417,7 @@ NULL
 #' @keywords datasets
 #' @name epi_nutr
 #' @aliases nutrients chla colora doc phosphorus nitrogen chlorophyll waterquality censorcode qualifiers detectionlimit secchi
-#' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
+#' @references Soranno et al. (2017) \doi{10.1093/gigascience/gix101}
 NULL
 
 #' Metadata for Lakes with Water Quality
@@ -450,7 +449,7 @@ NULL
 #' @name lakes_limno
 #' @aliases meandepth maxdepth legacyid depth
 #' @seealso \code{\link[LAGOSNE]{lakes.geo}}
-#' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
+#' @references Soranno et al. (2017) \doi{10.1093/gigascience/gix101}{Gigascience 6:12}
 NULL
 
 #' Metadata for all lakes > 1ha
@@ -495,7 +494,7 @@ NULL
 #' @name locus
 #' @aliases location
 #' @seealso \code{\link[LAGOSNE]{lakes.geo}}
-#' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
+#' @references Soranno et al. (2017) \doi{10.1093/gigascience/gix101}
 NULL
 
 #' Connectivity Datasets
@@ -785,7 +784,7 @@ NULL
 #' @name conn
 #' @aliases connectivity buffer500m.conn iws.conn hu12.conn hu8.conn hu4.conn edu.conn county.conn state.conn
 #' @seealso \code{\link[LAGOSNE]{lakes.geo}}
-#' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
+#' @references Soranno et al. (2017) \doi{10.1093/gigascience/gix101}{Gigascience 6:12}
 NULL
 
 #' Lake Geospatial Metadata
@@ -861,7 +860,7 @@ NULL
 #' @keywords datasets
 #' @name lagoslakes
 #' @aliases lakes.geo
-#' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
+#' @references Soranno et al. (2017) \doi{10.1093/gigascience/gix101}
 NULL
 
 #' LAGOSNE sources
@@ -896,7 +895,7 @@ NULL
 #' @keywords datasets
 #' @name lagos_source_program
 #' @aliases programs lagos.source.programs source.programs lagos.source lagos_source_program
-#' @references Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
+#' @references Soranno et al. (2017) \doi{10.1093/gigascience/gix101}
 NULL
 
 #' The spatial extent of LAGOSNE data

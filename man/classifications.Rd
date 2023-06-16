@@ -67,8 +67,7 @@ Data frames containing metadata for each spatial classification at which
  counties (county), and states (state). Each abbreviation is the name of the
  data frame, with all or a subset of the following variables. For more
  information about derivation of each spatial classification, see Details
- below or \href{https://doi.org/10.1186/s13742-015-0067-4}{Additional file 7}
- from Soranno et al. 2015.
+ below or Additional file 7 from \doi{10.1186/s13742-015-0067-4}.
 }
 \details{
 The nine LAGOSNE spatial classifications were used to summarize the ecological
@@ -129,7 +128,7 @@ at all classifications due to data availability. Briefly:
 }
 }
 \references{
-Soranno et al. (2017) \doi{10.1093/gigascience/gix101}Gigascience 6:12
+Soranno et al. (2017) \doi{10.1093/gigascience/gix101}
 }
 \seealso{
 \code{\link[LAGOSNE]{conn}} \code{\link[LAGOSNE]{lakes.geo}} \code{\link{chag}} \code{\link{lulc}}

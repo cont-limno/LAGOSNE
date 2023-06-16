@@ -110,6 +110,6 @@ A dataset containing physical and chemical observations in the epilimnion
 Each row is a sampling event, and lakes can have multiple sampling events.
 }
 \references{
-Soranno et al. (2017) \href{https://doi.org/10.1093/gigascience/gix101}{Gigascience 6:12}
+Soranno et al. (2017) \doi{10.1093/gigascience/gix101}
 }
 \keyword{datasets}
