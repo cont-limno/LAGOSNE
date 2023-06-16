@@ -1,6 +1,6 @@
 citHeader("To cite LAGOSNE in publications use:")
 
-bibentry(entry = "Article",
+bibentry(bibtype = "Article",
   title        = "LAGOS-NE: a multi-scaled geospatial and temporal database of lake ecological context and water quality for thousands of US lakes",
   author       = c(
                    person("P.A.", "Soranno"),
@@ -19,7 +19,7 @@ bibentry(entry = "Article",
   paste("Soranno, P.A., L.C. Bacon, M. Beauchene, K.E. Bednar, E.G. Bissell, et. al., 2017. LAGOS-NE: a multi-scaled geospatial and temporal database of lake ecological context and water quality for thousands of US lakes. Gigascience, 6(12)")
 )
 
-bibentry(entry = "Manual",
+bibentry(bibtype = "Manual",
   title        = "LAGOSNE: Interface to the Lake Multi-Scaled Geospatial and Temporal Database",
   author       = c(
                    person("Jemma", "Stachelek", comment = c(ORCID = "0000-0002-5924-2464")),
