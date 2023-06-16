@@ -235,6 +235,7 @@ get_file_names <- function(url){
   gsub('\\"', "", res)
 }
 
+#' @importFrom httr GET content
 get_lagos_module <- function(edi_url, pasta_url, folder_name, overwrite){
 
   id <- httr::content(httr::GET(pasta_url), encoding = "UTF-8")
