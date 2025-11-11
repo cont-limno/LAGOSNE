@@ -1,11 +1,11 @@
 #' Interface to the LAGOSNE lakes database
 #' @name LAGOSNE-package
 #' @aliases LAGOSNE
-#' @docType package
 #' @importFrom magrittr %>%
 #' @title R interface to the LAGOSNE lakes database
 #' @author \email{stachel2@msu.edu}
-NULL
+#' @keywords internal
+"_PACKAGE"
 
 #' Latest LAGOSNE version
 #' @name lagosne_version

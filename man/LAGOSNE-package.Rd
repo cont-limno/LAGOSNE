@@ -8,6 +8,16 @@
 \description{
 Interface to the LAGOSNE lakes database
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/cont-limno/LAGOSNE}
+  \item \url{https://cont-limno.github.io/LAGOSNE/}
+  \item Report bugs at \url{https://github.com/cont-limno/LAGOSNE/issues}
+}
+
+}
 \author{
 \email{stachel2@msu.edu}
 }
+\keyword{internal}
