@@ -1,0 +1,148 @@
+# LAGOSNE Spatial Classifications Metadata
+
+Data frames containing metadata for each spatial classification at which
+ecological context data are derived in LAGOSNE. The spatial
+classifications include 100m buffers (buffer100m), 500m buffers
+(buffer500m), interlake watersheds (iws), hydrologic units (hu12, hu8,
+hu4), ecological drainage units (edu), counties (county), and states
+(state). Each abbreviation is the name of the data frame, with all or a
+subset of the following variables. For more information about derivation
+of each spatial classification, see Details below or Additional file 7
+from
+[doi:10.1186/s13742-015-0067-4](https://doi.org/10.1186/s13742-015-0067-4)
+.
+
+## Format
+
+Data frames with all or a subset of the following variables. Number of
+observations is equal to the number of zones in each spatial
+classification (see Details below).
+
+- \*\_nhdid: permanent lake-specific identifier from the National
+  Hydrography Dataset (\* = buffer100m, buffer500m, iws)
+
+- \*\_name: text name of the zone (\* = iws, hu12, hu8, hu4, county,
+  state)
+
+- hu\*: unique zone identifier (\* = 12, 8, 4)
+
+- \*\_ha: area of spatial classification in hectares (\* = buffer100m,
+  buffer500m, hu12, hu8, hu4, edu, county)
+
+- \*\_areaha: area of spatial classification in hectares (\* = iws, )
+
+- \*\_perimkm: perimeter of spatial classification in kilometers (\* =
+  iws, )
+
+- \*\_lat: latitude of centroid of polygon in decimal degrees (NAD83)
+  (\* = iws, hu12, hu8, hu4, edu, county, state)
+
+- \*\_long: longitude of centroid of polygon in decimal degrees (NAD83)
+  (\* = iws, hu12, hu8, hu4, edu, county, state)
+
+- \*\_lakeareaha: lake area (ha) of focal lake associated with polygon
+  (\* = iws, )
+
+- \*\_country: whether the polygon lies within the US ("US") or the US
+  and Canada (US_CA) (\* = hu12, edu)
+
+- \*\_pct_in_usa: percent of polygon within the US boundary (\* = iws,
+  hu12, edu)
+
+- \*\_ha_in_usa: area (ha) of polygon within the US boundary (\* = iws,
+  hu12, edu)
+
+- \*\_pct_in_nwi: percent of polygon within the USFWS National Wetland
+  Inventory (NWI) boundary (\* = hu12, hu8, hu4, edu, county, state)
+
+- \*\_ha_in_nwi: area (ha) of polygon within the USFWS National Wetland
+  Inventory (NWI) boundary (\* = hu12, hu8, hu4, edu, county, state)
+
+- \*\_zoneid: a unique identifier for each IWS in LAGOSNE, numbered 1:n
+  with classification prefix (e.g., HU12_1) (\* = iws, hu12, hu8, hu4,
+  edu, county, state)
+
+- lagoslakeid: LAGOSNE unique identifier for focal lake
+
+- hu4_states: states that intersect hu4 zone polygon
+
+- state: 2-letter state abbreviation
+
+- county_state: state where county is located
+
+## Details
+
+The nine LAGOSNE spatial classifications were used to summarize the
+ecological context of each lake. Ecological context themes include land
+use/land cover (LULC), connectivity (CONN), and climate, hydrology,
+atmospheric deposition, and groundwater (CHAG). Not all themes were
+derived at all classifications due to data availability. Briefly:
+
+- iws: a dataframe with 51065 observations of 12 variables. The area of
+  land that drains directly into a lake, and into all
+  upstream-connected, permanent streams to that lake exclusive of any
+  upstream lake watersheds for lakes greater than 10 ha that are
+  connected via permanent streams. For details on how the watersheds
+  were delineated, see additional file 8 in Soranno et al. (2015).
+  Themes derived at the iws classification include LULC and CONN.
+
+- buffer100m: a dataframe with 51065 of 3 variables. Buffers are a 100 m
+  equidistant buffer of the land that is 100 m from the lake shoreline,
+  calculated using the ArcGIS Buffer tool. Themes derived at the 100m
+  buffer classification include LULC.
+
+- buffer500m: a dataframe with 51065 of 3 variables. Buffers are a 500 m
+  equidistant buffer of the land that is 500 m from the lake shoreline,
+  calculated using the ArcGIS Buffer tool. Themes derived at the 500m
+  buffer classification include LULC and CONN.
+
+- hu12: a dataframe with 20257 observations of 11 variables. The
+  Watershed Boundary Dataset defines boundaries based on surface water
+  drainage and creates nested Hydrologic Units (sometimes abbreviated
+  and referred to as HUCs, which are hydrologic unit codes) that are
+  georeferenced to the USGS 1:24,000 topographic base map. HUC12s are
+  the sixth level of classificiation. HUC12s are defined along natural
+  hydrologic breaks based on land surface and surface-water flow and
+  they have a single flow outlet except in frontal, lake,
+  braided-stream, or closed-basin hydrologic units. Themes derived at
+  the HUC12 classification include LULC, CONN and CHAG.
+
+- hu8: a data frame with 511 observations of 9 variables. HUC8s are the
+  fourth level of classificiation. Sometimes called 'watersheds', a HUC8
+  is a geographic area representing part or all of a surface drainage
+  basin, a combination of drainage basins, or a distinct hydrologic
+  feature. Themes derived at the HUC8 classification include LULC, CONN,
+  and CHAG.
+
+- hu4: a data frame with 65 observations of 9 variables. HUC4s are the
+  second level of classification, called a 'subregion'. A subregion
+  includes the area drained by a river system, a reach of a river and
+  its tributaries in that reach, a closed basin(s), or a group of
+  streams forming a coastal drainage area. Themes derived at the HUC4
+  classification include LULC, CONN, and CHAG.
+
+- edu: a data frame with 91 observations of 10 variables. Ecological
+  drainage units (EDUs) follow the WBD boundaries, and are of roughly
+  similar size to HUC6s. EDUs were delineated by grouping the HUC8
+  watersheds based on common zoogeographic history, and physiographic
+  and climatic characteristics. Themes derived at the EDU classification
+  include LULC, CONN, and CHAG.
+
+- county: a data frame with 955 observations of 8 variables. Counties
+  (political boundary) within the 17-state region of LAGOSNE. Themes
+  derived at the county classification include LULC, CONN, and CHAG.
+
+- state: a dataframe with 17 observations of 7 variables. Themes derived
+  at the state classification include LULC, CONN, and CHAG.
+
+## References
+
+Soranno et al. (2017)
+[doi:10.1093/gigascience/gix101](https://doi.org/10.1093/gigascience/gix101)
+
+## See also
+
+[`conn`](https://cont-limno.github.io/LAGOSNE/reference/conn.md)
+[`lakes.geo`](https://cont-limno.github.io/LAGOSNE/reference/lagoslakes.md)
+[`chag`](https://cont-limno.github.io/LAGOSNE/reference/chag.md)
+[`lulc`](https://cont-limno.github.io/LAGOSNE/reference/lulc.md)
