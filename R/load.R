@@ -7,7 +7,7 @@
 #' @export
 #' @importFrom rappdirs user_data_dir
 #' @importFrom memoise memoise
-#' @importFrom qs qread
+#' @importFrom qs2 qread
 #'
 #' @examples \dontrun{
 #' dt  <- lagosne_load("1.087.3")

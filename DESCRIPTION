@@ -32,7 +32,7 @@ Imports: dplyr (>= 0.7.0),
     memoise,
     rlang,
     progress,
-    qs,
+    qs2,
     httr
 Suggests: testthat,
     knitr,

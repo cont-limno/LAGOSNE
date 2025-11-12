@@ -13,7 +13,7 @@
 #'
 #'@importFrom utils read.table
 #'@importFrom rappdirs user_data_dir
-#'@importFrom qs qsave
+#'@importFrom qs2 qsave
 #'@export
 #'
 #'@examples \dontrun{
