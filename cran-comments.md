@@ -1,7 +1,7 @@
 ## Test environments
 
-* ubuntu 20 (on ghactions), R 4.2.3
-* rhub (devel and release)
+* ubuntu 24 (on ghactions), R 4.5.2
+* rhub (ubuntu-release)
 
 ## R CMD check results
 
