@@ -33,7 +33,6 @@ A data frame with observations of 8 variables:
 
 Soranno et al. (2017)
 [doi:10.1093/gigascience/gix101](https://doi.org/10.1093/gigascience/gix101)
-Gigascience 6:12
 
 ## See also
 
