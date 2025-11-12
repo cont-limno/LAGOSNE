@@ -297,7 +297,7 @@ Datasets containing lake, stream, and wetland abundance and connectivity
    (county.conn) and state (state.conn) classifications.
 }
 \references{
-Soranno et al. (2017) \doi{10.1093/gigascience/gix101}{Gigascience 6:12}
+Soranno et al. (2017) \doi{10.1093/gigascience/gix101}
 }
 \seealso{
 \code{\link[LAGOSNE]{lakes.geo}}

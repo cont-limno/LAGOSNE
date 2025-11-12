@@ -784,7 +784,7 @@ NULL
 #' @name conn
 #' @aliases connectivity buffer500m.conn iws.conn hu12.conn hu8.conn hu4.conn edu.conn county.conn state.conn
 #' @seealso \code{\link[LAGOSNE]{lakes.geo}}
-#' @references Soranno et al. (2017) \doi{10.1093/gigascience/gix101}{Gigascience 6:12}
+#' @references Soranno et al. (2017) \doi{10.1093/gigascience/gix101}
 NULL
 
 #' Lake Geospatial Metadata
