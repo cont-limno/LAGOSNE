@@ -18,60 +18,60 @@
 #' # - See 'Legacy Versions' section of the README for instructions
 #' }
 lagosne_get <- function(version = lagosne_version(), overwrite = FALSE,
-                        dest_folder = tempdir()){
+                        dest_folder = tempdir()) {
 
-  if(dest_folder != lagos_path()){
+  if (dest_folder != lagos_path()) {
     warning("Set dest_folder to LAGOSNE:::lagos_path() so that data persists
 between R sessions. \n")
   }
 
   outpath <- file.path(lagos_path(), paste0("data_", version, ".qs"))
-  if(file.exists(outpath) & !overwrite){
+  if (file.exists(outpath) & !overwrite) {
     warning("LAGOSNE data for this version already exists on the local machine.
   Re-download if neccessary using the 'overwrite` argument.'")
     return(invisible("LAGOS is the best"))
   }
 
-  if(version != lagosne_version()){
+  if (version != lagosne_version()) {
     warning(
       paste0("Specified version '", version, "' does not match the most recent LAGOSNE version '", lagosne_version(), "' - If an older LAGOSNE version is desired, see the 'Legacy Versions' section of the README for instructions."))
   }
 
-    edi_baseurl   <- "https://portal.edirepository.org/nis/dataviewer?packageid="
-    pasta_baseurl <- "https://pasta.lternet.edu/package/data/eml/edi/"
+  edi_baseurl   <- "https://portal.edirepository.org/nis/dataviewer?packageid="
+  pasta_baseurl <- "https://pasta.lternet.edu/package/data/eml/edi/"
 
-    message("Downloading the 'locus' module ...")
-    locus_base_edi   <- paste0(edi_baseurl, c("edi.100.4"))
-    locus_base_pasta <- paste0(pasta_baseurl, "100/4")
-    locus_dir        <- get_lagos_module(locus_base_edi, locus_base_pasta,
-                                         "locus", overwrite)
+  message("Downloading the 'locus' module ...")
+  locus_base_edi   <- paste0(edi_baseurl, c("edi.100.4"))
+  locus_base_pasta <- paste0(pasta_baseurl, "100/4")
+  locus_dir        <- get_lagos_module(locus_base_edi, locus_base_pasta,
+    "locus", overwrite)
 
-    message("Downloading the 'limno' module ...")
-    limno_base_edi   <- paste0(edi_baseurl, c("edi.101.3"))
-    limno_base_pasta <- paste0(pasta_baseurl, "101/3")
-    limno_dir        <- get_lagos_module(limno_base_edi, limno_base_pasta,
-                                         "limno", overwrite)
+  message("Downloading the 'limno' module ...")
+  limno_base_edi   <- paste0(edi_baseurl, c("edi.101.3"))
+  limno_base_pasta <- paste0(pasta_baseurl, "101/3")
+  limno_dir        <- get_lagos_module(limno_base_edi, limno_base_pasta,
+    "limno", overwrite)
 
-    message("Downloading the 'geo' module ...")
-    geo_base_edi   <- paste0(edi_baseurl, c("edi.99.5"))
-    geo_base_pasta <- paste0(pasta_baseurl, "99/5")
-    geo_dir        <- get_lagos_module(geo_base_edi, geo_base_pasta,
-                                       "geo", overwrite)
+  message("Downloading the 'geo' module ...")
+  geo_base_edi   <- paste0(edi_baseurl, c("edi.99.5"))
+  geo_base_pasta <- paste0(pasta_baseurl, "99/5")
+  geo_dir        <- get_lagos_module(geo_base_edi, geo_base_pasta,
+    "geo", overwrite)
 
   dir.create(dest_folder, showWarnings = FALSE)
 
   message("LAGOSNE downloaded. Now compressing to native R object ...")
 
   lagosne_compile(version = version,
-                locus_folder = locus_dir,
-                limno_folder = limno_dir,
-                geo_folder   = geo_dir,
-                dest_folder  = dest_folder
-                )
+    locus_folder = locus_dir,
+    limno_folder = limno_dir,
+    geo_folder   = geo_dir,
+    dest_folder  = dest_folder
+  )
 
   return(invisible(list(locus_folder = locus_dir,
-                        limno_folder = limno_dir,
-                        geo_folder   = geo_dir)))
+    limno_folder = limno_dir,
+    geo_folder   = geo_dir)))
 }
 
 #' Get depth data from Oliver et al. 2015
@@ -88,11 +88,11 @@ between R sessions. \n")
 #' @examples \dontrun{
 #' lagos_get_oliver_2015()
 #' }
-lagos_get_oliver_2015 <- function(dest_folder, overwrite = FALSE){
+lagos_get_oliver_2015 <- function(dest_folder, overwrite = FALSE) {
   dir.create(lagos_path(), showWarnings = FALSE)
 
   baseurl <- paste0("http://pasta.lternet.edu/package/data/eml/",
-                    "knb-lter-ntl/320/4/4a283c25f3548c0f78d8a01658e4a353")
+    "knb-lter-ntl/320/4/4a283c25f3548c0f78d8a01658e4a353")
 
   get_if_not_exists(baseurl, paste0(lagos_path(), "oliver_2015_depth.csv"), overwrite = overwrite)
 }
@@ -111,12 +111,12 @@ lagos_get_oliver_2015 <- function(dest_folder, overwrite = FALSE){
 #' @examples \dontrun{
 #' lagos_get_collins_2017()
 #' }
-lagos_get_collins_2017 <- function(dest_folder, overwrite = FALSE){
+lagos_get_collins_2017 <- function(dest_folder, overwrite = FALSE) {
   dir.create(lagos_path(), showWarnings = FALSE)
 
   baseurl <- paste0("http://pasta.lternet.edu/package/data/eml/",
-                    "knb-lter-ntl/332/5/d9e3a388e566a2428a93b982a000e2c4")
+    "knb-lter-ntl/332/5/d9e3a388e566a2428a93b982a000e2c4")
 
   get_if_not_exists(baseurl, paste0(lagos_path(), "collins_2017.csv"),
-                    overwrite = overwrite)
+    overwrite = overwrite)
 }
