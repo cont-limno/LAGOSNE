@@ -1,5 +1,11 @@
 # Changelog
 
+## LAGOSNE 2.0.4
+
+### MAINTENANCE CHANGES
+
+- Switch `qs` dependency to `qs2` due to pending removal from CRAN
+
 ## LAGOSNE 2.0.3
 
 CRAN release: 2023-06-16
