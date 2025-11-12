@@ -449,7 +449,7 @@ NULL
 #' @name lakes_limno
 #' @aliases meandepth maxdepth legacyid depth
 #' @seealso \code{\link[LAGOSNE]{lakes.geo}}
-#' @references Soranno et al. (2017) \doi{10.1093/gigascience/gix101}{Gigascience 6:12}
+#' @references Soranno et al. (2017) \doi{10.1093/gigascience/gix101}
 NULL
 
 #' Metadata for all lakes > 1ha
