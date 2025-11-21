@@ -18,38 +18,38 @@
 #' cbind(names(lg$lakes_limno), display_names(names(lg$lakes_limno)))
 #' cbind(names(lg$lakes.geo), display_names(names(lg$lakes.geo)))
 #' }
-display_names <- function(nms_raw){
-
+display_names <- function(nms_raw) {
   # nms_raw <- names(lg$locus)
-  if(!inherits(nms_raw, "character")){
+  if (!inherits(nms_raw, "character")) {
     stop("This function on works on character vectors.")
   }
 
   nms <- data.frame(raw = nms_raw,
-                    formatted = NA,
-                    stringsAsFactors = FALSE)
+    formatted = NA,
+    stringsAsFactors = FALSE)
 
   nms <- tidy_name_prefixes(nms)
   nms <- key_names(nms)
   nms <- tidy_name_suffixes(nms)
 
   # detect name collisions - if collision + formatted prefixes bk to collisions
-  nms_collisions <- as.character(sapply(seq_len(nrow(nms)), function(x){
-    if(length(which(nms$cleaned[x] == nms$cleaned)) > 1){
+  nms_collisions <- as.character(sapply(seq_len(nrow(nms)), function(x) {
+    if (length(which(nms$cleaned[x] == nms$cleaned)) > 1) {
       paste0(nms$cleaned[x], " (", gsub("_", "", nms$prefix[x]), ")")
-    }}))
+    }
+  }))
 
   nms$cleaned[which(nms_collisions != "NULL")] <- nms_collisions[
     which(nms_collisions != "NULL")]
 
   # sort back to original order
-  nms <- nms[match(nms_raw, nms$raw),]
+  nms <- nms[match(nms_raw, nms$raw), ]
 
   # caps formatting
   nms$cleaned[!(nms$cleaned %in% nms_raw)] <-
     capitalize(nms$cleaned[!(nms$cleaned %in% nms_raw)])
   nms$cleaned[!(nms$cleaned %in% nms_raw)] <- gsub("_", " ",
-                              nms$cleaned[!(nms$cleaned %in% nms_raw)])
+    nms$cleaned[!(nms$cleaned %in% nms_raw)])
 
   # convert usa and nwi to all caps
   nms$cleaned <- gsub("usa", "USA", nms$cleaned)
