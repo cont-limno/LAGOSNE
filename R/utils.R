@@ -222,30 +222,11 @@ query_column_keywords <- function(dt, table_name, keyword_string) {
 
 }
 
-#' @importFrom curl curl_fetch_memory
-#' @importFrom stringr str_extract
-get_file_names <- function(url) {
-  handle <- curl::new_handle(nobody = TRUE)
-
-  headers <- curl::parse_headers(
-    curl::curl_fetch_memory(url, handle)$headers)
-  fname <- headers[grep("filename", headers)]
-
-  res <- stringr::str_extract(fname, "(?<=\\=)(.*?)\\.csv")
-  gsub('\\"', "", res)
-}
-
-#' @importFrom httr GET content
-get_lagos_module <- function(edi_url, pasta_url, folder_name, overwrite) {
-
-  id <- httr::content(httr::GET(pasta_url), encoding = "UTF-8")
-  id <- strsplit(id, "\n")[[1]]
-  files <- suppressWarnings(paste0(edi_url, "&entityid=", id))
-
-  file_names <- sapply(files, get_file_names)
-
-  files      <- files[!is.na(file_names)]
-  file_names <- file_names[!is.na(file_names)]
+#' @importFrom xml2 read_xml xml_find_all xml_text
+get_lagos_module <- function(pasta_url, folder_name, overwrite) {
+  xml_files <- xml2::xml_find_all(xml2::read_xml(pasta_url), ".//dataTable")
+  files <- xml2::xml_text(xml2::xml_find_all(xml_files, ".//url"))
+  file_names <- xml2::xml_text(xml2::xml_find_all(xml_files, ".//objectName"))
 
   local_dir   <- file.path(tempdir(), folder_name)
   dir.create(local_dir, showWarnings = FALSE)
