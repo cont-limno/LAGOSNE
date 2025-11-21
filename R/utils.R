@@ -287,7 +287,12 @@ tidy_name_prefixes <- function(nms) {
       nms$raw, prefixes_key$prefix[i])
   }
 
-  prefix_matches <- tidyr::unnest(tibble::enframe(prefix_matches))
+  prefix_data <- tibble::enframe(prefix_matches)
+  names(prefix_data) <- c("data_names", "display_names")
+  prefix_matches <- tidyr::unnest(
+    cols = c("data_names", "display_names"),
+    data = prefix_data
+  )
   prefix_matches <- apply(prefix_matches, 1, function(x)
     c(nms$raw[x[2]], prefixes_key$prefix[x[1]]))
   prefix_matches <- data.frame(t(prefix_matches), stringsAsFactors = FALSE)
