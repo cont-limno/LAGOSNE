@@ -12,19 +12,19 @@
 #' @examples \dontrun{
 #' dt  <- lagosne_load("1.087.3")
 #' }
-lagosne_load <- function(version = NULL, fpath = NA){
-  if(is.null(version)){
+lagosne_load <- function(version = NULL, fpath = NA) {
+  if (is.null(version)) {
     version <- lagosne_version()
-    if(interactive()){
+    if (interactive()) {
       message(paste0("Loading LAGOSNE version: ", version))
-    }else{
+    } else {
       warning(paste0("LAGOSNE version unspecified, loading version: ", version))
     }
   }
 
-  if(!is.na(fpath)){
-      qs2::qs_read(fpath)
-  }else{
+  if (!is.na(fpath)) {
+    qs2::qs_read(fpath)
+  } else {
     qs_path <- paste0(lagos_path(), "data_", version, ".qs")
     stop_if_not_exists(qs_path)
     qs2::qs_read(qs_path)
@@ -61,14 +61,14 @@ lagosne_load <- function(version = NULL, fpath = NA){
 #' @examples \dontrun{
 #' lagos_load_oliver_2015()
 #' }
-lagos_load_oliver_2015 <- function(fpath = NA){
+lagos_load_oliver_2015 <- function(fpath = NA) {
   destdir <- rappdirs::user_data_dir("LAGOSNE")
   dir.create(destdir, showWarnings = FALSE)
 
-  if(is.na(fpath)){
+  if (is.na(fpath)) {
     read.csv(paste0(destdir, .Platform$file.sep, "oliver_2015_depth.csv"),
-             stringsAsFactors = FALSE)
-  }else{
+      stringsAsFactors = FALSE)
+  } else {
     read.csv(fpath, stringsAsFactors = FALSE)
   }
 }
@@ -88,14 +88,14 @@ lagos_load_oliver_2015 <- function(fpath = NA){
 #' @examples \dontrun{
 #' lg <- lagos_load_collins_2017()
 #' }
-lagos_load_collins_2017 <- function(fpath = NA){
+lagos_load_collins_2017 <- function(fpath = NA) {
   destdir <- rappdirs::user_data_dir("LAGOSNE")
   dir.create(destdir, showWarnings = FALSE)
 
-  if(is.na(fpath)){
+  if (is.na(fpath)) {
     read.csv(paste0(destdir, .Platform$file.sep, "collins_2017.csv"),
-             stringsAsFactors = FALSE)
-  }else{
+      stringsAsFactors = FALSE)
+  } else {
     read.csv(fpath, stringsAsFactors = FALSE)
   }
 }
