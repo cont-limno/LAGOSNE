@@ -23,11 +23,25 @@ lagosne_load <- function(version = NULL, fpath = NA) {
   }
 
   if (!is.na(fpath)) {
-    qs2::qs_read(fpath)
+    tryCatch(
+      {
+        return(qs2::qs_read(fpath))
+      },
+      error = function(e) {
+        message("if old version of data download exists, try lagosne_get with overwrite set")
+        print(e)
+      })
   } else {
     qs_path <- paste0(lagos_path(), "data_", version, ".qs")
     stop_if_not_exists(qs_path)
-    qs2::qs_read(qs_path)
+    tryCatch(
+      {
+        return(qs2::qs_read(qs_path))
+      },
+      error = function(e) {
+        message("if old version of data download exists, try lagosne_get with overwrite set")
+        print(e)
+      })
   }
 }
 
