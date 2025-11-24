@@ -43,9 +43,9 @@ lagosne_compile(
 ``` r
 if (FALSE) { # \dontrun{
 lagosne_compile("1.087.3",
- limno_folder = "~/Downloads/LAGOS-NE-LIMNO-EXPORT",
- geo_folder   = "~/Downloads/LAGOS-NE-GEO-EXPORT",
- locus_folder = "~/Downloads/LAGOS-NE-LOCUS-EXPORT",
- dest_folder = lagos_path())
+  limno_folder = "~/Downloads/LAGOS-NE-LIMNO-EXPORT",
+  geo_folder   = "~/Downloads/LAGOS-NE-GEO-EXPORT",
+  locus_folder = "~/Downloads/LAGOS-NE-LOCUS-EXPORT",
+  dest_folder = lagos_path())
 } # }
 ```
