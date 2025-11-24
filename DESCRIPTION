@@ -33,7 +33,7 @@ Imports: dplyr (>= 0.7.0),
     rlang,
     progress,
     qs2,
-    httr
+	xml2
 Suggests: testthat,
     knitr,
     rmarkdown,

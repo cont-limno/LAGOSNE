@@ -13,7 +13,7 @@
 #'
 #'@importFrom utils read.table
 #'@importFrom rappdirs user_data_dir
-#'@importFrom qs2 qsave
+#'@importFrom qs2 qs_save
 #'@export
 #'
 #'@examples \dontrun{
@@ -48,6 +48,6 @@ lagosne_compile <- function(version,
 
   outpath <- file.path(dest_folder, paste0("data_", version, ".qs"))
 
-  qs::qsave(res, outpath)
+  qs2::qs_save(res, outpath)
   message(paste0("LAGOSNE compiled to ", outpath))
 }
