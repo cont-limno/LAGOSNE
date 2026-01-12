@@ -10,7 +10,6 @@
 #' @param \dots arguments passed to \code{\link[base]{agrepl}} to fuzzy match
 #' lake name
 #' @importFrom dplyr filter
-#' @importFrom lazyeval interp
 #' @importFrom utils adist
 #' @importFrom rlang .data
 #' @export
@@ -118,20 +117,17 @@ lake_info_ <- function(dt, name, state, llid, ...){
   dt_filter       <- dt[dt$state_name %in% state,]
 
   if(is.na(llid)){
-    filter_criteria <- lazyeval::interp(~ agrepl(name,
-                                                 lagosname1,
-                                                 ignore.case = TRUE,
-                                                 ...))
-    # dt_filter       <- dplyr::filter(dt, !is.na(state_name))
-    dt_filter       <- dplyr::filter_(dt_filter, filter_criteria)
+    dt_filter       <- dplyr::filter(dt_filter,
+                                     agrepl(name, .data$lagosname1,
+                                            ignore.case = TRUE, ...))
   }else{
     dt_filter <- dplyr::filter(dt, lagoslakeid == as.numeric(llid))
   }
 
   if(nrow(dt_filter) == 0){
-    filter_criteria <- lazyeval::interp(~ agrepl(name, gnis_name,
-                                                 ignore.case = TRUE, ...))
-    dt_filter       <- dplyr::filter_(dt_filter, filter_criteria)
+    dt_filter       <- dplyr::filter(dt_filter,
+                                     agrepl(name, .data$gnis_name,
+                                            ignore.case = TRUE, ...))
   }
 
   if(nrow(dt_filter) < 1 & !is.na(state)){
