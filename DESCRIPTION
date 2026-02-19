@@ -19,9 +19,8 @@ Description: Client for programmatic access to the Lake
     for accessing lake water quality and ecological context data for the US.
 Depends:
     R (>= 3.5.0)
-Imports: dplyr (>= 0.7.0), 
+Imports: dplyr (>= 0.7.0),
     rappdirs (>= 0.3.1),
-    lazyeval (>= 0.2),
     purrr (>= 0.2.2.2),
     magrittr (>= 1.5),
     sf,
