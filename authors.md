@@ -12,7 +12,7 @@
 ## Citation
 
 Source:
-[`inst/CITATION`](https://github.com/cont-limno/LAGOSNE/blob/v2.0.4/inst/CITATION)
+[`inst/CITATION`](https://github.com/cont-limno/LAGOSNE/blob/master/inst/CITATION)
 
 Soranno, P.A., L.C. Bacon, M. Beauchene, K.E. Bednar, E.G. Bissell, et.
 al., 2017. LAGOS-NE: a multi-scaled geospatial and temporal database of
