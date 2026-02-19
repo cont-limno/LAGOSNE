@@ -72,7 +72,7 @@ lake_info <- function(lagoslakeid = NA, name = NA, state = NA,
     name_state <- dplyr::mutate(name_state,
                                 name = .data$gnis_name, state = .data$state_name)
     name_state <- dplyr::select(name_state,
-                                .data$name, .data$state, .data$lagoslakeid)
+                                name, state, lagoslakeid)
   }else{
     lagoslakeid <- rep(NA, length(state))
     name_state  <- data.frame(name = name, state = state,
