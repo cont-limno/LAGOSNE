@@ -2,6 +2,8 @@
 
 ## LAGOSNE 2.0.5
 
+CRAN release: 2026-02-20
+
 ### MAINTENANCE CHANGES
 
 - Update internal dplyr syntax for release version
